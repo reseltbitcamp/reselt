@@ -9,6 +9,7 @@
             - **불가: [Extension Pack for Java 및 dependencies (자동 코드 수정으로 실행 불가능, 불가역적)](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)**
     - Spring Tool Suite 3
         - 작업범위: Java, Spring, DB, 기타 백엔드
+    - 협업툴 (🙏자주 이용 바랍니다🙏): [Gather Town (원격 오피스)](https://app.gather.town/invite?token=kcTp-jMm5i9hr3RX_eeZAISPmPHZ9dv6), [GitHub Projects (칸반보드)](https://github.com/orgs/reseltbitcamp/projects/3/views/1)
 
 
 2. Branch 관련
