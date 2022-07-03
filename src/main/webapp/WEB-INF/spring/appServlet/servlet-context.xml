@@ -14,9 +14,9 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<!-- <resources mapping="/resources/**" location="/resources/" /> -->
-	<resources location="/resources/assets/css/" mapping="/css/**"/>
-	<resources location="/resources/assets/img/" mapping="/img/**"/>
-	<resources location="/resources/assets/js/" mapping="/js/**"/>
+	<resources location="/assets/css/" mapping="/css/**"/>
+	<resources location="/assets/img/" mapping="/img/**"/>
+	<resources location="/assets/js/" mapping="/js/**"/>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

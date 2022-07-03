@@ -8,11 +8,10 @@
     <meta charset="UTF-8">
     <title>RESELT | 한정판 거래의 RESELT</title>
     <!-- TailwindCSS configuration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="/ReseltProject/js/tailwind.config.js"></script>
-
+    <link rel="stylesheet" href="/ReseltProject/css/output.css"> 
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/ReseltProject/css/index.css"> 
+    <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
 
     <!-- External Web Fonts -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
