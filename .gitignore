@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/git,java,eclipse,visualstudiocode,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,java,eclipse,visualstudiocode,node
 
+### Tailwind CSS ###
+**/output.css
+
 ### Eclipse ###
 .metadata
 bin/
