@@ -27,7 +27,7 @@
           <a href="#" class="m-2">고객센터</a>
           <a href="#" class="m-2">관심상품</a>
           <a href="#" class="m-2">마이페이지</a>
-          <a href="#" class="m-2">로그인</a>
+          <a href="/reselt/member/loginForm" class="m-2">로그인</a>
         </div>
       </div>
       <jsp:include page="${menu }" />

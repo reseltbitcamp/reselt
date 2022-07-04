@@ -16,6 +16,7 @@
 	<!-- <resources mapping="/resources/**" location="/resources/" /> -->
 	<resources location="/resources/assets/css/" mapping="/css/**"/>
 	<resources location="/resources/assets/img/" mapping="/img/**"/>
+	<resources location="/resources/assets/img/member/" mapping="/member/**"/>
 	<resources location="/resources/assets/js/" mapping="/js/**"/>
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
@@ -25,6 +26,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="main.controller" />
+	<context:component-scan base-package="member.controller" />
 	
 	
 	
