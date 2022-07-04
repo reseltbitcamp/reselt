@@ -8,7 +8,9 @@
     <meta charset="UTF-8">
     <title>RESELT | 한정판 거래의 RESELT</title>
     <!-- TailwindCSS configuration -->
-    <link rel="stylesheet" href="/ReseltProject/css/output.css"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="/ReseltProject/css/output.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
@@ -44,5 +46,8 @@
 
     <!-- Footer -->
     <jsp:include page="${footer }" />
+
+    <!-- Flowbite Script-->
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
   </body>
 </html>
