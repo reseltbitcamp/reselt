@@ -1,5 +1,5 @@
 {
-  "scripts":{
+  "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./src/main/webapp/assets/css/output.css",
     "watch": "tailwindcss -i ./src/input.css -o ./src/main/webapp/assets/css/output.css --watch"
   },
