@@ -46,48 +46,129 @@
             <span class="hidden">Next</span>
         </span>
     </button>
+  </div>
 </div>
-
-</div>
-
-<div id="showcase" class="mx-[72px] my-[50px] px-[32px] grid grid-cols-5 gap-4">
+<div id="showcase" class="mx-80 my-[50px] px-[32px] grid grid-cols-5 gap-3 text-center justify-items-center">
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">뉴 트렌딩</p>
+    <div class="w-56 h-24">
+      <img src="/ReseltProject/img/index/showcase_01.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">뉴 트렌딩</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">남성 추천</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_02.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">남성 추천</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">뉴 트렌딩</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_03.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">여성 추천</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">남성 추천</p>
+    <div class=" w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_04.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">골프</p>
   </a><a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">뉴 트렌딩</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_05.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">Luxury Bag</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">남성 추천</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_06.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">오늘의 코디</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">뉴 트렌딩</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_07.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">여행 컬렉션</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">남성 추천</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_08.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">7월 럭키드로우</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">뉴 트렌딩</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_09.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">빠른배송</p>
   </a>
   <a href="#">
-    <div class="bg-orange-500 w-56 h-24 rounded-xl"></div>
-    <p class="text-center">남성 추천</p>
+    <div class="w-56 h-24 rounded-xl">
+      <img src="/ReseltProject/img/index/showcase_10.jpg" class="object-contain object-center rounded-xl">
+    </div>
+    <p class="text-center text-sm pt-2">누구나 창고보관</p>
   </a>
+</div>
+<div id="justdropped" class="mx-80 my-[50px] px-[32px]">
+  <div id="justdroppedTitle">
+    <p class="text-xl font-bold">Just Dropped</p>
+    <p class="text-sm text-slate-500">발매 상품</p>
+  </div>
+  <div id="justdroppedItems" class="my-5 grid grid-cols-4 gap-5">
+    <a href="#" id="productBox">
+      <div id="productImg">
+        <div class="bg-[#ebf0f5] rounded-xl">
+          <img src="/ReseltProject/img/index/shoe_01.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
+        </div>
+      </div>
+      <div id="productInfo">
+        <p class="my-1 text-sm font-bold underline text-[#333]">Nike</p>
+        <p class="mb-1 text-sm text-[#222]">(W) Nike Dunk Low Ocean</p>
+        <p class="text-base font-bold">144,000원</p>
+        <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
+      </div>
+    </a>
+    <a href="#" id="productBox">
+      <div id="productImg">
+        <div class="bg-[#f6eeed] rounded-xl">
+          <img src="/ReseltProject/img/index/shoe_02.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
+        </div>
+      </div>
+      <div id="productInfo">
+        <p class="my-1 text-sm font-bold underline text-[#333]">Jordan</p>
+        <p class="mb-1 text-sm text-[#222]">(W) Jordan 1 Mid Black and Gym Red</p>
+        <p class="text-base font-bold">149,000원</p>
+        <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
+      </div>
+    </a>
+    <a href="#" id="productBox">
+      <div id="productImg">
+        <div class="bg-[#ebf0f5] rounded-xl">
+          <img src="/ReseltProject/img/index/shoe_03.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
+        </div>
+      </div>
+      <div id="productInfo">
+        <p class="my-1 text-sm font-bold underline text-[#333]">Nike</p>
+        <p class="mb-1 text-sm text-[#222]">(W) Nike SB Dunk Low Pro Be True</p>
+        <p class="text-base font-bold">145,000원</p>
+        <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
+      </div>
+    </a>
+    <a href="#" id="productBox">
+      <div id="productImg">
+        <div class="bg-[#f6eeed] rounded-xl">
+          <img src="/ReseltProject/img/index/shoe_04.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
+        </div>
+      </div>
+      <div id="productInfo">
+        <p class="my-1 text-sm font-bold underline text-[#333]">Jordan</p>
+        <p class="mb-1 text-sm text-[#222]">(W) Jordan 1 Low Taxi</p>
+        <p class="text-base font-bold">250,000원</p>
+        <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
+      </div>
+    </a>
+  </div>
+  <div class="text-center">
+    <button id="showMore" class="my-5 px-8 h-10 border-[1px] border-[#222222] rounded-xl bg-white text-[#222222] text-sm">더보기</button>
+  </div>
 </div>
