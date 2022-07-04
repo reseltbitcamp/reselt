@@ -1,7 +1,6 @@
 # Project RESELT
-## 간단한 규칙
 1. 개발환경
-    - VS Code:
+    - [VS Code](https://code.visualstudio.com/):
         - 작업범위: JSP, CSS, Javascript
         - Extensions:
             - 필수: [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss), [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss), [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
@@ -10,6 +9,8 @@
     - Spring Tool Suite 3
         - 작업범위: Java, Spring, DB, 기타 백엔드
     - 협업툴 (🙏자주 이용 바랍니다🙏): [Gather Town (원격 오피스)](https://app.gather.town/invite?token=kcTp-jMm5i9hr3RX_eeZAISPmPHZ9dv6), [GitHub Projects (칸반보드)](https://github.com/orgs/reseltbitcamp/projects/3/views/1)
+    - [Tailwind CSS](https://tailwindcss.com/docs/installation)
+        - [Tailwind CSS CLI 설치 및 사용방법](https://github.com/reseltbitcamp/reselt/wiki/TailwindCSS-CLI-%EC%84%A4%EC%B9%98-%EB%B0%8F-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-%EB%B0%A9%EB%B2%95)
 
 
 2. Branch 관련
