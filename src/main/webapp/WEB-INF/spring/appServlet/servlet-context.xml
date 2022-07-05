@@ -26,6 +26,8 @@
 	
 	<context:component-scan base-package="main.controller" />
 	
+	<context:component-scan base-package="style.controller" />
+	
 	
 	
 </beans:beans>
