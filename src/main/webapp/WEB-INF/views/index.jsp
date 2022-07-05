@@ -9,16 +9,17 @@
     <title>RESELT | 한정판 거래의 RESELT</title>
     <!-- TailwindCSS configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/ReseltProject/js/tailwind.config.js"></script>
+    
     <!-- <link rel="stylesheet" href="/ReseltProject/css/output.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
-
+    
     <!-- External Web Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=notoSans:wght@300;400&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=notoSans:wght@300;400&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Header-->
