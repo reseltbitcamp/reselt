@@ -27,6 +27,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="main.controller" />
+	<context:component-scan base-package="notice.controller" />
 	<context:component-scan base-package="sell.controller" />
 	<context:component-scan base-package="buy.controller" />
 	
