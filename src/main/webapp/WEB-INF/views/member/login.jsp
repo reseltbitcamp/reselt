@@ -14,14 +14,14 @@
     <div class="">
       <form>
         <div class="pt-5 pb-6">
-        	<div id="emailDiv">
-	        	<div class="pt-10 text-xs font-bold"><h3>이메일 주소</h3></div>
+        	<div>
+	        	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소</h3></div>
 	        	<input type="email" id="email" name="email" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
 	        	<div id="emailDivcmt" class="mb-10"></div>
         	</div>
          	
-         	<div id="pwdDiv">
-         		<div class="pt-5 text-xs font-bold"><h3>비밀번호</h3></div>
+         	<div>
+         		<div id="pwdDiv" class="pt-5 text-xs font-bold"><h3>비밀번호</h3></div>
          	 	<input type="password" id="pwd" name="pwd" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2">
 	        	<div id="pwdDivcmt" class="mb-10"></div>
          	</div>
@@ -71,6 +71,7 @@ $(function(){
 		if(!reg_email.test($('#email').val())) {                            
 			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
+			$('#emailDivcmt').css({'color':'red'});  
 			$('#emailDiv').css({'color':'red'});  
 		 }                            
 		 else {                     
@@ -89,10 +90,14 @@ $(function(){
 			$('#loginBtn').css({'background-color':'black'});
 			$('#pwdDivcmt').html(""); 
 			$('#pwdDiv').css({'color':'black'}); 
+			
+			//링크추가 필요
 		}else {
 			$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
 			$('#pwdDivcmt').css({'font-size':'5pt'}); 
+			$('#pwdDivcmt').css({'color':'red'}); 
 			$('#pwdDiv').css({'color':'red'}); 
+			$('#loginBtn').css({'background-color':'rgb(209 213 219)'}); 
 		}
 	});
 	 

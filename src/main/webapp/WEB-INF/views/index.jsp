@@ -13,7 +13,7 @@
     <script src="/ReseltProject/js/tailwind.config.js"></script>
 
     <!-- <link rel="stylesheet" href="/ReseltProject/css/output.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" /> -->
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
 
