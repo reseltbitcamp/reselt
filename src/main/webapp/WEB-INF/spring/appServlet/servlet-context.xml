@@ -18,6 +18,8 @@
 	<resources location="/assets/img/" mapping="/img/**"/>
 	<resources location="/assets/js/" mapping="/js/**"/>
 
+	<resources location="/assets/img/member/" mapping="/member/**"/>
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -26,6 +28,7 @@
 	
 	<context:component-scan base-package="main.controller" />
 	
+	<context:component-scan base-package="member.controller" />
 	
 	
 </beans:beans>
