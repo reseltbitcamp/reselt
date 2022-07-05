@@ -5,21 +5,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <title>RESELT | 한정판 거래의 RESELT</title>
     <!-- TailwindCSS configuration -->
-    <link rel="stylesheet" href="/ReseltProject/css/output.css"> 
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/ReseltProject/js/tailwind.config.js"></script>
+
+    <!-- <link rel="stylesheet" href="/ReseltProject/css/output.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/tailwind.config.js"></script>
-    <link rel="stylesheet" type="text/tailwindcss" href="./assets/css/tailwind.config.css">
     <!-- External Web Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=notoSans:wght@300;400&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=notoSans:wght@300;400&display=swap" rel="stylesheet">
   </head>
   <body>
     <!-- Header-->
@@ -29,7 +30,7 @@
           <a href="#" class="m-2">고객센터</a>
           <a href="#" class="m-2">관심상품</a>
           <a href="#" class="m-2">마이페이지</a>
-          <a href="#" class="m-2">로그인</a>
+          <a href="/ReseltProject/member/login" class="m-2">로그인</a>
         </div>
       </div>
       <jsp:include page="${menu }" />
@@ -47,5 +48,10 @@
 
     <!-- Footer -->
     <jsp:include page="${footer }" />
+
+    <!-- Flowbite Script-->
+    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
   </body>
+  
+    
 </html>
