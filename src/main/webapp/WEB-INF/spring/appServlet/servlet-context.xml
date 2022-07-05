@@ -25,6 +25,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="main.controller" />
+	<context:component-scan base-package="notice.controller" />
 	
 	
 	
