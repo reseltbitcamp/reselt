@@ -337,9 +337,9 @@
   </div> 
  
 <!-- product img / details -->
-  <div id="productlist" class="basis-4/5 mx-[20px] my-[50px] pl-[32px] grid grid-cols-4 gap-4" >
+<div id="productlist" class="basis-4/5 mx-[20px] my-[50px] pl-[32px] grid grid-cols-4 gap-4" >
   
- <a href="#">
+  <a href="#">
     <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
       <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/1.jpg">
     </div>
@@ -553,3 +553,13 @@
 
   </div>
 </div>
+<script>
+$('.scrollable').on('scroll', function(){
+  var $el = $(this);
+  $('.scrolled').text($(this).scrollTop());
+  if( $el.innerHeight()+$el.scrollTop() >= this.scrollHeight-5 ){
+    var d = new Date();
+    $el.append('more text added on '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'<br>');
+  }
+});
+</script>
