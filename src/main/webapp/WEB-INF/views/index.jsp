@@ -13,6 +13,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" type="text/tailwindcss" href="./assets/css/tailwind.config.css">
     <!-- External Web Fonts -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
