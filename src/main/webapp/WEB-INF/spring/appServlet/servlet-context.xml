@@ -25,7 +25,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="main.controller" />
-	
+	<context:component-scan base-package="shop.controller" />
 	
 	
 </beans:beans>
