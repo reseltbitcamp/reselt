@@ -11,19 +11,19 @@
     <div class="overflow-hidden relative h-[480px]">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out bg-[#0232a2]" data-carousel-item="active">
-            <img src="/ReseltProject/img/index/carousel_1.jpg" class="object-contain block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/ReseltProject/img/index/carousel_1.jpg" class="block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out bg-[#ffa826]" data-carousel-item>
-            <img src="/ReseltProject/img/index/carousel_2.jpg" class="object-contain block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/ReseltProject/img/index/carousel_2.jpg" class="block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out bg-[#8891ae]" data-carousel-item>
-            <img src="/ReseltProject/img/index/carousel_3.jpg" class="object-contain block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/ReseltProject/img/index/carousel_3.jpg" class="block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out bg-[#0088eb]" data-carousel-item>
-            <img src="/ReseltProject/img/index/carousel_4.jpg" class="object-contain block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            <img src="/ReseltProject/img/index/carousel_4.jpg" class="block absolute top-1/2 left-1/2 h-full -translate-x-1/2 -translate-y-1/2" alt="...">
         </div>
     </div>
     <!-- Slider indicators -->
