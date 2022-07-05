@@ -31,7 +31,11 @@
 	<context:component-scan base-package="sell.controller" />
 	<context:component-scan base-package="buy.controller" />
 	
+	<context:component-scan base-package="style.controller" />
+	
+
 	<context:component-scan base-package="member.controller" />
+
 	
 	
 </beans:beans>
