@@ -11,11 +11,12 @@
     <link rel="stylesheet" type="text/tailwindcss" href="./assets/css/tailwind.config.css"> 
 </head>
 <body>
-    <div class="wrap_inner float-left ml-10 mr-5 grid">
-        <div class="container customer md max-w-7xl m-auto pt-10 pr-10 pb-40">
+ <div class="notice_outer">
+  <div class="wrap_inner float-left m-auto grid">
+        <div class="container customer max-w-7xl m-auto pt-10 pr-10 pb-40">
             <div class="box-border">
-                <div class="snb_area m-0 p-0">
-                    <a href="/notice" aria-current="page" class="cursor-pointer">
+                <div class="snb_area m-0 p-0 float-left w-[150px] mt-5">
+                    <a href="/notice/moticeMain" aria-current="page" class="cursor-pointer">
                     <h2 class="snb_main_title pb-25 text-3xl tracking-tighter decoration-black uppercase block font-bold">고객센터</h2></a>
                     <br>
                     <nav class="snb">
@@ -30,10 +31,8 @@
             </div>
         </div>
     </div>
-    <div id="content">
-        <jsp:include page="../notice/noticeContent.jsp"></jsp:include>
-    </div>
-    </div>
+<jsp:include page="../notice/noticeContent.jsp"></jsp:include>
+  </div>
 </body>
 </html>
 

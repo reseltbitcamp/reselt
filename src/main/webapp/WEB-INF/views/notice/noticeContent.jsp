@@ -7,8 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<br>
+<div class="content_area mt-10 m-auto grid">
+  <div class="content_title pb-[16px] ">
+    <div class="title text-2xl tracking-[-.36px] border-b-black border-solid border-b-[3px]">
+      <h3 class="leading-7 font-bold mb-3">공지사항</h3>
+    </div>
+  </div>
+
 <ul class="content_list">
-  <li><p class="title1">[공지] 7월 거래 혜택 이벤트 안내</p>
+  <li><p class="title1 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 cursor-pointer flex">[공지] 7월 거래 혜택 이벤트 안내</p>
     <div class="content1">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
@@ -32,7 +40,7 @@
       <p>감사합니다.</p>
     </div>
   </li>
-  <li><p class="title2">[공지] 서비스 수수료 안내</p>
+  <li><p class="title2 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[공지] 서비스 수수료 안내</p>
     <div class="content2">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
@@ -57,7 +65,7 @@
       <p>감사합니다.</p>
     </div>
   </li>
-  <li><p class="title3">[이벤트 발표] LUCKY DRAW - 뉴발란스 x JJJ자운드 990v3 & 나이키 x 오프화이트 덩크 로우</p>
+  <li><p class="title3 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 뉴발란스 x JJJ자운드 990v3 & 나이키 x 오프화이트 덩크 로우</p>
     <div class="content3">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 뉴발란스 x JJJ자운드 990v3 &amp; 나이키 x 오프화이트 덩크 로우 당첨자를 발표합니다.</p>
@@ -116,7 +124,7 @@
       <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
     </div>
   </li>
-  <li><p class="title4">[공지] 검수 기준 변경 안내 (7.1 금요일 체결 거래부터)</p>
+  <li><p class="title4 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[공지] 검수 기준 변경 안내 (7.1 금요일 체결 거래부터)</p>
     <div class="content4">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
@@ -134,7 +142,7 @@
       <p>감사합니다.</p>
     </div>
   </li>
-  <li><p class="title5">[이벤트 발표] LUCKY DRAW - 에르메스 오란 샌들 & 조던 1 하이 블랙 모카</p>
+  <li><p class="title5 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 에르메스 오란 샌들 & 조던 1 하이 블랙 모카</p>
     <div class="content5">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 에르메스 오란 샌들 &amp; 조던 1 하이 블랙 모카 당첨자를 발표합니다.</p>
@@ -193,7 +201,7 @@
       <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
     </div>
   </li>
-  <li><p class="title6">[이벤트 발표] LUCKY DRAW - 나이키 x 스투시 에어포스 1 '07 미드 SP 블랙 앤 라이트 본 & 파슬</p>
+  <li><p class="title6 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 나이키 x 스투시 에어포스 1 '07 미드 SP 블랙 앤 라이트 본 & 파슬</p>
     <div class="content6">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 나이키 x 스투시 에어포스 1 '07 미드 SP 블랙 앤 라이트 본 &amp; 파슬 당첨자를 발표합니다.</p>
@@ -253,7 +261,7 @@
         <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
     </div>
   </li>
-  <li><p class="title7">[이벤트 발표] LUCKY DRAW - 나이키 x 피마원 에어포스 1 로우 파라노이즈 2.0 & 조던 1 레트로 하이 OG 유니버시티 블루</p>
+  <li><p class="title7 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 나이키 x 피마원 에어포스 1 로우 파라노이즈 2.0 & 조던 1 레트로 하이 OG 유니버시티 블루</p>
     <div class="content7">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 나이키 x 피스마이너스원 에어포스 1 로우 파라노이즈 2.0 &amp; 조던 1 레트로 하이 OG 유니버시티 블루 당첨자를 발표합니다.</p>
@@ -312,7 +320,7 @@
       <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
     </div>
   </li>
-  <li><p class="title8">[이벤트 발표] 쇼룸 #RESELT기습드로우 - 스캇 에어맥스 1</p>
+  <li><p class="title8 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] 쇼룸 #RESELT기습드로우 - 스캇 에어맥스 1</p>
     <div class="content8">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난 토요일 무더운 날씨에도 RESELT 상수 쇼룸을 방문하여 #RESELT기습드로우에 참여해주신 모든 분께 감사 인사를 드립니다. 선착순 100분 중 응모 조건에 부합하며 토요일 내 게시물을 올려주신 총 10명의 당첨자를 발표합니다.</p>
@@ -397,7 +405,7 @@
       <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
     </div>
   </li>
-  <li><p class="title9">[공지] 6월 공휴일 거래/운영 일정 안내</p>
+  <li><p class="title9 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[공지] 6월 공휴일 거래/운영 일정 안내</p>
     <div class="content9">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
@@ -430,7 +438,7 @@
       <p>감사합니다.</p>
     </div>
   </li>
-  <li><p class="title10">[이벤트 발표] LUCKY DRAW - 슈프림 MG 1/100 RX-78-2 건담 Ver. 3.0 & 카우스 패밀리 피규어 그레이 핑크</p>
+  <li><p class="title10 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 슈프림 MG 1/100 RX-78-2 건담 Ver. 3.0 & 카우스 패밀리 피규어 그레이 핑크</p>
     <div class="content10">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 슈프림 MG 1/100 RX-78-2 건담 Ver. 3.0 &amp; 카우스 패밀리 피규어 그레이 핑크 당첨자를 발표합니다.</p>
@@ -487,7 +495,13 @@
   </li>
 </ul>
 
-<input type = "reset" value = "목록보기" id="noticeBtn" onclick="location.reload()"> <!-- 구현필요 -->
+  <div class="btn_list mt-[30px] text-center">
+    <input type = "reset" value = "목록보기" id="noticeBtn" class="border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] h-[42px] leading-10 rounded-[12px] text-sm tracking-[-.14px] cursor-pointer" onclick="location.reload()">
+  </div>
+  
+  <div class="mb-52"></div>
+  
+  </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
