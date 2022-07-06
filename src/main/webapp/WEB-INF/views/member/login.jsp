@@ -50,13 +50,16 @@
 					<img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.1" height="50">
 				</a>
 			</div>
-    
+    		
+    		<div id="kakaoLogin">
+    			<input type="button" id="kakaologinBtn" value="로그인버튼"></input>
+    		</div>
 		</div>
 	</div>
       
 </div>
 
-
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
@@ -105,6 +108,7 @@ $(function(){
 </script>
 
 <script type="text/javascript">
+    /* 네이버 로그인 */
     var naverLogin = new naver.LoginWithNaverId( {
         clientId: "LgPc6iOg7dmRiTAsIpnG",
         callbackUrl: "http://localhost:8080/ReseltProject/member/naverlogin",
@@ -113,6 +117,19 @@ $(function(){
     } ); 
     /* 설정정보를 초기화하고 연동을 준비 */
     naverLogin.init();
+    
+    /* 카카오 로그인 */
+    
+    // SDK 초기화 여부를 판단합니다.
+    $('#kakaologinBtn').click(function(){
+   
+    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('a4dde13eaf237704c8119f1c077373c5');
+    	
+    console.log(Kakao.isInitialized());
+
+    Kakao.Auth.authorize();
+    });
 </script>
 
 
