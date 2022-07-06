@@ -16,6 +16,7 @@
 		<org.slf4j-version>2.0.0-alpha6</org.slf4j-version>
 	</properties>
 	<dependencies>
+	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -33,6 +34,73 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.3.15</version>
+		</dependency>
+		
+		<!-- Connection Pool -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-collections4</artifactId>
+		    <version>4.4</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-dbcp2</artifactId>
+		    <version>2.9.0</version>
+		</dependency>
+		
+		<!-- Oracle -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc8</artifactId>
+		    <version>21.5.0.0</version>
+		</dependency>
+		
+		<!-- MyBatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.7</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.6</version>
+		</dependency>
+		
+		<!-- JSON -->
+		<dependency>
+	       <groupId>net.sf.json-lib</groupId>
+	       <artifactId>json-lib</artifactId>
+	       <version>2.4</version>
+	       <classifier>jdk15</classifier>
+	    </dependency>
+	   
+	    <dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-core</artifactId>
+	        <version>2.13.0</version>
+	    </dependency>
+	   
+	    <dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-databind</artifactId>
+	        <version>2.13.0</version>
+	    </dependency>
+		
+		<!-- lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.22</version>
+		    <scope>provided</scope>
 		</dependency>
 				
 		<!-- AspectJ -->
@@ -116,14 +184,14 @@
 		    <version>1.2.5</version>
 		    <scope>runtime</scope>
 		</dependency>
-
+		
 		<!-- mySQL -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.29</version>
-		</dependency>
-
+      <dependency>
+         <groupId>mysql</groupId>
+         <artifactId>mysql-connector-java</artifactId>
+         <version>8.0.29</version>
+      </dependency>
+      
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -134,7 +202,7 @@
 	</dependencies>
     <build>
         <plugins>
-            <plugin>
+	            <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.9</version>
                 <configuration>
