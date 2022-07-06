@@ -56,4 +56,16 @@ public class BuyController {
 		
 		return mav;
 	}
+
+	@RequestMapping(value = "/buyLastPage", method = RequestMethod.GET)
+	public ModelAndView buyLastPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/buyMenu/buyStraightMenu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/buyPage/buyLastPage.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
 }
