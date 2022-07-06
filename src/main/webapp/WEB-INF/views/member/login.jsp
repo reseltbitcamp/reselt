@@ -109,6 +109,7 @@ $(function(){
 
 <script type="text/javascript">
     /* 네이버 로그인 */
+
     var naverLogin = new naver.LoginWithNaverId( {
         clientId: "LgPc6iOg7dmRiTAsIpnG",
         callbackUrl: "http://localhost:8080/ReseltProject/member/naverlogin",
@@ -120,15 +121,19 @@ $(function(){
     
     /* 카카오 로그인 */
     
-    // SDK 초기화 여부를 판단합니다.
-    $('#kakaologinBtn').click(function(){
-   
     // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
     Kakao.init('a4dde13eaf237704c8119f1c077373c5');
     	
+    // SDK 초기화 여부를 판단합니다.
     console.log(Kakao.isInitialized());
 
-    Kakao.Auth.authorize();
+    $('#kakaologinBtn').click(function(){
+
+    Kakao.Auth.authorize({
+		redirectUri: 'http://localhost:8080/ReseltProject/member/kakaologin',  /* redirect되는 URL */
+		scope: 'account_email'  /* 전달 받을 정보 */
+    });
+    
     });
 </script>
 

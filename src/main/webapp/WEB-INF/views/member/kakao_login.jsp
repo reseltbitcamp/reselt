@@ -12,7 +12,10 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-
+$(function(){
+	var accessToken = Kakao.Auth.setAccessToken();
+	console(accessToken);
+});
 </script>
 
 </html>

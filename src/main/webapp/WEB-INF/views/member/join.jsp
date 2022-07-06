@@ -72,7 +72,7 @@
       </div>
      
       <div class="mb-10">
-        <input type="button" value="회원 가입" class="text-white block m-auto bg-gray-300 m- rounded-xl h-12 w-full"  >
+        <input id="joinBtn" type="button" value="회원 가입" class="text-white block m-auto bg-gray-300 m- rounded-xl h-12 w-full"  >
       </div>
       
       
@@ -195,7 +195,11 @@ $(function(){
     });
     
     
+    $('#joinBtn').click(function(){
+    	
+    	
+    });
 });
-    
+	
 </script>  
 
