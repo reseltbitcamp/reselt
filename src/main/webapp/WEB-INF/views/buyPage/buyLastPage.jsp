@@ -143,9 +143,37 @@
       <p class="text-xs">결제 혜택</p>
     </div>
     <div>
-      <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
-      
-      <a>계좌 이체로 결제 시 0.5% 무한적립</a>
+      <ul>
+        <li class="flex mt-1">
+          <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
+          <p class="text-gray-400 text-sm">계좌 이체로 결제 시 0.5% 무한적립</p>
+          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
+        </li>
+        <li class="flex mt-1">
+          <img src="https://kream-phinf.pstatic.net/MjAyMTExMjZfMjI5/MDAxNjM3OTMyNDIxNDQ5.kO29DWw5j5r_vqt4cP2uCcI8si5vwnr1m2OSrzqdqUAg.agxcIJth1kHMYuz26KFjf2VHvCRM1-fv_ra2BPqzFAYg.PNG/d_6cd3cdc3d7b045c29794d0c5dfea97a9.png" class="w-[72px] h-[16px] m-[1px]" />
+          <p class="text-gray-400 text-sm">10만원 이상 결제시 즉시 할인 5%</p>
+          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
+        </li>
+        <li class="flex mt-1">
+          <img src="https://kream-phinf.pstatic.net/MjAyMTA3MjNfMjE2/MDAxNjI3MDQ0NjUxNTc5.NRYELauTh0NQalDifk1g8-txKLJVL0KO_wiheYsEPwkg.38cKqkZvp2V0zXr2WJfXgCdZTpvWl55pbhxfI5uCzigg.PNG/d_b3ac7ff93d8f46c38b1e14c3f7908685.png" class="w-[72px] h-[16px] m-[1px]" />
+          <p class="text-gray-400 text-sm">20만원 이상 결제시 즉시 할인 6%</p>
+          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
+        </li>
+        <li class="flex mt-1">
+          <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
+          <p class="text-gray-400 text-sm">신한카드로 결제시 2% 캐시백</p>
+          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
+        </li>
+        <li class="flex mt-1">
+          <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
+          <p class="text-gray-400 text-sm">토스로 첫 결제 시 3천원 캐시백</p>
+          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
+        </li>
+        <li class="flex mt-1">
+          <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
+          <p class="text-gray-400 text-sm">페이코 포인트로 결제 시 3% 적립</p>
+          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
+        </li>
     </div>
   </div>
 </div>
