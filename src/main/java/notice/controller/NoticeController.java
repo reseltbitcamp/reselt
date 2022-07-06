@@ -14,7 +14,7 @@ public class NoticeController {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
-		mav.addObject("display", "/WEB-INF/notice/noticeMain.jsp");
+		mav.addObject("display", "/WEB-INF/views/notice/noticeMain.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.setViewName("/index");
 		
