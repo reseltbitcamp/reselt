@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/tailwindcss" href="./assets/css/tailwind.config.css"> 
 </head>
 <body>
- <div class="notice_outer ml-52">
+ <div class="notice_outer m-0 m-auto max-w-[1280px] px-[40px]">
   <div class="wrap_inner float-left m-auto grid">
         <div class="container customer max-w-7xl m-auto pt-10 pr-10 pb-40">
             <div class="box-border">

@@ -17,7 +17,7 @@
 
 <ul class="content_list">
   <li><p class="title1 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 cursor-pointer flex">[공지] 7월 거래 혜택 이벤트 안내</p>
-    <div class="content1">
+    <div class="content1 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
       <p>7월 거래 혜택 이벤트 안내드립니다.</p>
@@ -41,7 +41,7 @@
     </div>
   </li>
   <li><p class="title2 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[공지] 서비스 수수료 안내</p>
-    <div class="content2">
+    <div class="content2 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
       <p>약관법 제 6조에 따라 추후 적용될 서비스 수수료 세부 사항을 안내드립니다.</p>
