@@ -116,7 +116,6 @@
 		    <version>1.2.5</version>
 		    <scope>runtime</scope>
 		</dependency>
-		
 		<!-- mySQL -->
 		<dependency>
 			<groupId>mysql</groupId>
