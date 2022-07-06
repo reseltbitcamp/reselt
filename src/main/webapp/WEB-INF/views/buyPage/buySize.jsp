@@ -75,7 +75,9 @@ $(function(){
   $('.sizeBtn').click(function(){
     $('#nextBtn').show();
   })
-	$('#nextBtn').click
-	location.href="ReseltProject/buyPage/buyAgree"
+	$('#nextBtn').click(function(){
+		location.href="ReseltProject/buyPage/buyAgree"
+	})
+	
 })
 </script>

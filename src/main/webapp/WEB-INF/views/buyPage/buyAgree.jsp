@@ -14,10 +14,10 @@
 }
 </style>
   </head>
-  <body class="">
+  <div class="">
     <!-- 해더 -->
 	
-    <main class="main-content mx-auto mt-5 bg-white p-8 shadow-md">
+    <div class="main-content mx-auto mt-5 bg-white p-8 shadow-md">
       <!-- 제품 정보 화면 -->
 
       <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
@@ -83,9 +83,9 @@
 
         <input type="button" value="판매 계속" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
       </form>
-    </main>
+    </div>
     <!-- footer -->
-  </body>
+  </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/sellPage.js"></script>
 <script type="text/javascript">

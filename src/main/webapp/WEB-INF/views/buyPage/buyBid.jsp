@@ -38,7 +38,7 @@
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
           <p class="float-right text-xl font-semibold">원</p>
-          <input type="text" class="text-right float-right text-xl font-semibold" />
+          <input type="text" class="float-right text-right text-xl font-semibold outline-none" />
         </div>
 
         <div class="mb-9 w-auto">
@@ -48,21 +48,21 @@
         </div>
       </div>
 
-      <div class="border-t">
+      <div id="sellBid" class="border-t">
         <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
         <p class="text-xs">시간은 가지 tictoc</p>
         <div class="text-center">
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">1일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">3일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">7일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">30일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">60일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">7일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">30일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">60일</button>
         </div>
         
         <div class="border-t">
           <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
           <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-          <button href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">구매 입찰 계속</button>
+          <input type="button" href="#" class="bg-black w-full text-white font-semibold h-14 mt-3 rounded-2xl">구매 입찰 계속</input>
         </div>
       </div>
     </div>
@@ -70,7 +70,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $('#sellStraight').click(function(){
-	location.href="/ReseltProject/buyPage/buyStraight"
+	location.href="#"
 });
 
 $('.dateBtn').each(function(index){
