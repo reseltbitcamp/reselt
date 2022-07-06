@@ -11,19 +11,19 @@
     <link rel="stylesheet" type="text/tailwindcss" href="./assets/css/tailwind.config.css"> 
 </head>
 <body>
- <div class="notice_outer">
+ <div class="notice_outer ml-52">
   <div class="wrap_inner float-left m-auto grid">
         <div class="container customer max-w-7xl m-auto pt-10 pr-10 pb-40">
             <div class="box-border">
                 <div class="snb_area m-0 p-0 float-left w-[150px] mt-5">
-                    <a href="/notice/moticeMain" aria-current="page" class="cursor-pointer">
-                    <h2 class="snb_main_title pb-25 text-3xl tracking-tighter decoration-black uppercase block font-bold">고객센터</h2></a>
+                    <a href="#" onclick="location.reload()" aria-current="page" class="cursor-pointer">
+                    <h2 class="snb_main_title pb-25 text-3xl tracking-tighter text-black uppercase block font-semibold">고객센터</h2></a>
                     <br>
                     <nav class="snb">
                         <div class="snb_list">
                             <ul class="snb_menu">
-                                <li class="menu_item menu_on mb-2"><a href="/noticeMain" aria-current="page"> 공지사항 </a></li>
-                                <li class="menu_item"><a href="#" class="menu_link"> 검수 기준 </a></li>
+                                <li><a href="#" onclick="location.reload()" aria-current="page" class="menu_item menu_on mb-2 text-[#222] font-semibold tracking-[-.15px] leading-[18px]"> 공지사항 </a></li>
+                                <li class="menu_item"><a href="#" class="menu_link text-[rgba(34,34,34,.5)] tracking-[-.15px] leading-[40px]"> 검수 기준 </a></li>
                             </ul>
                         </div>
                     </nav>
