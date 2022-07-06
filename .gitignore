@@ -9,13 +9,13 @@
 .metadata
 bin/
 tmp/
-target/
+target/**
 *.tmp
 *.bak
 *.swp
 *~.nib
 local.properties
-.settings/
+.settings/**
 .loadpath
 .recommenders
 
@@ -90,6 +90,7 @@ local.properties
 ### Java ###
 # Compiled class file
 *.class
+**/.classpath
 
 # Log file
 *.log
@@ -253,12 +254,7 @@ dist
 .svelte-kit
 
 ### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+**/.vscode/**
 
 # Local History for Visual Studio Code
 .history/
