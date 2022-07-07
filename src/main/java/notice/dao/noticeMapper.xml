@@ -5,9 +5,10 @@
 <mapper namespace="noticeSQL">
 	<!-- 공지작성 -->
 	<insert id="noticeWrite" parameterType="notice">
-		insert into notice values(seq_notice.nextval,
-								  #{title},
-								  #{content},
-								  sysdate)
+		insert into notice (seq, title, content, logtime)
+					values (seq_notice.nextval,
+						  	#{title},
+						   	#{content},
+						   	sysdate)
 	</insert>
 </mapper>
