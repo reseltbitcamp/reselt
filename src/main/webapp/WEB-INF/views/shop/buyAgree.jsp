@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 	
-    <div class="mx-auto max-h-[960px] max-w-[780px] bg-white p-8 shadow-md">
+    <div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
       <!-- 제품 정보 화면 -->
 
       <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
@@ -71,9 +71,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/sellPage.js"></script>
 <script type="text/javascript">
-$(function(){
-  $('#body').addClass("bg-gray-50")
-})
+
 $('#firstAgree').click(function(){
 	var check1 = $('#firstAgree').prop("checked");
 	var check2 = $('#secondAgree').prop("checked");

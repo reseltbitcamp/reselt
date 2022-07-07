@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div class="mx-auto max-h-[960px] max-w-[780px] px-8 pb-4 pt-2">
+<div class="mx-auto max-h-[960px] max-w-[780px] px-8 pb-4 pt-2 shadow-md">
   <div class="mt-1 mb-5 flex items-center">
     <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
     <div class="flex-1">
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 ">
+<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <h3 class="mb-2 inline-block font-extrabold">배송주소</h3>
   <button class="float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
 
@@ -50,7 +50,7 @@
   </div>
 </div>
 
-<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 ">
+<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <div id="">
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14 border-b-2">
@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8">
+<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <div class="mb-3">
     <h3 class="font-bold">결제 방법</h3>
   </div>
@@ -139,7 +139,7 @@
   </div>
 
   <div class="inline-block w-full">
-    <div class="border-b-[1px] border-gray-200">
+    <div class="border-b-[1px] border-gray-200 mt-2">
       <p class="text-xs">결제 혜택</p>
     </div>
     <div>
@@ -178,7 +178,7 @@
   </div>
 </div>
 
-<div id="sellAgree" class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8">
+<div id="sellAgree" class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
         <ul>
           <label>
             <li class="flex cursor-pointer items-center border-b border-b-gray-100 py-4">
@@ -223,7 +223,7 @@
       </label>
 </div>
 
-<div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200">
+<div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200 shadow-md">
   <div class="flex">
     <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">총 결제금액</dt>
     <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
