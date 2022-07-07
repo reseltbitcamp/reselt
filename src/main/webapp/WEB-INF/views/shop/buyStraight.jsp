@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div class="mt-5 mb-24">
-    <div class="main-content mx-auto bg-white pb-8 px-8 pt-2 shadow-md max-w-[780px] max-h-[960px]">
+
+    <div class="main-content mx-auto bg-white pb-8 px-8 pt-2 shadow-md max-w-[780px] max-h-[960px] my-5">
       <!-- 이전페이지에서 내가 선택한 제품의 사진, 제품특성들 받아와서 표시 -->
       <div class="mt-1 mb-5 flex items-center">
         <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
@@ -51,7 +51,7 @@
 
         <div id="bidDiv" class="border-t">
           <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
-          <p id="bidDate" class="text-xs">3일(2022/07/07)</p>
+          <p id="bidDate" class="text-xs">tictoc</p>
           <div class="text-center">
             <button id="dateBtn1" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
             <button id="dateBtn3" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
@@ -63,7 +63,7 @@
           <div id="bidBuy" class="border-t">
             <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
             <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-            <input id="bidBuyBtn" type="button" href="#" class="w-full text-white font-semibold cursor-pointer disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
+            <input id="bidBuyBtn" type="button" href="#" class="w-full text-white font-semibold disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
           </div>
         </div>
 
@@ -73,14 +73,22 @@
         <button id="straightBuyBtn" href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
       </div>
     </div>
-</div>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
+  $('#body').addClass("bg-gray-50")
   $('#bidDiv').hide();
 })
+	var date = new Date()
+$('#dateBtn1').click(function(){
+	date.setDate(date.getDate() + 1)
+	$('#bidDate').html(date)
+})
 
+$('#dateBtn3').click(function(){
 
+})
 $('#buyBid').click(function(){
   $('#straightBuy').hide()
   $('#straight_bg').removeClass('bg-red-500 text-white')
@@ -96,7 +104,7 @@ $('#buyBid').click(function(){
 $('#buyStraight').click(function(){
   $('#straightBuy').show()
   $('#straight_bg').addClass('bg-red-500 text-white')
-  $('#price').attr("readonly");
+
   $('#bid_bg').removeClass("bg-red-500 text-white")
   $('#bidBuy').hide();
   $('#bidDiv').hide();
@@ -114,14 +122,9 @@ $('.dateBtn').each(function(index){
     $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
     $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
     $('#bidBuyBtn').removeAttr("disabled");
-})
- 
-$('#straightBuyBtn').click(function(){
-	location.href="./buyLastPage"	  
-})
-$('#bidBuyBtn').click(function(){
-	location.href="./buyLastPage"
-})
+  })
+  
+
 
 </script>
 </html>
