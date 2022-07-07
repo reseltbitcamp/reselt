@@ -5,6 +5,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../css/myPage.css"/>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
 </head>
 <body>
@@ -12,24 +13,24 @@
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
-            <h2 class="pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">¸¶ÀÌ ÆäÀÌÁö</h2>
+            <h2 class="pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">ë§ˆì´ íŽ˜ì´ì§€</h2>
           </a>
 
           <nav>
             <div>
-              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">¼îÇÎ Á¤º¸</strong>
+              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ì‡¼í•‘ ì •ë³´</strong>
               <ul class="list-none">
-                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">±¸¸Å ³»¿ª</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">ÆÇ¸Å ³»¿ª</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">°ü½É »óÇ°</a></li>
+                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">êµ¬ë§¤ ë‚´ì—­</a></li>
+                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">íŒë§¤ ë‚´ì—­</a></li>
+                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">ê´€ì‹¬ ìƒí’ˆ</a></li>
               </ul>
             </div>
 
             <div class="mt-10">
-              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">³» Á¤º¸</strong>
+              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ë‚´ ì •ë³´</strong>
               <ul class="list-none">
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">ÇÁ·ÎÇÊ Á¤º¸</a></li>
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">°áÁ¦ Á¤º¸</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">í”„ë¡œí•„ ì •ë³´</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">ê²°ì œ ì •ë³´</a></li>
               </ul>
             </div>
           </nav>
@@ -46,17 +47,17 @@
 <div class="my_purchase">
   <div class="content_title flex pt-[5px] pb-[6px]">
     <div class="title text-[24px] tracking-[-.36px]">
-      <h3 class="leading-[29px] text-inherit font-semibold">±¸¸Å ³»¿ª</h3>
+      <h3 class="leading-[29px] text-inherit font-semibold">êµ¬ë§¤ ë‚´ì—­</h3>
     </div>
   </div>
 
-  <!--tab_onÀº Å¬¸¯ ½Ã ÀÌº¥Æ®-->
+  <!--tab_onì€ í´ë¦­ ì‹œ ì´ë²¤íŠ¸-->
   <div class="purchase_list_tab detail_tab bg-[#fff] rounded-[0px] mt-[20px] table table-fixed w-full">
 
     <div class="tab_item tab_on table-cell text-center">
       <a href="#" class="tab_link border-b-[2px] border-b-solid border-b-[#222] pt-[12px] h-[68px] relative block ">
         <dl class="tab_box flex flex-col-reverse ">
-          <dt class="title text-[#222] font-bold">±¸¸Å ÀÔÂû</dt>
+          <dt class="title text-[#222] font-bold">êµ¬ë§¤ ìž…ì°°</dt>
           <dd class="count text-[#f15746] mt-[0px] text-[20px] leading-[24px] tracking-[-.1px]">0</dd>
         </dl>
       </a>
@@ -65,7 +66,7 @@
     <div class="tab_item table-cell text-center">
       <a href="#" class="tab_link border-b-[1px] border-b-solid border-b-[#d3d3d3] pt-[12px] h-[68px] relative block">
         <dl class="tab_box flex flex-col-reverse">
-          <dt class="title text-[##22222280]">ÁøÇà Áß</dt>
+          <dt class="title text-[##22222280]">ì§„í–‰ ì¤‘</dt>
           <dd class="count mt-[0px] text-[20px] leading-[24px] tracking-[-.1px]">0</dd>
         </dl>
       </a>
@@ -74,7 +75,7 @@
     <div class="tab_item table-cell text-center">
       <a href="#" class="tab_link border-b-[1px] border-b-solid border-b-[#d3d3d3] pt-[12px] h-[68px] relative block">
         <dl class="tab_box flex flex-col-reverse">
-          <dt class="title text-[##22222280]">Á¾·á</dt>
+          <dt class="title text-[##22222280]">ì¢…ë£Œ</dt>
           <dd class="count mt-[0px] text-[20px] leading-[24px] tracking-[-.1px]">0</dd>
         </dl>
       </a>
@@ -89,13 +90,13 @@
     <div class="period_month mr-[20px]">
       <ul class="month_list flex">
         <li class="month_item flex">
-          <a onClick="setSearchDate('2m')" class="month_link flex px-[12px] min-w-[62px] h-[32px] leading-[30px] bg-[#fff] border-[1px] border-solid border-[#ebebeb] text-[13px] tracking-[-.07px] text-[#22222280] justify-center">ÃÖ±Ù 2°³¿ù</a>
+          <a onClick="setSearchDate('2m')" class="month_link flex px-[12px] min-w-[62px] h-[32px] leading-[30px] bg-[#fff] border-[1px] border-solid border-[#ebebeb] text-[13px] tracking-[-.07px] text-[#22222280] justify-center">ìµœê·¼ 2ê°œì›”</a>
         </li>
         <li class="month_item flex">
-          <a onClick="setSearchDate('4m')" class="month_link flex px-[12px] min-w-[62px] h-[32px] leading-[30px] bg-[#fff] border-[1px] border-solid border-[#ebebeb] text-[13px] tracking-[-.07px] text-[#22222280] justify-center">4°³¿ù</a>
+          <a onClick="setSearchDate('4m')" class="month_link flex px-[12px] min-w-[62px] h-[32px] leading-[30px] bg-[#fff] border-[1px] border-solid border-[#ebebeb] text-[13px] tracking-[-.07px] text-[#22222280] justify-center">4ê°œì›”</a>
         </li>
         <li class="month_item flex">
-          <a onClick="setSearchDate('6m')" class="month_link flex px-[12px] min-w-[62px] h-[32px] leading-[30px] bg-[#fff] border-[1px] border-solid border-[#ebebeb] text-[13px] tracking-[-.07px] text-[#22222280] justify-center">6°³¿ù</a>
+          <a onClick="setSearchDate('6m')" class="month_link flex px-[12px] min-w-[62px] h-[32px] leading-[30px] bg-[#fff] border-[1px] border-solid border-[#ebebeb] text-[13px] tracking-[-.07px] text-[#22222280] justify-center">6ê°œì›”</a>
         </li>
       </ul>
     </div>
@@ -107,7 +108,7 @@
           <span class="dset">
             <input type="text" class="h-[32px] datepicker inpType cal_input" name="searchStartDate" id="searchStartDate" >
             <span class="cal_btn absolute top-1/2 right-3 mt-[-9px] w-[18px] h-[18px] bg-[length:18px_18px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA1NiA1NiI+PHBhdGggZmlsbD0iI0JCQiIgZD0iTTIxIDI1LjY2N2gtNC42Njd2NC42NjZIMjF2LTQuNjY2em05LjMzMyAwaC00LjY2NnY0LjY2Nmg0LjY2NnYtNC42NjZ6bTkuMzM0IDBIMzV2NC42NjZoNC42Njd2LTQuNjY2em00LjY2Ni0xNi4zMzRINDJWNC42NjdoLTQuNjY3djQuNjY2SDE4LjY2N1Y0LjY2N0gxNHY0LjY2NmgtMi4zMzNjLTIuNTkgMC00LjY0NCAyLjEtNC42NDQgNC42NjdMNyA0Ni42NjdhNC42NjYgNC42NjYgMCAwMDQuNjY3IDQuNjY2aDMyLjY2NkE0LjY4IDQuNjggMCAwMDQ5IDQ2LjY2N1YxNGE0LjY4IDQuNjggMCAwMC00LjY2Ny00LjY2N3ptMCAzNy4zMzRIMTEuNjY3VjIxaDMyLjY2NnYyNS42Njd6Ii8+PC9zdmc+')]"></span>
-            <!-- <a href="#none" class="btncalendar dateclick">´Þ·Â</a> -->
+            <!-- <a href="#none" class="btncalendar dateclick">ë‹¬ë ¥</a> -->
           <span/>
         </div>
 
@@ -118,7 +119,7 @@
             <div class="calendar">
               <input type="text" class="h-[32px] datepicker inpType" name="searchEndDate" id="searchEndDate" >
                <span class="cal_btn absolute top-1/2 right-3 mt-[-9px] w-[18px] h-[18px] bg-[length:18px_18px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA1NiA1NiI+PHBhdGggZmlsbD0iI0JCQiIgZD0iTTIxIDI1LjY2N2gtNC42Njd2NC42NjZIMjF2LTQuNjY2em05LjMzMyAwaC00LjY2NnY0LjY2Nmg0LjY2NnYtNC42NjZ6bTkuMzM0IDBIMzV2NC42NjZoNC42Njd2LTQuNjY2em00LjY2Ni0xNi4zMzRINDJWNC42NjdoLTQuNjY3djQuNjY2SDE4LjY2N1Y0LjY2N0gxNHY0LjY2NmgtMi4zMzNjLTIuNTkgMC00LjY0NCAyLjEtNC42NDQgNC42NjdMNyA0Ni42NjdhNC42NjYgNC42NjYgMCAwMDQuNjY3IDQuNjY2aDMyLjY2NkE0LjY4IDQuNjggMCAwMDQ5IDQ2LjY2N1YxNGE0LjY4IDQuNjggMCAwMC00LjY2Ny00LjY2N3ptMCAzNy4zMzRIMTEuNjY3VjIxaDMyLjY2NnYyNS42Njd6Ii8+PC9zdmc+')]"></span>
-             <!--  <a href="#none" class="btncalendar dateclick">´Þ·Â</a> -->
+             <!--  <a href="#none" class="btncalendar dateclick">ë‹¬ë ¥</a> -->
             </div>
            </span>
         </div>
@@ -126,7 +127,7 @@
       </div> <!--calendar-->
 
       <div class="period_btn_box ml-[4px]">
-        <button class="is_active btn_search px-[16px] ml-[7px] mt-[1px] h-[32px] leading-[34px] text-[13px] tracking-[-.07px] border-[1px] border-solid cursor-pointer bg-[#222] border-[#d3d3d3] text-[#fff]">Á¶È¸</button>
+        <button class="is_active btn_search px-[16px] ml-[7px] mt-[1px] h-[32px] leading-[34px] text-[13px] tracking-[-.07px] border-[1px] border-solid cursor-pointer bg-[#222] border-[#d3d3d3] text-[#fff]">ì¡°íšŒ</button>
       </div>
     </div> <!--wrapper-->
   </div>
@@ -135,10 +136,10 @@
 
 <ul class="search_info py-[12px]">
   <li class="info_item relative pl-[7px] text-[12px] tracking-[-.06px] text-[#22222280] mb-[3px]">
-    <p>ÇÑ ¹ø¿¡ Á¶È¸ °¡´ÉÇÑ ±â°£Àº ÃÖ´ë 6°³¿ùÀÔ´Ï´Ù.</p>
+    <p>í•œ ë²ˆì— ì¡°íšŒ ê°€ëŠ¥í•œ ê¸°ê°„ì€ ìµœëŒ€ 6ê°œì›”ìž…ë‹ˆë‹¤.</p>
   </li>
   <li class="info_item relative pl-[7px] text-[12px] tracking-[-.06px] text-[#22222280]">
-    <p>±â°£º° Á¶È¸ °á°ú´Â ÀÔÂûÀÏ ±âÁØÀ¸·Î ³ëÃâµË´Ï´Ù</p>
+    <p>ê¸°ê°„ë³„ ì¡°íšŒ ê²°ê³¼ëŠ” ìž…ì°°ì¼ ê¸°ì¤€ìœ¼ë¡œ ë…¸ì¶œë©ë‹ˆë‹¤</p>
   </li>
 </ul>
 
@@ -148,7 +149,7 @@
     
     <div class="head_product flex h-[38px]">
       <a class="btn_filter relative py-[5px] pr-[30px] pl-[10px] inline-block w-[120px] leading-[24px] bg-[#fff] border-[1px] border-solid border-[#d3d3d3] rounded-[12px] text-[13px] tracking-[-.07px]">
-        	ÀüÃ¼
+        	ì „ì²´
       </a>
       <svg data-v-33da0054="" xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] absolute top-[6px] right-[5px] ico-arr-dir-down-circle icon sprite-icons">
       	<use data-v-33da0054="" href="/_nuxt/3eb827d04a461ab3eecd387024737978.svg#i-ico-arr-dir-down-circle" xlink:href="/_nuxt/3eb827d04a461ab3eecd387024737978.svg#i-ico-arr-dir-down-circle"></use>
@@ -156,7 +157,7 @@
     </div>
 
 
-          <!-- status_box field_price ¿¡¼­ ¹öÆ° ´©¸£¸é descending active_first -->
+          <!-- status_box field_price ì—ì„œ ë²„íŠ¼ ëˆ„ë¥´ë©´ descending active_first -->
           <!-- .head_status .status_box.active_first {
               font-weight: 700;
           } -->
@@ -165,14 +166,14 @@
     <div class="head_status ml-auto items-center text-right flex ">
       <div class="status_box field_price block w-[140px]">
       	<a href="#" class="status_link relative pr-[16px] inline-block text-[13px] tracking-[-.07px] leading-[24px]">
-      		<span class="status_txt inline-block align-top">±¸¸Å Èñ¸Á°¡</span>
+      		<span class="status_txt inline-block align-top">êµ¬ë§¤ í¬ë§ê°€</span>
       	</a>
       </div>
-      <!-- status_link after¿¡ svg image ³Ö±â-->
+      <!-- status_link afterì— svg image ë„£ê¸°-->
       
       <div class="status_box field_expires_at block">
       	<a href="#" class="status_link relative pr-[16px] inline-block text-[13px] tracking-[-.07px] leading-[24px]">
-      		<span class="status_txt inline-block align-top ml-[10px]">¸¸·áÀÏ</span>
+      		<span class="status_txt inline-block align-top ml-[10px]">ë§Œë£Œì¼</span>
       	</a>
       </div> 
     </div> <!-- head_status -->
@@ -181,15 +182,15 @@
 
 
   <div class="empty_area py-[80px] text-center">
-  	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">±¸¸Å ÀÔÂû ³»¿ªÀÌ ¾ø½À´Ï´Ù</p>
-  	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP ¹Ù·Î°¡±â</a>
+  	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">êµ¬ë§¤ ìž…ì°° ë‚´ì—­ì´ ì—†ìŠµë‹ˆë‹¤</p>
+  	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP ë°”ë¡œê°€ê¸°</a>
   </div>
 
 
-<!-- ±¸¸ÅÀÏ ¹è¼Û ¿Ï·á ³Ö±â -->
+<!-- êµ¬ë§¤ì¼ ë°°ì†¡ ì™„ë£Œ ë„£ê¸° -->
   <div class="not_empty_area">
     <ul class="wish_list">
-            <!-- °ü½É »óÇ° ÀÖÀ» °æ¿ì (li_a)¸®½ºÆ®·Î »Ñ¸®±â -->
+            <!-- ê´€ì‹¬ ìƒí’ˆ ìžˆì„ ê²½ìš° (li_a)ë¦¬ìŠ¤íŠ¸ë¡œ ë¿Œë¦¬ê¸° -->
             <li>
               <div class="flex pt-[20px] pb-[19px]">
               
@@ -212,18 +213,18 @@
                   <div>
                     <div class="division_btn_box lg mt-0 flex h-[60px] w-[164px] text-left">
                       <a class="btn_division buy relative inline-flex flex-1 items-center rounded-[10px] bg-[#ef6253] text-[#fff]">
-                        <strong class="title w-[55px] text-center text-[18px] tracking-[-.27px]">±¸¸Å</strong>
+                        <strong class="title w-[55px] text-center text-[18px] tracking-[-.27px]">êµ¬ë§¤</strong>
                         <div class="price ml-[10px] leading-[15px]">
                           <span class="amount block">
                             <em class="num inline-block align-top text-[15px] font-bold not-italic">423,000</em>
-                            <span class="won inline-block align-top text-[14px] font-bold tracking-[-.21px]">¿ø</span>
+                            <span class="won inline-block align-top text-[14px] font-bold tracking-[-.21px]">ì›</span>
                           </span>
-                          <span class="desc block text-[11px] font-normal text-[#ffffffcc]">Áï½Ã ±¸¸Å°¡</span>
+                          <span class="desc block text-[11px] font-normal text-[#ffffffcc]">ì¦‰ì‹œ êµ¬ë§¤ê°€</span>
                         </div>
                       </a>
                     </div>
 
-                    <a class="status_link mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">»èÁ¦</a>
+                    <a class="status_link mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">ì‚­ì œ</a>
                   </div>
                </div> <!-- wish_buy -->
                 
@@ -244,8 +245,8 @@
 </div> <!--container-->
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> <!-- ´Þ·Â ±âº» ½ºÅ¸ÀÏ -->
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/datepicker-ko.js"></script> <!-- datepicker ÇÑ±¹¾î·Î -->
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> <!-- ë‹¬ë ¥ ê¸°ë³¸ ìŠ¤íƒ€ì¼ -->
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/i18n/datepicker-ko.js"></script> <!-- datepicker í•œêµ­ì–´ë¡œ -->
 <script src="../js/calendar.js"></script>   
 </body>
 </html>
