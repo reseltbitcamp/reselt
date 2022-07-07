@@ -13,7 +13,7 @@
 		  <td width="70" align="center">제목</td>
 			<td>
 				<input type="text" name="title" id="title" placeholder="제목을 입력하세요">
-				<div id="subjectDiv"></div>
+				<div id="titleDiv"></div>
 			</td>
 		</tr>
 		
@@ -38,14 +38,14 @@
 <script type="text/javascript">
 $(function(){
 	$('#noticeWriteBtn').click(function(){
-		$('#subjectDiv').empty();
+		$('#titleDiv').empty();
 		$('#contentDiv').empty();
 		
-		if($('#subject').val() == ''){
-			$('#subjectDiv').html('제목을 입력하세요');
-			$('#subjectDiv').css('color', 'red');
-			$('#subjectDiv').css('font-size', '8pt');
-			$('#subjectDiv').css('font-weight', 'bold');
+		if($('#title').val() == ''){
+			$('#titleDiv').html('제목을 입력하세요');
+			$('#titleDiv').css('color', 'red');
+			$('#titleDiv').css('font-size', '8pt');
+			$('#titleDiv').css('font-weight', 'bold');
 		}else if($('#content').val() == ''){
 			$('#contentDiv').html('내용을 입력하세요');
 			$('#contentDiv').css('color', 'red');
