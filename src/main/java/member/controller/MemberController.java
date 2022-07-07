@@ -56,6 +56,11 @@ public class MemberController {
 		
 		return "/member/naver_login";
 	}
+	@GetMapping(value = "kakaologin")
+	public String kakaologin() {
+		
+		return "/member/kakao_login";
+	}
 	
 	@GetMapping(value = "naverlogout")
 	public String naverlogout() {
