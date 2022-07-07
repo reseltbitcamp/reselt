@@ -5,26 +5,26 @@
       <img class="mx-auto w-full" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" />
     </div>
 
-    <div class="basis-1/2 border-l-2 pl-10 max-w-[600px]">
+    <div class="basis-1/2 border-l-2 pl-10 max-w-[600px] flex-initial">
       <div class="max-w-md">
         <p class="text-lg font-black underline">Nike</p>
         <p>Nike Dunk Low Retro Black</p>
         <p class="mb-2 text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
       </div>
 
-      <div class="border-b border-gray-300">
+      <div class="border-b border-gray-300 flex-initial">
         <p class="mb-3 inline-block text-xs">사이즈</p>
         <a class="float-right cursor-pointer font-semibold">모든사이즈</a>
         <button></button>
       </div>
 
-      <div class="mt-3">
+      <div class="mt-3 flex-initial">
         <p class="mb-3 text-xs">최근거래가
         <span class="float-right text-xl font-semibold">150,000원</p>
         <p class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
       </div>
       
-      <div class="flex flex-row gap-3 rounded-3xl p-1 text-center mt-9">
+      <div class="flex flex-row gap-3 rounded-3xl p-1 text-center mt-9 flex-initial">
         <a id="buyBtn" href="#" class="w-80 rounded-xl p-2 bg-red-500  align-middle text-sm">
           <strong class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-1">
@@ -42,13 +42,13 @@
         </a>
        </div>
 
-          <a class="h-[60px] border-[1px] border-gray-300 flex items-center justify-center rounded-[10px]">
+          <a class="h-[60px] border-[1px] border-gray-300 flex items-center justify-center rounded-[10px] flex-initial">
             <svg class="w-5 h-5"></svg>
             <span>관심상품</span>
             <span class="font-semibold">10.2만</span>
           </a>  
 
-        <div class="mt-7">
+        <div class="mt-7 flex-initial">
           <p class="text-lg font-bold">상품 정보</p>
           <div class="border-y border-gray-300">
             <dl class="flex py-5 min-h-[20px]">
@@ -72,7 +72,7 @@
           </div>
         </div>
       
-        <div>
+        <div class="flex-initial">
         <h3 class="mb- mt-3 font-extrabold">배송 정보</h3>
         <div class="rounded-lg border-gray-300 flex items-center">
           <div class="flex-none">
@@ -87,7 +87,7 @@
           </div>
         </div>
       </div>
-      <div class="flex">
+      <div class="flex flex-initial">
         <a href="#" class="w-full">
           <img class="h-[80px] w-full"src="https://kream-phinf.pstatic.net/MjAyMjA2MjlfMTIw/MDAxNjU2NDkzNDY2NDM1.VWp3oO6-D0c3CkRqXXlQF2q2uj51z6Ww-_cM5dwzLUsg.FMawZ4eiJYo6DEEa9cSogFlKmUB_Nlnd3BCIcY9IipEg.JPEG/a_0d8cb287f49d44429760a25cd8653a2e.jpg">
         </a>
