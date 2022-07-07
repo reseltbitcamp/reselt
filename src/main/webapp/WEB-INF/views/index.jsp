@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <title>RESELT | 한정판 거래의 RESELT</title>
     <!-- TailwindCSS configuration -->
