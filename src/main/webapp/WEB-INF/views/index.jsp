@@ -10,12 +10,13 @@
     <!-- TailwindCSS configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/ReseltProject/js/tailwind.config.js"></script>
-
-    <!-- <link rel="stylesheet" href="/ReseltProject/css/output.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    <c:if test="${flowbite == true}">
+      <!-- Flowbite CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+    </c:if>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/ReseltProject/css/style.css"> 
-
+	
     <!-- External Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,9 +48,10 @@
 
     <!-- Footer -->
     <jsp:include page="${footer }" />
-
-    <!-- Flowbite Script-->
-    <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <c:if test="${flowbite == true }">
+      <!-- Flowbite Script-->
+      <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    </c:if>
   </body>
   
     
