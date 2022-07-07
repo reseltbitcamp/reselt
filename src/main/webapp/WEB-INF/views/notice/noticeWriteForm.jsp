@@ -7,12 +7,12 @@
 <title>공지 작성</title>
 </head>
 <body>
-<form name="noticeWriteForm">
+<form id="noticeWriteForm">
   <table border="1" cellspacing="0" cellpadding="5">
 		<tr>
 		  <td width="70" align="center">제목</td>
 			<td>
-				<input type="text" name="subject" id="subject" placeholder="제목을 입력하세요">
+				<input type="text" name="title" id="title" placeholder="제목을 입력하세요">
 				<div id="subjectDiv"></div>
 			</td>
 		</tr>
@@ -43,18 +43,25 @@ $(function(){
 		
 		if($('#subject').val() == ''){
 			$('#subjectDiv').html('제목을 입력하세요');
+			$('#subjectDiv').css('color', 'red');
+			$('#subjectDiv').css('font-size', '8pt');
+			$('#subjectDiv').css('font-weight', 'bold');
 		}else if($('#content').val() == ''){
 			$('#contentDiv').html('내용을 입력하세요');
+			$('#contentDiv').css('color', 'red');
+			$('#contentDiv').css('font-size', '8pt');
+			$('#contentDiv').css('font-weight', 'bold');
 		}else{
 			
 			$.ajax({
 				type: 'post',
 				url: '/ReseltProject/notice/noticeWrite',
-				data: {'subject': $('#subject').val(),
-					   'content': $('#content').val()},
+				data: 
+						{'title': $('#title').val(),
+					   	 'content': $('#content').val()},
 				success: function(){
 					alert('작성하신 글을 저장하였습니다.');
-					//location.href = '/ReseltProject/notice/noticeList';
+					//location.href = '/ReseltProject/notice/noticeMain';
 				},
 				error: function(e){
 					console.log(e);
@@ -65,6 +72,5 @@ $(function(){
 });
 </script>
 </form>
-
 </body>
 </html>
