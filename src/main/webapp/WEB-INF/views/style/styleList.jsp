@@ -70,7 +70,7 @@
   <!-- style 게시글 -->
   <div class="shrink-0 basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage2.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
@@ -111,7 +111,7 @@
   <!-- style 게시글 -->
   <div class="shrink-0 basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage3.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
@@ -152,7 +152,7 @@
   <!-- style 게시글 -->
   <div class="shrink-0 basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage4.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
@@ -193,7 +193,7 @@
   <!-- style 게시글 -->
   <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage5.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
@@ -234,7 +234,7 @@
   <!-- style 게시글 -->
   <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage6.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
@@ -275,7 +275,7 @@
   <!-- style 게시글 -->
   <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage7.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
@@ -316,7 +316,7 @@
   <!-- style 게시글 -->
   <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
-      <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+      <img src="/ReseltProject/img/style/styleImage8.jpeg" alt="miing.9님 게시글">
     </div>
     
     <!-- user 정보 -->
