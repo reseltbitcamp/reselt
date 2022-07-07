@@ -66,66 +66,68 @@
     </div>
   </li>
   <li><p class="title3 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 뉴발란스 x JJJ자운드 990v3 & 나이키 x 오프화이트 덩크 로우</p>
-    <div class="content3">
-      <p>안녕하세요. RESELT 입니다.</p>
-      <p>지난주 진행되었던, LUCKY DRAW - 뉴발란스 x JJJ자운드 990v3 &amp; 나이키 x 오프화이트 덩크 로우 당첨자를 발표합니다.</p>
-      <p>&nbsp;</p><p>&nbsp;</p>
-      <p><strong>[New Balance x JJJJound 990v3 Brown Black]</strong></p>
-      <figure class="table">
-        <table>
-          <tbody>
-            <tr>
-              <td><strong>가입 이메일 주소</strong></td>
-              <td><strong>이름</strong></td>
-            </tr>
-            <tr>
-              <td>tp*******@naver.com</td>
-              <td>유*종</td>
-            </tr>
-            <tr>
-              <td>sw*****@naver.com</td>
-              <td>진*욱</td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-      <p>&nbsp;</p>
-      <p><strong>[Nike x Off-White Dunk Low Pine Green]</strong></p>
-      <figure class="table">
-        <table>
-          <tbody>
-            <tr>
-              <td><strong>가입 이메일 주소</strong></td>
-              <td><strong>이름</strong></td>
-            </tr>
-            <tr>
-              <td>hy*******@naver.com</td>
-              <td>김*수</td>
-            </tr>
-            <tr>
-              <td>wn*******@naver.com</td>
-              <td>임*혁</td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-      <p>&nbsp;</p><p>&nbsp;</p>
-      <p>총 4명의 당첨을 축하드립니다!</p>
-      <p>&nbsp;</p>
-      <p>당첨자에게는 오늘 중 상품 수령 시 필요한 서류를 가입하신 이메일로 요청하고 있습니다. 서류를 모두 전달받은 후 상품이 발송되는 점 유의 부탁드립니다.</p>
-      <p>&nbsp;</p>
-      <p>감사합니다.</p
-      ><p>&nbsp;</p><p>&nbsp;</p><p>
-      <strong>유의사항</strong></p>
-      <p>※ 당첨자에게는 가입된 회원 정보의 휴대폰 번호로 이벤트 상품의 거래 체결 알림을 드리며, 결제 수단의 문제로 인한 당첨 취소에 대해서는 당사에서 책임지지 않습니다.</p>
-      <p>※ 당첨자에게는 가입된 회원 정보의 이메일로 당첨 안내와 상품 수령을 위한 서류를 요청합니다.</p>
-      <p>※ 이메일로 요청한 서류(신분증/상품수령증/개인정보수집이용동의서)가 72시간 내 제출되지 않은 경우 당첨이 취소되며, 재추첨은 진행되지 않습니다.</p>
-      <p>※ 상품은 이벤트 참여시 등록된 배송 주소로 배송됩니다.</p>
-      <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
+    <div class="content3 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
+      <div class="inner_content max-w-[640px] break-words">
+        <p>안녕하세요. RESELT 입니다.</p>
+        <p>지난주 진행되었던, LUCKY DRAW - 뉴발란스 x JJJ자운드 990v3 &amp; 나이키 x 오프화이트 덩크 로우 당첨자를 발표합니다.</p>
+        <p>&nbsp;</p><p>&nbsp;</p>
+        <p><strong>[New Balance x JJJJound 990v3 Brown Black]</strong></p>
+        <figure class="table mt-[10px]">
+          <table class="w-[100%] border-t-[1px] border-solid border-t-[#ebebeb] break-words text-center table-fixed border-spacing-0 border-0 border-collapse">
+            <tbody class="box-border table-row-group align-middle border-inherit">
+              <tr class="table-row align-middle border-inherit">
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]"><strong>가입 이메일 주소</strong></td>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]"><strong>이름</strong></td>
+              </tr> 
+              <tr class="table-row align-middle border-inherit">
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">tp*******@naver.com</td>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">유*종</td>
+              </tr>
+              <tr class="table-row align-middle border-inherit">
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">sw*****@naver.com</td>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">진*욱</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <p>&nbsp;</p>
+        <p><strong>[Nike x Off-White Dunk Low Pine Green]</strong></p>
+        <figure class="table mt-[10px]">
+          <table class="w-[100%] border-t-[1px] border-solid border-t-[#ebebeb] break-words text-center table-fixed border-spacing-0 border-0 border-collapse">
+            <tbody class="box-border table-row-group align-middle border-inherit">
+              <tr class="table-row align-middle border-inherit">
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]"><strong>가입 이메일 주소</strong></td>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]"><strong>이름</strong></td>
+              </tr>
+              <tr>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">hy*******@naver.com</td>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">김*수</td>
+              </tr>
+              <tr>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">wn*******@naver.com</td>
+                <td class="text-left bg-[#fcfcfc] h-[48px] py-[4px] px-[15px] border-t-[1px] border-solid border-t-[#ebebeb]">임*혁</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+        <p>&nbsp;</p><p>&nbsp;</p>
+        <p>총 4명의 당첨을 축하드립니다!</p>
+        <p>&nbsp;</p>
+        <p>당첨자에게는 오늘 중 상품 수령 시 필요한 서류를 가입하신 이메일로 요청하고 있습니다. 서류를 모두 전달받은 후 상품이 발송되는 점 유의 부탁드립니다.</p>
+        <p>&nbsp;</p>
+        <p>감사합니다.</p
+        ><p>&nbsp;</p><p>&nbsp;</p><p>
+        <strong>유의사항</strong></p>
+        <p>※ 당첨자에게는 가입된 회원 정보의 휴대폰 번호로 이벤트 상품의 거래 체결 알림을 드리며, 결제 수단의 문제로 인한 당첨 취소에 대해서는 당사에서 책임지지 않습니다.</p>
+        <p>※ 당첨자에게는 가입된 회원 정보의 이메일로 당첨 안내와 상품 수령을 위한 서류를 요청합니다.</p>
+        <p>※ 이메일로 요청한 서류(신분증/상품수령증/개인정보수집이용동의서)가 72시간 내 제출되지 않은 경우 당첨이 취소되며, 재추첨은 진행되지 않습니다.</p>
+        <p>※ 상품은 이벤트 참여시 등록된 배송 주소로 배송됩니다.</p>
+        <p>※ 증정받은 상품의 사이즈는 랜덤이며 교환이 불가능합니다.</p>
+      </div>
     </div>
   </li>
   <li><p class="title4 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[공지] 검수 기준 변경 안내 (7.1 금요일 체결 거래부터)</p>
-    <div class="content4">
+    <div class="content4 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
       <p>더 나은 서비스 제공을 위해 검수 기준의 일부 항목이 변경될 예정입니다.</p>
@@ -143,7 +145,7 @@
     </div>
   </li>
   <li><p class="title5 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 에르메스 오란 샌들 & 조던 1 하이 블랙 모카</p>
-    <div class="content5">
+    <div class="content5 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 에르메스 오란 샌들 &amp; 조던 1 하이 블랙 모카 당첨자를 발표합니다.</p>
       <p>&nbsp;</p><p>&nbsp;</p>
@@ -202,7 +204,7 @@
     </div>
   </li>
   <li><p class="title6 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 나이키 x 스투시 에어포스 1 '07 미드 SP 블랙 앤 라이트 본 & 파슬</p>
-    <div class="content6">
+    <div class="content6 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 나이키 x 스투시 에어포스 1 '07 미드 SP 블랙 앤 라이트 본 &amp; 파슬 당첨자를 발표합니다.</p>
       <p>&nbsp;</p>
@@ -262,7 +264,7 @@
     </div>
   </li>
   <li><p class="title7 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 나이키 x 피마원 에어포스 1 로우 파라노이즈 2.0 & 조던 1 레트로 하이 OG 유니버시티 블루</p>
-    <div class="content7">
+    <div class="content7 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 나이키 x 피스마이너스원 에어포스 1 로우 파라노이즈 2.0 &amp; 조던 1 레트로 하이 OG 유니버시티 블루 당첨자를 발표합니다.</p>
       <p>&nbsp;</p><p>&nbsp;</p>
@@ -321,7 +323,7 @@
     </div>
   </li>
   <li><p class="title8 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] 쇼룸 #RESELT기습드로우 - 스캇 에어맥스 1</p>
-    <div class="content8">
+    <div class="content8 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난 토요일 무더운 날씨에도 RESELT 상수 쇼룸을 방문하여 #RESELT기습드로우에 참여해주신 모든 분께 감사 인사를 드립니다. 선착순 100분 중 응모 조건에 부합하며 토요일 내 게시물을 올려주신 총 10명의 당첨자를 발표합니다.</p>
       <p>&nbsp;</p>
@@ -406,7 +408,7 @@
     </div>
   </li>
   <li><p class="title9 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[공지] 6월 공휴일 거래/운영 일정 안내</p>
-    <div class="content9">
+    <div class="content9 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT입니다.</p>
       <p>&nbsp;</p>
       <p>6월 공휴일 거래/운영 일정 안내드립니다.</p>
@@ -439,7 +441,7 @@
     </div>
   </li>
   <li><p class="title10 border-b-[#ebebeb] border-b-[1px] border-solid pb-3 mt-3 cursor-pointer flex">[이벤트 발표] LUCKY DRAW - 슈프림 MG 1/100 RX-78-2 건담 Ver. 3.0 & 카우스 패밀리 피규어 그레이 핑크</p>
-    <div class="content10">
+    <div class="content10 block pt-[30px] px-[30px] pb-[28px] bg-[#fafafa] border-b-[#ebebeb] border-solid border-b-[1px] text-[14px] tracking-[-.21px]">
       <p>안녕하세요. RESELT 입니다.</p>
       <p>지난주 진행되었던, LUCKY DRAW - 슈프림 MG 1/100 RX-78-2 건담 Ver. 3.0 &amp; 카우스 패밀리 피규어 그레이 핑크 당첨자를 발표합니다.</p>
       <p>&nbsp;</p><p>&nbsp;</p>
@@ -539,6 +541,7 @@ $(function(){
   
   $('.title3').click(function(){
 	$('.content3').show();
+	$('.inner_content').show();
 	$('#noticeBtn').show();
 	$('.title1').hide();
 	$('.title2').hide();
