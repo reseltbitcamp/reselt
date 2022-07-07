@@ -70,7 +70,7 @@ $(function(){
 	$('#emailDiv').css('color' , 'black');
 	
 	//아이디 이메일 형식
-	$('#email').keydown(function(){
+	$('#email').keyup(function(){
 		if(!reg_email.test($('#email').val())) {                            
 			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
@@ -88,7 +88,7 @@ $(function(){
  	});         
 	
 	//비밀번호 10자 이상시 로그인 버튼 활성화
-	$('#pwd').keydown(function(){
+	$('#pwd').keyup(function(){
 		if($('#pwd').val().length >= 10 ) {
 			$('#loginBtn').css({'background-color':'black'});
 			$('#pwdDivcmt').html(""); 
@@ -135,6 +135,44 @@ $(function(){
     });
     
     });
+
+    //////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    //버튼이 검정색일때 submit
+ 	$('#loginBtn').click(function(){
+		if($('#loginBtn').css('background-color') == 'rgb(0, 0, 0)' || $('#loginBtn').css('background-color') == 'black' ){
+		console.log('if 성공');
+			//alert('클릭');
+			//alert($('#email').val());
+			//alert(JSON.stringify($('#joinForm').serialize()));
+			$.ajax({
+				type: 'post',
+				url: "/ReseltProject/member/loginTry",
+				data: {
+					email : $('#email').val(),
+					pwd : $('#pwd').val(),
+					},
+				success: function(data){
+					//alert('회원가입 정보 전달 성공');
+					if(data == "0"){
+						alert("이메일 또는 비밀번호를 확인해주세요.");
+					}else {
+						location.href="/ReseltProject/"
+					}
+				},
+				error: function(e){
+					console.log(e);
+				}
+			});
+		}else {
+			console.log("회색");
+		}
+	});
+    
+    
+    
+    
 </script>
 
 
