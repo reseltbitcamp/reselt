@@ -16,7 +16,7 @@
      
     <div class="">
 
-      <form>
+      <form id="joinForm">
         <div class="pt-5 pb-6">
           <div>
 	      	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
@@ -80,7 +80,7 @@
       
   </div>
 	<!-- 모달 내용 -->
-  <div id="size" class="flex m-auto scroll-m-48 w-96" style="max-width: 350px;">
+  <div id="size" class="flex m-auto scroll-m-48 w-96 hidden" style="max-width: 350px;">
     <div>
       <h1 class="font-bold text-center">사이즈 선택</h1>
     </div>
@@ -119,58 +119,136 @@ $(function(){
 	$('#emailDiv').css('color' , 'black');
 	
 	//아이디 이메일 형식
-	$('#email').keydown(function(){
+	$('#email').keyup(function(){
+		 $('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+
 		if(!reg_email.test($('#email').val())) {                            
 			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
 			$('#emailDivcmt').css({'color':'red'});  
 			$('#emailDiv').css({'color':'red'});  
-		 }                            
+		 }
 		 else {                     
 	 	 	 $('#emailDivcmt').html(""); 
+			 $('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
           	 $('#emailDiv').css('color' , 'black');           
-		 }
-		               
+			
+			
+			
+			//비밀번호 재확인 및 10자이상
+			$('#pwd').keyup(function(){
+				if($('#pwd').val().length >= 10 ) {
+					$('#pwdDivcmt').html(""); 
+					$('#pwdDiv').css({'color':'black'}); 
+					$('#repwd').trigger('keyup');
+				}else {
+					$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
+					$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+					$('#pwdDivcmt').css({'font-size':'5pt'}); 
+					$('#pwdDivcmt').css({'color':'red'}); 
+					$('#pwdDiv').css({'color':'red'}); 
+				}
+			});
+				
+		}
+			 	
+			$('#repwd').keyup(function(){
+				if($('#pwd').val() != $('#repwd').val()){
+					$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
+					$('#repwdDivcmt').css({'font-size':'5pt'}); 
+					$('#repwdDivcmt').css({'color':'red'}); 
+					$('#repwdDiv').css({'color':'red'}); 
+					$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+				}else {
+					$('#repwdDivcmt').html(""); 
+					$('#repwdDiv').css({'color':'black'}); 
+					
+					//버튼 활성화
+					$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+					/* $("#joinBtn").attr("onclick", "join()")	 */			
+					
+					
+						
+				}
+			});
 	});
-    $('#email').on('focusout', function(){
-	 	$('#email').trigger('keydown')
- 	});         
 	
-	//비밀번호 재확인 및 10자이상
-	$('#pwd').keydown(function(){
-		if($('#pwd').val().length >= 10 ) {
-			$('#pwdDivcmt').html(""); 
-			$('#pwdDiv').css({'color':'black'}); 
+	
+		//값 변경시 유효성 재검사 
+		$('#email ,#pwd, #repwd').on('change', function(){
+			$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+		    $('#email').trigger('focusout');
+		 	
+		    if($('#pwd').val() == $('#repwd').val()){
+			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+			console.log($('#joinBtn').css('background-color'));
+		    }
+		});		 
+	
+	//버튼이 검정색일때 submit
+ 	$('#joinBtn').click(function(){
+		if($('#joinBtn').css('background-color') == 'rgb(0, 0, 0)' || $('#joinBtn').css('background-color') == 'black' ){
+		console.log('if 성공');
+			//alert('클릭');
+			//alert($('#email').val());
+			//alert(JSON.stringify($('#joinForm').serialize()));
+			$.ajax({
+				type: 'post',
+				url: "/ReseltProject/member/joinTry",
+				data: {
+					email : $('#email').val(),
+					pwd : $('#pwd').val(),
+					footsize : $('#footsize').val()
+					},
+				success: function(){
+					//alert('회원가입 정보 전달 성공');
+					location.href="/ReseltProject/member/login"
+				},
+				error: function(e){
+					console.log(e);
+				}
+			});
 		}else {
-			$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
-			$('#pwdDivcmt').css({'font-size':'5pt'}); 
-			$('#pwdDivcmt').css({'color':'red'}); 
+			console.log("회색");
 		}
 	});
- 	
- 	$('#pwd').on('focusout', function(){
-	 	$('#pwd').trigger('keydown')
- 	});	
-	 	
-	$('#repwd').keydown(function(){
-		if($('#pwd').val() != $('#repwd').val()){
-			$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
-			$('#repwdDivcmt').css({'font-size':'5pt'}); 
-			$('#repwdDivcmt').css({'color':'red'}); 
-			$('#repwdDiv').css({'color':'red'}); 
-		}else {
-			$('#repwdDivcmt').html(""); 
-			$('#repwdDiv').css({'color':'black'}); 
-		}
-	});
+
+
 	
- 	$('#repwd').on('focusout', function(){
-	 	$('#repwd').trigger('keydown')
-	 
+	//아이디 중복검사
+	$('#email').on('focusout', function(){
+		console.log('중복검사');
+		$.ajax({
+			type: 'post',
+			url: "/ReseltProject/member/checkEmail",
+			data: {
+				email : $('#email').val()
+				},
+			success: function(data){
+				//alert(data);
+				if(data == '0'){
+					$('#emailDivcmt').html("");
+  	          	    $('#emailDiv').css('color' , 'black');           
+				    if($('#pwd').val() == $('#repwd').val() && $('#pwd').val() != ''){
+						$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+				    }
+				}else if(data == '1') {
+					$('#emailDivcmt').css({'font-size':'5pt'}); 
+					$('#emailDivcmt').html("이미 사용중인 아이디 입니다."); 
+  	          	    $('#emailDivcmt').css('color' , 'red');           
+					$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+				}
+					
+			},
+			error: function(e){
+				console.log(e);
+			}
+		 });
 	});
 
-
-
+	
+		
+	
 
 
 	//모달창 선택시 값 넣고 종료
@@ -195,10 +273,6 @@ $(function(){
     });
     
     
-    $('#joinBtn').click(function(){
-    	
-    	
-    });
 });
 	
 </script>  

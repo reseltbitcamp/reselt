@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
     
-	<div class="m-auto max-w-[780px] max-h-[960px]">
+	<div class="m-auto max-w-[780px] max-h-[960px] my-[50px]">
 	
 		<div class="my-6 bg-white p-8 shadow-md">
 
@@ -61,6 +61,7 @@
 <script type="text/javascript">
 //sellPage 스크립트
 $(function(){
+
   $('#nextBtn').hide();
   $('.sizeBtn').each(function(index){
     $(this).attr('sizeBtn-index',index);
@@ -76,7 +77,7 @@ $(function(){
     $('#nextBtn').show();
   })
 	$('#nextBtn').click(function(){
-		location.href="ReseltProject/buyPage/buyAgree"
+		location.href="./buyAgree"
 	})
 	
 })
