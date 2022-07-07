@@ -336,10 +336,12 @@
    </aside>
   </div> 
  
-<!-- product img / details -->
-<div id="productlist" class="basis-4/5 mx-[20px] my-[50px] pl-[32px] grid grid-cols-4 gap-4" >
-  
-  <a href="#">
+<!-- product img / details tagged you to product datail pg...-->
+<div id="productlist" class="basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 gap-4" >
+  <!-- modal login -->
+  <div>
+    <button type="button" data-modal-toggle="naverLogin">
+    <a href="#">
     <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
       <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/1.jpg">
     </div>
@@ -349,6 +351,34 @@
     <br>
     <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
     <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
+    </a>
+  </button>
+    <!-- mini svg link -->
+    <a href="#">
+     <div class="h-6 w-20 grid grid-cols-3 content-start">
+      <button onclick="bookmark.style.fill='#DFBD69'" class="w-1 h-1 pl-1 py-1">
+        <svg id="bookmark" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
+      </button>
+    </a> 
+    <a href="#"> 
+      <button onclick="smile.style.fill='#FFFF00'" class="w-1 h-1 pl-1 py-1">
+        <svg id="smile" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </button> 
+    </a> 
+    <a href="#">
+      <button onclick="fire.style.fill='#ff0000'" class="w-1 h-1 pl-1 py-1">
+        <svg id="fire" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+        </svg>
+      </button>  
+      </div>
+     </a>
+    </div>
     
     <!-- 빠른배송 logo -->
     <div class="bg-white w-20 h-8">
@@ -553,13 +583,74 @@
 
   </div>
 </div>
+
+<!-- Main modal -->
+<div id="naverLogin" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
+  <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+      <!-- Modal content -->
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-600">
+          <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="naverLogin">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>  
+          </button>
+          <div class="py-6 px-6 lg:px-8">
+              <h3 class="mb-4 text-2xl font-medium text-gray-900 dark:text-white">sign in to Reselt now</h3>
+              <form class="space-y-6" action="#">
+                  <div>
+                      <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Your email</label>
+                      <input type="email" name="email" id="email" class="italic bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-400 dark:border-gray-300 dark:placeholder-gray-300 dark:text-white" placeholder="name@company.com"  required>
+                  </div>
+                  <div>
+                      <label for="password" class="italic block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">Your password</label>
+                      <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-400 dark:border-gray-300 dark:placeholder-gray-300 dark:text-white" required>
+                  </div>
+                  <div class="flex justify-between">
+                      <div class="flex items-start">
+                          <div class="flex items-center h-5">
+                              <input id="remember" type="checkbox" value="" class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required>
+                          </div>
+                          <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                      </div>
+                      <a href="#" class="text-sm text-green-700 hover:underline dark:text-green-500">Lost Password?</a>
+                  </div>
+                  <button type="submit" class="w-full text-white bg-green-500 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-500 dark:hover:bg-green-700 dark:focus:ring-green-800">Login to your account</button>
+                  <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                      Not registered? <a href="#" class="text-green-700 hover:underline dark:text-green-500">Create account</a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> 
+<!-- onclick event for hiding subcategory... -->
 <script>
-$('.scrollable').on('scroll', function(){
-  var $el = $(this);
-  $('.scrolled').text($(this).scrollTop());
-  if( $el.innerHeight()+$el.scrollTop() >= this.scrollHeight-5 ){
-    var d = new Date();
-    $el.append('more text added on '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds()+'<br>');
+const targetDiv = document.getElementById("hidecategory");
+const btn = document.getElementById("category");
+
+btn.onclick = function () {
+  if (targetDiv.style.display !== "none") {
+    targetDiv.style.display = "none";
+  } else {
+    targetDiv.style.display = "block";
   }
-});
+};
+
+// document.addEventListener("scroll", function (event) {
+//       checkForNewDiv();
+//  });
+
+//  var checkForNewDiv = function () {
+//       var lastDiv = document.querySelector("#scroll-content > div:last-child");
+//       var lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight;
+//       var pageOffset = window.pageYOffset + window.innerHeight;
+
+//       if (pageOffset > lastDivOffset - 10) {
+//           var newDiv = document.createElement("div");
+//           newDiv.innerHTML = "my awesome new div";
+//           document.getElementById("scroll-content").appendChild(newDiv);
+//           checkForNewDiv();
+//       }
+//  }; 
+//  checkForNewDiv();
+  
 </script>
+</body>
