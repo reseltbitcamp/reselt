@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,24 +12,24 @@
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
-            <h2 class="pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">∏∂¿Ã ∆‰¿Ã¡ˆ</h2>
+            <h2 class="pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">ÎßàÏù¥ ÌéòÏù¥ÏßÄ</h2>
           </a>
 
           <nav>
             <div>
-              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ºÓ«Œ ¡§∫∏</strong>
+              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ÏáºÌïë Ï†ïÎ≥¥</strong>
               <ul class="list-none">
-                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">±∏∏≈ ≥ªø™</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">∆«∏≈ ≥ªø™</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">∞¸Ω… ªÛ«∞</a></li>
+                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">Íµ¨Îß§ ÎÇ¥Ïó≠</a></li>
+                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">ÌåêÎß§ ÎÇ¥Ïó≠</a></li>
+                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">Í¥ÄÏã¨ ÏÉÅÌíà</a></li>
               </ul>
             </div>
 
             <div class="mt-10">
-              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">≥ª ¡§∫∏</strong>
+              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ÎÇ¥ Ï†ïÎ≥¥</strong>
               <ul class="list-none">
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">«¡∑Œ«  ¡§∫∏</a></li>
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">∞·¡¶ ¡§∫∏</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">ÌîÑÎ°úÌïÑ Ï†ïÎ≥¥</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">Í≤∞Ï†ú Ï†ïÎ≥¥</a></li>
               </ul>
             </div>
           </nav>
@@ -43,12 +43,12 @@
         <div class="my_interest">
           <div class="content_title border-b-solid flex border-b-[3px] border-b-[#222] pb-[16px] pt-[5px]">
             <div class="title text-[24px] tracking-[-.36px]">
-              <h3 class="font-semibold leading-[29px]">∞¸Ω… ªÛ«∞</h3>
+              <h3 class="font-semibold leading-[29px]">Í¥ÄÏã¨ ÏÉÅÌíà</h3>
             </div>
           </div>
 
           <ul class="wish_list">
-            <!-- ∞¸Ω… ªÛ«∞ ¿÷¿ª ∞ÊøÏ (li_a)∏ÆΩ∫∆Æ∑Œ ª—∏Æ±‚ -->
+            <!-- Í¥ÄÏã¨ ÏÉÅÌíà ÏûàÏùÑ Í≤ΩÏö∞ (li_a)Î¶¨Ïä§Ìä∏Î°ú ÎøåÎ¶¨Í∏∞ -->
             <li>
               <div class="flex pt-[20px] pb-[19px]">
                 <div class="wish_product mr-[30px] flex">
@@ -69,18 +69,18 @@
                   <div>
                     <div class="division_btn_box lg mt-0 flex h-[60px] w-[164px] text-left">
                       <a class="btn_division buy relative inline-flex flex-1 items-center rounded-[10px] bg-[#ef6253] text-[#fff]">
-                        <strong class="title w-[55px] text-center text-[18px] tracking-[-.27px]">±∏∏≈</strong>
+                        <strong class="title w-[55px] text-center text-[18px] tracking-[-.27px]">Íµ¨Îß§</strong>
                         <div class="price ml-[10px] leading-[15px]">
                           <span class="amount block">
                             <em class="num inline-block align-top text-[15px] font-bold not-italic">423,000</em>
-                            <span class="won inline-block align-top text-[14px] font-bold tracking-[-.21px]">ø¯</span>
+                            <span class="won inline-block align-top text-[14px] font-bold tracking-[-.21px]">Ïõê</span>
                           </span>
-                          <span class="desc block text-[11px] font-normal text-[#ffffffcc]">¡ÔΩ√ ±∏∏≈∞°</span>
+                          <span class="desc block text-[11px] font-normal text-[#ffffffcc]">Ï¶âÏãú Íµ¨Îß§Í∞Ä</span>
                         </div>
                       </a>
                     </div>
 
-                    <a class="status_link mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">ªË¡¶</a>
+                    <a class="status_link mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">ÏÇ≠Ï†ú</a>
                   </div>
                 </div>
                 <!-- wish_product -->

@@ -53,5 +53,6 @@
 
     <!-- Flowbite Script-->
     <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

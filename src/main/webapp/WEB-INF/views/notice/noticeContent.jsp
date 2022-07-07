@@ -541,6 +541,7 @@ $(function(){
   
   $('.title3').click(function(){
 	$('.content3').show();
+	$('.inner_content').show();
 	$('#noticeBtn').show();
 	$('.title1').hide();
 	$('.title2').hide();
