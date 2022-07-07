@@ -1,5 +1,6 @@
 package notice.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -18,6 +19,16 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 	public void noticeWrite(NoticeDTO noticeDTO) {
 		sqlSession.insert("noticeSQL.noticeWrite", noticeDTO);
 
+	}
+
+	@Override
+	public List<NoticeDTO> getNoticeList(Map<String, Integer> map) {
+		return sqlSession.selectList("noticeSQL.getNoticeList", map);
+	}
+
+	@Override
+	public int getTotalA() {
+		return sqlSession.selectOne("noticeSQL.getTotalA");
 	}
 
 }
