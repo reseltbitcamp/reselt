@@ -11,9 +11,14 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:component-scan base-package="spring.conf" />
+	<!-- Member -->
+	<context:component-scan base-package="member.bean"></context:component-scan>
+	<context:component-scan base-package="member.dao"></context:component-scan>
+	<context:component-scan base-package="member.service"></context:component-scan>
 	
+	<!-- Notice -->
 	<context:component-scan base-package="notice.dao" />
 	<context:component-scan base-package="notice.service" />
-	<context:component-scan base-package="spring.conf" />
 	
 </beans>
