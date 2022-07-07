@@ -139,7 +139,11 @@ $('#fourthAgree').click(function(){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
-	}
+	}  
 })
+
+$('#agreeBtn').click(function(){
+	location.href=""
+});
 </script>
 </html>
