@@ -47,17 +47,16 @@
             </div>
           </div>
 
-          <!-- removement 대신 넣기-->
-          <input type="file" class="imgFile hidden" />
+          <input type="file" class="imgFile removeEvent" />
 
           <!-- 이미지 변경/삭제 -->
           <div class="user_profile flex items-center border-b-[1px] border-[#ebebeb] pt-[50px] pb-[38px]">
             <div class="profile_thumb mr-[18px] h-[100px] w-[100px] flex-none overflow-hidden rounded-full">
-              <img src="/MyPage/image/profile.png" class="showImg h-full w-full" />
+              <img src="../img/myPage/profile.png" class="showImg h-full w-full" />
             </div>
 
             <div class="profile_detail">
-              <strong class="name text-2xl leading-8 tracking-[-.12px] text-[#000]">이름</strong>
+              <strong class="text-2xl leading-8 tracking-[-.12px] text-[#000]">이름</strong>
               <div class="profile_btn_box mt-[8px]">
                 <input type="button" value="이미지 변경" class="imgBtn btn inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" />
                 <input type="button" value="삭제" class="resetBtn btn ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" />
@@ -81,12 +80,12 @@
               <!-- 나타난 애 -->
               <div class="emailDiv_New removeEvent modify name pt-[25px]">
                 <form class="updateEmailForm">
-                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">이메일</h5>
+                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">이메일 주소</h5>
 
                   <div class="input_box pt-[10px] pb-[14px]">
                     <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 이메일</h6>
                     <div class="input_item relative">
-                      <input type="text" class="input_txt text_fill emailDiv_text pt-[7px] pb-[7px] text-[15px] tracking-[-.15px] text-[#6b6a6a]" placeholder="고객님의 이메일" autocomplete="off" />
+                       <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이메일" autocomplete="off" />
                     </div>
                     <!-- 글자 수 유효성 검사 -->
                     <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 이메일을 입력해주세요</p>
@@ -115,7 +114,7 @@
                   <div class="input_box pt-[10px] pb-[14px]">
                     <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 비밀번호</h6>
                     <div class="input_item relative">
-                      <input type="text" class="input_txt text_fill pwdDiv_text pt-[7px] pb-[7px] text-[15px] tracking-[-.15px] text-[#6b6a6a]" placeholder="고객님의 이메일" autocomplete="off" />
+                       <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 비밀번호" autocomplete="off" />
                     </div>
                     <!-- 글자 수 유효성 검사 -->
                     <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 비밀번호를 입력해주세요</p>
@@ -147,7 +146,7 @@
                   <div class="input_box relative pt-[10px] pb-[14px]">
                     <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 이름</h6>
                     <div class="input_item relative">
-                      <input type="text" class="input_txt text_fill nameDiv_text pt-[7px] pb-[7px] text-[15px] tracking-[-.15px] text-[#6b6a6a]" placeholder="고객님의 이름" autocomplete="off" />
+                      <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이름" autocomplete="off" />
                     </div>
                     <!-- 글자 수 유효성 검사 -->
                     <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 이름을 입력해주세요</p>
@@ -175,9 +174,9 @@
               </div>
               <!--
               <!-- 신발 모달창 -->
-              <div class="modalDiv removeEvent layer lg fixed z-[1000] bg-[#6b6a6a]">
+             <div class="modalDiv removeEvent layer lg z-[1000] top-0 left-0 right-0 bottom-0 bg-[#22222280] fixed">
               
-                <div class="modalDiv_content layer_container top-0 left-0 right-0 bottom-0 absolute top-2/4 left-2/4 w-[448px] overflow-hidden rounded-[16px] bg-[#fff] shadow-[#6b6a6a]">
+                <div class="modalDiv_content layer_container absolute top-1/4 left-1/3 w-[448px] overflow-hidden rounded-[16px] bg-[#fff] shadow-[#6b6a6a]">
                   <div class="modalDiv_content-header layer_header">
                     <h2 class="title min-h-[60px] bg-[#fff] px-[50px] pt-[18px] pb-[20px] text-center text-lg font-bold leading-[22px] tracking-[-.15px] text-[#000]">사이즈 선택</h2>
                   </div>
@@ -294,7 +293,7 @@ function readURL(input){
 //이미지 제거
 $('.resetBtn').click(function(){
 	//$('.showImg').remove("");
-	$('.showImg').attr('src', '/MyPage/image/profile.png');
+	$('.showImg').attr('src', '../img/myPage/profile.png');
 	
 });
 

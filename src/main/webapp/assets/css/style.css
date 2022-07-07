@@ -1,8 +1,8 @@
-/* 	* 필요시에 자유롭게 css 추가.
-	  * 각 페이지에만 종속되는 속성만 추가할 것.
-	  * 추가시 해당 JSP의 파일명을 주석으로 남길 것.
-    	* 테일윈드로 적용하기 어려운 스타일만 추가할 것.
-*/
+/* 	* �븘�슂�떆�뿉 �옄�쑀濡�寃� css 異붽�.
+	  * 媛� �럹�씠吏��뿉留� 醫낆냽�릺�뒗 �냽�꽦留� 異붽��븷 寃�.
+	  * 異붽��떆 �빐�떦 JSP�쓽 �뙆�씪紐낆쓣 二쇱꽍�쑝濡� �궓湲� 寃�.
+    * �뀒�씪�쐢�뱶濡� �쟻�슜�븯湲� �뼱�젮�슫 �뒪���씪留� 異붽��븷 寃�.
+ */	
 
 /* External web fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
@@ -32,7 +32,7 @@ body, button, input, select, table, textarea {
   outline: none !important;
 }
 #ui-datepicker-div {
-  top: 240px !important;
+  top: 300px !important;
   overflow: hidden;
   margin-top: 0!important;
   width: 256px;
@@ -57,6 +57,20 @@ body, button, input, select, table, textarea {
   margin: 0;
 }
 
+/*myPage-profile css*/
 .removeEvent {
 	display: none;
+}
+.clickEvent {
+	background-color: blue;
+}
+/*myPage-selling, buying icon*/
+.head_status .status_link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -4px;
+    width: 16px;
+    height: 24px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxNiAyNCI+PHBhdGggZmlsbD0iI0QzRDNEMyIgZD0iTTEyIDEzbC00IDUtNC01aDh6bS04LTJsNC01IDQgNUg0eiIvPjwvc3ZnPg==) no-repeat;
 }
