@@ -1,23 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
- 	 <!-- TailwindCSS configuration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../assets/js/tailwind.config.js"></script>
-    <link rel="stylesheet" href="Kream/tailwind.config.css">
-<style type="text/css">
-.main-content{
-	max-height: 960px;
-	max-width: 780px ;
-}
-</style>
-  </head>
-  <div class="">
-    <!-- 해더 -->
+
 	
-    <div class="main-content mx-auto mt-5 bg-white p-8 shadow-md">
+    <div class="mx-auto max-h-[960px] max-w-[780px] bg-white p-8 shadow-md">
       <!-- 제품 정보 화면 -->
 
       <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
@@ -71,8 +55,7 @@
               <div class="flex-1">
                 <p class="-mb-2 text-base">KREAM의 최신 이용정책을 모두 확인하였으며, 판매를 계속합니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">
-                건전하고 안전한 거래를 위해 반드시 숙지해야 할 미입고,패널티,부정거래 등의 이용정책을<br />
-                확인했습니다.
+                건전하고 안전한 거래를 위해 반드시 숙지해야 할 미입고,패널티,부정거래 등의 이용정책을 확인했습니다.
               </p>
               <a class="inline-block text-sm text-blue-400 underline" href="#">이용정책 보기</a>
             </div>
@@ -84,11 +67,13 @@
         <input type="button" value="판매 계속" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
       </form>
     </div>
-    <!-- footer -->
-  </div>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/sellPage.js"></script>
 <script type="text/javascript">
+$(function(){
+  $('#body').addClass("bg-gray-50")
+})
 $('#firstAgree').click(function(){
 	var check1 = $('#firstAgree').prop("checked");
 	var check2 = $('#secondAgree').prop("checked");
@@ -99,7 +84,8 @@ $('#firstAgree').click(function(){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
-    location.href="#"
+	} else {
+		$('#agreeBtn').attr("disabled",true);
 	}
 })
 
@@ -113,6 +99,8 @@ $('#secondAgree').click(function(){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled",true);
 	}
 })
 
@@ -126,7 +114,9 @@ $('#thirdAgree').click(function(){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
-	}
+	  } else {
+		  $('#agreeBtn').attr("disabled",true);
+		}
 })
 
 $('#fourthAgree').click(function(){
@@ -139,11 +129,13 @@ $('#fourthAgree').click(function(){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
-	}  
+  	} else {
+			$('#agreeBtn').attr("disabled",true);
+		} 
 })
 
 $('#agreeBtn').click(function(){
-	location.href=""
+	location.href="./buyStraight"
 });
 </script>
 </html>

@@ -16,12 +16,12 @@
         <ul class="flex h-20 w-full border-t">
           <li class="mx-4 mb-4 mt-5 h-10 w-80 border-r border-r-gray-400 text-center align-top">
             <p class="text-xs text-gray-400">즉시 구매가</p>
-            <span class="font-medium">150,000원</span>
+            <span class="font-semibold">150,000원</span>
           </li>
 
           <li class="mx-4 mb-4 mt-5 h-10 w-80 text-center">
             <p class="buyStraight text-xs text-gray-400">즉시 판매가</p>
-            <span class="inline-block font-medium">150,000원</span>
+            <span class="font-semibold">150,000원</span>
           </li>
         </ul>
 
@@ -38,7 +38,7 @@
 
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
-          <p class="float-right text-xl font-semibold">원</p>ch
+          <p class="float-right text-xl font-semibold">원</p>
           <input type="text" id="price" class="float-right text-right text-xl font-semibold outline-none" value="150,000" readonly>
         </div>
       </div>
@@ -51,51 +51,62 @@
 
         <div id="bidDiv" class="border-t">
           <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
-          <p class="text-xs">시간은 가지 tictoc</p>
+          <p id="bidDate" class="text-xs">tictoc</p>
           <div class="text-center">
-            <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
-            <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
-            <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">7일</button>
-            <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">30일</button>
-            <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">60일</button>
+            <button id="dateBtn1" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
+            <button id="dateBtn3" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
+            <button id="dateBtn7" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">7일</button>
+            <button id="dateBtn30" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">30일</button>
+            <button id="dateBtn60" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">60일</button>
           </div>
           
-          <div class="border-t">
+          <div id="bidBuy" class="border-t">
             <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
             <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-            <input type="button" href="#" class="w-full text-white font-semibold disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
+            <input id="bidBuyBtn" type="button" href="#" class="w-full text-white font-semibold disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
           </div>
         </div>
 
-      <div class="border-t">
+      <div id="straightBuy" class="border-t">
         <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
         <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-        <button href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
+        <button id="straightBuyBtn" href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
       </div>
     </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
+  $('#body').addClass("bg-gray-50")
   $('#bidDiv').hide();
 })
+	var date = new Date()
+$('#dateBtn1').click(function(){
+	date.setDate(date.getDate() + 1)
+	$('#bidDate').html(date)
+})
 
+$('#dateBtn3').click(function(){
+
+})
 $('#buyBid').click(function(){
+  $('#straightBuy').hide()
   $('#straight_bg').removeClass('bg-red-500 text-white')
 
   $('#bid_bg').addClass("bg-red-500 text-white")
-
+  $('#bidBuy').show();
   $('#bidDiv').show();
 
   $('#price').removeAttr("readonly");
   $('#price').val("");
 });
 
-$('#straight').click(function(){
+$('#buyStraight').click(function(){
+  $('#straightBuy').show()
   $('#straight_bg').addClass('bg-red-500 text-white')
 
-  $('#bid_bg').reomveClass("bg-red-500 text-white")
- 
+  $('#bid_bg').removeClass("bg-red-500 text-white")
+  $('#bidBuy').hide();
   $('#bidDiv').hide();
 
   $('#price').attr("readonly");
@@ -110,6 +121,7 @@ $('.dateBtn').each(function(index){
     
     $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
     $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
+    $('#bidBuyBtn').removeAttr("disabled");
   })
   
 

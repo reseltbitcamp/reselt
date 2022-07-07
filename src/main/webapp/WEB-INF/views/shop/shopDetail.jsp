@@ -99,11 +99,11 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $('#sellBtn').click(function(){
-	location.href="../sellPage/sellSize"
+	location.href="./sellSize"
 });
 
 $('#buyBtn').click(function(){
-	location.href="../buyPage/buySize"
+	location.href="./buySize"
 });
 </script>
 
