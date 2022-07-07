@@ -34,7 +34,6 @@
 	
 	<context:component-scan base-package="style.controller" />
 	
-	<context:component-scan base-package="myPage.controller"/>
 
 	<context:component-scan base-package="member.controller" />
 	
