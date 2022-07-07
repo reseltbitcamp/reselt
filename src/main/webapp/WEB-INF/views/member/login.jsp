@@ -14,14 +14,24 @@
     <div class="">
       <form>
         <div class="pt-5 pb-6">
+<<<<<<< HEAD
         	<div id="emailDiv">
 	        	<div class="pt-10 text-xs font-bold"><h3>이메일 주소</h3></div>
+=======
+        	<div>
+	        	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소</h3></div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 	        	<input type="email" id="email" name="email" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
 	        	<div id="emailDivcmt" class="mb-10"></div>
         	</div>
          	
+<<<<<<< HEAD
          	<div id="pwdDiv">
          		<div class="pt-5 text-xs font-bold"><h3>비밀번호</h3></div>
+=======
+         	<div>
+         		<div id="pwdDiv" class="pt-5 text-xs font-bold"><h3>비밀번호</h3></div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
          	 	<input type="password" id="pwd" name="pwd" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2">
 	        	<div id="pwdDivcmt" class="mb-10"></div>
          	</div>
@@ -50,13 +60,24 @@
 					<img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.1" height="50">
 				</a>
 			</div>
+<<<<<<< HEAD
     
+=======
+    		
+    		<div id="kakaoLogin">
+    			<input type="button" id="kakaologinBtn" value="로그인버튼"></input>
+    		</div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 		</div>
 	</div>
       
 </div>
 
+<<<<<<< HEAD
 
+=======
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
@@ -71,6 +92,10 @@ $(function(){
 		if(!reg_email.test($('#email').val())) {                            
 			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
+<<<<<<< HEAD
+=======
+			$('#emailDivcmt').css({'color':'red'});  
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 			$('#emailDiv').css({'color':'red'});  
 		 }                            
 		 else {                     
@@ -89,10 +114,21 @@ $(function(){
 			$('#loginBtn').css({'background-color':'black'});
 			$('#pwdDivcmt').html(""); 
 			$('#pwdDiv').css({'color':'black'}); 
+<<<<<<< HEAD
 		}else {
 			$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
 			$('#pwdDivcmt').css({'font-size':'5pt'}); 
 			$('#pwdDiv').css({'color':'red'}); 
+=======
+			
+			//링크추가 필요
+		}else {
+			$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
+			$('#pwdDivcmt').css({'font-size':'5pt'}); 
+			$('#pwdDivcmt').css({'color':'red'}); 
+			$('#pwdDiv').css({'color':'red'}); 
+			$('#loginBtn').css({'background-color':'rgb(209 213 219)'}); 
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 		}
 	});
 	 
@@ -100,6 +136,11 @@ $(function(){
 </script>
 
 <script type="text/javascript">
+<<<<<<< HEAD
+=======
+    /* 네이버 로그인 */
+
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     var naverLogin = new naver.LoginWithNaverId( {
         clientId: "LgPc6iOg7dmRiTAsIpnG",
         callbackUrl: "http://localhost:8080/ReseltProject/member/naverlogin",
@@ -108,6 +149,26 @@ $(function(){
     } ); 
     /* 설정정보를 초기화하고 연동을 준비 */
     naverLogin.init();
+<<<<<<< HEAD
+=======
+    
+    /* 카카오 로그인 */
+    
+    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('a4dde13eaf237704c8119f1c077373c5');
+    	
+    // SDK 초기화 여부를 판단합니다.
+    console.log(Kakao.isInitialized());
+
+    $('#kakaologinBtn').click(function(){
+
+    Kakao.Auth.authorize({
+		redirectUri: 'http://localhost:8080/ReseltProject/member/kakaologin',  /* redirect되는 URL */
+		scope: 'account_email'  /* 전달 받을 정보 */
+    });
+    
+    });
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 </script>
 
 

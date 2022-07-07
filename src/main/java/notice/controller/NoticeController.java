@@ -18,36 +18,36 @@ import notice.service.NoticeService;
 @Controller
 @RequestMapping (value="notice")
 public class NoticeController {
-	@Autowired
-	private NoticeService noticeService;
-	
-	@GetMapping(value="noticeMain")
-	public ModelAndView noticeMain() {
-		ModelAndView mav = new ModelAndView();
-		
-		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
-		mav.addObject("display", "/WEB-INF/views/notice/noticeMain.jsp");
-		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.setViewName("/index");
-		
-		return mav;
-	}
-	
-	@GetMapping(value="noticeWriteForm")
-	public ModelAndView noticeWriteForm() {
-		ModelAndView mav = new ModelAndView();
-		
-		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
-		mav.addObject("display", "/WEB-INF/views/notice/noticeWriteForm.jsp");
-		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.setViewName("/index");
-		
-		return mav;
-	}
-	
-	@PostMapping(value="noticeWrite")
-	@ResponseBody
-	public void noticeWrite(@ModelAttribute NoticeDTO noticeDTO) {
-		noticeService.noticeWrite(noticeDTO);
-	}
+   @Autowired
+   private NoticeService noticeService;
+   
+   @GetMapping(value="noticeMain")
+   public ModelAndView noticeMain() {
+      ModelAndView mav = new ModelAndView();
+      
+      mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+      mav.addObject("display", "/WEB-INF/views/notice/noticeMain.jsp");
+      mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+      mav.setViewName("/index");
+      
+      return mav;
+   }
+   
+   @GetMapping(value="noticeWriteForm")
+   public ModelAndView noticeWriteForm() {
+      ModelAndView mav = new ModelAndView();
+      
+      mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+      mav.addObject("display", "/WEB-INF/views/notice/noticeWriteForm.jsp");
+      mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+      mav.setViewName("/index");
+      
+      return mav;
+   }
+   
+   @PostMapping(value="noticeWrite")
+   @ResponseBody
+   public void noticeWrite(@ModelAttribute NoticeDTO noticeDTO) {
+      noticeService.noticeWrite(noticeDTO);
+   }
 }
