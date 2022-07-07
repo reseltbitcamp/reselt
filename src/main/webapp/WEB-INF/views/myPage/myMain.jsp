@@ -4,6 +4,7 @@
 <html>
   <head>
     <meta charset="EUC-KR" />
+      <link rel="stylesheet" href="../css/myPage.css"/>
     <title>Insert title here</title>
   </head>
   <body>
@@ -11,24 +12,24 @@
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
-            <h2 class="pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">∏∂¿Ã ∆‰¿Ã¡ˆ</h2>
+            <h2 class="pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">ÎßàÏù¥ ÌéòÏù¥ÏßÄ</h2>
           </a>
 
           <nav>
             <div>
-              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ºÓ«Œ ¡§∫∏</strong>
+              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ÏáºÌïë Ï†ïÎ≥¥</strong>
               <ul class="list-none">
-                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">±∏∏≈ ≥ªø™</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">∆«∏≈ ≥ªø™</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">∞¸Ω… ªÛ«∞</a></li>
+                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">Íµ¨Îß§ ÎÇ¥Ïó≠</a></li>
+                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">ÌåêÎß§ ÎÇ¥Ïó≠</a></li>
+                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">Í¥ÄÏã¨ ÏÉÅÌíà</a></li>
               </ul>
             </div>
 
             <div class="mt-10">
-              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">≥ª ¡§∫∏</strong>
+              <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ÎÇ¥ Ï†ïÎ≥¥</strong>
               <ul class="list-none">
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">«¡∑Œ«  ¡§∫∏</a></li>
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">∞·¡¶ ¡§∫∏</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">ÌîÑÎ°úÌïÑ Ï†ïÎ≥¥</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">Í≤∞Ï†ú Ï†ïÎ≥¥</a></li>
               </ul>
             </div>
           </nav>
@@ -43,15 +44,15 @@
           <div class="user_membership flex border-[1px] border-solid border-[#fff] py-[23px] pl-[23px]">
             <div class="user_detail flex">
               <div class="user_thumb relative mr-[12px] h-[100px] w-[100px] flex-shrink-0 rounded-full">
-                <img src="../img/myPage/profile.png" alt="ªÁøÎ¿⁄ ¿ÃπÃ¡ˆ" class="thumb_img h-full w-full rounded-full align-top" />
+                <img src="../img/myPage/profile.png" alt="ÏÇ¨Ïö©Ïûê Ïù¥ÎØ∏ÏßÄ" class="thumb_img h-full w-full rounded-full align-top" />
               </div>
 
               <div class="user_info flex items-center">
                 <div class="info_box">
-                  <strong class="name text-[18px] font-semibold leading-[21px] tracking-[-.27px] text-[#000]">¿Ã∏ß</strong>
+                  <strong class="name text-[18px] font-semibold leading-[21px] tracking-[-.27px] text-[#000]">Ïù¥Î¶Ñ</strong>
                   <p class="email text-[14px] leading-[18px] tracking-[-.05px] text-[#22222280]">naver.com</p>
-                  <input class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="«¡∑Œ«  ºˆ¡§" onClick="location.href='/MyPage/my/profile'" />
-                  <input class="btn_my_style mt-[12px] ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="≥ª Ω∫≈∏¿œ" onClick="location.href='/MyPage/social/users'" />
+                  <input class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="ÌîÑÎ°úÌïÑ ÏàòÏ†ï" onClick="location.href='/MyPage/my/profile'" />
+                  <input class="btn_my_style mt-[12px] ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="ÎÇ¥ Ïä§ÌÉÄÏùº" onClick="location.href='/MyPage/social/users'" />
                 </div>
                 <!--info_box-->
               </div>
@@ -61,11 +62,11 @@
           </div>
           <!--user_membership-->
 
-          <!-- ±∏∏≈ ≥ªø™ -->
+          <!-- Íµ¨Îß§ ÎÇ¥Ïó≠ -->
           <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
-            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">±∏∏≈ ≥ªø™</h3>
+            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">Íµ¨Îß§ ÎÇ¥Ïó≠</h3>
             <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
-              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">¥ı∫∏±‚ ></span>
+              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">ÎçîÎ≥¥Í∏∞ ></span>
             </a>
           </div>
 
@@ -74,7 +75,7 @@
               <div class="tab_item total table-cell text-center">
                 <a href="/MyPage/my/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¿¸√º</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">Ï†ÑÏ≤¥</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]">0</dd>
                   </dl>
                 </a>
@@ -84,7 +85,7 @@
               <div class="tab_item tab_on table-cell text-center">
                 <a href="/MyPage/my/buying?tab=bidding" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¿‘¬˚ ¡ﬂ</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">ÏûÖÏ∞∞ Ï§ë</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
                   </dl>
                 </a>
@@ -93,7 +94,7 @@
               <div class="tab_item table-cell text-center">
                 <a href="/MyPage/my/buying?tab=pending" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¡¯«‡ ¡ﬂ</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">ÏßÑÌñâ Ï§ë</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
                   </dl>
                 </a>
@@ -102,7 +103,7 @@
               <div class="tab_item table-cell text-center">
                 <a href="/MyPage/my/buying?tab=finished" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¡æ∑·</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">Ï¢ÖÎ£å</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
                   </dl>
                 </a>
@@ -110,21 +111,21 @@
             </div>
             <!--purchase_list_tab-->
 
-            <!--∞≈∑° ≥ªø™ æ¯¿ª ∞ÊøÏ-->
+            <!--Í±∞Îûò ÎÇ¥Ïó≠ ÏóÜÏùÑ Í≤ΩÏö∞-->
             <div>
               <div class="purchase_list all bid">
                 <div class="empty_area py-[80px]">
-                  <p class="desc text-center text-[13px] tracking-[-.07px] text-[#22222280]">∞≈∑° ≥ªø™¿Ã æ¯Ω¿¥œ¥Ÿ</p>
+                  <p class="desc text-center text-[13px] tracking-[-.07px] text-[#22222280]">Í±∞Îûò ÎÇ¥Ïó≠Ïù¥ ÏóÜÏäµÎãàÎã§</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!--∆«∏≈ ≥ªø™-->
+          <!--ÌåêÎß§ ÎÇ¥Ïó≠-->
           <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
-            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">∆«∏≈ ≥ªø™</h3>
+            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">ÌåêÎß§ ÎÇ¥Ïó≠</h3>
             <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
-              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">¥ı∫∏±‚ ></span>
+              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">ÎçîÎ≥¥Í∏∞ ></span>
             </a>
           </div>
 
@@ -133,7 +134,7 @@
               <div class="tab_item total table-cell text-center">
                 <a href="/MyPage/my/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¿¸√º</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">Ï†ÑÏ≤¥</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]">0</dd>
                   </dl>
                 </a>
@@ -143,7 +144,7 @@
               <div class="tab_item tab_on table-cell text-center">
                 <a href="/MyPage/my/buying?tab=bidding" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¿‘¬˚ ¡ﬂ</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">ÏûÖÏ∞∞ Ï§ë</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
                   </dl>
                 </a>
@@ -152,7 +153,7 @@
               <div class="tab_item table-cell text-center">
                 <a href="/MyPage/my/buying?tab=pending" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¡¯«‡ ¡ﬂ</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">ÏßÑÌñâ Ï§ë</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
                   </dl>
                 </a>
@@ -161,7 +162,7 @@
               <div class="tab_item table-cell text-center">
                 <a href="/MyPage/my/buying?tab=finished" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">¡æ∑·</dt>
+                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">Ï¢ÖÎ£å</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
                   </dl>
                 </a>
@@ -169,35 +170,35 @@
             </div>
             <!--purchase_list_tab-->
 
-            <!--∞≈∑° ≥ªø™ æ¯¿ª ∞ÊøÏ-->
+            <!--Í±∞Îûò ÎÇ¥Ïó≠ ÏóÜÏùÑ Í≤ΩÏö∞-->
             <div>
               <div class="purchase_list all bid">
                 <div class="empty_area py-[80px]">
-                  <p class="desc text-center text-[13px] tracking-[-.07px] text-[#22222280]">∞≈∑° ≥ªø™¿Ã æ¯Ω¿¥œ¥Ÿ</p>
+                  <p class="desc text-center text-[13px] tracking-[-.07px] text-[#22222280]">Í±∞Îûò ÎÇ¥Ïó≠Ïù¥ ÏóÜÏäµÎãàÎã§</p>
                 </div>
               </div>
             </div>
           </div>
           <!--recent purchase-->
 
-          <!--∞¸Ω… ªÛ«∞-->
+          <!--Í¥ÄÏã¨ ÏÉÅÌíà-->
           <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
-            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">∞¸Ω… ªÛ«∞</h3>
+            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">Í¥ÄÏã¨ ÏÉÅÌíà</h3>
             <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
-              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">¥ı∫∏±‚ ></span>
+              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">ÎçîÎ≥¥Í∏∞ ></span>
             </a>
           </div>
 
           <div class="insert_product mx-[-10px]">
             <div class="empty_area has_bg mx-[10px] rounded-[12px] bg-[#fafafa] py-[80px] text-center">
-              <p class="desc text-[14px] tracking-[-.21px]">√ﬂ∞°«œΩ≈ ∞¸Ω… ªÛ«∞¿Ã æ¯Ω¿¥œ¥Ÿ</p>
-              <a class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fafafa] px-[14px] text-center align-middle text-xs leading-8 text-[#000]">SHOP πŸ∑Œ∞°±‚</a>
+              <p class="desc text-[14px] tracking-[-.21px]">Ï∂îÍ∞ÄÌïòÏã† Í¥ÄÏã¨ ÏÉÅÌíàÏù¥ ÏóÜÏäµÎãàÎã§</p>
+              <a class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fafafa] px-[14px] text-center align-middle text-xs leading-8 text-[#000]">SHOP Î∞îÎ°úÍ∞ÄÍ∏∞</a>
             </div>
 
-            <!--√ﬂ∞°«— ªÛ«∞¿Ã ¿÷¿ª ∞ÊøÏ-->
+            <!--Ï∂îÍ∞ÄÌïú ÏÉÅÌíàÏù¥ ÏûàÏùÑ Í≤ΩÏö∞-->
             <div class="product_list">
               <div class="product_item relative my-[20px] inline-block w-1/4 px-[12px] align-top">
-                <a href="ªÁ¡¯ ¡÷º“∑Œ ¿Ãµø" class="item_inner block rounded-[12px] bg-[#fff]">
+                <a href="ÏÇ¨ÏßÑ Ï£ºÏÜåÎ°ú Ïù¥Îèô" class="item_inner block rounded-[12px] bg-[#fff]">
                   <div class="thumb_box">
                     <div class="product relative overflow-hidden rounded-[8px] pt-[100%]" style="background-color: rgb(244, 244, 244);">
                       <picture class="picture product_img absolute top-1/2 left-1/2 flex h-auto w-[81.5%]">
@@ -216,11 +217,11 @@
                     <div class="price pt-[7px]">
                       <div class="amount">
                         <em class="num inline-block align-top font-bold not-italic leading-[15px] tracking-[-.04px]">520,000</em>
-                        <span class="won inline-block align-top text-[15px] font-bold leading-[17px] tracking-[-.04px]">ø¯</span>
+                        <span class="won inline-block align-top text-[15px] font-bold leading-[17px] tracking-[-.04px]">Ïõê</span>
                       </div>
 
                       <div class="desc text-[11px] leading-[13px] text-[#22222280]">
-                        <p>¡ÔΩ√ ±∏∏≈∞°</p>
+                        <p>Ï¶âÏãú Íµ¨Îß§Í∞Ä</p>
                       </div>
                     </div>
                     <!--price-->
