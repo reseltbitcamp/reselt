@@ -3,7 +3,7 @@
 
 <div id="headerBot" class="py-2 px-11 border-b-[1px] flex flex-row font-notoSans">
   <div id="menuLogo" class="basis-1/2">
-    <a href="#" class="font-extrabold text-[32px] italic">RESELT</a>
+    <a href="/ReseltProject/" class="font-extrabold text-[32px] italic">RESELT</a>
   </div>
   <div id="menuBtn" class="basis-1/2 text-right self-center font-light">
     <a href="/ReseltProject/style/styleList" id="styleBtn" class="px-5 text-[15px]">STYLE</a>
