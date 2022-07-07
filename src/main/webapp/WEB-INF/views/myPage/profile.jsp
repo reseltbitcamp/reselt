@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<link rel="stylesheet" href="../css/style.css"/>
+	<link rel="stylesheet" href="../css/myPage.css"/>
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,24 +13,24 @@
       <div class="nav">
         <div class="snb_area float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
-            <h2 class="snb_main_title pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">¸¶ÀÌ ÆäÀÌÁö</h2>
+            <h2 class="snb_main_title pb-[30px] text-2xl font-bold leading-7 tracking-[-.15px]">ë§ˆì´ í˜ì´ì§€</h2>
           </a>
 
           <nav class="snb">
             <div class="snb_list">
-              <strong class="snb_title mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">¼îÇÎ Á¤º¸</strong>
+              <strong class="snb_title mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ì‡¼í•‘ ì •ë³´</strong>
               <ul class="snb_menu list-none">
-                <li class="menu_item list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">±¸¸Å ³»¿ª</a></li>
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">ÆÇ¸Å ³»¿ª</a></li>
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">°ü½É »óÇ°</a></li>
+                <li class="menu_item list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">êµ¬ë§¤ ë‚´ì—­</a></li>
+                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">íŒë§¤ ë‚´ì—­</a></li>
+                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">ê´€ì‹¬ ìƒí’ˆ</a></li>
               </ul>
             </div>
 
             <div class="snb_list mt-10">
-              <strong class="snb_title mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">³» Á¤º¸</strong>
+              <strong class="snb_title mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">ë‚´ ì •ë³´</strong>
               <ul class="snb_menu list-none">
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">ÇÁ·ÎÇÊ Á¤º¸</a></li>
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">°áÁ¦ Á¤º¸</a></li>
+                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">í”„ë¡œí•„ ì •ë³´</a></li>
+                <li class="menu_item mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">ê²°ì œ ì •ë³´</a></li>
               </ul>
             </div>
           </nav>
@@ -43,23 +44,23 @@
         <div class="my_profile">
           <div class="content_title border-b-4 border-[#222] pb-4">
             <div class="title text-2xl tracking-[-.36px]">
-              <h3 class="font-bold leading-7">ÇÁ·ÎÇÊ Á¤º¸</h3>
+              <h3 class="font-bold leading-7">í”„ë¡œí•„ ì •ë³´</h3>
             </div>
           </div>
 
           <input type="file" class="imgFile removeEvent" />
 
-          <!-- ÀÌ¹ÌÁö º¯°æ/»èÁ¦ -->
+          <!-- ì´ë¯¸ì§€ ë³€ê²½/ì‚­ì œ -->
           <div class="user_profile flex items-center border-b-[1px] border-[#ebebeb] pt-[50px] pb-[38px]">
             <div class="profile_thumb mr-[18px] h-[100px] w-[100px] flex-none overflow-hidden rounded-full">
               <img src="../img/myPage/profile.png" class="showImg h-full w-full" />
             </div>
 
             <div class="profile_detail">
-              <strong class="text-2xl leading-8 tracking-[-.12px] text-[#000]">ÀÌ¸§</strong>
+              <strong class="text-2xl leading-8 tracking-[-.12px] text-[#000]">ì´ë¦„</strong>
               <div class="profile_btn_box mt-[8px]">
-                <input type="button" value="ÀÌ¹ÌÁö º¯°æ" class="imgBtn btn inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" />
-                <input type="button" value="»èÁ¦" class="resetBtn btn ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <input type="button" value="ì´ë¯¸ì§€ ë³€ê²½" class="imgBtn btn inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <input type="button" value="ì‚­ì œ" class="resetBtn btn ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
             </div>
           </div>
@@ -67,123 +68,123 @@
 
           <div class="profile_info max-w-[480px] pt-[38px]">
             <div class="profile_group pt-0">
-              <h4 class="group_title text-lg font-bold tracking-[-.27px]">·Î±×ÀÎ Á¤º¸</h4>
+              <h4 class="group_title text-lg font-bold tracking-[-.27px]">ë¡œê·¸ì¸ ì •ë³´</h4>
 
-              <!-- ÀÌ¸ŞÀÏ  -->
-              <!-- ¿ø·¡ ¾Ö -->
+              <!-- ì´ë©”ì¼  -->
+              <!-- ì›ë˜ ì•  -->
               <div class="emailDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
-                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ÀÌ¸ŞÀÏ ÁÖ¼Ò</h5>
+                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ì´ë©”ì¼ ì£¼ì†Œ</h5>
                 <p class="desc email pt-[6px] text-[16px] tracking-[-.16px] text-[#6b6a6a]">naver.com</p>
-                <input type="button" value="º¯°æ" class="emailDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <input type="button" value="ë³€ê²½" class="emailDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
 
-              <!-- ³ªÅ¸³­ ¾Ö -->
+              <!-- ë‚˜íƒ€ë‚œ ì•  -->
               <div class="emailDiv_New removeEvent modify name pt-[25px]">
                 <form class="updateEmailForm">
-                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">ÀÌ¸ŞÀÏ ÁÖ¼Ò</h5>
+                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">ì´ë©”ì¼ ì£¼ì†Œ</h5>
 
                   <div class="input_box pt-[10px] pb-[14px]">
-                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">»õ·Î¿î ÀÌ¸ŞÀÏ</h6>
+                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">ìƒˆë¡œìš´ ì´ë©”ì¼</h6>
                     <div class="input_item relative">
-                       <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="°í°´´ÔÀÇ ÀÌ¸ŞÀÏ" autocomplete="off" />
+                       <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="ê³ ê°ë‹˜ì˜ ì´ë©”ì¼" autocomplete="off" />
                     </div>
-                    <!-- ±ÛÀÚ ¼ö À¯È¿¼º °Ë»ç -->
-                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">¿Ã¹Ù¸¥ ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä</p>
+                    <!-- ê¸€ì ìˆ˜ ìœ íš¨ì„± ê²€ì‚¬ -->
+                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">ì˜¬ë°”ë¥¸ ì´ë©”ì¼ì„ ì…ë ¥í•´ì£¼ì„¸ìš”</p>
                   </div>
 
                   <div class="modify_btn_box pt-[28px] text-center">
-                    <input type="button" value="Ãë¼Ò" class="btn medium emailDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
-                    <input type="button" value="ÀúÀå" class="btn medium solid emailDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
+                    <input type="button" value="ì·¨ì†Œ" class="btn medium emailDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
+                    <input type="button" value="ì €ì¥" class="btn medium solid emailDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
                   </div>
                 </form>
               </div>
 
-              <!-- ºñ¹Ğ¹øÈ£  -->
-              <!-- ¿ø·¡ ¾Ö -->
+              <!-- ë¹„ë°€ë²ˆí˜¸  -->
+              <!-- ì›ë˜ ì•  -->
               <div class="pwdDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
-                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ºñ¹Ğ¹øÈ£</h5>
-                <p class="desc password pt-[6px] text-[11px] tracking-[-.16px] text-[#6b6a6a]">¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü</p>
-                <input type="button" value="º¯°æ" class="pwdDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ë¹„ë°€ë²ˆí˜¸</h5>
+                <p class="desc password pt-[6px] text-[11px] tracking-[-.16px] text-[#6b6a6a]">â—â—â—â—â—â—â—â—</p>
+                <input type="button" value="ë³€ê²½" class="pwdDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
 
-              <!-- ³ªÅ¸³­ ¾Ö -->
+              <!-- ë‚˜íƒ€ë‚œ ì•  -->
               <div class="pwdDiv_New removeEvent modify name pt-[25px]">
                 <form class="updatePwdForm">
-                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">ºñ¹Ğ¹øÈ£</h5>
+                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">ë¹„ë°€ë²ˆí˜¸</h5>
 
                   <div class="input_box pt-[10px] pb-[14px]">
-                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">»õ·Î¿î ºñ¹Ğ¹øÈ£</h6>
+                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">ìƒˆë¡œìš´ ë¹„ë°€ë²ˆí˜¸</h6>
                     <div class="input_item relative">
-                       <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="°í°´´ÔÀÇ ºñ¹Ğ¹øÈ£" autocomplete="off" />
+                       <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="ê³ ê°ë‹˜ì˜ ë¹„ë°€ë²ˆí˜¸" autocomplete="off" />
                     </div>
-                    <!-- ±ÛÀÚ ¼ö À¯È¿¼º °Ë»ç -->
-                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">¿Ã¹Ù¸¥ ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä</p>
+                    <!-- ê¸€ì ìˆ˜ ìœ íš¨ì„± ê²€ì‚¬ -->
+                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">ì˜¬ë°”ë¥¸ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”</p>
                   </div>
 
                   <div class="modify_btn_box pt-[28px] text-center">
-                    <input type="button" value="Ãë¼Ò" class="btn medium pwdDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
-                    <input type="button" value="ÀúÀå" class="btn medium solid pwdDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
+                    <input type="button" value="ì·¨ì†Œ" class="btn medium pwdDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
+                    <input type="button" value="ì €ì¥" class="btn medium solid pwdDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
                   </div>
                 </form>
               </div>
             </div>
 
             <div class="profile_group pt-[58px]">
-              <h4 class="group_title text-[18px] font-bold tracking-[-.27px]">°³ÀÎ Á¤º¸</h4>
+              <h4 class="group_title text-[18px] font-bold tracking-[-.27px]">ê°œì¸ ì •ë³´</h4>
 
-              <!-- ¿ø·¡ ¾Ö -->
+              <!-- ì›ë˜ ì•  -->
               <div class="nameDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
-                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ÀÌ¸§</h5>
+                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ì´ë¦„</h5>
                 <p class="desc pt-[6px] text-[16px] tracking-[-.16px]">name</p>
-                <input type="button" value="º¯°æ" class="nameDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <input type="button" value="ë³€ê²½" class="nameDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
 
-              <!-- ³ªÅ¸³­ ¾Ö -->
+              <!-- ë‚˜íƒ€ë‚œ ì•  -->
               <div class="nameDiv_New removeEvent modify name pt-[25px]">
                 <form class="updateNameForm">
-                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">ÀÌ¸§</h5>
+                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">ì´ë¦„</h5>
 
                   <div class="input_box relative pt-[10px] pb-[14px]">
-                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">»õ·Î¿î ÀÌ¸§</h6>
+                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">ìƒˆë¡œìš´ ì´ë¦„</h6>
                     <div class="input_item relative">
-                      <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="°í°´´ÔÀÇ ÀÌ¸§" autocomplete="off" />
+                      <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="ê³ ê°ë‹˜ì˜ ì´ë¦„" autocomplete="off" />
                     </div>
-                    <!-- ±ÛÀÚ ¼ö À¯È¿¼º °Ë»ç -->
-                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">¿Ã¹Ù¸¥ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä</p>
+                    <!-- ê¸€ì ìˆ˜ ìœ íš¨ì„± ê²€ì‚¬ -->
+                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">ì˜¬ë°”ë¥¸ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”</p>
                   </div>
 
                   <div class="modify_btn_box pt-[28px] text-center">
-                    <input type="button" value="Ãë¼Ò" class="btn medium nameDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
-                    <input type="button" value="ÀúÀå" class="btn medium solid nameDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
+                    <input type="button" value="ì·¨ì†Œ" class="btn medium nameDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
+                    <input type="button" value="ì €ì¥" class="btn medium solid nameDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
                   </div>
                 </form>
               </div>
 
-              <!-- ÈŞ´ëÆù ¹øÈ£ -->
+              <!-- íœ´ëŒ€í° ë²ˆí˜¸ -->
               <div class="phoneDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
-                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ÈŞ´ëÆù ¹øÈ£</h5>
+                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">íœ´ëŒ€í° ë²ˆí˜¸</h5>
                 <p class="desc pt-[6px] text-[16px] tracking-[-.16px] text-[#222]">010-0000-0000</p>
-                <input type="button" value="º¯°æ" class="emailDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <input type="button" value="ë³€ê²½" class="emailDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
 
-              <!-- ½Å¹ß  -->
+              <!-- ì‹ ë°œ  -->
               <div class="sizeDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
-                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">½Å¹ß »çÀÌÁî</h5>
+                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">ì‹ ë°œ ì‚¬ì´ì¦ˆ</h5>
                 <div class="desc pt-[6px] text-[16px] tracking-[-.16px] text-[#222]">235</div>
-                <input type="button" value="º¯°æ" class="sizeDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <input type="button" value="ë³€ê²½" class="sizeDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
               <!--
-              <!-- ½Å¹ß ¸ğ´ŞÃ¢ -->
+              <!-- ì‹ ë°œ ëª¨ë‹¬ì°½ -->
              <div class="modalDiv removeEvent layer lg z-[1000] top-0 left-0 right-0 bottom-0 bg-[#22222280] fixed">
               
                 <div class="modalDiv_content layer_container absolute top-1/4 left-1/3 w-[448px] overflow-hidden rounded-[16px] bg-[#fff] shadow-[#6b6a6a]">
                   <div class="modalDiv_content-header layer_header">
-                    <h2 class="title min-h-[60px] bg-[#fff] px-[50px] pt-[18px] pb-[20px] text-center text-lg font-bold leading-[22px] tracking-[-.15px] text-[#000]">»çÀÌÁî ¼±ÅÃ</h2>
+                    <h2 class="title min-h-[60px] bg-[#fff] px-[50px] pt-[18px] pb-[20px] text-center text-lg font-bold leading-[22px] tracking-[-.15px] text-[#000]">ì‚¬ì´ì¦ˆ ì„ íƒ</h2>
                   </div>
 
                   <div class="modalDiv_content-main layer_content">
                     <div class="size_list_area h-[270px] overflow-y-auto overflow-x-hidden px-[28px] pt-[6px] pb-0">
-                      <!-- ¼öÁ¤ -->
+                      <!-- ìˆ˜ì • -->
                       <div class="size_item float-left m-1 table h-[52px]" style="width: calc(33.33333% - 8px);">
                         <a class="btn outlinegrey medium modalDiv_content-button table-cell h-full w-full rounded-[15px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] pt-[10px] text-center" id="220">
                           <span class="info_txt inline-block text-center text-[14px] text-[#000]">220</span>
@@ -222,7 +223,7 @@
                     </div>
 
                     <div class="modalDiv_content-footer layer_btn flex justify-center px-[32px] pt-[24px] pb-[32px]">
-                      <input type="button" value="È®ÀÎ" class="modalDiv_check btn solid medium inline-block h-[42px] w-[120px] cursor-pointer rounded-[12px] bg-[#222] py-0 px-[18px] text-center align-middle text-sm font-semibold leading-10 tracking-[-.14px] text-[#fff]" />
+                      <input type="button" value="í™•ì¸" class="modalDiv_check btn solid medium inline-block h-[42px] w-[120px] cursor-pointer rounded-[12px] bg-[#222] py-0 px-[18px] text-center align-middle text-sm font-semibold leading-10 tracking-[-.14px] text-[#fff]" />
                     </div>
                   </div>
                 </div>
@@ -230,37 +231,37 @@
             </div>
 
             <div class="profile_group pt-[58px]">
-              <h4 class="group_title text-lg font-bold tracking-[-.27px]">±¤°í¼º Á¤º¸ ¼ö½Å</h4>
+              <h4 class="group_title text-lg font-bold tracking-[-.27px]">ê´‘ê³ ì„± ì •ë³´ ìˆ˜ì‹ </h4>
 
               <div class="unit to_receive border-b-solid relative border-b-[1px] border-b-[#ebebeb] pr-[200px] pb-[20px] pt-[25px] pl-[0px]">
-                <p class="desc text-[15px] tracking-[-.15px]">¹®ÀÚ ¸Ş½ÃÁö</p>
+                <p class="desc text-[15px] tracking-[-.15px]">ë¬¸ì ë©”ì‹œì§€</p>
                 <div class="radio_txt_box absolute bottom-[15px] right-0">
                   <div class="radio_item relative float-left mt-0 mr-[6px]">
-                    <span class="label_txt float-left mr-[4px]">¼ö½Å µ¿ÀÇ</span>
+                    <span class="label_txt float-left mr-[4px]">ìˆ˜ì‹  ë™ì˜</span>
                     <input type="radio" name="messageBtn" />
                   </div>
                   <div class="radio_item relative float-left mt-0">
-                    <span class="label_txt label_txt float-left mr-[4px]">¼ö½Å °ÅºÎ</span>
+                    <span class="label_txt label_txt float-left mr-[4px]">ìˆ˜ì‹  ê±°ë¶€</span>
                     <input type="radio" name="messageBtn" />
                   </div>
                 </div>
               </div>
 
               <div class="unit to_receive border-b-solid relative border-b-[1px] border-b-[#ebebeb] pr-[200px] pb-[20px] pt-[25px] pl-[0px]">
-                <p class="desc text-[15px] tracking-[-.15px]">ÀÌ¸ŞÀÏ</p>
+                <p class="desc text-[15px] tracking-[-.15px]">ì´ë©”ì¼</p>
                 <div class="radio_txt_box absolute bottom-[15px] right-0">
                   <div class="radio_item relative float-left mt-0 mr-[6px]">
-                    <span class="label_txt float-left mr-[4px]">¼ö½Å µ¿ÀÇ</span>
+                    <span class="label_txt float-left mr-[4px]">ìˆ˜ì‹  ë™ì˜</span>
                     <input type="radio" name="messageBtn" />
                   </div>
                   <div class="radio_item relative float-left mt-0">
-                    <span class="label_txt label_txt float-left mr-[4px]">¼ö½Å °ÅºÎ</span>
+                    <span class="label_txt label_txt float-left mr-[4px]">ìˆ˜ì‹  ê±°ë¶€</span>
                     <input type="radio" name="messageBtn" />
                   </div>
                 </div>
               </div>
             </div>
-            <a class="btn_withdraxal py-5px mt-[55px] inline-block px-0 text-[13px] tracking-[-.07px] text-[#6b6a6a]">È¸¿øÅ»Åğ</a>
+            <a class="btn_withdraxal py-5px mt-[55px] inline-block px-0 text-[13px] tracking-[-.07px] text-[#6b6a6a]">íšŒì›íƒˆí‡´</a>
           </div>
           <!--profile_info-->
         </div>
@@ -271,7 +272,7 @@
     <!--container-->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-//ÀÌ¹ÌÁö ¾÷·Îµå
+//ì´ë¯¸ì§€ ì—…ë¡œë“œ
 $('.imgBtn').click(function(){
 	$('.imgFile').click();
 });
@@ -290,26 +291,26 @@ function readURL(input){
 	}
 }
 
-//ÀÌ¹ÌÁö Á¦°Å
+//ì´ë¯¸ì§€ ì œê±°
 $('.resetBtn').click(function(){
 	//$('.showImg').remove("");
 	$('.showImg').attr('src', '../img/myPage/profile.png');
 	
 });
 
-//º¯°æ ´©¸£¸é emailDiv ¼öÁ¤
+//ë³€ê²½ ëˆ„ë¥´ë©´ emailDiv ìˆ˜ì •
 $('.emailDiv_alter').click(function(){
 	$('.emailDiv').addClass('removeEvent');
 	$('.emailDiv_New').removeClass('removeEvent');
 });
 
-//Ãë¼Ò ´©¸£¸é ¿ø·¡ emailDiv Ãë¼Ò
+//ì·¨ì†Œ ëˆ„ë¥´ë©´ ì›ë˜ emailDiv ì·¨ì†Œ
 $('.emailDiv_cancel').click(function(){
 	$('.emailDiv').removeClass('removeEvent');
 	$('.emailDiv_New').addClass('removeEvent');
 });
 
-//ÅØ½ºÆ® ¾²¸é È°¼ºÈ­ emailDiv È°¼ºÈ­
+//í…ìŠ¤íŠ¸ ì“°ë©´ í™œì„±í™” emailDiv í™œì„±í™”
 $('.emailDiv_text').on('input', function(){
 	if ($('.emailDiv_text').val().length == '0') {
 		$('.emailDiv_save').attr('disabled', true);
@@ -321,20 +322,20 @@ $('.emailDiv_text').on('input', function(){
 });
 
 
-//º¯°æ ´©¸£¸é PwdDiv ¼öÁ¤
+//ë³€ê²½ ëˆ„ë¥´ë©´ PwdDiv ìˆ˜ì •
 $('.pwdDiv_alter').click(function(){
 	$('.pwdDiv').addClass('removeEvent');
 	$('.pwdDiv_New').removeClass('removeEvent');
 });
 
-//Ãë¼Ò ´©¸£¸é ¿ø·¡ PwdDiv Ãë¼Ò
+//ì·¨ì†Œ ëˆ„ë¥´ë©´ ì›ë˜ PwdDiv ì·¨ì†Œ
 $('.pwdDiv_cancel').click(function(){
 	$('.pwdDiv').removeClass('removeEvent');
 	$('.pwdDiv_New').addClass('removeEvent');
 });
 
 
-//ÅØ½ºÆ® ¾²¸é È°¼ºÈ­ PwdDiv È°¼ºÈ­
+//í…ìŠ¤íŠ¸ ì“°ë©´ í™œì„±í™” PwdDiv í™œì„±í™”
 $('.pwdDiv_text').on('input', function(){
 	if($('.pwdDiv_text').val() == '') {
 		$('.pwdDiv_save').attr('disabled', true);
@@ -344,20 +345,20 @@ $('.pwdDiv_text').on('input', function(){
 });
 
 
-//º¯°æ ´©¸£¸é nameDiv ¼öÁ¤
+//ë³€ê²½ ëˆ„ë¥´ë©´ nameDiv ìˆ˜ì •
 $('.nameDiv_alter').click(function(){
 	$('.nameDiv').addClass('removeEvent');
 	$('.nameDiv_New').removeClass('removeEvent');
 });
 
-//Ãë¼Ò ´©¸£¸é ¿ø·¡ nameDiv Ãë¼Ò
+//ì·¨ì†Œ ëˆ„ë¥´ë©´ ì›ë˜ nameDiv ì·¨ì†Œ
 $('.nameDiv_cancel').click(function(){
 	$('.nameDiv').removeClass('removeEvent');
 	$('.nameDiv_New').addClass('removeEvent');
 });
 
 
-//ÅØ½ºÆ® ¾²¸é È°¼ºÈ­ nameDiv È°¼ºÈ­
+//í…ìŠ¤íŠ¸ ì“°ë©´ í™œì„±í™” nameDiv í™œì„±í™”
 $('.nameDiv_text').on('input', function(){
 	if ($('.nameDiv_text').val().length < 2 || $('.nameDiv_text').val().length > 50) {
 		$('.nameDiv_save').attr('disabled', true);
@@ -369,18 +370,18 @@ $('.nameDiv_text').on('input', function(){
 });
 
 
-//º¯°æ ´©¸£¸é ¸ğ´ŞÃ¢
+//ë³€ê²½ ëˆ„ë¥´ë©´ ëª¨ë‹¬ì°½
 $('.sizeDiv_alter').click(function(){
 	$('.modalDiv').fadeIn();
 });
 
-//È®ÀÎ ´©¸£¸é ¸ğ´ŞÃ¢ x
+//í™•ì¸ ëˆ„ë¥´ë©´ ëª¨ë‹¬ì°½ x
 $('.modalDiv_check').click(function(){
 	$('.modalDiv').fadeOut();
 });
 
 
-//¸ğ´ŞÃ¢ ÀÎµ¦½º ¹Ş¾Æ¼­ ÀÎµ¦½º °ª º¸³»±â
+//ëª¨ë‹¬ì°½ ì¸ë±ìŠ¤ ë°›ì•„ì„œ ì¸ë±ìŠ¤ ê°’ ë³´ë‚´ê¸°
 $('.modalDiv_content-button').on('click', function(){
 	var index = $(this).index();
 	
