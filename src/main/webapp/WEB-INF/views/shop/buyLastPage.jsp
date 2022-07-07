@@ -94,7 +94,7 @@
   </div>
 
   <div class="relative mb-4 cursor-pointer">
-    <a class="flex h-14 w-full items-center rounded-lg border border-gray-200">카드를 등록해주세요 <span class="text-sm text-gray-200 font-bold"> ></span>
+    <a class="flex h-14 w-full items-center rounded-lg border border-gray-200 text-gray-400">카드를 등록해주세요 <span class="text-sm text-gray-400 font-bold"> ></span>
     </a>
   </div>
 
