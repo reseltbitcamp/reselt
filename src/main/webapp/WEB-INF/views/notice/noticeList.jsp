@@ -21,14 +21,16 @@
 			data: 'pg=' + $('#pg').val(),
 			dataType: 'json',
 			success: function(data){
-				//alert(JSON.stringify(data));
+				alert(JSON.stringify(data));
 
-				$.each(data.list, function(index, title){
-					console.log(index, title)
+				$.each(data.list, function(index, items){
+					console.log(index, items.title)
 
 					$('<tr/>').append($('<td/>', {
-						align: 'left',
-						text: title
+						
+					})).append($('<a/>', {
+						href:'#',
+						text: items.title
 					})).appendTo($('#content_area'));
 
 				}); //each

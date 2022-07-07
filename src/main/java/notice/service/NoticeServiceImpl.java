@@ -40,27 +40,27 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		List<NoticeDTO> list = noticeDAO.getNoticeList(map);
 		
-		//페이징 처리
-		NoticePaging noticePaging = this.getNoticeList(pg);
+//		//페이징 처리
+//		NoticePaging noticePaging = this.getNoticeList(pg);
 		
 		Map<String, Object> sendMap = new HashMap<String, Object>();
 		sendMap.put("list", list);
-		sendMap.put("noticePaging", noticePaging);
+//		sendMap.put("noticePaging", noticePaging);
 		
 		return sendMap;
 	}
 
-	@Override
-	public NoticePaging getNoticePaging(String pg) {
-		int totalA = noticeDAO.getTotalA();
-		
-		noticePaging.setCurrentPage(Integer.parseInt(pg));
-		noticePaging.setPageBlock(8);
-		noticePaging.setPageSize(10);
-		noticePaging.setTotalA(totalA);
-		noticePaging.makePagingHTML();
-		
-		return noticePaging;
-	}
+//	@Override
+//	public NoticePaging getNoticePaging(String pg) {
+//		int totalA = noticeDAO.getTotalA();
+//		
+//		noticePaging.setCurrentPage(Integer.parseInt(pg));
+//		noticePaging.setPageBlock(8);
+//		noticePaging.setPageSize(10);
+//		noticePaging.setTotalA(totalA);
+//		noticePaging.makePagingHTML();
+//		
+//		return noticePaging;
+//	}
 
 }
