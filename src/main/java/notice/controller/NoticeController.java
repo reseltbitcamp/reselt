@@ -1,5 +1,6 @@
 package notice.controller;
 
+<<<<<<< HEAD
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,16 @@ import notice.service.NoticeService;
 public class NoticeController {
 	@Autowired
 	private NoticeService noticeService;
+=======
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+@RequestMapping (value="notice")
+public class NoticeController {
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 	
 	@GetMapping(value="noticeMain")
 	public ModelAndView noticeMain() {
@@ -32,6 +43,7 @@ public class NoticeController {
 		
 		return mav;
 	}
+<<<<<<< HEAD
 	
 	@GetMapping(value="noticeWriteForm")
 	public ModelAndView noticeWriteForm() {
@@ -50,4 +62,6 @@ public class NoticeController {
 	public void noticeWrite(@ModelAttribute NoticeDTO noticeDTO) {
 		noticeService.noticeWrite(noticeDTO);
 	}
+=======
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 }

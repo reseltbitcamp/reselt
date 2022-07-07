@@ -20,17 +20,111 @@
     <div class="">
         <div>
         <form>
+<<<<<<< HEAD
             <p class="text-xs font-bold">휴대폰 번호</p>
             <input type="text" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm mb-10 border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
         
             <p class="text-xs font-bold">이메일 주소</p>
             <input type="email" id="email" name="email" class="border-b-2 mb-10 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+=======
+        	<div class="mb-10">
+	            <p id="telDiv" class="text-xs font-bold">휴대폰 번호</p>
+    	        <input id="tel" type="text" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
+       			<input id="telOk" type="text">
+       			<div id="telDivcmt" ></div>
+        	</div>
+        	
+        	<div class="mb-10">
+            	<p id="emailDiv" class="text-xs font-bold">이메일 주소</p>
+            	<input type="email" id="email" name="email" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+       			<input id="emailOk" type="text">
+        		<div id="emailDivcmt" ></div>
+        	</div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
         </form>
         </div>
     </div>
     
     <div class="mb-10">
+<<<<<<< HEAD
         <input type="button" value="문자 발송하기" class="text-white block m-auto bg-gray-300 rounded-xl h-14 w-full"  >
     </div>
     
 </div>
+=======
+        <input id="findPwdBtn" type="button" value="문자 발송하기" class="text-white block m-auto bg-gray-300 rounded-xl h-14 w-full"  >
+    </div>
+    
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	//휴대폰 유효성 검사 성공시 버튼 활성화
+	$('#tel').keydown(function(){
+		var checknum = $('#tel').val().substr(0,3);
+		var telLength = $('#tel').val().length;
+			//console.log(telLength);	
+			//console.log(checknum);	
+			
+		if (checknum == "010" || checknum == "011" || checknum == "017"){
+			if(telLength == 10 || telLength == 11) {
+				$('#telDivcmt').html('');
+				$('#telDiv').css({'color':'black'}); 
+				$('#telOk').val('1');
+
+		
+			}else{
+				$('#telDivcmt').html('올바른 휴대폰 번호를 입력하세요.');
+				$('#telDivcmt').css({'font-size':'5pt'}); 
+				$('#telDivcmt').css({'color':'red'}); 
+				$('#telDiv').css({'color':'red'}); 
+				$('#telOk').val('0');
+			}
+		}else {
+			$('#telDivcmt').html('올바른 휴대폰 번호를 입력하세요.');
+			$('#telDivcmt').css({'font-size':'5pt'}); 
+			$('#telDivcmt').css({'color':'red'}); 
+			$('#telDiv').css({'color':'red'}); 
+			$('#telOk').val('0');
+		}
+	});
+	
+	//유효성 검사 
+	var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+	//아이디 이메일 형식
+	$('#email').keydown(function(){
+		if(!reg_email.test($('#email').val())) {                            
+			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
+			$('#emailDivcmt').css({'font-size':'5pt'}); 
+			$('#emailDivcmt').css({'color':'red'});  
+			$('#emailDiv').css({'color':'red'});  
+			$('#emailOk').val('0');
+		 }                            
+		 else {                     
+	 	 	 $('#emailDivcmt').html(""); 
+			$('#emailDiv').css({'color':'black'});  
+			 $('#emailOk').val('1');
+		 }
+		               
+	});
+    $('#email').on('focusout', function(){
+	 	$('#email').trigger('keydown')
+ 	});      
+	
+ 	
+ 	//버튼 활성화
+ 	$('#tel , #email').on('input', function(){
+	if ($('#emailOk').val() == "1" && $('#telOk').val() == "1"){
+		$('#findPwdBtn').css({"background-color":"black", "color":"white"});
+	 	//링크추가
+	 	
+	}else {
+		$('#findPwdBtn').css({"background-color":"rgb(209 213 219)", "color":"white"});
+	}
+ 	});
+});
+</script>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d

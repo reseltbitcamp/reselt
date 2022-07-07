@@ -18,16 +18,26 @@
 </div>
 
 <!-- style Write button -->
+<<<<<<< HEAD
 <div id="writeBtn" class="fixed animate-bounce right-16 bottom-11 inline drop-shadow-md md:drop-shadow-xl bg-zinc-900 rounded-full w-[75px] h-[75px] p-5" onclick="location.href='/ReseltProject/style/styleWrite'">
+=======
+<div id="writeBtn" class="fixed animate-bounce cursor-pointer right-16 bottom-11 inline drop-shadow-md md:drop-shadow-xl bg-zinc-900 rounded-full w-[75px] h-[75px] p-5" onclick="location.href='/ReseltProject/style/styleWrite'">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     <svg xmlns="http://www.w3.org/2000/svg"  class="inline flex-shrink-0 h-10 w-10 white" fill="white" class="bi bi-pen" viewBox="0 0 16 16">
     <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
     </svg>
 </div>
 
 <!-- style content -->
+<<<<<<< HEAD
 <div id="styleContent" class="mx-[280px] grid grid-cols-4 grid-flow-row gap-4">
   <!-- style 게시글 -->
   <div class="h-[480px]">
+=======
+<div id="styleContent" class="flex flex-wrap gap-1 w-[1100px] mx-auto my-0">
+  <!-- style 게시글 -->
+  <div class="shrink-0 basic-1/8 w-[250px] h-[480px] mx-auto">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
     </div>
@@ -68,9 +78,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink-0 basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage2.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->
@@ -109,9 +125,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink-0 basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage3.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->
@@ -150,9 +172,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink-0 basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage4.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->
@@ -191,9 +219,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage5.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->
@@ -232,9 +266,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage6.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->
@@ -273,9 +313,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage7.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->
@@ -314,9 +360,15 @@
   </div>
   
   <!-- style 게시글 -->
+<<<<<<< HEAD
   <div class="h-[480px]">
     <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
       <img src="/ReseltProject/img/style/styleImage.jpeg" alt="miing.9님 게시글">
+=======
+  <div class="shrink basic-1/4 w-[250px] h-[480px] mx-auto">
+    <div id="styleImage" class="h-[300px] rounded-xl overflow-hidden">
+      <img src="/ReseltProject/img/style/styleImage8.jpeg" alt="miing.9님 게시글">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
     </div>
     
     <!-- user 정보 -->

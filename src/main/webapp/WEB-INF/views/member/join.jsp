@@ -18,6 +18,7 @@
 
       <form>
         <div class="pt-5 pb-6">
+<<<<<<< HEAD
           <div id="emailDiv">
 	      	<div class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
     	  	<input id="email" type="email" name="email" class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
@@ -30,6 +31,20 @@
           </div>
           <div id="repwdDiv">
           	<div class="text-xs font-bold"><h3>비밀번호 확인*</h3></div>
+=======
+          <div>
+	      	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
+    	  	<input id="email" type="email" name="email" class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+          	<div id="emailDivcmt" class="mb-10"></div>
+          </div>
+          <div>
+          	<div id="pwdDiv" class="text-xs font-bold"><h3>비밀번호*</h3></div>
+          	<input id="pwd" name="pwd" type="password" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="영문 10자 이상">
+      	    <div id="pwdDivcmt" class="mb-10"></div>
+          </div>
+          <div>
+          	<div id="repwdDiv" class="text-xs font-bold"><h3>비밀번호 확인*</h3></div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
          	<input id="repwd" type="password" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2">
          	<div id="repwdDivcmt" class="mb-10"></div>
           </div>
@@ -43,6 +58,7 @@
               </button>
             </a>
           </div>
+<<<<<<< HEAD
 
           <div>
             <div class="text-xs font-bold f"><h3>주소록 등록*</h3></div>
@@ -54,6 +70,9 @@
 
           </div>
         </div> 
+=======
+		</div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
       </form>
       
       <div class="mb-10 ml-6">
@@ -62,7 +81,11 @@
             <input type="checkbox"></input>
             [필수] 만 14세 이상이며 모두 동의합니다.
           </label>
+<<<<<<< HEAD
           <button type="button" class="float-right">
+=======
+          <button id="plusBtn1" type="button" class="float-right">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
             </svg>
@@ -73,7 +96,11 @@
             <input type="checkbox"></input>
             [선택] 광고성 정보 수신에 모두 동의합니다.
           </label>
+<<<<<<< HEAD
           <button type="button" class="float-right">
+=======
+          <button id="plusBtn2" type="button" class="float-right">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
             </svg>
@@ -82,18 +109,30 @@
       </div>
      
       <div class="mb-10">
+<<<<<<< HEAD
         <input type="button" value="회원 가입" class="text-white block m-auto bg-gray-300 m- rounded-xl h-12 w-full"  >
+=======
+        <input id="joinBtn" type="button" value="회원 가입" class="text-white block m-auto bg-gray-300 m- rounded-xl h-12 w-full"  >
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
       </div>
       
       
     </div>
       
   </div>
+<<<<<<< HEAD
 
+=======
+	<!-- 모달 내용 -->
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
   <div id="size" class="flex m-auto scroll-m-48 w-96" style="max-width: 350px;">
     <div>
       <h1 class="font-bold text-center">사이즈 선택</h1>
     </div>
+<<<<<<< HEAD
+=======
+    <div class="overflow-y-auto">
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 	    <div class="float-left"><a href="#selectsize" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg">220</a></div>
 	    <div class="float-left"><a href="#selectsize" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg">225</a></div>
 	    <div class=""><a href="#selectsize" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg">230</a></div>
@@ -111,6 +150,13 @@
 	    <div class=""><a href="#selectsize" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg">290</a></div>
 	    <div class="float-left"><a href="#selectsize" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg">295</a></div>
 	    <div class="float-left"><a href="#selectsize" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg">300</a></div>
+<<<<<<< HEAD
+=======
+    </div>
+    <div class="float-none text-center">
+    	<div><a href="#ok" class="inline-block w-20 h-8 m-2 text-center border-2 rounded-lg bg-black text-white ">확인</a></div>
+    </div>
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
   	</div>
     
     
@@ -128,6 +174,10 @@ $(function(){
 		if(!reg_email.test($('#email').val())) {                            
 			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
+<<<<<<< HEAD
+=======
+			$('#emailDivcmt').css({'color':'red'});  
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 			$('#emailDiv').css({'color':'red'});  
 		 }                            
 		 else {                     
@@ -148,7 +198,11 @@ $(function(){
 		}else {
 			$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
 			$('#pwdDivcmt').css({'font-size':'5pt'}); 
+<<<<<<< HEAD
 			$('#pwdDiv').css({'color':'red'}); 
+=======
+			$('#pwdDivcmt').css({'color':'red'}); 
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 		}
 	});
  	
@@ -160,6 +214,10 @@ $(function(){
 		if($('#pwd').val() != $('#repwd').val()){
 			$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
 			$('#repwdDivcmt').css({'font-size':'5pt'}); 
+<<<<<<< HEAD
+=======
+			$('#repwdDivcmt').css({'color':'red'}); 
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 			$('#repwdDiv').css({'color':'red'}); 
 		}else {
 			$('#repwdDivcmt').html(""); 
@@ -186,6 +244,7 @@ $(function(){
       });
     
     });
+<<<<<<< HEAD
     $('a[href="#selectsize"]').on('click', function(){
 	    event.preventDefault();
 	    $('#footsize').val($(this).html());
@@ -193,5 +252,25 @@ $(function(){
     });
 });
     
+=======
+	
+    $('a[href="#selectsize"]').on('click', function(){
+    	event.preventDefault();
+	    $('#footsize').val($(this).html());
+    	$('a[href="#selectsize"]').css({"background-color":"white", "color":"black"});
+	    $(this).css({"background-color":"black", "color":"white"});
+    });
+    $('a[href="#ok"]').on('click', function(){
+	    $('.close-modal').trigger('click');
+    });
+    
+    
+    $('#joinBtn').click(function(){
+    	
+    	
+    });
+});
+	
+>>>>>>> 11458d4a6f31a80f99d51ab9ec393550765e9e9d
 </script>  
 
