@@ -38,16 +38,21 @@
     </div>
   </div>
 
-  <div>
-    <h3 class="mb-2 mt-3 inline-block font-extrabold">배송 방법</h3>
-    <div class="rounded-lg border border-gray-300">
-      <div class="inline-block"><img src=https://kream-phinf.pstatic.net/MjAyMTExMjlfMTQ4/MDAxNjM4MTc4MjI5NTk3.2phJLPtRvFqViNfhZu06HzNRiUBlT4cmZR4_Ukqsyesg.ikrfWOrL7WXCVO0Rqy5kMvOn3B2YpjLUj6RuJqosPX0g.PNG/a_8b54cbca40e945f4abf1ee24bdd031f7.png class="w-12 inline-block"></div>
-      <div class="inline-block">
-        <p class="text-sm font-semibold">일반배송</p>
-        <p class="text-sm text-gray-400">검수 후 배송 · 5-7일 내 도착 예정</p>
+  <div class="flex-initial">
+        <h3 class="mb- mt-3 font-extrabold">배송 방법</h3>
+        <div class="rounded-lg border-gray-300 flex items-center">
+          <div class="flex-none">
+            <img src=https://kream-phinf.pstatic.net/MjAyMTExMjlfMTQ4/MDAxNjM4MTc4MjI5NTk3.2phJLPtRvFqViNfhZu06HzNRiUBlT4cmZR4_Ukqsyesg.ikrfWOrL7WXCVO0Rqy5kMvOn3B2YpjLUj6RuJqosPX0g.PNG/a_8b54cbca40e945f4abf1ee24bdd031f7.png class="w-10 h-10">
+          </div>
+          <div class="text-sm items-center border-y w-full relative p-[18px] flex-1">
+            <p class="font-semibold">
+              <span>일반배송</span>
+              <span class="text-sm font-medium">3000원</span>
+            </p>
+            <p class="text-sm text-gray-400">검수 후 배송 · 5-7일 내 도착 예정</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 </div>
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
