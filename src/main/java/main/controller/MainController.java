@@ -15,7 +15,7 @@ public class MainController {
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("flowbite", true);
-		mav.setViewName("/index");
+		mav.setViewName("index");
 		
 		return mav;
 	}
