@@ -25,7 +25,7 @@
       </div>
       
       <div class="flex flex-row gap-3 rounded-3xl p-1 text-center mt-9">
-        <a id="buyPage" class="w-80 rounded-xl p-2 bg-red-500  align-middle text-sm">
+        <a id="buyBtn" href="#" class="w-80 rounded-xl p-2 bg-red-500  align-middle text-sm">
           <strong class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-1">
               <p class="text-base font-semibold text-white">150,000원</p>
@@ -33,8 +33,8 @@
             </div>
         </a>
     
-        <a id="buyPage" class="w-80 rounded-xl p-2 bg-green-500  align-middle text-sm">
-          <strong class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
+        <a id="sellBtn" href="#" class="w-80 rounded-xl p-2 bg-green-500  align-middle text-sm">
+          <strong class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">판매</strong>
             <div class="float-left ml-1">
               <p class="text-base font-semibold text-white">150,000원</p>
               <span class="float-left text-xs text-white ">즉시 판매가</span>
@@ -42,7 +42,7 @@
         </a>
        </div>
 
-          <a class="h-[60px] border-[1px] border-gray-300 flex items-center justify-center rounded-[10px] ">
+          <a class="h-[60px] border-[1px] border-gray-300 flex items-center justify-center rounded-[10px]">
             <svg class="w-5 h-5"></svg>
             <span>관심상품</span>
             <span class="font-semibold">10.2만</span>
@@ -95,3 +95,15 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$('#sellBtn').click(function(){
+	location.href="../sellPage/sellSize"
+});
+
+$('#buyBtn').click(function(){
+	location.href="../buyPage/buySize"
+});
+</script>
+

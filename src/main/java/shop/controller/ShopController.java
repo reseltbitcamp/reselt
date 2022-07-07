@@ -20,5 +20,17 @@ public class ShopController {
 		
 		return mav;
 	}
+	
+	@RequestMapping(value = "/shop/shopDetail", method = RequestMethod.GET)
+	public ModelAndView shopDetail() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/shopDetail.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
 }
 

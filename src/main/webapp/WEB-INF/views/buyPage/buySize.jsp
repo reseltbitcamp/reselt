@@ -76,7 +76,7 @@ $(function(){
     $('#nextBtn').show();
   })
 	$('#nextBtn').click(function(){
-		location.href="ReseltProject/buyPage/buyAgree"
+		location.href="./buyAgree"
 	})
 	
 })
