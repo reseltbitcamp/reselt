@@ -17,7 +17,7 @@ public class ShopController {
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("shopmain", "/WEB-INF/views/shop/shopmain.jsp");
 		mav.addObject("shopmenu", "/WEB-INF/views/shop/shopmenu.jsp");
-		mav.setViewName("/shopindex");
+		mav.setViewName("/shop/shopindex");
 		
 		return mav;
 	}
