@@ -38,7 +38,8 @@ public class SpringConfiguration {
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("member/dao/memberMapper.xml"),
-							new ClassPathResource("notice/dao/noticeMapper.xml"));
+							new ClassPathResource("notice/dao/noticeMapper.xml"),
+							new ClassPathResource("style/dao/styleMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject();
 	}
