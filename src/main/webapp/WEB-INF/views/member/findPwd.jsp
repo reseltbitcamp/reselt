@@ -23,22 +23,22 @@
         	<div class="mb-10">
 	            <p id="telDiv" class="text-xs font-bold">휴대폰 번호</p>
     	        <input id="tel" type="text" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
-       			<input id="telOk" type="text">
+       			<input id="telOk" type="hidden">
        			<div id="telDivcmt" ></div>
         	</div>
         	
         	<div class="mb-10">
             	<p id="emailDiv" class="text-xs font-bold">이메일 주소</p>
             	<input type="email" id="email" name="email" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
-       			<input id="emailOk" type="text">
+       			<input id="emailOk" type="hidden">
         		<div id="emailDivcmt" ></div>
         	</div>
         </form>
         </div>
     </div>
     
-    <div class="mb-10">
-        <input id="findPwdBtn" type="button" value="문자 발송하기" class="text-white block m-auto bg-gray-300 rounded-xl h-14 w-full"  >
+    <div id="BtnDiv" class="mb-10">
+        <input id="findPwdBtn" type="button" value="이메일 발송하기" class="text-white block m-auto bg-gray-300 rounded-xl h-14 w-full"  >
     </div>
     
 </div>
@@ -106,10 +106,44 @@ $(function(){
 	if ($('#emailOk').val() == "1" && $('#telOk').val() == "1"){
 		$('#findPwdBtn').css({"background-color":"black", "color":"white"});
 	 	//링크추가
-	 	
+		
+	
 	}else {
 		$('#findPwdBtn').css({"background-color":"rgb(209 213 219)", "color":"white"});
 	}
  	});
+ 	
+ 	
+ $('#findEmailBtn').click(function() {
+	 	alert('hi');
+		console.log(('$findEmailBtn').css('background-color'));
+		if($('$findEmailBtn').css('background-color') == "black" || $('$findEmailBtn').css('background-color') == "rgb(0, 0, 0)"){
+			
+			
+			$('<div/>').append('<input>', {'type' : 'text', 'id' : 'checkInput'}).appendTo('#BtnDiv');
+			const eamil = $('#email').val(); // 이메일 주소값 얻어오기!
+			console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
+			const checkInput = $('.mail-check-input') // 인증번호 입력하는곳 
+			
+			$.ajax({
+				type : 'get',
+				url : '<c:url value ="/user/mailCheck?email="/>'+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+				success : function (data) {
+					console.log("data : " +  data);
+					checkInput.attr('disabled',false);
+					code = data;
+					alert('인증번호가 전송되었습니다.');
+				},
+				error: function(e){
+					console.log(e);
+				}
+	}); // end ajax
+		}else {
+			console.log('회색');
+		}
+}); // end send eamil
 });
+
+
+
 </script>

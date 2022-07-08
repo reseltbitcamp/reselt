@@ -42,7 +42,7 @@
 
                 // 회원가입 혹은 로그인 시 처리하기 위한 페이지 입니다. 예를 들어 DB
                 /* 인증이 완료된후 /sample/main.html 페이지로 이동하라는것이다. 본인 페이로 수정해야한다. */
-                alert('잠깐');
+                //alert('잠깐');
                 location.href = "http://localhost:8080/ReseltProject/";
                 } else {
                 console.log("callback 처리에 실패하였습니다.");

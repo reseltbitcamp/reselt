@@ -2,6 +2,7 @@ package member.service;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.PageContext;
 
@@ -38,6 +39,9 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public String loginTry(MemberDTO memberDTO) {
+		String check;
+		
+		
 		Map<String,String> map = new HashedMap<String, String>();
 		map.put("email", memberDTO.getEmail());
 		map.put("pwd", memberDTO.getPwd());
@@ -46,12 +50,11 @@ public class MemberServiceImpl implements MemberService {
 		memberDTO = memberDAO.loginTry(map);
 		
 		
-		String check;
+		
 		if(memberDTO == null) {
 			check = "0";
 		}else {
-			//세션 생성
-			session.setAttribute("email", memberDTO.getEmail());
+
 			check = "1";
 		}
 		return check;

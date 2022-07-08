@@ -17,7 +17,6 @@ public class MemberDAOMybatis implements MemberDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	@Override
-	
 	public void joinTry(MemberDTO memberDTO) {
 		sqlSession.insert("memberSQL.joinTry", memberDTO);
 	}
