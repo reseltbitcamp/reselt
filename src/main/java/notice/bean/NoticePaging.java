@@ -9,7 +9,7 @@ import lombok.Data;
 public class NoticePaging {
 	private int currentPage; //현재페이지
 	private int pageBlock; //[이전][1][2][3][다음]
-	private int pageSize; //1페이지당 5개씩
+	private int pageSize; //1페이지당 10개씩
 	private int totalA; //총글수
 	private StringBuffer pagingHTML;
 	

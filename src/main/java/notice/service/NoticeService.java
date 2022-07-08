@@ -11,6 +11,6 @@ public interface NoticeService {
 
 	public Map<String, Object> getNoticeList(String pg);
 	
-//	public NoticePaging getNoticePaging(String pg);
+	public NoticePaging getNoticePaging(String pg);
 
 }
