@@ -51,31 +51,31 @@
 </div>
 <!-- Showcase -->
 <div id="showcase1" class="mb-4 mx-[32px] flex flex-row gap-4 text-center justify-center">
-  <a href="#" class="flex-initial">
+  <a href="#" class="">
     <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_01.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">뉴 트렌딩</p>
   </a>
-  <a href="#" class="flex-initial">
+  <a href="#" class="">
     <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_02.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">남성 추천</p>
   </a>
-  <a href="#" class="flex-initial">
+  <a href="#" class="">
     <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_03.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">여성 추천</p>
   </a>
-  <a href="#" class="flex-initial">
+  <a href="#" class="">
     <div class=" w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_04.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">골프</p>
   </a>
-  <a href="#" class="flex-initial">
+  <a href="#" class="">
     <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_05.jpg" class="object-contain object-center rounded-xl">
     </div>
@@ -83,32 +83,32 @@
   </a>
 </div>
 <div id="showcase2" class="mx-[32px] mb-[50px] flex flex-row gap-4 text-center justify-center">
-  <a href="#">
-    <div class="w-56 h-24 flex-initial">
+  <a href="#" class="">
+    <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_06.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">오늘의 코디</p>
   </a>
-  <a href="#">
-    <div class="w-56 h-24 flex-initial">
+  <a href="#" class="">
+    <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_07.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">여행 컬렉션</p>
   </a>
-  <a href="#">
-    <div class="w-56 h-24 flex-initial">
+  <a href="#" class="">
+    <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_08.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">7월 럭키드로우</p>
   </a>
-  <a href="#">
-    <div class="w-56 h-24 flex-initial">
+  <a href="#" class="">
+    <div class="w-56 h-24 ">
       <img src="/ReseltProject/img/index/showcase_09.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">빠른배송</p>
   </a>
-  <a href="#">
-    <div class="w-56 h-24 flex-initial">
+  <a href="#" class="">
+    <div class="w-56 h-24">
       <img src="/ReseltProject/img/index/showcase_10.jpg" class="object-contain object-center rounded-xl">
     </div>
     <p class="text-center text-sm pt-2">누구나 창고보관</p>
