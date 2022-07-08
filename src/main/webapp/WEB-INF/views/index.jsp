@@ -57,7 +57,6 @@
       <!-- Flowbite Script-->
       <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     </c:if>
-    <script src="/ReseltProject/js/main/main.js"></script>
   </body>
   
     
