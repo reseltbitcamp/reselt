@@ -5,17 +5,18 @@
 <mapper namespace="memberSQL">
 
 <!-- 회원가입  -->
-<insert id="joinForm" parameterType="member">
+<insert id="joinTry" parameterType="member">
 	insert into members values(
 								id_seq.nextval,
 								#{email},
-								#{pwd},
-								#{footsize},
-								'',
-								'',
-								'',
+								#{pwd, jdbcType=VARCHAR},
+								#{footsize, jdbcType=VARCHAR},
+								#{name,jdbcType=VARCHAR},
+								#{tel,jdbcType=VARCHAR},
+								#{address,jdbcType=VARCHAR},
 								sysdate,
-								'')
+								'',
+								#{snslogin, jdbcType=INTEGER)
 </insert>
 
 <!-- 이메일 중복체크  -->
