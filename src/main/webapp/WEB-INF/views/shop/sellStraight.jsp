@@ -12,7 +12,6 @@
         </div>
       </div>
 
-      <div class="w-auto">
         <ul class="flex h-20 w-full border-t">
           <li class="mx-4 mb-4 mt-5 h-10 w-80 border-r border-r-gray-400 text-center align-top">
             <p class="text-xs text-gray-400">즉시 구매가</p>
@@ -35,7 +34,7 @@
             </li>
           </ul>
         </div>
-
+			<div class="sellBid">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
           <p class="float-right text-xl font-semibold">150,000 원</p>
@@ -57,12 +56,13 @@
             <dd class="float-right inline-block text-sm">선불 · 판매자부담</dd>
           </dl>
         </div>
-      </div>
       <div class="border-t">
         <p class="mt-3 text-sm font-semibold">정산금액</p>
         <button href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 판매 계속</button>
       </div>
     </div>
+   </div>
+
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
