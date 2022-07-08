@@ -1,5 +1,8 @@
 package member.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +21,8 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	@Autowired
+	private HttpServletRequest request;
 	
 	@GetMapping(value = "login")
 	public ModelAndView login() {
@@ -78,8 +83,14 @@ public class MemberController {
 	
 	@PostMapping(value = "loginTry")
 	@ResponseBody
-	public String loginForm(@ModelAttribute MemberDTO memberDTO) {
+	public String loginForm(@ModelAttribute MemberDTO memberDTO, HttpServletRequest request) {
 		String check = memberService.loginTry(memberDTO);
+		
+		//세션 생성
+		HttpSession session = request.getSession(true);
+		session.setAttribute("email", memberDTO.getEmail());
+		System.out.println(session.isNew());
+		
 		
 		return check; 
 	}

@@ -1,5 +1,7 @@
 package member.service;
 
+import javax.servlet.http.HttpServletRequest;
+
 import member.bean.MemberDTO;
 
 public interface MemberService {
