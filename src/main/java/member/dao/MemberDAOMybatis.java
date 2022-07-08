@@ -18,6 +18,7 @@ public class MemberDAOMybatis implements MemberDAO {
 	private SqlSession sqlSession;
 	@Override
 	public void joinTry(MemberDTO memberDTO) {
+		System.out.println("memberDTO = " + memberDTO);
 		sqlSession.insert("memberSQL.joinTry", memberDTO);
 	}
 	
@@ -28,8 +29,9 @@ public class MemberDAOMybatis implements MemberDAO {
 	
 	@Override
 	public MemberDTO loginTry(Map<String, String> map) {
-		
+	
 		return sqlSession.selectOne("memberSQL.loginTry",map);
+
 	}
 	
 	

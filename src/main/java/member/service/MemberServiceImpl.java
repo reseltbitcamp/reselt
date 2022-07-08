@@ -40,7 +40,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String loginTry(MemberDTO memberDTO) {
 		String check;
-		
+
 		
 		Map<String,String> map = new HashedMap<String, String>();
 		map.put("email", memberDTO.getEmail());
@@ -49,6 +49,7 @@ public class MemberServiceImpl implements MemberService {
 		
 		memberDTO = memberDAO.loginTry(map);
 		
+		session.setAttribute("email", memberDTO.getEmail());
 		
 		
 		if(memberDTO == null) {

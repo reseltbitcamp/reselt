@@ -119,12 +119,12 @@ $(function(){
 					pwd : $('#pwd').val(),
 					},
 				success: function(data){
-					//alert('회원가입 정보 전달 성공');
+					alert(data);
 					if(data == "0"){
 						alert("이메일 또는 비밀번호를 확인해주세요.");
 					}else {
 						//alert(JSON.stringify(data));
-						location.href="/ReseltProject/"
+						//location.href="/ReseltProject/"
 					}
 				},
 				error: function(e){
