@@ -52,7 +52,7 @@ $(function(){
 				$('#telDiv').css({'color':'black'}); 
 				$('#findEmailBtn').css({"background-color":"black", "color":"white"});
 				//링크 추가 필요
-		
+
 			}else{
 				$('#telDivcmt').html('올바른 휴대폰 번호를 입력하세요.');
 				$('#telDivcmt').css({'font-size':'5pt'}); 

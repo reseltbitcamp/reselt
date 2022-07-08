@@ -227,10 +227,15 @@ $(function(){
 			success: function(data){
 				//alert(data);
 				if(data == '0'){
-					$('#emailDivcmt').html("");
-  	          	    $('#emailDiv').css('color' , 'black');           
-				    if($('#pwd').val() == $('#repwd').val() && $('#pwd').val() != ''){
+  					if(!reg_email.test($('#email').val())){
+						$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요.");
+  					}           
+  					else if($('#pwd').val() == $('#repwd').val() && $('#pwd').val() != ''){
 						$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+				    }else {
+				    	
+  	          	  	  $('#emailDiv').css('color' , 'black');
+						$('#emailDivcmt').html("");
 				    }
 				}else if(data == '1') {
 					$('#emailDivcmt').css({'font-size':'5pt'}); 
