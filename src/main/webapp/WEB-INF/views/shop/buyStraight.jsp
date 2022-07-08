@@ -88,7 +88,7 @@ $('#buyBid').click(function(){
   $('#bid_bg').addClass("bg-red-500 text-white")
   $('#bidBuy').show();
   $('#bidDiv').show();
-
+	$('#centerText').text("구매 입찰하기")
   $('#price').removeAttr("readonly");
   $('#price').val("");
 });
@@ -100,7 +100,7 @@ $('#buyStraight').click(function(){
   $('#bid_bg').removeClass("bg-red-500 text-white")
   $('#bidBuy').hide();
   $('#bidDiv').hide();
-
+  $('#centerText').text("즉시 구매하기")
   $('#price').attr("readonly");
   $('#price').val("150000");
 })

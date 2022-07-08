@@ -136,4 +136,3 @@ $('#agreeBtn').click(function(){
 	location.href="./buyStraight"
 });
 </script>
-</html>

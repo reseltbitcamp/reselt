@@ -49,8 +49,7 @@
 		</ul>
 
 		<div id="nextBtn" class="text-center">
-			<button
-				class="border m-4 bg-green-400 rounded-xl text-white  w-3/4 h-14">
+			<button id="PriceBtn" class="border m-4 bg-green-400 rounded-xl text-white  w-3/4 h-14">
 				<span id="price" class="text-lg ">price</span>
 			</button>
 		</div>
@@ -74,6 +73,10 @@ $(function(){
 
   $('.sizeBtn').click(function(){
     $('#nextBtn').show();
+  })
+  
+  $('#PriceBtn').click(function(){
+	  location.href="./sellAgree"
   })
 })
 </script>
