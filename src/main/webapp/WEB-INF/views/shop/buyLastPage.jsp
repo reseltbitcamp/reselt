@@ -40,11 +40,11 @@
 
   <div class="flex-initial">
         <h3 class="mb- mt-3 font-extrabold">배송 방법</h3>
-        <div class="rounded-lg border-gray-300 flex items-center">
+        <div class="rounded-lg border-gray-300 flex items-center mt-3">
           <div class="flex-none">
             <img src=https://kream-phinf.pstatic.net/MjAyMTExMjlfMTQ4/MDAxNjM4MTc4MjI5NTk3.2phJLPtRvFqViNfhZu06HzNRiUBlT4cmZR4_Ukqsyesg.ikrfWOrL7WXCVO0Rqy5kMvOn3B2YpjLUj6RuJqosPX0g.PNG/a_8b54cbca40e945f4abf1ee24bdd031f7.png class="w-10 h-10">
           </div>
-          <div class="text-sm items-center border-y w-full relative p-[18px] flex-1">
+          <div class="text-sm items-center border-y w-full relative p-[9px] flex-1">
             <p class="font-semibold">
               <span>일반배송</span>
               <span class="text-sm font-medium">3000원</span>
@@ -99,7 +99,7 @@
   </div>
 
   <div class="relative mb-4 cursor-pointer">
-    <a class="flex h-14 w-full items-center rounded-lg border border-gray-200 text-gray-400">카드를 등록해주세요 <span class="text-sm text-gray-400 font-bold"> ></span>
+    <a class="paymentOption flex h-14 w-full items-center rounded-lg border border-gray-200 text-gray-400">카드를 등록해주세요 <span class="text-sm text-gray-400 font-bold"> ></span>
     </a>
   </div>
 
@@ -109,35 +109,35 @@
   </div>
 
   <div class="flex flex-wrap justify-between float-left">
-    <div class="flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
+    <div class="paymentOption flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
       <div class="pr-2">
       <p class="ml-2">신용/체크카드</p>
       </div>
     </div>
     
-    <div class="flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
+    <div class="paymentOption flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
       <div>
       <p class="ml-2 block">계좌이체</p>
       <p class="ml-2 text-xs text-red-500 block">최대 5만포인트 적립</p>
       </div>
     </div>
 
-    <div class="flex h-full text-sm cursor-pointer items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
+    <div class="paymentOption flex h-full text-sm cursor-pointer items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
       <p class="ml-2">네이버페이</p>
       <img src="https://kream.co.kr/_nuxt/img/buy_pay_npay.425fb05.png" class="w-12 ml-auto mr-2"></img>
     </div>
 
-    <div class="flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
+    <div class="paymentOption flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
       <p class="ml-2">카카오페이</p>
       <img src="https://kream.co.kr/_nuxt/img/buy_pay_kakaopay.b4ed775.png"class="w-12 ml-auto mr-2"></img>
     </div>
 
-    <div class="flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
+    <div class="paymentOption flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
       <p class="ml-2">토스</p>
       <img src="https://kream.co.kr/_nuxt/img/buy_pay_tosspay.0dabd99.png"class="w-12 ml-auto mr-2"></img>
     </div>
 
-    <div class="flex cursor-pointer h-full text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
+    <div class="paymentOption flex cursor-pointer h-full text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
       <p class="ml-2">페이코</p>
       <img src="https://kream.co.kr/_nuxt/img/buy_pay_payco.af9c8b7.png"class="w-12 ml-auto mr-2"></img>
     </div>
@@ -194,7 +194,7 @@
               <input id="firstAgree" type="checkbox" class="h-5 w-5" />
             </li>
           </label>
-
+	
           <label>
             <li class="flex items-center border-b border-b-gray-100 py-4 cursor-pointer">
               <div class="flex-1">
@@ -235,3 +235,73 @@
   </div>
   <input type="button" value="결제하기" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$('#firstAgree').click(function(){
+	var check1 = $('#firstAgree').prop("checked");
+	var check2 = $('#secondAgree').prop("checked");
+	var check3 = $('#thirdAgree').prop("checked");
+	var check4 = $('#fourthAgree').prop("checked");
+	if(check1 == true && check2 == true && check3 == true && check4 == true){
+	$('#agreeBtn').removeAttr("disabled");
+    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
+    $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled",true);
+	}
+})
+
+$('#secondAgree').click(function(){
+	var check1 = $('#firstAgree').prop("checked");
+	var check2 = $('#secondAgree').prop("checked");
+	var check3 = $('#thirdAgree').prop("checked");
+	var check4 = $('#fourthAgree').prop("checked");
+	if(check1 == true && check2 == true && check3 == true && check4 == true){
+	$('#agreeBtn').removeAttr("disabled");
+    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
+    $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled",true);
+	}
+})
+
+$('#thirdAgree').click(function(){
+	var check1 = $('#firstAgree').prop("checked");
+	var check2 = $('#secondAgree').prop("checked");
+	var check3 = $('#thirdAgree').prop("checked");
+	var check4 = $('#fourthAgree').prop("checked");
+  if(check1 == true && check2 == true && check3 == true && check4 == true){
+	$('#agreeBtn').removeAttr("disabled");
+    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
+    $('#agreeBtn').addClass("cursor-pointer")
+	  } else {
+		  $('#agreeBtn').attr("disabled",true);
+		}
+})
+
+$('#fourthAgree').click(function(){
+	var check1 = $('#firstAgree').prop("checked");
+	var check2 = $('#secondAgree').prop("checked");
+	var check3 = $('#thirdAgree').prop("checked");
+	var check4 = $('#fourthAgree').prop("checked");
+  if(check1 == true && check2 == true && check3 == true && check4 == true){
+	$('#agreeBtn').removeAttr("disabled");
+    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
+    $('#agreeBtn').addClass("cursor-pointer")
+	  } else {
+		  $('#agreeBtn').attr("disabled",true);
+		}
+})
+ 
+$('.paymentOption').each(function(index){
+    $(this).attr('paymentOption-index',index);
+    
+  }).click(function(){
+    var index = $(this).attr('paymentOption-index');
+    
+    $('.paymentOption[paymentOption-index='+ index + ']').addClass('border-2 border-black');
+    $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
+  })
+
+</script>

@@ -96,6 +96,8 @@ $('#firstAgree').click(function(){
 		$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
+	} else{
+		$('#agreeBtn').attr("disabled", true);
 	}
 })
 
@@ -110,6 +112,8 @@ $('#secondAgree').click(function(){
 		$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled", true);
 	}
 })
 
@@ -124,6 +128,8 @@ $('#thirdAgree').click(function(){
 		$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled", true);
 	}
 })
 
@@ -138,6 +144,8 @@ $('#fourthAgree').click(function(){
 		$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled", true);
 	}
 })
 
@@ -152,7 +160,12 @@ $('#fifthAgree').click(function(){
 		$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
+	} else {
+		$('#agreeBtn').attr("disabled", true);
 	}
+	$('#agreeBtn').click(function(){
+		location.href="./sellStraight"
+	})
 })
 </script>
 </html>

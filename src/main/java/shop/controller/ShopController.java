@@ -84,7 +84,7 @@ public class ShopController {
 	@RequestMapping(value = "/buyLastPage", method = RequestMethod.GET)
 	public ModelAndView buyLastPage() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyStraightMenu.jsp");
+		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buyLastPage.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
