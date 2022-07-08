@@ -184,3 +184,4 @@
     <img src="/ReseltProject/img/index/collection_01.jpg" class="h-[480px] inline">
   </a>
 </div>
+<script src="/ReseltProject/js/main/main.js"></script>
