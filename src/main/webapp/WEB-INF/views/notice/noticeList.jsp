@@ -29,8 +29,10 @@
     <div class="title text-2xl tracking-[-.36px] border-b-black border-solid border-b-[3px]">
       <h3 class="leading-7 font-bold mb-3">공지사항</h3>
     </div>
-  </div>
+    <table id="noticeListTable">
 	<!-- 동적처리 -->
+    </table>
+  </div>
 </div>
 <div id="noticePagingDiv"></div>
 
@@ -52,13 +54,14 @@
 						
 					})).append($('<a/>', {
 						href:'#',
-						text: items.title
-					})).appendTo($('#content_area'));
+						text: items.title,
+						class: 'border-b-[#ebebeb] border-b-[1px] border-solid pb-3 cursor-pointer flex'
+					})).appendTo($('#noticeListTable'));
 
 				}); //each
 
 				//페이징
-// 				$('#noticePagingDiv').html(data.noticePaging.pagingHTML);
+				$('#noticePagingDiv').html(data.noticePaging.pagingHTML);
 			}, //data
 
 			error: function(e){

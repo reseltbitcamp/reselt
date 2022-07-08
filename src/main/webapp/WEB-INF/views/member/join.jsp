@@ -34,9 +34,9 @@
          	<div id="repwdDivcmt" class="mb-10"></div>
           </div>
           <div class="cursor-pointer"><h3 class="text-xs font-bold ">신발사이즈</h3>
-            <input id="footsize" type="text" autocomplete="off" class="mb-10 cursor-pointer focus:outline-none disabled:disable" placeholder="선택하세요" readonly="readonly">
+            <input id="footsize" type="text" autocomplete="off" class="mb-10 cursor-pointer focus:outline-none disabled:disable w-20" placeholder="선택하세요" readonly="readonly">
             <a href="#size" class="btn">
-              <button type="button" value="" class="float-right ml-5">
+              <button id="footsizeBtn" type="button" value="" class="float-right ml-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                 </svg>
@@ -64,7 +64,7 @@
             [선택] 광고성 정보 수신에 모두 동의합니다.
           </label>
           <button id="plusBtn2" type="button" class="float-right">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+            <svg id="sizeSvg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
             </svg>
             </button>
@@ -113,7 +113,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script>
 $(function(){
-    //유효성 검사 
+    $('#footsize').click(function(){
+		$('#footsizeBtn').trigger('click');
+	});
+
+
+
+	//유효성 검사 
 	var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
 	    
 	$('#emailDiv').css('color' , 'black');

@@ -18,4 +18,5 @@ public class MemberDTO {
 	private String address;
 	private DATE created_at;
 	private DATE update_at;
+	private int snsLogin;
 }
