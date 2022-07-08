@@ -50,78 +50,81 @@
   </div>
 </div>
 <!-- Showcase -->
-<div id="showcase1" class="mb-4 mx-[32px] flex flex-row gap-4 text-center justify-center">
-  <a href="#" class="">
-    <div class="w-56 h-24">
+<div id="showcase1" class="mb-10 mx-[32px] flex flex-row gap-4 text-center justify-center">
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_01.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">뉴 트렌딩</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24">
+      <p class="text-center text-sm pt-2">뉴 트렌딩</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_02.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">남성 추천</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24">
+      <p class="text-center text-sm pt-2">남성 추천</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_03.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">여성 추천</p>
-  </a>
-  <a href="#" class="">
-    <div class=" w-56 h-24">
+      <p class="text-center text-sm pt-2">여성 추천</p>
+    </a>
+  </div>
+  <div class=" w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_04.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">골프</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24">
+      <p class="text-center text-sm pt-2">골프</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_05.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">Luxury Bag</p>
-  </a>
+      <p class="text-center text-sm pt-2">Luxury Bag</p>
+    </a>
+  </div>
 </div>
+<div class="h-6"></div>
 <div id="showcase2" class="mx-[32px] mb-[50px] flex flex-row gap-4 text-center justify-center">
-  <a href="#" class="">
-    <div class="w-56 h-24">
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_06.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">오늘의 코디</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24">
+      <p class="text-center text-sm pt-2">오늘의 코디</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_07.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">여행 컬렉션</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24">
+      <p class="text-center text-sm pt-2">여행 컬렉션</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_08.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">7월 럭키드로우</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24 ">
+      <p class="text-center text-sm pt-2">7월 럭키드로우</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_09.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">빠른배송</p>
-  </a>
-  <a href="#" class="">
-    <div class="w-56 h-24">
+      <p class="text-center text-sm pt-2">빠른배송</p>
+    </a>
+  </div>
+  <div class="w-56 h-24 shrink">
+    <a href="#">
       <img src="/ReseltProject/img/index/showcase_10.jpg" class="object-contain object-center rounded-xl">
-    </div>
-    <p class="text-center text-sm pt-2">누구나 창고보관</p>
-  </a>
+      <p class="text-center text-sm pt-2">누구나 창고보관</p>
+    </a>
+  </div>
 </div>
+
 <!-- Just Dropped (발매상품) -->
 <div id="justdropped" class="mx-[32px] mb-[50px] flex flex-col items-center">
   <div id="justdroppedTitle" class="text-center">
     <p class="text-xl font-bold">JUST DROPPED</p>
     <p class="text-sm text-slate-500">발매 상품</p>
   </div>
+  <!-- Just Dropped (발매상품) Items -->
   <div id="justdroppedItems" class="my-5 flex felx-row gap-5 justify-center">
-    <a href="#" id="productBox" class="flex-initial">
+    <a href="#" id="productBox" class="">
       <div id="productImg">
         <div class="bg-[#ebf0f5] rounded-xl">
           <img src="/ReseltProject/img/index/shoe_01.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
@@ -134,7 +137,7 @@
         <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
       </div>
     </a>
-    <a href="#" id="productBox" class="flex-initial">
+    <a href="#" id="productBox" class="">
       <div id="productImg">
         <div class="bg-[#f6eeed] rounded-xl">
           <img src="/ReseltProject/img/index/shoe_02.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
@@ -147,7 +150,7 @@
         <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
       </div>
     </a>
-    <a href="#" id="productBox" class="flex-initial">
+    <a href="#" id="productBox" class="">
       <div id="productImg">
         <div class="bg-[#ebf0f5] rounded-xl">
           <img src="/ReseltProject/img/index/shoe_03.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
@@ -160,7 +163,7 @@
         <p class="-mt-1 text-xs text-[#222222]">즉시 구매가</p>
       </div>
     </a>
-    <a href="#" id="productBox" class="flex-initial">
+    <a href="#" id="productBox" class="">
       <div id="productImg">
         <div class="bg-[#f6eeed] rounded-xl">
           <img src="/ReseltProject/img/index/shoe_04.png" class="w-[282px] h-[282px] object-contain object-center scale-90">
