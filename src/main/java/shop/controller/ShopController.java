@@ -17,11 +17,22 @@ public class ShopController {
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("shopmain", "/WEB-INF/views/shop/shopmain.jsp");
 		mav.addObject("shopmenu", "/WEB-INF/views/shop/shopmenu.jsp");
-		mav.setViewName("/shopindex");
+		mav.setViewName("/shop/shopindex");
 		
 		return mav;
 	}
 	
+	@RequestMapping(value = "/shopDetailRevising", method = RequestMethod.GET)
+	public ModelAndView shopDetailRevising() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/shopDetailRevising.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
 	public ModelAndView shopDetail() {
 		ModelAndView mav = new ModelAndView();

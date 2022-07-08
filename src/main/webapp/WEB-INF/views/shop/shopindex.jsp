@@ -35,7 +35,7 @@
       <jsp:include page="${menu }" />
       </header>
 
-    <!-- Body -->
+    <!-- Body -->3
     <main id="body" class="relative">
       <jsp:include page="${shopmenu }" />
 
