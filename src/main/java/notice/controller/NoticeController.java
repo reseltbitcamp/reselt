@@ -50,4 +50,33 @@ public class NoticeController {
 	public void noticeWrite(@ModelAttribute NoticeDTO noticeDTO) {
 		noticeService.noticeWrite(noticeDTO);
 	}
+	
+	@GetMapping(value="noticeList")
+	public ModelAndView noticeList(@RequestParam(required = false, defaultValue = "1") String pg) {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.addObject("pg", pg);
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("display", "/WEB-INF/views/notice/noticeList.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
+	@PostMapping(value="getNoticeList")
+	@ResponseBody
+	public Map<String, Object> getNoticeList(@RequestParam(required = false, defaultValue = "1") String pg){
+		return noticeService.getNoticeList(pg);
+	}
 }
+
+
+
+
+
+
+
+
+
+
