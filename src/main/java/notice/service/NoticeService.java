@@ -13,4 +13,6 @@ public interface NoticeService {
 	
 	public NoticePaging getNoticePaging(String pg);
 
+	public Map<String, Object> getNoticeView(String seq);
+
 }

@@ -63,4 +63,21 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticePaging;
 	}
 
+	@Override
+	public Map<String, Object> getNoticeView(String seq) {
+		NoticeDTO noticeDTO = noticeDAO.getNoticeView(seq);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("noticeDTO", noticeDTO);
+		
+		
+		return map;
+	}
+
 }
+
+
+
+
+
+
