@@ -3,7 +3,6 @@ package style.controller;
 import java.io.File;
 import java.io.IOException;
 
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +24,6 @@ import style.service.StyleService;
 public class StyleController {
 	@Autowired
 	private StyleService styleService;
-	
-//	@ModelAttribute("list")
-//	public List<S> list() {
-//		ModelAndView list = new ModelAndView();
-//		list.addObject("list", styleService.getStyleList());
-//		return list;
-//	}
 	
 	@RequestMapping(value="styleList")
 	public ModelAndView styleList() {
