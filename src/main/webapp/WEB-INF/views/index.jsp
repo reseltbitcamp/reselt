@@ -45,12 +45,10 @@
       <c:if test="${empty display }">
         <jsp:include page="${main }" />
       </c:if>
-      
       <c:if test="${not empty display }">
         <jsp:include page="${display }" />
       </c:if>
     </main>
-
     <!-- Footer -->
     <jsp:include page="${footer }" />
     <c:if test="${flowbite == true }">
@@ -58,6 +56,4 @@
       <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     </c:if>
   </body>
-  
-    
 </html>
