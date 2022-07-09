@@ -1,15 +1,31 @@
 package style.controller;
 
+import java.io.File;
+import java.io.IOException;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+
+import style.bean.StyleDTO;
+import style.service.StyleService;
 
 @Controller
 @RequestMapping(value="style")
 public class StyleController {
-
+	@Autowired
+	private StyleService styleService;
+	
 	@GetMapping(value="styleList")
 	public ModelAndView styleList() {
 		ModelAndView mav = new ModelAndView();
@@ -30,5 +46,28 @@ public class StyleController {
 		mav.setViewName("/index");
 		
 		return mav;
+	}
+
+	@PostMapping(value="styleWriteForm")
+	@ResponseBody
+	public void styleWriteForm(@ModelAttribute StyleDTO styleDTO,
+								@RequestParam MultipartFile img,
+								HttpSession session) {
+		
+		//실제폴더
+		String filePath = session.getServletContext().getRealPath("/assets/img/styleImage");
+		String fileName = img.getOriginalFilename();
+		
+		File file = new File(filePath, fileName);
+		
+		try {
+			img.transferTo(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		styleDTO.setStyle_image(fileName);
+		
+		styleService.styleWriteForm(styleDTO);
 	}
 }

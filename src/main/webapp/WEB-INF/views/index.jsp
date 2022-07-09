@@ -30,7 +30,12 @@
           <a href="/ReseltProject/notice/noticeList" class="m-2">고객센터</a>
           <a href="#" class="m-2">관심상품</a>
           <a href="/ReseltProject/myPage/myMain" class="m-2">마이페이지</a>
-          <a href="/ReseltProject/member/login" class="m-2">로그인</a>
+          <c:if test="${not empty email}">
+            <a href="/ReseltProject/member/logout" class="m-2">로그아웃</a>
+          </c:if>
+          <c:if test="${empty email}">
+            <a href="/ReseltProject/member/login" class="m-2">로그인</a>
+          </c:if>
         </div>
       </div>
       <jsp:include page="${menu }" />
@@ -40,12 +45,10 @@
       <c:if test="${empty display }">
         <jsp:include page="${main }" />
       </c:if>
-      
       <c:if test="${not empty display }">
         <jsp:include page="${display }" />
       </c:if>
     </main>
-
     <!-- Footer -->
     <jsp:include page="${footer }" />
     <c:if test="${flowbite == true }">
@@ -53,6 +56,4 @@
       <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     </c:if>
   </body>
-  
-    
 </html>

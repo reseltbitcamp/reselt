@@ -20,28 +20,49 @@
           </li>
 
           <li class="mx-4 mb-4 mt-5 h-10 w-80 text-center">
-            <p class="buyStraight text-xs text-gray-400">즉시 판매가</p>
+            <p class="text-xs text-gray-400">즉시 판매가</p>
             <span class="font-semibold">150,000원</span>
           </li>
         </ul>
 
         <div>
           <ul class="flex h-12 rounded-3xl border bg-gray-100 p-1 text-center">
-            <li id="bid_bg" class="w-1/2 rounded-3xl p-2 text-center align-middle text-sm">
+            <li id="buyBid_bg" class="w-1/2 rounded-3xl p-2 text-center align-middle text-sm">
               <a id="buyBid" href="#" class="">판매 입찰</a>
             </li>
-            <li id="straight_bg" class="w-1/2 rounded-3xl bg-red-500 p-2 text-center align-middle text-sm font-medium text-white">
+            <li id="buyStraight_bg" class="w-1/2 rounded-3xl bg-red-500 p-2 text-center align-middle text-sm font-medium text-white">
               <a id="buyStraight" href="#" class="">즉시 구매</a>
             </li>
           </ul>
         </div>
-
+        
+      <!-- buyStraightDiv -->
+			<div id="buyStraightDiv">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
-          <p class="float-right text-xl font-semibold">원</p>
-          <input type="text" id="price" class="float-right text-right text-xl font-semibold outline-none" value="150,000" readonly>
+          <p class="float-right text-xl font-semibold">150,000 원</p>
         </div>
-      </div>
+   			
+   			<div class="mb-9 w-auto">
+          <dl class="flex justify-between">
+            <dt class="mt-2 text-center itesm text-gray-400">총 결제금액은 다음 화면에서 계산 됩니다.</dt>
+          </dl>
+        </div>
+
+	      <div class="border-t">
+	        <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
+	        <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
+	        <button id="straightBuyBtn" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
+	      </div>
+      </div> 
+			
+			<!-- buyBidDiv -->			
+      <div id="buyBidDiv" class="border-t">
+        <div class="mt-5 h-14 border-b-2">
+          <p class="align-top text-xs font-bold text-black">구매 희망가</p>
+          <p class="float-right text-xl font-semibold">원</p>
+          <input type="text" class="float-right text-right text-xl font-semibold outline-none" placeholder="희망가 입력"/>
+        </div>
 
         <div class="mb-9 w-auto">
           <dl class="flex justify-between">
@@ -49,60 +70,50 @@
           </dl>
         </div>
 
-        <div id="bidDiv" class="border-t">
-          <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
-          <p id="bidDate" class="text-xs">3일(2022/07/07)</p>
-          <div class="text-center">
-            <button id="dateBtn1" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
-            <button id="dateBtn3" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
-            <button id="dateBtn7" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">7일</button>
-            <button id="dateBtn30" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">30일</button>
-            <button id="dateBtn60" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">60일</button>
-          </div>
-          
-          <div id="bidBuy" class="border-t">
-            <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
-            <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-            <input id="bidBuyBtn" type="button" href="#" class="w-full text-white font-semibold cursor-pointer disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
-          </div>
+        <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
+        <p class="text-xs">시간</p>
+        <div class="text-center">
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">7일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">30일</button>
+          <button id="dateBtn" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">60일</button>
         </div>
-
-      <div id="straightBuy" class="border-t">
-        <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
-        <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-        <button id="straightBuyBtn" href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
+        
+        <div class="border-t">
+          <p class="text-sm font-semibold inline-block mt-4">총 결제 금액</p>
+          <input type="button" class="bg-black w-full text-white font-semibold h-14 mt-3 rounded-2xl"value="구매 입찰 계속">
+        </div>
       </div>
     </div>
+	</div>
 </div>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
-  $('#bidDiv').hide();
+  $('#buyBidDiv').hide();
 })
 
 
-$('#buyBid').click(function(){
-  $('#straightBuy').hide()
-  $('#straight_bg').removeClass('bg-red-500 text-white')
-
-  $('#bid_bg').addClass("bg-red-500 text-white")
-  $('#bidBuy').show();
-  $('#bidDiv').show();
-	$('#centerText').text("구매 입찰하기")
-  $('#price').removeAttr("readonly");
-  $('#price').val("");
+$('#buyBid_bg').click(function(){
+  $('#buyBidDiv').show()
+  $('#buyStraightDiv').hide();
+  
+  $('#buyStraight_bg').removeClass("bg-red-500 text-white font-semibold")
+  $('#buyBid_bg').addClass("bg-red-500 text-white font-semibold")
+	
+  $('#centerText').text("구매 입찰하기")
 });
 
-$('#buyStraight').click(function(){
-  $('#straightBuy').show()
-  $('#straight_bg').addClass('bg-red-500 text-white')
-  $('#price').attr("readonly");
-  $('#bid_bg').removeClass("bg-red-500 text-white")
-  $('#bidBuy').hide();
-  $('#bidDiv').hide();
+$('#buyStraight_bg').click(function(){
+  $('#buyBidDiv').hide()
+  $('#buyStraightDiv').show()
+  
+  $('#buyStraight_bg').addClass('bg-red-500 text-white font-semibold')
+  
+  $('#buyBid_bg').removeClass("bg-red-500 text-white font-semibold")
   $('#centerText').text("즉시 구매하기")
-  $('#price').attr("readonly");
-  $('#price').val("150000");
 })
 
 $('.dateBtn').each(function(index){

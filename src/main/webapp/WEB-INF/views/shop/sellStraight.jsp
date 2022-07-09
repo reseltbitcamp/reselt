@@ -26,18 +26,47 @@
 
         <div>
           <ul class="flex h-12 rounded-3xl border bg-gray-100 p-1 text-center">
-            <li class="w-1/2 rounded-3xl p-2 text-center align-middle text-sm">
-              <a id="sellBid" href="#" class="">판매 입찰</a>
+            <li id="sellBid_bg" class="w-1/2 rounded-3xl p-2 text-center align-middle text-sm">
+              <a href="#" class="">판매 입찰</a>
             </li>
-            <li class="w-1/2 rounded-3xl bg-green-300 p-2 text-center align-middle text-sm font-medium text-white">
-              <a id="sellStraight" href="#" class="">즉시 판매</a>
+            <li id="sellStraight_bg" class="w-1/2 rounded-3xl bg-green-300 p-2 text-center align-middle text-sm font-medium text-white">
+              <a href="#" class="">즉시 판매</a>
             </li>
           </ul>
         </div>
-			<div class="sellBid">
+			<div id="sellStraightDiv">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
           <p class="float-right text-xl font-semibold">150,000 원</p>
+        </div>
+
+        <div class="mb-9 w-auto">
+          <dl class="flex justify-between">
+            <dt class="mt-2 text-xs text-gray-400">검수비</dt>
+            <dd class="float-right">무료</dd>
+          </dl>
+
+          <dl class="flex justify-between">
+            <dt class="mt-2 text-xs text-gray-400">수수료</dt>
+            <dd class="float-right text-sm">무료</dd>
+          </dl>
+
+          <dl class="flex justify-between">
+            <dt class="mt-2 text-xs text-gray-400">배송비</dt>
+            <dd class="float-right inline-block text-sm">선불 · 판매자부담</dd>
+          </dl>
+        </div>
+      <div class="border-t">
+        <p class="mt-3 text-sm font-semibold">정산금액</p>
+        <button id="sellStraightBtn" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 판매 계속</button>
+      </div>
+    </div>
+    
+    <div id="sellBidDiv">
+        <div class="mt-5 h-14 border-b-2">
+          <p class="align-top text-xs font-bold text-black">판매 희망가</p>
+          <p class="float-right text-xl font-semibold">원</p>
+          <input type="text" class="text-right float-right text-xl font-semibold" placeholder="희망가 입력" />
         </div>
 
         <div class="mb-9 w-auto">
@@ -53,27 +82,74 @@
 
           <dl class="flex justify-between">
             <dt class="mt-2 text-xs text-gray-400">배송비</dt>
-            <dd class="float-right inline-block text-sm">선불 · 판매자부담</dd>
+            <dd class="inline-block text-right text-sm">선불 · 판매자부담</dd>
           </dl>
         </div>
+
       <div class="border-t">
-        <p class="mt-3 text-sm font-semibold">정산금액</p>
-        <button href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 판매 계속</button>
+        <p class="my-5 text-sm font-semibold">입찰 마감기한</p>
+        <p class="text-xs">시간</p>
+        <div class="text-center">
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">1일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">3일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">7일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">30일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">60일</button>
+        </div>
+
+        <div class="border-t">
+          <p class="mt-3 text-sm font-semibold">정산금액</p>
+          <button id="sellBidBtn" class="mt-3 h-14 w-full rounded-2xl bg-black font-semibold cursor-not-allowed text-white" disabled>즉시 판매 계속</button>
+        </div>
       </div>
-    </div>
+		</div>
+    
    </div>
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-var Date = new Date()
-
-$('#')
-date.setDate(getDate()+ 100)
-$('#sellBid').click(function(){
-	location.href="#"
+$(function(){
+	$('#sellBidDiv').hide();
+})
+$('#sellBid_bg').click(function(){
+	$('#sellStraightDiv').hide();
+	$('#sellBidDiv').show();
+	$('#sellBid_bg').removeClass("bg-gray-100 text-black");
+	$('#sellBid_bg').addClass("bg-green-300 text-white font-semibold");
+	$('#centerText').text("판매 입찰하기")
+	
+	$('#sellStraight_bg').removeClass("bg-green-300 text-white font-semibold")
+	$('#sellStraight_bg').addClass("bg-gray-100 text-black");
 });
 
+$('#sellStraight_bg').click(function(){
+	$('#sellBidDiv').hide();
+	$('#sellStraightDiv').show();
+	$('#sellStraight_bg').removeClass("bg-gray-100 text-black");
+	$('#sellStraight_bg').addClass("bg-green-300 text-white font-semibold");
+	$('#centerText').text("즉시 판매하기")
+	$('#sellBid_bg').removeClass("bg-green-300 text-white font-semibold")
+	$('#sellBid_bg').addClass("bg-gray-100 text-black");
+})
+
+$('.dateBtn').each(function(index){
+    $(this).attr('dateBtn-index',index);
+    
+  }).click(function(){
+    var index = $(this).attr('dateBtn-index');
+    
+    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
+    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
+    $('#sellBidBtn').removeAttr("disabled");
+})
+ 
+$('#sellStraightBtn').click(function(){
+	location.href="./sellLastPage"	  
+})
+$('#sellBidBtn').click(function(){
+	location.href="./sellLastPage"
+})
 
 </script>
-</html>
+

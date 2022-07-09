@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="styleSQL">
+	<!-- style write 등록  -->
+	<insert id="styleWriteForm" parameterType="style">
+		insert into styles (seq, user_id, style_image, content, product_tag, style_date) 
+							values(3
+									, 'hong'
+									, #{style_image}
+									, #{content}
+									, #{product_tag}
+									, sysdate)
+	</insert>
+</mapper>

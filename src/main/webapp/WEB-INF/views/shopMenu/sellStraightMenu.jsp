@@ -10,7 +10,7 @@
   </div>
 
   <div class="font-semibold m-auto text-center inline-block w-1/3"> 
-    <p class="text-2xl">즉시 판매하기<p>
+    <p id="centerText" class="text-2xl">즉시 판매하기<p>
   </div>
 
   <div class="ml-auto text-right w-1/3  inline-block">
@@ -18,4 +18,3 @@
   </div>
      
   </div>
-</div>
