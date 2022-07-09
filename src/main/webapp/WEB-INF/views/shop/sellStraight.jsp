@@ -1,4 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
     <div class="main-content mx-auto bg-white pb-8 px-8 pt-2 shadow-md max-w-[780px] max-h-[960px] my-5">
       <!-- 이전페이지에서 내가 선택한 제품의 사진, 제품특성들 받아와서 표시 -->
@@ -66,7 +70,7 @@
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">판매 희망가</p>
           <p class="float-right text-xl font-semibold">원</p>
-          <input type="text" class="text-right float-right text-xl font-semibold" placeholder="희망가 입력" />
+          <input id="sellBidPrice" type="text" class="text-right float-right text-xl font-semibold" placeholder="희망가 입력" />
         </div>
 
         <div class="mb-9 w-auto">
@@ -99,7 +103,7 @@
 
         <div class="border-t">
           <p class="mt-3 text-sm font-semibold">정산금액</p>
-          <button id="sellBidBtn" class="mt-3 h-14 w-full rounded-2xl bg-black font-semibold cursor-not-allowed text-white" disabled>즉시 판매 계속</button>
+          <button id="sellBidBtn" class="mt-3 h-14 w-full rounded-2xl bg-black font-semibold cursor-not-allowed text-white disabled:bg-gray-100" disabled>판매 입찰 계속</button>
         </div>
       </div>
 			</div>
@@ -111,14 +115,42 @@
 <script type="text/javascript">
 $(function(){
 	$('#sellBid').hide();
+	
+	  $('.dateBtn').each(function(index){
+		    $(this).attr('dateBtn-index',index);
+		    
+		  }).click(function(){
+		    var index = $(this).attr('dateBtn-index');
+		    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
+		    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
+		    console.log($('#buyBidPrice').val())
+		    
+		    if($('#sellBidPrice').val() != "") {
+		    	$('#sellBidBtn').removeAttr("disabled");   	
+		    } else {
+		    	$('#sellBidBtn').attr("disabled", true);
+		    };
+		    
+		})
+		$('.dateBtn[dateBtn-index=3]').addClass('border-3 border-black font-semibold');
 })
+
+$('#sellBidPrice').keyup(function(){
+	if($('#sellBidPrice').val() != "") {
+    	$('#sellBidBtn').removeAttr("disabled");   	
+    } else {
+    	$('#sellBidBtn').attr("disabled", true);
+    };
+	
+})
+
 $('#sellBid_bg').click(function(){
 	$('#sellStraight').hide();
 	$('#sellBid').show();
 	$('#sellBid_bg').removeClass("bg-gray-100 text-black");
 	$('#sellBid_bg').addClass("bg-green-300 text-white");
 	$('#centerText').text("판매 입찰하기")
-	
+	$('#sellBidBtn').attr("disabled", true)
 	$('#sellStraight_bg').removeClass("bg-green-300 text-white")
 	$('#sellStraight_bg').addClass("bg-gray-100 text-black");
 });
@@ -131,17 +163,6 @@ $('#sellStraight_bg').click(function(){
 	$('#centerText').text("즉시 판매하기")
 	$('#sellBid_bg').removeClass("bg-green-300 text-white")
 	$('#sellBid_bg').addClass("bg-gray-100 text-black");
-})
-
-$('.dateBtn').each(function(index){
-    $(this).attr('dateBtn-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('dateBtn-index');
-    
-    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
-    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
-    $('#sellBidBtn').removeAttr("disabled");
 })
  
 $('#sellStraightBtn').click(function(){

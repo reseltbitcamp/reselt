@@ -92,6 +92,18 @@ public class ShopController {
 		
 		return mav;
 	}
+
+	@RequestMapping(value = "/buySuccess", method = RequestMethod.GET)
+	public ModelAndView buySuccess() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/buySuccess.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
 	
 	@RequestMapping(value = "/sellSize", method = RequestMethod.GET)
 	public ModelAndView sellSize() {
@@ -135,6 +147,18 @@ public class ShopController {
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/sellStraightMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/sellStraight.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+
+	@RequestMapping(value = "/sellLastPage", method = RequestMethod.GET)
+	public ModelAndView sellLastPage() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/shopMenu/sellLastPageMenu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/sellLastPage.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.setViewName("/index");
 		

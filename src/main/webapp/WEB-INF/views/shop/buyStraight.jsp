@@ -1,4 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <div class="mt-5 mb-24">
     <div class="main-content mx-auto bg-white pb-8 px-8 pt-2 shadow-md max-w-[780px] max-h-[960px]">
       <!-- 이전페이지에서 내가 선택한 제품의 사진, 제품특성들 받아와서 표시 -->
@@ -30,12 +35,13 @@
             <li id="buyBid_bg" class="w-1/2 rounded-3xl p-2 text-center align-middle text-sm">
               <a id="buyBid" href="#" class="">판매 입찰</a>
             </li>
-            <li id="BuyStraight_bg" class="w-1/2 rounded-3xl bg-red-500 p-2 text-center align-middle text-sm font-medium text-white">
+            <li id="buyStraight_bg" class="w-1/2 rounded-3xl bg-red-500 p-2 text-center align-middle text-sm font-medium text-white">
               <a id="buyStraight" href="#" class="">즉시 구매</a>
             </li>
           </ul>
         </div>
-			<div>
+        
+			<div id="buyStraightDiv">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
           <p class="float-right text-xl font-semibold">150,000 원</p>
@@ -50,12 +56,18 @@
 	      <div id="buyStraightBuy" class="border-t">
 	        <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
 	        <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-	        <button id="straightBuyBtn" href="#" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
+	        <button id="straightBuyBtn" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
 	      </div>
       </div>
 			
 
         <div id="buyBidDiv" class="border-t">
+	        <div class="mt-5 h-14 border-b-2">
+	          <p class="align-top text-xs font-bold text-black">판매 희망가</p>
+	          <p class="float-right text-xl font-semibold">원</p>
+	          <input id="buyBidPrice" type="text" class="text-right float-right text-xl font-semibold" placeholder="희망가 입력" />
+	        </div>
+        
           <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
           <p id="bidDate" class="text-xs">3일(2022/07/07)</p>
           <div class="text-center">
@@ -69,53 +81,64 @@
           <div id="bidBuy" class="border-t">
             <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
             <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-            <input id="bidBuyBtn" type="button" href="#" class="w-full text-white font-semibold cursor-pointer disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
+            <input id="buyBidBtn" type="button" class="w-full text-white font-semibold cursor-pointer disabled:cursor-not-allowed h-14 mt-3 rounded-2xl bg-black disabled:bg-gray-100" value="구매 입찰 계속" disabled>
           </div>
         </div>
-
+			</div>
     </div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
   $('#buyBidDiv').hide();
+  $('.dateBtn').each(function(index){
+	    $(this).attr('dateBtn-index',index);
+	    
+	  }).click(function(){
+	    var index = $(this).attr('dateBtn-index');
+	    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
+	    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
+	    console.log($('#buyBidPrice').val())
+	    
+	    if($('#buyBidPrice').val() != "") {
+	    	$('#buyBidBtn').removeAttr("disabled");   	
+	    } else {
+	    	$('#buyBidBtn').attr("disabled", true);
+	    };
+	    
+	})
+	$('.dateBtn[dateBtn-index=3]').addClass('border-3 border-black font-semibold');
+})
+
+$('#buyBidPrice').keyup(function(){
+	if($('#buyBidPrice').val() != "") {
+    	$('#buyBidBtn').removeAttr("disabled");   	
+    } else {
+    	$('#buyBidBtn').attr("disabled", true);
+    };
+	
 })
 
 
-$('#buyBid').click(function(){
-  $('#Buystraight').hide()
-  $('#straight_bg').removeClass('bg-red-500 text-white')
-
-  $('#bid_bg').addClass("bg-red-500 text-white")
-  $('#bidBuy').show();
+$('#buyBid_bg').click(function(){
+  $('#buyStraightDiv').hide()
+  $('#buyStraight_bg').removeClass('bg-red-500 text-white')
+  $('#buyBidPrice').val("");
+  
+  $('#buyBid_bg').addClass("bg-red-500 text-white")
+  $('#buyBidDiv').show();
   $('#bidDiv').show();
 	$('#centerText').text("구매 입찰하기")
-  $('#price').removeAttr("readonly");
-  $('#price').val("");
 });
 
-$('#buyStraight').click(function(){
-  $('#straightBuy').show()
-  $('#straight_bg').addClass('bg-red-500 text-white')
-  $('#price').attr("readonly");
-  $('#bid_bg').removeClass("bg-red-500 text-white")
-  $('#bidBuy').hide();
-  $('#bidDiv').hide();
+$('#buyStraight_bg').click(function(){
+  $('#buyStraightDiv').show()
+  $('#buyStraight_bg').addClass('bg-red-500 text-white')
+  $('#buyBid_bg').removeClass("bg-red-500 text-white")
+  $('#buyBidDiv').hide();
   $('#centerText').text("즉시 구매하기")
-  $('#price').attr("readonly");
-  $('#price').val("150,000");
 })
 
-$('.dateBtn').each(function(index){
-    $(this).attr('dateBtn-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('dateBtn-index');
-    
-    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
-    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
-    $('#bidBuyBtn').removeAttr("disabled");
-})
  
 $('#straightBuyBtn').click(function(){
 	location.href="./buyLastPage"	  
