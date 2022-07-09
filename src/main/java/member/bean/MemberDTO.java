@@ -19,4 +19,6 @@ public class MemberDTO {
 	private DATE created_at;
 	private DATE update_at;
 	private int snsLogin;
+	
+	
 }

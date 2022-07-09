@@ -15,4 +15,5 @@ public class StyleDTO {
 	private int style_like;
 	private int countcmt;
 	private Date style_date;
+
 }
