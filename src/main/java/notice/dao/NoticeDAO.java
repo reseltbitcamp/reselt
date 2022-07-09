@@ -12,5 +12,7 @@ public interface NoticeDAO {
 	public List<NoticeDTO> getNoticeList(Map<String, Integer> map);
 	
 	public int getTotalA();
+
+	public NoticeDTO getNoticeView(String seq);
 	
 }
