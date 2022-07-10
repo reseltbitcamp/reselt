@@ -1,5 +1,7 @@
 package style.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,6 +18,11 @@ public class StyleDAOMyBatis implements StyleDAO {
 	@Override
 	public void styleWriteForm(StyleDTO styleDTO) {
 		sqlSession.insert("styleSQL.styleWriteForm", styleDTO);
+	}
+
+	@Override
+	public List<StyleDTO> getStyleList() {
+		return sqlSession.selectList("styleSQL.getStyleList");
 	}
 
 }
