@@ -315,7 +315,7 @@
     <button type="button" data-modal-toggle="naverLogin">
     <a href="#">
     <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/1.jpg">
+      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/1.jpg">**클릭시 loginpage
     </div>
     <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
     <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
@@ -354,9 +354,9 @@
     
    </a>
 
-  <a href="#">
+  <a href="/ReseltProject/shop/shopDetailRevising">
     <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/2.jpg">
+      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/2.jpg"> **클릭시 shopdetail페이지
     </div>
     <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
     <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
