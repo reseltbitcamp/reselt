@@ -69,6 +69,26 @@ public class NoticeController {
 	public Map<String, Object> getNoticeList(@RequestParam(required = false, defaultValue = "1") String pg){
 		return noticeService.getNoticeList(pg);
 	}
+	
+	@GetMapping(value="noticeView")
+	public ModelAndView noticeView(@RequestParam String seq, @RequestParam String pg) {
+		ModelAndView mav = new ModelAndView();
+
+		mav.addObject("seq", seq);
+		mav.addObject("pg", pg);
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("display", "/WEB-INF/views/notice/noticeView.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
+	@PostMapping(value="getNoticeView")
+	@ResponseBody
+	public Map<String, Object> getNoticeView(@RequestParam String seq) {
+		return noticeService.getNoticeView(seq);
+	}
 }
 
 

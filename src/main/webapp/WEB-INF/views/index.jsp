@@ -27,7 +27,7 @@
     <header id="header" class="sticky top-0 z-50 bg-white">
       <div id="headerTop" class="border-b-[1px]">
         <div id="header" class="px-10 py-1 text-right text-[13px] font-notoSans font-extralight">
-          <a href="/ReseltProject/notice/noticeMain" class="m-2">고객센터</a>
+          <a href="/ReseltProject/notice/noticeList" class="m-2">고객센터</a>
           <a href="#" class="m-2">관심상품</a>
           <a href="/ReseltProject/myPage/myMain" class="m-2">마이페이지</a>
           <c:if test="${not empty email}">
