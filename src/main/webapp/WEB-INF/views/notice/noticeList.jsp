@@ -35,6 +35,9 @@
   </div>
 </div>
 <div id="noticePagingDiv" class="py-[28px] px-0 text-center"></div>
+  <div class="btn_list mt-[30px] text-center">
+    <input type="button" value="글쓰기" class="border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] h-[42px] leading-10 rounded-[12px] text-sm tracking-[-.14px] cursor-pointer" onclick="location.href='../notice/noticeWriteForm'">
+  </div>
 <div class="mb-52"></div>
 </div>
 
@@ -74,6 +77,10 @@
 			}
 		});
 	});
+	
+	function noticePaging(pg){
+		location.href = "noticeList?pg=" + pg;
+	}
 
 </script>
 
