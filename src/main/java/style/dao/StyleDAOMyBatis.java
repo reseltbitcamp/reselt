@@ -1,6 +1,7 @@
 package style.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,7 @@ public class StyleDAOMyBatis implements StyleDAO {
 	}
 
 	@Override
-	public List<StyleDTO> getStyleList() {
-		return sqlSession.selectList("styleSQL.getStyleList");
+	public List<StyleDTO> getStyleList(Map<String, Integer> map) {
+		return sqlSession.selectList("styleSQL.getStyleList", map);
 	}
-
 }

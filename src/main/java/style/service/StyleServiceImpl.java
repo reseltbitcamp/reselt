@@ -1,5 +1,6 @@
 package style.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,9 +21,20 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	@Override
-	public List<StyleDTO> getStyleList() {
-		List<StyleDTO> list = styleDAO.getStyleList();
-		return list;
+	public Map<String, Object> getStyleList(String pg) {
+		//1페이지당 3개씩
+		int endNum = Integer.parseInt(pg) * 8;
+		int startNum = endNum - 7;
+		
+		System.out.println("pg = "+pg+", startNum = "+startNum+", endNum = ");
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startNum", startNum);
+		map.put("endNum", endNum);
+		
+		List<StyleDTO> list = styleDAO.getStyleList(map);
+		
+		Map<String, Object> sendMap = new HashMap<String, Object>();
+		sendMap.put("list", list);
+		return sendMap;
 	}
-
 }
