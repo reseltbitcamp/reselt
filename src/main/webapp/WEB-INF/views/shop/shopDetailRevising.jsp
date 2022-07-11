@@ -90,8 +90,8 @@
                                     </div>
                                     <!-- modal detail -->
                                     <div> 
-                                          <div class="productDetail text-center">
-                                                <img class="w-14 text-webkit-center" src="https://kream-phinf.pstatic.net/MjAyMDEwMjJfOCAg/MDAxNjAzMzQwOTUzNzMx.nCU7Bumo43r7JZcTRjq4blFOcj33dPIxNYW-_94RtWgg.rJwsoEL3W-f7pgpwfYISb-0HBItIWL04h7p8Ixyp8CUg.PNG/p_4cedd884b4a3427ca616bc31b3bf2867.png">   
+                                          <div class="productDetail text-center pb-3">
+                                                <img class="w-16 h-16" style="display: -webkit-inline-box" src="https://kream-phinf.pstatic.net/MjAyMDEwMjJfOCAg/MDAxNjAzMzQwOTUzNzMx.nCU7Bumo43r7JZcTRjq4blFOcj33dPIxNYW-_94RtWgg.rJwsoEL3W-f7pgpwfYISb-0HBItIWL04h7p8Ixyp8CUg.PNG/p_4cedd884b4a3427ca616bc31b3bf2867.png">   
                                                       <p class="text-xs font-bold">Jordan 1 Retro High OG Black Mocha</p>
                                                       <p class="text-xs font-light">조던 1 레트로 하이 OG 블랙 모카</p>            
                                           </div>
