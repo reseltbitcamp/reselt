@@ -9,6 +9,6 @@ public interface StyleService {
 
 	public void styleWriteForm(StyleDTO styleDTO);
 
-	public List<StyleDTO> getStyleList();
+	public Map<String, Object> getStyleList(String pg);
 
 }

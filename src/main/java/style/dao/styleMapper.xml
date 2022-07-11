@@ -14,7 +14,14 @@
 									, 0
 									, sysdate)
 	</insert>
+	
+	<!-- List 글 받아오기 -->
 	<select id="getStyleList" resultType="style">
-	  	select * from styles order by seq
+		<![CDATA[
+	  		select * from 
+	  		(select rownum rn,tt.* from 
+	  		(select * from styles order by seq desc)tt) 
+	  		where rn >= #{startNum} and rn <= #{endNum}
+  		]]>
 	</select>
 </mapper>
