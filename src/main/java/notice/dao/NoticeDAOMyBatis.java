@@ -23,6 +23,7 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 
 	@Override
 	public List<NoticeDTO> getNoticeList(Map<String, Integer> map) {
+		System.out.println(map);
 		return sqlSession.selectList("noticeSQL.getNoticeList", map);
 	}
 

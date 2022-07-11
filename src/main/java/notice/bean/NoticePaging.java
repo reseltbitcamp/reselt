@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class NoticePaging {
 	private int currentPage; //현재페이지
-	private int pageBlock; //[이전][1][2][3][다음]
+	private int pageBlock; //< 1 2 3 >
 	private int pageSize; //1페이지당 10개씩
 	private int totalA; //총글수
 	private StringBuffer pagingHTML;
@@ -25,17 +25,17 @@ public class NoticePaging {
 		if(endPage > totalP) endPage = totalP;
 		
 		if(startPage > pageBlock) //if(startPage != 1) 둘 다 가능
-			pagingHTML.append("[ <span id='paging' onclick='noticePaging("+ (startPage-1) + ")'>이전</span> ]");
+			pagingHTML.append("<span id='paging' class='cursor-pointer py-0 px-[8px] text-[16px] text-[rgba(34,34,34,.5)]' onclick='noticePaging("+ (startPage-1) + ")'> < </span>");
 		
 		for(int i=startPage; i<=endPage; i++) {
 			if(i == currentPage) 
-				pagingHTML.append("[ <span id='currentPaging' class='underline text-red cursor-pointer' onclick='noticePaging(" + i + ")'>" + i + "</span>]");
+				pagingHTML.append("<span id='currentPaging' class='font-bold text-[16px] cursor-pointer py-0 px-[8px]' onclick='noticePaging(" + i + ")'>" + i + "</span>");
 			else 
-				pagingHTML.append("[ <span id='paging' onclick='noticePaging(" + i + ")'>" + i + "</span> ]");
+				pagingHTML.append("<span id='paging' class='cursor-pointer py-0 px-[8px] text-[16px] text-[rgba(34,34,34,.5)]' onclick='noticePaging(" + i + ")'>" + i + "</span>");
 		}
 		
 		if(endPage < totalP)
-			pagingHTML.append("[ <span id='paging' onclick='noticePaging("+ (endPage+1) + ")'>다음</span> ]");
+			pagingHTML.append(" <span id='paging' class='cursor-pointer py-0 px-[8px] text-[16px] text-[rgba(34,34,34,.5)]' onclick='noticePaging("+ (endPage+1) + ")'> > </span> ");
 
 	}
 
