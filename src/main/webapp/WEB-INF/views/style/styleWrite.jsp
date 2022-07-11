@@ -7,9 +7,8 @@
     <form id="styleWriteForm" enctype="multipart/form-data">
      <!-- 사진 등록 -->
 <!--      <input type="file" name="style_image" id="style_image" class="invisible w-2 h-2" onchange="setThumbnail(event);"> -->
-     <input type="file" name="img" id="img">
+     <input type="file" name="img" id="img" class="invisible">
       <div id="cameraBox" class="cursor-pointer w-full h-[250px] border border-gray-200 rounded-md">
-        <img id="showImg" style="border: 1px red solid; width: 100px; height: 100px;">
         <svg xmlns="http://www.w3.org/2000/svg" id="cameraIcon" width="16" height="16" fill="currentColor" class="mx-auto mt-[110px] bi bi-camera-fill" viewBox="0 0 16 16">
           <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
           <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
@@ -26,7 +25,7 @@
         <!-- 상품명 작성 -->
         <div id="productTitle" class="absolute left-7 rounded-md z-0 bg-gray-200 w-[460px] h-[50px] pl-8 pt-3 font-semibold text-slate-600">
           <p class="text-base">상품 태그를 추가해보세요</p>
-          <input type="text" id="product_tag" name="product_tag" class="w-[200px] h-[30px]">
+          <input type="text" id="product_id" name="product_id" class="w-[200px] h-[30px]">
         </div>
       </div>
       <!-- 글 작성 -->
@@ -39,10 +38,6 @@
 <script type="text/javascript" src="/ReseltProject/js/style.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#cameraBox').click(function(){
-		   $('#img').trigger('click');
-	});
-	
 	$('#img').on('change', function(){
 		readURL(this);
 	});
@@ -51,7 +46,13 @@ $(function(){
 		if(input.files[0]){
 			var reader = new FileReader();
 			reader.onload = function(e){
-				$('#showImg').attr('src', e.target.result); //e.target : 이벤트가 발생한 요소를 반환해준다.
+				var img = document.createElement("img");
+				var div = document.querySelector("div#cameraBox");
+				document.querySelector("svg#cameraIcon").remove();
+				img.setAttribute("src", event.target.result);
+				img.setAttribute("class", "w-auto h-full mx-auto my-0");
+				div.setAttribute("class", "w-full h-[250px] border border-gray-200 rounded-md overflow-hidden");
+				div.appendChild(img);
 			}
 			
 			reader.readAsDataURL(input.files[0]);
@@ -60,10 +61,6 @@ $(function(){
 	
 	$('#uploadBtn').click(function(){
 		var formData = new FormData($('#styleWriteForm')[0]);
-		
-		for(var pair of formData.entries()){
-			console.log(pair[0]+',' +pair[1]);
-		}
 		
 		$.ajax({
 			type: 'post',

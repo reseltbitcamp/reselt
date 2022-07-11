@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myPageSQL">
+
+	<!-- 업데이트한 dto select -->
+	<select id="getProfile" parameterType="string" resultType="myPage.bean.MyPageProfileDTO">
+		select * from members where id=#{id}
+	</select>
+	
+	<!-- 이메일 업데이트 -->
+	<update id="emailUpdate" parameterType="java.util.Map">
+		update members set email=#{email} where id=#{id}
+	</update>
+	
+	<!-- 비밀번호 업데이트 -->
+	<update id="pwdUpdate" parameterType="java.util.Map">
+		update members set pwd=#{pwd} where id=#{id}
+	</update>
+	
+	<!-- 이름 업데이트 -->
+	<update id="nameUpdate" parameterType="java.util.Map">
+		update members set name=#{name} where id=#{id}
+	</update>
+	
+	<!-- 신발 사이즈 업데이트 -->
+	<update id="sizeUpdate" parameterType="java.util.Map">
+		update members set footsize=#{footsize} where id=#{id}
+	</update>
+	
+	<!-- 프로필 업데이트 -->
+	<update id="updateImg" parameterType="java.util.Map">
+		update members set profile_img=#{profile_img} where id=#{id}
+	</update>
+	
+	<!-- 프로필 삭제 -->
+	<update id="deleteImg" parameterType="string">
+		update members set profile_img = null where id = #{id}
+	</update>
+	
+	
+</mapper>
+

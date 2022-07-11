@@ -21,11 +21,12 @@
   <p class="font-extrabold text-base">판매 정산 계좌</p>
   </div>
   <div class="relative">
+
+    <div>
   <p class="text-xs mt-3">등록된 판매 정산 계좌가 없습니다.
     <br>새 계좌번호를 추가해주세요!</p>
   </div>
-  <div class="relative">
-  <a class="float-right -mt-5 absolute right-0">계좌 추가</a>
+  <button class="float-right -mt-5 bg-black align-middle text-white rounded-lg cursor-pointer h-8 text-center px-3 top-1/2 text-xs right-0">계좌 추가</button>
   </div>
 </div>
 
@@ -54,7 +55,7 @@
 
   <div class="flex-initial">
         <h3 class="mb- mt-3 font-extrabold">발송 방법</h3>
-        <div class="rounded-lg border-gray-300 flex items-center mt-3">
+        <div class="rounded-lg border-black border flex items-center mt-3">
           <div class="flex-none">
             <img src=https://kream-phinf.pstatic.net/MjAyMTExMjlfMTQ4/MDAxNjM4MTc4MjI5NTk3.2phJLPtRvFqViNfhZu06HzNRiUBlT4cmZR4_Ukqsyesg.ikrfWOrL7WXCVO0Rqy5kMvOn3B2YpjLUj6RuJqosPX0g.PNG/a_8b54cbca40e945f4abf1ee24bdd031f7.png class="w-10 h-10">
           </div>
@@ -73,13 +74,13 @@
   <div id="">
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14 border-b-2">
-      <p class="align-top text-xs font-bold text-black">총 결제 금액</p>
-      <p class="float-right text-xl font-semibold text-red-600">167,400 원</p>
+      <p class="align-top text-xs font-bold text-black">정산 금액</p>
+      <p class="float-right text-xl font-semibold text-green-600">167,400 원</p>
     </div>
 
     <div class="w-auto">
       <dl class="flex justify-between">
-        <dt class="mt-2 text-sm">즉시 구매가</dt>
+        <dt class="mt-2 text-sm">즉시 판매가</dt>
         <dd class="float-right font-semibold">150,000원</dd>
       </dl>
 
@@ -102,6 +103,20 @@
 </div>
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
+  <div class="mb-2">
+  <p class="font-bold">현금영수증 정보</p>
+  </div>
+  <div>
+    <span class="mt-1 text-gray-400 float-left min-w-[80px] text-xs">형태</span>
+    <a class="text-sm">미신청</a>
+    <p class="text-gray-400 text-sm">판매 거래 시 수수료에 대해 건별로 현금영수증을 발급합니다.</p>
+  </div>
+  <div>
+  <button class="float-right border rounded-lg cursor-pointer -mt-10 h-8 text-center px-3 text-xs right-0">변경</button>
+  </div>
+</div>
+
+<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <div class="mb-3">
     <h3 class="font-bold">결제 방법</h3>
   </div>
@@ -118,134 +133,78 @@
   </div>
 
   <div class="block cursor-pointer">
-    <dt class="float-left block min-w-[70px] truncate text-sm text-gray-500">일반 결제</dt>
-    <dd class="mt block text-xs text-gray-400">일시불 · 할부</dd>
-  </div>
-
-  <div class="flex flex-wrap justify-between float-left">
-    <div class="paymentOption flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <div class="pr-2">
-      <p class="ml-2">신용/체크카드</p>
-      </div>
-    </div>
-    
-    <div class="paymentOption flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <div>
-      <p class="ml-2 block">계좌이체</p>
-      <p class="ml-2 text-xs text-red-500 block">최대 5만포인트 적립</p>
-      </div>
-    </div>
-
-    <div class="paymentOption flex h-full text-sm cursor-pointer items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">네이버페이</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_npay.425fb05.png" class="w-12 ml-auto mr-2"></img>
-    </div>
-
-    <div class="paymentOption flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">카카오페이</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_kakaopay.b4ed775.png"class="w-12 ml-auto mr-2"></img>
-    </div>
-
-    <div class="paymentOption flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">토스</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_tosspay.0dabd99.png"class="w-12 ml-auto mr-2"></img>
-    </div>
-
-    <div class="paymentOption flex cursor-pointer h-full text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">페이코</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_payco.af9c8b7.png"class="w-12 ml-auto mr-2"></img>
-    </div>
-  </div>
-
-  <div class="inline-block w-full">
-    <div class="border-b-[1px] border-gray-200 mt-2">
-      <p class="text-xs">결제 혜택</p>
-    </div>
-    <div>
-      <ul>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">계좌 이체로 결제 시 0.5% 무한적립</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTExMjZfMjI5/MDAxNjM3OTMyNDIxNDQ5.kO29DWw5j5r_vqt4cP2uCcI8si5vwnr1m2OSrzqdqUAg.agxcIJth1kHMYuz26KFjf2VHvCRM1-fv_ra2BPqzFAYg.PNG/d_6cd3cdc3d7b045c29794d0c5dfea97a9.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">10만원 이상 결제시 즉시 할인 5%</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTA3MjNfMjE2/MDAxNjI3MDQ0NjUxNTc5.NRYELauTh0NQalDifk1g8-txKLJVL0KO_wiheYsEPwkg.38cKqkZvp2V0zXr2WJfXgCdZTpvWl55pbhxfI5uCzigg.PNG/d_b3ac7ff93d8f46c38b1e14c3f7908685.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">20만원 이상 결제시 즉시 할인 6%</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTA3MDlfNDgg/MDAxNjI1NzU3MTQzNzM0.p8zHdL65rwPY6QDndISSntdesa9onmDokshSgtr0brkg.A5Vayjl-8XaTtJtcJKVdZbwwAvrYQHS7PqeqIZQA6Akg.PNG/p_8f5e108b4c74409ba3a04d9273827180.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">신한카드로 결제시 2% 캐시백</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTA4MjRfMjM0/MDAxNjI5ODE2MTgxODA2.zqDQvoDLZpQLvuJTrBWlJHlcPSaAH0jX9tsLBAco5lkg.IdyhXkbEvUkJsM6yD7aPxOA-M4mOewO3KUxLZ0Ka47sg.PNG/d_c810b2e128ac40869e5055f891919512.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">토스로 첫 결제 시 3천원 캐시백</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMjA1MzFfNzkg/MDAxNjUzOTY3NTI1MDMz.9K10E5A_3PnRkhUnTXSTlSAx2j9vb6TJNJPB6Wp0prwg.yYQwdt6D4SZhgOEToJ8FWw7nV6mJ97rhiZDlxW8ntkkg.PNG/d_dd5312bd03744c03a282bebd96e9535d.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">페이코 포인트로 결제 시 3% 적립</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-    </div>
+    <p class="text-xs text-gray-400">- 패널티는 일시불만 지원하며, 카드나 홈페이지나 앱에서 분할납부로 변경 가능합니다. 단, 카드사별 정책에 따라 분할 납부 변경 시 수수료가 발생할 수 있습니다. </p>
+    <p class="text-xs text-gray-400">- 수수료(페널티, 착불배송비 등)가 정산되지 않을 경우, 별도 고시 없이 해당 금액을 결제 시도 할 수 있습니다.</p>
+    <a class="text-[13px] text-blue-700 underline">페널티 정책</a>
   </div>
 </div>
 
-<div id="sellAgree" class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
+<div id="sellAgree" class="mx-auto mt-4 mb-4 max-h-[960px] max-w-[780px] p-8 shadow-md">
         <ul>
           <label>
-            <li class="flex cursor-pointer items-center border-b border-b-gray-100 py-4">
+            <li class="flex cursor-pointer text-sm items-center border-b border-b-gray-100 py-4">
               <div class="flex-1">
-                <p class="-mb-2 text-base">판매자의 판매거부, 배송지연, 미입고 등의 사유가 발생할 경우, 거래가 취소될 수 있습니다.</p>
-                <p class="mt-2 mb-2 text-xs text-gray-400">앱 알림 해체, 알림톡 차단, 전화번호 변경 후 미등록 시에는 거래 진행 상태 알림을 받을 수 없습니다.</p>
+                <p class="-mb-2 text-base">거래가 체결되면 일요일 · 공휴일을 제외하고 48시간 내에 KREAM으로 발송을 완료한 후, 발송정보를 정확히 입력해야 합니다.</p>
+                <p class="mt-2 mb-2 text-xs text-gray-400">착불 배송 시 판매 금액에서 차감 정산하며, 미정산 시 별도 고지없이 해당 금액을 결제 시도할 수 있습니다.</p>
               </div>
-              <input id="firstAgree" type="checkbox" class="h-5 w-5" />
+              <div>
+              <input id="firstAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
             </li>
           </label>
 	
           <label>
             <li class="flex items-center border-b border-b-gray-100 py-4 cursor-pointer">
               <div class="flex-1">
-                <p class="-mb-2 text-base">창고 보관을 선택한 경우 구매자에게 배송되지 않고 RESSLET 창고에 보관됩니다.</p>
-                <p class="mt-2 mb-2 text-xs text-gray-400">검수 합격 후 보관이 완료되면 창고 이용료(현재 첫 30일 무료)가 결제됩니다.</p>
+                <p class="-mb-2 text-base">송장 번호 미기재 · 오입력 시 입고가 진행되지 않으며, 발송 후 5일(일요일·공휴일 제외) 내 미도착은 허위 정보 입력으로 간주하여 미입고 페널티를 부과합니다.</p>
+                <p class="mt-2 mb-2 text-xs text-gray-400">앱 알림 해제, 알림톡 차단, 전화번호 변경 후 미등록 시에는 거래 진행 상태 알림을 받을 수 없으며 이로인한 거래 실패는 판매자의 책임입니다.</p>
               </div>
-              <input id="secondAgree" type="checkbox" class="h-5 w-5" />
+              <div>
+              <input id="secondAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
             </li>
           </label>
 
           <label>
             <li class="flex items-center border-b border-b-gray-100 py-4 cursor-pointer">
               <div class="flex-1">
-                <p class="-mb-2 text-base">'바로 결제하기'를 선택하시면 즉시 결제가 진행되며, 단순 변심이나 실수에 의한 취소가 불가능 합니다.</p>
-                <p class="mt-2 mb-2 text-xs text-gray-400">본 거래는 개인간 거래로 전자상거래법(제17조)에 따른 청약철회(환불, 교환)규정이 적용되지 않습니다.</p>
+                <p class="-mb-2 text-base">검수 기준과 페널티 및 이용정책을 다시 한번 확인하였습니다.</p>
+                <p class="mt-2 mb-2 text-xs text-gray-400">이용정책 위반 시, 판매 금액의 최대 15.0%의 페널티가 부과됩니다. 페널티 회피 시 이후 거래가 제한되며 별도 고지없이 해당 금액을 결제 시도할 수 있습니다.</p>
               </div>
-              <input id="thirdAgree" type="checkbox" class="h-5 w-5" />
+              <div>
+              <input id="thirdAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
+            </li>
+          </label>
+
+          <label>
+            <li class="flex items-center border-b border-b-gray-100 py-4 cursor-pointer">
+              <div class="flex-1">
+                <p class="-mb-2 text-base">'바로 판매하기'를 선택하시면 즉시 거래가 체결되며, 단순 변심이나 실수에 의한 취소가 불가능합니다.</p>
+              </div>
+              <div>
+                <input id="fourthAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
             </li>
           </label>
 
           <label>
             <li class="flex items-center py-4 cursor-pointer">
               <div class="flex-1">
-                <p class="-mb-2 text-base">구매 조건을 모두 확인하였으며, 거래진행에 동의합니다.</p>
+                <p class="-mb-2 text-base">판매 조건을 모두 확인하였으며, 거래진행에 동의합니다.</p>
             </div>
-            <div class="">
-            <input id="fourthAgree" type="checkbox" class="h-5 w-5" />
+            <div>
+              <input id="fifthAgree" type="checkbox" class="ml-10 h-5 w-5" />
             </div>
           </li>
+          </label>
         </ul>
-      </label>
 </div>
 
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200 shadow-md">
   <div class="flex">
-    <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">총 결제금액</dt>
-    <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
+    <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">정산 금액</dt>
+    <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-green-500">167,400원</dd>
   </div>
   <input type="button" value="결제하기" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
 </div>
@@ -257,7 +216,8 @@ $('#firstAgree').click(function(){
 	var check2 = $('#secondAgree').prop("checked");
 	var check3 = $('#thirdAgree').prop("checked");
 	var check4 = $('#fourthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
+	var check5 = $('#fifthAgree').prop("checked");
+	if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
@@ -271,7 +231,9 @@ $('#secondAgree').click(function(){
 	var check2 = $('#secondAgree').prop("checked");
 	var check3 = $('#thirdAgree').prop("checked");
 	var check4 = $('#fourthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
+	var check5 = $('#fifthAgree').prop("checked");
+	
+	if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true) {
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
@@ -285,7 +247,9 @@ $('#thirdAgree').click(function(){
 	var check2 = $('#secondAgree').prop("checked");
 	var check3 = $('#thirdAgree').prop("checked");
 	var check4 = $('#fourthAgree').prop("checked");
-  if(check1 == true && check2 == true && check3 == true && check4 == true){
+	var check5 = $('#fifthAgree').prop("checked");
+	
+  if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
@@ -299,7 +263,25 @@ $('#fourthAgree').click(function(){
 	var check2 = $('#secondAgree').prop("checked");
 	var check3 = $('#thirdAgree').prop("checked");
 	var check4 = $('#fourthAgree').prop("checked");
-  if(check1 == true && check2 == true && check3 == true && check4 == true){
+	var check5 = $('#fifthAgree').prop("checked");
+	
+  if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
+	$('#agreeBtn').removeAttr("disabled");
+    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
+    $('#agreeBtn').addClass("cursor-pointer")
+	  } else {
+		  $('#agreeBtn').attr("disabled",true);
+		}
+})
+
+$('#fifthAgree').click(function(){
+	var check1 = $('#firstAgree').prop("checked");
+	var check2 = $('#secondAgree').prop("checked");
+	var check3 = $('#thirdAgree').prop("checked");
+	var check4 = $('#fourthAgree').prop("checked");
+	var check5 = $('#fifthAgree').prop("checked");
+	
+  if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
 	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")

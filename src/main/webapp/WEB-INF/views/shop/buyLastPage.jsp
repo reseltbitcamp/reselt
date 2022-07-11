@@ -56,7 +56,7 @@
 </div>
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
-  <div id="">
+  <div>
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14 border-b-2">
       <p class="align-top text-xs font-bold text-black">총 결제 금액</p>
@@ -191,7 +191,9 @@
                 <p class="-mb-2 text-base">판매자의 판매거부, 배송지연, 미입고 등의 사유가 발생할 경우, 거래가 취소될 수 있습니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">앱 알림 해체, 알림톡 차단, 전화번호 변경 후 미등록 시에는 거래 진행 상태 알림을 받을 수 없습니다.</p>
               </div>
-              <input id="firstAgree" type="checkbox" class="h-5 w-5" />
+              <div>
+                <input id="firstAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
             </li>
           </label>
 	
@@ -201,7 +203,9 @@
                 <p class="-mb-2 text-base">창고 보관을 선택한 경우 구매자에게 배송되지 않고 RESSLET 창고에 보관됩니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">검수 합격 후 보관이 완료되면 창고 이용료(현재 첫 30일 무료)가 결제됩니다.</p>
               </div>
-              <input id="secondAgree" type="checkbox" class="h-5 w-5" />
+              <div>
+                <input id="secondAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
             </li>
           </label>
 
@@ -211,7 +215,9 @@
                 <p class="-mb-2 text-base">'바로 결제하기'를 선택하시면 즉시 결제가 진행되며, 단순 변심이나 실수에 의한 취소가 불가능 합니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">본 거래는 개인간 거래로 전자상거래법(제17조)에 따른 청약철회(환불, 교환)규정이 적용되지 않습니다.</p>
               </div>
-              <input id="thirdAgree" type="checkbox" class="h-5 w-5" />
+              <div>
+                <input id="thirdAgree" type="checkbox" class="ml-10 h-5 w-5" />
+              </div>
             </li>
           </label>
 
@@ -220,8 +226,8 @@
               <div class="flex-1">
                 <p class="-mb-2 text-base">구매 조건을 모두 확인하였으며, 거래진행에 동의합니다.</p>
             </div>
-            <div class="">
-            <input id="fourthAgree" type="checkbox" class="h-5 w-5" />
+            <div>
+                <input id="fourthAgree" type="checkbox" class="ml-10 h-5 w-5" />
             </div>
           </li>
         </ul>
@@ -304,4 +310,7 @@ $('.paymentOption').each(function(index){
     $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
   })
 
+$('#agreeBtn').click(function(){
+	location.href="./buySuccess"
+})
 </script>
