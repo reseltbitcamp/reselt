@@ -34,6 +34,11 @@ public class MemberDAOMybatis implements MemberDAO {
 		return sqlSession.selectOne("memberSQL.loginTry",map);
 
 	}
+
+	@Override
+	public MemberDTO findEmailSMS(MemberDTO memberDTO) {
+		return sqlSession.selectOne("memberSQL.findEmailSMS",memberDTO);
+	}
 	
 	
 	

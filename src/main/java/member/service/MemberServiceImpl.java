@@ -60,4 +60,26 @@ public class MemberServiceImpl implements MemberService {
 		}
 		return check;
 	}
+
+	@Override
+	public Map<String,Object> findEmailSMS(MemberDTO memberDTO) {
+		String check;
+		Map<String,Object> map = new HashedMap<String, Object>();
+
+		
+		
+		
+		memberDTO = memberDAO.findEmailSMS(memberDTO);
+		
+		
+		
+		if(memberDTO == null) {
+			check = "0";
+		}else {
+			check = "1";
+			map.put("memberDTO", memberDTO);
+		}
+		map.put("check", check);
+		return map;
+	}
 }

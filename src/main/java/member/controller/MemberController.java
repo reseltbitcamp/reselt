@@ -93,6 +93,20 @@ public class MemberController {
 		}
 		return check; 
 	}
+
+	@PostMapping(value = "findEmailResult")
+	public ModelAndView findEmailResult(@ModelAttribute MemberDTO memberDTO) {
+		Map<String, Object> map = memberService.findEmailSMS(memberDTO);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("display", "/WEB-INF/views/member/findEmailResult.jsp");
+		mav.addObject("memberDTO", map.get("memberDTO"));
+		mav.setViewName("/index");
+		System.out.println(mav);
+		return mav; 
+	}
 	
 	
 	@PostMapping(value = "loginTry")
@@ -180,6 +194,15 @@ public class MemberController {
 			map.put("login", "0");
 		}
 		return map;
+	}
+	
+	@PostMapping(value = "findEmailSMS")
+	@ResponseBody
+	public Map<String, Object> findEmailSMS(MemberDTO memberDTO) {
+		Map<String, Object> map = memberService.findEmailSMS(memberDTO);
+		
+		System.out.println(map);
+		return map; 
 	}
 	
 	@GetMapping(value = "kakaologin")
