@@ -9,7 +9,7 @@
 					values (seq_notice.nextval,
 						  	#{title},
 						   	#{content},
-						   	sysdate)
+						   	systimestamp)
 	</insert>
 	
 	<!-- 목록 -->
@@ -26,5 +26,9 @@
 		select count(*) from notice
 	</select>
 	
+	<!-- 글보기 -->
+	<select id="getNoticeView" parameterType="int" resultType="notice">
+		select * from notice where seq = #{seq}
+	</select>
 	
 </mapper>

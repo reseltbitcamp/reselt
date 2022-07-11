@@ -17,13 +17,18 @@
 	<resources location="/assets/css/" mapping="/css/**"/>
 	<resources location="/assets/img/" mapping="/img/**"/>
 	<resources location="/assets/js/" mapping="/js/**"/>
-
+	
 	<resources location="/assets/img/member/" mapping="/member/**"/>
-
+	<resources location="/assets/img/style/styleImage/" mapping="/styleImage/**"/>
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+  	  <beans:property name="maxUploadSize" value="5000000" />
 	</beans:bean>
 	
 	<context:component-scan base-package="main.controller" />

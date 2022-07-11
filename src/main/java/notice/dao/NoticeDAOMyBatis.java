@@ -31,5 +31,10 @@ public class NoticeDAOMyBatis implements NoticeDAO {
 		return sqlSession.selectOne("noticeSQL.getTotalA");
 	}
 
+	@Override
+	public NoticeDTO getNoticeView(String seq) {
+		return sqlSession.selectOne("noticeSQL.getNoticeView", Integer.parseInt(seq));
+	}
+
 
 }

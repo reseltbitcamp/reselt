@@ -29,7 +29,7 @@ public class NoticePaging {
 		
 		for(int i=startPage; i<=endPage; i++) {
 			if(i == currentPage) 
-				pagingHTML.append("[ <span id='currentPaging' onclick='noticePaging(" + i + ")'>" + i + "</span>]");
+				pagingHTML.append("[ <span id='currentPaging' class='underline text-red cursor-pointer' onclick='noticePaging(" + i + ")'>" + i + "</span>]");
 			else 
 				pagingHTML.append("[ <span id='paging' onclick='noticePaging(" + i + ")'>" + i + "</span> ]");
 		}

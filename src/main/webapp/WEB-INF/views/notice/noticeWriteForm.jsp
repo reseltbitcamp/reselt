@@ -29,7 +29,7 @@
 		<td colspan="2" align="center">
 				<input type = "button" value="글쓰기" id="noticeWriteBtn">
 				<input type = "reset" value="다시작성">
-				<input type = "button" value ="목록" onclick="location.href='/ReseltProject/notice/noticeMain'">
+				<input type = "button" value ="목록" onclick="location.href='/ReseltProject/notice/noticeList'">
 			</td>
 		</tr>
 	</table>

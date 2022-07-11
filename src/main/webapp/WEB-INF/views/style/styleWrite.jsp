@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" href="/ReseltProject/css/style.css"> 
 <div id="styleWriteContainer" class="p-6 w-full h-[800px] bg-gray-50">
   <!-- Style 작성창 -->
   <div class="mx-auto my-0 w-[550px] h-[550px] drop-shadow-lg bg-white px-8">
-    <form name="styleWriteForm">
+    <form id="styleWriteForm" enctype="multipart/form-data">
      <!-- 사진 등록 -->
-     <input type="file" name="img" id="img" class="invisible w-2 h-2" onchange="setThumbnail(event);">
+<!--      <input type="file" name="style_image" id="style_image" class="invisible w-2 h-2" onchange="setThumbnail(event);"> -->
+     <input type="file" name="img" id="img" class="invisible">
       <div id="cameraBox" class="cursor-pointer w-full h-[250px] border border-gray-200 rounded-md">
         <svg xmlns="http://www.w3.org/2000/svg" id="cameraIcon" width="16" height="16" fill="currentColor" class="mx-auto mt-[110px] bi bi-camera-fill" viewBox="0 0 16 16">
           <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
@@ -24,20 +25,74 @@
         <!-- 상품명 작성 -->
         <div id="productTitle" class="absolute left-7 rounded-md z-0 bg-gray-200 w-[460px] h-[50px] pl-8 pt-3 font-semibold text-slate-600">
           <p class="text-base">상품 태그를 추가해보세요</p>
-          <input type="text" id="productResult" name="productResult" class="invisible w-1 h-1">
+          <input type="text" id="product_id" name="product_id" class="w-[200px] h-[30px]">
         </div>
       </div>
       <!-- 글 작성 -->
-      <textarea id="styleWriteText" name="styleWriteText" class="mt-10 pt-10 w-[487px] h-[150px] placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="productTagSearch" id="productTagSearch" placeholder="스타일 글 작성... "></textarea>
-      <div id="buttonBox" class="w-full">
-        <div id="faqBtn" class="mx-auto my-3 w-28 h-11 bg-zinc-700 text-white rounded-md" onclick="location.href='/ReseltProject/style/styleList'">
-          <p class="pt-3 px-6 text-base">작성 완료</p>
-        </div>
-        <!-- <button id="faqBtn" class="mt-3 ml-48 w-28 h-11 text-base bg-zinc-700 text-white rounded-md font-medium" onclick="location.href='/ReseltProject/style/styleList'">작성 완료</button> -->
-      </div>
+      <textarea id="content" name="content" class="mt-10 pt-10 w-[487px] h-[150px] placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="content" id="content" placeholder="스타일 글 작성... "></textarea>
+    <input type="button" id="uploadBtn" name="uploadBtn" class="mt-3 ml-48 w-28 h-11 text-base bg-zinc-700 text-white rounded-md font-medium" value="작성 완료">
     </form>
   </div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/ReseltProject/js/style.js">
+<script type="text/javascript" src="/ReseltProject/js/style.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#img').on('change', function(){
+		readURL(this);
+	});
+	
+	function readURL(input){
+		if(input.files[0]){
+			var reader = new FileReader();
+			reader.onload = function(e){
+				var img = document.createElement("img");
+				var div = document.querySelector("div#cameraBox");
+				document.querySelector("svg#cameraIcon").remove();
+				img.setAttribute("src", event.target.result);
+				img.setAttribute("class", "w-auto h-full mx-auto my-0");
+				div.setAttribute("class", "w-full h-[250px] border border-gray-200 rounded-md overflow-hidden");
+				div.appendChild(img);
+			}
+			
+			reader.readAsDataURL(input.files[0]);
+		}
+	}
+	
+	$('#uploadBtn').click(function(){
+		var formData = new FormData($('#styleWriteForm')[0]);
+		
+		$.ajax({
+			type: 'post',
+			url: '/ReseltProject/style/styleWriteForm',
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: formData,
+			success: function(){
+				alert('상품 등록 완료');
+				location.href='/ReseltProject/style/styleList';
+			},
+			error:function(request,status,error){    
+				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+	});
+});
 
+
+
+/* function setThumbnail(event){
+	  console.log("진행 중");
+	  var reader = new FileReader();
+		
+	  reader.onload = function(event){
+	  var img = document.createElement("img");
+	  var div = document.querySelector("div#cameraBox");
+	  document.querySelector("svg#cameraIcon").remove();
+	  img.setAttribute("src", event.target.result);
+	  img.setAttribute("class", "w-auto h-full mx-auto my-0");
+	  div.setAttribute("class", "w-full h-[250px] border border-gray-200 rounded-md overflow-hidden");
+	  div.appendChild(img);
+} */
+</script>

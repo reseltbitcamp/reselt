@@ -38,7 +38,7 @@
             </li>
           </ul>
         </div>
-			<div id="sellStraight">
+			<div id="sellStraightDiv">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
           <p class="float-right text-xl font-semibold">150,000 원</p>
@@ -47,12 +47,12 @@
         <div class="mb-9 w-auto">
           <dl class="flex justify-between">
             <dt class="mt-2 text-xs text-gray-400">검수비</dt>
-            <dd class="float-right">-</dd>
+            <dd class="float-right">무료</dd>
           </dl>
 
           <dl class="flex justify-between">
             <dt class="mt-2 text-xs text-gray-400">수수료</dt>
-            <dd class="float-right text-sm">-</dd>
+            <dd class="float-right text-sm">무료</dd>
           </dl>
 
           <dl class="flex justify-between">
@@ -66,7 +66,7 @@
       </div>
     </div>
     
-    <div id="sellBid">
+    <div id="sellBidDiv">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">판매 희망가</p>
           <p class="float-right text-xl font-semibold">원</p>
@@ -106,7 +106,7 @@
           <button id="sellBidBtn" class="mt-3 h-14 w-full rounded-2xl bg-black font-semibold cursor-not-allowed text-white disabled:bg-gray-100" disabled>판매 입찰 계속</button>
         </div>
       </div>
-			</div>
+		</div>
     
    </div>
 
@@ -145,10 +145,10 @@ $('#sellBidPrice').keyup(function(){
 })
 
 $('#sellBid_bg').click(function(){
-	$('#sellStraight').hide();
-	$('#sellBid').show();
+	$('#sellStraightDiv').hide();
+	$('#sellBidDiv').show();
 	$('#sellBid_bg').removeClass("bg-gray-100 text-black");
-	$('#sellBid_bg').addClass("bg-green-300 text-white");
+	$('#sellBid_bg').addClass("bg-green-300 text-white font-semibold");
 	$('#centerText').text("판매 입찰하기")
 	$('#sellBidBtn').attr("disabled", true)
 	$('#sellStraight_bg').removeClass("bg-green-300 text-white")
@@ -156,12 +156,12 @@ $('#sellBid_bg').click(function(){
 });
 
 $('#sellStraight_bg').click(function(){
-	$('#sellBid').hide();
-	$('#sellStraight').show();
+	$('#sellBidDiv').hide();
+	$('#sellStraightDiv').show();
 	$('#sellStraight_bg').removeClass("bg-gray-100 text-black");
-	$('#sellStraight_bg').addClass("bg-green-300 text-white");
+	$('#sellStraight_bg').addClass("bg-green-300 text-white font-semibold");
 	$('#centerText').text("즉시 판매하기")
-	$('#sellBid_bg').removeClass("bg-green-300 text-white")
+	$('#sellBid_bg').removeClass("bg-green-300 text-white font-semibold")
 	$('#sellBid_bg').addClass("bg-gray-100 text-black");
 })
  

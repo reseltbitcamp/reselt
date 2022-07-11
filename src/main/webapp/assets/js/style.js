@@ -1,22 +1,32 @@
 $(function(){
-  $('#cameraBox').click(function(){
-    $('#img').trigger('click');
-  });
+	$('#cameraBox').click(function(){
+	   $('#img').trigger('click');
+	});
 });
 
-function setThumbnail(event){
-  console.log("진행 중");
-  var reader = new FileReader();
+$('#faqBtn').click(function(){
+	var formData = new FormData($('#styleWriteForm')[0]);
 	
-  reader.onload = function(event){
-  var img = document.createElement("img");
-  var div = document.querySelector("div#cameraBox");
-  document.querySelector("svg#cameraIcon").remove();
-  img.setAttribute("src", event.target.result);
-  img.setAttribute("class", "w-auto h-full mx-auto my-0");
-  div.setAttribute("class", "w-full h-[250px] border border-gray-200 rounded-md overflow-hidden");
-  div.appendChild(img);
-  };
+	var data = '';
+	$.each( $('#styleWriteForm').serializeArray(), function(key, val){
+	    data += ","+val['name']+":"+val['value'];
+	});
 	
-  reader.readAsDataURL(event.target.files[0]);
-}
+	console.log(data);
+	
+	$.ajax({
+			type: 'post',
+			url: '/ReseltProject/style/styleWriteForm',
+			enctype: 'multipart/form-data',
+			processData: false,
+			contentType: false,
+			data: formData,
+			success: function(){
+				alert('글이 등록되었습니다.');
+				location.href='/ReseltProject/style/styleList';
+			},
+			error: function(err){
+				console.log(err);
+			}
+	});
+});

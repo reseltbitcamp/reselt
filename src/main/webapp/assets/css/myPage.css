@@ -28,7 +28,7 @@ body, button, input, select, table, textarea {
   outline: none !important;
 }
 #ui-datepicker-div {
-  top: 300px !important;
+  top: 320px !important;
   overflow: hidden;
   margin-top: 0!important;
   width: 256px;
@@ -58,8 +58,9 @@ body, button, input, select, table, textarea {
 	display: none;
 }
 .clickEvent {
-	background-color: blue;
+	border: 1px solid #222;
 }
+
 /*myPage-selling, buying icon*/
 .head_status .status_link:after {
     content: "";

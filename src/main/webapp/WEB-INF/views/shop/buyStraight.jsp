@@ -41,6 +41,7 @@
           </ul>
         </div>
         
+      <!-- buyStraightDiv -->
 			<div id="buyStraightDiv">
         <div class="mt-5 h-14 border-b-2">
           <p class="align-top text-xs font-bold text-black">즉시 판매가</p>
@@ -53,13 +54,21 @@
           </dl>
         </div>
 
-	      <div id="buyStraightBuy" class="border-t">
+	      <div class="border-t">
 	        <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
 	        <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
 	        <button id="straightBuyBtn" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
 	      </div>
-      </div>
+      </div> 
 			
+			<!-- buyBidDiv -->			
+      <div id="buyBidDiv" class="border-t">
+        <div class="mt-5 h-14 border-b-2">
+          <p class="align-top text-xs font-bold text-black">구매 희망가</p>
+          <p class="float-right text-xl font-semibold">원</p>
+          <input type="text" class="float-right text-right text-xl font-semibold outline-none" placeholder="희망가 입력"/>
+        </div>
+
 
         <div id="buyBidDiv" class="border-t">
 	        <div class="mt-5 h-14 border-b-2">
@@ -86,7 +95,9 @@
         </div>
 			</div>
     </div>
+	</div>
 </div>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -119,23 +130,24 @@ $('#buyBidPrice').keyup(function(){
 	
 })
 
-
 $('#buyBid_bg').click(function(){
-  $('#buyStraightDiv').hide()
-  $('#buyStraight_bg').removeClass('bg-red-500 text-white')
-  $('#buyBidPrice').val("");
+  $('#buyBidDiv').show()
+  $('#buyStraightDiv').hide();
   
-  $('#buyBid_bg').addClass("bg-red-500 text-white")
-  $('#buyBidDiv').show();
-  $('#bidDiv').show();
-	$('#centerText').text("구매 입찰하기")
+  $('#buyStraight_bg').removeClass("bg-red-500 text-white font-semibold")
+  $('#buyBid_bg').addClass("bg-red-500 text-white font-semibold")
+	
+  $('#centerText').text("구매 입찰하기")
 });
 
 $('#buyStraight_bg').click(function(){
+  $('#buyBidDiv').hide()
   $('#buyStraightDiv').show()
-  $('#buyStraight_bg').addClass('bg-red-500 text-white')
-  $('#buyBid_bg').removeClass("bg-red-500 text-white")
-  $('#buyBidDiv').hide();
+  
+  $('#buyStraight_bg').addClass('bg-red-500 text-white font-semibold')
+  
+  $('#buyBid_bg').removeClass("bg-red-500 text-white font-semibold")
+
   $('#centerText').text("즉시 구매하기")
 })
 

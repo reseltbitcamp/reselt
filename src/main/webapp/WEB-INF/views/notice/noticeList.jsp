@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-  </div>
+  
 
 <input type="text" id="pg" value="${requestScope.pg }">
 <div class="content_area mt-10 m-auto grid">
@@ -29,12 +29,14 @@
     <div class="title text-2xl tracking-[-.36px] border-b-black border-solid border-b-[3px]">
       <h3 class="leading-7 font-bold mb-3">공지사항</h3>
     </div>
-    <table id="noticeListTable">
+    <ul id="noticeListTable">
 	<!-- 동적처리 -->
-    </table>
+    </ul>
   </div>
 </div>
 <div id="noticePagingDiv"></div>
+<div class="mb-52"></div>
+</div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -45,18 +47,21 @@
 			data: 'pg=' + $('#pg').val(),
 			dataType: 'json',
 			success: function(data){
-				alert(JSON.stringify(data));
+				//alert(JSON.stringify(data));
 
 				$.each(data.list, function(index, items){
 					console.log(index, items.title)
 
-					$('<tr/>').append($('<td/>', {
-						
-					})).append($('<a/>', {
-						href:'#',
-						text: items.title,
-						class: 'border-b-[#ebebeb] border-b-[1px] border-solid pb-3 cursor-pointer flex'
+					$('<li/>').append($('<p/>', {
+						href: '#',
+                        text: items.title,
+                        class: 'border-b-[#ebebeb] border-b-[1px] border-solid pb-3 cursor-pointer flex title'+items.seq
+//                         class: 'title'+items.seq
 					})).appendTo($('#noticeListTable'));
+
+                    $('.title'+items.seq).click(function(){
+                        location.href = '../notice/noticeView?seq='+items.seq+'&pg='+$('#pg').val();
+                    });
 
 				}); //each
 

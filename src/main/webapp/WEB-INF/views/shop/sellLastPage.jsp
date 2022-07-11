@@ -21,6 +21,7 @@
   <p class="font-extrabold text-base">판매 정산 계좌</p>
   </div>
   <div class="relative">
+
     <div>
   <p class="text-xs mt-3">등록된 판매 정산 계좌가 없습니다.
     <br>새 계좌번호를 추가해주세요!</p>

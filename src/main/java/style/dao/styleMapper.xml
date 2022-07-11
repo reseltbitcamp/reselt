@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="styleSQL">
+	<!-- style write 등록  -->
+	<insert id="styleWriteForm" parameterType="style">
+		insert into styles values(seq.nextval
+									, 103
+									, #{style_image}
+									, #{content}
+									, #{product_id}
+									, 0
+									, 0
+									, sysdate)
+	</insert>
+	<select id="getStyleList" resultType="style">
+	  	select * from styles order by seq
+	</select>
+</mapper>
