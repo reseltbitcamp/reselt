@@ -6,22 +6,27 @@
 
 <!-- 회원가입  -->
 <insert id="joinTry" parameterType="member">
-	insert into members values(
-								id_seq.nextval,
-								#{email},
-								#{pwd, jdbcType=VARCHAR},
-								#{footsize, jdbcType=VARCHAR},
-								#{name,jdbcType=VARCHAR},
-								#{tel,jdbcType=VARCHAR},
-								#{address,jdbcType=VARCHAR},
-								sysdate,
-								'',
-								#{snslogin, jdbcType=INTEGER)
+	<!-- private int id;
+	private String email;
+	private String pwd;
+	private String name;
+	private String tel;
+	private String address;
+	private Date created_at;
+	private Date update_at;
+	private String footsize;
+	private File profile_img;
+	private int snsLogin;
+	private int level;
+	 -->
+	insert into members(email, pwd, name, tel, address, created_at, updated_at, footsize, profile_img, snsLogin, level) 
+				values(#{email},#{pwd},'','','',now(),'0000-00-00 00:00:00',#{footsize},#{profile_img},#{snsLogin},0)
+
 </insert>
 
 <!-- 이메일 중복체크  -->
-<select id="checkEmail" parameterType="member" resultType="string">
-	select count(*) from members where email = #{email}
+<select id="checkEmail" parameterType="member" resultType="member">
+	select * from members where email = #{email}
 </select>
 
 <!-- 로그인 -->

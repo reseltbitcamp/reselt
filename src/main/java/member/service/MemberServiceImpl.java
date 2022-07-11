@@ -31,10 +31,10 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String checkEmail(MemberDTO memberDTO) {
-		String checkEmail = memberDAO.checkEmail(memberDTO);
+	public MemberDTO checkEmail(MemberDTO memberDTO) {
+		memberDTO = memberDAO.checkEmail(memberDTO);
 
-		return checkEmail;
+		return memberDTO;
 	}
 
 	@Override
@@ -49,13 +49,13 @@ public class MemberServiceImpl implements MemberService {
 		
 		memberDTO = memberDAO.loginTry(map);
 		
-		session.setAttribute("email", memberDTO.getEmail());
 		
 		
 		if(memberDTO == null) {
 			check = "0";
 		}else {
 
+			session.setAttribute("email", memberDTO.getEmail());
 			check = "1";
 		}
 		return check;
