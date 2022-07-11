@@ -1,8 +1,11 @@
 package member.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.collections4.map.HashedMap;
 import org.apache.http.HttpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,8 +83,14 @@ public class MemberController {
 	@PostMapping(value = "checkEmail")
 	@ResponseBody
 	public String checkEmail(@ModelAttribute MemberDTO memberDTO) {
-		String check = memberService.checkEmail(memberDTO);
-		
+		memberDTO = memberService.checkEmail(memberDTO);
+		String check;
+		if(memberDTO == null) {
+			check = "0";
+		}
+		else{
+			check= "1";
+		}
 		return check; 
 	}
 	
@@ -91,7 +100,7 @@ public class MemberController {
 	public String loginTry(MemberDTO memberDTO) {
 		System.out.println(memberDTO);
 		String check = memberService.loginTry(memberDTO);
-		
+		System.out.println("로그인 = " + check);
 		return check; 
 	}
 
@@ -116,21 +125,61 @@ public class MemberController {
 			return "/member/naver_login";
 		}
 	
-	@PostMapping(value = "snsJoin" )
+	@PostMapping(value = "snsJoinNaver" )
 	@ResponseBody
-	public void snsJoin(MemberDTO memberDTO) {
+	public Map<String, String> snsJoinNaver(@ModelAttribute MemberDTO memberDTO) {
 		//네이버: 이름 메일주소 휴대전화 프사(선택) 
-		System.out.println("snsJoin 의 memberDTO " + memberDTO);
+		System.out.println("네이버 로그인 = " + memberDTO);
 		memberDTO.setSnsLogin(1); // 소셜로그인 구분
-		
+		Map<String, String> map = new HashedMap<String, String>();
 		try {
 			memberService.joinTry(memberDTO);
 			System.out.println("회원가입");
-			
+			//네이버 1, 카카오 2
 		}catch (Exception e) {
+			memberDTO = memberService.checkEmail(memberDTO);
 			System.out.println("이미가입");
+			System.out.println("이미가입되었을때(네이버) =" + memberDTO);
+			
 		}
-		session.setAttribute("email", memberDTO.getEmail());
+		System.out.println("catch 밖");
+		if(memberDTO.getSnsLogin() == 1) {
+			session.setAttribute("email", memberDTO.getEmail());
+			map.put("login", "1");
+		}else if(memberDTO.getSnsLogin() == 2) {
+			map.put("login", "2");
+		}else {
+			map.put("login", "0");
+		}
+		
+		System.out.println("naver =" + map);
+		return map;
+	}
+	@PostMapping(value = "snsJoinKakao" )
+	@ResponseBody
+	public Map<String, String> snsJoinKakao(MemberDTO memberDTO) {
+		//네이버: 이름 메일주소 휴대전화 프사(선택) 
+		System.out.println("카카오 로그인 = " + memberDTO);
+		memberDTO.setSnsLogin(2); // 소셜로그인 구분
+		Map<String, String> map = new HashedMap<String, String>();
+		try {
+			memberService.joinTry(memberDTO);
+			System.out.println("회원가입");
+			//네이버 1, 카카오 2
+		}catch (Exception e) {
+			memberDTO = memberService.checkEmail(memberDTO);
+			System.out.println("이미가입");
+			
+		}
+		if(memberDTO.getSnsLogin() == 1) {
+			map.put("login", "1");
+		}else if(memberDTO.getSnsLogin() == 2) {
+			session.setAttribute("email", memberDTO.getEmail());
+			map.put("login", "2");
+		}else {
+			map.put("login", "0");
+		}
+		return map;
 	}
 	
 	@GetMapping(value = "kakaologin")

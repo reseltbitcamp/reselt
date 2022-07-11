@@ -8,7 +8,7 @@ public interface MemberDAO {
 
 	public void joinTry(MemberDTO memberDTO);
 
-	public String checkEmail(MemberDTO memberDTO);
+	public MemberDTO checkEmail(MemberDTO memberDTO);
 
 	public MemberDTO loginTry(Map<String, String> map);
 	
