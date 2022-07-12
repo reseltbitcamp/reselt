@@ -11,5 +11,7 @@ public interface MemberDAO {
 	public MemberDTO checkEmail(MemberDTO memberDTO);
 
 	public MemberDTO loginTry(Map<String, String> map);
+
+	public MemberDTO findEmailSMS(MemberDTO memberDTO);
 	
 }

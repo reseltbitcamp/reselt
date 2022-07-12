@@ -33,4 +33,9 @@
 <select id="loginTry" parameterType="java.util.Map" resultType="member">
 	select * from members where email = #{email} and pwd=#{pwd} 
 </select>
+
+<!-- 이메일 SMS 찾기  -->
+<select id="findEmailSMS" parameterType="member" resultType="member">
+	select * from members where tel = #{tel}
+</select>
 </mapper>
