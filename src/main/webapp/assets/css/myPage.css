@@ -61,13 +61,94 @@ body, button, input, select, table, textarea {
 	border: 1px solid #222;
 }
 
-/*myPage-selling, buying icon*/
-.head_status .status_link:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -4px;
-    width: 16px;
-    height: 24px;
-    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxNiAyNCI+PHBhdGggZmlsbD0iI0QzRDNEMyIgZD0iTTEyIDEzbC00IDUtNC01aDh6bS04LTJsNC01IDQgNUg0eiIvPjwvc3ZnPg==) no-repeat;
+
+/*buying 동적처리구간*/
+.wish_block {
+	display: flex;
+	border-top: 1px;
+	border-bottom: 1px;
+	padding-top: 20px;
+	padding-bottom: 19px;
+}
+.wish_product {
+	margin-right: 30px;
+	display: flex;
+}
+.product_box {
+	margin-top: 10px;
+	height: 80px;
+	width: 80px;
+	flex: none;
+}
+.product_img {
+	height: 80px;
+	width: 80px;
+}
+.product_detail {
+	margin-left: 13px;
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+	text-align: left;
+}
+.brand_text {
+	border-bottom: 1px solid #222;
+	display: inline-block;
+	height: 17px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	padding-bottom: 2px;
+	text-align: top;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 17px;
+	color: #333;
+}
+.brand_name {
+	margin-top: 2px;
+	max-height: 36px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: -.03px;
+}
+.brand_size {
+	margin-top: 13px;
+	display: inline-flex;
+	text-align: left;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 16px;
+}
+.wish_coin {
+	margin-left: auto;
+	margin-right: 50px;
+	display: inline-flex;
+	flex-shrink: 0;
+	flex-direction: column;
+	text-align: right;
+}
+.wish_coin_content {
+	font-size: 13px;
+}
+.wish_buy_inner {
+	margin-top: 12px;
+}
+.wish_buy_content {
+	font-size: 13px;
+}
+.wish_div {
+	margin: auto;
+	padding: 20px;
+	display: flex;
+}
+.wish_buy {
+	width: 100px;
+}
+
+/*buying 버튼*/
+.tab_on {
+	border-bottom: 2px solid #222;
 }

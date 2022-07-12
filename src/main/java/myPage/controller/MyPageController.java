@@ -2,14 +2,15 @@ package myPage.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,8 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
-import myPage.dao.MyPageProfileDAO;
+import myPage.service.MyPageBuyingService;
 import myPage.service.MyPageProfileService;
 
 @Controller
@@ -86,6 +88,15 @@ public class MyPageController {
 		mav.setViewName("/index");
 		return mav;
 	}
+	@GetMapping(value="buying_detail")
+	public ModelAndView buying_detail() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("display", "/WEB-INF/views/myPage/buying_detail.jsp");
+		mav.setViewName("/index");
+		return mav;
+	}
 	
 	@PostMapping(value="emailUpdate")
 	@ResponseBody
@@ -117,14 +128,10 @@ public class MyPageController {
 						 	HttpSession session) {
 
 		/*
-		//상대경로
-		//이미지 저장 후 페이지 reload할 시 저장된 이미지가 보일 수 있도록 상대경로에도 저장함
-		//절대경로로 이미지를 받으면 보안상 에러가 발생하므로 임시로 상대경로를 지정해서 이미지 받아옴
 		String resourcePath = "D:\\git\\project\\check2\\ReseltProject\\src\\main\\webapp\\assets\\img\\myPage";
 		String fileName = img.getOriginalFilename();
 		File resource = new File(resourcePath, fileName);
 		
-		//저장
 		try {
 			img.transferTo(resource);
 		} catch (IOException e) {
@@ -133,13 +140,13 @@ public class MyPageController {
 		*/
 	     
 		
-		//물리경로
+		
 		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
 		String fileName = img.getOriginalFilename();
-		System.out.println(filePath); // \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ReseltProject\assets\img\myPage 저장됨
+		System.out.println(filePath); // \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ReseltProject\assets\img\myPage 占쏙옙占쏙옙占�
 		File file = new File(filePath, fileName);
 		
-		//저장
+		
 		try {
 			img.transferTo(file);
 		} catch (IOException e) {
@@ -147,7 +154,7 @@ public class MyPageController {
 		}
 
 		
-		//파일 이름 db에 저장
+		
 		myPageProfileService.updateImg(fileName);
 		
 	}
@@ -164,8 +171,8 @@ public class MyPageController {
 		
 		File file = new File(resourcePath, fileName);
 		
-		if(file.exists()) { // 파일이 존재하면
-			file.delete(); // 파일 삭제	
+		if(file.exists()) { 
+			file.delete(); 
 		}
 		*/
 		
@@ -173,20 +180,16 @@ public class MyPageController {
 		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
 		String fileName = img.getOriginalFilename();
 		
-		//현재 게시판에 존재하는 파일객체를 만듬
 		File file = new File(filePath, fileName);
 		
-		if(file.exists()) { // 파일이 존재하면
-			file.delete(); // 파일 삭제	
+		if(file.exists()) { 
+			file.delete(); 
 		}
 
-		
-		
 		myPageProfileService.deleteImg();
 	}
 	
 	
-	/*
 	@PostMapping(value="getProfile")
 	@ResponseBody
 	public MyPageProfileDTO getProfile(HttpSession session) {
@@ -197,7 +200,20 @@ public class MyPageController {
 		myPageProfileDTO.setProfile_img(filePath + "/" + fileName);
 		return myPageProfileDTO;
 	}
-	*/
+
+	@Autowired
+	MyPageBuyingService myPageBuyingService;
+	
+	@PostMapping(value="getBuying")
+	@ResponseBody
+	public List<MyPageBuyingDTO> getBuying() {
+		
+		List<MyPageBuyingDTO> list = myPageBuyingService.getBuying();
+		System.out.println(list);
+		return list;
+		
+		
+	}
 	
 }
 	
