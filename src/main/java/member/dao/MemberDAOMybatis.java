@@ -23,7 +23,8 @@ public class MemberDAOMybatis implements MemberDAO {
 	}
 	
 	@Override
-	public String checkEmail(MemberDTO memberDTO) {
+	public MemberDTO checkEmail(MemberDTO memberDTO) {
+		System.out.println("sql 확인 =" + sqlSession.selectOne("memberSQL.checkEmail",memberDTO));
 		return sqlSession.selectOne("memberSQL.checkEmail",memberDTO);
 	}
 	

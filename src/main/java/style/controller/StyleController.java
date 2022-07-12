@@ -2,6 +2,7 @@ package style.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -26,12 +27,12 @@ public class StyleController {
 	private StyleService styleService;
 	
 	@RequestMapping(value="styleList")
-	public ModelAndView styleList() {
+	public ModelAndView styleList(@RequestParam(required = false, defaultValue = "1") String pg) {
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("pg", pg);
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("display", "/WEB-INF/views/style/styleList.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.addObject("list", styleService.getStyleList());
 		mav.setViewName("/index");
 		
 		return mav;
@@ -42,6 +43,17 @@ public class StyleController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/style/styleMenu.jsp");
 		mav.addObject("display", "/WEB-INF/views/style/styleWrite.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
+	@GetMapping(value="styleDetails")
+	public ModelAndView styleDetails() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/style/styleMenu.jsp");
+		mav.addObject("display", "/WEB-INF/views/style/styleDetails.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.setViewName("/index");
 		
@@ -70,5 +82,11 @@ public class StyleController {
 		styleDTO.setStyle_image(fileName);
 		
 		styleService.styleWriteForm(styleDTO);
+	}
+	
+	@PostMapping(value="getStyleList")
+	@ResponseBody
+	public Map<String, Object> getImageboardList(@RequestParam String pg){
+		return styleService.getStyleList(pg);
 	}
 }

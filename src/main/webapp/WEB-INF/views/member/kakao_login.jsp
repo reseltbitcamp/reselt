@@ -17,7 +17,7 @@ $(function(){
 	
 	
 	var accessToken = Kakao.Auth.setAccessToken();
-	console(accessToken);
+	console.log(accessToken);
 });
 </script>
 
