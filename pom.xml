@@ -123,6 +123,20 @@
 		    <version>1.18.22</version>
 		    <scope>provided</scope>
 		</dependency>
+		
+		<!-- NHN kcp api -->
+		<dependency>
+    	<groupId>org.bouncycastle</groupId>
+    	<artifactId>bcpkix-jdk15to18</artifactId>
+    	<version>1.68</version>
+		</dependency>
+		
+		<dependency>
+	    <groupId>org.bouncycastle</groupId>
+	    <artifactId>bcprov-jdk15to18</artifactId>
+	    <version>1.68</version>
+		</dependency>
+		
 				
 		<!-- AspectJ -->
 		<dependency>
@@ -251,8 +265,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
