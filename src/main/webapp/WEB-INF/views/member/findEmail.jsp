@@ -43,7 +43,7 @@
     </div>
     
     <div class="mb-10">
-        <input id="findEmailBtn" type="button" value="이메일 아이디 찾기" class="text-white block m-auto bg-gray-300 rounded-xl h-14 w-full"  >
+        <input id="findEmailBtn" type="button" value="SMS 인증번호  발송 " class="text-white block m-auto bg-gray-300 rounded-xl h-14 w-full"  >
     </div>
 </div>
 
@@ -52,6 +52,10 @@
 <script type="text/javascript">
 $(function(){
 	//휴대폰 유효성 검사 성공시 버튼 활성화
+	$('#tel').on('change fadeout fadein', function(){
+		$('#tel').trigger('keydown');
+	});
+	
 	$('#tel').keydown(function(){
 		var checknum = $('#tel').val().substr(0,3);
 		var telLength = $('#tel').val().length;
@@ -79,7 +83,7 @@ $(function(){
 			$('#findEmailBtn').css({"background-color":"rgb(209 213 219)", "color":"white"});
 		}
 	});
-	//버튼 색이 점겅일떄
+	//버튼 색이 검정일떄
 	$('#findEmailBtn').click(function(){
 		if($('#findEmailBtn').css('background-color') == 'rgb(0, 0, 0)' || $('#findEmailBtn').css('background-color') == 'black' ){
 		console.log('if 성공');

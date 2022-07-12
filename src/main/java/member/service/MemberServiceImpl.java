@@ -82,4 +82,10 @@ public class MemberServiceImpl implements MemberService {
 		map.put("check", check);
 		return map;
 	}
+
+	@Override
+	public void tmpPwd(Map<String, String> map) {
+		memberDAO.tmpPwd(map);
+		
+	}
 }
