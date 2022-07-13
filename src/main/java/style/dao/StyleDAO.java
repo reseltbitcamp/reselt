@@ -11,4 +11,8 @@ public interface StyleDAO {
 
 	public List<StyleDTO> getStyleList(Map<String, Integer> map);
 
+	public StyleDTO getStyleDetails(String seq);
+
+	public void styleDelete(String seq);
+
 }

@@ -11,4 +11,8 @@ public interface StyleService {
 
 	public Map<String, Object> getStyleList(String pg);
 
+	public StyleDTO getStyleDetails(String seq);
+
+	public void styleDelete(String seq);
+
 }
