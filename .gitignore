@@ -4,6 +4,9 @@
 ### DB Connection ###
 **/db.properties
 
+### Inicis Payment Gateway Dependency ###
+!**/inicis/**
+
 ### Eclipse ###
 .metadata
 bin/
