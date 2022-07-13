@@ -88,6 +88,7 @@ public class MyPageController {
 		mav.setViewName("/index");
 		return mav;
 	}
+	
 	@GetMapping(value="buying_detail")
 	public ModelAndView buying_detail() {
 		ModelAndView mav = new ModelAndView();
@@ -98,28 +99,44 @@ public class MyPageController {
 		return mav;
 	}
 	
-	@PostMapping(value="emailUpdate")
-	@ResponseBody
-	public void emailUpdate(@RequestParam String email) {
-		myPageProfileService.emailUpdate(email);
+	@GetMapping(value="withdrawal")
+	public ModelAndView withdrawal() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("display", "/WEB-INF/views/myPage/withdrawal.jsp");
+		mav.setViewName("/index");
+		return mav;
 	}
-	
+
 	@PostMapping(value="pwdUpdate")
 	@ResponseBody
 	public void pwdUpdate(@RequestParam String pwd) {
 		myPageProfileService.pwdUpdate(pwd);
 	}
 	
-	@PostMapping(value="nameUpdate")
+	@PostMapping(value="nickUpdate")
 	@ResponseBody
-	public void nameUpdate(@RequestParam String name) {
-		myPageProfileService.nameUpdate(name);
+	public void nickUpdate(@RequestParam String nick) {
+		myPageProfileService.nickUpdate(nick);
 	}
 	
 	@PostMapping(value="sizeUpdate")
 	@ResponseBody
 	public void sizeUpdate(@RequestParam String footsize) {
 		myPageProfileService.sizeUpdate(footsize);
+	}
+	
+	@PostMapping(value="check_email")
+	@ResponseBody
+	public void check_email(@RequestParam String check_email) {
+		myPageProfileService.check_email(check_email);
+	}
+	
+	@PostMapping(value="check_message")
+	@ResponseBody
+	public void check_message(@RequestParam String check_message) {
+		myPageProfileService.check_message(check_message);
 	}
 	
 	@PostMapping(value="updateImg")
@@ -196,8 +213,12 @@ public class MyPageController {
 		MyPageProfileDTO myPageProfileDTO = myPageProfileService.getProfile();
 		
 		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
-		String fileName = myPageProfileDTO.getProfile_img();
-		myPageProfileDTO.setProfile_img(filePath + "/" + fileName);
+		
+		if(myPageProfileDTO.getProfile_img() != null) {
+			String fileName = myPageProfileDTO.getProfile_img();
+			myPageProfileDTO.setProfile_img(filePath + "/" + fileName);
+		}
+		
 		return myPageProfileDTO;
 	}
 

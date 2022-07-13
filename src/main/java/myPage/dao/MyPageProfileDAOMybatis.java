@@ -19,8 +19,8 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 	private SqlSession sqlSession;
 
 	@Override
-	public void emailUpdate(Map<String, String> map) {
-		sqlSession.update("myPageSQL.emailUpdate", map);
+	public void emailUpdate(String email) {
+		sqlSession.update("myPageSQL.emailUpdate", email);
 	}
 
 	@Override
@@ -29,8 +29,8 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 	}
 
 	@Override
-	public void nameUpdate(Map<String, String> map) {
-		sqlSession.update("myPageSQL.nameUpdate", map);
+	public void nickUpdate(Map<String, String> map) {
+		sqlSession.update("myPageSQL.nickUpdate", map);
 	}
 
 	@Override
@@ -46,14 +46,26 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 	}
 
 	@Override
-	public void deleteImg(String id) {
-		sqlSession.update("myPageSQL.deleteImg", id);
+	public void deleteImg(String email) {
+		sqlSession.update("myPageSQL.deleteImg", email);
 		
 	}
 
 	@Override
 	public MyPageProfileDTO getProfile(String id) {
 		return sqlSession.selectOne("myPageSQL.getProfile", id);
+	}
+
+	@Override
+	public void check_email(Map<String, String> map) {
+		sqlSession.selectOne("myPageSQL.check_email", map);
+		
+	}
+
+	@Override
+	public void check_message(Map<String, String> map) {
+		sqlSession.selectOne("myPageSQL.check_message", map);
+		
 	}
 
 
