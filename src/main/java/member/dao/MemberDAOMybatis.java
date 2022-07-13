@@ -39,6 +39,11 @@ public class MemberDAOMybatis implements MemberDAO {
 	public MemberDTO findEmailSMS(MemberDTO memberDTO) {
 		return sqlSession.selectOne("memberSQL.findEmailSMS",memberDTO);
 	}
+
+	@Override
+	public void tmpPwd(Map<String, String> map) {
+		sqlSession.update("memberSQL.tmpPwd", map);
+	}
 	
 	
 	

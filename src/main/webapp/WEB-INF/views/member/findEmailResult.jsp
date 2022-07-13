@@ -14,7 +14,7 @@
     
     <div class="pt-10 pb-7">
         <p class="text-xs">
-        고객님의 이메일을 안내드립니다.
+        	고객님의 이메일을 안내드립니다.
         </p>
         <div id="findEmailResult">회원님은 이메일은 '${memberDTO.email }' 입니다.</div>
     </div>
