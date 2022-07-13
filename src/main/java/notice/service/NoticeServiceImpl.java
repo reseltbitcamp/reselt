@@ -32,7 +32,7 @@ public class NoticeServiceImpl implements NoticeService {
 	public Map<String, Object> getNoticeList(String pg) {
 		// DB - 1페이지당 10개씩
 		int endNum = Integer.parseInt(pg) * 10;
-		int startNum = endNum - 9;
+		int startNum = endNum - 10;
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("startNum", startNum);

@@ -8,17 +8,17 @@
 </head>
 <body>
 <form id="noticeWriteForm">
-  <table border="1" cellspacing="0" cellpadding="5">
-		<tr>
-		  <td width="70" align="center">제목</td>
+  <table border="1" cellspacing="0" cellpadding="5" class="m-auto mt-10 border-black border-solid border-[1px] rounded-[12px]">
+		<tr class="border-black border-solid border-[1px]">
+		  <td width="70" align="center" class="border-r border-black">제목</td>
 			<td>
-				<input type="text" name="title" id="title" placeholder="제목을 입력하세요">
+				<input type="text" name="title" id="title" class="w-[400px]" placeholder="제목을 입력하세요">
 				<div id="titleDiv"></div>
 			</td>
 		</tr>
 		
 		<tr>
-			<td align="center">내용</td>
+			<td align="center" class="border-r border-black">내용</td>
 			<td>
 				<textarea name="content" id="content" rows="15" cols="50" placeholder="내용을 입력하세요"></textarea>
 				<div id="contentDiv"></div>
@@ -26,10 +26,10 @@
 		</tr>
 		
 		<tr>
-		<td colspan="2" align="center">
-				<input type = "button" value="글쓰기" id="noticeWriteBtn">
-				<input type = "reset" value="다시작성">
-				<input type = "button" value ="목록" onclick="location.href='/ReseltProject/notice/noticeList'">
+		<td colspan="2" align="center" class="border-t border-black">
+				<input type = "button" value="글쓰기" id="noticeWriteBtn" class="border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] h-[42px] leading-10 rounded-[12px] text-sm tracking-[-.14px] cursor-pointer">
+				<input type = "reset" value="다시작성" class="border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] h-[42px] leading-10 rounded-[12px] text-sm tracking-[-.14px] cursor-pointer">
+				<input type = "button" value ="목록" class="border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] h-[42px] leading-10 rounded-[12px] text-sm tracking-[-.14px] cursor-pointer" onclick="location.href='/ReseltProject/notice/noticeList'">
 			</td>
 		</tr>
 	</table>
@@ -61,7 +61,7 @@ $(function(){
 					   	 'content': $('#content').val()},
 				success: function(){
 					alert('작성하신 글을 저장하였습니다.');
-					//location.href = '/ReseltProject/notice/noticeMain';
+					location.href = '/ReseltProject/notice/noticeList';
 				},
 				error: function(e){
 					console.log(e);

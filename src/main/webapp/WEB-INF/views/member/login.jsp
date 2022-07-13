@@ -44,16 +44,24 @@
     
     <!-- 네이버아이디 로그인 버튼  -->  
 		<div class="mt-10">
-
-			<div id="naverIdLogin" class="pb-4">
-				<a id="naverIdLogin_loginButton" href="#">
-					<img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.1" height="50">
-				</a>
+			<div>
+				<div>
+					<a id="naverloginBtn" href="#">
+						<img src="/ReseltProject/img/member/naverlogin.png" width="384">
+					</a>
+				</div>
+    			<div>
+	    			<a id="kakaologinBtn" href="#">
+    					<img src="/ReseltProject/img/member/kakaologin.png" width="384">
+    				</a>
+    			</div>
+				
 			</div>
-    		<div id="kakaoLogin">
-    			<a id="kakaologinBtn">
-    				<img src="/ReseltProject/img/member/kakaologin.png" width="384">
-    			</a>
+			<div id="naverIdLogin" class="hidden">
+
+			</div>
+    		<div id="kakaoLogin" class="hidden">
+
     		</div>
 		</div>
 	</div>
@@ -119,12 +127,12 @@ $(function(){
 					pwd : $('#pwd').val(),
 					},
 				success: function(data){
-					alert(data);
+					//alert(data);
 					if(data == "0"){
 						alert("이메일 또는 비밀번호를 확인해주세요.");
 					}else {
 						//alert(JSON.stringify(data));
-						//location.href="/ReseltProject/"
+						location.href="/ReseltProject/"
 					}
 				},
 				error: function(e){
@@ -145,12 +153,11 @@ $(function(){
     var naverLogin = new naver.LoginWithNaverId( {
         clientId: "LgPc6iOg7dmRiTAsIpnG",
         callbackUrl: "http://localhost:8080/ReseltProject/member/naverlogin",
-        isPopup: false, /* 팝업을 통한 연동처리 여부 */
+        isPopup: true, /* 팝업을 통한 연동처리 여부 */
         loginButton: {color: "green", type: 3, height: 10} /* 로그인 버튼의 타입을 지정 */
     } ); 
     /* 설정정보를 초기화하고 연동을 준비 */
     naverLogin.init();
-    
     /* 카카오 로그인 */
     
     // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -162,8 +169,8 @@ $(function(){
     Kakao.Auth.createLoginButton({
     	container : '#kakaoLogin',
     	size : 'large',
-		success : function(data){
-			alert(JSON.stringify(data));
+    	success : function(data){
+			//alert(JSON.stringify(data));
 			Kakao.Auth.setAccessToken(data.access_token);
 			
 			// 사용자 정보 가져오기
@@ -173,6 +180,34 @@ $(function(){
 			    console.log(res)
 			    
 			    console.log(res.kakao_account.email);
+            	$.ajax({
+					type: 'post',
+					data : {email : res.kakao_account.email,
+					},
+					url: "/ReseltProject/member/snsJoinKakao",
+					success: function(data){
+						//alert("소셜 로그인 회원기입 완료");
+						alert(JSON.stringify(data));
+						console.log("hi");
+						if (data.login == '0'){
+							window.close();
+							alert('이미 가입된 이메일입니다. 일반회원가입 회원 로그인 해주세요');
+						}else if (data.login == '1'){
+							window.close();
+							alert('이미 가입된 이메일입니다. 다른 소셜 로그인 해주세요');
+							
+						}else {
+							alert('카카오로그인 성공');
+							window.close();
+							location.href='/ReseltProject/'; 
+						}
+					},
+					error: function(e){
+						alert("소셜 로그인 실패");
+						
+					}
+						
+				}); 
 			  },
 			  fail: function(error) {
 			    console.error(error)
@@ -187,8 +222,16 @@ $(function(){
     });
 
     //////////////////////////////////////////////////////////////////////////////////////////
+    //로그인 버튼 변경
     
-    
+	$(document).on("click", "#naverloginBtn", function(){ 
+		var btnNaverLogin = document.getElementById("naverIdLogin").firstChild;
+		btnNaverLogin.click();
+	});
+	$(document).on("click", "#kakaologinBtn", function(){ 
+		var btnNaverLogin = document.getElementById("kakaoLogin").firstChild;
+		btnNaverLogin.click();
+	});
    /*  redirectUri: 'http://localhost:8080/ReseltProject/member/kakaologin',  redirect되는 URL */ 
     
     

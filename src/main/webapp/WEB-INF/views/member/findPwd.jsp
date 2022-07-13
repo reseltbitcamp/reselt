@@ -19,7 +19,7 @@
     
     <div class="">
         <div>
-        <form>
+        <form id="findPwdForm">
         	<div class="mb-10">
 	            <p id="telDiv" class="text-xs font-bold">휴대폰 번호</p>
     	        <input id="tel" type="text" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
@@ -114,25 +114,26 @@ $(function(){
  	});
  	
  	
- $('#findEmailBtn').click(function() {
+ $('#findPwdBtn').click(function() {
 	 	alert('hi');
-		console.log(('$findEmailBtn').css('background-color'));
-		if($('$findEmailBtn').css('background-color') == "black" || $('$findEmailBtn').css('background-color') == "rgb(0, 0, 0)"){
+		if($('#findPwdBtn').css('background-color') == "black" || $('#findPwdBtn').css('background-color') == "rgb(0, 0, 0)"){
 			
-			
-			$('<div/>').append('<input>', {'type' : 'text', 'id' : 'checkInput'}).appendTo('#BtnDiv');
-			const eamil = $('#email').val(); // 이메일 주소값 얻어오기!
-			console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
-			const checkInput = $('.mail-check-input') // 인증번호 입력하는곳 
-			
+			alert('if통과');
 			$.ajax({
-				type : 'get',
-				url : '<c:url value ="/user/mailCheck?email="/>'+eamil, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
+				type : 'post',
+				url : '/ReseltProject/member/mailCheck',
+				data : $('#findPwdForm').serialize(),
 				success : function (data) {
 					console.log("data : " +  data);
-					checkInput.attr('disabled',false);
-					code = data;
-					alert('인증번호가 전송되었습니다.');
+					if(data == "0"){
+						alert('회원 정보를 정확하게 입력해주세요');
+					}else if(data =="1"){
+						alert('등록 되지 않은 휴대폰 번호입니다.')
+					}
+					else{
+						alert('임시 비밀번호가 전송되었습니다.');
+						location.href='/ReseltProject/member/login'
+					}
 				},
 				error: function(e){
 					console.log(e);
