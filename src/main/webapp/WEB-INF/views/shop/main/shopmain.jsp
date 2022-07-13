@@ -354,7 +354,7 @@
     
    </a>
 
-  <a href="/ReseltProject/shop/shopDetailRevising">
+  <a href="/ReseltProject/shop/shopDetail">
     <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
       <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/2.jpg"> **클릭시 shopdetail페이지
     </div>
