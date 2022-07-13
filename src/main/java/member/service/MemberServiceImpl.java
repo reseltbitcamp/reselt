@@ -31,10 +31,10 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public String checkEmail(MemberDTO memberDTO) {
-		String checkEmail = memberDAO.checkEmail(memberDTO);
+	public MemberDTO checkEmail(MemberDTO memberDTO) {
+		memberDTO = memberDAO.checkEmail(memberDTO);
 
-		return checkEmail;
+		return memberDTO;
 	}
 
 	@Override
@@ -49,15 +49,43 @@ public class MemberServiceImpl implements MemberService {
 		
 		memberDTO = memberDAO.loginTry(map);
 		
-		session.setAttribute("email", memberDTO.getEmail());
 		
 		
 		if(memberDTO == null) {
 			check = "0";
 		}else {
 
+			session.setAttribute("email", memberDTO.getEmail());
 			check = "1";
 		}
 		return check;
+	}
+
+	@Override
+	public Map<String,Object> findEmailSMS(MemberDTO memberDTO) {
+		String check;
+		Map<String,Object> map = new HashedMap<String, Object>();
+
+		
+		
+		
+		memberDTO = memberDAO.findEmailSMS(memberDTO);
+		
+		
+		
+		if(memberDTO == null) {
+			check = "0";
+		}else {
+			check = "1";
+			map.put("memberDTO", memberDTO);
+		}
+		map.put("check", check);
+		return map;
+	}
+
+	@Override
+	public void tmpPwd(Map<String, String> map) {
+		memberDAO.tmpPwd(map);
+		
 	}
 }

@@ -1,6 +1,7 @@
 package myPage.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import member.dao.MemberDAO;
+import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 import myPage.dao.MyPageProfileDAO;
 
@@ -25,10 +27,11 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		
 		Map<String, String> map = new HashMap<String, String>();
 		
+		//ì„¸ì…˜ì—ì„œ..ì•„ì´ë””..ë°›ë‚˜?
 		//String id = (String) session.getAttribute("id");
 		//map.put("id", id);
 		
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
+		//ì„ì˜ê°’ 1
 		map.put("id", "1");
 		map.put("email", email);
 		myPageProfileDAO.emailUpdate(map);
@@ -39,10 +42,6 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	public void pwdUpdate(String pwd) {
 		Map<String, String> map = new HashMap<String, String>();
 				
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
 		map.put("id", "1");
 		map.put("pwd", pwd);
 		myPageProfileDAO.pwdUpdate(map);
@@ -52,10 +51,6 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	public void nameUpdate(String name) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
 		map.put("id", "1");
 		map.put("name", name);
 		myPageProfileDAO.nameUpdate(map);
@@ -65,10 +60,6 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	public void sizeUpdate(String footsize) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
 		map.put("id", "1");
 		map.put("footsize", footsize);
 		myPageProfileDAO.sizeUpdate(map);
@@ -80,10 +71,6 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		
 		Map<String, String> map = new HashMap<String, String>();
 		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
 		map.put("id", "1");
 		map.put("profile_img", fileName);
 		myPageProfileDAO.updateImg(map);
@@ -92,9 +79,6 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	@Override
 	public void deleteImg() {
 		
-		//String id = (String) session.getAttribute("id");
-
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
 		String id = "1";
 		myPageProfileDAO.deleteImg(id);
 		
@@ -102,12 +86,13 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 
 	@Override
 	public MyPageProfileDTO getProfile() {
-		//String id = (String) session.getAttribute("id");
-
-		//È®ÀÎ Â÷ ¼¼¼Ç ´ë½Å ÀÓÀÇ·Î id°ª 1 ³ÖÀ½
+	
 		String id = "1";
 		return myPageProfileDAO.getProfile(id);
 	}
-		
+
+	
+	
+	
 }
 

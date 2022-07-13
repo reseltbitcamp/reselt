@@ -52,10 +52,8 @@ public class StyleController {
 	@GetMapping(value="styleDetails")
 	public ModelAndView styleDetails() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("menu", "/WEB-INF/views/style/styleMenu.jsp");
-		mav.addObject("display", "/WEB-INF/views/style/styleDetails.jsp");
-		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.setViewName("/index");
+		mav.addObject("styleDetails", "/WEB-INF/views/style/styleDetails.jsp");
+		mav.setViewName("/style/styleDetails");
 		
 		return mav;
 	}
@@ -67,7 +65,7 @@ public class StyleController {
 								HttpSession session) {
 		System.out.println(session.getServletContext());
 		//실제폴더
-		String filePath = session.getServletContext().getRealPath("/assets/img/style/styleImage");
+		String filePath = session.getServletContext().getRealPath("/assets/img/style/styleImage/");
 		String fileName = img.getOriginalFilename();
 		
 		System.out.println(filePath);

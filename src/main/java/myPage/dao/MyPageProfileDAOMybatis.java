@@ -1,5 +1,6 @@
 package myPage.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -54,6 +55,7 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 	public MyPageProfileDTO getProfile(String id) {
 		return sqlSession.selectOne("myPageSQL.getProfile", id);
 	}
+
 
 	
 

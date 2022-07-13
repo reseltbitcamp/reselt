@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.inicis.std.util.SignatureUtil"%>
+<%@page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -87,101 +90,7 @@
   </div>
 </div>
 
-<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
-  <div class="mb-3">
-    <h3 class="font-bold">결제 방법</h3>
-  </div>
 
-  <div class="flex">
-    <dt class="float-left block min-w-[70px] mb-1 truncate text-sm text-gray-500">간편 결제</dt>
-    <dd class="mt text-xs inline ">일시불</dd>
-    <dd class="mt float m inline pl-1 ml-auto text-xs text-gray-400">+ 새 카드 추가</dd>
-  </div>
-
-  <div class="relative mb-4 cursor-pointer">
-    <a class="paymentOption flex h-14 w-full items-center rounded-lg border border-gray-200 text-gray-400">카드를 등록해주세요 <span class="text-sm text-gray-400 font-bold"> ></span>
-    </a>
-  </div>
-
-  <div class="block cursor-pointer">
-    <dt class="float-left block min-w-[70px] truncate text-sm text-gray-500">일반 결제</dt>
-    <dd class="mt block text-xs text-gray-400">일시불 · 할부</dd>
-  </div>
-
-  <div class="flex flex-wrap justify-between float-left">
-    <div class="paymentOption flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <div class="pr-2">
-      <p class="ml-2">신용/체크카드</p>
-      </div>
-    </div>
-    
-    <div class="paymentOption flex h-full text-sm items-center cursor-pointer mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <div>
-      <p class="ml-2 block">계좌이체</p>
-      <p class="ml-2 text-xs text-red-500 block">최대 5만포인트 적립</p>
-      </div>
-    </div>
-
-    <div class="paymentOption flex h-full text-sm cursor-pointer items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">네이버페이</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_npay.425fb05.png" class="w-12 ml-auto mr-2"></img>
-    </div>
-
-    <div class="paymentOption flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">카카오페이</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_kakaopay.b4ed775.png"class="w-12 ml-auto mr-2"></img>
-    </div>
-
-    <div class="paymentOption flex h-full cursor-pointer text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">토스</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_tosspay.0dabd99.png"class="w-12 ml-auto mr-2"></img>
-    </div>
-
-    <div class="paymentOption flex cursor-pointer h-full text-sm items-center mb-2 basis-[49%] rounded-xl border min-h-[60px] border-gray-200">
-      <p class="ml-2">페이코</p>
-      <img src="https://kream.co.kr/_nuxt/img/buy_pay_payco.af9c8b7.png"class="w-12 ml-auto mr-2"></img>
-    </div>
-  </div>
-
-  <div class="inline-block w-full">
-    <div class="border-b-[1px] border-gray-200 mt-2">
-      <p class="text-xs">결제 혜택</p>
-    </div>
-    <div>
-      <ul>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMjA2MTZfMTE5/MDAxNjU1MzkxNTE5Mjg2.QP9CB9xrNaPm4gSffUbHuPZXgC9Cu5sOic5zsDucNSwg.sgZqI0kBmJo7WdILHaEdmER13nI-ZsHdEj2EcF6gd8Yg.PNG/d_823b047c489341cfb30142125aa812b9.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">계좌 이체로 결제 시 0.5% 무한적립</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTExMjZfMjI5/MDAxNjM3OTMyNDIxNDQ5.kO29DWw5j5r_vqt4cP2uCcI8si5vwnr1m2OSrzqdqUAg.agxcIJth1kHMYuz26KFjf2VHvCRM1-fv_ra2BPqzFAYg.PNG/d_6cd3cdc3d7b045c29794d0c5dfea97a9.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">10만원 이상 결제시 즉시 할인 5%</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTA3MjNfMjE2/MDAxNjI3MDQ0NjUxNTc5.NRYELauTh0NQalDifk1g8-txKLJVL0KO_wiheYsEPwkg.38cKqkZvp2V0zXr2WJfXgCdZTpvWl55pbhxfI5uCzigg.PNG/d_b3ac7ff93d8f46c38b1e14c3f7908685.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">20만원 이상 결제시 즉시 할인 6%</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTA3MDlfNDgg/MDAxNjI1NzU3MTQzNzM0.p8zHdL65rwPY6QDndISSntdesa9onmDokshSgtr0brkg.A5Vayjl-8XaTtJtcJKVdZbwwAvrYQHS7PqeqIZQA6Akg.PNG/p_8f5e108b4c74409ba3a04d9273827180.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">신한카드로 결제시 2% 캐시백</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMTA4MjRfMjM0/MDAxNjI5ODE2MTgxODA2.zqDQvoDLZpQLvuJTrBWlJHlcPSaAH0jX9tsLBAco5lkg.IdyhXkbEvUkJsM6yD7aPxOA-M4mOewO3KUxLZ0Ka47sg.PNG/d_c810b2e128ac40869e5055f891919512.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">토스로 첫 결제 시 3천원 캐시백</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-        <li class="flex mt-1">
-          <img src="https://kream-phinf.pstatic.net/MjAyMjA1MzFfNzkg/MDAxNjUzOTY3NTI1MDMz.9K10E5A_3PnRkhUnTXSTlSAx2j9vb6TJNJPB6Wp0prwg.yYQwdt6D4SZhgOEToJ8FWw7nV6mJ97rhiZDlxW8ntkkg.PNG/d_dd5312bd03744c03a282bebd96e9535d.png" class="w-[72px] h-[16px] m-[1px]" />
-          <p class="text-gray-400 text-sm">페이코 포인트로 결제 시 3% 적립</p>
-          <a href="#" class="text-xs ml-auto underline text-gray-400">더보기</a>
-        </li>
-    </div>
-  </div>
-</div>
 
 <div id="sellAgree" class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
         <ul>
@@ -239,11 +148,242 @@
     <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">총 결제금액</dt>
     <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
   </div>
-  <input type="button" value="결제하기" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
+  <div class="p-3">
+  	<button id="agreeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
+  </div>
 </div>
 
+
+<!------------------------------------  결제 api   -------------------------------------------->
+<%
+
+	/*
+		//*** 위변조 방지체크를 signature 생성 ***
+
+			oid, price, timestamp 3개의 키와 값을
+
+			key=value 형식으로 하여 '&'로 연결한 하여 SHA-256 Hash로 생성 된값
+
+			ex) oid=INIpayTest_1432813606995&price=819000&timestamp=2012-02-01 09:19:04.004
+				
+
+			 * key기준 알파벳 정렬
+
+			 * timestamp는 반드시 signature생성에 사용한 timestamp 값을 timestamp input에 그대로 사용하여야함
+	*/
+
+	//############################################
+	// 1.전문 필드 값 설정(***가맹점 개발수정***)
+	//############################################
+
+	// 여기에 설정된 값은 Form 필드에 동일한 값으로 설정
+	String mid					= "INIpayTest";		// 가맹점 ID(가맹점 수정후 고정)					
+	
+	//인증
+	String signKey			    = "SU5JTElURV9UUklQTEVERVNfS0VZU1RS";	// 가맹점에 제공된 웹 표준 사인키(가맹점 수정후 고정)
+	String timestamp			= SignatureUtil.getTimestamp();			// util에 의해서 자동생성
+
+	String oid					= mid+"_"+SignatureUtil.getTimestamp();	// 가맹점 주문번호(가맹점에서 직접 설정)
+	String price				= "100";													// 상품가격(특수기호 제외, 가맹점에서 직접 설정)
+
+	String cardNoInterestQuota	= "11-2:3:,34-5:12,14-6:12:24,12-12:36,06-9:12,01-3:4";		// 카드 무이자 여부 설정(가맹점에서 직접 설정)
+	String cardQuotaBase		= "2:3:4:5:6:11:12:24:36";		// 가맹점에서 사용할 할부 개월수 설정
+
+	//###############################################
+	// 2. 가맹점 확인을 위한 signKey를 해시값으로 변경 (SHA-256방식 사용)
+	//###############################################
+	String mKey = SignatureUtil.hash(signKey, "SHA-256");
+	
+	//###############################################
+	// 2.signature 생성
+	//###############################################
+	Map<String, String> signParam = new HashMap<String, String>();
+
+	signParam.put("oid", oid); 					// 필수
+	signParam.put("price", price);				// 필수
+	signParam.put("timestamp", timestamp);		// 필수
+
+	// signature 데이터 생성 (모듈에서 자동으로 signParam을 알파벳 순으로 정렬후 NVP 방식으로 나열해 hash)
+	String signature = SignatureUtil.makeSignature(signParam);
+	
+	
+	/* 기타 */
+	String siteDomain = "http://localhost:8080/ReseltProject/shop"; //가맹점 도메인 입력
+	// 페이지 URL에서 고정된 부분을 적는다. 
+	// Ex) returnURL이 http://localhost:8080INIpayStdSample/INIStdPayReturn.jsp 라면
+	// http://localhost:8080/INIpayStdSample 까지만 기입한다.
+	
+%>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- 이니시스 표준결제 js -->
+  <!--
+    연동시 유의 사항!!
+    1) 테스트 URL(stgstdpay.inicis.com) - 샘플에 제공된 테스트 MID 전용으로 실제 가맹점 MID 사용 시 에러가 발생 할 수 있습니다.
+    2) 상용 URL(stdpay.inicis.com) - 실제 가맹점 MID 로 테스트 및 오픈 시 해당 URL 변경하여 사용합니다.
+    3) 가맹점의 URL이 http: 인경우 js URL도 https://stgstdpay.inicis.com/stdjs/INIStdPay.js 로 변경합니다.	
+    4) 가맹점에서 사용하는 케릭터셋이 EUC-KR 일 경우 charset="UTF-8"로 UTF-8 일 경우 charset="UTF-8"로 설정합니다.
+  -->	
+  
+  <!-- 상용 JS(가맹점 MID 변경 시 주석 해제, 테스트용 JS 주석 처리 필수!) -->
+	<!--script language="javascript" type="text/javascript" src="https://stdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script-->
+  
+  <!-- 테스트 JS(샘플에 제공된 테스트 MID 전용) -->
+	<div id="kgApi">
+							<table>
+								<tr>
+									<td style="text-align:left;">
+										<form id="SendPayForm_id" name="" method="POST" >
+										
+											<br/><b>***** 필 수 *****</b>
+											<div style="border:2px #dddddd double;padding:10px;background-color:#f3f3f3;">
+
+												<br/><b>version</b> :
+												<br/><input  style="width:100%;" name="version" value="1.0" >
+
+												<br/><b>mid</b> :
+												<br/><input  style="width:100%;" name="mid" value="<%=mid%>" >
+													
+												<br/><b>goodname</b> :
+												<br/><input  style="width:100%;" name="goodname" value="테스트" >
+
+												<br/><b>oid</b> :
+												<br/><input  style="width:100%;" name="oid" value="<%=oid%>" >
+
+												<br/><b>price</b> :
+												<br/><input  style="width:100%;" name="price" value="<%=price%>" >
+
+												<br/><b>currency</b> :
+												<br/>[WON|USD]
+												<br/><input  style="width:100%;" name="currency" value="WON" >
+
+												<br/><b>buyername</b> :
+												<br/><input  style="width:100%;" name="buyername" value="홍길동" >
+
+												<br/><b>buyertel</b> :
+												<br/><input  style="width:100%;" name="buyertel" value="010-1234-5678" >
+
+												<br/><b>buyeremail</b> :
+												<br/><input  style="width:100%;" name="buyeremail" value="test@inicis.com" >
+
+											
+												<!-- <br/><b>timestamp</b> : -->
+												<input type="hidden" style="width:100%;" name="timestamp" value="<%=timestamp %>" >
+
+												<!-- <br/><b>signature</b> : -->
+												<input type="hidden" style="width:100%;" name="signature" value="<%=signature%>" >
+
+												<br/><b>returnUrl</b> :
+												<br/><input  style="width:100%;" name="returnUrl" value="<%=siteDomain%>/buySuccess" >
+												<!--
+					                            payViewType이 popup일 경우 crossDomain이슈로 우회처리 
+					                            <input  style="width:100%;" name="returnUrl" value="<%=siteDomain%>/INIStdPayRelay.jsp" >
+												-->
+												<input type="hidden"  name="mKey" value="<%=mKey%>" >
+
+											</div>
+
+											<br/><br/>
+											<b>***** 기본 옵션 *****</b>
+											<div style="border:2px #dddddd double;padding:10px;background-color:#f3f3f3;">
+												<b>gopaymethod</b> : 결제 수단 선택
+												<br/>ex) Card (계약 결제 수단이 존재하지 않을 경우 에러로 리턴)
+												<br/>사용 가능한 입력 값
+												<br/>Card,DirectBank,HPP,Vbank,kpay,Swallet,Paypin,EasyPay,PhoneBill,GiftCard,EWallet
+												<br/>onlypoint,onlyocb,onyocbplus,onlygspt,onlygsptplus,onlyupnt,onlyupntplus
+												<br/><input  style="width:100%;" name="gopaymethod" value="" >
+												<br/><br/>
+
+												<br/>
+												<b>offerPeriod</b> : 제공기간
+												<br/>ex)20151001-20151231, [Y2:년단위결제, M2:월단위결제, yyyyMMdd-yyyyMMdd : 시작일-종료일]
+												<br/><input  style="width:100%;" name="offerPeriod" value="20151001-20151231" >
+												<br/><br/>
+												
+												<br/><b>acceptmethod</b> : acceptmethod
+												<br/>acceptmethod  ex) CARDPOINT:SLIMQUOTA(코드-개월:개월):no_receipt:va_receipt:vbank(20150425):va_ckprice: 
+												<br/>KWPY_TYPE(0):KWPY_VAT(10|0) 기타 옵션 정보 및 설명은 연동정의보 참조 구분자 ":"
+												<br/><input style="width:100%;" name="acceptmethod" value="CARDPOINT:HPP(1):no_receipt:va_receipt:below1000" >
+											</div>
+
+											<br/><br/>
+											<b>***** 표시 옵션 *****</b>
+											<div style="border:2px #dddddd double;padding:10px;background-color:#f3f3f3;">
+												<br/><b>languageView</b> : 초기 표시 언어
+												<br/>[ko|en] (default:ko)
+												<br/><input style="width:100%;" name="languageView" value="" >
+
+												<br/><b>charset</b> : 리턴 인코딩
+												<br/>[UTF-8|EUC-KR] (default:UTF-8)
+												<br/><input style="width:100%;" name="charset" value="" >
+
+												<br/><b>payViewType</b> : 결제창 표시방법
+												<br/>[overlay] (default:overlay)
+												<br/><input style="width:100%;" name="payViewType" value="" >
+
+												<br/><b>closeUrl</b> : payViewType='overlay','popup'시 취소버튼 클릭시 창닥기 처리 URL(가맹점에 맞게 설정)
+												<br/>close.jsp 샘플사용(생략가능, 미설정시 사용자에 의해 취소 버튼 클릭시 인증결과 페이지로 취소 결과를 보냅니다.)
+												<br/><input style="width:100%;" name="closeUrl" value="<%=siteDomain%>/close" >
+
+												<br/><b>popupUrl</b> : payViewType='popup'시 팝업을 띄울수 있도록 처리해주는 URL(가맹점에 맞게 설정)
+												<br/>popup.jsp 샘플사용(생략가능,payViewType='popup'으로 사용시에는 반드시 설정)
+												<br/><input style="width:100%;" name="popupUrl" value="<%=siteDomain%>/popup.jsp" >
+
+											</div>
+											
+											<b>***** 결제 수단별 옵션 *****</b>
+											<br/>
+											<b>-- 카드(간편결제도 사용) --</b>
+											<div style="border:2px #cccccc solid;padding:10px;background-color:#f3f3f3;">
+
+												<br/><b>quotabase</b> : 할부 개월 설정
+												<br/>ex) 2:3:4
+												<br/><input  style="width:100%;" name="quotabase" value="<%=cardQuotaBase%>" >
+												
+												<br/><b>ini_onlycardcode</b> : 중복 카드 코드
+												<br/>ex) 01:03:04:11
+												<br/><input  style="width:100%;" name="ini_onlycardcode" value="" >
+												
+												<br/><b>ini_cardcode</b> : 카드 코드
+												<br/>ex) 14
+												<br/><input  style="width:100%;" name="ini_cardcode" value="" >
+												
+												<br/><b>ansim_quota</b> : 할부 선택
+												<br/>ex) 3
+												<br/><input  style="width:100%;" name="ansim_quota" value="" >	
+											
+											</div>
+											
+											<b>-- 가상계좌 --</b>
+											<div style="border:2px #cccccc solid;padding:10px;background-color:#f3f3f3;">
+												<br/><b>INIregno</b> : 주민번호 설정 기능
+												<br/>13자리(주민번호),10자리(사업자번호),미입력시(화면에서입력가능)
+												<br/><input  style="width:100%;" name="INIregno" value="" >
+											</div>
+											
+											<br/><br/>
+											<b>***** 추가 옵션 *****</b>
+											<div style="border:2px #dddddd double;padding:10px;background-color:#f3f3f3;">
+												<br/><b>merchantData</b> : 가맹점 관리데이터(2000byte)
+												<br/>인증결과 리턴시 함께 전달됨(한글 지원 안됨, 개인정보 암호화(권장))
+												<br/><input  style="width:100%;" name="merchantData" value="" >
+											</div>
+																						
+										</form>
+									</td>
+								</tr>
+							</table>
+	</div>
+<script language="javascript" type="text/javascript" src="https://stgstdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+$(function(){
+	$('#kgApi').hide();	
+})
+
+
+
 $('#firstAgree').click(function(){
 	var check1 = $('#firstAgree').prop("checked");
 	var check2 = $('#secondAgree').prop("checked");
@@ -310,7 +450,4 @@ $('.paymentOption').each(function(index){
     $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
   })
 
-$('#agreeBtn').click(function(){
-	location.href="./buySuccess"
-})
 </script>
