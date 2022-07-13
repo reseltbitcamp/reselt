@@ -3,153 +3,349 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<style type="text/css">
-.social_post_detail[data-v-b710a39c],.sm .social_post_detail[data-v-b710a39c]{padding-bottom:30px}.lg .social_post_detail.empty_comments[data-v-b710a39c],.md .social_post_detail.empty_comments[data-v-b710a39c]{padding-bottom:40px}
-</style>
-<div data-v-b710a39c="" data-v-b5f8fcbc="" id="p525519" class="social_post_detail">
-<div data-v-271ab2d7="" data-v-b710a39c="" class="social_user_state">
-<a data-v-271ab2d7="" href="#" class="user_state_box">
-<div data-v-271ab2d7="" class="profile_img_box">
-<img data-v-271ab2d7="" src="https://kream-phinf.pstatic.net/MjAyMjA0MjNfMjkg/MDAxNjUwNjQ2NjE5NjI4.4--iKKNvb6pLK-jp3nPCphJ0PAc2nc-QvjKJlZkW6zog.PoVuNDesIE0YG7rVVQmMJRokgybmUuTsjuKO-0DAnAAg.JPEG/p_d081704f3ee546bf8d0efe8f06949711.jpeg?type=sl" alt="KREAM 프로필 이미지" class="profile_img">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>RESELT | 한정판 거래의 RESELT</title>
+    <!-- TailwindCSS configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/ReseltProject/js/tailwind.config.js"></script>
+	
+    <!-- External Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=notoSans:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Header-->
+      <div id="headerTop" class="border-b-[1px]">
+        <div id="header" class="px-10 py-1 text-right text-[13px] font-notoSans font-extralight">
+          <a href="/ReseltProject/notice/noticeList" class="m-2">고객센터</a>
+          <a href="#" class="m-2">관심상품</a>
+          <a href="/ReseltProject/myPage/myMain" class="m-2">마이페이지</a>
+          <c:if test="${not empty email}">
+            <a href="/ReseltProject/member/logout" class="m-2">로그아웃</a>
+          </c:if>
+          <c:if test="${empty email}">
+            <a href="/ReseltProject/member/login" class="m-2">로그인</a>
+          </c:if>
+        </div>
+      </div>
+      
+<!-- menu -->
+<div id="headerBot" class="py-2 px-11 border-b-[1px] flex flex-row font-notoSans">
+  <div id="menuLogo" class="basis-1/2">
+    <a href="/ReseltProject/" class="font-extrabold text-[32px] italic">RESELT</a>
+  </div>
+  <div id="menuBtn" class="basis-1/2 text-right self-center font-light">
+    <a href="/ReseltProject/style/styleList" id="styleBtn" class="px-5 text-[15px]">STYLE</a>
+    <a href="/ReseltProject/shop/shopindex" id="shopBtn" class="px-5 text-[15px]">SHOP</a>
+    <a href="#" id="aboutBtn" class="px-5 text-[15px]">ABOUT</a>
+    <a id="searchBtn" href="#" class="pl-5">
+      <img src="/ReseltProject/img/index/search-icon.png" class="w-6 h-6 inline align-middle">
+    </a>
+  </div>
 </div>
-<div data-v-271ab2d7="" class="profile_info">
-<p data-v-271ab2d7="" href="#" class="user_name">hsd_09_</p>
-<p data-v-271ab2d7="" class="upload_time">2일 전</p>
-</div>
-<button data-v-3d1bcc82="" data-v-7611bfce="" data-v-271ab2d7="" type="button" class="btn solid small btn_follow small"> 팔로우 </button>
-</a>
-</div>
-<div data-v-ff5c1306="" data-v-b710a39c="" class="social_image_box">
-<div data-v-ff5c1306="" class="social_slide">
-<div data-v-3d1a4f76="" data-v-ff5c1306="" dir="ltr" class="slick-slider slick-initialized">
-<div data-v-ff5c1306="" data-v-3d1a4f76="" data-v-21137603="" class="custom-arrow slick-arrow slick-prev slick-disabled">
-</div>
-<div data-v-3d1a4f76="" class="slick-list">
-<div data-v-e4caeaf8="" data-v-3d1a4f76="" class="slick-track" style="width: 1440px; opacity: 1; transform: translate3d(0px, 0px, 0px);">
-<div data-v-e4caeaf8="" tabindex="-1" data-index="0" aria-hidden="false" class="slick-slide slick-active slick-current" style="outline: none; width: 720px;"><div data-v-e4caeaf8=""><div data-v-ff5c1306="" data-v-e4caeaf8="" tabindex="-1" class="slide_content" style="width: 100%; display: inline-block;">
-<div data-v-ff5c1306="" data-v-e4caeaf8="" class="slide_item"><div data-v-ff5c1306="" data-v-e4caeaf8="" class="img_box">
-<img data-v-ff5c1306="" data-v-e4caeaf8="" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" src="https://kream-phinf.pstatic.net/MjAyMjA3MDhfMzEg/MDAxNjU3MjcxMTQ5OTg5.0uVAHJGc2MauNvfzEjzWFxy51qSL6Z8gVRHHgUG6MhQg.im3v_2lW1OVjNN2wdJTtT2_RD0m5krkButlVc8OQMzog.JPEG/p_b2561e7ed5754c64b05e60a4fe3d105f.jpeg?type=l" alt="소셜이미지" class="social_img">
-</div>
-</div></div>
-</div>
-</div>
-<div data-v-e4caeaf8="" tabindex="-1" data-index="1" aria-hidden="true" class="slick-slide" style="outline: none; width: 720px;"><div data-v-e4caeaf8="">
-<div data-v-ff5c1306="" data-v-e4caeaf8="" tabindex="-1" class="slide_content" style="width: 100%; display: inline-block;"><div data-v-ff5c1306="" data-v-e4caeaf8="" class="slide_item">
-<div data-v-ff5c1306="" data-v-e4caeaf8="" class="img_box"><img data-v-ff5c1306="" data-v-e4caeaf8="" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" src="https://kream-phinf.pstatic.net/MjAyMjA3MDhfMjky/MDAxNjU3MjcxMTUwNTAw.Wp-nxI4tEMXkwz2naSA2gsplLKRAMk18V3_iDsuiHeAg.rSBAgs3DJOz0MyVlr7uTMlw_qvl5trNO_1xju47NZn8g.JPEG/p_e5357cbcfddb4937b462753bbfbaed3d.jpeg?type=l" alt="소셜이미지" class="social_img">
-</div>
-</div>
-</div></div>
-</div>
-</div>
-</div>
-<div data-v-ff5c1306="" data-v-3d1a4f76="" data-v-21137603="" class="custom-arrow slick-arrow slick-next">
-</div>
-<ul data-v-3d1a4f76="" class="slick-dots" style="display: block;">
-<li class="slick-active"><button>1</button></li>
-<li class=""><button>2</button></li>
-</ul>
-</div>
-<div data-v-ff5c1306="" class="img_count">
-<span data-v-ff5c1306="" class="current">1</span>
-<span data-v-ff5c1306="">/</span>
-<span data-v-ff5c1306="" class="total">2</span>
-</div>
-</div>
-</div>
-<div data-v-91cee5a6="" data-v-b710a39c="" class="social_product">
-<div data-v-91cee5a6="">
-<div data-v-91cee5a6="" class="product_title">
-<span data-v-91cee5a6="" class="title_txt">상품 태그
-<strong data-v-91cee5a6="" class="num">3</strong>개</span>
 
+<!-- style filter -->
+<div id="styleTabMenu" class="bg-white w-full h-[68px] p-4 bg-white">
+  <div class="w-24 h-10 text-center mx-auto my-0">
+    <div class="w-12 h-9 justify-center py-1 m-auto rounded-2xl bg-zinc-900 float-left">
+      <a href="#" class="text-white font-semibold">인기</a>
+    </div>
+    <div class="w-12 h-9 py-1 justify-center m-auto text-center float-left">
+      <a href="#">최신</a>
+    </div>
+  </div>
 </div>
-</div>
-<div data-v-91cee5a6="" class="product_list_area single_list">
-<ul data-v-91cee5a6="" class="product_list" style="transform: translateX(0px);">
-<li data-v-91cee5a6="" class="product_item"><a data-v-91cee5a6="" href="/products/47492" class="product_link">
-<div data-v-75e33658="" data-v-91cee5a6="" class="product" style="background-color: rgb(244, 244, 244);"><picture data-v-548c90f9="" data-v-75e33658="" class="picture product_img">
-<source data-v-548c90f9="" type="image/webp" srcset="https://kream-phinf.pstatic.net/MjAyMjAxMTRfNDgg/MDAxNjQyMTUxNzA4Njcx.JlRyJLnGBMGKicse523NuqqIqqT85FUvie35z4AlSKQg.N0t8fu4AbhS8eXbZbtkvTwmDJcRwLOh0deHs_L9esSAg.JPEG/a_810b4fc0969b47b5b02efc485cc44bcd.jpg?type=s_webp">
-<source data-v-548c90f9="" srcset="https://kream-phinf.pstatic.net/MjAyMjAxMTRfNDgg/MDAxNjQyMTUxNzA4Njcx.JlRyJLnGBMGKicse523NuqqIqqT85FUvie35z4AlSKQg.N0t8fu4AbhS8eXbZbtkvTwmDJcRwLOh0deHs_L9esSAg.JPEG/a_810b4fc0969b47b5b02efc485cc44bcd.jpg?type=s">
-<img data-v-548c90f9="" alt="Bottega Veneta Mini Leather Cassette White" src="https://kream-phinf.pstatic.net/MjAyMjAxMTRfNDgg/MDAxNjQyMTUxNzA4Njcx.JlRyJLnGBMGKicse523NuqqIqqT85FUvie35z4AlSKQg.N0t8fu4AbhS8eXbZbtkvTwmDJcRwLOh0deHs_L9esSAg.JPEG/a_810b4fc0969b47b5b02efc485cc44bcd.jpg?type=s" class="image">
-</picture>
-</div>
-<div data-v-91cee5a6="" class="product_desc">
-<p data-v-91cee5a6="" class="product_name">Bottega Veneta Mini Leather Cassette White</p>
-<div data-v-91cee5a6="" class="price_box">
-<span data-v-91cee5a6="" class="amount">1,290,000</span>
-<span data-v-91cee5a6="" class="unit">원</span>
-</div>
-</div>
-</a></li>
-<li data-v-91cee5a6="" class="product_item">
-<a data-v-91cee5a6="" href="/products/51930" class="product_link"><div data-v-75e33658="" data-v-91cee5a6="" class="product" style="background-color: rgb(244, 244, 244);">
-<picture data-v-548c90f9="" data-v-75e33658="" class="picture product_img"><source data-v-548c90f9="" type="image/webp" srcset="https://kream-phinf.pstatic.net/MjAyMjAyMThfMjgy/MDAxNjQ1MTYwNTEwMzE1.b7Tfo2yd_MAJxvpLOr5SiAzko_mSbsciipBTmmX-35sg.J7YcCqgNCCcpH9-JFP2PU9vYnDj1_P7pyjd1csXJ7jQg.JPEG/a_300efd0ab2e4431e956b8af0acc6c586.jpg?type=s_webp">
-<source data-v-548c90f9="" srcset="https://kream-phinf.pstatic.net/MjAyMjAyMThfMjgy/MDAxNjQ1MTYwNTEwMzE1.b7Tfo2yd_MAJxvpLOr5SiAzko_mSbsciipBTmmX-35sg.J7YcCqgNCCcpH9-JFP2PU9vYnDj1_P7pyjd1csXJ7jQg.JPEG/a_300efd0ab2e4431e956b8af0acc6c586.jpg?type=s"><img data-v-548c90f9="" alt="Apple AirPods Max Silver (Korean Ver.)" src="https://kream-phinf.pstatic.net/MjAyMjAyMThfMjgy/MDAxNjQ1MTYwNTEwMzE1.b7Tfo2yd_MAJxvpLOr5SiAzko_mSbsciipBTmmX-35sg.J7YcCqgNCCcpH9-JFP2PU9vYnDj1_P7pyjd1csXJ7jQg.JPEG/a_300efd0ab2e4431e956b8af0acc6c586.jpg?type=s" class="image"></picture>
-</div>
-<div data-v-91cee5a6="" class="product_desc">
-<p data-v-91cee5a6="" class="product_name">Apple AirPods Max Silver (Korean Ver.)</p>
-<div data-v-91cee5a6="" class="price_box"><span data-v-91cee5a6="" class="amount">555,000</span>
-<span data-v-91cee5a6="" class="unit">원</span>
-</div>
-</div>
-</a>
-</li>
-<li data-v-91cee5a6="" class="product_item">
-<a data-v-91cee5a6="" href="/products/61818" class="product_link">
-<div data-v-75e33658="" data-v-91cee5a6="" class="product" style="background-color: rgb(244, 244, 244);"><picture data-v-548c90f9="" data-v-75e33658="" class="picture product_img">
-<source data-v-548c90f9="" type="image/webp" srcset="https://kream-phinf.pstatic.net/MjAyMjA1MThfMjc4/MDAxNjUyODQ0NjY3Njk4.z9CzyPjVe-e-AozmJj0z8X24-jLCVTYczD3RbyEE4HIg.mXdFm9k8_UaEFlo2nRTdha-qXFquOVKduD7qbFBAiXsg.JPEG/a_e7d25427a74d406eb141e471c3ba7109.jpg?type=s_webp">
-<source data-v-548c90f9="" srcset="https://kream-phinf.pstatic.net/MjAyMjA1MThfMjc4/MDAxNjUyODQ0NjY3Njk4.z9CzyPjVe-e-AozmJj0z8X24-jLCVTYczD3RbyEE4HIg.mXdFm9k8_UaEFlo2nRTdha-qXFquOVKduD7qbFBAiXsg.JPEG/a_e7d25427a74d406eb141e471c3ba7109.jpg?type=s">
-<img data-v-548c90f9="" alt="Prada Symbole Necklace Black" src="https://kream-phinf.pstatic.net/MjAyMjA1MThfMjc4/MDAxNjUyODQ0NjY3Njk4.z9CzyPjVe-e-AozmJj0z8X24-jLCVTYczD3RbyEE4HIg.mXdFm9k8_UaEFlo2nRTdha-qXFquOVKduD7qbFBAiXsg.JPEG/a_e7d25427a74d406eb141e471c3ba7109.jpg?type=s" class="image"></picture>
-<!----><!----><!----></div>
-<div data-v-91cee5a6="" class="product_desc">
-<p data-v-91cee5a6="" class="product_name">Prada Symbole Necklace Black</p>
-<div data-v-91cee5a6="" class="price_box">
-<span data-v-91cee5a6="" class="amount">950,000</span>
-<span data-v-91cee5a6="" class="unit">원</span>
-</div></div></a></li></ul></div></div>
-<div data-v-74bb3120="" data-v-b710a39c="" class="social_contents">
-<div data-v-66774c6c="" data-v-74bb3120="" class="social_btn">
-<div data-v-66774c6c="" class="btn_bind"><a data-v-66774c6c="" href="#" aria-label="좋아요" class="btn like">
-<svg data-v-66774c6c="" xmlns="http://www.w3.org/2000/svg" class="icon sprite-icons social-like">
-<use data-v-66774c6c="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like">
-</use>
-</svg>
-</a>
-<a data-v-66774c6c="" href="#" aria-label="댓글" class="btn comment"><svg data-v-66774c6c="" xmlns="http://www.w3.org/2000/svg" class="social-comment icon sprite-icons">
-<use data-v-66774c6c="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-comment" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-comment"></use></svg></a></div><a data-v-66774c6c="" href="#" aria-label="공유" class="btn share">
-<svg data-v-66774c6c="" xmlns="http://www.w3.org/2000/svg" class="social-share icon sprite-icons"><use data-v-66774c6c="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-share" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-share"></use>
-</svg>
-</a>
-</div><div data-v-8cbe1490="" data-v-74bb3120="" class="social_count">
-<!---->
-<a data-v-8cbe1490="" href="#" class="like_count"> 공감 
-<strong data-v-8cbe1490="">184</strong>개
- </a>
-<!----><!---->
-</div><div data-v-1834f83a="" data-v-74bb3120="" class="social_text">
-<span data-v-1834f83a="" href="#" class="text_link">
-<span data-v-1834f83a="" class="text">
-<a class="hashtag" href="https://kream.co.kr/social/tags/🎧">#🎧</a> 
-<a class="hashtag" href="https://kream.co.kr/social/tags/에어팟맥스">#에어팟맥스</a> 
-<a class="hashtag" href="https://kream.co.kr/social/tags/밤마실룩🖤">#밤마실룩🖤</a>
-</span><!----></span><!----></div><div data-v-1eb891e0="" data-v-74bb3120="" class="social_comment">
-<div data-v-1eb891e0="" class="comment_area">
-<a data-v-1eb891e0="" href="#" class="comment_count"> 댓글 <strong data-v-1eb891e0="">1</strong>개 </a>
-<div data-v-1eb891e0="" class="comment_list"><div data-v-262e9d34="" data-v-1eb891e0="" class="comment_unit">
-<div data-v-262e9d34="" class="comment_box"><a data-v-262e9d34="" href="#" class="profile_link">
-<img data-v-262e9d34="" src="https://kream-phinf.pstatic.net/MjAyMTAzMjFfMTcz/MDAxNjE2Mjk1MzU2NzQz.r9-DQG-PWx7LaPRavcRp4Bn7cKqsGKkSwbzMtPWv0jQg.rnRQkvUMW7pNPkY4nPl7sbideRxUqEcpKoDtpuPaZPgg.JPEG/p_c3562faf3acc4e8ca4c749da2e086097.jpeg?type=sl" alt="KREAM 프로필 이미지" class="profile_img"></a>
-<div data-v-262e9d34="" class="comment_detail"><div data-v-262e9d34="" class="main"><span data-v-262e9d34="" class="user_name">crescent_so_young_moon</span>
-<span data-v-262e9d34="" class="comment_txt">완벼크💕💕</span></div><div data-v-262e9d34="" class="sub"><span data-v-262e9d34="" class="upload_time">어제</span><!----><!----><!----><!---->
-</div></div>
-<a data-v-262e9d34="" href="#" class="btn_like"><svg data-v-262e9d34="" xmlns="http://www.w3.org/2000/svg" class="icon sprite-icons social-like-gray-sm"><use data-v-262e9d34="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like-gray-sm" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like-gray-sm"></use></svg></a></div></div><!----></div></div></div><!----><!----><!----></div></div>
 
-<div data-v-350bc372="" class="layer_container">
-<div data-v-350bc372="" class="layer_header">
-<h2 data-v-e139a0b8="" data-v-350bc372="" class="title">댓글</h2>
+<!-- style 상세페이지 -->
+<div id="styleContent" class="w-[620px] mx-auto my-0">
+    <!-- user 정보 -->
+    <div id="cardDetail" class="w-full h-[60px]">
+      <div id="userBox" class="w-[400px] h-[56px] py-2 float-left">
+        <div id="userImage" class="rounded-full w-[44px] h-[44px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+        <div id="userName" class="inline w-[350px] font-medium float-left text-xs px-1 pt-2">m.mming</div>
+        <div id="date" class="inline float-left text-xs px-1">2시간 전</div>
+      </div>
+      
+       <!-- 수정, 삭제 메뉴 -->
+      <div id="menu" class="relative w-[20px] h-[60px] float-left pt-5 ml-[190px]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+ 	    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+	    </svg>
+	    <div id="dropMenu" class="hidden absolute w-[100px] h-[70px] bg-white rounded-md border-2 border-slate-200 text-center right-0 pt-2">
+	      <ul class="submenu">
+		    <li class="hover:bg-gray-200" class="mb-2"><a href="#">수정</a></li>
+		    <li class="hover:bg-gray-200" class="mt-2"><a href="#">삭제</a></li>
+		  </ul>
+	    </div>
+	  </div>
+
+	  </div>
+	  
+	  <!-- style image -->
+	  <div id="styleImage" class="w-full">
+	     <img src="/ReseltProject/img/style/styleImage.jpeg" alt="프로필 사진" class="w-full h-auto">
+	  </div>
+	  
+	  <!-- style product tag -->
+	  <div id="productBox" class="w-[120px] h-[255px]">
+	    <div id="tagName" class="w-full font-medium text-xs pt-6">상품태그</div>
+	    <div id="productImage" class="bg-sky-100 rounded-md w-[120px] h-[120px] mt-3 mb-2">
+       	  <img src="/ReseltProject/img/style/productImage.png" alt="나이키 신발">
+        </div>
+        <p id="productName" class="text-xs">Jordan 1 x Travis Scott x Fragment Retro</p>
+          <span id="amount" class="text-xs">159,000</span>
+          <span id="unit" class="text-xs">원</span>
+	  </div>
+	  
+	  <!-- 좋아요, 댓글 버튼 -->
+	  <div id="btnBox" class="w-full mt-3">
+	    <svg class="inline flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+        </svg>
+        <svg class="inline ml-2 flex-shrink-0 h-6 w-6 cursor-pointer" id="replyViewIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+           <path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/>
+        </svg>
+        <p id="textBox" class="leading-normal text-xs">공감 86개</p>
+      </div>
+      
+	  <!-- content -->
+	  <div id="styleContent" class="w-full pt-3">
+	    <p id="textBox" class="leading-normal text-xs">오늘은 날도 좋다. 운동화 신고 한 컷~</p>
+	  </div>
+	  
+	  <!-- 댓글 보기 -->
+	  <div id="replyBox" class="w-full h-[200px] ">
+	    <div id="replyName" class="w-full font-medium text-xs pt-6">댓글 3개</div>
+	    
+	    <div id="replyUserBox" class="w-[110px] h-[56px] py-2 float-left">
+        <div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+        <div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">m.mming</div>
+        <div id="replydate" class="inline float-left text-xs px-1">2시간 전</div>
+        </div>
+        <div id="replyContent" class="w-full h-[56px] text-xs pt-3">너무 잘 어울린다~
+        </div>
+        <div id="replyUserBox" class="w-[110px] h-[56px] py-2 float-left">
+        <div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+        <div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">heaa.tt</div>
+        <div id="replydate" class="inline float-left text-xs px-1">3시간 전</div>
+        </div>
+        <div id="replyContent" class="w-full h-[56px] text-xs pt-3">예쁘세요~
+        </div>
+	  </div>
 </div>
-<div data-v-350bc372="" class="layer_content">
-<div data-v-e139a0b8="" data-v-350bc372="" class="comment_top">
-<div data-v-e139a0b8="" data-v-350bc372="" class="comment_top_scroll">
-<div data-v-262e9d34="" data-v-e139a0b8="" class="comment_unit" data-v-350bc372="">
-<div data-v-262e9d34="" class="comment_box"><a data-v-262e9d34="" href="#" class="profile_link">
-<img data-v-262e9d34="" src="https://kream-phinf.pstatic.net/MjAyMTEwMTdfMTcy/MDAxNjM0NDQyNjE2OTAw.zcttZMktG1r7UzTGLx1O0xNa3NpIpY5sv1OT3TsISeUg.htPxm_M5js-UOSoE-EmPj1xBbPMtUAue7vsuDkjkzXcg.JPEG/p_fa4534f074834c7283a6f0284d188e93.jpeg?type=sl" alt="KREAM 프로필 이미지" class="profile_img"></a><div data-v-262e9d34="" class="comment_detail"><div data-v-262e9d34="" class="main"><span data-v-262e9d34="" class="user_name">mangocheezz</span><span data-v-262e9d34="" class="comment_txt">베이프 사랑해<br>#KREAM스타일 <a class="hashtag" href="https://kream.co.kr/social/tags/크림스타일">#크림스타일</a> <a class="hashtag" href="https://kream.co.kr/social/tags/스트릿패션">#스트릿패션</a> <a class="hashtag" href="https://kream.co.kr/social/tags/스트릿룩">#스트릿룩</a> <a class="hashtag" href="https://kream.co.kr/social/tags/스타일컬렉터">#스타일컬렉터</a> <a class="hashtag" href="https://kream.co.kr/social/tags/오버핏코디">#오버핏코디</a></span></div><div data-v-262e9d34="" class="sub"><span data-v-262e9d34="" class="upload_time">2일 전</span><!----><!----><!----><!----></div></div><a data-v-262e9d34="" href="#" class="btn_like"><svg data-v-262e9d34="" xmlns="http://www.w3.org/2000/svg" class="icon sprite-icons social-like-gray-sm"><use data-v-262e9d34="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like-gray-sm" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like-gray-sm"></use></svg></a></div></div></div></div><div data-v-e139a0b8="" data-v-350bc372=""><div data-v-4ae41fe7="" data-v-e139a0b8="" class="social_comment_input_box"><!----><div data-v-4ae41fe7="" class="social_comment_input"><div data-v-4ae41fe7="" class="comment_input"><a data-v-4ae41fe7="" href="#" class="profile_link"><img data-v-4ae41fe7="" src="/images/account_img_default.png?type=sl" alt="KREAM 프로필 이미지" class="profile_img"></a><div data-v-4ae41fe7="" class="wrap_input" style="height: 41px;"><div data-v-52c9b494="" data-v-4ae41fe7="" contenteditable="true" class="input_txt origin"></div><div data-v-4ae41fe7="" placeholder="댓글을 남기세요…" class="input_txt dummy"></div><a data-v-4ae41fe7="" href="#" class="btn_regist" style="display: none;"> 등록 </a></div></div><ul data-v-573055b0="" data-v-4ae41fe7="" class="social_suggests" style="display: none;"></ul></div></div></div><div data-v-e139a0b8="" data-v-350bc372="" class="comment_content"><div data-v-e139a0b8="" data-v-350bc372="" class="comment_group"><div data-v-262e9d34="" data-v-e139a0b8="" class="comment_unit" data-v-350bc372=""><div data-v-262e9d34="" class="comment_box"><a data-v-262e9d34="" href="#" class="profile_link"><img data-v-262e9d34="" src="https://kream-phinf.pstatic.net/MjAyMjA1MjZfMjAw/MDAxNjUzNTQyOTM5NDcy.Ef_SpSk-88_w8DhigSV0P7DPnPNz9q_Geb49OZ7pp8Yg.lzpUeEI0cdnnr1EC-3kCzZAERZg-j4UTv5iDFn9-ORMg.JPEG/p_492035775e56403d960d41e147fc5941.jpeg?type=sl" alt="KREAM 프로필 이미지" class="profile_img"></a><div data-v-262e9d34="" class="comment_detail"><div data-v-262e9d34="" class="main"><span data-v-262e9d34="" class="user_name">y___y</span><span data-v-262e9d34="" class="comment_txt">존머탱🤭</span></div><div data-v-262e9d34="" class="sub"><span data-v-262e9d34="" class="upload_time">2일 전</span><!----><!----><a data-v-262e9d34="" href="#" class="writing_reply"> 답글쓰기 </a><!----></div></div><a data-v-262e9d34="" href="#" class="btn_like"><svg data-v-262e9d34="" xmlns="http://www.w3.org/2000/svg" class="icon sprite-icons social-like-gray-sm"><use data-v-262e9d34="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like-gray-sm" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-social-like-gray-sm"></use></svg></a></div><div data-v-e139a0b8="" data-v-262e9d34="" class="reply_bind"></div></div><!----></div></div><!----></div><a data-v-e139a0b8="" data-v-350bc372="" class="btn_layer_close"><svg data-v-e139a0b8="" data-v-350bc372="" xmlns="http://www.w3.org/2000/svg" class="ico-close icon sprite-icons"><use data-v-e139a0b8="" data-v-350bc372="" href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-ico-close" xlink:href="/_nuxt/a7a7eb5a7757da9bd1f7f0de66705692.svg#i-ico-close"></use></svg></a></div>
+
+<!-- footer -->
+<div id="footerTop" class="px-10 py-[50px] border-t-[1px] grid grid-cols-2 font-notoSans">
+  <div id="csAreaLeft" class="flex flex-row">
+    <div id="userguide" class="pr-32">
+      <h2 class="font-bold">이용안내</h2>
+      <ul class="pt-4 list-none">
+        <li class="text-sm text-slate-500">
+          <a href="#">검수기준</a>
+        </li>
+        <li class="mt-3 text-sm text-slate-500">
+          <a href="#">이용정책</a>
+        </li>
+        <li class="mt-3 text-sm text-slate-500">
+          <a href="#">패널티 정책</a>
+        </li>
+        <li class="mt-3 text-sm text-slate-500">
+          <a href="#">커뮤니티 가이드라인</a>
+        </li>
+      </ul>
+    </div>
+    <div id="csInfo">
+      <h2 class="font-bold">고객지원</h2>
+      <ul class="pt-4 list-none">
+        <li class="text-sm text-slate-500">
+          <a href="#">공지사항</a>
+        </li>
+        <li class="mt-3 text-sm text-slate-500">
+          <a href="#">서비스 소개</a>
+        </li>
+        <li class="mt-3 text-sm text-slate-500">
+          <a href="#">쇼룸 안내</a>
+        </li>
+        <li class="mt-3 text-sm text-slate-500">
+          <a href="#">판매자 방문접수</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="csAreaRight" class="flex flex-row justify-self-end">
+    <div id="csCenterInfo" class="pl-5">
+      <h2 class="font-bold">고객센터 1588-7813</h2>
+      <p class="text-[13px] text-slate-500">운영시간 평일 11:00 - 18:00 (토 ∙ 일, 공휴일 휴무)</p>
+      <p class="text-[13px] text-slate-500">점심시간 평일 13:00 - 14:00</p>
+      <p class="py-2 text-[13px] font-medium">1:1 문의하기는 앱에서만 가능합니다.</p>
+      <button id="faqBtn" class="w-28 h-11 bg-zinc-900 text-white text-xs font-semibold">자주 묻는 질문</button>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<div id="footerBot" class="px-10 mb-10 font-notoSans">
+  <div id="footerBotWrap" class="grid grid-cols-3 border-t-[1px]">
+    <div id="corpArea" class="pb-8 col-span-2">
+      <div id="corpLink" class="pt-7">
+        <a href="#" id="" class="text-sm">회사소개</a>
+        <a href="#" id="" class="pl-4 text-sm">인재채용</a>
+        <a href="#" id="" class="pl-4 text-sm">제휴제안</a>
+        <a href="#" id="" class="pl-4 text-sm">이용약관</a>
+        <a href="#" id="" class="pl-4 text-sm font-semibold">개인정보처리방침</a>
+      </div>
+      <div id="corpInfo" class="pt-2">
+        <p class="text-xs text-slate-500">
+          <span>리셀트 주식회사 · 대표 댕댕이</span>
+          <span class="pl-3">사업자등록번호: 123-45-78901</span>
+          <span class="pl-3 underline">사업자정보확인</span>
+          <span class="pl-3">통신판매업: 제 2022-서울강남C-0602호</span>
+        </p>
+        <p class="pt-1 text-xs text-slate-500">
+          <span>사업장소재지: 서울시 강남구 강남대로94길 20 삼오빌딩 6층</span>
+          <span class="pl-3">개인정보관리책임자: 고먐미</span>
+          <span class="pl-3">호스팅 서비스: Amazon Web Services</span>
+        </p>
+      </div>
+    </div>
+    <div id="sns" class="col-span-1 justify-self-end">
+      <div id="snsBtn" class="pt-7 flex flex-row">
+        <a href="#" id="igBtn">
+          <img src="/ReseltProject/img/index/ig-icon.png" alt="Instagram" class="w-5 h-5">
+        </a>
+        <a href="#" id="igBtn" class="pl-6">
+          <img src="/ReseltProject/img/index/fb-icon.png" alt="Facebook" class="w-5 h-5">
+        </a>
+        <a href="#" id="igBtn" class="pl-6">
+          <img src="/ReseltProject/img/index/kakao-icon.png" alt="KakaoTalk" class="w-5 h-5">
+        </a>
+      </div>
+    </div>
+    <div id="tns" class="col-span-2 text-xs text-slate-500">
+      <p>리셀트(주)는 통신판매 중개자로서 통신판매의 당사자가 아니므로 개별 판매자가 등록한 상품정보에 대해서 책임을 지지 않습니다.</p>
+      <p>단, 거래과정에서 검수하고 보증하는 내용에 대한 책임은 당사에 있습니다.</p>
+    </div>
+    <div id="copyright" class="col-span-1 text-xs text-slate-500 justify-self-end center self-center">
+      <p>© RESELT Corp.</p>
+    </div>
+  </div>
+</div> 
+
+<div id="modal" class="hidden fixed w-full h-full top-0 left-0 bg-gray-900/30">
+  <div id="replyModal" class="absolute top-0 right-0 bg-white w-[315px] h-full">
+    <!-- 모달 상단 (close, title) -->
+    <div id="modalTop" class="w-full h-[30px] mt-7 pl-4">
+      <div id="closeIcon" class="inline w-[20px] float-left mt-1 mr-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+      </svg>
+      </div>
+      <div id="modalTitle" class="inline float-left">댓글</div>
+    </div>
+    
+    <!-- 모달 content -->
+    <div id="modalContent" class="w-full h-[92px] pt-3">
+      <div id="modalUserBox" class="w-[40px] h-[80px] py-2 ml-4 float-left">
+        <div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+      </div>
+      <div id="modalReplyBox" class="w-[245px] h-[80px]  float-left">
+        <div id="replyUserName" class="inline w-[50px] font-medium text-xs pt-1">m.mming</div>
+        <div id="replyContent" class="w-full text-xs pt-1">KREAM ootd dailylook outfit streetfashion y2 jordan pink thisisneverthat tetemomo
+        </div>
+        <div id="replydate" class="text-xs px-1">2시간 전</div>
+      </div>
+     </div>
+     
+     <!-- 모달 구분선 -->
+     <div id="modalMd" class="w-full h-1 bg-gray-100 mt-2 mb-2"></div>
+     
+     <!-- 댓글 작성 -->
+     <div id="replyWriteBox" class="w-full h-[60px] pt-3 mb-[10px]">
+     <form id="replyWriteBox">
+      <div id="modalUserBox" class="w-[40px] h-[40px] ml-4 float-left mt-1">
+        <div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+      </div>
+        <input type="text" placeholder="댓글을 작성하세요..." id="replyWrite" name="replyWrite" class="float-left w-[210px] h-[40px] placeholder:italic placeholder:text-xs block bg-white w-full border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="content" id="content" placeholder="스타일 글 작성... ">
+        <input type="button" id="uploadBtn" name="uploadBtn" class="w-[40px] h-[40px] bg-zinc-700 text-white rounded-md text-xs float-left" value="게시">
+     </form>
+     </div>
+     
+ 	 <hr>
+ 	 
+ 	 <!-- 댓글 보기 -->
+ 	 <div id="replyViewBox" class="w-full h-[255px] pl-4">    
+	    <div id="replyUserViewBox" class="w-[95px] h-[56px] py-2 float-left">
+        <div id="replyUserViewImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+        <div id="replyUserViewName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">m.mming</div>
+        <div id="replyViewdate" class="inline float-left text-xs px-1">2시간 전</div>
+        </div>
+        <div id="replyViewContent" class="w-full h-[56px] text-xs pt-3">너무 잘 어울린다~
+        </div>
+        <!-- 반복 -->
+        <div id="replyUserBox" class="w-[95px] h-[56px] py-2 float-left">
+        <div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
+          <img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+        </div>
+        <div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">heaa.tt</div>
+        <div id="replydate" class="inline float-left text-xs px-1">3시간 전</div>
+        </div>
+        <div id="replyContent" class="w-full h-[56px] text-xs pt-3">예쁘세요~
+        </div>
+	  </div>
+	  
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){ 
+	  $('#replyViewIcon').click(function(){
+	    $('#modal').fadeIn();
+	  });
+	  
+	  $("#closeIcon").click(function(){
+	    $("#modal").fadeOut();
+	  });
+	  
+	  $('#menu').click(function(){
+		    $('#dropMenu').fadeIn();
+		  });
+		  
+		  $("#closeIcon").click(function(){
+		    $("#modal").fadeOut();
+	  });
+	  
+});
+
+$('#menu').click(function(event) {
+    if ($(event.target).parents().index($('#dropMenu')) == -1) {
+        if ($('#dropMenu').is(":visible")) {
+            $('#dropMenu').animate({
+            }, 75, function() {
+                $(this).fadeOut(75)
+            });
+            
+        } else {
+            $('#dropMenu').show().animate({
+            }, 75);
+        }
+    }
+});
+</script>
