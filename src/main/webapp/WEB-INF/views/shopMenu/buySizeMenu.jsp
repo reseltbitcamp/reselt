@@ -17,5 +17,7 @@
     <button id="inspectionBtn" class="border-gray-300 border-2 h-8 w-24 mt-2 cursor-pointer text-xs rounded-lg">검수기준</button>
   </div>
      
-  </div>
 </div>
+
+<jsp:include page="../shopMenu/isModal.jsp"></jsp:include>
+
