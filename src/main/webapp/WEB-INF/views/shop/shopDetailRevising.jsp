@@ -300,21 +300,23 @@
                         </div>
                         <!-- chart / canvas -->
                         <div class="shadow-lg rounded-lg overflow-hidden ">
-                        <div class="py-1 px-2 bg-gray-50">
-                              <ul class="flex">
-                                    <li class="flex-1 mr-2">
-                                          <a class="text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white" href="#">korea</a>
-                                    </li>
-                                    <li class="flex-1 mr-2">
-                                          <a class="text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white " href="#">us</a>
-                                    </li>
-                                    <li class="flex-1 mr-2">
-                                          <a class="text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white" href="#">eu</a>
-                                    </li>
-                              </ul>
+                          <div class="py-1 px-2 bg-gray-50 flex flex-row gap-x-2">
+                            <div class="basis-1/4">
+                              <button id="dailyPI" onclick="toggleDataPoints(0)" class="w-full text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white">1일</button>
+                            </div>
+                            <div class="basis-1/4">
+                              <button id="weeklyPI" onclick="toggleDataPoints(1)" class="w-full text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white">1주</button>
+                            </div>
+                            <div class="basis-1/4">
+                              <button id="monthlyPI" onclick="toggleDataPoints(2)" class="w-full text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white">1개월</button>
+                            </div>
+                            <div class="basis-1/4">
+                              <button id="quarterlyPI" onclick="toggleDataPoints(2)" class="w-full text-center block border border-gray-400 rounded py-2 px-4 bg-gray-400 hover:bg-gray-500 text-white">3개월</button>
+                            </div>
+                          </div>
+                          <canvas class="m-6 h-full" id="priceIndex"></canvas>
                         </div>
-                        <canvas class="p-10" id="chartLine"></canvas>
-                        </div>
+                        <!-- chart / canvas END -->
                         <div class="pt-7">
                         <div class="py-3 mt-6 grid grid-cols-2 gap-10 border-b border-gray-200 flex-initial">
                               <div class="text-xl font-semibold w-100">구매전 꼭 확인해주세요</div>
@@ -395,17 +397,6 @@
       <div id="lower" class="h-56">
          jsp:include 스타일
       </div>
-      <!-- JQuery -->
-      <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script type="text/javascript">
-         $('#sellBtn').click(function(){
-             location.href="./sellSize"
-         });
-         
-         $('#buyBtn').click(function(){
-             location.href="./buySize"
-         });
-      </script>
       <!-- Flowbite Script-->
       <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
       <script src="app.js"></script>
@@ -413,41 +404,8 @@
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="/ReseltProject/js/tailwind.config.js"></script>
       <!-- Chart.js CDN -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
-      <!-- Chart line -->
-      <script>
-         const labels = ["January", "February", "March", "April", "May", "June"];
-         const data = {
-           labels: labels,
-           datasets: [
-             {
-               label: "Korea",
-               borderColor: "hsl(26, 73%, 57%)",
-               data: [0, 10, 5, 90, 20, 30, 45],
-             },
-             {
-               label: "US",
-               borderColor: "hsl(189, 50%, 78%)",
-               data: [0, 20, 55, 60, 20, 11, 90],
-              },
-              {
-               label: "EU",
-               // backgroundColor: "hsl(0,0%,100%)",
-               borderColor: "hsl(33, 73%, 69%)",
-               data: [0, 30, 70, 50, 10, 20, 30],
-              }, 
-           ],
-         };
-         
-         const configLineChart = {
-           type: "line",
-           data,
-           options: {},
-         };
-         
-         var chartLine = new Chart(
-           document.getElementById("chartLine"),
-           configLineChart
-         );
-      </script>
-   </body>
+	  <script src="/ReseltProject/js/shop/chart.min.js"></script>
+	  <!-- jQuery -->
+	  <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	  <script type="text/javascript" src="/ReseltProject/js/shop/shopDetail.js"></script>     
+	  
