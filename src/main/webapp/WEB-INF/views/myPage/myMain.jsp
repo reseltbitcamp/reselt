@@ -8,7 +8,7 @@
     <title>Insert title here</title>
   </head>
   <body>
-    <div class="container mx-auto mt-0 mb-0 p-10 pb-40">
+   <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">

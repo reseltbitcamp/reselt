@@ -1,5 +1,6 @@
 package myPage.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import myPage.bean.MyPageProfileDTO;
@@ -19,6 +20,7 @@ public interface MyPageProfileDAO {
 	public void deleteImg(String id);
 
 	public MyPageProfileDTO getProfile(String id);
+
 
 	
 }

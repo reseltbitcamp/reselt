@@ -10,7 +10,7 @@
 
 <body>
 
-    <div class="container mx-auto mt-0 mb-0 p-10 pb-40">
+    <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div class="nav">
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
@@ -174,7 +174,7 @@
               <!-- 신발  -->
               <div class="sizeDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
                 <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">신발 사이즈</h5>
-                <div class="sizeDiv_text pt-[6px] text-[16px] tracking-[-.16px] text-[#222]">235</div>
+                <div class="sizeDiv_text pt-[6px] text-[16px] tracking-[-.16px] text-[#222]"></div>
                 <input type="button" value="변경" class="sizeDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
               <!--

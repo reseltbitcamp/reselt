@@ -1,5 +1,8 @@
 package myPage.service;
 
+import java.util.List;
+
+import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 
 public interface MyPageProfileService {
@@ -17,7 +20,5 @@ public interface MyPageProfileService {
 	void deleteImg();
 
 	MyPageProfileDTO getProfile();
-
-
 
 }
