@@ -24,7 +24,7 @@ public class StyleServiceImpl implements StyleService {
 	public Map<String, Object> getStyleList(String pg) {
 		//1페이지당 3개씩
 		int endNum = Integer.parseInt(pg) * 8;
-		int startNum = endNum - 7;
+		int startNum = endNum - 8;
 		
 		System.out.println("pg = "+pg+", startNum = "+startNum+", endNum = ");
 		Map<String, Integer> map = new HashMap<String, Integer>();
