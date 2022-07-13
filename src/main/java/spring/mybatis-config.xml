@@ -7,5 +7,6 @@
 		<typeAlias type="member.bean.MemberDTO" alias="member"/>
 		<typeAlias type="notice.bean.NoticeDTO" alias="notice"/>
 		<typeAlias type="style.bean.StyleDTO" alias="style"/>
+		<typeAlias type="shop.bean.PriceIndexDTO" alias="priceIndex"/>
 	</typeAliases>
 </configuration>
