@@ -123,7 +123,7 @@
     <p class="text-sm text-slate-500">발매 상품</p>
   </div>
   <!-- Just Dropped (발매상품) Items -->
-  <div id="justdroppedItems" class="my-5 flex felx-row gap-5 justify-center">
+  <div id="justdroppedItems" class="my-5 flex flex-row gap-5 justify-center">
     <a href="#" id="productBox">
       <div id="productImg">
         <div class="bg-[#ebf0f5] rounded-xl">
