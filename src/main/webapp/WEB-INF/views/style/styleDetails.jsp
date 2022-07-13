@@ -89,7 +89,7 @@
 	  
 	  <!-- style image -->
 	  <div id="styleImage" class="w-full">
-	     <img src="/ReseltProject/img/style/styleImage.jpeg" alt="프로필 사진" class="w-full h-auto">
+	     <img src="/ReseltProject/styleImage/styleImage.jpeg" alt="프로필 사진" class="w-full h-auto">
 	  </div>
 	  
 	  <!-- style product tag -->
