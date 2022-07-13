@@ -1,14 +1,36 @@
 package shop.controller;
 
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Enumeration;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import shop.bean.PriceIndexDTO;
+import shop.service.ShopService;
+
+import com.inicis.std.util.HttpUtil;
+import com.inicis.std.util.ParseUtil;
+import com.inicis.std.util.SignatureUtil;
 
 @Controller
 @RequestMapping("shop")
 public class ShopController {
+	@Autowired
+	private ShopService shopService;
 	
 	@RequestMapping(value = "/shopindex", method = RequestMethod.GET)
 	public ModelAndView shop() {
@@ -92,7 +114,7 @@ public class ShopController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/buyLastPage", method = RequestMethod.GET)
+	@RequestMapping(value = "/buyLastPage", method={RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView buyLastPage() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
@@ -101,10 +123,12 @@ public class ShopController {
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.setViewName("/index");
 		
+		System.out.println("check");
+		
 		return mav;
 	}
 
-	@RequestMapping(value = "/buySuccess", method = RequestMethod.GET)
+	@RequestMapping(value = "/buySuccess", method={RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView buySuccess() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
@@ -175,5 +199,24 @@ public class ShopController {
 		
 		return mav;
 	}
+	
+	@PostMapping(value = "getPriceIndex")
+	@ResponseBody
+	public List<PriceIndexDTO> getPriceIndex(@RequestParam Map<String, String> map) {
+		return shopService.getPriceIndex(map);
+	}
+	
+	@RequestMapping(value = "/close", method = RequestMethod.GET)
+	public ModelAndView close_INI_api() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/INIpayStdSample/close.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
 }
 

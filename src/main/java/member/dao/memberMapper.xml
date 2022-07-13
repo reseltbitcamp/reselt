@@ -20,7 +20,7 @@
 	private int level;
 	 -->
 	insert into members(email, pwd, name, tel, address, created_at, updated_at, footsize, profile_img, snsLogin, level) 
-				values(#{email},#{pwd},'','','',now(),'0000-00-00 00:00:00',#{footsize},#{profile_img},#{snsLogin},0)
+				values(#{email},#{pwd},#{name},#{tel},#{address},now(),'0000-00-00 00:00:00',#{footsize},#{profile_img},#{snsLogin},0)
 
 </insert>
 
@@ -38,4 +38,9 @@
 <select id="findEmailSMS" parameterType="member" resultType="member">
 	select * from members where tel = #{tel}
 </select>
+
+<!-- 임시 비밀번호  변경 -->
+<update id="tmpPwd" parameterType="java.util.Map">
+	update members set pwd = #{tmpPwd} where email = #{email}
+</update>
 </mapper>

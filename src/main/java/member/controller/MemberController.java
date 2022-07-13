@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import member.bean.MemberDTO;
+import member.service.MailSendService;
 import member.service.MemberService;
 
 @Controller
@@ -30,6 +31,8 @@ public class MemberController {
 	private MemberService memberService;
 	@Autowired
 	private HttpSession session;
+	@Autowired
+	private MailSendService mailService;
 	
 	@GetMapping(value = "login")
 	public ModelAndView login() {
@@ -194,6 +197,37 @@ public class MemberController {
 			map.put("login", "0");
 		}
 		return map;
+	}
+	//임시비밀번호 발급 -이메일 인증
+	@PostMapping(value = "mailCheck")
+	@ResponseBody
+	public String mailCheck(MemberDTO memberDTO) {
+		String inputTel = memberDTO.getTel();
+		memberDTO = memberService.checkEmail(memberDTO);
+		//System.out.println(inputTel + "....." + memberDTO.getTel());
+		//System.out.println("전화번호 = " + memberDTO.getTel()); 
+		if(memberDTO.getTel() != null) {
+			
+			if(!memberDTO.getTel().equals(inputTel)) {
+				System.out.println("정보 불일치");
+				return "0";
+			}else {
+				
+				System.out.println("이메일 인증 요청이 들어옴!");
+				System.out.println("이메일 인증 이메일 : " + memberDTO.getEmail());
+				String tmpPwd = mailService.tmpPwdEmail(memberDTO.getEmail());
+				Map<String, String> map = new HashedMap<String, String>();
+				map.put("tmpPwd", tmpPwd);
+				map.put("email", memberDTO.getEmail());
+				
+				memberService.tmpPwd(map);
+				return tmpPwd;
+			}
+		}else {
+			return "1";
+		}
+		
+			
 	}
 	
 	@PostMapping(value = "findEmailSMS")

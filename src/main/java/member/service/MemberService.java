@@ -16,4 +16,6 @@ public interface MemberService {
 
 	public Map<String, Object> findEmailSMS(MemberDTO memberDTO);
 
+	public void tmpPwd(Map<String, String> map);
+
 }
