@@ -6,7 +6,7 @@
  	<typeAliases>
  		<typeAlias type="member.bean.MemberDTO" alias="member"/>
  		<typeAlias type="notice.bean.NoticeDTO" alias="notice" />
-   <typeAlias type="style.bean.StyleDTO" alias="style" />
+ 		<typeAlias type="style.bean.StyleDTO" alias="style" />
  	</typeAliases>
  	<mappers>
  	</mappers>
