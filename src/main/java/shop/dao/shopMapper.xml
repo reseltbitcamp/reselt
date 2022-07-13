@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="shopSQL">
+	<select id="getPriceIndex" parameterType="java.util.Map" resultType="priceIndex">
+		<![CDATA[
+		SELECT product_id, logtime, avg(price) AS price
+		FROM priceConfirmed
+		WHERE product_id = #{product_id}
+			AND logtime < #{today}
+			AND logtime >= DATE_SUB(#{today}, INTERVAL 7 DAY)
+		GROUP BY logtime
+		]]>
+	</select>
+</mapper>
