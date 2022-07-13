@@ -50,8 +50,9 @@ public class StyleController {
 	}
 	
 	@GetMapping(value="styleDetails")
-	public ModelAndView styleDetails() {
+	public ModelAndView styleDetails(@RequestParam String seq) {
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("seq", seq);
 		mav.addObject("styleDetails", "/WEB-INF/views/style/styleDetails.jsp");
 		mav.setViewName("/style/styleDetails");
 		
@@ -87,4 +88,26 @@ public class StyleController {
 	public Map<String, Object> getImageboardList(@RequestParam String pg){
 		return styleService.getStyleList(pg);
 	}
+	
+	@PostMapping(value="getStyleDetails")
+	@ResponseBody
+	public StyleDTO getStyleDetails(@RequestParam String seq) {
+		
+		return styleService.getStyleDetails(seq);
+	}
+	
+	@PostMapping(value="styleDelete")
+	public ModelAndView styleDelete(@RequestParam String seq) {
+		styleService.styleDelete(seq);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("pg", 1);
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("display", "/WEB-INF/views/style/styleList.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+
 }

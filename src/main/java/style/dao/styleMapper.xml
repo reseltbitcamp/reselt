@@ -19,4 +19,13 @@
 	<select id="getStyleList" parameterType="java.util.Map" resultType="style">
 	  		select * from styles order by seq desc limit #{startNum}, #{endNum}
 	</select>
+	
+	<!-- Details 글 받아오기 -->
+	<select id="getStyleDetails" parameterType="int" resultType="style">
+	  		select * from styles where seq = #{seq}
+	</select>
+	
+	<delete id="styleDelete" parameterType="int">
+			delete from styles where seq = #{seq}
+	</delete>
 </mapper>
