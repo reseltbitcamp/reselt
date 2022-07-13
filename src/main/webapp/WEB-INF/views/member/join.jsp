@@ -21,6 +21,7 @@
           <div>
 	      	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
     	  	<input id="email" type="email" name="email" class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+          	<!-- <input type="button" id="emailSend" value="이메일 인증"> -->
           	<input id="emailOk" type="text">
           	<div id="emailDivcmt" class="mb-10"></div>
           </div>
@@ -53,7 +54,7 @@
         <div>
           <label>
             <input id="check1" type="checkbox"></input>
-            <input id="checkOk"type="hidden"></input>
+            <input id="checkOk" type="text"></input>
             [필수] 만 14세 이상이며 모두 동의합니다.
           </label>
           <button id="plusBtn1" type="button" class="float-right">
@@ -144,7 +145,7 @@ $(function(){
 	});
 	
 	//비밀번호 확인 및 10자이상
-	$('#pwd').keyup(function(){
+	$('#pwd').on('keyup , focusout',function(){
 		if($('#pwd').val().length >= 10 ) {
 			$('#pwdDivcmt').html(""); 
 			$('#pwdDiv').css({'color':'black'}); 
@@ -158,8 +159,9 @@ $(function(){
 		}
 	});
 	
+	
 	//비밀번호 재확인
-	$('#repwd').keyup(function(){
+	$('#repwd').on('keyup , focusin',function(){
 		if($('#pwd').val() != $('#repwd').val()){
 			$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
 			$('#repwdDivcmt').css({'font-size':'5pt'}); 
@@ -177,7 +179,7 @@ $(function(){
 	
 	
 		//값 변경시 유효성 재검사 
-		$('#pwd, #repwd').on('keyup', function(){
+		$('#pwd, #repwd').on('keyup , focusout', function(){
 		    if($('#pwd').val() != $('#repwd').val()){
 		 		if($('#repwd').val() != ""){
 		    	$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
@@ -197,9 +199,9 @@ $(function(){
 	 }
 	});	
 	 	
-	$('#emailOk, #pwdOk, #repwdOk, #checkOk').change(function(){
-			console.log('123');
-		if($('#emailOk').val() == '1' || $('#pwdOk').val() == '1' || $('#repwdOk').val() == '1' || $('#checkOk').val() == '1' ){
+	$('#email , #pwd , #repwd').on('focusout',function(){
+		console.log('변화');
+		if($('#emailOk').val() == '1' && $('#pwdOk').val() == '1' && $('#repwdOk').val() == '1' && $('#checkOk').val() == '1' ){
 			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
 			console.log('0');
 		}else{
@@ -207,11 +209,38 @@ $(function(){
 			console.log('1');
 		}
 	}); 
+	$('#check1').click(function(){
+		console.log('변화');
+		if($('#emailOk').val() == '1' && $('#pwdOk').val() == '1' && $('#repwdOk').val() == '1' && $('#checkOk').val() == '1' ){
+			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+		}else{
+			$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+			console.log('1');
+		}
+	}); 
 	
+/* 	//이메일 인증
+	$('#emailSend').click(function(){
+		if($('#emailOk').val() == '0') {
+			alert('이메일을 다시 확인 해주세요.');
+		}else{
+			$.ajax({
+				type : 'post',
+				url : '/ReseltProject/member/joinCheckEmail',
+				data : { email : $('#email').val() },
+				success : function(data){
+					
+				}
+			});
+		}		
+	
+	}); */
 	
 	//버튼이 검정색일때 submit
  	$('#joinBtn').click(function(){
 		if($('#joinBtn').css('background-color') == 'rgb(0, 0, 0)' || $('#joinBtn').css('background-color') == 'black' ){
+			
+
 		console.log('if 성공');
 			//alert('클릭');
 			//alert($('#email').val());
@@ -240,7 +269,7 @@ $(function(){
 
 	
 	//아이디 중복검사
-	$('#email').on('focusout', function(){
+	$('#email').on('focusout , keyup', function(){
 		console.log('중복검사');
 		$.ajax({
 			type: 'post',
@@ -261,9 +290,11 @@ $(function(){
 				    }
 				}else if(data == '1') {
 					$('#emailDivcmt').css({'font-size':'5pt'}); 
-					$('#emailDivcmt').html("이미 사용중인 아이디 입니다."); 
-  	          	    $('#emailDivcmt').css('color' , 'red');           
 					$('#emailOk').val('0');
+					$('#emailDivcmt').html("이미 사용중인 아이디 입니다."); 
+  	          	    $('#emailDivcmt').css('color' , 'red');   
+					$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+       
 
 				}
 					
