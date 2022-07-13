@@ -70,7 +70,7 @@ $(function(){
 			contentType: false,
 			data: formData,
 			success: function(){
-				alert('상품 등록 완료');
+				alert('글이 등록되었습니다.');
 				location.href='/ReseltProject/style/styleList';
 			},
 			error:function(request,status,error){    
