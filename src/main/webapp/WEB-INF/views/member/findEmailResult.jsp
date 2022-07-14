@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +18,10 @@
         <p class="text-xs">
         	고객님의 이메일을 안내드립니다.
         </p>
-        <div id="findEmailResult">회원님은 이메일은 '${memberDTO.email }' 입니다.</div>
+        <div><c:if test="${memberDTO.snsLogin == 0 }">회원 유형: 일반 로그인 회원</c:if></div>
+        <div><c:if test="${memberDTO.snsLogin == 1 }">회원 유형: 네이버 로그인 회원</c:if></div>
+        <div><c:if test="${memberDTO.snsLogin == 2 }">회원 유형: 카카오 로그인 회원</c:if></div>
+        <div>회원 이메일: ${memberDTO.email }</div>
     </div>
     
     
@@ -26,8 +31,4 @@
 </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script type="text/javascript">
-$(function(){
-});
-</script>
 </html>

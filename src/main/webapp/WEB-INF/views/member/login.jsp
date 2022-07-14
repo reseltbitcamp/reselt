@@ -187,8 +187,8 @@ $(function(){
 					url: "/ReseltProject/member/snsJoinKakao",
 					success: function(data){
 						//alert("소셜 로그인 회원기입 완료");
-						alert(JSON.stringify(data));
-						console.log("hi");
+						//alert(JSON.stringify(data));
+						//console.log("hi");
 						if (data.login == '0'){
 							window.close();
 							alert('이미 가입된 이메일입니다. 일반회원가입 회원 로그인 해주세요');

@@ -226,7 +226,8 @@ public class MemberController {
 				System.out.println("정보 불일치");
 				return "0";
 			}else {
-				
+				if(memberDTO.getSnsLogin() == 0) {
+					
 				System.out.println("이메일 인증 요청이 들어옴!");
 				System.out.println("이메일 인증 이메일 : " + memberDTO.getEmail());
 				String tmpPwd = mailService.tmpPwdEmail(memberDTO.getEmail());
@@ -236,6 +237,9 @@ public class MemberController {
 				
 				memberService.tmpPwd(map);
 				return tmpPwd;
+				}else {
+					return "3";
+				}
 			}
 		}else {
 			return "1";
