@@ -169,7 +169,7 @@
   <div id="replyModal" class="absolute top-0 right-0 bg-white w-[315px] h-full">
     <!-- 모달 상단 (close, title) -->
     <div id="modalTop" class="w-full h-[30px] mt-7 pl-4">
-      <div id="closeIcon" class="inline w-[20px] float-left mt-1 mr-1">
+      <div id="closeIcon" class="inline w-[20px] float-left mt-1 mr-1 cursor-pointer">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
       <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
       </svg>
@@ -262,17 +262,24 @@ function modalView(){
 }
 
 function dropmenuView(){
-	$('#dropMenu').fadeIn();
+	 let click = document.getElementById("dropMenu");
+     if(click.style.display === "none"){
+         click.style.display = "block";
+
+     }else{
+         click.style.display = "none";
+     }
 }
 
 $("#closeIcon").click(function(){
  	$("#modal").fadeOut();
 });
+
 </script>
 <script type="text/javascript">
 function mode(num){
 	if(num==1){ //글수정, seq
-		document.styleDetailsForm.method = "post";
+		document.styleDetailsForm.method = "get";
 		document.styleDetailsForm.action = "/ReseltProject/style/styleUpdateForm";
 		document.styleDetailsForm.submit();
 		
