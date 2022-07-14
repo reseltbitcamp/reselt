@@ -496,7 +496,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/ReseltProject/js/tailwind.config.js"></script>
   <!-- Chart.js CDN -->
-  <script src="/ReseltProject/js/shop/chart.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- jQuery -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="/ReseltProject/js/shop/shopDetail.js"></script>
