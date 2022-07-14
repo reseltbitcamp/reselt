@@ -32,29 +32,19 @@ public class ShopController {
 	@Autowired
 	private ShopService shopService;
 	
-	@RequestMapping(value = "/shopindex", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.addObject("shopmain", "/WEB-INF/views/shop/shopmain.jsp");
-		mav.addObject("shopmenu", "/WEB-INF/views/shop/shopmenu.jsp");
-		mav.setViewName("/shop/shopindex");
-		
+		mav.addObject("display", "/WEB-INF/views/shop/shopindex.jsp");
+		mav.addObject("shopmain", "/WEB-INF/views/shop/main/shopmain.jsp");
+		mav.addObject("shopmenu", "/WEB-INF/views/shop/main/shopmenu.jsp");
+		mav.addObject("flowbite", true);
+		mav.setViewName("/index");
 		return mav;
 	}
 	
-	@RequestMapping(value = "/shopDetailRevising", method = RequestMethod.GET)
-	public ModelAndView shopDetailRevising() {
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
-		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
-		mav.addObject("display","/WEB-INF/views/shop/shopDetailRevising.jsp");
-		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.setViewName("/index");
-		
-		return mav;
-	}
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
 	public ModelAndView shopDetail() {
 		ModelAndView mav = new ModelAndView();

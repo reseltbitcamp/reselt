@@ -23,44 +23,41 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	private HttpSession session;
 	
 	@Override
-	public void emailUpdate(String email) {		
-		
-		Map<String, String> map = new HashMap<String, String>();
-		
-		//세션에서..아이디..받나?
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//임의값 1
-		map.put("id", "1");
-		map.put("email", email);
-		myPageProfileDAO.emailUpdate(map);
+	public void emailUpdate() {		
+
+		String email = (String) session.getAttribute("email");
+		myPageProfileDAO.emailUpdate(email);
 
 	}
 
 	@Override
 	public void pwdUpdate(String pwd) {
 		Map<String, String> map = new HashMap<String, String>();
-				
-		map.put("id", "1");
+		
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		map.put("pwd", pwd);
+		myPageProfileDAO.sizeUpdate(map);
+		
 		myPageProfileDAO.pwdUpdate(map);
 	}
 
 	@Override
-	public void nameUpdate(String name) {
+	public void nickUpdate(String nick) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		map.put("id", "1");
-		map.put("name", name);
-		myPageProfileDAO.nameUpdate(map);
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("nick", nick);
+		myPageProfileDAO.nickUpdate(map);
 	}
 
 	@Override
 	public void sizeUpdate(String footsize) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		map.put("id", "1");
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		map.put("footsize", footsize);
 		myPageProfileDAO.sizeUpdate(map);
 		
@@ -71,7 +68,8 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		
 		Map<String, String> map = new HashMap<String, String>();
 		
-		map.put("id", "1");
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		map.put("profile_img", fileName);
 		myPageProfileDAO.updateImg(map);
 	}
@@ -79,17 +77,54 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	@Override
 	public void deleteImg() {
 		
-		String id = "1";
-		myPageProfileDAO.deleteImg(id);
+		String email = (String) session.getAttribute("email");
+		myPageProfileDAO.deleteImg(email);
 		
 	}
 
 	@Override
 	public MyPageProfileDTO getProfile() {
-	
-		String id = "1";
-		return myPageProfileDAO.getProfile(id);
+		
+		String email = (String) session.getAttribute("email");
+		return myPageProfileDAO.getProfile(email);
 	}
+
+	@Override
+	public void check_email(String check_email) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("check_email", check_email);
+		myPageProfileDAO.check_email(map);
+		
+	}
+
+	@Override
+	public void check_message(String check_message) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("check_message", check_message);
+		myPageProfileDAO.check_message(map);
+		
+	}
+
+	@Override
+	public void telUpdate(String tel) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("tel", tel);
+		myPageProfileDAO.telUpdate(map);
+	}
+
+
 
 	
 	

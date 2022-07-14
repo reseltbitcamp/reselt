@@ -7,18 +7,26 @@ import myPage.bean.MyPageProfileDTO;
 
 public interface MyPageProfileService {
 
-	void emailUpdate(String email);
+	public void emailUpdate();
 
-	void pwdUpdate(String pwd);
+	public void pwdUpdate(String pwd);
 
-	void nameUpdate(String name);
+	public void sizeUpdate(String footsize);
 
-	void sizeUpdate(String footsize);
+	public void updateImg(String fileName);
 
-	void updateImg(String fileName);
+	public void deleteImg();
 
-	void deleteImg();
+	public MyPageProfileDTO getProfile();
 
-	MyPageProfileDTO getProfile();
+	public void nickUpdate(String nick);
+
+	public void check_email(String check_email);
+
+	public void check_message(String check_message);
+
+	public void telUpdate(String tel);
+
+
 
 }

@@ -2,6 +2,7 @@ package style.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -50,8 +51,9 @@ public class StyleController {
 	}
 	
 	@GetMapping(value="styleDetails")
-	public ModelAndView styleDetails() {
+	public ModelAndView styleDetails(@RequestParam String seq) {
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("seq", seq);
 		mav.addObject("styleDetails", "/WEB-INF/views/style/styleDetails.jsp");
 		mav.setViewName("/style/styleDetails");
 		
@@ -86,5 +88,63 @@ public class StyleController {
 	@ResponseBody
 	public Map<String, Object> getImageboardList(@RequestParam String pg){
 		return styleService.getStyleList(pg);
+	}
+	
+	@PostMapping(value="getStyleDetails")
+	@ResponseBody
+	public StyleDTO getStyleDetails(@RequestParam String seq) {
+		
+		return styleService.getStyleDetails(seq);
+	}
+	
+	@PostMapping(value="styleDelete")
+	public ModelAndView styleDelete(@RequestParam String seq) {
+		styleService.styleDelete(seq);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("pg", 1);
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("display", "/WEB-INF/views/style/styleList.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
+	@GetMapping(value="styleUpdateForm")
+	public ModelAndView styleUpdateForm(@RequestParam String seq) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("seq", seq);
+		mav.addObject("menu", "/WEB-INF/views/style/styleMenu.jsp");
+		mav.addObject("display", "/WEB-INF/views/style/styleUpdateForm.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
+	@PostMapping(value="styleUpdate")
+	@ResponseBody
+	public void styleUpdate(@ModelAttribute StyleDTO styleDTO,
+								@RequestParam int seq,
+								@RequestParam MultipartFile img,
+								HttpSession session) {
+		System.out.println(session.getServletContext());
+		//실제폴더
+		String filePath = session.getServletContext().getRealPath("/assets/img/style/styleImage/");
+		String fileName = img.getOriginalFilename();
+		
+		System.out.println(filePath);
+		File file = new File(filePath, fileName);
+		
+		try {
+			img.transferTo(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		styleDTO.setStyle_image(fileName);
+		
+	    styleService.styleUpdate(styleDTO);
 	}
 }

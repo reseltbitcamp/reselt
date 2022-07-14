@@ -37,4 +37,20 @@ public class StyleServiceImpl implements StyleService {
 		sendMap.put("list", list);
 		return sendMap;
 	}
+
+	@Override
+	public StyleDTO getStyleDetails(String seq) {
+		StyleDTO styleDTO = styleDAO.getStyleDetails(seq);
+		return styleDTO;
+	}
+
+	@Override
+	public void styleDelete(String seq) {
+		styleDAO.styleDelete(seq);
+	}
+
+	@Override
+	public void styleUpdate(StyleDTO styleDTO) {
+		styleDAO.styleUpdate(styleDTO);
+	}
 }

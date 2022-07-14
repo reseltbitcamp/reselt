@@ -25,4 +25,19 @@ public class StyleDAOMyBatis implements StyleDAO {
 	public List<StyleDTO> getStyleList(Map<String, Integer> map) {
 		return sqlSession.selectList("styleSQL.getStyleList", map);
 	}
+
+	@Override
+	public StyleDTO getStyleDetails(String seq) {
+		return sqlSession.selectOne("styleSQL.getStyleDetails", Integer.parseInt(seq));
+	}
+
+	@Override
+	public void styleDelete(String seq) {
+		sqlSession.delete("styleSQL.styleDelete", Integer.parseInt(seq));
+	}
+
+	@Override
+	public void styleUpdate(StyleDTO styleDTO) {
+		sqlSession.update("styleSQL.styleUpdate", styleDTO);
+	}
 }
