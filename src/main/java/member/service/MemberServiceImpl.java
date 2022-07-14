@@ -10,6 +10,7 @@ import org.apache.commons.collections4.map.HashedMap;
 import org.apache.http.client.protocol.RequestAcceptEncoding;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import member.bean.MemberDTO;
@@ -24,7 +25,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
 	private HttpSession session;
-
+	
 	@Override
 	public void joinTry(MemberDTO memberDTO) {
 		System.out.println("joinTry = " + memberDTO);
@@ -53,6 +54,15 @@ public class MemberServiceImpl implements MemberService {
 			nick = nickSplit[0]; 
 			
 			memberDTO.setNick(nick);
+		}
+		
+		
+		//비밀번호 암호화
+		if(memberDTO.getPwd() != null) {
+		System.out.println(memberDTO.getPwd());	
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(memberDTO.getPwd());
+		memberDTO.setPwd(securePassword);
 		}
 		
 		System.out.println("형식 변환" + memberDTO);
