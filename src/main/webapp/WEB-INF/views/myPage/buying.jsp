@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 
 </head>
 <body>
-    <div class="container mx-auto mt-0 mb-0 p-10 pb-40">
+   <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
@@ -55,8 +56,8 @@
   <!--tab_on은 클릭 시 이벤트-->
   <div class="purchase_list_tab detail_tab bg-[#fff] rounded-[0px] mt-[20px] table table-fixed w-full">
 
-    <div class="tab_item tab_on table-cell text-center">
-      <a href="#" class="tab_link border-b-[2px] border-b-solid border-b-[#222] pt-[12px] h-[68px] relative block ">
+    <div class="buying_btn_1 tab_item table-cell text-center">
+      <a href="#" class="tab_link border-b-[1px] tab_on border-b-solid border-b-[#d3d3d3] pt-[12px] h-[68px] relative block ">
         <dl class="tab_box flex flex-col-reverse ">
           <dt class="title text-[#222] font-bold">구매 입찰</dt>
           <dd class="count text-[#f15746] mt-[0px] text-[20px] leading-[24px] tracking-[-.1px]">0</dd>
@@ -64,7 +65,7 @@
       </a>
     </div>
 
-    <div class="tab_item table-cell text-center">
+    <div class="buying_btn_2 tab_item table-cell text-center">
       <a href="#" class="tab_link border-b-[1px] border-b-solid border-b-[#d3d3d3] pt-[12px] h-[68px] relative block">
         <dl class="tab_box flex flex-col-reverse">
           <dt class="title text-[##22222280]">진행 중</dt>
@@ -73,7 +74,7 @@
       </a>
     </div>
     
-    <div class="tab_item table-cell text-center">
+    <div class="buying_btn_3 tab_item table-cell text-center">
       <a href="#" class="tab_link border-b-[1px] border-b-solid border-b-[#d3d3d3] pt-[12px] h-[68px] relative block">
         <dl class="tab_box flex flex-col-reverse">
           <dt class="title text-[##22222280]">종료</dt>
@@ -154,86 +155,71 @@
       </a>
     </div>
 
-
-          <!-- status_box field_price 에서 버튼 누르면 descending active_first -->
-          <!-- .head_status .status_box.active_first {
-              font-weight: 700;
-          } -->
-
-
     <div class="head_status ml-auto items-center text-right flex ">
-      <div class="status_box field_price block w-[140px]">
-      	<a href="#" class="status_link relative pr-[16px] inline-block text-[13px] tracking-[-.07px] leading-[24px]">
-      		<span class="status_txt inline-block align-top">구매 희망가</span>
-      	</a>
-      </div>
-      <!-- status_link after에 svg image 넣기-->
       
       <div class="status_box field_expires_at block">
-      	<a href="#" class="status_link relative pr-[16px] inline-block text-[13px] tracking-[-.07px] leading-[24px]">
-      		<span class="status_txt inline-block align-top ml-[10px]">만료일</span>
+      	<a href="#" class="relative pr-[16px] inline-block text-[13px] tracking-[-.07px] leading-[24px]">
+      		<label class="status_txt inline-block align-top ml-[10px]">시간순</label>
+      		<select size="2" id="asc_desc">
+      			<option value="asc">오름차순</option>
+      			<option value="desc">내림차순</option>
+      		</select>
       	</a>
       </div> 
     </div> <!-- head_status -->
+    
   </div> <!-- purchase_head -->
 
 
+<!-- 구매 입찰 구간 -->
 
-  <div class="empty_area py-[80px] text-center">
+  <div class="empty_area_1 py-[80px] text-center">
   	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">구매 입찰 내역이 없습니다</p>
   	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP 바로가기</a>
   </div>
 
+ <div class="not_empty_area_1">
+  <ul class="wish_list_1" id="test">
+  	
+  	<!-- 동적처리 -->
 
-<!-- 구매일 배송 완료 넣기 -->
-  <div class="not_empty_area">
-    <ul class="wish_list">
-            <!-- 관심 상품 있을 경우 (li_a)리스트로 뿌리기 -->
-            <li>
-              <div class="flex pt-[20px] pb-[19px]">
-              
-                <div class="wish_product mr-[30px] flex">
-                
-                  <div class="product_box mt-[10px] h-[80px] w-[80px] flex-none">
-                    <img src="/MyPage/image/bearbrick.JPG" class="h-20 w-20" />
-                  </div>
+  </ul>
+</div>
 
-                  <div class="product_detail ml-[13px] flex flex-col pt-[10px] text-left">
-                    <div class="brand">
-                      <a class="brand-text border-b-solid inline-block h-[17px] overflow-hidden text-ellipsis whitespace-nowrap border-b-[1px] border-b-[#222] pb-[2px] align-top text-[14px] font-bold leading-[17px] text-[#333]">Helinox</a>
-                    </div>
-                    <p class="name mt-[2px] max-h-[36px] overflow-hidden text-ellipsis text-[13px] leading-[18px] tracking-[-.03px]">Helinox Tactical Cot Convertible Coyote Tan</p>
-                    <span class="size mt-auto inline-flex text-left text-[13px] font-bold leading-[16px]">ONE SIZE</span>
-                  </div>
-                </div> <!-- wish_product -->
 
-                <div class="wish_buy mt-[10px] ml-auto inline-flex flex-shrink-0 flex-col text-right">
-                  <div>
-                    <div class="division_btn_box lg mt-0 flex h-[60px] w-[164px] text-left">
-                      <a class="btn_division buy relative inline-flex flex-1 items-center rounded-[10px] bg-[#ef6253] text-[#fff]">
-                        <strong class="title w-[55px] text-center text-[18px] tracking-[-.27px]">구매</strong>
-                        <div class="price ml-[10px] leading-[15px]">
-                          <span class="amount block">
-                            <em class="num inline-block align-top text-[15px] font-bold not-italic">423,000</em>
-                            <span class="won inline-block align-top text-[14px] font-bold tracking-[-.21px]">원</span>
-                          </span>
-                          <span class="desc block text-[11px] font-normal text-[#ffffffcc]">즉시 구매가</span>
-                        </div>
-                      </a>
-                    </div>
+<!-- 진행 중 구간 -->
 
-                    <a class="status_link mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">삭제</a>
-                  </div>
-               </div> <!-- wish_buy -->
-                
-              </div>
-            </li>
-          </ul>
-    
+  <div class="empty_area_2 py-[80px] text-center removeEvent">
+  	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">구매 입찰 내역이 없습니다</p>
+  	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP 바로가기</a>
+  </div>
 
-    </div>
+ <div class="not_empty_area_2 removeEvent">
+  <ul class="wish_list_2" id="test">
+  	
+  	<!-- 동적처리 -->
 
-</div> <!--bid-->
+  </ul>
+</div>
+
+<!-- 종료 구간 -->
+
+  <div class="empty_area_3 py-[80px] text-center removeEvent">
+  	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">구매 입찰 내역이 없습니다</p>
+  	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP 바로가기</a>
+  </div>
+
+ <div class="not_empty_area_3 removeEvent">
+  <ul class="wish_list_3" id="test">
+  	
+  	<!-- 동적처리 -->
+
+  </ul>
+</div>
+
+
+
+</div> <!--purchase_list-->
 </div> <!--my purchase-->
 	
 </div> <!--content-area-->
@@ -249,7 +235,7 @@
     </div>
     <div class="layer_content">
       <div class="select_status px-[26px] pt-[4px] pb-[26px]">
-        <ul>
+        <ul id="test">
           <li class="status_item item_on m-[6px] inline-block" style="width: calc(30% - 12px);">
             <!--버튼 눌렀을 떄는 bg-[#222] font-bold-->
             <a id="--- 전체 ---" class="status_link block overflow-hidden whitespace-nowrap rounded-[16px] border-[1px] border-solid border-[#ebebeb] bg-[#fff] py-[15px] px-[14px] text-center text-[14px] leading-[20px]">전체</a>

@@ -27,13 +27,42 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void joinTry(MemberDTO memberDTO) {
+		System.out.println("joinTry = " + memberDTO);
+		//010-1111-1111 형식을 01011111111 으로 변경
+		String snsTel;
+		String ReseltTel = null; 
+		String nick = null;
+		if(memberDTO.getSnsLogin() == 1 || memberDTO.getSnsLogin() == 2) {
+			if(memberDTO.getTel() != null) {
+				
+			snsTel = memberDTO.getTel();
+			String tel[] = snsTel.split("-");
+			
+			for(int i=0; i<tel.length; i++) {
+				ReseltTel += tel[i];
+			}
+			System.out.println(ReseltTel);
+			//null 제거하여 삽입
+			memberDTO.setTel(ReseltTel.substring(4));
+			
+			}
+		}
+		//아이디 앞 자리 닉네임
+		if(memberDTO.getNick() == null) {
+			String nickSplit[] = memberDTO.getEmail().split("@");
+			nick = nickSplit[0]; 
+			
+			memberDTO.setNick(nick);
+		}
+		
+		System.out.println("형식 변환" + memberDTO);
 		memberDAO.joinTry(memberDTO);
 	}
 
 	@Override
 	public MemberDTO checkEmail(MemberDTO memberDTO) {
 		memberDTO = memberDAO.checkEmail(memberDTO);
-
+		System.out.println("체크메일 " + memberDTO);
 		return memberDTO;
 	}
 

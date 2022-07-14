@@ -18,3 +18,4 @@
   </div>
      
 </div>
+<jsp:include page="../shopMenu/isModal.jsp"></jsp:include>

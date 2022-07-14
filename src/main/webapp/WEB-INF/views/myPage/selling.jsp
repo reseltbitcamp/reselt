@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
 </head>
 <body>
-<div class="container mx-auto mt-0 mb-0 p-10 pb-40">
+<div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">

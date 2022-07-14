@@ -1,6 +1,7 @@
 package myPage.service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import member.dao.MemberDAO;
+import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 import myPage.dao.MyPageProfileDAO;
 
@@ -21,55 +23,41 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	private HttpSession session;
 	
 	@Override
-	public void emailUpdate(String email) {		
-		
-		Map<String, String> map = new HashMap<String, String>();
-		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		map.put("id", "1");
-		map.put("email", email);
-		myPageProfileDAO.emailUpdate(map);
+	public void emailUpdate() {		
+
+		String email = (String) session.getAttribute("email");
+		myPageProfileDAO.emailUpdate(email);
 
 	}
 
 	@Override
 	public void pwdUpdate(String pwd) {
 		Map<String, String> map = new HashMap<String, String>();
-				
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
 		
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		map.put("id", "1");
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		map.put("pwd", pwd);
+		myPageProfileDAO.sizeUpdate(map);
+		
 		myPageProfileDAO.pwdUpdate(map);
 	}
 
 	@Override
-	public void nameUpdate(String name) {
+	public void nickUpdate(String nick) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		map.put("id", "1");
-		map.put("name", name);
-		myPageProfileDAO.nameUpdate(map);
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("nick", nick);
+		myPageProfileDAO.nickUpdate(map);
 	}
 
 	@Override
 	public void sizeUpdate(String footsize) {
 		Map<String, String> map = new HashMap<String, String>();
 		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		map.put("id", "1");
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		map.put("footsize", footsize);
 		myPageProfileDAO.sizeUpdate(map);
 		
@@ -80,11 +68,8 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		
 		Map<String, String> map = new HashMap<String, String>();
 		
-		//String id = (String) session.getAttribute("id");
-		//map.put("id", id);
-		
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		map.put("id", "1");
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		map.put("profile_img", fileName);
 		myPageProfileDAO.updateImg(map);
 	}
@@ -92,22 +77,44 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 	@Override
 	public void deleteImg() {
 		
-		//String id = (String) session.getAttribute("id");
-
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		String id = "1";
-		myPageProfileDAO.deleteImg(id);
+		String email = (String) session.getAttribute("email");
+		myPageProfileDAO.deleteImg(email);
 		
 	}
 
 	@Override
 	public MyPageProfileDTO getProfile() {
-		//String id = (String) session.getAttribute("id");
-
-		//확인 차 세션 대신 임의로 id값 1 넣음
-		String id = "1";
-		return myPageProfileDAO.getProfile(id);
-	}
 		
+		String email = (String) session.getAttribute("email");
+		return myPageProfileDAO.getProfile(email);
+	}
+
+	@Override
+	public void check_email(String check_email) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("check_email", check_email);
+		myPageProfileDAO.check_email(map);
+		
+	}
+
+	@Override
+	public void check_message(String check_message) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+		
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("check_message", check_message);
+		myPageProfileDAO.check_message(map);
+		
+	}
+
+	
+	
+	
 }
 

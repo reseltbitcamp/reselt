@@ -21,22 +21,26 @@
           <div>
 	      	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
     	  	<input id="email" type="email" name="email" class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+          	<!-- <input type="button" id="emailSend" value="이메일 인증"> -->
+          	<input id="emailOk" type="hidden">
           	<div id="emailDivcmt" class="mb-10"></div>
           </div>
           <div>
           	<div id="pwdDiv" class="text-xs font-bold"><h3>비밀번호*</h3></div>
           	<input id="pwd" name="pwd" type="password" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="영문 10자 이상">
+      	    <input id="pwdOk" type="hidden">
       	    <div id="pwdDivcmt" class="mb-10"></div>
           </div>
           <div>
           	<div id="repwdDiv" class="text-xs font-bold"><h3>비밀번호 확인*</h3></div>
          	<input id="repwd" type="password" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2">
+         	<input id="repwdOk" type="hidden">
          	<div id="repwdDivcmt" class="mb-10"></div>
           </div>
           <div class="cursor-pointer"><h3 class="text-xs font-bold ">신발사이즈</h3>
             <input id="footsize" type="text" autocomplete="off" class="mb-10 cursor-pointer focus:outline-none disabled:disable w-20" placeholder="선택하세요" readonly="readonly">
             <a href="#size" class="btn">
-              <button id="footsizeBtn" type="button" value="" class="float-right ml-5">
+              <button id="footsizeBtn" type="button" class="float-right ml-5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                 </svg>
@@ -49,7 +53,8 @@
       <div class="mb-10 ml-6">
         <div>
           <label>
-            <input type="checkbox"></input>
+            <input id="check1" type="checkbox"></input>
+            <input id="checkOk" type="hidden"></input>
             [필수] 만 14세 이상이며 모두 동의합니다.
           </label>
           <button id="plusBtn1" type="button" class="float-right">
@@ -117,84 +122,126 @@ $(function(){
 		$('#footsizeBtn').trigger('click');
 	});
 
-
-
-	//유효성 검사 
+	//유효성 검사
 	var reg_email = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
-	    
-	$('#emailDiv').css('color' , 'black');
 	
-	//아이디 이메일 형식
 	$('#email').keyup(function(){
-		 $('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+		
 
 		if(!reg_email.test($('#email').val())) {                            
 			$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요."); 
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
 			$('#emailDivcmt').css({'color':'red'});  
 			$('#emailDiv').css({'color':'red'});  
-		 }
+			$('#emailOk').val('0');					 
+		}
 		 else {                     
 	 	 	 $('#emailDivcmt').html(""); 
-			 $('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
           	 $('#emailDiv').css('color' , 'black');           
-			
-			
-			
-			//비밀번호 재확인 및 10자이상
-			$('#pwd').keyup(function(){
-				if($('#pwd').val().length >= 10 ) {
-					$('#pwdDivcmt').html(""); 
-					$('#pwdDiv').css({'color':'black'}); 
-					$('#repwd').trigger('keyup');
-				}else {
-					$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
-					$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
-					$('#pwdDivcmt').css({'font-size':'5pt'}); 
-					$('#pwdDivcmt').css({'color':'red'}); 
-					$('#pwdDiv').css({'color':'red'}); 
-				}
-			});
+			 $('#emailOk').val('1');
 				
 		}
-			 	
-			$('#repwd').keyup(function(){
-				if($('#pwd').val() != $('#repwd').val()){
-					$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
-					$('#repwdDivcmt').css({'font-size':'5pt'}); 
-					$('#repwdDivcmt').css({'color':'red'}); 
-					$('#repwdDiv').css({'color':'red'}); 
-					$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
-				}else {
-					$('#repwdDivcmt').html(""); 
-					$('#repwdDiv').css({'color':'black'}); 
-					
-					//버튼 활성화
-					$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
-					/* $("#joinBtn").attr("onclick", "join()")	 */			
-					
-					
-						
-				}
-			});
+	
+	});
+	
+	//비밀번호 확인 및 10자이상
+	$('#pwd').on('keyup , focusout',function(){
+		if($('#pwd').val().length >= 10 ) {
+			$('#pwdDivcmt').html(""); 
+			$('#pwdDiv').css({'color':'black'}); 
+			$('#pwdOk').val('1');
+		}else {
+			$('#pwdDivcmt').html("비밀번호 10자 이상 입력해 주세요."); 
+			$('#pwdDivcmt').css({'font-size':'5pt'}); 
+			$('#pwdDivcmt').css({'color':'red'}); 
+			$('#pwdDiv').css({'color':'red'}); 
+			$('#pwdOk').val('0');
+		}
+	});
+	
+	
+	//비밀번호 재확인
+	$('#repwd').on('keyup , focusin',function(){
+		if($('#pwd').val() != $('#repwd').val()){
+			$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
+			$('#repwdDivcmt').css({'font-size':'5pt'}); 
+			$('#repwdDivcmt').css({'color':'red'}); 
+			$('#repwdDiv').css({'color':'red'}); 
+			$('#repwdOk').val('0');
+
+		}else {
+			$('#repwdDivcmt').html(""); 
+			$('#repwdDiv').css({'color':'black'}); 
+			$('#repwdOk').val('1');
+			
+		}
 	});
 	
 	
 		//값 변경시 유효성 재검사 
-		$('#email ,#pwd, #repwd').on('change', function(){
-			$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
-		    $('#email').trigger('focusout');
-		 	
-		    if($('#pwd').val() == $('#repwd').val()){
-			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
-			console.log($('#joinBtn').css('background-color'));
+		$('#pwd, #repwd').on('keyup , focusout', function(){
+		    if($('#pwd').val() != $('#repwd').val()){
+		 		if($('#repwd').val() != ""){
+		    	$('#repwdDivcmt').html("비밀번호가 일치하지 않습니다."); 
+				$('#repwdDivcmt').css({'font-size':'5pt'}); 
+				$('#repwdDivcmt').css({'color':'red'}); 
+				$('#repwdDiv').css({'color':'red'}); 
+				$('#repwdOk').val('0');
+		 		}
 		    }
-		});		 
+		});
+	//필수 체크 조건
+	$('#check1').click(function(){
+	 if($('#check1').is(':checked')){
+		 $('#checkOk').val('1')
+	 }else{
+		 $('#checkOk').val('0')
+	 }
+	});	
+	 	
+	$('#email , #pwd , #repwd').on('focusout',function(){
+		console.log('변화');
+		if($('#emailOk').val() == '1' && $('#pwdOk').val() == '1' && $('#repwdOk').val() == '1' && $('#checkOk').val() == '1' ){
+			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+			console.log('0');
+		}else{
+			$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+			console.log('1');
+		}
+	}); 
+	$('#check1').click(function(){
+		console.log('변화');
+		if($('#emailOk').val() == '1' && $('#pwdOk').val() == '1' && $('#repwdOk').val() == '1' && $('#checkOk').val() == '1' ){
+			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+		}else{
+			$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+			console.log('1');
+		}
+	}); 
+	
+/* 	//이메일 인증
+	$('#emailSend').click(function(){
+		if($('#emailOk').val() == '0') {
+			alert('이메일을 다시 확인 해주세요.');
+		}else{
+			$.ajax({
+				type : 'post',
+				url : '/ReseltProject/member/joinCheckEmail',
+				data : { email : $('#email').val() },
+				success : function(data){
+					
+				}
+			});
+		}		
+	
+	}); */
 	
 	//버튼이 검정색일때 submit
  	$('#joinBtn').click(function(){
 		if($('#joinBtn').css('background-color') == 'rgb(0, 0, 0)' || $('#joinBtn').css('background-color') == 'black' ){
-		console.log('if 성공');
+			
+
+		//console.log('if 성공');
 			//alert('클릭');
 			//alert($('#email').val());
 			//alert(JSON.stringify($('#joinForm').serialize()));
@@ -207,7 +254,7 @@ $(function(){
 					footsize : $('#footsize').val()
 					},
 				success: function(){
-					//alert('회원가입 정보 전달 성공');
+					alert('회원가입이 완료되었습니다.');
 					location.href="/ReseltProject/member/login"
 				},
 				error: function(e){
@@ -222,7 +269,7 @@ $(function(){
 
 	
 	//아이디 중복검사
-	$('#email').on('focusout', function(){
+	$('#email').on('focusout , keyup', function(){
 		console.log('중복검사');
 		$.ajax({
 			type: 'post',
@@ -235,19 +282,20 @@ $(function(){
 				if(data == '0'){
   					if(!reg_email.test($('#email').val())){
 						$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요.");
-  					}           
-  					else if($('#pwd').val() == $('#repwd').val() && $('#pwd').val() != ''){
-						$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+ 						$('#emailOk').val('0');
 				    }else {
-				    	
-  	          	  	  $('#emailDiv').css('color' , 'black');
+  						$('#emailOk').val('1');
+  	          	  	  	$('#emailDiv').css('color' , 'black');
 						$('#emailDivcmt').html("");
 				    }
 				}else if(data == '1') {
 					$('#emailDivcmt').css({'font-size':'5pt'}); 
+					$('#emailOk').val('0');
 					$('#emailDivcmt').html("이미 사용중인 아이디 입니다."); 
-  	          	    $('#emailDivcmt').css('color' , 'red');           
-					$('#joinBtn').css({'background-color' : 'rgb(209, 213, 219)'});
+  	          	    $('#emailDivcmt').css('color' , 'red');   
+					$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+       
+
 				}
 					
 			},

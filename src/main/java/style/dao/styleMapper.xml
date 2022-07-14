@@ -5,23 +5,27 @@
 <mapper namespace="styleSQL">
 	<!-- style write 등록  -->
 	<insert id="styleWriteForm" parameterType="style">
-		insert into styles values(seq.nextval
+		insert into styles values(seq
 									, 103
 									, #{style_image}
 									, #{content}
 									, #{product_id}
 									, 0
 									, 0
-									, sysdate)
+									, NOW())
 	</insert>
 	
 	<!-- List 글 받아오기 -->
-	<select id="getStyleList" resultType="style">
-		<![CDATA[
-	  		select * from 
-	  		(select rownum rn,tt.* from 
-	  		(select * from styles order by seq desc)tt) 
-	  		where rn >= #{startNum} and rn <= #{endNum}
-  		]]>
+	<select id="getStyleList" parameterType="java.util.Map" resultType="style">
+	  		select * from styles order by seq desc limit #{startNum}, #{endNum}
 	</select>
+	
+	<!-- Details 글 받아오기 -->
+	<select id="getStyleDetails" parameterType="int" resultType="style">
+	  		select * from styles where seq = #{seq}
+	</select>
+	
+	<delete id="styleDelete" parameterType="int">
+			delete from styles where seq = #{seq}
+	</delete>
 </mapper>
