@@ -3,28 +3,32 @@ package myPage.bean;
 import java.util.Date;
 
 public class MyPageProfileDTO {
-	int id, login_type, level;
-	String email, pwd, name, tel, address, footsize, profile_img;
-	Date created_at, update_at;
+	int snsLogin;
+	String email, pwd, nick, tel, footsize, profile_img, name, check_email, check_message;
 	
-	
-	public int getId() {
-		return id;
+	public String getCheck_email() {
+		return check_email;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setCheck_email(String check_email) {
+		this.check_email = check_email;
 	}
-	public int getLogin_type() {
-		return login_type;
+	public String getCheck_message() {
+		return check_message;
 	}
-	public void setLogin_type(int login_type) {
-		this.login_type = login_type;
+	public void setCheck_message(String check_message) {
+		this.check_message = check_message;
 	}
-	public int getLevel() {
-		return level;
+	public String getName() {
+		return name;
 	}
-	public void setLevel(int level) {
-		this.level = level;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getSnsLogin() {
+		return snsLogin;
+	}
+	public void setSnsLogin(int snsLogin) {
+		this.snsLogin = snsLogin;
 	}
 	public String getEmail() {
 		return email;
@@ -38,23 +42,17 @@ public class MyPageProfileDTO {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String getName() {
-		return name;
+	public String getNick() {
+		return nick;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 	public String getTel() {
 		return tel;
 	}
 	public void setTel(String tel) {
 		this.tel = tel;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
 	}
 	public String getFootsize() {
 		return footsize;
@@ -68,18 +66,5 @@ public class MyPageProfileDTO {
 	public void setProfile_img(String profile_img) {
 		this.profile_img = profile_img;
 	}
-	public Date getCreated_at() {
-		return created_at;
-	}
-	public void setCreated_at(Date created_at) {
-		this.created_at = created_at;
-	}
-	public Date getUpdate_at() {
-		return update_at;
-	}
-	public void setUpdate_at(Date update_at) {
-		this.update_at = update_at;
-	}
-	
 	
 }

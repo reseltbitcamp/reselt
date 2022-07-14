@@ -4,39 +4,49 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="myPageSQL">
 
+
 	<!-- 업데이트한 dto select -->
 	<select id="getProfile" parameterType="string" resultType="myPage.bean.MyPageProfileDTO">
-		select * from members where id=#{id}
+		select * from members where email=#{email}
 	</select>
 	
-	<!-- 이메일 업데이트 -->
+	<!-- 이메일 업데이트 --> <!-- id를 닉네임으로 변경 -->
 	<update id="emailUpdate" parameterType="java.util.Map">
 		update members set email=#{email} where id=#{id}
 	</update>
 	
 	<!-- 비밀번호 업데이트 -->
 	<update id="pwdUpdate" parameterType="java.util.Map">
-		update members set pwd=#{pwd} where id=#{id}
+		update members set pwd=#{pwd} where email=#{email}
 	</update>
 	
-	<!-- 이름 업데이트 -->
-	<update id="nameUpdate" parameterType="java.util.Map">
-		update members set name=#{name} where id=#{id}
+	<!-- 닉네임 업데이트 -->
+	<update id="nickUpdate" parameterType="java.util.Map">
+		update members set nick=#{nick} where email=#{email}
 	</update>
 	
 	<!-- 신발 사이즈 업데이트 -->
 	<update id="sizeUpdate" parameterType="java.util.Map">
-		update members set footsize=#{footsize} where id=#{id}
+		update members set footsize=#{footsize} where email=#{email}
+	</update>
+	
+	<!-- 수신 확인 -->
+	<update id="check_message" parameterType="java.util.Map">
+		update members set check_message=#{check_message} where email=#{email}
+	</update>
+	
+	<update id="check_email" parameterType="java.util.Map">
+		update members set check_email=#{check_email} where email=#{email}
 	</update>
 	
 	<!-- 프로필 업데이트 -->
 	<update id="updateImg" parameterType="java.util.Map">
-		update members set profile_img=#{profile_img} where id=#{id}
+		update members set profile_img=#{profile_img} where email=#{email}
 	</update>
 	
 	<!-- 프로필 삭제 -->
 	<update id="deleteImg" parameterType="string">
-		update members set profile_img = null where id = #{id}
+		update members set profile_img = null where email=#{email}
 	</update>
 	
 	

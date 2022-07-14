@@ -54,10 +54,10 @@
           <div class="user_profile flex items-center border-b-[1px] border-[#ebebeb] pt-[50px] pb-[38px]">
           	<form id="updateImgForm">
 	            <div class="profile_thumb mr-[18px] h-[100px] w-[100px] flex-none overflow-hidden rounded-full"/>
-	              <img class="showImg h-full w-full" /> <!-- src="../img/myPage/profile.png" -->
+	              <img class="showImg h-full w-full" /> 
 	              <input type="file" name="img" id="img" class="imgFile removeEvent" />
 	            </div>
-			</form>
+						</form>
 			
             <div class="profile_detail">
               <strong class="text-2xl leading-8 tracking-[-.12px] text-[#000]">이름</strong>
@@ -78,29 +78,8 @@
               <div class="emailDiv border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
                 <h5 class="text-sm tracking-[-.07px] text-[#6b6a6a]">이메일 주소</h5>
                 <p class="emailDiv_p pt-[6px] text-[16px] tracking-[-.16px] text-[#6b6a6a]"></p>
-                <input type="button" value="변경" class="emailDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
 
-              <!-- 나타난 애 -->
-              <div class="emailDiv_New removeEvent modify name pt-[25px]">
-                <form class="updateEmailForm">
-                  <h5 class="pb-[22px] text-sm tracking-[-.07px] text-[#222]">이메일 주소</h5>
-
-                  <div class="pt-[10px] pb-[14px]">
-                    <h6 class="text-[13px] leading-[18px] tracking-[-.07px]">새로운 이메일</h6>
-                    <div class="relative">
-                       <input type="text" class="emailDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이메일" autocomplete="off" />
-                    </div>
-                    <!-- 글자 수 유효성 검사 -->
-                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 이메일을 입력해주세요</p>
-                  </div>
-
-                  <div class="modify_btn_box pt-[28px] text-center">
-                    <input type="button" value="취소" class="btn medium emailDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
-                    <input type="button" value="저장" class="emailDiv_save btn medium solid ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
-                  </div>
-                </form>
-              </div>
 
               <!-- 비밀번호  -->
               <!-- 원래 애 -->
@@ -135,31 +114,41 @@
             <div class="profile_group pt-[58px]">
               <h4 class="group_title text-[18px] font-bold tracking-[-.27px]">개인 정보</h4>
 
-			  <!-- 이름 -->
+
+							<!-- 이름 -->
               <!-- 원래 애 -->
               <div class="nameDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
                 <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">이름</h5>
-                <p class="nameDiv_p desc pt-[6px] text-[16px] tracking-[-.16px]"></p>
-                <input type="button" value="변경" class="nameDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <p class="nameDiv_p desc pt-[6px] text-[16px] tracking-[-.16px] text-[#222]"></p>
+              </div>
+
+
+
+			 				<!-- 닉네임 -->
+              <!-- 원래 애 -->
+              <div class="nickDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
+                <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">닉네임</h5>
+                <p class="nickDiv_p desc pt-[6px] text-[16px] tracking-[-.16px] text-[#222]"></p>
+                <input type="button" value="변경" class="nickDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
 
               <!-- 나타난 애 -->
-              <div class="nameDiv_New removeEvent modify name pt-[25px]">
+              <div class="nickDiv_New removeEvent modify name pt-[25px]">
                 <form class="updateNameForm">
-                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">이름</h5>
+                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">닉네임</h5>
 
                   <div class="input_box relative pt-[10px] pb-[14px]">
-                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 이름</h6>
+                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 닉네임</h6>
                     <div class="input_item relative">
-                      <input type="text" class="input_txt text_fill nameDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이름" autocomplete="off" />
+                      <input type="text" class="input_txt text_fill nickDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이름" autocomplete="off" />
                     </div>
                     <!-- 글자 수 유효성 검사 -->
-                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 이름을 입력해주세요</p>
+                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 닉네임을 입력해주세요</p>
                   </div>
 
                   <div class="modify_btn_box pt-[28px] text-center">
-                    <input type="button" value="취소" class="btn medium nameDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
-                    <input type="button" value="저장" class="btn medium solid nameDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
+                    <input type="button" value="취소" class="btn medium nickDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
+                    <input type="button" value="저장" class="btn medium solid nickDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
                   </div>
                 </form>
               </div>
@@ -167,9 +156,32 @@
               <!-- 휴대폰 번호 -->
               <div class="phoneDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
                 <h5 class="title text-sm tracking-[-.07px] text-[#6b6a6a]">휴대폰 번호</h5>
-                <p class="desc pt-[6px] text-[16px] tracking-[-.16px] text-[#222]">010-0000-0000</p>
-                <input type="button" value="변경" class="emailDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
+                <p class="desc pt-[6px] text-[16px] tracking-[-.16px] text-[#222] phoneDiv_p" ></p>
+                <input type="button" value="변경" class="phoneDiv_alter btn btn_modify absolute right-0 bottom-[15px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] pt-[1px] pl-[11px] pr-[12px] text-center align-middle text-xs leading-8 text-[#000]" />
               </div>
+
+							<!-- 나타난 애 -->
+              <div class="phoneDiv_New removeEvent modify name pt-[25px]">
+                <form class="updatePhoneForm">
+                  <h5 class="title pb-[22px] text-sm tracking-[-.07px] text-[#222]">휴대폰 번호</h5>
+
+                  <div class="input_box relative pt-[10px] pb-[14px]">
+                    <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 번호</h6>
+                    <div class="input_item relative">
+                      <input type="text" class="input_txt text_fill phoneDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이름" autocomplete="off" />
+                    </div>
+                    <!-- 글자 수 유효성 검사 -->
+                    <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 번호를 입력해주세요</p>
+                  </div>
+
+                  <div class="modify_btn_box pt-[28px] text-center">
+                    <input type="button" value="취소" class="btn medium phoneDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
+                    <input type="button" value="저장" class="btn medium solid phoneDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
+                  </div>
+                </form>
+              </div>
+
+
 
               <!-- 신발  -->
               <div class="sizeDiv unit border-b-solid relative border-b-[1px] border-b-[#ebebeb] pt-[25px] pr-[60px] pb-[18px] pl-[0px]">
@@ -311,11 +323,11 @@
                 <div class="radio_txt_box absolute bottom-[15px] right-0">
                   <div class="radio_item relative float-left mt-0 mr-[6px]">
                     <span class="float-left mr-[4px]">수신 동의</span>
-                    <input type="radio" name="messageBtn" class="radio_check_1" />
+                    <input type="radio" value="1" name="messageBtn" class="radio_check_1" />
                   </div>
                   <div class="radio_item relative float-left mt-0">
                     <span class="float-left mr-[4px]">수신 거부</span>
-                    <input type="radio" name="messageBtn" class="radio_check_2"/>
+                    <input type="radio" value="2" name="messageBtn" class="radio_check_2"/>
                   </div>
                 </div>
               </div>
@@ -325,16 +337,16 @@
                 <div class="radio_txt_box absolute bottom-[15px] right-0">
                   <div class="radio_item relative float-left mt-0 mr-[6px]">
                     <span class="float-left mr-[4px]">수신 동의</span>
-                    <input type="radio" name="messageBtn" class="radio_check_3" />
+                    <input type="radio" value="1" name="messageBtn2" class="radio_check_3" />
                   </div>
                   <div class="radio_item relative float-left mt-0">
                     <span class="float-left mr-[4px]">수신 거부</span>
-                    <input type="radio" name="messageBtn" class="radio_check_4"/>
+                    <input type="radio" value="2" name="messageBtn2" class="radio_check_4"/>
                   </div>
                 </div>
               </div>
             </div>
-            <a class="btn_withdraxal py-5px mt-[55px] inline-block px-0 text-[13px] tracking-[-.07px] text-[#6b6a6a]">회원탈퇴</a>
+            <a class="btn_withdraxal py-5px mt-[55px] inline-block px-0 text-[13px] tracking-[-.07px] text-[#6b6a6a]" href="/ReseltProject/myPage/withdrawal">회원탈퇴</a>
           </div>
           <!--profile_info-->
         </div>
