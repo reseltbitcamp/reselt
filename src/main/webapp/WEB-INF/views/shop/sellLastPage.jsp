@@ -124,7 +124,7 @@
   <div class="flex">
     <dt class="float-left block min-w-[70px] mb-1 truncate text-sm text-gray-500">간편 결제</dt>
     <dd class="mt text-xs inline ">일시불</dd>
-    <dd class="mt float m inline pl-1 ml-auto text-xs text-gray-400 cursor-pointer">+ 새 카드 추가</dd>
+    <dd class="mt float m inline pl-1 ml-auto text-xs text-gray-400 cursor-pointer ">+ 새 카드 추가</dd>
   </div>
 
   <div class="relative mb-4 cursor-pointer">
