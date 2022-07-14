@@ -169,7 +169,18 @@
                   <div class="input_box relative pt-[10px] pb-[14px]">
                     <h6 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">새로운 번호</h6>
                     <div class="input_item relative">
-                      <input type="text" class="input_txt text_fill phoneDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="고객님의 이름" autocomplete="off" />
+                      <input type="text" class="input_txt text_fill phoneDiv_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="변경할 번호" autocomplete="off" />
+                    </div>
+                    <div id="insertNum" class="input_item relative hidden">
+                      <input id="input" type="text" class="input_txt text_fill randomNum_textOk w-32 float-left py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="인증 번호 입력" autocomplete="off" />
+	                    <button id="telOkBtn" type="button" value="" class="float-left ml-5">
+		                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						  <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+						</svg>
+		              </button>
+		              
+                      <input type="text" class="input_txt text_fill randomNum_text w-full py-[7px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[#ebebeb] border-solid border-b-[1px] outline-0 border-0 resize-none px-0" placeholder="" autocomplete="off" />
                     </div>
                     <!-- 글자 수 유효성 검사 -->
                     <p class="input_error removeEvent text-[13px] text-[#ff3939]">올바른 번호를 입력해주세요</p>
@@ -177,7 +188,7 @@
 
                   <div class="modify_btn_box pt-[28px] text-center">
                     <input type="button" value="취소" class="btn medium phoneDiv_cancel h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" />
-                    <input type="button" value="저장" class="btn medium solid phoneDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
+                    <input type="button" value="인증번호 받기" class="btn medium solid phoneDiv_save ml-[8px] h-[42px] rounded-[12px] border-[1px] border-solid border-[#d3d3d3] pr-[38px] pl-[38px] text-[14px] tracking-[-.14px] text-[#222]" disabled="true" />
                   </div>
                 </form>
               </div>

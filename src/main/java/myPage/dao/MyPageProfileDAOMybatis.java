@@ -68,6 +68,12 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 		
 	}
 
+
+	@Override
+	public void telUpdate(Map<String, String> map) {
+		sqlSession.selectOne("myPageSQL.telUpdate", map);
+	}
+
 	
 
 

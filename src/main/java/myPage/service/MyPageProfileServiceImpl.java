@@ -113,6 +113,17 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		
 	}
 
+	@Override
+	public void telUpdate(String tel) {
+		
+		Map<String, String> map = new HashMap<String, String>();
+
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("tel", tel);
+		myPageProfileDAO.telUpdate(map);
+	}
+
 
 
 	
