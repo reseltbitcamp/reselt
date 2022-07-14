@@ -1,4 +1,4 @@
-
+/*
 //변경 누르면 emailDiv 수정
 $('.emailDiv_alter').click(function(){
 	$('.emailDiv').addClass('removeEvent');
@@ -21,7 +21,7 @@ $('.emailDiv_text').on('input', function(){
 		$('.input_error').addClass('removeEvent');
 	}
 });
-
+*/
 
 //변경 누르면 PwdDiv 수정
 $('.pwdDiv_alter').click(function(){
@@ -46,26 +46,26 @@ $('.pwdDiv_text').on('input', function(){
 });
 
 
-//변경 누르면 nameDiv 수정
-$('.nameDiv_alter').click(function(){
-	$('.nameDiv').addClass('removeEvent');
-	$('.nameDiv_New').removeClass('removeEvent');
+//변경 누르면 nickDiv 수정
+$('.nickDiv_alter').click(function(){
+	$('.nickDiv').addClass('removeEvent');
+	$('.nickDiv_New').removeClass('removeEvent');
 });
 
-//취소 누르면 원래 nameDiv 취소
-$('.nameDiv_cancel').click(function(){
-	$('.nameDiv').removeClass('removeEvent');
-	$('.nameDiv_New').addClass('removeEvent');
+//취소 누르면 원래 nickDiv 취소
+$('.nickDiv_cancel').click(function(){
+	$('.nickDiv').removeClass('removeEvent');
+	$('.nickDiv_New').addClass('removeEvent');
 });
 
 
-//텍스트 쓰면 활성화 nameDiv 활성화
-$('.nameDiv_text').on('input', function(){
-	if ($('.nameDiv_text').val().length < 2 || $('.nameDiv_text').val().length > 50) {
-		$('.nameDiv_save').attr('disabled', true);
+//텍스트 쓰면 활성화 nickDiv 활성화
+$('.nickDiv_text').on('input', function(){
+	if ($('.nickDiv_text').val().length < 2 || $('.nickDiv_text').val().length > 50) {
+		$('.nickDiv_save').attr('disabled', true);
 		$('.input_error').removeClass('removeEvent');
 	} else {
-		$('.nameDiv_save').attr('disabled', false);
+		$('.nickDiv_save').attr('disabled', false);
 		$('.input_error').addClass('removeEvent');
 	}
 });
@@ -82,6 +82,7 @@ $('.sizeDiv_alter').click(function(){
 //});
 
 
+/*
 //email 변경 시 데이터 변경, 페이지에 뿌리기
 $('.emailDiv_save').click(function(){
 	
@@ -101,6 +102,7 @@ $('.emailDiv_save').click(function(){
 	});
 	
 });
+*/
 
 //비밀번호 변경 시 데이터 변경
 $('.pwdDiv_save').click(function(){
@@ -123,16 +125,16 @@ $('.pwdDiv_save').click(function(){
 
 
 //이름 변경 시 데이터 변경, 페이지 뿌리기
-$('.nameDiv_save').click(function(){
+$('.nickDiv_save').click(function(){
 	
 	$.ajax({
 		type: 'post',
-		url: '/ReseltProject/myPage/nameUpdate',
-		data: 'name=' + $('.nameDiv_text').val(),
+		url: '/ReseltProject/myPage/nickUpdate',
+		data: 'nick=' + $('.nickDiv_text').val(),
 		success: function(){
-			$('.nameDiv').removeClass('removeEvent');
-			$('.nameDiv_New').addClass('removeEvent');
-			$('.nameDiv_p').text($('.nameDiv_text').val());
+			$('.nickDiv').removeClass('removeEvent');
+			$('.nickDiv_New').addClass('removeEvent');
+			$('.nickDiv_p').text($('.nickDiv_text').val());
 			alert('이름이 변경되었습니다');
 		},
 		error: function(err){
@@ -248,45 +250,122 @@ $('.resetBtn').click(function(){
 
 //문자 이메일 alert, 페이지 버튼 뿌리기
 $('.radio_check_1').on('click', function(){
-	alert('광고성 정보 수신을 설정하였습니다. (문자 메시지 동의)');
-	$(this).attr('checked', true);
-	$('.radio_check_2').attr('checked', false);
+
+	//check_email에 1값 넣기
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/check_message',
+		data: 'check_message=' + $('.radio_check_1').val(),
+		success: function() {
+			alert('광고성 정보 수신을 설정하였습니다. (문자 메시지 동의)');
+			$('.radio_check_2').attr('checked', false);
+			$(this).attr('checked', true);
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
 });
 
 $('.radio_check_2').on('click', function(){
-	alert('광고성 정보 수신을 설정하였습니다. (문자 메시지 동의)');
-	$(this).attr('checked', true);
-	$('.radio_check_1').attr('checked', false);
+	
+	//check_email에 2값 넣기
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/check_message',
+		data: 'check_message=' + $('.radio_check_2').val(),
+		success: function() {
+			alert('광고성 정보 수신을 설정하였습니다. (문자 메시지 동의)');
+			$('.radio_check_1').attr('checked', false);
+			$(this).attr('checked', true);
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
 });
 
 $('.radio_check_3').on('click', function(){
-	alert('광고성 정보 수신을 설정하였습니다. (이메일 동의)');
-	$(this).attr('checked', true);
-	$('.radio_check_4').attr('checked', false);
+	
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/check_email',
+		data: 'check_email=' + $('.radio_check_3').val(),
+		success: function() {
+			alert('광고성 정보 수신을 설정하였습니다. (문자 메시지 동의)');
+			$('.radio_check_4').attr('checked', false);
+			$(this).attr('checked', true);
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	
 });
 
 $('.radio_check_4').on('click', function(){
-	alert('광고성 정보 수신을 설정하였습니다. (이메일 동의)');
-	$(this).attr('checked', true);
-	$('.radio_check_3').attr('checked', false);
+	
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/check_email',
+		data: 'check_email=' + $('.radio_check_4').val(),
+		success: function() {
+			alert('광고성 정보 수신을 설정하였습니다. (문자 메시지 동의)');
+			$('.radio_check_3').attr('checked', false);
+			$(this).attr('checked', true);
+		},
+		error: function(err) {
+			console.log(err);
+		}
+	});
+	
 });
 
 
 
 
-//페이지 새로고침할 시 데이터 뿌리기
+//페이지 데이터 뿌리기
 $(document).ready(function(){
-	
 	
 	$.ajax({
 		type: 'post',
 		url: '/ReseltProject/myPage/getProfile',
 		dataType: 'json',
 		success: function(data) {
-			$('.showImg').attr('src', data.profile_img);
+			console.log(data.profile_img);
 			$('.emailDiv_p').append($('<span/>', {text: data.email}));
 			$('.nameDiv_p').append($('<span/>', {text: data.name}));
+			$('.nickDiv_p').append($('<span/>', {text: data.nick}));
+			$('.phoneDiv_p').append($('<span/>', {text: data.tel}));
 			$('.sizeDiv_text').append($('<span/>', {text: data.footsize}));
+			
+			if(data.profile_img == null) {
+				$('.showImg').attr('src', '/assets/img/myPage/profile.png');
+			} else {
+				$('.showImg').attr('src', data.profile_img);
+			}
+			
+			if(data.snsLogin == 0) {
+				// 버튼 보여줌
+				$('.pwdDiv_alter').removeClass('removeEvent');
+			} else {
+				//버튼 안보여줌
+				$('.pwdDiv_alter').addClass('removeEvent');
+			}
+			
+			if(data.check_email == 1) {
+				$('.radio_check_3').attr('checked', true);
+			} else {
+				$('.radio_check_4').attr('checked', true);
+			}
+			
+			if(data.check_message == 1) {
+				$('.radio_check_1').attr('checked', true);
+			} else {
+				$('.radio_check_2').attr('checked', true);
+			}
+			
+			
 		},
 		error: function(error) {
 			console.log(error)
