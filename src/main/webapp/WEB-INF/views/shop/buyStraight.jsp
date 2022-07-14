@@ -63,28 +63,21 @@
 			
 			<!-- buyBidDiv -->			
       <div id="buyBidDiv" class="border-t">
-        <div class="mt-5 h-14 border-b-2">
-          <p class="align-top text-xs font-bold text-black">구매 희망가</p>
+        <div class="buyBidPriceText mt-5 h-14 border-b-2">
+          <p class="buyBidPriceText align-top text-xs font-bold text-black">구매 희망가</p>
           <p class="float-right text-xl font-semibold">원</p>
-          <input type="text" class="float-right text-right text-xl font-semibold outline-none" placeholder="희망가 입력"/>
+          <input type="text" id="buyBidPrice" class="float-right text-right text-xl font-semibold outline-none" placeholder="희망가 입력"/>
+       		<div id="buyBidPriceDiv" class="buyBidPriceText text-red-600 text-xs">30일</div>
         </div>
-
-
-        <div id="buyBidDiv" class="border-t">
-	        <div class="mt-5 h-14 border-b-2">
-	          <p class="align-top text-xs font-bold text-black">판매 희망가</p>
-	          <p class="float-right text-xl font-semibold">원</p>
-	          <input id="buyBidPrice" type="text" class="text-right float-right text-xl font-semibold" placeholder="희망가 입력" />
-	        </div>
         
           <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
-          <p id="bidDate" class="text-xs">3일(2022/07/07)</p>
+          <p id="bidTime" class="text-xs"></p>
           <div class="text-center">
-            <button id="dateBtn1" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">1일</button>
-            <button id="dateBtn3" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">3일</button>
-            <button id="dateBtn7" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">7일</button>
-            <button id="dateBtn30" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">30일</button>
-            <button id="dateBtn60" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400">60일</button>
+            <button id="dateBtn1" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="1일">1일</button>
+            <button id="dateBtn3" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="3일">3일</button>
+            <button id="dateBtn7" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="7일">7일</button>
+            <button id="dateBtn30" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="30일">30일</button>
+            <button id="dateBtn60" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="60일">60일</button>
           </div>
           
           <div id="bidBuy" class="border-t">
@@ -102,23 +95,6 @@
 <script type="text/javascript">
 $(function(){
   $('#buyBidDiv').hide();
-  $('.dateBtn').each(function(index){
-	    $(this).attr('dateBtn-index',index);
-	    
-	  }).click(function(){
-	    var index = $(this).attr('dateBtn-index');
-	    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
-	    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
-	    console.log($('#buyBidPrice').val())
-	    
-	    if($('#buyBidPrice').val() != "") {
-	    	$('#buyBidBtn').removeAttr("disabled");   	
-	    } else {
-	    	$('#buyBidBtn').attr("disabled", true);
-	    };
-	    
-	})
-	$('.dateBtn[dateBtn-index=3]').addClass('border-3 border-black font-semibold');
 })
 
 $('#buyBidPrice').keyup(function(){
@@ -133,21 +109,45 @@ $('#buyBidPrice').keyup(function(){
 $('#buyBid_bg').click(function(){
   $('#buyBidDiv').show()
   $('#buyStraightDiv').hide();
-  
   $('#buyStraight_bg').removeClass("bg-red-500 text-white font-semibold")
   $('#buyBid_bg').addClass("bg-red-500 text-white font-semibold")
-	
   $('#centerText').text("구매 입찰하기")
+  
+  $('#buyBidPrice').keyup(function(){
+		var check = $('#buyBidPrice').val()%1000;
+		if((check == 0) && ($('#buyBidPrice').val() > 30000)){
+			console.log(check)
+			$('#buyBidPriceDiv').html("");
+			console.log(check)
+	    $('.buyBidPriceText').removeClass("text-red-600 border-red-600");
+			$('#buyBidBtn').removeAttr("disabled");
+		} else {
+			$('#buyBidPriceDiv').html("30000원 이상 부터 천원단위로 입력하세요");
+			 $('.buyBidPriceText').addClass("text-red-600 border-red-600");
+	 	   $('#buyBidBtn').attr("disabled", true);
+		}
+	})
+  
+  
+  $('.dateBtn').each(function(index){
+	    $(this).attr('dateBtn-index',index);
+	    
+	  }).click(function(){
+	    var index = $(this).attr('dateBtn-index');
+	    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
+	    $('#bidTime').html($('.dateBtn[dateBtn-index='+ index + ']').val());
+	    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
+	    
+	})
+	$('.dateBtn[dateBtn-index=3]').addClass('border-3 border-black font-semibold');
+  
 });
 
 $('#buyStraight_bg').click(function(){
   $('#buyBidDiv').hide()
   $('#buyStraightDiv').show()
-  
   $('#buyStraight_bg').addClass('bg-red-500 text-white font-semibold')
-  
   $('#buyBid_bg').removeClass("bg-red-500 text-white font-semibold")
-
   $('#centerText').text("즉시 구매하기")
 })
 

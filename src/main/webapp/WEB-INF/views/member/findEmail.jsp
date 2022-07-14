@@ -115,6 +115,7 @@ $(function(){
 							min = parseInt(time/60);
 							sec = time%60;
 							
+							$('#textDivcmt').css({'font-size':'5pt' , 'color':'red' });
 							$('#textDivcmt').html("제한 시간: " + min + " 분 " + sec + " 초");
 							time--;
 							

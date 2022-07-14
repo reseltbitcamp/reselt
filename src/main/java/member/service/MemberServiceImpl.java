@@ -43,7 +43,7 @@ public class MemberServiceImpl implements MemberService {
 			}
 			System.out.println(ReseltTel);
 			//null 제거하여 삽입
-			memberDTO.setTel(ReseltTel.substring(3));
+			memberDTO.setTel(ReseltTel.substring(4));
 			
 			}
 		}
