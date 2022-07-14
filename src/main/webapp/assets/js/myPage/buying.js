@@ -141,6 +141,7 @@ $('.buying_btn_1').on('click', function(){
 	$(this).children('.tab_link').addClass('tab_on');
 	
 	/*ajax 넘어오는 데이터 있으면 empty_area가 remove, 없으면 not_empty_area가 remove*/
+	/*kream 보면 다시 전체로 받음*/
 	$('.empty_area_1').removeClass('.removeEvent');
 	$('.not_empty_area_1').removeClass('removeEvent');
 	$('.empty_area_2').addClass('.removeEvent');
@@ -177,4 +178,23 @@ $('.buying_btn_3').on('click', function(){
 	$('.empty_area_3').removeClass('.removeEvent');
 	$('.not_empty_area_3').removeClass('removeEvent');
 });
+
+
+/*상태 value() 달력 input value() 정렬 value*/
+/*구매 1페이지 조회 (정렬, 기간, 상태)*/
+
+/*구매 2페이지 조회 (정렬, 기간, 상태)*/
+
+/*구매 3페이지 조회 (정렬, 기간, 상태)*/
+
+
+
+
+
+
+
+
+
+
+
 

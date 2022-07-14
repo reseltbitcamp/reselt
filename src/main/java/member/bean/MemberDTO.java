@@ -1,6 +1,7 @@
 package member.bean;
 
 import java.io.File;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import org.springframework.stereotype.Component;
@@ -17,11 +18,13 @@ public class MemberDTO {
 	private String name;
 	private String tel;
 	private String address;
-	private Date created_at;
-	private Date update_at;
+	private Timestamp created_at;
+	private Timestamp update_at;
 	private String footsize;
 	private String profile_img;
 	private int snsLogin;
 	private int level;
 	private String nick;
+	private String check_email;
+	private String check_message;
 }

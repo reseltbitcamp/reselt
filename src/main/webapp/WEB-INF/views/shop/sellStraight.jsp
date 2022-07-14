@@ -4,6 +4,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<style type="text/css">
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+</style>
+
     <div class="main-content mx-auto bg-white pb-8 px-8 pt-2 shadow-md max-w-[780px] max-h-[960px] my-5">
       <!-- 이전페이지에서 내가 선택한 제품의 사진, 제품특성들 받아와서 표시 -->
       <div class="mt-1 mb-5 flex items-center">
@@ -67,10 +75,11 @@
     </div>
     
     <div id="sellBidDiv">
-        <div class="mt-5 h-14 border-b-2">
-          <p class="align-top text-xs font-bold text-black">판매 희망가</p>
+        <div class="sellBidPriceText mt-5 h-14 border-b-2">
+          <p class="sellBidPriceText align-top text-xs font-bold text-black">판매 희망가</p>
           <p class="float-right text-xl font-semibold">원</p>
-          <input id="sellBidPrice" type="text" class="text-right float-right text-xl font-semibold" placeholder="희망가 입력" />
+          <input id="sellBidPrice" type="number" class="sellBidPriceText text-right float-right text-xl font-semibold mr-1" placeholder="희망가 입력" />
+          <div id="sellBidPriceDiv" class="sellBidPriceText text-red-600 text-xs"></div>
         </div>
 
         <div class="mb-9 w-auto">
@@ -92,18 +101,18 @@
 
       <div class="border-t">
         <p class="my-5 text-sm font-semibold">입찰 마감기한</p>
-        <p class="text-xs">시간</p>
+        <p id="bidTime" class="text-xs">시간</p>
         <div class="text-center">
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">1일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">3일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">7일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">30일</button>
-          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400">60일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400" value="1일">1일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400" value="3일">3일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400" value="7일">7일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400" value="30일">30일</button>
+          <button id="dateBtn" class="dateBtn h-10 w-[138px] mb-5 rounded-2xl border border-gray-400" value="60일">60일</button>
         </div>
 
         <div class="border-t">
           <p class="mt-3 text-sm font-semibold">정산금액</p>
-          <button id="sellBidBtn" class="mt-3 h-14 w-full rounded-2xl bg-black font-semibold cursor-not-allowed text-white disabled:bg-gray-100" disabled>판매 입찰 계속</button>
+          <button id="sellBidBtn" class="mt-3 h-14 w-full rounded-2xl bg-black font-semibold disabled:cursor-not-allowed text-white disabled:bg-gray-100" disabled>판매 입찰 계속</button>
         </div>
       </div>
 		</div>
@@ -114,37 +123,12 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#sellBid').hide();
-	
-	  $('.dateBtn').each(function(index){
-		    $(this).attr('dateBtn-index',index);
-		    
-		  }).click(function(){
-		    var index = $(this).attr('dateBtn-index');
-		    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
-		    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');
-		    console.log($('#buyBidPrice').val())
-		    
-		    if($('#sellBidPrice').val() != "") {
-		    	$('#sellBidBtn').removeAttr("disabled");   	
-		    } else {
-		    	$('#sellBidBtn').attr("disabled", true);
-		    };
-		    
-		})
-		$('.dateBtn[dateBtn-index=3]').addClass('border-3 border-black font-semibold');
-})
-
-$('#sellBidPrice').keyup(function(){
-	if($('#sellBidPrice').val() != "") {
-    	$('#sellBidBtn').removeAttr("disabled");   	
-    } else {
-    	$('#sellBidBtn').attr("disabled", true);
-    };
-	
+	$('#sellBidDiv').hide();
 })
 
 $('#sellBid_bg').click(function(){
+	
+	
 	$('#sellStraightDiv').hide();
 	$('#sellBidDiv').show();
 	$('#sellBid_bg').removeClass("bg-gray-100 text-black");
@@ -153,6 +137,33 @@ $('#sellBid_bg').click(function(){
 	$('#sellBidBtn').attr("disabled", true)
 	$('#sellStraight_bg').removeClass("bg-green-300 text-white")
 	$('#sellStraight_bg').addClass("bg-gray-100 text-black");
+	 
+	$('#sellBidPrice').keyup(function(){
+		var check = $('#sellBidPrice').val()%1000;
+		if((check == 0) && ($('#sellBidPrice').val() > 30000)){
+			console.log(check)
+			$('#sellBidPriceDiv').html("");
+			console.log(check)
+	    $('.sellBidPriceText').removeClass("text-red-600 border-red-600");
+			$('#sellBidBtn').removeAttr("disabled");
+		} else {
+			$('#sellBidPriceDiv').html("30000원 이상 부터 천원단위로 입력하세요");
+			 $('.sellBidPriceText').addClass("text-red-600 border-red-600");
+	 	   $('#sellBidBtn').attr("disabled", true);
+		}
+	})    
+	
+	$('.dateBtn').each(function(index){
+		    $(this).attr('dateBtn-index',index);
+		    
+		  }).click(function(){
+		    var index = $(this).attr('dateBtn-index');
+		    $('.dateBtn[dateBtn-index='+ index + ']').addClass('border-3 border-black font-semibold');
+		    $('#bidTime').html($('.dateBtn[dateBtn-index='+ index + ']').val());
+		    $('.dateBtn[dateBtn-index!='+ index + ']').removeClass('border-3 border-black font-semibold');  
+		})
+		$('.dateBtn[dateBtn-index=3]').addClass('border-3 border-black font-semibold');
+	
 });
 
 $('#sellStraight_bg').click(function(){
@@ -163,6 +174,7 @@ $('#sellStraight_bg').click(function(){
 	$('#centerText').text("즉시 판매하기")
 	$('#sellBid_bg').removeClass("bg-green-300 text-white font-semibold")
 	$('#sellBid_bg').addClass("bg-gray-100 text-black");
+	$('#sellBidPrice').val("");
 })
  
 $('#sellStraightBtn').click(function(){

@@ -19,8 +19,8 @@
 	private int snsLogin;
 	private int level;
 	 -->
-	insert into members(email, pwd, name, tel, created_at, footsize, snsLogin, level, nick) 
-				values(#{email},#{pwd},#{name},#{tel},now(),#{footsize},#{snsLogin},0, #{nick})
+	insert into members(email, pwd, name, tel, footsize, snsLogin, level, nick) 
+				values(#{email},#{pwd},#{name},#{tel},#{footsize},#{snsLogin},0, #{nick})
 
 </insert>
 

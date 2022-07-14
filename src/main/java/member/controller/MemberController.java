@@ -142,6 +142,7 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mv.addObject("main", "/WEB-INF/views/main/main.jsp");
+		//mv.addObject("display", "/WEB-INF/views/member/findEmailResult.jsp");
 		mv.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mv.addObject("flowbite", true);
 		mv.setViewName("index");
@@ -226,7 +227,8 @@ public class MemberController {
 				System.out.println("정보 불일치");
 				return "0";
 			}else {
-				
+				if(memberDTO.getSnsLogin() == 0) {
+					
 				System.out.println("이메일 인증 요청이 들어옴!");
 				System.out.println("이메일 인증 이메일 : " + memberDTO.getEmail());
 				String tmpPwd = mailService.tmpPwdEmail(memberDTO.getEmail());
@@ -236,6 +238,9 @@ public class MemberController {
 				
 				memberService.tmpPwd(map);
 				return tmpPwd;
+				}else {
+					return "3";
+				}
 			}
 		}else {
 			return "1";
