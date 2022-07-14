@@ -19,8 +19,8 @@
 	private int snsLogin;
 	private int level;
 	 -->
-	insert into members(email, pwd, name, tel, address, created_at, updated_at, footsize, profile_img, snsLogin, level) 
-				values(#{email},#{pwd},#{name},#{tel},#{address},now(),'0000-00-00 00:00:00',#{footsize},#{profile_img},#{snsLogin},0)
+	insert into members(email, pwd, name, tel, created_at, footsize, snsLogin, level, nick) 
+				values(#{email},#{pwd},#{name},#{tel},now(),#{footsize},#{snsLogin},0, #{nick})
 
 </insert>
 
