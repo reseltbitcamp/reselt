@@ -142,6 +142,7 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mv.addObject("main", "/WEB-INF/views/main/main.jsp");
+		//mv.addObject("display", "/WEB-INF/views/member/findEmailResult.jsp");
 		mv.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mv.addObject("flowbite", true);
 		mv.setViewName("index");

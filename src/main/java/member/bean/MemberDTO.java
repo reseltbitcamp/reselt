@@ -25,4 +25,6 @@ public class MemberDTO {
 	private int snsLogin;
 	private int level;
 	private String nick;
+	private String check_email;
+	private String check_message;
 }
