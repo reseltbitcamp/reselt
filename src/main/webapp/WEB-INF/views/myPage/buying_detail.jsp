@@ -30,6 +30,7 @@
               <ul class="list-none">
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">프로필 정보</a></li>
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">결제 정보</a></li>
+             		<li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/address">주소록</a></li>
               </ul>
             </div>
           </nav>
@@ -142,6 +143,6 @@
   </div>
   <!--content-area-->
 </div>
-
+</div> <!--container-->
 </body>
 </html>
