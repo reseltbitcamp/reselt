@@ -28,4 +28,8 @@
 	<delete id="styleDelete" parameterType="int">
 			delete from styles where seq = #{seq}
 	</delete>
+	
+	<update id="styleUpdate" parameterType="style">
+		update styles set style_image=#{style_image}, product_id=#{product_id}, content=#{content} where seq=#{seq}
+	</update>
 </mapper>

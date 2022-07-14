@@ -2,6 +2,7 @@ package style.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -109,5 +110,41 @@ public class StyleController {
 		
 		return mav;
 	}
-
+	
+	@GetMapping(value="styleUpdateForm")
+	public ModelAndView styleUpdateForm(@RequestParam String seq) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("seq", seq);
+		mav.addObject("menu", "/WEB-INF/views/style/styleMenu.jsp");
+		mav.addObject("display", "/WEB-INF/views/style/styleUpdateForm.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
+	@PostMapping(value="styleUpdate")
+	@ResponseBody
+	public void styleUpdate(@ModelAttribute StyleDTO styleDTO,
+								@RequestParam int seq,
+								@RequestParam MultipartFile img,
+								HttpSession session) {
+		System.out.println(session.getServletContext());
+		//실제폴더
+		String filePath = session.getServletContext().getRealPath("/assets/img/style/styleImage/");
+		String fileName = img.getOriginalFilename();
+		
+		System.out.println(filePath);
+		File file = new File(filePath, fileName);
+		
+		try {
+			img.transferTo(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		styleDTO.setStyle_image(fileName);
+		
+	    styleService.styleUpdate(styleDTO);
+	}
 }
