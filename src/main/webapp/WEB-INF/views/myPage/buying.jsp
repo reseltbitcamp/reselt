@@ -11,7 +11,7 @@
 
 </head>
 <body>
-   <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
+     <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
@@ -33,6 +33,7 @@
               <ul class="list-none">
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">프로필 정보</a></li>
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">결제 정보</a></li>
+             		<li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/address">주소록</a></li>
               </ul>
             </div>
           </nav>
@@ -158,13 +159,10 @@
     <div class="head_status ml-auto items-center text-right flex ">
       
       <div class="status_box field_expires_at block">
-      	<a href="#" class="relative pr-[16px] inline-block text-[13px] tracking-[-.07px] leading-[24px]">
-      		<label class="status_txt inline-block align-top ml-[10px]">시간순</label>
-      		<select size="2" id="asc_desc">
+      		<select style="outline-style:none; border:none;" class="text-[13px] border-none">
       			<option value="asc">오름차순</option>
-      			<option value="desc">내림차순</option>
+      			<option value="desc" selected>내림차순</option>
       		</select>
-      	</a>
       </div> 
     </div> <!-- head_status -->
     

@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
+import myPage.service.MyPageAddressService;
 import myPage.service.MyPageBuyingService;
 import myPage.service.MyPageProfileService;
 
@@ -30,12 +31,27 @@ public class MyPageController {
 	@Autowired
 	MyPageProfileService myPageProfileService;
 	
+	@Autowired
+	MyPageBuyingService myPageBuyingService;
+	
+	@Autowired
+	MyPageAddressService myPageAddressService;
+	
 	@GetMapping(value="myMain")
 	public ModelAndView my() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("display", "/WEB-INF/views/myPage/myMain.jsp");
+		mav.setViewName("/index");
+		return mav;
+	}
+	@GetMapping(value="address")
+	public ModelAndView address() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("display", "/WEB-INF/views/myPage/address.jsp");
 		mav.setViewName("/index");
 		return mav;
 	}
@@ -222,8 +238,6 @@ public class MyPageController {
 		return myPageProfileDTO;
 	}
 
-	@Autowired
-	MyPageBuyingService myPageBuyingService;
 	
 	@PostMapping(value="getBuying")
 	@ResponseBody
@@ -233,9 +247,16 @@ public class MyPageController {
 		System.out.println(list);
 		return list;
 		
-		
 	}
 	
+	
+	@PostMapping(value="add_address")
+	@ResponseBody
+	public void add_address(@RequestParam String address) {
+		myPageAddressService.add_address(address);
+	}
+	
+
 }
 	
 	

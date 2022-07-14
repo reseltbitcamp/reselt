@@ -27,5 +27,7 @@ public interface MyPageProfileDAO {
 
 
 
+
+
 	
 }

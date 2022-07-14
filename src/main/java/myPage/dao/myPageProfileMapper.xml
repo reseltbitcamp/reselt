@@ -48,7 +48,6 @@
 	<update id="deleteImg" parameterType="string">
 		update members set profile_img = null where email=#{email}
 	</update>
-	
-	
+
 </mapper>
 
