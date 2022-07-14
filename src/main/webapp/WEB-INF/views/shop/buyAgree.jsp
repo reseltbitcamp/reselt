@@ -4,7 +4,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-	
     <div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
       <!-- 제품 정보 화면 -->
 
@@ -48,12 +47,11 @@
               <div class="flex-1">
                 <p class="-mb-2 text-base">제조사에서 불량으로 인정하지 않는 기준은 하자로 판단하지 않습니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">박스/패키지와 상품 컨디션에 민감하시다면 검수 기준을 반드시 확인하시기 바랍니다.</p>
-                <a class="inline-block text-sm text-blue-400 underline" href="#">검수기준 보기</a>
+                <input type="button" class="inline-block text-sm text-blue-400 underline" id="inspectionBtn2" value="검수기준 보기">
               </div>
               <input id="thirdAgree" type="checkbox" class="h-5 w-5" />
             </li>
           </label>
-
           <label>
             <li class="flex items-center py-4 cursor-pointer">
               <div class="flex-1">
@@ -61,7 +59,7 @@
                 <p class="mt-2 mb-2 text-xs text-gray-400">
                 건전하고 안전한 거래를 위해 반드시 숙지해야 할 미입고,패널티,부정거래 등의 이용정책을 확인했습니다.
               </p>
-              <a class="inline-block text-sm text-blue-400 underline" href="#">이용정책 보기</a>
+              <input type="button" class="inline-block text-sm text-blue-400 underline" id="tosBtn" value="이용정책 보기">
             </div>
             <input id="fourthAgree" type="checkbox" class="h-5 w-5" />
           </li>
@@ -71,6 +69,8 @@
         <input type="button" value="판매 계속" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
       </form>
     </div>
+    
+    
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/sellPage.js"></script>
@@ -140,3 +140,4 @@ $('#agreeBtn').click(function(){
 	location.href="./buyStraight"
 });
 </script>
+
