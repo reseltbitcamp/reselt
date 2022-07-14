@@ -115,10 +115,10 @@ $(function(){
  	
  	
  $('#findPwdBtn').click(function() {
-	 	alert('hi');
+	 	//alert('hi');
 		if($('#findPwdBtn').css('background-color') == "black" || $('#findPwdBtn').css('background-color') == "rgb(0, 0, 0)"){
 			
-			alert('if통과');
+			//alert('if통과');
 			$.ajax({
 				type : 'post',
 				url : '/ReseltProject/member/mailCheck',
@@ -128,8 +128,11 @@ $(function(){
 					if(data == "0"){
 						alert('회원 정보를 정확하게 입력해주세요');
 					}else if(data =="1"){
-						alert('등록 되지 않은 휴대폰 번호입니다.')
+						alert('등록 되지 않은 휴대폰 번호입니다. 정보를 확인해 주세요')
+					}else if(data =="3"){
+						alert('소셜로그인 회원입니다. 정보를 확인해 주세요')
 					}
+					
 					else{
 						alert('임시 비밀번호가 전송되었습니다.');
 						location.href='/ReseltProject/member/login'

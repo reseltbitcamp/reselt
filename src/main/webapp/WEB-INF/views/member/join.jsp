@@ -22,19 +22,19 @@
 	      	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
     	  	<input id="email" type="email" name="email" class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
           	<!-- <input type="button" id="emailSend" value="이메일 인증"> -->
-          	<input id="emailOk" type="text">
+          	<input id="emailOk" type="hidden">
           	<div id="emailDivcmt" class="mb-10"></div>
           </div>
           <div>
           	<div id="pwdDiv" class="text-xs font-bold"><h3>비밀번호*</h3></div>
           	<input id="pwd" name="pwd" type="password" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="영문 10자 이상">
-      	    <input id="pwdOk" type="text">
+      	    <input id="pwdOk" type="hidden">
       	    <div id="pwdDivcmt" class="mb-10"></div>
           </div>
           <div>
           	<div id="repwdDiv" class="text-xs font-bold"><h3>비밀번호 확인*</h3></div>
          	<input id="repwd" type="password" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2">
-         	<input id="repwdOk" type="text">
+         	<input id="repwdOk" type="hidden">
          	<div id="repwdDivcmt" class="mb-10"></div>
           </div>
           <div class="cursor-pointer"><h3 class="text-xs font-bold ">신발사이즈</h3>
@@ -54,7 +54,7 @@
         <div>
           <label>
             <input id="check1" type="checkbox"></input>
-            <input id="checkOk" type="text"></input>
+            <input id="checkOk" type="hidden"></input>
             [필수] 만 14세 이상이며 모두 동의합니다.
           </label>
           <button id="plusBtn1" type="button" class="float-right">
@@ -241,7 +241,7 @@ $(function(){
 		if($('#joinBtn').css('background-color') == 'rgb(0, 0, 0)' || $('#joinBtn').css('background-color') == 'black' ){
 			
 
-		console.log('if 성공');
+		//console.log('if 성공');
 			//alert('클릭');
 			//alert($('#email').val());
 			//alert(JSON.stringify($('#joinForm').serialize()));
@@ -254,7 +254,7 @@ $(function(){
 					footsize : $('#footsize').val()
 					},
 				success: function(){
-					//alert('회원가입 정보 전달 성공');
+					alert('회원가입이 완료되었습니다.');
 					location.href="/ReseltProject/member/login"
 				},
 				error: function(e){
