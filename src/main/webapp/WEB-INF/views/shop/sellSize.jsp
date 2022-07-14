@@ -63,6 +63,7 @@
 <script type="text/javascript">
 //sellPage 스크립트
 $(function(){
+	
   $('#nextBtn').hide();
   $('.sizeBtn').each(function(index){
     $(this).attr('sizeBtn-index',index);
