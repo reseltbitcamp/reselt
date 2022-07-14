@@ -25,6 +25,8 @@ public interface MyPageProfileService {
 
 	public void check_message(String check_message);
 
+	public void telUpdate(String tel);
+
 
 
 }

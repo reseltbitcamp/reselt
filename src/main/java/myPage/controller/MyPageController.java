@@ -37,6 +37,9 @@ public class MyPageController {
 	@Autowired
 	MyPageAddressService myPageAddressService;
 	
+	@Autowired
+	
+	
 	@GetMapping(value="myMain")
 	public ModelAndView my() {
 		ModelAndView mav = new ModelAndView();
@@ -135,6 +138,18 @@ public class MyPageController {
 	@ResponseBody
 	public void nickUpdate(@RequestParam String nick) {
 		myPageProfileService.nickUpdate(nick);
+	}
+	
+	
+	@PostMapping(value = "telOk")
+	@ResponseBody
+	public void telOk(String tel) {
+	}
+	
+	@PostMapping(value="telUpdate")
+	@ResponseBody
+	public void telUpdate(@RequestParam String tel) {
+		myPageProfileService.telUpdate(tel);
 	}
 	
 	@PostMapping(value="sizeUpdate")
