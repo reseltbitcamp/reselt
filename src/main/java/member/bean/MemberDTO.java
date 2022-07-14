@@ -23,4 +23,5 @@ public class MemberDTO {
 	private String profile_img;
 	private int snsLogin;
 	private int level;
+	private String nick;
 }

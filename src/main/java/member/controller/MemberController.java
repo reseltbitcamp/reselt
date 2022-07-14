@@ -97,6 +97,20 @@ public class MemberController {
 		return check; 
 	}
 
+//	@PostMapping(value = "joinCheckEmail")
+//	@ResponseBody
+//	public String joinCheckEmail(@ModelAttribute MemberDTO memberDTO) {
+//		memberDTO = memberService.joinCheckEmail(memberDTO);
+//		String check;
+//		if(memberDTO == null) {
+//			check = "0";
+//		}
+//		else{
+//			check= "1";
+//		}
+//		return check; 
+//	}
+
 	@PostMapping(value = "findEmailResult")
 	public ModelAndView findEmailResult(@ModelAttribute MemberDTO memberDTO) {
 		Map<String, Object> map = memberService.findEmailSMS(memberDTO);
@@ -148,18 +162,18 @@ public class MemberController {
 		//네이버: 이름 메일주소 휴대전화 프사(선택) 
 		System.out.println("네이버 로그인 = " + memberDTO);
 		memberDTO.setSnsLogin(1); // 소셜로그인 구분
+		System.out.println("네이버 로그인 숫자 추가 = " + memberDTO);
 		Map<String, String> map = new HashedMap<String, String>();
 		try {
 			memberService.joinTry(memberDTO);
 			System.out.println("회원가입");
 			//네이버 1, 카카오 2
 		}catch (Exception e) {
-			memberDTO = memberService.checkEmail(memberDTO);
 			System.out.println("이미가입");
-			System.out.println("이미가입되었을때(네이버) =" + memberDTO);
 			
 		}
-		System.out.println("catch 밖");
+		memberDTO = memberService.checkEmail(memberDTO);
+		System.out.println("IF문(네이버) =" + memberDTO);
 		if(memberDTO.getSnsLogin() == 1) {
 			session.setAttribute("email", memberDTO.getEmail());
 			map.put("login", "1");
@@ -184,10 +198,10 @@ public class MemberController {
 			System.out.println("회원가입");
 			//네이버 1, 카카오 2
 		}catch (Exception e) {
-			memberDTO = memberService.checkEmail(memberDTO);
 			System.out.println("이미가입");
 			
 		}
+		memberDTO = memberService.checkEmail(memberDTO);
 		if(memberDTO.getSnsLogin() == 1) {
 			map.put("login", "1");
 		}else if(memberDTO.getSnsLogin() == 2) {
