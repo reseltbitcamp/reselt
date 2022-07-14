@@ -71,6 +71,33 @@ $('.nickDiv_text').on('input', function(){
 });
 
 
+//핸드폰 변경
+//변경 누르면 nickDiv 수정
+$('.phoneDiv_alter').click(function(){
+	$('.phoneDiv').addClass('removeEvent');
+	$('.phoneDiv_New').removeClass('removeEvent');
+});
+
+//취소 누르면 원래 nickDiv 취소
+$('.phoneDiv_cancel').click(function(){
+	$('.phoneDiv').removeClass('removeEvent');
+	$('.phoneDiv_New').addClass('removeEvent');
+});
+
+
+//텍스트 쓰면 활성화 nickDiv 활성화
+$('.phoneDiv_text').on('input', function(){
+	if ($('.phoneDiv_text').val().length != 10 && $('.phoneDiv_text').val().length != 11) {
+		$('.phoneDiv_save').attr('disabled', true);
+		$('.input_error').removeClass('removeEvent');
+	} else {
+		$('.phoneDiv_save').attr('disabled', false);
+		$('.input_error').addClass('removeEvent');
+	}
+});
+
+
+
 //변경 누르면 모달창
 $('.sizeDiv_alter').click(function(){
 	$('.modalDiv').fadeIn();
@@ -143,6 +170,64 @@ $('.nickDiv_save').click(function(){
 	});
 	
 });
+
+
+//휴대폰 변경 시 데이터 변경, 페이지 뿌리기
+//인증번호 전송
+$('.phoneDiv_save').click(function(){
+	console.log('클릭');
+	//인증번호 발생
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/telOk',
+		success : function(){
+			var number = Math.floor(Math.random() * 100000) + 100000;
+			if(number>100000){
+				number = number - 10000;
+			}
+			$('#insertNum').css({'display' : "block"});
+			$('.phoneDiv_text').attr("readonly", true);
+			$('.randomNum_text').val(number);
+		
+		},
+		error : function(e){
+			console.log(e);
+		}
+	});
+});
+
+
+//인증버튼 클릭 시 번호 변경
+$('#telOkBtn').click(function(){
+	
+	var input = $("#input").val();
+	var result = $('.randomNum_text').val();
+	
+	console.log(input);
+	console.log(result);
+	if($("#input").val() == $('.randomNum_text').val()){
+		
+		$.ajax({
+			type: 'post',
+			url: '/ReseltProject/myPage/telUpdate',
+			data: 'tel=' + $('.phoneDiv_text').val(),
+			success: function(){
+				$('.phoneDiv').removeClass('removeEvent');
+				$('.phoneDiv_New').addClass('removeEvent');
+				$('.phoneDiv_p').text($('.phoneDiv_text').val());
+				alert('휴대폰 번호가 변경되었습니다.');
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+		
+	}else{
+		alert('인증번호를 확인해주세요');
+	}
+	
+});
+	
 
 
 //신발 변경 시 데이터 변경, 페이지 뿌리기

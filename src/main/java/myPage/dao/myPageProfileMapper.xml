@@ -49,5 +49,11 @@
 		update members set profile_img = null where email=#{email}
 	</update>
 
+	<!-- 휴대폰 업데이트 -->
+	<update id="telUpdate" parameterType="java.util.Map">
+		update members set tel=#{tel} where email=#{email}
+	</update>
+
+
 </mapper>
 
