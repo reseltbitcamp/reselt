@@ -21,12 +21,12 @@
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <h3 class="mb-2 inline-block font-extrabold">배송주소</h3>
-  <button class="float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
-
-  <div class="border-b">
-    <div class="float-right mr-9 mt-1 w-6">
-      <a href="#" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
+  <button class="addAddressBtn float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
+	  <div class="border-b">
+	    <div class="float-right mr-9 mt-1 w-6">
+	      <a href="#" id="addressChangeBtn" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
     </div>
+    
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">받는분</dt>
       <dd class="block text-sm">양웅비</dd>
@@ -319,15 +319,36 @@
 									</td>
 								</tr>
 							</table>
-	</div>
+</div>
+
+<jsp:include page="./shopModal/addressListModal.jsp"></jsp:include>
+<jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
 <script language="javascript" type="text/javascript" src="https://stgstdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#kgApi').hide();	
+	$('#kgApi').hide();
+	$('.addressDiv_modal').hide();
+	$('.addAddressModal').hide();
+
+	$('#exitBtn').click(function(){
+		$('.addressDiv_modal').hide();
+	})
+	
+	$('#addressList').click(function(){
+		$('.addressDiv_modal').hide();
+	})
+	$('#addAddressBtn').click(function(){
+		$('.addAddressModal').show();
+	})
+
 })
 
 
+
+$('#addressChangeBtn').click(function(){
+	$('.addressDiv_modal').show();
+})
 
 $('#firstAgree').click(function(){
 	var check1 = $('#firstAgree').prop("checked");
