@@ -47,7 +47,7 @@
               <div class="flex-1">
                 <p class="-mb-2 text-base">박스/패키지의 상태를 확인합니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">박스/패키지 상태에 따른 검수 기준을 확인했습니다.</p>
-                <a class="inline-block text-sm text-blue-400 underline" href="#">검수기준 보기</a>
+                 <input type="button" class="inline-block text-sm text-blue-400 underline" id="inspectionBtn2" value="검수기준 보기">
               </div>
               <input id="thirdAgree" type="checkbox" class="h-5 w-5" />
             </li>

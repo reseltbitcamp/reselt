@@ -35,4 +35,9 @@ public class StyleDAOMyBatis implements StyleDAO {
 	public void styleDelete(String seq) {
 		sqlSession.delete("styleSQL.styleDelete", Integer.parseInt(seq));
 	}
+
+	@Override
+	public void styleUpdate(StyleDTO styleDTO) {
+		sqlSession.update("styleSQL.styleUpdate", styleDTO);
+	}
 }

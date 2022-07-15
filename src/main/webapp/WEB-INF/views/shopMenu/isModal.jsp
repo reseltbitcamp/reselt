@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!-- Modal -->
-<div id="modalContainer">
-  <div id="is"></div>
-</div>
-
-<div id="isModal" class="modal-overlay w-[100%] h-[880%] absolute left-0 flex flex-col items-center hidden">
+<div id="isModal" class="modal-overlay w-[100%] h-[1000%] pt-[70px] absolute left-0 flex flex-col items-center hidden">
   <div id="modal_window" class="bg-white w-[580px] h-[700px] relative rounded-[10px]">
     <div class="title m-0 p-0 box-border">
       <h2 class="leading-[22px] pt-[18px] px-[50px] pb-[20px] min-h-[60px] text-[18px] font-bold tracking-[-.15px] text-black text-center">검수기준</h2>
@@ -34,19 +29,20 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
   const modal = document.getElementById("isModal")
   const headerTop = document.getElementById("headerTop")
-  const headerBot = document.getElementById("headerBot")
   
   function modalOn(){
+    $('#isModal').fadeIn("fast");
+    $('#headerTop').fadeIn("slow", function(){
+    	$(this).css('backgroundColor', 'rgba(34, 34, 34, .5)'),
+    	$(this).css('borderColor', 'transparent')
+    });
+    
     modal.style.display = "flex"
     modal.style.backgroundColor = "rgba(34, 34, 34, .5)"
     
-    headerTop.style.backgroundColor = "rgba(34, 34, 34, .5)"
-    headerTop.style.borderColor = "transparent"
-    
-    headerBot.style.backgroundColor = "rgba(34, 34, 34, .5)"
-    headerBot.style.borderColor = "transparent"
     
   }
   
@@ -60,15 +56,13 @@
     headerTop.style.backgroundColor = "white"
     headerTop.style.borderColor = "none"
     
-    headerBot.style.backgroundColor = "white"
-    headerBot.style.borderColor = "none"
   }
-
+  // Modal 실행 Btn
   const btnModal = document.getElementById("inspectionBtn")
   btnModal.addEventListener("click", e => {
     modalOn()
   })
-
+  
   const closeBtn = modal.querySelector(".close-area")
   closeBtn.addEventListener("click", e => {
     modalOff()
@@ -86,5 +80,57 @@
       modalOff()
     }
   })
+  
+//Modal2
+  const modal2 = document.getElementById("isModal")
+  const headerTop2 = document.getElementById("headerTop")
+  
+  function modalOn2(){
+	$('#isModal').fadeIn("fast");
+	$('#headerTop').fadeIn("slow", function(){
+	  $(this).css('backgroundColor', 'rgba(34, 34, 34, .5)'),
+	  $(this).css('borderColor', 'transparent')
+	});	  
+	  
+    modal2.style.display = "flex"
+    modal2.style.backgroundColor = "rgba(34, 34, 34, .5)"
+    
+  }
+  
+  function isModalOn2(){
+	return modal2.style.display === "flex"
+  }
+
+  function modalOff2(){
+    modal2.style.display = "none"
+    
+    headerTop2.style.backgroundColor = "white"
+    headerTop2.style.borderColor = "none"
+    
+  }
+  // Modal 실행 Btn
+  const btnModal2 = document.getElementById("inspectionBtn2")
+  btnModal2.addEventListener("click", e => {
+    modalOn2()
+  })
+  
+  const closeBtn2 = modal2.querySelector(".close-area")
+  closeBtn2.addEventListener("click", e => {
+    modalOff2()
+  })
+
+  modal2.addEventListener("click", e => {
+    const evTarget2 = e.target
+    if(evTarget2.classList.contains("modal-overlay")) 
+      modalOff2()
+    
+  })
+
+  window.addEventListener("keyup", e => {
+    if(isModalOn2() && e.key === "Escape") {
+      modalOff2()
+    }
+  })
+});
 
 </script>

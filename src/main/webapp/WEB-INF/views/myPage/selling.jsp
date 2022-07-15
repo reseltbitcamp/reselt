@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
 </head>
 <body>
-<div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
+   <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div>
         <div class="float-left mr-5 w-[180px]">
           <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
@@ -31,6 +31,7 @@
               <ul class="list-none">
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">프로필 정보</a></li>
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">결제 정보</a></li>
+             		<li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/address">주소록</a></li>
               </ul>
             </div>
           </nav>

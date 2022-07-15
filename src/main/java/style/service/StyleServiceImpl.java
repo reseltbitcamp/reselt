@@ -48,4 +48,9 @@ public class StyleServiceImpl implements StyleService {
 	public void styleDelete(String seq) {
 		styleDAO.styleDelete(seq);
 	}
+
+	@Override
+	public void styleUpdate(StyleDTO styleDTO) {
+		styleDAO.styleUpdate(styleDTO);
+	}
 }

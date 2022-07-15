@@ -4,6 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<jsp:include page="../shopMenu/isModal.jsp"></jsp:include>
+
 <div id="headerBot"
 	class="py-2 px-11 border-b-[1px] flex grid-cols-3 flex-row font-notoSans">
 	<div id="menuLogo" class="float-left inline-block w-1/3">
@@ -19,4 +21,3 @@
 	</div>
 </div>
 
-<jsp:include page="../shopMenu/isModal.jsp"></jsp:include>

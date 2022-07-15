@@ -15,4 +15,6 @@ public interface StyleDAO {
 
 	public void styleDelete(String seq);
 
+	public void styleUpdate(StyleDTO styleDTO);
+
 }

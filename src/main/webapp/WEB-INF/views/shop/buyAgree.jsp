@@ -4,7 +4,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
 <div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
+
       <!-- 제품 정보 화면 -->
 
   <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
@@ -41,6 +43,7 @@
         </li>
       </label>
 
+
       <label>
         <li class="flex items-center border-b border-b-gray-100 py-4 cursor-pointer">
           <div class="flex-1">
@@ -70,8 +73,7 @@
     <div class="mt-5 h-14 border-b-2">
       <p class="align-top text-xs font-bold text-black">판매가</p>
       <p class="float-right text-xl font-semibold">150,000 원</p>
-    </div>
-        
+    </div>        
     <div class="mb-9 w-auto">
       <dl class="flex justify-between">
         <dt class="mt-2 text-center itesm text-gray-400">총 결제금액은 다음 화면에서 계산 됩니다.</dt>
@@ -149,3 +151,4 @@ $('#agreeBtn').click(function(){
 	location.href="./buyLastPage"
 });
 </script>
+

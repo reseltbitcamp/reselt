@@ -25,6 +25,10 @@ public interface MyPageProfileDAO {
 
 	public void check_message(Map<String, String> map);
 
+	public void telUpdate(Map<String, String> map);
+
+
+
 
 
 	
