@@ -124,6 +124,7 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		myPageProfileDAO.telUpdate(map);
 	}
 
+	
 
 
 	

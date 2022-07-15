@@ -5,7 +5,8 @@
 <mapper namespace="myPageSQL">
 
 <select id="getBuying" parameterType="string" resultType="myPage.bean.MyPageBuyingDTO">
-	    select image_url, brand_name, product_size_id, to_date(biddings.created_at, 'YYYY-MM-DD'), status.name 
+	
+	<!-- select image_url, brand_name, product_size_id, to_date(biddings.created_at, 'YYYY-MM-DD'), status.name 
         from wishlists join products using (product_id)
         join product_sizes using (product_id)
         join brands using (brand_id)
@@ -13,7 +14,7 @@
         join bidding_positions on (bidding_position_id = bidding_positions.id)
         join status on (status_id = status.id)
         where wishlists.member_id = #{member_id}
-        and bidding_positions.position = '구매자' <!-- 임의  입찰포지션-->
+        and bidding_positions.position = '구매자' 임의  입찰포지션 -->
 </select>
 	
 </mapper>

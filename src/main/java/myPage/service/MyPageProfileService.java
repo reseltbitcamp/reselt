@@ -28,5 +28,4 @@ public interface MyPageProfileService {
 	public void telUpdate(String tel);
 
 
-
 }
