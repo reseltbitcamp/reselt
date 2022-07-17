@@ -14,10 +14,10 @@
 		]]>
 	</select>
 	
-	<select id="getProductInfo" parameterType="java.util.Map" resultType="priceIndex">
+	<select id="getProductInfo" parameterType="java.util.Map" resultType="ProductInfo">
 		SELECT product_name_kor, product_name_eng, product_id,category_id, gender_id
 		released_price, created_at, product_image
-		FROM product 
-		WHERE product_id = #{product_id}
+		FROM product
+		WHERE product_id = 'DD1391-100';
 	</select>
 </mapper>
