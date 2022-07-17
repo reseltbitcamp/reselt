@@ -47,7 +47,7 @@
               <div class="flex-1">
                 <p class="-mb-2 text-base">박스/패키지의 상태를 확인합니다.</p>
                 <p class="mt-2 mb-2 text-xs text-gray-400">박스/패키지 상태에 따른 검수 기준을 확인했습니다.</p>
-                 <input type="button" class="inline-block text-sm text-blue-400 underline" id="inspectionBtn2" value="검수기준 보기">
+                 <a class="inline-block text-sm text-blue-400 underline" id="inspectionBtn2">검수기준 보기</a>
               </div>
               <input id="thirdAgree" type="checkbox" class="h-5 w-5" />
             </li>
@@ -75,7 +75,7 @@
                 건전하고 안전한 거래를 위해 반드시 숙지해야 할 미입고,패널티,부정거래 등의 이용정책을<br />
                 확인했습니다.
               </p>
-              <a class="inline-block text-sm text-blue-400 underline" href="#">이용정책 보기</a>
+              <a class="inline-block text-sm text-blue-400 underline" id="tosBtn">이용정책 보기</a>
             </div>
             <input id="fifthAgree" type="checkbox" class="h-5 w-5" />
           </li>
