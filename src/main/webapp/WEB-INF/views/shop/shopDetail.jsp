@@ -338,13 +338,13 @@
         <hr>
         <!-- middle of right pg -->
         <div class="mt-6 grid grid-cols-2 gap-10">
-          <div class="text-xl font-semibold w-40">지역 별 시세</div>
+          <div class="text-xl font-semibold w-40">기간 별 시세</div>
           <!-- Dropdown Button -->
           <div class="text-right pb-2">
             <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation"
               class="text-black bg-white hover:bg-white font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center dark:bg-white dark:hover:bg-white dark:focus:ring-white text-center"
               type="button">
-              인기순↓↑
+          	    인기순↓↑
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </button>
             <!-- Dropdown menu -->
