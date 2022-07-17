@@ -32,8 +32,10 @@
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <h3 class="mb-2 inline-block font-extrabold">반송주소</h3>
-  <button class="float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
-
+  <button id="addAddressBtn" class="float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
+  <div id="addAddressModal">
+  	<jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
+	</div>
   <div class="border-b">
     <div class="float-right mr-9 mt-1 w-6">
       <a href="#" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
@@ -211,6 +213,20 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+$(function(){
+	$('#addAddressModal').hide();
+})
+$('#addAddressBtn').click(function(){
+	$('#addAddressModal').show();
+})
+$('.addressDiv_save').click(function(){
+	$('#addAddressModal').hide();
+})
+$('.addressDiv_reset').click(function(){
+	$('#addAddressModal').hide();
+})
+
+
 $('#firstAgree').click(function(){
 	var check1 = $('#firstAgree').prop("checked");
 	var check2 = $('#secondAgree').prop("checked");
