@@ -38,4 +38,10 @@ public class MyPageAddressServiceImpl implements MyPageAddressService {
 		return myPageAddressDAO.show_address(email);
 	}
 
+	@Override
+	public void delete_address() {
+		String email = (String) session.getAttribute("email");
+		myPageAddressDAO.delete_address(email);
+	}
+
 }

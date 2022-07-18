@@ -29,4 +29,9 @@ public class MyPageAddressMybatis implements MyPageAddressDAO {
 		
 	}
 
+	@Override
+	public void delete_address(String email) {
+		sqlSession.update("myPageSQL.delete_address", email);
+	}
+
 }

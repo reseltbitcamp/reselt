@@ -89,6 +89,7 @@ $('.addressDiv_save').click(function(){
 			console.log(data);
 			$('.addressDiv_modal').addClass('removeEvent');
 			alert('주소지가 등록되었습니다');
+			location.reload();
 			$('.not_empty_area_2').removeClass('removeEvent');
 			$('.empty_area_2').addClass('removeEvent');
 		},
@@ -100,7 +101,7 @@ $('.addressDiv_save').click(function(){
 	}
 });
 
-//페이지 새로고침할 시 데이터 뿌리기 select <이거하믄댐
+//페이지 새로고침할 시 데이터 뿌리기 select
 $(document).ready(function(){
 	
 	$.ajax({
@@ -110,25 +111,37 @@ $(document).ready(function(){
 		success: function(data) {
 			console.log(data);
 			
-			if (data == null) {
+			if (data.address == null) {
 				$('.not_empty_area_2').addClass('removeEvent');
 				$('.empty_area_2').removeClass('removeEvent');
 			} else {
 				$('.not_empty_area_2').removeClass('removeEvent');
 				$('.empty_area_2').addClass('removeEvent');
 			
-				/*
+				
 				//data.append
 				$('.address_info').append($('<div/>', {
 					class: 'name_box'
 				}).append($('<span/>', {
-					class: 'address_name'
+					class: 'address_name',
+					text: data.name
 				})).append($('<span/>', {
 					class: 'address_mark'
 				}))
-					//address_info
+					
+				).append($('<div/>', {
+					class: 'address_phone'
+				}).append($('<span/>', {
+					text: '0' + data.tel
+				}))
+				).append($('<div/>', {
+					class: 'address_box'
+				}).append($('<span/>', {
+					class: 'address_address',
+					text: data.address
+				}))
 				) //info_bind
-				*/
+			
 				
 			
 			}	//else
@@ -142,12 +155,31 @@ $(document).ready(function(){
 });	
 
 
+//수정버튼
+$('.modify_address').on('click', function(){
+	$('.addressDiv_modal').removeClass('removeEvent');
+});
+
 
 //삭제버튼 
+$('.delete_address').on('click', function(){
+	alert('정말로 삭제하시겠습니까?');
+	
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/delete_address',
+		success: function() {
+			alert('삭제되었습니다');
+			location.reload();
+			
+		},
+		error: function(error) {
+			console.log(error)
+		}
 
+	});
 
-//수정버튼
-//다시 모달창 뜨는데 대신 주소, 상세주소에 데이터
-//저장하기 누르면 디비 처리되고 li
+});
+
 
 

@@ -8,4 +8,6 @@ public interface MyPageAddressService {
 
 	public MyPageAddressDTO show_address();
 
+	public void delete_address();
+
 }
