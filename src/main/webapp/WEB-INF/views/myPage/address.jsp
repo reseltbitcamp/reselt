@@ -46,7 +46,7 @@ input:focus {
     <!--nav-->
 
     <div class="content content_area min-h-[380px] overflow-hidden">
-      <div class="my_purchase"></div>
+      <div class="my_purchase">
       <div class="content_title flex pb-[5px] pt-[5px]">
         <div class="title text-2xl tracking-[-.36px]">
           <h3 class="font-bold leading-7">주소록</h3>
@@ -56,23 +56,61 @@ input:focus {
             <span>+ 새 배송지 추가</span>
           </a>
         </div>
-      </div>
+      </div> <!-- content-title -->
 
       <div>
-        <div class="empty_area bg-[#fafafa] py-[80px] text-center">
+      <!-- empty -->
+        <div class="empty_area_2 bg-[#fafafa] py-[80px] text-center">
           <p class="text-center text-[13px] tracking-[-.07px] text-[#9b9b9b]">
-            배송지 정보가 없습니다.
+           	 배송지 정보가 없습니다.
             <br />
-            새 배송지를 등록해주세요
+            	새 배송지를 등록해주세요
           </p>
           <input type="button" value="새 배송지 추가" id="" class="addressDiv_btn mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] text-center align-middle text-[12px] leading-[32px] tracking-[-.16px] text-[#222222cc]"/>
         </div>
+        
+        <!-- not empty -->
+        <div class="my_list not_empty_area_2 removeEvent">
+		  <div class="basic border-b-solid border-b-[2px] border-b-[#222] pt-[30px] pb-[29px]">
+		    <div class="my_item relative flex items-center">
+		
+		      <div class="info_bind mr-[24px]">
+		        <div class="address_info leading-[17px]">
+		         
+		         <!-- 동적처리 
+		          <div class="name_box">
+		            <span class="address_name inline-block align-top text-[15px] font-bold leading-[20px] tracking-[-.15px]">name</span>
+		            <span class="address_mark mt-[0px] ml-[4px] inline-block rounded-[10px] bg-[#f4f4f4] py-[3px] pb-[6px] align-top text-[12px] leading-[14px] tracking-[-.06px]"></span>
+		          </div>
+		          
+		          <div class="address_phone flex flex-wrap items-center pt-[5px] text-[15px]">
+		            <span>phone</span>
+		          </div>
+		          
+		          <div class="address_box pt-[4px] text-[14px] tracking-[-.21px]">
+		            <span class="address_address text-[14px] leading-[17px] tracking-[-.21px]">address</span>
+		          </div>
+		          -->
+		        
+		        </div>
+		      </div>
+		      
+		      <div class="btn_bind mt-[12px] ml-auto">
+		        <a class="inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">수정</a>
+		        <a class="inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">삭제</a>
+		      </div> <!--btn bind-->
+		
+		    </div> <!--my_item-->
+		  </div> <!--basic -->
+		</div> <!--my list-->
+        
       </div>
-
+      
+	</div>
       <!--my purchase-->
-    </div>
+   </div>
     <!--content-area-->
-  </div>
+ </div>
   <!--container-->
   
   
@@ -100,7 +138,7 @@ input:focus {
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">우편번호</h4>
             <div class="input_item relative flex flex-nowrap">
-            	<input type="text" placeholder="우편 번호를 검색하세요" name="zipcode" id="zipcode" readonly autocomplete="off" class="input_txt py-[8px] w-[340px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
+            	<input type="text" placeholder="우편 번호를 검색하세요" name="zipcode" id="zipcode" readonly autocomplete="off" class="zipcodeDiv_text input_txt py-[8px] w-[340px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
             	<input type="button" value="우편번호" onclick="checkPost()" class="inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] text-center align-middle text-[12px] leading-[32px] tracking-[-.16px] text-[#222222cc]"/>
             </div>
           </div>
@@ -108,22 +146,15 @@ input:focus {
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">주소</h4>
             <div class="input_item relative"><input type="text" name="addr1" id="addr1" placeholder="우편 번호 검색 후, 자동입력 됩니다" autocomplete="off" class="input_txt py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+          	<p class="zipcodeDiv_error removeEvent block absolute leading-[16px] text-[11px] text-[#f15746]">정확한 우편번호를 입력해주세요</p>
           </div>
 
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">상세 주소</h4>
-            <div class="input_item relative"><input type="text" name="addr2" id="addr2" placeholder="건물, 아파드, 등/호수 입력" autocomplete="off" class="input_txt py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+            <div class="input_item relative"><input type="text" name="addr2" id="addr2" placeholder="건물, 아파드, 등/호수 입력" autocomplete="off" class="addressDiv_text input_txt py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+          	<p class="addressDiv_error removeEvent block absolute leading-[16px] text-[11px] text-[#f15746]">정확한 상세주소를 입력해주세요</p>
           </div>
         </div> <!--input-->
-
-        <div class="delivary_check">
-          <div class="checkbox_item mr-[0px]">
-            <input type="checkbox" id="check1" />
-            <label for="check1" class="relative inline-block cursor-pointer">
-              <span class="inline-block pl-[8px] align-top text-[13px] leading-[24px] tracking-[-.07px]">기본 배송지로 설정</span>
-            </label>
-          </div>
-        </div> <!--delivery check-->
 
       </div>
       <!--delivery bind-->
