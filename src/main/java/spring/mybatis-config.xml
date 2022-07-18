@@ -8,5 +8,7 @@
 		<typeAlias type="notice.bean.NoticeDTO" alias="notice"/>
 		<typeAlias type="style.bean.StyleDTO" alias="style"/>
 		<typeAlias type="shop.bean.PriceIndexDTO" alias="priceIndex"/>
+		<typeAlias type="shop.bean.ProductInfoDTO" alias="productInfo"/>
+		
 	</typeAliases>
 </configuration>
