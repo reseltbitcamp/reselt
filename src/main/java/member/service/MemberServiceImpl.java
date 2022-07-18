@@ -1,15 +1,10 @@
 package member.service;
 
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.servlet.jsp.PageContext;
 
 import org.apache.commons.collections4.map.HashedMap;
-import org.apache.http.client.protocol.RequestAcceptEncoding;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -48,14 +43,8 @@ public class MemberServiceImpl implements MemberService {
 			
 			}
 		}
-		//아이디 앞 자리 닉네임
-		if(memberDTO.getNick() == null) {
-			String nickSplit[] = memberDTO.getEmail().split("@");
-			nick = nickSplit[0]; 
 			
-			memberDTO.setNick(nick);
-		}
-		
+			
 		
 		//비밀번호 암호화
 		if(memberDTO.getPwd() != null) {
@@ -67,37 +56,45 @@ public class MemberServiceImpl implements MemberService {
 		
 		System.out.println("형식 변환" + memberDTO);
 		memberDAO.joinTry(memberDTO);
+		MemberDTO nickDTO = memberDAO.checkEmail(memberDTO);
+		//아이디 앞 자리 닉네임
+		if(nickDTO.getNick() == null) {
+			int i = 0;
+			String nickSplit[] = nickDTO.getEmail().split("@");
+			String battleTag = "#"+ nickDTO.getId();
+			
+			nick = nickSplit[0] + battleTag;
+			nickDTO.setNick(nick);
+			
+			memberDAO.updateNick(nickDTO);
+		}
 	}
+	
 
 	@Override
 	public MemberDTO checkEmail(MemberDTO memberDTO) {
 		memberDTO = memberDAO.checkEmail(memberDTO);
-		System.out.println("체크메일 " + memberDTO);
+		//System.out.println("체크메일 " + memberDTO);
 		return memberDTO;
 	}
 
 	@Override
 	public String loginTry(MemberDTO memberDTO) {
 		String check;
-
+		String inputPwd = memberDTO.getPwd(); // 사용자 입력
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
-		Map<String,String> map = new HashedMap<String, String>();
-		map.put("email", memberDTO.getEmail());
-		map.put("pwd", memberDTO.getPwd());
-		
-		
-		memberDTO = memberDAO.loginTry(map);
-		
-		
-		
-		if(memberDTO == null) {
-			check = "0";
-		}else {
-
+		memberDTO = memberDAO.checkEmail(memberDTO); //이메일로 암호화pwd DTO 에 담기
+		String encodePwd = memberDTO.getPwd();
+	
+		if(encoder.matches(inputPwd, encodePwd)) {
 			session.setAttribute("email", memberDTO.getEmail());
 			check = "1";
+		}else {
+			check = "0";
 		}
 		return check;
+		
 	}
 
 	@Override
