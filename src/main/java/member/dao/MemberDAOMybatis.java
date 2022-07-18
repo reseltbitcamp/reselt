@@ -18,13 +18,13 @@ public class MemberDAOMybatis implements MemberDAO {
 	private SqlSession sqlSession;
 	@Override
 	public void joinTry(MemberDTO memberDTO) {
-		System.out.println("memberDTO = " + memberDTO);
+		//System.out.println("memberDTO = " + memberDTO);
 		sqlSession.insert("memberSQL.joinTry", memberDTO);
 	}
 	
 	@Override
 	public MemberDTO checkEmail(MemberDTO memberDTO) {
-		System.out.println("sql 확인 =" + sqlSession.selectOne("memberSQL.checkEmail",memberDTO));
+		//System.out.println("sql 확인 =" + sqlSession.selectOne("memberSQL.checkEmail",memberDTO));
 		return sqlSession.selectOne("memberSQL.checkEmail",memberDTO);
 	}
 	
@@ -43,6 +43,12 @@ public class MemberDAOMybatis implements MemberDAO {
 	@Override
 	public void tmpPwd(Map<String, String> map) {
 		sqlSession.update("memberSQL.tmpPwd", map);
+	}
+
+	@Override
+	public void updateNick(MemberDTO nickDTO) {
+		sqlSession.update("memberSQL.updateNick", nickDTO);
+		
 	}
 	
 	

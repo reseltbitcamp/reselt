@@ -281,6 +281,8 @@ $(function(){
 				//alert(data);
 				if(data == '0'){
   					if(!reg_email.test($('#email').val())){
+  						$('#emailDivcmt').css({'font-size':'5pt'}); 
+  						$('#emailDivcmt').css({'color':'red'}); 
 						$('#emailDivcmt').html("이메일주소를 정확히 입력해 주세요.");
  						$('#emailOk').val('0');
 				    }else {
