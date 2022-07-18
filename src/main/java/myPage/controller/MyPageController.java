@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import myPage.bean.MyPageAddressDTO;
 import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 import myPage.service.MyPageAddressService;
@@ -128,6 +129,7 @@ public class MyPageController {
 		return mav;
 	}
 
+	//profile
 	@PostMapping(value="pwdUpdate")
 	@ResponseBody
 	public void pwdUpdate(@RequestParam String pwd) {
@@ -191,7 +193,7 @@ public class MyPageController {
 		
 		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
 		String fileName = img.getOriginalFilename();
-		System.out.println(filePath); // \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ReseltProject\assets\img\myPage �����
+		System.out.println(filePath); // \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ReseltProject\assets\img\myPage 占쏙옙占쏙옙占�
 		File file = new File(filePath, fileName);
 		
 		
@@ -252,8 +254,9 @@ public class MyPageController {
 		
 		return myPageProfileDTO;
 	}
-
 	
+
+	//buying
 	@PostMapping(value="getBuying")
 	@ResponseBody
 	public List<MyPageBuyingDTO> getBuying() {
@@ -264,14 +267,19 @@ public class MyPageController {
 		
 	}
 	
-	
+	//address
 	@PostMapping(value="add_address")
 	@ResponseBody
 	public void add_address(@RequestParam String address) {
 		myPageAddressService.add_address(address);
 	}
 	
-
+	@PostMapping(value="show_address")
+	@ResponseBody
+	public MyPageAddressDTO show_address() {
+		return myPageAddressService.show_address();
+	}
+	
 }
 	
 	

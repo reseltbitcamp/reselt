@@ -13,10 +13,8 @@ $('.addressDiv_reset').click(function(){
 $('.nameDiv_text').on('input', function(){
 	if ($('.nameDiv_text').val().length < 2 || $('.nameDiv_text').val().length > 50) {
 		$('.nameDiv_error').removeClass('removeEvent');
-		$('.addressDiv_save').attr('disabled', true);
 	} else {
 		$('.nameDiv_error').addClass('removeEvent');
-		$('.addressDiv_save').attr('disabled', false);
 	}
 });
 
@@ -59,28 +57,97 @@ function checkPost() {
     }).open();
 }
 
-var address =  $('#addr1').val() + $('#addr2').val();
-console.log(typeof(address));
 
 
-//주소 저장
+//주소 저장 insert만
 $('.addressDiv_save').click(function(){
 	
-	var address =  $('#addr1').val() + $('#addr2').val();
+	$('.nameDiv_error').addClass('removeEvent');
+	$('.phoneDiv_error').addClass('removeEvent');
+	$('.zipcodeDiv_error').addClass('removeEvent');
+	$('.addressDiv_error').addClass('removeEvent');
 	
+	//유효성 검사
+	if ($('.nameDiv_text').val() == '') {
+		$('.nameDiv_error').removeClass('removeEvent');
+	} else if ($('.phoneDiv_text').val() == '') {
+		$('.phoneDiv_error').removeClass('removeEvent');
+	} else if ($('.zipcodeDiv_text').val() == '') {
+		$('.zipcodeDiv_error').removeClass('removeEvent');
+	} else if ($('.addressDiv_text').val() == '') {
+		$('.addressDiv_error').removeClass('removeEvent');
+	} else {
+	
+	var address =  '(' + $('#zipcode').val() + ')' + $('#addr1').val() + $('#addr2').val();
+	console.log(typeof(address));
+		
 	$.ajax({
 		type: 'post',
 		url: '/ReseltProject/myPage/add_address',
 		data: 'address=' + address,
 		success: function(data) {
-			alert('주소지가 등록되었습니다');
+			console.log(data);
 			$('.addressDiv_modal').addClass('removeEvent');
-			
+			alert('주소지가 등록되었습니다');
+			$('.not_empty_area_2').removeClass('removeEvent');
+			$('.empty_area_2').addClass('removeEvent');
 		},
 		error: function(e) {
-			console.log(e)
+			console.log(e);
 		}
-	});
+		
+		});
+	}
 });
+
+//페이지 새로고침할 시 데이터 뿌리기 select <이거하믄댐
+$(document).ready(function(){
+	
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/show_address',
+		dataType: 'json',
+		success: function(data) {
+			console.log(data);
+			
+			if (data == null) {
+				$('.not_empty_area_2').addClass('removeEvent');
+				$('.empty_area_2').removeClass('removeEvent');
+			} else {
+				$('.not_empty_area_2').removeClass('removeEvent');
+				$('.empty_area_2').addClass('removeEvent');
+			
+				/*
+				//data.append
+				$('.address_info').append($('<div/>', {
+					class: 'name_box'
+				}).append($('<span/>', {
+					class: 'address_name'
+				})).append($('<span/>', {
+					class: 'address_mark'
+				}))
+					//address_info
+				) //info_bind
+				*/
+				
+			
+			}	//else
+		},
+		error: function(error) {
+			console.log(error)
+		}
+
+	});
+
+});	
+
+
+
+//삭제버튼 
+
+
+//수정버튼
+//다시 모달창 뜨는데 대신 주소, 상세주소에 데이터
+//저장하기 누르면 디비 처리되고 li
 
 

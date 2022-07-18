@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="../css/myPage.css"/>
 <title>Insert title here</title>
 <style>
 .terms_item:before {
@@ -67,7 +68,7 @@
                 <div class="terms_box">
                   <h5 class="terms_title text-[16px] tracking-[-.16px]">
                     <div class="checkbox_item relative flex">
-                    <input id="title0" type="checkbox" />
+                    <input class="chk" id="title0" type="checkbox" />
                       <label for="title0" class="relative inline-block cursor-pointer">
                         <span class="ml-[5px] text-[16px] tracking-[-.16px] font-bold">KREAM을 탈퇴하면 회원 정보 및 서비스 이용 기록이 삭제됩니다.</span>
                       </label>
@@ -85,7 +86,7 @@
                 <div class="terms_box mt-[40px]">
                   <h5 class="text-[16px] tracking-[-.16px]">
                     <div class="checkbox_item relative">
-                      <input id="title1" type="checkbox" />
+                      <input class="chk" id="title1" type="checkbox" />
                       <label for="title1" class="relative inline-block cursor-pointer">
                         <span class="text-[16px] tracking-[-.16px] font-bold">관련 법령 및 내부 기준에 따라 별도 보관하는 경우에는 일부 정보가 보관될 수 있습니다.</span>
                       </label>
@@ -116,7 +117,7 @@
                 <div class="terms_box mt-[40px]">
                   <h5 class="terms_title text-[16px] tracking-[-.16px]">
                     <div class="checkbox_item relative text-[0px]">
-                    <input id="title2" type="checkbox" />
+                    <input class="chk" id="title2" type="checkbox" />
                       <label for="title2" class="relative inline-block cursor-pointer">
                         <span class="ml-[5px] text-[16px] tracking-[-.16px] font-bold">KREAM 탈퇴가 제한된 경우에는 아래 내용을 참고하시기 바랍니다.</span>
                       </label>
@@ -133,19 +134,20 @@
                   </div>
                 </div>
               </div>
+              
 
               <div class="withdrawal_check mt-[20px]">
                 <div class="checkbox_item relative">
-                  <input id="check1" type="checkbox" />
-                  <label for="check1 relative cursor-pointer inline-block">
+                  <input onclick="checkbox" id="check1" type="checkbox" />
+                  <label for="check1" class="relative cursor-pointer inline-block">
                     <span class="text-[16px] tracking-[-.16px]">회원탈퇴 안내를 모두 확인하였으며 탈퇴에 동의합니다</span>
                   </label>
                 </div>
               </div>
 
               <div class="withdrawal_btn_box pt-[40px] text-center">
-                <a class="inline-block h-[42px] w-[120px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[18px] text-center align-middle text-[14px] leading-[40px] tracking-[-.14px] text-[#222]">탈퇴하기</a>
-                <a class="inline-block h-[42px] w-[120px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] bg-[#222] py-[0px] px-[18px] text-center align-middle text-[14px] leading-[40px] tracking-[-.14px] text-[#fff]">취소하기</a>
+                <a class="withdrawal_ok inline-block h-[42px] w-[120px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[18px] text-center align-middle text-[14px] leading-[40px] tracking-[-.14px] text-[#222]">탈퇴하기</a>
+                <a href="/ReseltProject/myPage/profile" class="inline-block h-[42px] w-[120px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] bg-[#222] py-[0px] px-[18px] text-center align-middle text-[14px] leading-[40px] tracking-[-.14px] text-[#fff]">취소하기</a>
               </div>
             </div>
           </div>
@@ -156,6 +158,9 @@
     <!--content-area-->
   </div>
   <!--container-->
+  
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
+<script src="../js/myPage/withdrawal.js"></script>  
 </body>
 
 </html>

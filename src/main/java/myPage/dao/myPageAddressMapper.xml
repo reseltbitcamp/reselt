@@ -4,9 +4,13 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="myPageSQL">
 
-	<!-- 프로필 삭제 -->
+	<!-- 주소 업데이트 -->
 	<update id="add_address" parameterType="java.util.Map">
-		update members set address = #{address} where email=#{email}
+		update members set address = #{address} where email=#{email};
 	</update>
+	
+	<select id="show_address" parameterType="string" resultType="myPage.bean.MyPageAddressDTO">
+		select name, tel, address from members where email=#{email};	
+	</select>
 
 </mapper>

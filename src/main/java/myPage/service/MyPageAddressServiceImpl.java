@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import myPage.bean.MyPageAddressDTO;
+import myPage.bean.MyPageProfileDTO;
 import myPage.dao.MyPageAddressDAO;
 import myPage.dao.MyPageProfileDAO;
 
@@ -28,6 +30,12 @@ public class MyPageAddressServiceImpl implements MyPageAddressService {
 		map.put("address", address);
 		myPageAddressDAO.add_address(map);
 		
+	}
+
+	@Override
+	public MyPageAddressDTO show_address() {
+		String email = (String) session.getAttribute("email");
+		return myPageAddressDAO.show_address(email);
 	}
 
 }
