@@ -84,7 +84,7 @@ public class MemberServiceImpl implements MemberService {
 		String inputPwd = memberDTO.getPwd(); // 사용자 입력
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
-		memberDTO = memberDAO.checkEmail(memberDTO); //이메일로 암호화pwd DTO 에 담기
+		memberDTO = memberDAO.checkEmail(memberDTO); //이메일로 암호화 pwd DTO 에 담기
 		String encodePwd = memberDTO.getPwd();
 	
 		if(encoder.matches(inputPwd, encodePwd)) {

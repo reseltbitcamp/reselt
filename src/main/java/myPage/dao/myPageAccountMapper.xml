@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myPageSQL">
+
+	<insert id="add_account" parameterType="java.util.Map">
+		insert into account (account_name, account_num, account_holder, id) values 
+		(#{account_name}, #{account_num}, #{account_holder}, (select members.id from members where email = #{email}))
+		on duplicate key update account_name = #{account_name}, account_num = #{account_num}, account_holder = #{account_holder}
+	</insert>
+	
+	<select id="show_account" parameterType="String" resultType="myPage.bean.MyPageAccountDTO">
+		select account_name, account_num, account_holder from account where account.id = (select members.id from members where email = #{email})
+	</select>
+	
+	
+</mapper>
