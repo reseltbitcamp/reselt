@@ -56,7 +56,7 @@
         <div class="max-w-md">
           <p class="text-lg font-black underline">Nike</p>
           <p id="product_name_eng">Nike Dunk Low Retro Black</p>
-          <p class="mb-2 text-sm text-gray-400" id="product_name_kor" >나이키 덩크 로우 레트로 블랙</p>
+          <p class="mb-2 text-sm text-gray-400" id="product_name_kor">나이키 덩크 로우 레트로 블랙</p>
         </div>
         <div class="border-b border-gray-300 flex-initial">
           <p class="mb-3 inline-block text-xs" >사이즈</p>
@@ -83,7 +83,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">판매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white" id="released_price">150,000원</p>
+              <p class="text-base font-semibold text-white">150,000원</p>
               <span class="float-left text-xs text-white">즉시 판매가</span>
             </div>
           </a>
