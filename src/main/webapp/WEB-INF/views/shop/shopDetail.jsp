@@ -54,7 +54,7 @@
     <div class="md:w-6/12 ml-auto pl-10 border-l-2 border-gray-200 content-center">
       <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
         <div class="max-w-md">
-          <p class="text-lg font-black underline">Nike</p>
+          <p class="text-lg font-black underline" id="brand_firstname">Nike</p>
           <p id="product_name_eng">Nike Dunk Low Retro Black</p>
           <p class="mb-2 text-sm text-gray-400" id="product_name_kor">나이키 덩크 로우 레트로 블랙</p>
         </div>

@@ -211,7 +211,7 @@ public class ShopController {
 	
 	@PostMapping(value = "getProductInfo")
 	@ResponseBody
-	public List<ProductInfoDTO> getProductInfo(@RequestParam Map<String, String> map){
+	public ProductInfoDTO getProductInfo(@RequestParam Map<String, String> map){
 		return shopService.getProductInfo(map);
 	}
 	

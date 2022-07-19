@@ -442,13 +442,13 @@
       <button type="button" >
         <a href="/ReseltProject/shop/shopDetail">
           <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-            <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/1.jpg">
+            <img class="w-full object-contain min-h-0 h-full" src="">
           </div>
-          <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-          <p class="text-left text-[14px]" >&nbsp;Nike Dunk Low Retro Black</p>
-          <p class="text-left text-[13px] text-slate-400" >&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
+          <p class="text-left text-[16px] font-bold font-notoSans" id="brand_firstname">&nbsp;Nike</p>
+          <p class="text-left text-[14px]" id="product_name_eng">&nbsp;Nike Dunk Low Retro Black</p>
+          <p class="text-left text-[13px] text-slate-400" id="product_name_kor" >&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
           <br>
-          <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
+          <p class="text-left text-[16px] font-bold font-notoSans" id="released_price">&nbsp;129,000원</p>
           <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
         </a>
       </button>
@@ -547,15 +547,19 @@
   </div>
 </div>
 
+<!-- query -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
 
 
 <!-- filter Script -->
+
 <script type="text/javascript">
 let displayState = {none: "block", block: "none"}
 let ids = ["category", "brand", "gender", "collection", "shoes", "garment", "price"]
 
 function toggleDisplayState(id) {
-  let ele = document.getElementById("hide" + id)
+  let ele = document.getElementById("hide" + id);
   ele.style.display = displayState[ele.style.display];
 }
 
