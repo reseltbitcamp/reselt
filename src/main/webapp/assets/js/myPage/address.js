@@ -80,11 +80,16 @@ $('.addressDiv_save').click(function(){
 	
 	var address =  '(' + $('#zipcode').val() + ')' + $('#addr1').val() + $('#addr2').val();
 	console.log(typeof(address));
-		
+	
 	$.ajax({
 		type: 'post',
 		url: '/ReseltProject/myPage/add_address',
-		data: 'address=' + address,
+		data: {
+			"address_info": address,
+			"address_name": $('.nameDiv_text').val(),
+			"address_num": $('.phoneDiv_text').val()
+			},
+		
 		success: function(data) {
 			console.log(data);
 			$('.addressDiv_modal').addClass('removeEvent');
@@ -111,7 +116,7 @@ $(document).ready(function(){
 		success: function(data) {
 			console.log(data);
 			
-			if (data.address == null) {
+			if (data.address_name == null) {
 				$('.not_empty_area_2').addClass('removeEvent');
 				$('.empty_area_2').removeClass('removeEvent');
 			} else {
@@ -124,7 +129,7 @@ $(document).ready(function(){
 					class: 'name_box'
 				}).append($('<span/>', {
 					class: 'address_name',
-					text: data.name
+					text: data.address_name
 				})).append($('<span/>', {
 					class: 'address_mark'
 				}))
@@ -132,13 +137,13 @@ $(document).ready(function(){
 				).append($('<div/>', {
 					class: 'address_phone'
 				}).append($('<span/>', {
-					text: '0' + data.tel
+					text: '0' + data.address_num
 				}))
 				).append($('<div/>', {
 					class: 'address_box'
 				}).append($('<span/>', {
 					class: 'address_address',
-					text: data.address
+					text: data.address_info
 				}))
 				) //info_bind
 			

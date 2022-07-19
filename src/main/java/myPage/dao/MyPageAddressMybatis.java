@@ -19,7 +19,7 @@ public class MyPageAddressMybatis implements MyPageAddressDAO {
 	
 	@Override
 	public void add_address(Map<String, String> map) {
-		sqlSession.update("myPageSQL.add_address", map);
+		sqlSession.insert("myPageSQL.add_address", map);
 		
 	}
 

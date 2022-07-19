@@ -6,14 +6,16 @@
 
 	<!-- 주소 업데이트 -->
 	<update id="add_address" parameterType="java.util.Map">
-		update members set address = #{address} where email=#{email}
+		insert into address (address_name, address_num, address_info, member_id) values 
+		(#{address_name}, #{address_num}, #{address_info}, (select members.id from members where email = #{email}))
+		on duplicate key update address_name = #{address_name}, address_num = #{address_num}, address_info = #{address_info}
 	</update>
 	
 	<select id="show_address" parameterType="string" resultType="myPage.bean.MyPageAddressDTO">
-		select name, tel, address from members where email=#{email}
+		select address_name, address_num, address_info from address where member_id = (select members.id from members where email = #{email})
 	</select>
 
 	<update id="delete_address" parameterType="string">
-		update members set address = null where email=#{email} 
+		update address set address_name = null, address_num = null, address_info = null where member_id = (select members.id from members where email = #{email})
 	</update>
 </mapper>

@@ -112,13 +112,13 @@ input:focus {
         <div class="delivety_input">
         	<div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">이름</h4>
-            <div class="input_item relative"><input type="text" placeholder="프로필 정보의 이름과 동일하게 입력하세요" autocomplete="off" class="nameDiv_text py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+            <div class="input_item relative"><input type="text" placeholder="이름을 입력하세요" autocomplete="off" class="nameDiv_text py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
             <p class="nameDiv_error removeEvent block absolute leading-[16px] text-[11px] text-[#f15746]">정확한 이름을 입력해주세요.</p>
           </div>
         
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">휴대폰 번호</h4>
-            <div class="input_item relative"><input type="text" placeholder="프로필 정보의 휴대폰 번호와 동일하게 입력하세요" autocomplete="off" class="phoneDiv_text py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+            <div class="input_item relative"><input type="text" placeholder="-제외하고 입력하세요" autocomplete="off" class="phoneDiv_text py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
             <p class="phoneDiv_error removeEvent block absolute leading-[16px] text-[11px] text-[#f15746]">정확한 휴대폰 번호를 입력해주세요.</p>
           </div>
 

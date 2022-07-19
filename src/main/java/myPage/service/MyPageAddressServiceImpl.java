@@ -22,12 +22,10 @@ public class MyPageAddressServiceImpl implements MyPageAddressService {
 	private HttpSession session;
 	
 	@Override
-	public void add_address(String address) {
-		Map<String, String> map = new HashMap<String, String>();
-		
+	public void add_address(Map<String, String> map) {
+	
 		String email = (String) session.getAttribute("email");
 		map.put("email", email);
-		map.put("address", address);
 		myPageAddressDAO.add_address(map);
 		
 	}
@@ -43,5 +41,6 @@ public class MyPageAddressServiceImpl implements MyPageAddressService {
 		String email = (String) session.getAttribute("email");
 		myPageAddressDAO.delete_address(email);
 	}
+
 
 }

@@ -14,4 +14,5 @@
 		select account_name, account_num, account_holder from account where account.id = (select members.id from members where email = #{email})
 	</select>
 	
+	
 </mapper>

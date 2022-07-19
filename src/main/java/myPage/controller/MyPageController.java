@@ -274,8 +274,8 @@ public class MyPageController {
 	//address
 	@PostMapping(value="add_address")
 	@ResponseBody
-	public void add_address(@RequestParam String address) {
-		myPageAddressService.add_address(address);
+	public void add_address(@RequestParam Map <String,String> map) {
+		myPageAddressService.add_address(map);
 	}
 	
 	@PostMapping(value="show_address")

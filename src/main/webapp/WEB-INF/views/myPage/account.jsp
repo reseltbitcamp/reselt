@@ -14,6 +14,7 @@ input:focus {
 </head>
 <body>
   <div class="container mt-0 mb-0 p-10 px-[100px] pb-40">
+  
     <div class="nav">
       <div class="float-left mr-5 w-[180px]">
         <a href="/ReseltProject/myPage/myMain" class="nuxt-link-active text no-underline">
