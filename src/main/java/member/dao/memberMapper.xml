@@ -44,7 +44,7 @@
 
 <!-- 임시 비밀번호  변경 -->
 <update id="tmpPwd" parameterType="java.util.Map">
-	update members set pwd = #{tmpPwd} where email = #{email}
+	update members set pwd = #{securePassword} where email = #{email}
 </update>
 
 <update id="updateNick" parameterType="member">

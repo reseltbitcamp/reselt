@@ -121,6 +121,9 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void tmpPwd(Map<String, String> map) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(map.get("tmpPwd"));
+		map.put("securePassword", securePassword);
 		memberDAO.tmpPwd(map);
 		
 	}

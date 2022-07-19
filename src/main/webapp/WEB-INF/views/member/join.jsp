@@ -10,7 +10,7 @@
 
  
  <div class="m-auto w-96 pt-16 pb-40" >
-   <div id="joinForm" class="relative m-auto bg-gray-50 sm:py-12">
+   <div id="joinForm" class="relative m-auto bg-white sm:py-12">
      <h2 class="text-3xl font-bold text-center">회원가입</h2>
    </div>
      
@@ -20,7 +20,7 @@
         <div class="pt-5 pb-6">
           <div>
 	      	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소*</h3></div>
-    	  	<input id="email" type="email" name="email" class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+    	  	<input id="email" type="email" name="email" autocomplete='off' class="border-b-2 w-96 focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
           	<!-- <input type="button" id="emailSend" value="이메일 인증"> -->
           	<input id="emailOk" type="hidden">
           	<div id="emailDivcmt" class="mb-10"></div>
