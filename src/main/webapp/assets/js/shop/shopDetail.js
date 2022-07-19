@@ -63,23 +63,39 @@ $('#buyBtn').click(function(){
   location.href="./buySize"
 });
 
+//shop main
+
+const product_name_kor = document.getElementById('product_name_kor').innerText;
+const product_name_eng = document.getElementById('product_name_eng').innerText;
+const created_at = document.getElementById('created_at').innerText;
+const released_price = document.getElementById('released_price').innerText;
+
+
 //product details
 
-const product_name_kor = document.getElementById("product_name_kor").innerText;
-const product_name_eng = document.getElementById("product_name_eng").innerText;
-const created_at = document.getElementById("created_at").innerText;
-const released_price = document.getElementById("released_price").innerText;
 
-document.addEventListener("DOMContentLoaded", function(){
+$(document).ready(function(){
 	$.ajax({
 		type: "post",
 		url: "/ReseltProject/shop/getProductInfo",
-		data: {"product_name_kor":product_name_kor, "product_name_eng":product_name_eng, "created_at":created_at, "released_price":released_price},
+		data: {"product_name_kor":product_name_kor, 
+			   "product_name_eng":product_name_eng, 
+			   "created_at":created_at, 
+			   "product_id":product_id, 
+			   "released_price":released_price
+				},
+		
+			   
 		success: function(data){
+			alert(JSON.stringify(data));
 			document.getElementById("product_name_kor").innerText = data.product_name_kor;
-			document.getElementById("product_name_eng").innerText = data.product_name_engd;
+			document.getElementById("product_name_eng").innerText = data.product_name_eng;
 			document.getElementById("created_at").innerText = data.created_at;
 			document.getElementById("released_price").innerText = data.released_price;
-		}
+			document.getElementById("product_id").innerText = data.product_id;
+		},
+		error: function(e){
+	      console.log(e);
+	    }
 	});
 });

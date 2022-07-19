@@ -17,7 +17,7 @@ public class MyPageBuyingServiceImpl implements MyPageBuyingService {
 	@Override
 	public List<MyPageBuyingDTO> getBuying() {
 		
-		String member_id = "111"; //임의의 값
+		String member_id = "111"; 
 		return myPageBuyingDAO.getBuying(member_id);
 	}
 
