@@ -164,7 +164,7 @@ body, button, input, select, table, textarea {
 	display: inline-block;
 	vertical-align: top;
 	font-size: 15px;
-	font-weight: 700px;
+	font-weight: bold;
 	line-height: 20px;
 	letter-spacing: -.15px;	
 }
@@ -186,7 +186,9 @@ body, button, input, select, table, textarea {
 	flex-wrap: wrap;
 	align-items: center;
 	padding-top: 5px;
-	font-size: 15px;
+	font-size: 14px;
+	font-weight: 600px;
+	font-weight: bold;
 }
 .address_box {
 	padding-top: 4px;

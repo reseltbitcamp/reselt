@@ -11,4 +11,6 @@ public interface MyPageAddressDAO {
 
 	public MyPageAddressDTO show_address(String email);
 
+	public void delete_address(String email);
+
 }
