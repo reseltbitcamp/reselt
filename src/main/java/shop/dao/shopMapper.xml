@@ -14,10 +14,11 @@
 		]]>
 	</select>
 	
-	<select id="getProductInfo" parameterType="java.util.Map" resultType="ProductInfo">
-		SELECT product_name_kor, product_name_eng, product_id,category_id, gender_id
-		released_price, created_at, product_image
+	<select id="getProductInfo" parameterType="java.util.Map" resultType="productInfo">
+		SELECT product_name_kor, product_name_eng, product_id,
+		released_price, created_at, category_id
 		FROM product
-		WHERE product_id = 'DD1391-100';
+		WHERE product_id = '2EV176-9C9';
 	</select>
+
 </mapper>

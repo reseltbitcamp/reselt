@@ -13,3 +13,4 @@ ids.forEach(id=>{
 })*/
 
 //안먹힘 shopmain.jsp 하단에 추가
+

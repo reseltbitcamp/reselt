@@ -55,14 +55,15 @@
       <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
         <div class="max-w-md">
           <p class="text-lg font-black underline">Nike</p>
-          <p id="product_name_eng" >Nike Dunk Low Retro Black</p>
-          <p class="mb-2 text-sm text-gray-400" id="product_name_kor" >나이키 덩크 로우 레트로 블랙</p>
+          <p id="product_name_eng">Nike Dunk Low Retro Black</p>
+          <p class="mb-2 text-sm text-gray-400" id="product_name_kor">나이키 덩크 로우 레트로 블랙</p>
         </div>
         <div class="border-b border-gray-300 flex-initial">
           <p class="mb-3 inline-block text-xs" >사이즈</p>
           <a class="float-right cursor-pointer font-semibold">모든사이즈</a>
           <button></button>
         </div>
+        
         <div class="mt-3 flex-initial">
           <p class="mb-3 text-xs">최근거래가
             <span class="float-right text-xl font-semibold">150,000원
@@ -74,7 +75,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white">150,000원</p>
+              <p class="text-base font-semibold text-white" id="released_price">150,000원</p>
               <span class="float-left text-xs text-white ">즉시구매가</span>
             </div>
           </a>
@@ -83,7 +84,7 @@
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">판매</strong>
             <div class="float-left ml-2">
               <p class="text-base font-semibold text-white">150,000원</p>
-              <span class="float-left text-xs text-white ">즉시 판매가</span>
+              <span class="float-left text-xs text-white">즉시 판매가</span>
             </div>
           </a>
         </div>
@@ -488,7 +489,7 @@
   <hr class="border-y-gray-200">
   <!-- style 페이지 -->
   <div id="lower" class="h-56">
-    jsp:include 스타일
+
   </div>
   <!-- Flowbite Script-->
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
@@ -500,5 +501,8 @@
   <!-- jQuery -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="/ReseltProject/js/shop/shopDetail.js"></script>
+  
+  <script>
+  </script>
 
   
