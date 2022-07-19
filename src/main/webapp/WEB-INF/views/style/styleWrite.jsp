@@ -63,7 +63,7 @@ $(function(){
 		var formData = new FormData($('#styleWriteForm')[0]);
 		$.ajax({
 			type: 'post',
-			url: '/ReseltProject/style/styleWriteForm',
+			url: '/upload/',
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,

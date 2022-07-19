@@ -16,7 +16,7 @@ $('#faqBtn').click(function(){
 	
 	$.ajax({
 			type: 'post',
-			url: '/ReseltProject/style/styleWriteForm',
+			url: '/upload/',
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
