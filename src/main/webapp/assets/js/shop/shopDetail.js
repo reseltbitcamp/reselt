@@ -84,8 +84,6 @@ $(document).ready(function(){
 			   "product_id":product_id, 
 			   "released_price":released_price
 				},
-		
-			   
 		success: function(data){
 			alert(JSON.stringify(data));
 			document.getElementById("product_name_kor").innerText = data.product_name_kor;

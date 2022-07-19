@@ -9,5 +9,5 @@ import shop.bean.ProductInfoDTO;
 public interface ShopDAO {
 	public List<PriceIndexDTO> getPriceIndex(Map<String, String> map);
 	
-	public List<ProductInfoDTO> getProductInfo(Map<String, String> map);
+	public ProductInfoDTO getProductInfo(Map<String, String> map);
 }
