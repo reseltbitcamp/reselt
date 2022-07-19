@@ -56,9 +56,9 @@ input:focus {
     <div class="mt-[21px] overflow-hidden rounded-[10px] border-[1px] border-solid border-[#ebebeb] bg-[#fafafa] p-[15px] pb-[16px]">
       <h4 class="mb-[5px] text-[12px] font-bold leading-[14px] tracking-[-.5px]">등록된 계좌 정보</h4>
       <p class="box_account_info text-[15px] leading-[22px] tracking-[1px]">
-        <span class="account">하나은행 2209**********</span>
+        <span class="account"></span>
         <span class="account_devider px-[4px]">/</span>
-        <span class="account_name">이혜린</span>
+        <span class="account_name"></span>
       </p>
     </div>
 

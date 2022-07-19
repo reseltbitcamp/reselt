@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import myPage.bean.MyPageAccountDTO;
 import myPage.bean.MyPageAddressDTO;
 import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
@@ -295,9 +296,13 @@ public class MyPageController {
 
 		myPageAccountService.add_account(map);
 		
+	}
+	
+	@PostMapping(value="show_account")
+	@ResponseBody
+	public MyPageAccountDTO show_account() {
 		
-		
-		
+		return myPageAccountService.show_account();
 	}
 	
 }

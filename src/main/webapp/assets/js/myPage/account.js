@@ -76,7 +76,7 @@ $('.accountDiv_save').click(function(){
 	}
 	
 });
-/*
+
 
 //데이터 보이기
 $(document).ready(function(){
@@ -85,24 +85,13 @@ $(document).ready(function(){
 		url: '/ReseltProject/myPage/show_account',
 		dataType: 'json',
 		success: function(data) {
-			console.log(data);
-			
-			if (data.address == null) {
-				$('.not_empty_area_2').addClass('removeEvent');
-				$('.empty_area_2').removeClass('removeEvent');
-			} else {
-				$('.not_empty_area_2').removeClass('removeEvent');
-				$('.empty_area_2').addClass('removeEvent');
-			}
 			
 			//데이터 보여주기
-			$('.account').text();
-			$('account_name').text();
+			$('.account').text(data.account_name + data.account_num);
+			$('.account_name').text(data.account_holder);
 		}
 });
 });
-
-*/
 
 
 
