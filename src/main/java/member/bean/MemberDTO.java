@@ -17,7 +17,7 @@ public class MemberDTO {
 	private String pwd;
 	private String name;
 	private String tel;
-	private String address;
+	//private String address; DB테이블 추가되면서 이동
 	private Timestamp created_at;
 	private Timestamp update_at;
 	private String footsize;
