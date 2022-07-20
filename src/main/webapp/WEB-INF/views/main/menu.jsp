@@ -9,7 +9,7 @@
     <a href="/ReseltProject/style/styleList" id="styleBtn" class="px-5 text-[15px]">STYLE</a>
     <a href="/ReseltProject/shop" id="shopBtn" class="px-5 text-[15px]">SHOP</a>
     <a href="#" id="aboutBtn" class="px-5 text-[15px]">ABOUT</a>
-    <a id="searchBtn" href="#" class="pl-5">
+    <a id="searchBtn" href="/ReseltProject/search/searchMain" class="pl-5">
       <img src="/ReseltProject/img/index/search-icon.png" class="w-6 h-6 inline align-middle">
     </a>
   </div>
