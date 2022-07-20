@@ -49,14 +49,8 @@ public class MyPageController {
 	HttpSession session;
 	
 	@GetMapping(value="myMain")
-	public ModelAndView my(HttpSession session) {
+	public ModelAndView my() {
 		ModelAndView mav = new ModelAndView();
-		
-		//세션 이메일 가져오기
-		String email = (String) session.getAttribute("email");
-		System.out.println("세션 이메일 확인 = " + email);
-			
-		mav.addObject("email", email);
 		
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
