@@ -23,7 +23,7 @@
         <form id="findEmailForm" method="post" action="/ReseltProject/member/findEmailResult">
         	<div class="mb-10">
 	            <p id="telDiv" class="text-xs font-bold">휴대폰 번호</p>
-    	        <input id="tel" type="text" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
+    	        <input id="tel" type="text" name="tel" autocomplete='off' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
        			<div id="telDivcmt" ></div>
         	</div>
         	<div id="textInput" class="mb-10 hidden">

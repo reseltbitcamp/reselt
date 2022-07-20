@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.bean.PriceIndexDTO;
+import shop.bean.ProductInfoDTO;
 import shop.service.ShopService;
 
 import com.inicis.std.util.HttpUtil;
@@ -218,6 +219,12 @@ public class ShopController {
 		mav.setViewName("/index");
 		
 		return mav;
+	}
+	
+	@PostMapping(value = "getProductInfo")
+	@ResponseBody
+	public ProductInfoDTO getProductInfo(@RequestParam Map<String, String> map){
+		return shopService.getProductInfo(map);
 	}
 	
 }

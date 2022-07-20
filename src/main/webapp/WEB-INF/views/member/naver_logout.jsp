@@ -13,8 +13,16 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 $(function(){
-    sessionStorage.clear();
-    alert('로그아웃');
+	//window.open('https://nid.naver.com/nidlogin.logout', '네이버아이디 로그아웃', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');
+	
+	//self.opener = self;
+	//window.close();
+	
+	top.window.open('https://nid.naver.com/nidlogin.logout', '네이버아이디 로그아웃', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no').close();
+	top.window.opener=self;
+	top.self.close();
+	
+    //alert('stop');
     location.href="/ReseltProject/";
 });
 </script>

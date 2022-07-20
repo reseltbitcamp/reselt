@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
 <div id="indicators-carousel" class="relative" data-carousel="slide">
   <!-- Carousel wrapper -->
   <div class="overflow-hidden relative h-[100px]">
@@ -110,7 +111,7 @@
 
           <!-- 카테고리 -->
           <li>
-            <button id="category" type="button"
+            <button id="category" type="button" data-toggle=""#
               class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
               aria-controls="dropdown0" data-collapse-toggle="dropdown0">
               <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>카테고리</span>
@@ -121,7 +122,7 @@
               </svg>
             </button>
             <!-- click event : hide below div -->
-            <div id="hidecategory" class="text-sm pl-5 font-sm text-left text-gray-400">모든 카테고리</div>
+            <div id="hidecategory" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 카테고리</div>
             <ul id="dropdown0" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -169,7 +170,7 @@
               </svg>
             </button>
             <!-- click event : hide below div -->
-            <div id="hidebrand" class="text-sm pl-5 font-sm text-left text-gray-400">모든 브랜드</div>
+            <div id="hidebrand" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 브랜드</div>
             <ul id="dropdown1" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -206,7 +207,7 @@
 
           <!-- Gender -->
           <li>
-            <button id="hidegender" type="button"
+            <button id="gender" type="button"
               class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
               aria-controls="dropdown0" data-collapse-toggle="dropdown2">
               <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>성별</span>
@@ -217,7 +218,7 @@
               </svg>
             </button>
             <!-- click event : hide below div -->
-            <div id="hidegender" class="text-sm pl-5 font-sm text-left text-gray-400">모든 성별</div>
+            <div id="hidegender" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 성별</div>
             <ul id="dropdown2" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -253,7 +254,7 @@
               </svg>
             </button>
             <!-- click event : hide below div -->
-            <div id="hidecollection" class="text-sm pl-5 font-sm text-left text-gray-400">모든 컬렉션</div>
+            <div id="hidecollection" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 컬렉션</div>
             <ul id="dropdown3" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -301,7 +302,7 @@
               </svg>
             </button>
             <!-- click event : hide below div -->
-            <div id="hideshoes" class="text-sm pl-5 font-sm text-left text-gray-400">모든 사이즈</div>
+            <div id="hideshoes" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 사이즈</div>
             <ul id="dropdown4" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -348,7 +349,7 @@
                   clip-rule="evenodd"></path>
               </svg>
             </button>
-            <div id="hidegarment" class="text-sm pl-5 font-sm text-left text-gray-400">모든 사이즈</div>
+            <div id="hidegarment" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 사이즈</div>
             <ul id="dropdown5" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -396,7 +397,7 @@
                   clip-rule="evenodd"></path>
               </svg>
             </button>
-            <div id="hideprice" class="text-sm pl-5 font-sm text-left text-gray-400">모든 가격</div>
+            <div id="hideprice" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 가격</div>
             <ul id="dropdown6" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="default-checkbox" type="checkbox" value=""
@@ -438,42 +439,42 @@
   <div id="productlist" class="basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
     <!-- modal login -->
     <div>
-      <button type="button" data-modal-toggle="naverLogin">
-        <a href="#">
+      <button type="button" >
+        <a href="/ReseltProject/shop/shopDetail">
           <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-            <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/1.jpg">**클릭시 loginpage
+            <img class="w-full object-contain min-h-0 h-full" src="">
           </div>
-          <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-          <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-          <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
+          <p class="text-left text-[16px] font-bold font-notoSans" id="brand_firstname">&nbsp;Nike</p>
+          <p class="text-left text-[14px]" id="product_name_eng">&nbsp;Nike Dunk Low Retro Black</p>
+          <p class="text-left text-[13px] text-slate-400" id="product_name_kor" >&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
           <br>
-          <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
+          <p class="text-left text-[16px] font-bold font-notoSans" id="released_price">&nbsp;129,000원</p>
           <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
         </a>
       </button>
       <!-- mini svg link -->
       <a href="#">
         <div class="h-6 w-20 grid grid-cols-3 content-start">
-          <button onclick="bookmark.style.fill='#DFBD69'" class="w-1 h-1 pl-1 py-1">
-            <svg id="bookmark" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+          <button id="bookmark" class="w-1 h-1 pl-1 py-1"  data-modal-toggle="naverLogin">
+            <svg id="bookmarkColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
               stroke="currentColor" stroke-width="1.25">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
             </svg>
           </button>
       </a>
-      <a href="#">
-        <button onclick="smile.style.fill='#FFFF00'" class="w-1 h-1 pl-1 py-1">
-          <svg id="smile" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24"
+      <a>
+        <button id="smile" class="w-1 h-1 pl-1 py-1">
+          <svg id="smileColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="1.25">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </button>
       </a>
-      <a href="#">
-        <button onclick="fire.style.fill='#ff0000'" class="w-1 h-1 pl-1 py-1">
-          <svg id="fire" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+      <a>
+        <button id="fire" class="w-1 h-1 pl-1 py-1">
+          <svg id="fireColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="1.25">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
@@ -485,184 +486,6 @@
     </a>
   </div>
 
-  </a>
-
-  <a href="/ReseltProject/shop/shopDetail">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/2.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-  <a href="#">
-    <div class="bg-[#edf0f1] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/3.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-  <a href="#">
-    <div class="bg-[#f6eeec] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/4.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-
-  </a>
-  <a href="#">
-    <div class="bg-[#edf0f1] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/5.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-
-  </a>
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/6.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-  <a href="#">
-    <div class="bg-[#edf0f1] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/7.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/8.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#f6eeec] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/9.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#f5e9f1] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/10.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/11.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/12.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#f5e9f1] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/13.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/14.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-  </a>
-
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/15.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-
-  </a>
-
-  <a href="#">
-    <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopproduct/16.jpg">
-    </div>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;Nike</p>
-    <p class="text-left text-[14px]">&nbsp;Nike Dunk Low Retro Black</p>
-    <p class="text-left text-[13px] text-slate-400">&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-    <br>
-    <p class="text-left text-[16px] font-bold font-notoSans">&nbsp;129,000원</p>
-    <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
   </a>
 
 </div>
@@ -723,6 +546,65 @@
     </div>
   </div>
 </div>
-<!-- jQuery -->
+
+<!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/ReseltProject/js/shop/shopmain.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
+
+
+<!-- filter Script -->
+
+<script type="text/javascript">
+let displayState = {none: "block", block: "none"}
+let ids = ["category", "brand", "gender", "collection", "shoes", "garment", "price"]
+
+function toggleDisplayState(id) {
+  let ele = document.getElementById("hide" + id);
+  ele.style.display = displayState[ele.style.display];
+}
+
+ids.forEach(id=>{
+  document.getElementById(id).addEventListener("click", ()=>{
+    toggleDisplayState(id);
+  })
+})
+
+<!-- svg script-->
+const btn = document.getElementById('bookmark')
+const bookmarkColor = document.getElementById('bookmarkColor')
+
+btn.addEventListener('click', function(){
+	if (bookmarkColor.style.fill === 'none'){
+	bookmarkColor.style.fill = '#DFBD69'
+	}
+	else {
+	bookmarkColor.style.fill = 'none';	
+	}
+})
+
+const btn1 = document.getElementById('smile')
+const smileColor = document.getElementById('smileColor')
+
+btn1.addEventListener('click', function(){
+	if (smileColor.style.fill === 'none'){
+	smileColor.style.fill = '#FFFF00'
+	}
+	else {
+	smileColor.style.fill = 'none';	
+	}
+})
+
+const btn2 = document.getElementById('fire')
+const fireColor = document.getElementById('fireColor')
+
+btn2.addEventListener('click', function(){
+	if (fireColor.style.fill === 'none'){
+	fireColor.style.fill = '#ff0000'
+	}
+	else {
+	fireColor.style.fill = 'none';	
+	}
+})
+
+
+</script>

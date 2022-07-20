@@ -22,14 +22,14 @@
         <form id="findPwdForm">
         	<div class="mb-10">
 	            <p id="telDiv" class="text-xs font-bold">휴대폰 번호</p>
-    	        <input id="tel" type="text" name="tel" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
+    	        <input id="tel" type="text" name="tel" autocomplete='off' oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" class="text-sm border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="가입하신 휴대폰 번호">
        			<input id="telOk" type="hidden">
        			<div id="telDivcmt" ></div>
         	</div>
         	
         	<div class="mb-10">
             	<p id="emailDiv" class="text-xs font-bold">이메일 주소</p>
-            	<input type="email" id="email" name="email" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+            	<input type="email" id="email" name="email" autocomplete='off' class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
        			<input id="emailOk" type="hidden">
         		<div id="emailDivcmt" ></div>
         	</div>

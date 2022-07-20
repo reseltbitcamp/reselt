@@ -43,5 +43,7 @@
 
 	<context:component-scan base-package="member.controller" />
 	
+	<context:component-scan base-package="search.controller" />
+	
 	
 </beans:beans>

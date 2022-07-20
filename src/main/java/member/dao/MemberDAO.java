@@ -15,5 +15,7 @@ public interface MemberDAO {
 	public MemberDTO findEmailSMS(MemberDTO memberDTO);
 
 	public void tmpPwd(Map<String, String> map);
+
+	public void updateNick(MemberDTO nickDTO);
 	
 }

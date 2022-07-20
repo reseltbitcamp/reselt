@@ -13,4 +13,17 @@
 		GROUP BY logtime
 		]]>
 	</select>
+	
+	<select id="getProductInfo" parameterType="java.util.Map" resultType="productInfo">
+	
+		SELECT 
+		product.*, brand.brand_firstname
+        FROM product 
+        LEFT JOIN brand
+        ON 
+        product.brand_id = brand.brand_id
+        WHERE product_id = '2EV176-9C9';
+	
+	</select>
+
 </mapper>
