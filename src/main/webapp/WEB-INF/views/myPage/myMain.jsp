@@ -250,5 +250,6 @@ input:focus {
     
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
 <script src="../js/myPage/address.js"></script>  
+<script src="../js/myPage/myMain.js"></script>  
   </body>
 </html>
