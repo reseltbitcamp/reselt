@@ -59,28 +59,4 @@
 	</div>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../js/sellSize.js"></script>
-<script type="text/javascript">
-//sellPage 스크립트
-$(function(){
-	
-  $('#nextBtn').hide();
-  $('.sizeBtn').each(function(index){
-    $(this).attr('sizeBtn-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('sizeBtn-index');
-    
-    $('.sizeBtn[sizeBtn-index='+ index + ']').addClass('border-2 border-black');
-    $('.sizeBtn[sizeBtn-index!='+ index + ']').removeClass('border-2 border-black');
-  })
-
-  $('.sizeBtn').click(function(){
-    $('#nextBtn').show();
-  })
-  
-  $('#PriceBtn').click(function(){
-	  location.href="./sellAgree"
-  })
-})
-</script>
+<script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>

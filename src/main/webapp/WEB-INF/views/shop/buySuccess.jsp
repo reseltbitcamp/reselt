@@ -19,11 +19,11 @@
 
   <div class="text-center my-2">
     <div class="inline-block mx-2">
-      <button class="border w-[225px] h-12 rounded-xl text-gray-400">내역 상세보기</button>
+      <button id="buyListPageBtn"class="border w-[225px] h-12 rounded-xl text-gray-400">내역 상세보기</button>
     </div>
 
     <div class="inline-block mx-2">
-      <button class="border w-[225px] h-12 rounded-xl text-gray-400">SHOP 바로가기</button>
+      <button id="shopPageBtn" class="border w-[225px] h-12 rounded-xl text-gray-400">SHOP 바로가기</button>
     </div>
     <a class="block text-sm my-2 text-gray-400">즉시 구매는 취소가 불가능합니다.</a>
   </div>
@@ -574,12 +574,5 @@
 %>
 </div>
 
-
-
-
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#INIpayReturn').hide();
-})
-</script>
+<script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>
