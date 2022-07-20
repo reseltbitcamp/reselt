@@ -27,6 +27,8 @@ public interface MyPageProfileDAO {
 
 	public void telUpdate(Map<String, String> map);
 
+	public void withdrawal_user(String email);
+
 
 
 

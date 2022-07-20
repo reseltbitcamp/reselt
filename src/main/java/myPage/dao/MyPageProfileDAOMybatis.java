@@ -74,6 +74,11 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 		sqlSession.selectOne("myPageSQL.telUpdate", map);
 	}
 
+	@Override
+	public void withdrawal_user(String email) {
+		sqlSession.delete("myPageSQL.withdrawal_user",email);
+	}
+
 	
 
 

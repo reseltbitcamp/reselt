@@ -27,5 +27,7 @@ public interface MyPageProfileService {
 
 	public void telUpdate(String tel);
 
+	public void withdrawal_user(String email);
+
 
 }

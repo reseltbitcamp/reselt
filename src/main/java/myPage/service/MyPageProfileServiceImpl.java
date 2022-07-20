@@ -128,6 +128,12 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		myPageProfileDAO.telUpdate(map);
 	}
 
+	@Override
+	public void withdrawal_user(String email) {
+		myPageProfileDAO.withdrawal_user(email);
+		
+	}
+
 	
 
 
