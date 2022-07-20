@@ -45,15 +45,37 @@ public class MyPageController {
 	@Autowired
 	MyPageAccountService myPageAccountService;
 	
+	@Autowired
+	HttpSession session;
+	
 	@GetMapping(value="myMain")
-	public ModelAndView my() {
+	public ModelAndView my(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
+		
+		//세션 이메일 가져오기
+		String email = (String) session.getAttribute("email");
+		System.out.println("세션 이메일 확인 = " + email);
+			
+		mav.addObject("email", email);
+		
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("display", "/WEB-INF/views/myPage/myMain.jsp");
 		mav.setViewName("/index");
 		return mav;
 	}
+
+	@PostMapping(value="getSession")
+	@ResponseBody
+	public String getSession(HttpSession session) {
+		
+		//세션 이메일 가져오기
+		String email = (String) session.getAttribute("email");
+		System.out.println("세션 이메일 확인 = " + email);
+		return email;
+	}
+	
+	
 	@GetMapping(value="address")
 	public ModelAndView address() {
 		ModelAndView mav = new ModelAndView();
@@ -131,6 +153,16 @@ public class MyPageController {
 		mav.addObject("display", "/WEB-INF/views/myPage/withdrawal.jsp");
 		mav.setViewName("/index");
 		return mav;
+	}
+
+	//탈퇴 DB처리
+	@PostMapping(value="withdrawal_user")
+	@ResponseBody
+	public void withdrawal_user() {
+		String email = (String) session.getAttribute("email");
+		
+		myPageProfileService.withdrawal_user(email);
+		session.invalidate();
 	}
 
 	//profile
