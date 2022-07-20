@@ -19,6 +19,9 @@ public class ProductInfoDTO {
 	private int brand_id;
 	private int category_id;
 	private int released_price;
+	private int product_likes;
+	private int product_bookmark;
 	private Date created_at;
+	
 
 }

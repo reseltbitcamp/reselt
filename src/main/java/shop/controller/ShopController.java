@@ -8,6 +8,7 @@ import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -225,6 +226,14 @@ public class ShopController {
 	@ResponseBody
 	public ProductInfoDTO getProductInfo(@RequestParam Map<String, String> map){
 		return shopService.getProductInfo(map);
+	}
+	
+	@PostMapping(value = "getSession")
+	@ResponseBody
+	public String getSession(HttpSession session) {
+	String email = (String) session.getAttribute("email");
+	System.out.println(email);
+	return email;
 	}
 	
 }

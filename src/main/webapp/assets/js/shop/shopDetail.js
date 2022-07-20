@@ -70,7 +70,10 @@ const product_name_eng = document.getElementById('product_name_eng').innerText;
 const created_at = document.getElementById('created_at').innerText;
 const released_price = document.getElementById('released_price').innerText;
 const brand_firstname = document.getElementById('brand_firstname').innerText;
-
+const dateStr = function(timestamp) {   //Created_at 날짜 변환
+  const date = new Date(timestamp);
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
+}
 
 //product details
 
@@ -91,8 +94,8 @@ $(document).ready(function(){
 			alert(JSON.stringify(data));
 			document.getElementById("product_name_kor").innerText = data.product_name_kor;
 			document.getElementById("product_name_eng").innerText = data.product_name_eng;
-			document.getElementById("created_at").innerText = data.created_at;
-			document.getElementById("released_price").innerText = data.released_price;
+      document.getElementById("created_at").innerText = dateStr(data.created_at);
+			document.getElementById("released_price").innerText = data.released_price.toLocaleString('ko-KR');
 			document.getElementById("product_id").innerText = data.product_id;
 			document.getElementById("brand_firstname").innerText = data.brand_firstname;
 		},
