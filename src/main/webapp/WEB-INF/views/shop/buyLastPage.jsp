@@ -139,8 +139,8 @@
                 <input id="fourthAgree" type="checkbox" class="ml-10 h-5 w-5" />
             </div>
           </li>
+      	</label>
         </ul>
-      </label>
 </div>
 
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200 shadow-md">
@@ -149,7 +149,7 @@
     <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
   </div>
   <div class="p-3">
-  	<button id="agreeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
+  	<button id="chargeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
   </div>
 </div>
 
@@ -325,95 +325,4 @@
 <jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
 <script language="javascript" type="text/javascript" src="https://stgstdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#kgApi').hide();
-	$('.addressDiv_modal').hide();
-	$('.addAddressModal').hide();
-
-	$('#exitBtn').click(function(){
-		$('.addressDiv_modal').hide();
-	})
-	
-	$('#addressList').click(function(){
-		$('.addressDiv_modal').hide();
-	})
-	$('#addAddressBtn').click(function(){
-		$('.addAddressModal').show();
-	})
-
-})
-
-
-
-$('#addressChangeBtn').click(function(){
-	$('.addressDiv_modal').show();
-})
-
-$('#firstAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	} else {
-		$('#agreeBtn').attr("disabled",true);
-	}
-})
-
-$('#secondAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	} else {
-		$('#agreeBtn').attr("disabled",true);
-	}
-})
-
-$('#thirdAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-  if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
-
-$('#fourthAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-  if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
- 
-$('.paymentOption').each(function(index){
-    $(this).attr('paymentOption-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('paymentOption-index');
-    
-    $('.paymentOption[paymentOption-index='+ index + ']').addClass('border-2 border-black');
-    $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
-  })
-
-</script>
+<script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>

@@ -1,16 +1,17 @@
 //버튼 누르면 모달 창 뜸
 $('.addressDiv_btn').click(function(){
-	$('.nameDiv_error').addClass('removeEvent');
-	$('.phoneDiv_error').addClass('removeEvent');
-	$('.addressDiv_modal').removeClass('removeEvent');
+   $('.nameDiv_error').addClass('removeEvent');
+   $('.phoneDiv_error').addClass('removeEvent');
+   $('.addressDiv_modal').removeClass('removeEvent');
 });
 
 $('.addressDiv_reset').click(function(){
-	$('.addressDiv_modal').addClass('removeEvent');
+   $('.addressDiv_modal').addClass('removeEvent');
 });
 
 //이름 유효성 검사
 $('.nameDiv_text').on('input', function(){
+
 	if ($('.nameDiv_text').val().length < 2 || $('.nameDiv_text').val().length > 50) {
 		$('.nameDiv_error').removeClass('removeEvent');
 	} else {
@@ -20,13 +21,13 @@ $('.nameDiv_text').on('input', function(){
 
 //전화번호 유효성 검사
 $('.phoneDiv_text').on('input', function(){
-  	var patternPhone = /01[016789][^0][0-9]{2,3}[0-9]{3,4}/;
-	
-	if(!patternPhone.test($('.phoneDiv_text').val())) {
-		$('.phoneDiv_error').removeClass('removeEvent');
-	} else {
-		$('.phoneDiv_error').addClass('removeEvent');
-	}  
+     var patternPhone = /01[016789][^0][0-9]{2,3}[0-9]{3,4}/;
+   
+   if(!patternPhone.test($('.phoneDiv_text').val())) {
+      $('.phoneDiv_error').removeClass('removeEvent');
+   } else {
+      $('.phoneDiv_error').addClass('removeEvent');
+   }  
 });
 
 
@@ -60,8 +61,7 @@ function checkPost() {
 
 
 //주소 저장 insert만
-$('.addressDiv_save').click(function(){
-	
+$('.addressDiv_save').click(function(){	
 	$('.nameDiv_error').addClass('removeEvent');
 	$('.phoneDiv_error').addClass('removeEvent');
 	$('.zipcodeDiv_error').addClass('removeEvent');
@@ -185,6 +185,3 @@ $('.delete_address').on('click', function(){
 	});
 
 });
-
-
-

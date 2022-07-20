@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-<style type="text/css">
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-</style>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="main-content mx-auto my-5 max-h-[960px] max-w-[780px] bg-white px-8 pb-8 pt-2 shadow-md">
   <!-- 이전페이지에서 내가 선택한 제품의 사진, 제품특성들 받아와서 표시 -->
@@ -66,25 +61,4 @@
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$('#sellBidPrice').keyup(function(){
-	var check = $('#sellBidPrice').val()%1000;
-	if((check == 0) && ($('#sellBidPrice').val() >= 30000)){
-		console.log(check)
-		$('#sellBidPriceDiv').html("");
-		console.log(check)
-    $('.sellBidPriceText').removeClass("text-red-600 border-red-600");
-		$('#sellBidBtn').removeAttr("disabled");
-	} else {
-		$('#sellBidPriceDiv').html("30000원 이상 부터 천원단위로 입력하세요");
-		 $('.sellBidPriceText').addClass("text-red-600 border-red-600");
- 	   $('#sellBidBtn').attr("disabled", true);
-	}
-})    
-	
-$('#sellBidBtn').click(function(){
-	location.href="./sellLastPage"
-})
-
-</script>
-
+<script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>
