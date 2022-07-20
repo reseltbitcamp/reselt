@@ -4,6 +4,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<style type="text/css">
+.removeEvent {
+   display: none;
+}
+</style>
+
 <!-- 모달창 -->
 <div class="addAddressModal removeEvent addressDiv_modal layer fixed top-0 left-0 right-0 bottom-0 z-[1000] bg-[#22222280]">
   <div class="layer_container absolute top-[20%] left-[40%] w-[500px] overflow-hidden rounded-[16px] bg-[#fff] drop-shadow-sm">
@@ -28,7 +34,7 @@
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">우편번호</h4>
             <div class="input_item relative flex flex-nowrap">
-               <input type="text" placeholder="우편 번호를 검색하세요" name="zipcode" id="zipcode" readonly autocomplete="off" class="input_txt py-[8px] w-[340px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
+               <input type="text" placeholder="우편 번호를 검색하세요" name="zipcode" id="zipcode" readonly autocomplete="off" class="zipcodeDiv_text input_txt py-[8px] w-[340px] text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
                <input type="button" value="우편번호" onclick="checkPost()" class="inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] text-center align-middle text-[12px] leading-[32px] tracking-[-.16px] text-[#222222cc]"/>
             </div>
           </div>
@@ -36,75 +42,28 @@
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">주소</h4>
             <div class="input_item relative"><input type="text" name="addr1" id="addr1" placeholder="우편 번호 검색 후, 자동입력 됩니다" autocomplete="off" class="input_txt py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+             <p class="zipcodeDiv_error removeEvent block absolute leading-[16px] text-[11px] text-[#f15746]">정확한 우편번호를 입력해주세요</p>
           </div>
 
           <div class="input_box relative pt-[16px] pb-[14px]">
             <h4 class="input_title text-[13px] leading-[18px] tracking-[-.07px]">상세 주소</h4>
-            <div class="input_item relative"><input type="text" name="addr2" id="addr2" placeholder="건물, 아파드, 등/호수 입력" autocomplete="off" class="input_txt py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+            <div class="input_item relative"><input type="text" name="addr2" id="addr2" placeholder="건물, 아파드, 등/호수 입력" autocomplete="off" class="addressDiv_text input_txt py-[8px] w-full text-[15px] tracking-[-.15px] leading-[22px] border-b-[1px] border-b-solid border-b-[#ebebeb]"></div>
+             <p class="addressDiv_error removeEvent block absolute leading-[16px] text-[11px] text-[#f15746]">정확한 상세주소를 입력해주세요</p>
           </div>
         </div> <!--input-->
-
-        <div class="delivary_check">
-          <div class="checkbox_item mr-[0px]">
-            <input type="checkbox" id="check1" />
-            <label for="check1" class="relative inline-block cursor-pointer">
-              <span class="inline-block pl-[8px] align-top text-[13px] leading-[24px] tracking-[-.07px]">기본 배송지로 설정</span>
-            </label>
-          </div>
-        </div> <!--delivery check-->
 
       </div>
       <!--delivery bind-->
 
       <div class="flex justify-center p-[32px] pt-[24px]">
-        <a class="addressDiv_reset inline-block cursor-pointer ml-[5px] align-middle text-center bg-[#fff] py-[0px] px-[18px] h-[42px] leading-[40px] rounded-[12px] text-[14px] tracking-[-.14px] w-[120px] border-[1px] border-solid border-[#d3d3d3] text-[#222222cc] mr-1">취소</a>
-        <a class="addressDiv_save inline-block cursor-pointer align-middle text-center bg-[#222222cc] py-[0px] px-[18px] h-[42px] leading-[40px] rounded-[12px] text-[14px] tracking-[-.14px] w-[120px] border-[1px] border-solid text-[#d3d3d3] border-[#d3d3d3] ml-1">저장하기</a>
+        <a class="addressDiv_reset inline-block cursor-pointer ml-[5px] align-middle text-center bg-[#fff] py-[0px] px-[18px] h-[42px] leading-[40px] rounded-[12px] text-[14px] tracking-[-.14px] w-[120px] border-[1px] border-solid border-[#d3d3d3] text-[#222222cc]">취소</a>
+        <a class="addressDiv_save inline-block cursor-pointer align-middle text-center bg-[#222222cc] py-[0px] px-[18px] h-[42px] leading-[40px] rounded-[12px] text-[14px] tracking-[-.14px] w-[120px] border-[1px] border-solid text-[#d3d3d3] border-[#d3d3d3]">저장하기</a>
       </div>
 
     </div> <!--content-->
   </div> <!--container-->
 </div> <!--addressDiv_modal-->
 
-<style>
-input:focus {
-   outline: none;
-}
-</style>
-
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>  
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
 <script src="../js/myPage/address.js"></script> 
-<script type="text/javascript">
-//버튼 누르면 모달 창 뜸
-$('.addressDiv_btn').click(function(){
-   $('.nameDiv_error').addClass('removeEvent');
-   $('.phoneDiv_error').addClass('removeEvent');
-   $('.addressDiv_modal').removeClass('removeEvent');
-});
-
-$('.addressDiv_reset').click(function(){
-   $('.addressDiv_modal').addClass('removeEvent');
-});
-
-//이름 유효성 검사
-$('.nameDiv_text').on('input', function(){
-   if ($('.nameDiv_text').val().length < 2 || $('.nameDiv_text').val().length > 50) {
-      $('.nameDiv_error').removeClass('removeEvent');
-      $('.addressDiv_save').attr('disabled', true);
-   } else {
-      $('.nameDiv_error').addClass('removeEvent');
-      $('.addressDiv_save').attr('disabled', false);
-   }
-});
-
-//전화번호 유효성 검사
-$('.phoneDiv_text').on('input', function(){
-     var patternPhone = /01[016789][^0][0-9]{2,3}[0-9]{3,4}/;
-   
-   if(!patternPhone.test($('.phoneDiv_text').val())) {
-      $('.phoneDiv_error').removeClass('removeEvent');
-   } else {
-      $('.phoneDiv_error').addClass('removeEvent');
-   }  
-});
-</script>

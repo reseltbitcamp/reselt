@@ -18,13 +18,12 @@
 
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 shadow-md">
   <div class="pb-3">
-  <p class="font-extrabold text-base">판매 정산 계좌</p>
+    <p class="font-extrabold text-base">판매 정산 계좌</p>
   </div>
   <div class="relative">
 
-    <div>
-  <p class="text-xs mt-3">등록된 판매 정산 계좌가 없습니다.
-    <br>새 계좌번호를 추가해주세요!</p>
+  <div>
+    <p class="text-xs mt-3">등록된d!</p>
   </div>
   <button class="float-right -mt-5 bg-black align-middle text-white rounded-lg cursor-pointer h-8 text-center px-3 top-1/2 text-xs right-0">계좌 추가</button>
   </div>
@@ -32,13 +31,10 @@
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <h3 class="mb-2 inline-block font-extrabold">반송주소</h3>
-  <button id="addAddressBtn" class="float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
-  <div id="addAddressModal">
-  	<jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
-	</div>
+  <button class="addAddressBtn float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
   <div class="border-b">
     <div class="float-right mr-9 mt-1 w-6">
-      <a href="#" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
+      <a href="#" id="addressChangeBtn" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
     </div>
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">받는분</dt>
@@ -82,7 +78,7 @@
 
     <div class="w-auto">
       <dl class="flex justify-between">
-        <dt class="mt-2 text-sm">즉시 판매가</dt>
+        <dt class="mt-2 text-sm">판매가</dt>
         <dd class="float-right font-semibold">150,000원</dd>
       </dl>
 
@@ -101,43 +97,6 @@
         <dd class="float-right inline-block text-sm">선불 · 판매자부담</dd>
       </dl>
     </div>
-  </div>
-</div>
-
-<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
-  <div class="mb-2">
-  <p class="font-bold">현금영수증 정보</p>
-  </div>
-  <div>
-    <span class="mt-1 text-gray-400 float-left min-w-[80px] text-xs">형태</span>
-    <a class="text-sm">미신청</a>
-    <p class="text-gray-400 text-sm">판매 거래 시 수수료에 대해 건별로 현금영수증을 발급합니다.</p>
-  </div>
-  <div>
-  <button class="float-right border rounded-lg cursor-pointer -mt-10 h-8 text-center px-3 text-xs right-0">변경</button>
-  </div>
-</div>
-
-<div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
-  <div class="mb-3">
-    <h3 class="font-bold">결제 방법</h3>
-  </div>
-
-  <div class="flex">
-    <dt class="float-left block min-w-[70px] mb-1 truncate text-sm text-gray-500">간편 결제</dt>
-    <dd class="mt text-xs inline ">일시불</dd>
-    <dd class="mt float m inline pl-1 ml-auto text-xs text-gray-400 cursor-pointer ">+ 새 카드 추가</dd>
-  </div>
-
-  <div class="relative mb-4 cursor-pointer">
-    <a class="paymentOption flex h-14 w-full items-center rounded-lg border border-gray-200 text-gray-400">카드를 등록해주세요 <span class="text-sm text-gray-400 font-bold"> ></span>
-    </a>
-  </div>
-
-  <div class="block cursor-pointer">
-    <p class="text-xs text-gray-400">- 패널티는 일시불만 지원하며, 카드나 홈페이지나 앱에서 분할납부로 변경 가능합니다. 단, 카드사별 정책에 따라 분할 납부 변경 시 수수료가 발생할 수 있습니다. </p>
-    <p class="text-xs text-gray-400">- 수수료(페널티, 착불배송비 등)가 정산되지 않을 경우, 별도 고시 없이 해당 금액을 결제 시도 할 수 있습니다.</p>
-    <a class="text-[13px] text-blue-700 underline">페널티 정책</a>
   </div>
 </div>
 
@@ -208,112 +167,11 @@
     <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">정산 금액</dt>
     <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-green-500">167,400원</dd>
   </div>
-  <input type="button" value="결제하기" id="agreeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
+  <input type="button" value="결제하기" id="chargeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
 </div>
 
+
+<jsp:include page="./shopModal/addressListModal.jsp"></jsp:include>
+<jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#addAddressModal').hide();
-})
-$('#addAddressBtn').click(function(){
-	$('#addAddressModal').show();
-})
-$('.addressDiv_save').click(function(){
-	$('#addAddressModal').hide();
-})
-$('.addressDiv_reset').click(function(){
-	$('#addAddressModal').hide();
-})
-
-
-$('#firstAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	var check5 = $('#fifthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	} else {
-		$('#agreeBtn').attr("disabled",true);
-	}
-})
-
-$('#secondAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	var check5 = $('#fifthAgree').prop("checked");
-	
-	if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true) {
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	} else {
-		$('#agreeBtn').attr("disabled",true);
-	}
-})
-
-$('#thirdAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	var check5 = $('#fifthAgree').prop("checked");
-	
-  if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
-
-$('#fourthAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	var check5 = $('#fifthAgree').prop("checked");
-	
-  if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
-
-$('#fifthAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	var check5 = $('#fifthAgree').prop("checked");
-	
-  if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
- 
-$('.paymentOption').each(function(index){
-    $(this).attr('paymentOption-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('paymentOption-index');
-    
-    $('.paymentOption[paymentOption-index='+ index + ']').addClass('border-2 border-black');
-    $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
-  })
-
-</script>
+<script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>

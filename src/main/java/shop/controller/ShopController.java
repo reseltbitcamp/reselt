@@ -191,6 +191,18 @@ public class ShopController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/sellSuccess", method={RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView sellSuccess() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/sellSuccess.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
 	@PostMapping(value = "getPriceIndex")
 	@ResponseBody
 	public List<PriceIndexDTO> getPriceIndex(@RequestParam Map<String, String> map) {
