@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import member.dao.MemberDAO;
@@ -36,8 +37,11 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		
 		String email = (String) session.getAttribute("email");
 		map.put("email", email);
-		map.put("pwd", pwd);
-		myPageProfileDAO.sizeUpdate(map);
+		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(pwd);
+		
+		map.put("pwd", securePassword);
 		
 		myPageProfileDAO.pwdUpdate(map);
 	}
@@ -124,6 +128,13 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		myPageProfileDAO.telUpdate(map);
 	}
 
+	@Override
+	public void withdrawal_user(String email) {
+		myPageProfileDAO.withdrawal_user(email);
+		
+	}
+
+	
 
 
 	

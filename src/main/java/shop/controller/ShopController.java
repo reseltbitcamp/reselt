@@ -8,6 +8,7 @@ import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.bean.PriceIndexDTO;
+import shop.bean.ProductInfoDTO;
 import shop.service.ShopService;
 
 import com.inicis.std.util.HttpUtil;
@@ -190,6 +192,18 @@ public class ShopController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/sellSuccess", method={RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView sellSuccess() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
+		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
+		mav.addObject("display","/WEB-INF/views/shop/sellSuccess.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
 	@PostMapping(value = "getPriceIndex")
 	@ResponseBody
 	public List<PriceIndexDTO> getPriceIndex(@RequestParam Map<String, String> map) {
@@ -206,6 +220,20 @@ public class ShopController {
 		mav.setViewName("/index");
 		
 		return mav;
+	}
+	
+	@PostMapping(value = "getProductInfo")
+	@ResponseBody
+	public ProductInfoDTO getProductInfo(@RequestParam Map<String, String> map){
+		return shopService.getProductInfo(map);
+	}
+	
+	@PostMapping(value = "getSession")
+	@ResponseBody
+	public String getSession(HttpSession session) {
+	String email = (String) session.getAttribute("email");
+	System.out.println(email);
+	return email;
 	}
 	
 }

@@ -152,3 +152,51 @@ body, button, input, select, table, textarea {
 .tab_on {
 	border-bottom: 2px solid #222;
 }
+
+/*address 버튼*/
+.info_bind {
+	margin-right: 24px;
+}
+.address_info {
+	line-height: 17px;
+}
+.address_name {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 20px;
+	letter-spacing: -.15px;	
+}
+.address_mark {
+	margin-top: 0px;
+	margin-left: 4px;
+	display: inline-block;
+	border-radius: 10px;
+	background-color: #f4f4f4;
+	padding-top: 3px;
+	padding-bottom: 6px;
+	vertical-align: top;
+	font-size: 12px;
+	line-height: 14px;
+	letter-spacing: -.06px;
+}
+.address_phone {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding-top: 5px;
+	font-size: 14px;
+	font-weight: 600px;
+	font-weight: bold;
+}
+.address_box {
+	padding-top: 4px;
+	font-size: 14px;
+	letter-spacing: -.21px;
+}
+.address_address {
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: -.21px;
+}

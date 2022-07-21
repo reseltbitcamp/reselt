@@ -21,12 +21,12 @@
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <h3 class="mb-2 inline-block font-extrabold">배송주소</h3>
-  <button class="float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
-
-  <div class="border-b">
-    <div class="float-right mr-9 mt-1 w-6">
-      <a href="#" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
+  <button class="addAddressBtn float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
+	  <div class="border-b">
+	    <div class="float-right mr-9 mt-1 w-6">
+	      <a href="#" id="addressChangeBtn" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
     </div>
+    
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">받는분</dt>
       <dd class="block text-sm">양웅비</dd>
@@ -139,8 +139,8 @@
                 <input id="fourthAgree" type="checkbox" class="ml-10 h-5 w-5" />
             </div>
           </li>
+      	</label>
         </ul>
-      </label>
 </div>
 
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200 shadow-md">
@@ -149,7 +149,7 @@
     <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
   </div>
   <div class="p-3">
-  	<button id="agreeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
+  	<button id="chargeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
   </div>
 </div>
 
@@ -319,80 +319,10 @@
 									</td>
 								</tr>
 							</table>
-	</div>
+</div>
+
+<jsp:include page="./shopModal/addressListModal.jsp"></jsp:include>
+<jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
 <script language="javascript" type="text/javascript" src="https://stgstdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#kgApi').hide();	
-})
-
-
-
-$('#firstAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	} else {
-		$('#agreeBtn').attr("disabled",true);
-	}
-})
-
-$('#secondAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	} else {
-		$('#agreeBtn').attr("disabled",true);
-	}
-})
-
-$('#thirdAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-  if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
-
-$('#fourthAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
-  if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
-	  } else {
-		  $('#agreeBtn').attr("disabled",true);
-		}
-})
- 
-$('.paymentOption').each(function(index){
-    $(this).attr('paymentOption-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('paymentOption-index');
-    
-    $('.paymentOption[paymentOption-index='+ index + ']').addClass('border-2 border-black');
-    $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
-  })
-
-</script>
+<script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>

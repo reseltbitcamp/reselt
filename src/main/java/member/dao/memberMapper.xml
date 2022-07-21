@@ -24,7 +24,7 @@
 
 </insert>
 
-<!-- 이메일 중복체크  -->
+<!-- 이메일 중복체크 , 암호화 비밀번호 이메일로 가져오기 -->
 <select id="checkEmail" parameterType="member" resultType="member">
 	select * from members where email = #{email}
 </select>
@@ -34,13 +34,20 @@
 	select * from members where email = #{email} and pwd=#{pwd} 
 </select>
 
+
 <!-- 이메일 SMS 찾기  -->
 <select id="findEmailSMS" parameterType="member" resultType="member">
 	select * from members where tel = #{tel}
 </select>
 
+
+
 <!-- 임시 비밀번호  변경 -->
 <update id="tmpPwd" parameterType="java.util.Map">
-	update members set pwd = #{tmpPwd} where email = #{email}
+	update members set pwd = #{securePassword} where email = #{email}
+</update>
+
+<update id="updateNick" parameterType="member">
+	update members set nick = #{nick} where email = #{email}
 </update>
 </mapper>

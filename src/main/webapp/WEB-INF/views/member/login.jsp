@@ -7,7 +7,7 @@
 
  
  <div class="m-auto w-96 pt-16 pb-40 " >
-   <div id="logo" class="relative flex flex-col justify-center py-6 mx-20 overflow-hidden bg-gray-50 sm:py-12">
+   <div id="logo" class="relative flex flex-col justify-center py-6 mx-20 overflow-hidden bg-white sm:py-12">
      <img src="/ReseltProject/img/member/logo.png" alt="로고이미지" class="self-center">
    </div>
      
@@ -16,7 +16,7 @@
         <div class="pt-5 pb-6">
         	<div>
 	        	<div id="emailDiv" class="pt-10 text-xs font-bold"><h3>이메일 주소</h3></div>
-	        	<input type="email" id="email" name="email" class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
+	        	<input type="email" id="email" name="email" autocomplete='off' class="border-b-2 w-full focus:outline-none focus:border-black focus:border-b-2" placeholder="예) reselt@reselt.com">
 	        	<div id="emailDivcmt" class="mb-10"></div>
         	</div>
          	

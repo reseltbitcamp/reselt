@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/myPage.css"/>
-    <title>Insert title here</title>
-  </head>
+<link rel="stylesheet" href="../css/myPage.css"/>
+<title>Insert title here</title>
+<style>
+input:focus {
+	outline: none;
+}
+</style>
+
+</head>
   <body>
       <div class="container mt-0 mb-0 p-10 pb-40 px-[100px]">
       <div>
@@ -29,7 +35,7 @@
               <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">내 정보</strong>
               <ul class="list-none">
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">프로필 정보</a></li>
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">결제 정보</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/account">판매 정산 계좌</a></li>
              		<li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/address">주소록</a></li>
               </ul>
             </div>
@@ -66,7 +72,7 @@
           <!-- 구매 내역 -->
           <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
             <h3 class="title text-[18px] font-semibold tracking-[-.27px]">구매 내역</h3>
-            <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
+            <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/ReseltProject/myPage/buying">
               <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">더보기 ></span>
             </a>
           </div>
@@ -74,7 +80,7 @@
           <div class="recent_purchase">
             <div class="purchase_list_tab table w-full table-fixed rounded-[12px] bg-[#fafafa]">
               <div class="tab_item total table-cell text-center">
-                <a href="/MyPage/my/buying" class="tab_link relative block h-[96px] pt-[18px]">
+                <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">전체</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]">0</dd>
@@ -83,8 +89,8 @@
               </div>
               <!--total-->
 
-              <div class="tab_item tab_on table-cell text-center">
-                <a href="/MyPage/my/buying?tab=bidding" class="tab_link relative block h-[96px] pt-[18px]">
+              <div class="tab_item table-cell text-center">
+                <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">입찰 중</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
@@ -93,7 +99,7 @@
               </div>
 
               <div class="tab_item table-cell text-center">
-                <a href="/MyPage/my/buying?tab=pending" class="tab_link relative block h-[96px] pt-[18px]">
+                <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">진행 중</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
@@ -102,7 +108,7 @@
               </div>
 
               <div class="tab_item table-cell text-center">
-                <a href="/MyPage/my/buying?tab=finished" class="tab_link relative block h-[96px] pt-[18px]">
+                <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">종료</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
@@ -125,7 +131,7 @@
           <!--판매 내역-->
           <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
             <h3 class="title text-[18px] font-semibold tracking-[-.27px]">판매 내역</h3>
-            <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
+            <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/ReseltProject/myPage/selling">
               <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">더보기 ></span>
             </a>
           </div>
@@ -133,7 +139,7 @@
           <div class="recent_purchase">
             <div class="purchase_list_tab table w-full table-fixed rounded-[12px] bg-[#fafafa]">
               <div class="tab_item total table-cell text-center">
-                <a href="/MyPage/my/buying" class="tab_link relative block h-[96px] pt-[18px]">
+                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">전체</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]">0</dd>
@@ -142,8 +148,8 @@
               </div>
               <!--total-->
 
-              <div class="tab_item tab_on table-cell text-center">
-                <a href="/MyPage/my/buying?tab=bidding" class="tab_link relative block h-[96px] pt-[18px]">
+              <div class="tab_item table-cell text-center">
+                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">입찰 중</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
@@ -152,7 +158,7 @@
               </div>
 
               <div class="tab_item table-cell text-center">
-                <a href="/MyPage/my/buying?tab=pending" class="tab_link relative block h-[96px] pt-[18px]">
+                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">진행 중</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
@@ -161,7 +167,7 @@
               </div>
 
               <div class="tab_item table-cell text-center">
-                <a href="/MyPage/my/buying?tab=finished" class="tab_link relative block h-[96px] pt-[18px]">
+                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">종료</dt>
                     <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
@@ -241,5 +247,9 @@
       <!--content-area-->
     </div>
     <!--container-->
+    
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
+<script src="../js/myPage/address.js"></script>  
+<script src="../js/myPage/myMain.js"></script>  
   </body>
 </html>

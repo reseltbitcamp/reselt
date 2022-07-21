@@ -54,15 +54,16 @@
     <div class="md:w-6/12 ml-auto pl-10 border-l-2 border-gray-200 content-center">
       <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
         <div class="max-w-md">
-          <p class="text-lg font-black underline">Nike</p>
-          <p>Nike Dunk Low Retro Black</p>
-          <p class="mb-2 text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
+          <p class="text-lg font-black underline" id="brand_firstname">Nike</p>
+          <p id="product_name_eng">Nike Dunk Low Retro Black</p>
+          <p class="mb-2 text-sm text-gray-400" id="product_name_kor">나이키 덩크 로우 레트로 블랙</p>
         </div>
         <div class="border-b border-gray-300 flex-initial">
-          <p class="mb-3 inline-block text-xs">사이즈</p>
+          <p class="mb-3 inline-block text-xs" >사이즈</p>
           <a class="float-right cursor-pointer font-semibold">모든사이즈</a>
           <button></button>
         </div>
+        
         <div class="mt-3 flex-initial">
           <p class="mb-3 text-xs">최근거래가
             <span class="float-right text-xl font-semibold">150,000원
@@ -74,7 +75,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white">150,000원</p>
+              <p class="text-base font-semibold text-white" id="released_price">150,000원</p>
               <span class="float-left text-xs text-white ">즉시구매가</span>
             </div>
           </a>
@@ -83,7 +84,7 @@
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">판매</strong>
             <div class="float-left ml-2">
               <p class="text-base font-semibold text-white">150,000원</p>
-              <span class="float-left text-xs text-white ">즉시 판매가</span>
+              <span class="float-left text-xs text-white">즉시 판매가</span>
             </div>
           </a>
         </div>
@@ -277,12 +278,12 @@
           <div class="border-y border-gray-300">
             <dl class="flex py-5 min-h-[20px]">
               <div class="flex-1 border-r pr-3">
-                <dt class="text-xs  border-gray-300">모델번호</dt>
-                <dd id="product_id" class="text-sm font-semibold">DD1391-100</dd>
+                <dt class="text-xs  border-gray-300" >모델번호</dt>
+                <dd id="product_id" class="text-sm font-semibold" id="product_id">DD1391-100</dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
-                <dt class="text-xs ">출시일</dt>
-                <dd class="text-sm">21/01/14</dd>
+                <dt class="text-xs">출시일</dt>
+                <dd class="text-sm" id="created_at">21/01/14</dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">컬러</dt>
@@ -290,7 +291,7 @@
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">발매가</dt>
-                <dd class="text-sm">129,000원</dd>
+                <dd class="text-sm" id="released_price">129,000원</dd>
               </div>
             </dl>
           </div>
@@ -338,13 +339,13 @@
         <hr>
         <!-- middle of right pg -->
         <div class="mt-6 grid grid-cols-2 gap-10">
-          <div class="text-xl font-semibold w-40">지역 별 시세</div>
+          <div class="text-xl font-semibold w-40">기간 별 시세</div>
           <!-- Dropdown Button -->
           <div class="text-right pb-2">
             <button id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation"
               class="text-black bg-white hover:bg-white font-medium rounded-lg text-sm px-4 py-2.5 inline-flex items-center dark:bg-white dark:hover:bg-white dark:focus:ring-white text-center"
               type="button">
-              인기순↓↑
+          	    인기순↓↑
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </button>
             <!-- Dropdown menu -->
@@ -488,7 +489,7 @@
   <hr class="border-y-gray-200">
   <!-- style 페이지 -->
   <div id="lower" class="h-56">
-    jsp:include 스타일
+
   </div>
   <!-- Flowbite Script-->
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
@@ -500,3 +501,8 @@
   <!-- jQuery -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="/ReseltProject/js/shop/shopDetail.js"></script>
+  
+  <script>
+  </script>
+
+  

@@ -137,12 +137,23 @@ public class MemberController {
 
 	@GetMapping(value = "logout")
 	public ModelAndView logout() {
+		MemberDTO memberDTO = new MemberDTO();
+		ModelAndView mv = new ModelAndView();
+		String email = (String) session.getAttribute("email");
+		memberDTO.setEmail(email);
+		memberDTO = memberService.checkEmail(memberDTO);
 		session.invalidate();
 		
-		ModelAndView mv = new ModelAndView();
+		if(memberDTO.getSnsLogin() == 1) {
+			mv.addObject("display", "/WEB-INF/views/member/naver_logout.jsp");
+		}else if (memberDTO.getSnsLogin() == 2) {
+			mv.addObject("display", "/WEB-INF/views/member/kakao_logout.jsp");
+			
+		}
+		
+		
 		mv.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mv.addObject("main", "/WEB-INF/views/main/main.jsp");
-		//mv.addObject("display", "/WEB-INF/views/member/findEmailResult.jsp");
 		mv.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mv.addObject("flowbite", true);
 		mv.setViewName("index");

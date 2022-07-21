@@ -30,7 +30,7 @@
               <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">내 정보</strong>
               <ul class="list-none">
                 <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/profile">프로필 정보</a></li>
-                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/payment">결제 정보</a></li>
+                <li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/account">판매 정산 계좌</a></li>
              		<li class="mt-3 list-none"><a class="menu_link text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/address">주소록</a></li>
               </ul>
             </div>
@@ -54,7 +54,7 @@
               <div class="flex pt-[20px] pb-[19px]">
                 <div class="wish_product mr-[30px] flex">
                   <div class="product_box mt-[10px] h-[80px] w-[80px] flex-none">
-                    <img src="/MyPage/image/bearbrick.JPG" class="h-20 w-20" />
+                    <img src="" class="h-20 w-20" />
                   </div>
 
                   <div class="product_detail ml-[13px] flex flex-col pt-[10px] text-left">
@@ -66,8 +66,8 @@
                   </div>
                 </div>
 
-                <div class="wish_buy mt-[10px] ml-auto inline-flex flex-shrink-0 flex-col text-right">
-                  <div>
+                <div class="wish_buy mt-[10px] ml-[340px] inline-flex flex-shrink-0 flex-col text-right">
+                  <div class="w-[164px]">
                     <div class="division_btn_box lg mt-0 flex h-[60px] w-[164px] text-left">
                       <a class="btn_division buy relative inline-flex flex-1 items-center rounded-[10px] bg-[#ef6253] text-[#fff]">
                         <strong class="title w-[55px] text-center text-[18px] tracking-[-.27px]">구매</strong>
@@ -81,7 +81,7 @@
                       </a>
                     </div>
 
-                    <a class="status_link mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">삭제</a>
+                    <a class="status_link pl-[30px] mt-[6px] inline-flex px-[3px] text-[12px] tracking-[-.06px] text-[#222222cc]">삭제</a>
                   </div>
                 </div>
                 <!-- wish_product -->

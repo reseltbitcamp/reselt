@@ -57,7 +57,7 @@
 	      <div class="border-t">
 	        <p class="mt-3 text-sm font-semibold inline-block">총 결제 금액</p>
 	        <p class="text-gray-400 inline-block float-right">다음 화면에서 확인 </p>
-	        <button id="straightBuyBtn" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
+	        <button id="buyStraightBtn" class="bg-black w-full  text-white font-semibold h-14 mt-3 rounded-2xl">즉시 구매 계속</button>
 	      </div>
       </div> 
 			
@@ -66,12 +66,12 @@
         <div class="buyBidPriceText mt-5 h-14 border-b-2">
           <p class="buyBidPriceText align-top text-xs font-bold text-black">구매 희망가</p>
           <p class="float-right text-xl font-semibold">원</p>
-          <input type="text" id="buyBidPrice" class="float-right text-right text-xl font-semibold outline-none" placeholder="희망가 입력"/>
-       		<div id="buyBidPriceDiv" class="buyBidPriceText text-red-600 text-xs">30일</div>
+          <input type="text" id="buyBidPrice" class="float-right text-right text-xl font-semibold outline-none mr-1" placeholder="희망가 입력"/>
+       		<div id="buyBidPriceDiv" class="buyBidPriceText text-red-600 text-xs"></div>
         </div>
         
           <p class="mt-3 mb-5 text-sm font-semibold">입찰 마감기한</p>
-          <p id="bidTime" class="text-xs"></p>
+          <p id="bidTime" class="text-xs">30일</p>
           <div class="text-center">
             <button id="dateBtn1" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="1일">1일</button>
             <button id="dateBtn3" class="dateBtn h-10 mb-5 w-[138px] rounded-2xl border border-gray-400" value="3일">3일</button>
@@ -89,7 +89,6 @@
 			</div>
     </div>
 	</div>
-</div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
@@ -152,10 +151,10 @@ $('#buyStraight_bg').click(function(){
 })
 
  
-$('#straightBuyBtn').click(function(){
+$('#buyStraightBtn').click(function(){
 	location.href="./buyLastPage"	  
 })
-$('#bidBuyBtn').click(function(){
+$('#buyBidBtn').click(function(){
 	location.href="./buyLastPage"
 })
 

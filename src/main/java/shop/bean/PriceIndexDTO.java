@@ -1,7 +1,5 @@
 package shop.bean;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -13,3 +11,4 @@ public class PriceIndexDTO {
 	private int price;
 	private String logtime;
 }
+

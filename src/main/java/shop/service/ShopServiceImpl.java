@@ -7,12 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import shop.bean.PriceIndexDTO;
+import shop.bean.ProductInfoDTO;
 import shop.dao.ShopDAO;
 
 @Service
 public class ShopServiceImpl implements ShopService {
-	@Autowired
-	private PriceIndexDTO priceIndexDTO;
 	@Autowired
 	private ShopDAO shopDAO;
 
@@ -21,6 +20,13 @@ public class ShopServiceImpl implements ShopService {
 		List<PriceIndexDTO> listPriceIndex = shopDAO.getPriceIndex(map);
 		
 		return listPriceIndex;
+	}
+
+	@Override
+	public ProductInfoDTO getProductInfo(Map<String, String> map) {
+		ProductInfoDTO ProductInfo = shopDAO.getProductInfo(map);
+		
+		return ProductInfo;
 	}
 
 }

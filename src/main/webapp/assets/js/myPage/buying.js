@@ -27,6 +27,7 @@ $('.btn_layer_close').on('click', function(){
 });
 
 
+
 //페이지 새로고침할 시 데이터 뿌리기
 $(document).ready(function(){
 	

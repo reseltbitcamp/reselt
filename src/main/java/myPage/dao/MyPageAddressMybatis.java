@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import myPage.bean.MyPageAddressDTO;
+import myPage.bean.MyPageProfileDTO;
+
 @Repository
 @Transactional
 public class MyPageAddressMybatis implements MyPageAddressDAO {
@@ -16,8 +19,19 @@ public class MyPageAddressMybatis implements MyPageAddressDAO {
 	
 	@Override
 	public void add_address(Map<String, String> map) {
-		sqlSession.update("myPageSQL.add_address", map);
+		sqlSession.insert("myPageSQL.add_address", map);
 		
+	}
+
+	@Override
+	public MyPageAddressDTO show_address(String email) {
+		return sqlSession.selectOne("myPageSQL.show_address", email);
+		
+	}
+
+	@Override
+	public void delete_address(String email) {
+		sqlSession.update("myPageSQL.delete_address", email);
 	}
 
 }

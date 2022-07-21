@@ -54,6 +54,8 @@
 		update members set tel=#{tel} where email=#{email}
 	</update>
 
-
+	<delete id="withdrawal_user" parameterType="string">
+		delete from members where email = #{email}
+	</delete>
 </mapper>
 
