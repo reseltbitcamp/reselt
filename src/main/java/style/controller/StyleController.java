@@ -2,7 +2,6 @@ package style.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -92,8 +91,7 @@ public class StyleController {
 	
 	@PostMapping(value="getStyleDetails")
 	@ResponseBody
-	public StyleDTO getStyleDetails(@RequestParam String seq) {
-		
+	public Map<String, Object> getStyleDetails(@RequestParam String seq) {
 		return styleService.getStyleDetails(seq);
 	}
 	
@@ -129,14 +127,18 @@ public class StyleController {
 								@RequestParam int seq,
 								@RequestParam MultipartFile img,
 								HttpSession session) {
-		System.out.println(session.getServletContext());
 		//실제폴더
-		String filePath = session.getServletContext().getRealPath("/assets/img/style/styleImage/");
+		String url = this.getClass().getResource("").getPath();
+		String path = url.substring(1, url.indexOf(".metadata"));
+
+		String filePath = path+"reselt/src/main/webapp/assets/img/style/styleImage/";
+		String filePath2 = session.getServletContext().getRealPath("/assets/img/style/styleImage/");
 		String fileName = img.getOriginalFilename();
 		
-		System.out.println(filePath);
+		System.out.println("filePath = "+filePath);
+		System.out.println("filePath2 = "+filePath2);
 		File file = new File(filePath, fileName);
-		
+		File file2 = new File(filePath2, fileName);
 		try {
 			img.transferTo(file);
 		} catch (IOException e) {
@@ -146,5 +148,20 @@ public class StyleController {
 		styleDTO.setStyle_image(fileName);
 		
 	    styleService.styleUpdate(styleDTO);
+	}
+	
+	@PostMapping(value="styleReplyWrite")
+	@ResponseBody
+	public Map<String, Object> styleReplyWrite(@RequestParam Map<String, String> map) {
+		System.out.println(map);
+		return styleService.styleReplyWrite(map); //원글
+	}
+	
+	@PostMapping(value="styleReplyDelete")
+	@ResponseBody
+	public void styleReplyDelete(@RequestParam int style_seq){
+		System.out.println("styleReplyDelete seq = "+style_seq);
+		styleService.styleReplyDelete(style_seq);
+		
 	}
 }

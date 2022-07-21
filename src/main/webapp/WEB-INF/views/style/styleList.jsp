@@ -65,7 +65,7 @@ function MadeBox(){
 		success: function(data){
 			$.each(data.list, function(index, items){
 				
-				$('<div class="shrink-0 basic-1/8 w-[250px] h-[480px] mx-auto"><div id="styleImage" class="h-[300px] rounded-xl overflow-hidden cursor-pointer" onclick="getStyleDetails('+items.seq+')"><img src="/ReseltProject/styleImage/'
+				$('<div class="shrink-0 basic-1/8 w-[250px] mx-auto"><div id="styleImage" class="rounded-xl overflow-hidden cursor-pointer" onclick="getStyleDetails('+items.seq+')"><img src="/ReseltProject/styleImage/'
 						+items.style_image+'" alt="'
 						+items.member_id+'님 게시글"></div><div id="cardDetail" class="h-[146px] px-1"><div id="userBox" class="h-[37px] py-2 cursor-pointer" onclick="getStyleDetails('+items.seq+')"><div id="userImage" class="bg-slate-200 rounded-full w-[20px] h-[20px] float-left overflow-hidden"><img src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진"></div><div id="userName" class="inline float-left text-xs px-1">'
 						+items.member_id+'</div></div><p id="textBox" class="leading-normal text-xs cursor-pointer" onclick="getStyleDetails('+items.seq+')">'
@@ -75,7 +75,7 @@ function MadeBox(){
 						+items.product_id+'</p><span id="amount" class="text-xs">159,000</span><span id="unit" class="text-xs">원</span></div></div></div>' )
 				.appendTo($('#styleContent'));
 			});//each
-			
+			paging();
 			YesScroll();
 		},
 		error: function(err){
@@ -84,7 +84,12 @@ function MadeBox(){
 	});
 
 }
-	
+
+function paging(){
+	const page = document.getElementById("pg");
+	console.log("page value = "+page.value);
+	page.value++;
+}
 
 function getStyleDetails(seq){
 	location.href = '/ReseltProject/style/styleDetails?seq='+seq;	
@@ -93,4 +98,6 @@ function getStyleDetails(seq){
 function shopDetail(){
 	location.href = '/ReseltProject/shop/shopDetail';	
 }
+
+
 </script>
