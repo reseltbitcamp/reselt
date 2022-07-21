@@ -495,9 +495,6 @@
   </div>
   <!-- Flowbite Script-->
   <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
-  <!-- TailwindCSS configuration -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/ReseltProject/js/tailwind.config.js"></script>
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- jQuery -->

@@ -15,7 +15,7 @@
 	</select>
 	
 	<select id="getProductDTO" parameterType="int" resultType="productDTO">
-		SELECT product.pid, product_name_kor, product_name_eng, product_id,
+		SELECT product.pid AS pid, product_name_kor, product_name_eng, product_id,
 	   		   category_id, gender_id, brand.brand_name AS brand_name,
 	   		   released_price, created_at, product_likes, product_bookmark,
 	   		   GROUP_CONCAT(product_img.img_file) AS img_file

@@ -9,6 +9,7 @@ import lombok.Data;
 @Component
 @Data
 public class ProductDTO {
+	private int pid;
 	private String product_name_kor;
 	private String product_name_eng;
 	private String product_id;

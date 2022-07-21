@@ -32,6 +32,28 @@ $(document).ready(function(){
         return document.getElementById(key).innerText = value;
       }
       
+      // 이미지 인젝션
+      function carouselImgHTML(img) {
+        const imgPath = 'http://3.39.241.175:6753/upload/resources/img/product'
+        let tagImg = document.createElement('img');
+        let tagDiv = document.createElement('div');
+        tagImg.setAttribute('src', `${imgPath}/${data.pid}/${img}`);
+        tagImg.setAttribute('class', 'block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2');
+        tagDiv.setAttribute('class', 'hidden duration-700 ease-in-out');
+        if (img.split('-')[1].includes('1')) {
+          tagDiv.setAttribute('data-carousel-item', 'active');
+        } else {
+          tagDiv.setAttribute('data-carousel-item', '');
+        }
+        return tagDiv.append(tagImg);
+      }
+
+      const imgFiles = data.img_file.split(',');
+      for (const insertImg of imgFiles) {
+        const carousel_wrapper = document.getElementById('carousel_wrapper');
+        carousel_wrapper.append(carouselImgHTML(insertImg));
+      }
+
       // DB테이터 인젝션
       const injectionTarget = [
         {'product_name_kor':data.product_name_kor}, {'product_name_eng':data.product_name_eng},
