@@ -28,10 +28,11 @@ $(document).ready(function(){
 		url: "/ReseltProject/shop/getProductDTO",
 		data: {"pid": pid},
 		success: function(data){
-      function docTarget(key, value) {
+      function docInjection(key, value) {
         return document.getElementById(key).innerText = value;
       }
       
+      // DB테이터 인젝션
       const injectionTarget = [
         {'product_name_kor':data.product_name_kor}, {'product_name_eng':data.product_name_eng},
         {'product_id':data.product_id}, {'brand_name':data.brand_name},
@@ -40,10 +41,14 @@ $(document).ready(function(){
 
       for (const target of injectionTarget) {
         for (const key in target) {
-          console.log(key, target[key]);
-          docTarget(key, target[key]);
+          target[key] = target[key] === 0 ? '-' : target[key];
+          docInjection(key, target[key]);
         }
       }
+
+      // 카테고리별 사이즈 표시
+      const sizeIndicator = data.category_id <= 62 ? '모든 사이즈' : 'ONE SIZE';
+      docInjection('sizeIndicator', sizeIndicator);
 		},
 		error: function(e){
 	      console.log(e);

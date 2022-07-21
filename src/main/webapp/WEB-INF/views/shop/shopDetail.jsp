@@ -8,7 +8,7 @@
     <div class="sticky top-10 left-28 right-0 float-left w-1/3 h-1/3 pt-20 md:sticky content-center">
       <div id="controls-carousel" class="relative" data-carousel="static">
         <!-- Carousel wrapper -->
-        <div class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+        <div id="carousel_wrapper" class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
           <!-- Item 1 -->
           <div class="hidden duration-700 ease-in-out" data-carousel-item>
             <img src="/ReseltProject/img/shopdetail/jordan1.jpg"
@@ -55,14 +55,14 @@
     <!-- right page -->
     <div class="md:w-6/12 ml-auto pl-10 border-l-2 border-gray-200 content-center">
       <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
-        <div class="max-w-md">
+        <div class="max-w">
           <p class="text-lg font-black underline" id="brand_name"></p>
-          <p id="product_name_eng"></p>
+          <p id="product_name_eng" class="text-lg"></p>
           <p class="mb-2 text-sm text-gray-400" id="product_name_kor"></p>
         </div>
         <div class="border-b border-gray-300 flex-initial">
           <p class="mb-3 inline-block text-xs">사이즈</p>
-          <a class="float-right cursor-pointer font-semibold">모든사이즈</a>
+          <a id="sizeIndicator" class="float-right cursor-pointer font-semibold"></a>
           <button></button>
         </div>
         
