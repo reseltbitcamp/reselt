@@ -14,15 +14,14 @@
 		]]>
 	</select>
 	
-	<select id="getProductInfo" parameterType="java.util.Map" resultType="productInfo">
+	<select id="getProductList" parameterType="java.util.Map" resultType="productInfo">
 	
-		SELECT 
-		product.*, brand.brand_firstname
+		SELECT product.*, brand.brand_name
         FROM product 
         LEFT JOIN brand
         ON 
         product.brand_id = brand.brand_id
-        WHERE product_id = '2EV176-9C9';
+        order by pid asc limit #{startNum}, #{endNum};
 	
 	</select>
 
