@@ -1,10 +1,5 @@
 //Product details pre-requisites
-const product_name_kor = document.getElementById('product_name_kor').innerText;
-const product_name_eng = document.getElementById('product_name_eng').innerText;
-const created_at = document.getElementById('created_at').innerText;
-const released_price = document.getElementById('released_price').innerText;
-const brand_firstname = document.getElementById('brand_firstname').innerText;
-
+const pid = document.getElementById("pid").value;
 const create_atStr = function(timestamp) {   //Created_at 날짜 변환
   const date = new Date(timestamp);
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
@@ -31,22 +26,24 @@ $(document).ready(function(){
   $.ajax({
 		type: "post",
 		url: "/ReseltProject/shop/getProductDTO",
-		data: {"product_name_kor":product_name_kor, 
-			   "product_name_eng":product_name_eng, 
-			   "created_at":created_at, 
-			   "product_id":product_id, 
-			   "released_price":released_price,
-			   "brand_firstname":brand_firstname
-				},
-				
+		data: {"pid": pid},
 		success: function(data){
-			alert(JSON.stringify(data));
-			document.getElementById("product_name_kor").innerText = data.product_name_kor;
-			document.getElementById("product_name_eng").innerText = data.product_name_eng;
-      document.getElementById("created_at").innerText = create_atStr(data.created_at);
-			document.getElementById("released_price").innerText = data.released_price.toLocaleString('ko-KR');
-			document.getElementById("product_id").innerText = data.product_id;
-			document.getElementById("brand_firstname").innerText = data.brand_firstname;
+      function docTarget(key, value) {
+        return document.getElementById(key).innerText = value;
+      }
+      
+      const injectionTarget = [
+        {'product_name_kor':data.product_name_kor}, {'product_name_eng':data.product_name_eng},
+        {'product_id':data.product_id}, {'brand_name':data.brand_name},
+        {'released_price':data.released_price}, {'created_at':data.created_at}
+      ]
+
+      for (const target of injectionTarget) {
+        for (const key in target) {
+          console.log(key, target[key]);
+          docTarget(key, target[key]);
+        }
+      }
 		},
 		error: function(e){
 	      console.log(e);
@@ -57,7 +54,7 @@ $(document).ready(function(){
   $.ajax({
     type: "post",
     url: "/ReseltProject/shop/getPriceIndex",
-    data: {"product_id": product_id, "today": todaySQL, "condition": "weekly"},
+    data: {"pid": pid, "today": todaySQL, "condition": "weekly"},
     success: function (response) {
       let labelsArray = [];
       let dataArray = [];

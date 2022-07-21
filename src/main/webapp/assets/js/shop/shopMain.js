@@ -26,7 +26,7 @@ const product_bookmark = document.getElementById('product_bookmark').innerText;
 $(document).ready(function(){
 	$.ajax({
 		type: "post",
-		url: "/ReseltProject/shop/getProductInfo",
+		url: "/ReseltProject/shop/getProductDTO",
 		data: {"product_name_kor":product_name_kor, 
 			   "product_name_eng":product_name_eng, 
 			   "released_price":released_price,

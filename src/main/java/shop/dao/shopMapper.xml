@@ -14,16 +14,16 @@
 		]]>
 	</select>
 	
-	<select id="getProductInfo" parameterType="java.util.Map" resultType="productInfo">
-	
-		SELECT 
-		product.*, brand.brand_firstname
-        FROM product 
-        LEFT JOIN brand
-        ON 
-        product.brand_id = brand.brand_id
-        WHERE product_id = '2EV176-9C9';
-	
+	<select id="getProductDTO" parameterType="int" resultType="productDTO">
+		SELECT product.pid, product_name_kor, product_name_eng, product_id,
+	   		   category_id, gender_id, brand.brand_name AS brand_name,
+	   		   released_price, created_at, product_likes, product_bookmark,
+	   		   GROUP_CONCAT(product_img.img_file) AS img_file
+		FROM product
+			INNER JOIN product_img ON product.pid = product_img.pid_number
+			INNER JOIN brand ON product.brand_id = brand.brand_id
+		WHERE product.pid = #{pid}
+		GROUP BY product.pid;
 	</select>
 
 </mapper>

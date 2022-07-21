@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<input type="hidden" id="pid" value='${pid}'>
+<!-- shopDetail.jsp -->
 <div class="pt-10">
   <div class="relative">
     <!-- left page -->
@@ -54,7 +56,7 @@
     <div class="md:w-6/12 ml-auto pl-10 border-l-2 border-gray-200 content-center">
       <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
         <div class="max-w-md">
-          <p class="text-lg font-black underline" id="brand_firstname">Nike</p>
+          <p class="text-lg font-black underline" id="brand_name"></p>
           <p id="product_name_eng"></p>
           <p class="mb-2 text-sm text-gray-400" id="product_name_kor"></p>
         </div>
@@ -66,9 +68,9 @@
         
         <div class="mt-3 flex-initial">
           <p class="mb-3 text-xs">최근거래가
-            <span class="float-right text-xl font-semibold">150,000원
+            <span id="latest_price" class="float-right text-xl font-semibold">150,000원</span>
           </p>
-          <p class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
+          <p id="latest_price_diff" class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
         </div>
         <div class="flex flex-row gap-3 rounded-3xl p-1 text-center mt-9 flex-initial">
           <a id="buyBtn" href="#" class="w-80 rounded-xl p-2 bg-[#ef6153]  align-middle text-sm">
@@ -279,15 +281,15 @@
             <dl class="flex py-5 min-h-[20px]">
               <div class="flex-1 border-r pr-3">
                 <dt class="text-xs  border-gray-300" >모델번호</dt>
-                <dd id="product_id" class="text-sm font-semibold" id="product_id">DD1391-100</dd>
+                <dd id="product_id" class="text-sm font-semibold" id="product_id"></dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs">출시일</dt>
-                <dd class="text-sm" id="created_at">21/01/14</dd>
+                <dd class="text-sm" id="created_at"></dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">컬러</dt>
-                <dd class="text-sm ">WHITE/BLCK</dd>
+                <dd id="color" class="text-sm">WHITE/BLCK</dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">발매가</dt>

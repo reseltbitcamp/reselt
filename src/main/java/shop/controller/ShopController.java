@@ -49,16 +49,24 @@ public class ShopController {
 	}
 	
 	@GetMapping(value = "/shopDetail")
-	public ModelAndView shopDetail(@RequestParam String pid_number) {
+	public ModelAndView shopDetail(@RequestParam String pid) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/shopDetail.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
 		mav.setViewName("/index");
 		
 		return mav;
 	}
+	
+	@PostMapping(value = "getProductDTO")
+	@ResponseBody
+	public ProductDTO getProductDTO(@RequestParam String pid){
+		return shopService.getProductDTO(pid);
+	}
+	
 	@RequestMapping(value = "/buySize", method = RequestMethod.GET)
 	public ModelAndView buySize() {
 		ModelAndView mav = new ModelAndView();
@@ -221,12 +229,6 @@ public class ShopController {
 		mav.setViewName("/index");
 		
 		return mav;
-	}
-	
-	@PostMapping(value = "getProductDTO")
-	@ResponseBody
-	public ProductDTO getProductInfo(@RequestParam Map<String, String> map){
-		return shopService.getProductDTO(map);
 	}
 	
 	@PostMapping(value = "getSession")

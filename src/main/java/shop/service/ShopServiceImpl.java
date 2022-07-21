@@ -23,8 +23,8 @@ public class ShopServiceImpl implements ShopService {
 	}
 
 	@Override
-	public ProductDTO getProductDTO(Map<String, String> map) {
-		ProductDTO ProductDTO = shopDAO.getProductInfo(map);
+	public ProductDTO getProductDTO(String pid) {
+		ProductDTO ProductDTO = shopDAO.getProductDTO(Integer.parseInt(pid));
 		return ProductDTO;
 	}
 
