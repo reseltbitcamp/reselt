@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import shop.bean.PriceIndexDTO;
-import shop.bean.ProductInfoDTO;
+import shop.bean.ProductDTO;
 
 @Repository
 @Transactional
@@ -23,7 +23,7 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
-	public ProductInfoDTO getProductInfo(Map<String, String> map) {
+	public ProductDTO getProductInfo(Map<String, String> map) {
 		return sqlsession.selectOne("shopSQL.getProductInfo", map);
 	}
 

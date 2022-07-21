@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.bean.PriceIndexDTO;
-import shop.bean.ProductInfoDTO;
+import shop.bean.ProductDTO;
 import shop.service.ShopService;
 
 import com.inicis.std.util.HttpUtil;
@@ -47,8 +48,8 @@ public class ShopController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
-	public ModelAndView shopDetail() {
+	@GetMapping(value = "/shopDetail")
+	public ModelAndView shopDetail(@RequestParam String pid_number) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
@@ -222,10 +223,10 @@ public class ShopController {
 		return mav;
 	}
 	
-	@PostMapping(value = "getProductInfo")
+	@PostMapping(value = "getProductDTO")
 	@ResponseBody
-	public ProductInfoDTO getProductInfo(@RequestParam Map<String, String> map){
-		return shopService.getProductInfo(map);
+	public ProductDTO getProductInfo(@RequestParam Map<String, String> map){
+		return shopService.getProductDTO(map);
 	}
 	
 	@PostMapping(value = "getSession")

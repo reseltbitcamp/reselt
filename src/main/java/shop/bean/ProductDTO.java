@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Component
 @Data
-public class ProductInfoDTO {
+public class ProductDTO {
 	private String product_name_kor;
 	private String product_name_eng;
 	private String product_id;
@@ -22,6 +22,4 @@ public class ProductInfoDTO {
 	private int product_likes;
 	private int product_bookmark;
 	private Date created_at;
-	
-
 }

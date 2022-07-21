@@ -30,7 +30,7 @@ $(document).ready(function(){
   //product details
   $.ajax({
 		type: "post",
-		url: "/ReseltProject/shop/getProductInfo",
+		url: "/ReseltProject/shop/getProductDTO",
 		data: {"product_name_kor":product_name_kor, 
 			   "product_name_eng":product_name_eng, 
 			   "created_at":created_at, 

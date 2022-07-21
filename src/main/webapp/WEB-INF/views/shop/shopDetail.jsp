@@ -55,11 +55,11 @@
       <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
         <div class="max-w-md">
           <p class="text-lg font-black underline" id="brand_firstname">Nike</p>
-          <p id="product_name_eng">Nike Dunk Low Retro Black</p>
-          <p class="mb-2 text-sm text-gray-400" id="product_name_kor">나이키 덩크 로우 레트로 블랙</p>
+          <p id="product_name_eng"></p>
+          <p class="mb-2 text-sm text-gray-400" id="product_name_kor"></p>
         </div>
         <div class="border-b border-gray-300 flex-initial">
-          <p class="mb-3 inline-block text-xs" >사이즈</p>
+          <p class="mb-3 inline-block text-xs">사이즈</p>
           <a class="float-right cursor-pointer font-semibold">모든사이즈</a>
           <button></button>
         </div>
