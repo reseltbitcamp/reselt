@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import style.bean.ReplyDTO;
 import style.bean.StyleDTO;
 
 @Repository
@@ -39,5 +40,32 @@ public class StyleDAOMyBatis implements StyleDAO {
 	@Override
 	public void styleUpdate(StyleDTO styleDTO) {
 		sqlSession.update("styleSQL.styleUpdate", styleDTO);
+	}
+
+	@Override
+	public void styleReplyWrite(Map<String, String> map) {
+		sqlSession.insert("styleSQL.styleReplyWrite", map);
+		
+	}
+
+	@Override
+	public List<ReplyDTO> getStyleReply(int pseq) {
+		return sqlSession.selectList("styleSQL.getStyleReply", pseq);
+	}
+
+	@Override
+	public int getReplyTotal(int pseq) {
+		return sqlSession.selectOne("styleSQL.getReplyTotal", pseq);
+	}
+
+	@Override
+	public ReplyDTO getNowReply() {
+		return sqlSession.selectOne("styleSQL.getNowReply");
+	}
+
+	@Override
+	public void styleReplyDelete(int style_seq) {
+		sqlSession.delete("styleSQL.styleReplyDelete", style_seq);
+		
 	}
 }

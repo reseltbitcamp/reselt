@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
+import style.bean.StyleDTO;
 
 @Repository
 @Transactional
@@ -25,6 +26,11 @@ public class ShopDAOMybatis implements ShopDAO {
 	@Override
 	public ProductDTO getProductDTO(int pid) {
 		return sqlsession.selectOne("shopSQL.getProductDTO", pid);
+	}
+
+	@Override
+	public List<StyleDTO> getProductList(Map<String, Integer> map) {
+		return sqlsession.selectList("shopSQL.getProductList", map);
 	}
 
 }

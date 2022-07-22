@@ -2,17 +2,11 @@ package shop.controller;
 
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Enumeration;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +19,6 @@ import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
 import shop.service.ShopService;
 
-import com.inicis.std.util.HttpUtil;
-import com.inicis.std.util.ParseUtil;
-import com.inicis.std.util.SignatureUtil;
-
 @Controller
 @RequestMapping("shop")
 public class ShopController {
@@ -36,9 +26,10 @@ public class ShopController {
 	private ShopService shopService;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public ModelAndView shop() {
+	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("pg", pg);
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("display", "/WEB-INF/views/shop/shopindex.jsp");
 		mav.addObject("shopmain", "/WEB-INF/views/shop/main/shopmain.jsp");
@@ -237,6 +228,12 @@ public class ShopController {
 	String email = (String) session.getAttribute("email");
 	System.out.println(email);
 	return email;
+	}
+	
+	@PostMapping(value="getProductList")
+	@ResponseBody
+	public Map<String, Object> getImageboardList(@RequestParam String pg){
+		return shopService.getProductList(pg);
 	}
 	
 }

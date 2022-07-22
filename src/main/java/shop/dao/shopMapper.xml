@@ -25,5 +25,14 @@
 		WHERE product.pid = #{pid}
 		GROUP BY product.pid;
 	</select>
+	
+	<select id="getProductList" parameterType="java.util.Map" resultType="productInfo">
+		SELECT product.*, brand.brand_name
+        FROM product 
+        LEFT JOIN brand
+        ON 
+        product.brand_id = brand.brand_id
+        order by pid asc limit #{startNum}, #{endNum};
+	</select>
 
 </mapper>

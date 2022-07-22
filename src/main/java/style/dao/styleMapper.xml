@@ -32,4 +32,31 @@
 	<update id="styleUpdate" parameterType="style">
 		update styles set style_image=#{style_image}, product_id=#{product_id}, content=#{content} where seq=#{seq}
 	</update>
+	
+	<insert id="styleReplyWrite" parameterType="java.util.Map">
+		insert into comment values(#{pseq}
+									, style_seq
+									, 103
+									, #{comment_reply}
+									, NOW())
+	</insert>
+	
+	<!-- 댓글 받아오기 -->
+	<select id="getStyleReply" parameterType="int" resultType="reply">
+	  		select * from comment where pseq=#{pseq} order by style_seq desc
+	</select>
+	
+	<!-- 댓글 총개수 -->
+	<select id="getReplyTotal" parameterType="int" resultType="int">
+		select count(*) from comment where pseq=#{pseq}
+	</select>
+	
+	<select id="getNowReply" resultType="reply">
+		select * from comment order by style_seq desc limit 1;
+	</select>
+	
+	<delete id="styleReplyDelete" parameterType="int">
+		delete from comment where style_seq = #{style_seq}
+	</delete>
+
 </mapper>

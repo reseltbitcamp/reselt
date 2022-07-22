@@ -4,7 +4,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
 <div id="indicators-carousel" class="relative" data-carousel="slide">
   <!-- Carousel wrapper -->
   <div class="overflow-hidden relative h-[100px]">
@@ -436,45 +435,22 @@
   </div>
 
   <!-- product img / details tagged you to product datail pg...-->
-  <div id="productlist" class="basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
-    <!-- modal login -->
-    <div>
-      <button type="button" >
-        <a href="/ReseltProject/shop/shopDetail">
-          <div class="bg-[#ebf0f4] w-60 h-60 rounded-xl">
-            <img class="w-full object-contain min-h-0 h-full" src="">
-          </div>
-          <p class="text-left text-[16px] font-bold font-notoSans" id="brand_firstname">&nbsp;Nike</p>
-          <p class="text-left text-[14px]" id="product_name_eng">&nbsp;Nike Dunk Low Retro Black</p>
-          <p class="text-left text-[13px] text-slate-400" id="product_name_kor" >&nbsp;나이키 에어포스 1 '07 로우 화이트</p>
-          <br>
-          <p class="text-left text-[16px] font-bold font-notoSans" id="released_price">&nbsp;129,000원</p>
-          <p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p>
-        </a>
-      </button>
-      <!-- mini svg link -->
-      <a href="#">
-        <div class="h-6 w-24 grid grid-cols-4 content-start">
-          <button id="bookmark" class="w-1 h-1 py-1"  data-modal-toggle="popup-modal">
-            <svg id="bookmarkColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25"> 
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-            </svg>
-          </button>
-     </a>
-      <p class="text-[12px] px-0 py-2" id="product_bookmark">0</p>
-      <a href="/ReseltProject/style/styleList">
-        <button id="smile" class="w-1 h-1 py-1">
-          <svg id="smileColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25" href="ReseltProject/">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </button>
-       </a>
-      <p class="text-[12px] px-0 py-2" id="product_likes">0</p>
-  	</div>
+    <!-- product content -->
+    <div class="pagination"></div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
+    <script type="text/javascript">
+    $(function(){
+      ProductList();
+    });
+    </script>
+    
+  <div id="productList" class="basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
+    
+  </div>
 
-  </a>
-
-</div>
+</script>
+<!-- product img / details tagged you to product datail pg...END-->
 </div>
 
 <!-- Main modal -->
@@ -495,10 +471,10 @@
                 <h3 class="mb-5 font-bold text-sm text-gray-700 dark:text-gray-700">관심 상품 추가</h3>
               </div>
               <!-- modal detail -->
-              <div>
+              <div id="elem1">
                 <div class="productDetail text-center pb-3">
                   <img class="w-16 h-16" style="display: -webkit-inline-box"
-                    src="https://kream-phinf.pstatic.net/MjAyMDEwMjJfOCAg/MDAxNjAzMzQwOTUzNzMx.nCU7Bumo43r7JZcTRjq4blFOcj33dPIxNYW-_94RtWgg.rJwsoEL3W-f7pgpwfYISb-0HBItIWL04h7p8Ixyp8CUg.PNG/p_4cedd884b4a3427ca616bc31b3bf2867.png">
+                    src="http://3.39.241.175:6753/upload/resources/img/product/%7B25632%7D/%7Bimg_file%7D">
                   <p class="text-xs font-bold">Jordan 1 Retro High OG Black Mocha</p>
                   <p class="text-xs font-light">조던 1 레트로 하이 OG 블랙 모카</p>
                 </div>
@@ -650,6 +626,9 @@
             </div>
           </div>
         </div>
+        <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
+      
+
 
 <!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -673,7 +652,7 @@ ids.forEach(id=>{
   })
 })
 
-<!-- svg script-->
+// <!-- svg script-->
 const btn = document.getElementById('bookmark')
 const bookmarkColor = document.getElementById('bookmarkColor')
 
@@ -698,17 +677,6 @@ btn1.addEventListener('click', function(){
 	}
 })
 
-const btn2 = document.getElementById('fire')
-const fireColor = document.getElementById('fireColor')
-
-btn2.addEventListener('click', function(){
-	if (fireColor.style.fill === 'none'){
-	fireColor.style.fill = '#ff0000'
-	}
-	else {
-	fireColor.style.fill = 'none';	
-	}
-})
 
 
 </script>
