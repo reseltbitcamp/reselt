@@ -31,29 +31,34 @@ $(document).ready(function(){
       function docInjection(key, value) {
         return document.getElementById(key).innerText = value;
       }
-      
+
       // 이미지 인젝션
-      function carouselImgHTML(img) {
+      function carouselImgHTML(img, cnt) {
         const imgPath = 'http://3.39.241.175:6753/upload/resources/img/product'
         let tagImg = document.createElement('img');
         let tagDiv = document.createElement('div');
         tagImg.setAttribute('src', `${imgPath}/${data.pid}/${img}`);
-        tagImg.setAttribute('class', 'block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2');
-        tagDiv.setAttribute('class', 'hidden duration-700 ease-in-out');
+        tagImg.setAttribute('class', 'block absolute top-1/2 left-1/2 w-full object-contain object-center object-cover -translate-x-1/2 -translate-y-1/2');
+        tagDiv.setAttribute('id', `carousel-item-${cnt}`);
         if (img.split('-')[1].includes('1')) {
-          tagDiv.setAttribute('data-carousel-item', 'active');
+          tagDiv.setAttribute('class', 'duration-700 ease-in-out');
         } else {
-          tagDiv.setAttribute('data-carousel-item', '');
+          tagDiv.setAttribute('class', 'hidden duration-700 ease-in-out');
         }
-        return tagDiv.append(tagImg);
+        tagDiv.append(tagImg);
+        const finalHTML = tagDiv;
+        return finalHTML;
       }
 
       const imgFiles = data.img_file.split(',');
+      const imageGallery = document.getElementById('imageGallery');
+      let cnt = 0;
       for (const insertImg of imgFiles) {
-        const carousel_wrapper = document.getElementById('carousel_wrapper');
-        carousel_wrapper.append(carouselImgHTML(insertImg));
+        console.log(carouselImgHTML(insertImg));
+        imageGallery.append(carouselImgHTML(insertImg, cnt));
+        cnt += 1;
       }
-
+      
       // DB테이터 인젝션
       const injectionTarget = [
         {'product_name_kor':data.product_name_kor}, {'product_name_eng':data.product_name_eng},
@@ -71,6 +76,8 @@ $(document).ready(function(){
       // 카테고리별 사이즈 표시
       const sizeIndicator = data.category_id <= 62 ? '모든 사이즈' : 'ONE SIZE';
       docInjection('sizeIndicator', sizeIndicator);
+      
+      
 		},
 		error: function(e){
 	      console.log(e);

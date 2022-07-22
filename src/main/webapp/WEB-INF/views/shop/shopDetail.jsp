@@ -5,56 +5,37 @@
 <div class="pt-10">
   <div class="relative">
     <!-- left page -->
-    <div class="sticky top-10 left-28 right-0 float-left w-1/3 h-1/3 pt-20 md:sticky content-center">
-      <div id="controls-carousel" class="relative" data-carousel="static">
-        <!-- Carousel wrapper -->
-        <div id="carousel_wrapper" class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-          <!-- Item 1 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/ReseltProject/img/shopdetail/jordan1.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-          </div>
-          <!-- Item 2 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="/ReseltProject/img/shopdetail/jordan2.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-          </div>
-          <!-- Item 4 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/ReseltProject/img/shopdetail/jordan4.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-          </div>
-        </div>
-        <!-- Slider controls -->
-        <button type="button"
-          class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-          data-carousel-prev>
-          <span
-            class="inline-flex justify-center items-center group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-6 h-6 text-white dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            <span class="hidden">Previous</span>
-          </span>
-        </button>
-        <button type="button"
-          class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-          data-carousel-next>
-          <span
-            class="inline-flex justify-center items-center group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-6 h-6 text-white dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-            <span class="hidden">Next</span>
-          </span>
-        </button>
+    <div class="top-1/4 left-28 right-0 float-left w-1/3 h-1/3 md:sticky content-center">
+      <!-- Image Gallery -->
+      <div id="imageGallery" class="relative h-[500px] rounded-lg bg-[#f5f5f5]">
       </div>
+      <!-- Slider controls -->
+      <button type="button"
+        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+        <span
+          class="inline-flex justify-center items-center group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-6 h-6 text-white dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span class="hidden">Previous</span>
+        </span>
+      </button>
+      <button type="button"
+        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+        <span
+          class="inline-flex justify-center items-center group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-6 h-6 text-white dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="hidden">Next</span>
+        </span>
+      </button>
     </div>
     <!-- right page -->
     <div class="md:w-6/12 ml-auto pl-10 border-l-2 border-gray-200 content-center">
-      <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
+      <div class="basis-1/2 max-w-[600px] flex-initial mb-20">
         <div class="max-w">
           <p class="text-lg font-black underline" id="brand_name"></p>
           <p id="product_name_eng" class="text-lg"></p>
@@ -493,15 +474,9 @@
   <div id="lower" class="h-56">
 
   </div>
-  <!-- Flowbite Script-->
-  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- jQuery -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="/ReseltProject/js/shop/shopDetail.js"></script>
-  
-  <script>
-  </script>
-
   
