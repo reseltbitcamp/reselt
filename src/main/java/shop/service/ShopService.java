@@ -10,4 +10,6 @@ public interface ShopService {
 	public List<PriceIndexDTO> getPriceIndex(Map<String, String> map);
 
 	public ProductInfoDTO getProductInfo(Map<String, String> map);
+
+	public Map<String, Object> getProductList(String pg);
 }
