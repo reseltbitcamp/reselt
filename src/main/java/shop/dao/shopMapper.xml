@@ -20,7 +20,7 @@
 	   		   released_price, created_at, product_likes, product_bookmark,
 	   		   GROUP_CONCAT(product_img.img_file) AS img_file
 		FROM product
-			INNER JOIN product_img ON product.pid = product_img.pid_number
+			INNER JOIN product_img ON product.pid = product_img.pid
 			INNER JOIN brand ON product.brand_id = brand.brand_id
 		WHERE product.pid = #{pid}
 		GROUP BY product.pid;
