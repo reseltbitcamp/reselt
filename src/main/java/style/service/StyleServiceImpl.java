@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import style.bean.ReplyDTO;
 import style.bean.StyleDTO;
 import style.dao.StyleDAO;
 
@@ -39,9 +40,19 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	@Override
-	public StyleDTO getStyleDetails(String seq) {
+	public Map<String, Object> getStyleDetails(String seq) {
+		Map<String, Object> map = new HashMap<String, Object>();
 		StyleDTO styleDTO = styleDAO.getStyleDetails(seq);
-		return styleDTO;
+		map.put("styleDTO", styleDTO);
+		
+		int pseq = Integer.parseInt(seq);
+		
+		List<ReplyDTO> list = styleDAO.getStyleReply(pseq);
+		map.put("list", list);
+		
+		int count = styleDAO.getReplyTotal(pseq); 
+		map.put("count", count);
+		return map;
 	}
 
 	@Override
@@ -52,5 +63,24 @@ public class StyleServiceImpl implements StyleService {
 	@Override
 	public void styleUpdate(StyleDTO styleDTO) {
 		styleDAO.styleUpdate(styleDTO);
+	}
+
+	@Override
+	public Map<String, Object> styleReplyWrite(Map<String, String> map) {
+		Map<String, Object> sendMap = new HashMap<String, Object>();
+		
+		styleDAO.styleReplyWrite(map);
+		ReplyDTO replyDTO = styleDAO.getNowReply();
+		sendMap.put("replyDTO", replyDTO);
+		
+		int count = styleDAO.getReplyTotal(Integer.parseInt(map.get("pseq"))); 
+		sendMap.put("count", count);
+		return sendMap;
+	}
+
+	@Override
+	public void styleReplyDelete(int style_seq) {
+		styleDAO.styleReplyDelete(style_seq);
+		
 	}
 }
