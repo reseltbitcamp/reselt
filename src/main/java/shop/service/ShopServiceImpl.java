@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import shop.bean.PriceIndexDTO;
-import shop.bean.ProductInfoDTO;
+import shop.bean.ProductDTO;
 import shop.dao.ShopDAO;
 import style.bean.StyleDTO;
 
@@ -25,10 +25,9 @@ public class ShopServiceImpl implements ShopService {
 	}
 
 	@Override
-	public ProductInfoDTO getProductInfo(Map<String, String> map) {
-		ProductInfoDTO ProductInfo = shopDAO.getProductInfo(map);
-		
-		return ProductInfo;
+	public ProductDTO getProductDTO(String pid) {
+		ProductDTO ProductDTO = shopDAO.getProductDTO(Integer.parseInt(pid));
+		return ProductDTO;
 	}
 
 	@Override

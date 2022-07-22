@@ -1,74 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<input type="hidden" id="pid" value='${pid}'>
+<!-- shopDetail.jsp -->
 <div class="pt-10">
   <div class="relative">
     <!-- left page -->
-    <div class="sticky top-10 left-28 right-0 float-left w-1/3 h-1/3 pt-20 md:sticky content-center">
-      <div id="controls-carousel" class="relative" data-carousel="static">
-        <!-- Carousel wrapper -->
-        <div class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-          <!-- Item 1 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/ReseltProject/img/shopdetail/jordan1.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-          </div>
-          <!-- Item 2 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-            <img src="/ReseltProject/img/shopdetail/jordan2.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-          </div>
-          <!-- Item 4 -->
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/ReseltProject/img/shopdetail/jordan4.jpg"
-              class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
-          </div>
-        </div>
-        <!-- Slider controls -->
-        <button type="button"
-          class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-          data-carousel-prev>
-          <span
-            class="inline-flex justify-center items-center group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-6 h-6 text-white dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            <span class="hidden">Previous</span>
-          </span>
-        </button>
-        <button type="button"
-          class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-          data-carousel-next>
-          <span
-            class="inline-flex justify-center items-center group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-6 h-6 text-white dark:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-            <span class="hidden">Next</span>
-          </span>
-        </button>
+    <div class="top-1/4 left-28 right-0 float-left w-1/3 h-1/3 md:sticky content-center">
+      <!-- Image Gallery -->
+      <div id="imageGallery" class="relative h-[500px] rounded-lg bg-[#f5f5f5]">
       </div>
+      <!-- Slider controls -->
+      <button type="button"
+        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+        <span
+          class="inline-flex justify-center items-center group-focus:ring-white group-focus:outline-none">
+          <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          <span class="hidden">Previous</span>
+        </span>
+      </button>
+      <button type="button"
+        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+        <span
+          class="inline-flex justify-center items-center group-focus:ring-white group-focus:outline-none">
+          <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+          <span class="hidden">Next</span>
+        </span>
+      </button>
     </div>
     <!-- right page -->
     <div class="md:w-6/12 ml-auto pl-10 border-l-2 border-gray-200 content-center">
-      <div class="basis-1/2 max-w-[600px] flex-initial mb-3">
-        <div class="max-w-md">
-          <p class="text-lg font-black underline" id="brand_firstname">Nike</p>
-          <p id="product_name_eng">Nike Dunk Low Retro Black</p>
-          <p class="mb-2 text-sm text-gray-400" id="product_name_kor">나이키 덩크 로우 레트로 블랙</p>
+      <div class="basis-1/2 max-w-[600px] flex-initial mb-20">
+        <div class="max-w">
+          <p class="text-lg font-black underline" id="brand_name"></p>
+          <p id="product_name_eng" class="text-lg"></p>
+          <p class="mb-2 text-sm text-gray-400" id="product_name_kor"></p>
         </div>
         <div class="border-b border-gray-300 flex-initial">
-          <p class="mb-3 inline-block text-xs" >사이즈</p>
-          <a class="float-right cursor-pointer font-semibold">모든사이즈</a>
+          <p class="mb-3 inline-block text-xs">사이즈</p>
+          <a id="sizeIndicator" class="float-right cursor-pointer font-semibold"></a>
           <button></button>
         </div>
         
         <div class="mt-3 flex-initial">
           <p class="mb-3 text-xs">최근거래가
-            <span class="float-right text-xl font-semibold">150,000원
+            <span id="latest_price" class="float-right text-xl font-semibold">150,000원</span>
           </p>
-          <p class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
+          <p id="latest_price_diff" class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
         </div>
         <div class="flex flex-row gap-3 rounded-3xl p-1 text-center mt-9 flex-initial">
           <a id="buyBtn" href="#" class="w-80 rounded-xl p-2 bg-[#ef6153]  align-middle text-sm">
@@ -279,15 +262,15 @@
             <dl class="flex py-5 min-h-[20px]">
               <div class="flex-1 border-r pr-3">
                 <dt class="text-xs  border-gray-300" >모델번호</dt>
-                <dd id="product_id" class="text-sm font-semibold" id="product_id">DD1391-100</dd>
+                <dd id="product_id" class="text-sm font-semibold" id="product_id"></dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs">출시일</dt>
-                <dd class="text-sm" id="created_at">21/01/14</dd>
+                <dd class="text-sm" id="created_at"></dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">컬러</dt>
-                <dd class="text-sm ">WHITE/BLCK</dd>
+                <dd id="color" class="text-sm">WHITE/BLCK</dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">발매가</dt>
@@ -491,18 +474,9 @@
   <div id="lower" class="h-56">
 
   </div>
-  <!-- Flowbite Script-->
-  <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
-  <!-- TailwindCSS configuration -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/ReseltProject/js/tailwind.config.js"></script>
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- jQuery -->
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="/ReseltProject/js/shop/shopDetail.js"></script>
-  
-  <script>
-  </script>
-
   

@@ -54,7 +54,7 @@
     <jsp:include page="${footer }" />
     <c:if test="${flowbite == true }">
       <!-- Flowbite Script-->
-      <script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
+      <script src="/ReseltProject/js/flowbite.js" async="false"></script>
     </c:if>
   </body>
 </html>
