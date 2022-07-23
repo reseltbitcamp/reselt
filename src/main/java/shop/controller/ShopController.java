@@ -221,7 +221,7 @@ public class ShopController {
 		
 		return mav;
 	}
-	
+
 	@PostMapping(value = "getSession")
 	@ResponseBody
 	public String getSession(HttpSession session) {
@@ -229,6 +229,7 @@ public class ShopController {
 	System.out.println(email);
 	return email;
 	}
+
 	
 	@PostMapping(value="getProductList")
 	@ResponseBody

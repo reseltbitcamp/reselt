@@ -27,12 +27,16 @@
 	</select>
 	
 	<select id="getProductList" parameterType="java.util.Map" resultType="productDTO">
-		SELECT product.*, brand.brand_name
+		SELECT 
+		product.*, brand.brand_name, product_img.img_file
         FROM product 
         LEFT JOIN brand
         ON 
         product.brand_id = brand.brand_id
-        order by pid asc limit #{startNum}, #{endNum};
+        LEFT JOIN product_img
+        ON product.pid = product_img.pid
+        WHERE product_img.img_file LIKE '%-1%'
+        order by product.pid asc limit #{startNum}, #{endNum};
 	</select>
 
 </mapper>

@@ -29,7 +29,7 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
-	public List<StyleDTO> getProductList(Map<String, Integer> map) {
+	public List<ProductDTO> getProductList(Map<String, Integer> map) {
 		return sqlsession.selectList("shopSQL.getProductList", map);
 	}
 

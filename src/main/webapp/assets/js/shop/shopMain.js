@@ -1,6 +1,6 @@
 
 function Scroll(){
-   console.log("Yes scroll 실행");
+   console.log("scroll 실행");
    const pagination = document.querySelector('.paginaiton');
    const fullContent = document.querySelector('.infinite');
    const screenHeight = screen.height;
@@ -19,14 +19,17 @@ function Scroll(){
 function ProductList(){
    console.log("productList callout");
    $.ajax({
-      type: 'post',
-      url: '/ReseltProject/shop/getProductList',
-        data: 'pg=' + $('#pg').val(),
-      dataType: 'json',
-      success: function(data){
+	   type: 'post',
+	   url: '/ReseltProject/shop/getProductList',
+	    data: 'pg=' + $('#pg').val(),
+	    dataType: 'json',
+	    success: function(data){
          $.each(data.list, function(index, items){
             
-            $('<div><button type="button"><a href="/ReseltProject/shop/shopDetail"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src=""></div><p class="text-left text-[16px] font-bold font-notoSans">&nbsp;'
+            $('<div><button type="button"><a href="/ReseltProject/shop/shopDetail?pid={'
+            +items.pid+'}"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
+            +items.pid+'/'
+            +items.img_file+'"></div><p class="text-left text-[16px] font-bold font-notoSans">&nbsp;'
             +items.brand_name+'</p><p class="text-left text-[14px]" id="product_name_eng">&nbsp;'
             +items.product_name_eng+'</p><p class="text-left text-[13px] text-slate-400" id="product_name_kor" >&nbsp;'
             +items.product_name_kor+'</p><br><p class="text-left text-[16px] font-bold font-notoSans">&nbsp;'
@@ -34,9 +37,11 @@ function ProductList(){
             +items.product_bookmark+'</p><a href="/ReseltProject/style/styleList"><button id="smile" class="w-1 h-1 py-1"><svg id="smileColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25" href="ReseltProject/"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button></a><p class="text-[12px] px-0 py-2" id="product_likes">'
             +items.product_likes+'</p></div>')
             .appendTo($('#productList'));
-                  
+            //http://3.39.241.175:6753/upload/resources/img/product/12831/12831-1.webp
+            console.log(items.img_file);
          });//each
-            
+        
+         paging();   
          Scroll();
       },
       error: function(err){
@@ -45,6 +50,13 @@ function ProductList(){
    });
 
 }
+
+function paging(){
+	const page = document.getElementById("pg");
+	console.log("page value = "+page.value);
+	page.value++;
+}
+
 //bookmark login getSession
 $('#popup-modal').click(function(){
    $.ajax({
