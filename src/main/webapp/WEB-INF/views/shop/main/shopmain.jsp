@@ -436,7 +436,7 @@
 
   <!-- product img / details tagged you to product datail pg...-->
     <!-- product content -->
-    <div class="pagination"></div>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
     <script type="text/javascript">
@@ -448,7 +448,7 @@
   <div id="productList" class="basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
     
   </div>
-
+  
 </script>
 <!-- product img / details tagged you to product datail pg...END-->
 </div>

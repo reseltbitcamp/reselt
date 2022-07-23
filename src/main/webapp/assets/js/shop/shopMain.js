@@ -36,7 +36,7 @@ function ProductList(){
 				.appendTo($('#productList'));
 						
 			});//each
-				
+			paging();
 			Scroll();
 		},
 		error: function(err){
@@ -45,6 +45,13 @@ function ProductList(){
 	});
 
 }
+
+function paging(){
+	const page = document.getElementById("pg");
+	console.log("page value = "+page.value);
+	page.value++;
+}
+
 //bookmark login getSession
 $('#popup-modal').click(function(){
 	$.ajax({

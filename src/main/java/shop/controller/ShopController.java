@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import shop.bean.PriceIndexDTO;
-import shop.bean.ProductInfoDTO;
+import shop.bean.ProductDTO;
 import shop.service.ShopService;
 
 @Controller
@@ -215,7 +215,7 @@ public class ShopController {
 	
 	@PostMapping(value = "getProductInfo")
 	@ResponseBody
-	public ProductInfoDTO getProductInfo(@RequestParam Map<String, String> map){
+	public ProductDTO getProductInfo(@RequestParam Map<String, String> map){
 		return shopService.getProductInfo(map);
 	}
 	
