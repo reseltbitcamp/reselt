@@ -29,10 +29,6 @@ $(document).ready(function () {
     url: "/ReseltProject/shop/getProductDTO",
     data: { pid: pid },
     success: function (data) {
-      function docInjection(key, value) {
-        return (document.getElementById(key).innerText = value);
-      }
-
       // 이미지 인젝션
       function carouselImgHTML(img, cnt) {
         const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
@@ -45,9 +41,9 @@ $(document).ready(function () {
         );
         tagDiv.setAttribute("id", `carousel-item-${cnt}`);
         if (img.split("-")[1].includes("1")) {
-          tagDiv.setAttribute("class", "duration-700 ease-in-out");
+          tagDiv.setAttribute("class", "carouselImg");
         } else {
-          tagDiv.setAttribute("class", "hidden duration-700 ease-in-out");
+          tagDiv.setAttribute("class", "hidden carouselImg");
         }
         tagDiv.append(tagImg);
         const finalHTML = tagDiv;
@@ -55,15 +51,25 @@ $(document).ready(function () {
       }
 
       const imgFiles = data.img_file.split(",");
+
       const imageGallery = document.getElementById("imageGallery");
-      let cnt = 0;
+      let cnt = 1;
       for (const insertImg of imgFiles) {
-        console.log(carouselImgHTML(insertImg));
         imageGallery.append(carouselImgHTML(insertImg, cnt));
         cnt += 1;
       }
 
+      // 이미지 버튼 보이기/숨기기
+      const imgLength = imgFiles.length;
+      if (imgLength > 1) {
+        document.getElementById("nextBtn").classList.remove('invisible');
+      }
+
       // DB테이터 인젝션
+      function docInjection(key, value) {
+        return (document.getElementById(key).innerText = value);
+      }
+
       const injectionTarget = [
         { product_name_kor: data.product_name_kor },
         { product_name_eng: data.product_name_eng },
@@ -140,4 +146,36 @@ $("#sellBtn").click(function () {
 
 $("#buyBtn").click(function () {
   location.href = "./buySize";
+});
+
+let imgNum = 1;
+$("#nextBtn").click(function (){
+  const totalImgNum = document.getElementsByClassName('carouselImg').length;
+  document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
+  imgNum += 1;
+
+  if (imgNum == 2) {
+    document.getElementById('prevBtn').classList.remove('invisible');
+  } else if (imgNum == 1) {
+    document.getElementById('nextBtn').classList.remove('invisible');
+  }
+
+  if (imgNum >= totalImgNum) {
+    document.getElementById('nextBtn').classList.add('invisible');
+    document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  } else {
+    document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  }
+});
+
+$('#prevBtn').click(function () {
+  const totalImgNum = document.getElementsByClassName('carouselImg').length;
+  document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
+  imgNum -= 1;
+  console.log('prv-imgNum = ' + imgNum);
+  document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  
+  if (imgNum == 1) {
+    document.getElementById('prevBtn').classList.add('invisible');
+  }
 });

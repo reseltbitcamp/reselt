@@ -10,8 +10,8 @@
       <div id="imageGallery" class="relative h-[500px] rounded-lg bg-[#f5f5f5]">
       </div>
       <!-- Slider controls -->
-      <button type="button"
-        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+      <button type="button" id="prevBtn"
+        class="invisible flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
         <span
           class="inline-flex justify-center items-center group-focus:ring-white group-focus:outline-none">
           <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -21,8 +21,8 @@
           <span class="hidden">Previous</span>
         </span>
       </button>
-      <button type="button"
-        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+      <button type="button" id="nextBtn"
+        class="invisible flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
         <span
           class="inline-flex justify-center items-center group-focus:ring-white group-focus:outline-none">
           <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
