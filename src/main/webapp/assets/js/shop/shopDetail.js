@@ -41,9 +41,9 @@ $(document).ready(function () {
         tagImg.setAttribute("src", `${imgPath}/${data.pid}/${img}`);
         tagImg.setAttribute(
           "class",
-          "block absolute top-1/2 left-1/2 w-full object-contain object-center object-cover -translate-x-1/2 -translate-y-1/2"
+          "block absolute top-1/2 left-1/2 w-full object-contain object-center object-cover -translate-x-1/2 -translate-y-1/2, imageGalleryItem"
         );
-        tagDiv.setAttribute("id", `carousel-item-${cnt}`);
+        tagDiv.setAttribute("id", `imageGallery-item-${cnt}`);
         if (img.split("-")[1].includes("1")) {
           tagDiv.setAttribute("class", "duration-700 ease-in-out");
         } else {
@@ -59,7 +59,6 @@ $(document).ready(function () {
       const imageGallery = document.getElementById("imageGallery");
       let cnt = 0;
       for (const insertImg of imgFiles) {
-        console.log(carouselImgHTML(insertImg));
         imageGallery.append(carouselImgHTML(insertImg, cnt));
         cnt += 1;
       }
@@ -147,4 +146,20 @@ $("#sellBtn").click(function () {
 
 $("#buyBtn").click(function () {
   location.href = "./buySize";
+});
+
+let imgNum = 0;
+const totalImg = document.getElementsByClassName('imageGalleryItem').length;
+
+$("#nextBtn").click(function (){
+  if (imgNum <= totalImg) {
+    document.getElementBy
+  }
+  document.getElementById(`imageGallery-item-${imgNum}`).classList.add('hidden');
+  imgNum += 1;
+  document.getElementById(`imageGallery-item-${imgNum}`).classList.remove('hidden');
+});
+
+$('#prevBtn').click(function () {
+  
 });
