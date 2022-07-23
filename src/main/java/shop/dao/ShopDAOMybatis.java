@@ -25,7 +25,7 @@ public class ShopDAOMybatis implements ShopDAO {
 
 	@Override
 	public ProductDTO getProductDTO(int pid) {
-		return sqlsession.selectOne("shopSQL.getProductInfo", pid);
+		return sqlsession.selectOne("shopSQL.getProductDTO", pid);
 	}
 
 	@Override
