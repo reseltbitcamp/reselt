@@ -172,10 +172,10 @@ $('#prevBtn').click(function () {
   const totalImgNum = document.getElementsByClassName('carouselImg').length;
   document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
   imgNum -= 1;
-  console.log('prv-imgNum = ' + imgNum);
   document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
   
   if (imgNum == 1) {
     document.getElementById('prevBtn').classList.add('invisible');
+    document.getElementById('nextBtn').classList.remove('invisible');
   }
 });
