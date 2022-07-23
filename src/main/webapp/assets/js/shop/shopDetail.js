@@ -55,12 +55,19 @@ $(document).ready(function () {
       }
 
       const imgFiles = data.img_file.split(",");
+
       const imageGallery = document.getElementById("imageGallery");
       let cnt = 0;
       for (const insertImg of imgFiles) {
         console.log(carouselImgHTML(insertImg));
         imageGallery.append(carouselImgHTML(insertImg, cnt));
         cnt += 1;
+      }
+
+      // 이미지 버튼 보이기/숨기기
+      const imgLength = imgFiles.length;
+      if (imgLength > 1) {
+        document.getElementById("nextBtn").classList.remove('invisible');
       }
 
       // DB테이터 인젝션
