@@ -58,7 +58,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white" id="released_price">150,000원</p>
+              <p class="text-base font-semibold text-white" id="released_price1"></p>
               <span class="float-left text-xs text-white ">즉시구매가</span>
             </div>
           </a>
@@ -270,11 +270,11 @@
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">컬러</dt>
-                <dd id="color" class="text-sm">WHITE/BLCK</dd>
+                <dd id="color" class="text-sm"></dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">발매가</dt>
-                <dd class="text-sm" id="released_price">129,000원</dd>
+                <dd class="text-sm" id="released_price2"></dd>
               </div>
             </dl>
           </div>
