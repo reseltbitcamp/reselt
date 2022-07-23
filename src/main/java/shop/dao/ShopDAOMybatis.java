@@ -24,8 +24,8 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
-	public ProductDTO getProductInfo(Map<String, String> map) {
-		return sqlsession.selectOne("shopSQL.getProductInfo", map);
+	public ProductDTO getProductDTO(int pid) {
+		return sqlsession.selectOne("shopSQL.getProductInfo", pid);
 	}
 
 	@Override
