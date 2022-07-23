@@ -29,10 +29,6 @@ $(document).ready(function () {
     url: "/ReseltProject/shop/getProductDTO",
     data: { pid: pid },
     success: function (data) {
-      function docInjection(key, value) {
-        return (document.getElementById(key).innerText = value);
-      }
-
       // 이미지 인젝션
       function carouselImgHTML(img, cnt) {
         const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
@@ -57,7 +53,7 @@ $(document).ready(function () {
       const imgFiles = data.img_file.split(",");
 
       const imageGallery = document.getElementById("imageGallery");
-      let cnt = 0;
+      let cnt = 1;
       for (const insertImg of imgFiles) {
         imageGallery.append(carouselImgHTML(insertImg, cnt));
         cnt += 1;
@@ -70,6 +66,10 @@ $(document).ready(function () {
       }
 
       // DB테이터 인젝션
+      function docInjection(key, value) {
+        return (document.getElementById(key).innerText = value);
+      }
+
       const injectionTarget = [
         { product_name_kor: data.product_name_kor },
         { product_name_eng: data.product_name_eng },
@@ -148,15 +148,16 @@ $("#buyBtn").click(function () {
   location.href = "./buySize";
 });
 
-let imgNum = 0;
-const totalImgNum = document.getElementsByClassName('carouselImg').length; //ajax 상황에선 안됨
-console.log('totalImgNum: ' + totalImgNum);
+let imgNum = 1;
 $("#nextBtn").click(function (){
+  const totalImgNum = document.getElementsByClassName('carouselImg').length;
+  console.log(totalImgNum);
   document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
   imgNum += 1;
   console.log('imgNum: ' + imgNum);
-  if (imgNum <= totalImgNum) {
+  if (imgNum >= totalImgNum) {
     document.getElementById('nextBtn').classList.add('invisible');
+    document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
   } else {
     document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
   }
