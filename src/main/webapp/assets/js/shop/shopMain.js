@@ -26,8 +26,8 @@ function ProductList(){
 	    success: function(data){
          $.each(data.list, function(index, items){
             
-            $('<div><button type="button"><a href="/ReseltProject/shop/shopDetail?pid={'
-            +items.pid+'}"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
+            $('<div><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
+            +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
             +items.pid+'/'
             +items.img_file+'"></div><p class="text-left text-[16px] font-bold font-notoSans">&nbsp;'
             +items.brand_name+'</p><p class="text-left text-[14px]" id="product_name_eng">&nbsp;'
