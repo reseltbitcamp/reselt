@@ -41,13 +41,13 @@ $(document).ready(function () {
         tagImg.setAttribute("src", `${imgPath}/${data.pid}/${img}`);
         tagImg.setAttribute(
           "class",
-          "block absolute top-1/2 left-1/2 w-full object-contain object-center object-cover -translate-x-1/2 -translate-y-1/2, imageGalleryItem"
+          "block absolute top-1/2 left-1/2 w-full object-contain object-center object-cover -translate-x-1/2 -translate-y-1/2"
         );
-        tagDiv.setAttribute("id", `imageGallery-item-${cnt}`);
+        tagDiv.setAttribute("id", `carousel-item-${cnt}`);
         if (img.split("-")[1].includes("1")) {
-          tagDiv.setAttribute("class", "duration-700 ease-in-out");
+          tagDiv.setAttribute("class", "carouselImg");
         } else {
-          tagDiv.setAttribute("class", "hidden duration-700 ease-in-out");
+          tagDiv.setAttribute("class", "hidden carouselImg");
         }
         tagDiv.append(tagImg);
         const finalHTML = tagDiv;
@@ -149,15 +149,17 @@ $("#buyBtn").click(function () {
 });
 
 let imgNum = 0;
-const totalImg = document.getElementsByClassName('imageGalleryItem').length;
-
+const totalImgNum = document.getElementsByClassName('carouselImg').length; //ajax 상황에선 안됨
+console.log('totalImgNum: ' + totalImgNum);
 $("#nextBtn").click(function (){
-  if (imgNum <= totalImg) {
-    document.getElementBy
-  }
-  document.getElementById(`imageGallery-item-${imgNum}`).classList.add('hidden');
+  document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
   imgNum += 1;
-  document.getElementById(`imageGallery-item-${imgNum}`).classList.remove('hidden');
+  console.log('imgNum: ' + imgNum);
+  if (imgNum <= totalImgNum) {
+    document.getElementById('nextBtn').classList.add('invisible');
+  } else {
+    document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  }
 });
 
 $('#prevBtn').click(function () {
