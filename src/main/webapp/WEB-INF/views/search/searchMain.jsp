@@ -19,7 +19,7 @@
           </div>
           
           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='recentSearch()'>검색</button>&nbsp;&nbsp;
-          <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='itemSearch()'>임시</button>&nbsp;&nbsp;
+<!--           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='itemSearch()'>임시</button>&nbsp;&nbsp; -->
           <button class="btn_close ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick="location.href='/ReseltProject/'">취소</button>
         </div>
         
@@ -27,7 +27,7 @@
       
       <div class="search_content_wrap block block bg-[#fff]">
         
-        <div class="recent_area relative pb-[42px] w-[704px] m-auto">
+        <div class="recent_area relative pb-[20px] w-[704px] m-auto">
           
           <div class="recent_box pt-0 px-[40px] pb-[21px] block">
             <strong class="recent_title inline-block leading-[20px] text-[12px] text-black align-middle font-bold">최근 검색어</strong>
@@ -48,6 +48,41 @@
                 <p class="brand_name max-w-[80px] mt-[-8px] mx-auto mb-0 text-[12px] block">포켓몬</p>
               </a>
             </li>
+            <li class="brand_item inline-block align-top rounded-[8px]">
+              <a class="brand_box block w-[100px] h-[100px] text-center cursor-pointer text-inherit">
+              <img src="https://kream-phinf.pstatic.net/MjAyMjA1MjdfMjQ1/MDAxNjUzNjIzMjU1MDA1.Eh9mGoIJqASznAFYwmvYroLQZc52KUv4eZ_tVESPV9Qg.aiEX0TgPe1RSc_1n4we7ZrZyYymKK-DisLp37rtjXD8g.PNG/a_6f243e29ed9b49f8a4f8aef956bbdcbd.png" alt="루이비통"
+                    class="w-[80px] h-[80px] m-auto">
+                <p class="brand_name max-w-[80px] mt-[-8px] mx-auto mb-0 text-[12px] block">루이비통</p>
+              </a>
+            </li>
+            <li class="brand_item inline-block align-top rounded-[8px]">
+              <a class="brand_box block w-[100px] h-[100px] text-center cursor-pointer text-inherit">
+              <img src="https://kream-phinf.pstatic.net/MjAyMjA3MjBfMTYw/MDAxNjU4MjkxOTMwNzI3.EVUaJleG1Dj8Sf6_6YmZqz5FVKHIWmi1plGejMQhGZgg.XxNoSYMFPZnZQ1YU9SL1iw5paX9p_DiSwwIDiQEoWycg.PNG/a_3aa0bfc5aab34b6689fa584e0e9a9164.png" alt="스캇"
+                    class="w-[80px] h-[80px] m-auto">
+                <p class="brand_name max-w-[80px] mt-[-8px] mx-auto mb-0 text-[12px] block">스캇</p>
+              </a>
+            </li>
+            <li class="brand_item inline-block align-top rounded-[8px]">
+              <a class="brand_box block w-[100px] h-[100px] text-center cursor-pointer text-inherit">
+              <img src="https://kream-phinf.pstatic.net/MjAyMjA3MTVfMTIg/MDAxNjU3ODg0MDgxNDM5.G_Z8oSUH-reOKget9mw_f6Hjv-1dRL6iacn5kfzEEiQg.9jirVBSg1klDxHziG2qnWoLQskQbRqzn4_couB4qwT0g.PNG/a_142adb8bc8cf49989c579c801fd79516.png" alt="샤넬"
+                    class="w-[80px] h-[80px] m-auto">
+                <p class="brand_name max-w-[80px] mt-[-8px] mx-auto mb-0 text-[12px] block">샤넬</p>
+              </a>
+            </li>
+            <li class="brand_item inline-block align-top rounded-[8px]">
+              <a class="brand_box block w-[100px] h-[100px] text-center cursor-pointer text-inherit">
+              <img src="https://kream-phinf.pstatic.net/MjAyMjA3MTVfMTUy/MDAxNjU3ODg0MDk5MDc3.L_k52MEN3jG8Q1UZBG0N2rrC2sfHBNkVY4JgCp4b_1Ug.8nHeotJjCgSD4ppX25I77FQwk0bBcViqDEf1lYqDNI0g.PNG/a_f8a97905d4e7461286297a3810ca80f8.png" alt="롤렉스"
+                    class="w-[80px] h-[80px] m-auto">
+                <p class="brand_name max-w-[80px] mt-[-8px] mx-auto mb-0 text-[12px] block">롤렉스</p>
+              </a>
+            </li>
+            <li class="brand_item inline-block align-top rounded-[8px]">
+              <a class="brand_box block w-[100px] h-[100px] text-center cursor-pointer text-inherit">
+              <img src="https://kream-phinf.pstatic.net/MjAyMjA3MTVfMzkg/MDAxNjU3ODg0MTI3ODUy._9LanCf1pMhoypQ4Fe-Xer4oLDetUDmL47tJZnviWHQg.CwWpEsjtrBIutNThK8lg2Ks_eXHmpu2Y0wSk_IfdRLUg.PNG/a_7a8ba94f6ad945cfa96b9364aa1a1c49.png" alt="우영미"
+                    class="w-[80px] h-[80px] m-auto">
+                <p class="brand_name max-w-[80px] mt-[-8px] mx-auto mb-0 text-[12px] block">우영미</p>
+              </a>
+            </li>
           </ul>
         
         </div>
@@ -55,62 +90,9 @@
         <div class="suggest_wrap bg-[#fff]">
           <div class="suggest_area w-[704px] pt-0 pr-[44px] pb-[23px] pl-[40px] my-0 mx-auto overflow-hidden relative ">
             <div class="suggest_title_area mr-[43px]"><p></p></div>
+            <!-- 상품검색 리스트 -->
             <div class="suggest_list pr-[43px] max-h-[420px] overflow-y-auto">
-              <div class="suggest_item h-[84px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
-                <a class="suggest_link align-center h-[100%] text-inherit flex">
-                  <div class="suggest_thumb overflow-hidden mr-[7px] w-[70px] h-[70px] shrink-0 rounded-[8px] block">
-                    <img class="thumb_img w-[100%] h-[100%]" src="https://kream-phinf.pstatic.net/MjAyMjA0MThfMTA1/MDAxNjUwMjQ1OTA0MjUx.ZRPWkYAT-DiTglB1ujM9dw_osqHe230Ozj3Xp9QDjmQg.CPrvFDxaeBRtQy48U2De-VfdJD5cNxp0DgDucyt2f4og.JPEG/a_d8dfb45da4cd47f3bf67ccd3ff0b2eb4.jpg">
-                  </div>
-                  <div class="suggest_info">
-                    <p class="model_title overflow-hidden text-ellipsis text-[14px] tracking-[-.21px]">상품영어</p>
-                    <p class="model_sub_info mt-[2px] text-[12px] tracking-[-.06px] text-[rgba(34,34,34,.5)]">상품한글</p>
-                  </div>
-                </a>
-              </div>
-              <div class="suggest_item h-[84px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
-                <a class="suggest_link align-center h-[100%] text-inherit flex">
-                  <div class="suggest_thumb overflow-hidden mr-[7px] w-[70px] h-[70px] shrink-0 rounded-[8px] block">
-                    <img class="thumb_img w-[100%] h-[100%]" src="https://kream-phinf.pstatic.net/MjAyMTEwMTRfNTIg/MDAxNjM0MjA1NzQ2NTYw.1QdEB-0rYUmxNkt8JD4XsIVknAaHUhQfM2nkMfPRw6Ig.1SUHYGfZc0S-K7_ls_OYEiWVKfeZVe6qgsuugyI2Clcg.PNG/a_39b383a25b8a4ab1aef1b18d3326f6e7.png">
-                  </div>
-                  <div class="suggest_info">
-                    <p class="model_title overflow-hidden text-ellipsis text-[14px] tracking-[-.21px]">상품영어</p>
-                    <p class="model_sub_info mt-[2px] text-[12px] tracking-[-.06px] text-[rgba(34,34,34,.5)]">상품한글</p>
-                  </div>
-                </a>
-              </div>
-              <div class="suggest_item h-[84px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
-                <a class="suggest_link align-center h-[100%] text-inherit flex">
-                  <div class="suggest_thumb overflow-hidden mr-[7px] w-[70px] h-[70px] shrink-0 rounded-[8px] block">
-                    <img class="thumb_img w-[100%] h-[100%]" src="https://kream-phinf.pstatic.net/MjAyMTEwMTRfNTIg/MDAxNjM0MjA1NzQ2NTYw.1QdEB-0rYUmxNkt8JD4XsIVknAaHUhQfM2nkMfPRw6Ig.1SUHYGfZc0S-K7_ls_OYEiWVKfeZVe6qgsuugyI2Clcg.PNG/a_39b383a25b8a4ab1aef1b18d3326f6e7.png">
-                  </div>
-                  <div class="suggest_info">
-                    <p class="model_title overflow-hidden text-ellipsis text-[14px] tracking-[-.21px]">상품영어</p>
-                    <p class="model_sub_info mt-[2px] text-[12px] tracking-[-.06px] text-[rgba(34,34,34,.5)]">상품한글</p>
-                  </div>
-                </a>
-              </div>
-              <div class="suggest_item h-[84px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
-                <a class="suggest_link align-center h-[100%] text-inherit flex">
-                  <div class="suggest_thumb overflow-hidden mr-[7px] w-[70px] h-[70px] shrink-0 rounded-[8px] block">
-                    <img class="thumb_img w-[100%] h-[100%]" src="https://kream-phinf.pstatic.net/MjAyMTEwMTRfNTIg/MDAxNjM0MjA1NzQ2NTYw.1QdEB-0rYUmxNkt8JD4XsIVknAaHUhQfM2nkMfPRw6Ig.1SUHYGfZc0S-K7_ls_OYEiWVKfeZVe6qgsuugyI2Clcg.PNG/a_39b383a25b8a4ab1aef1b18d3326f6e7.png">
-                  </div>
-                  <div class="suggest_info">
-                    <p class="model_title overflow-hidden text-ellipsis text-[14px] tracking-[-.21px]">상품영어</p>
-                    <p class="model_sub_info mt-[2px] text-[12px] tracking-[-.06px] text-[rgba(34,34,34,.5)]">상품한글</p>
-                  </div>
-                </a>
-              </div>
-              <div class="suggest_item h-[84px] border-b-[1px] border-b-solid border-b-[#ebebeb]">
-                <a class="suggest_link align-center h-[100%] text-inherit flex">
-                  <div class="suggest_thumb overflow-hidden mr-[7px] w-[70px] h-[70px] shrink-0 rounded-[8px] block">
-                    <img class="thumb_img w-[100%] h-[100%]" src="https://kream-phinf.pstatic.net/MjAyMTEwMTRfNTIg/MDAxNjM0MjA1NzQ2NTYw.1QdEB-0rYUmxNkt8JD4XsIVknAaHUhQfM2nkMfPRw6Ig.1SUHYGfZc0S-K7_ls_OYEiWVKfeZVe6qgsuugyI2Clcg.PNG/a_39b383a25b8a4ab1aef1b18d3326f6e7.png">
-                  </div>
-                  <div class="suggest_info">
-                    <p class="model_title overflow-hidden text-ellipsis text-[14px] tracking-[-.21px]">상품영어</p>
-                    <p class="model_sub_info mt-[2px] text-[12px] tracking-[-.06px] text-[rgba(34,34,34,.5)]">상품한글</p>
-                  </div>
-                </a>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -123,7 +105,13 @@
 <jsp:include page="../main/main.jsp"></jsp:include>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
 <script type="text/javascript">
+
+$(function(){
+  getSearchList();
+  //$('.brand_list').hide();
+});
 
 //검색List 활성화
 $(function(){
@@ -140,6 +128,7 @@ $(function(){
 $('.recent_box').hide()
 
 function recentSearch(){
+  if($('.input_search').val() != '')
   $('.recent_box').show()
 	
   var recent_search = document.getElementById('search_list')
@@ -154,13 +143,9 @@ function recentSearchReset(){
 }
 
 function itemSearch(){
-  $('.suggest_wrap').show()
+  $('.suggest_wrap').toggle()
+  $('.brand_list').toggle()
 }
  
 
 </script>
-
-
-
-
-
