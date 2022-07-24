@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import shop.bean.BiddingDTO;
 import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
 import shop.dao.ShopDAO;
@@ -45,6 +46,23 @@ public class ShopServiceImpl implements ShopService {
 		Map<String, Object> sendMap = new HashMap<String, Object>();
 		sendMap.put("list", list);
 		return sendMap;
+	}
+
+//	@Override
+//	public List<BiddingDTO> getBiddingDTO(Map<Integer, Integer> map) {
+//		List<BiddingDTO> getBiddingPrice= shopDAO.getBiddingPrice(map);
+//		
+//		return getBiddingPrice;
+//	}
+
+	@Override
+	public Map<Object, Object> getBiddingDTO(int pid) {
+		Map<Object, Object>map = new HashMap<Object, Object>();
+		map.put("pid", pid);
+		List<BiddingDTO> list = shopDAO.getBidiingPrice(map);
+		System.out.println(list);
+		map.put("list", list);
+		return map;
 	}
 
 }

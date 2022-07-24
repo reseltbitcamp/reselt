@@ -21,4 +21,5 @@ public class ProductDTO {
    private int product_likes;
    private int product_bookmark;
    private String img_file;
+   private String category_name_eng;
 }
