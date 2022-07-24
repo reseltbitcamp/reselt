@@ -1,5 +1,5 @@
+// >>>>>>>>>>>>> 01. infinite scroll
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>1. infinite scroll
 function Scroll(){
    console.log("scroll 실행");
    const pagination = document.querySelector('.paginaiton');
@@ -16,6 +16,7 @@ function Scroll(){
       }
     }
 }
+
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 2. product List
 function ProductList(){
@@ -45,7 +46,7 @@ function ProductList(){
         
                console.log(items.category_name_eng);
             });//each
-        
+
          paging();   
          Scroll();
       },
@@ -55,6 +56,7 @@ function ProductList(){
    });
 
 }
+
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 3. Side Filter
 
@@ -107,6 +109,9 @@ function setVisibility() {
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 4. paging each itembox//
+
+//paging each itembox
+
 function paging(){
    const page = document.getElementById("pg");
    console.log("page value = "+page.value);
