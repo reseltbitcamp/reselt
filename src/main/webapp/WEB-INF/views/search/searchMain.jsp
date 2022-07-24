@@ -19,7 +19,7 @@
           </div>
           
           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='recentSearch()'>검색</button>&nbsp;&nbsp;
-          <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='itemSearch()'>임시</button>&nbsp;&nbsp;
+<!--           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='itemSearch()'>임시</button>&nbsp;&nbsp; -->
           <button class="btn_close ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick="location.href='/ReseltProject/'">취소</button>
         </div>
         
@@ -27,7 +27,7 @@
       
       <div class="search_content_wrap block block bg-[#fff]">
         
-        <div class="recent_area relative pb-[42px] w-[704px] m-auto">
+        <div class="recent_area relative pb-[20px] w-[704px] m-auto">
           
           <div class="recent_box pt-0 px-[40px] pb-[21px] block">
             <strong class="recent_title inline-block leading-[20px] text-[12px] text-black align-middle font-bold">최근 검색어</strong>
@@ -128,6 +128,7 @@ $(function(){
 $('.recent_box').hide()
 
 function recentSearch(){
+  if($('.input_search').val() != '')
   $('.recent_box').show()
 	
   var recent_search = document.getElementById('search_list')
@@ -142,7 +143,8 @@ function recentSearchReset(){
 }
 
 function itemSearch(){
-  $('.suggest_wrap').show()
+  $('.suggest_wrap').toggle()
+  $('.brand_list').toggle()
 }
  
 

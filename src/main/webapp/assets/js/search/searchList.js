@@ -26,3 +26,13 @@ function getSearchList(){
     }
   });
 }
+
+//Auto Complete
+$(document).ready(function(){
+  $('#input_search').on("keyup", function(){
+    var value = $(this).val().toLowerCase();
+    $('.suggest_item').filter(function(){
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
