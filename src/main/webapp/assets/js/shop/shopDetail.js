@@ -93,6 +93,15 @@ $(document).ready(function () {
       // 카테고리별 사이즈 표시
       const sizeIndicator = data.category_id <= 62 ? "모든 사이즈" : "ONE SIZE";
       docInjection("sizeIndicator", sizeIndicator);
+      
+      // Button actions
+      $("#sellBtn").click(function () {
+        location.href = "./sellSize";
+      });
+
+      $("#buyBtn").click(function () {
+      	location.href = "./buySize?pid="+data.pid;
+      });
     },
     error: function (e) {
       console.log(e);
@@ -141,15 +150,6 @@ $(document).ready(function () {
       console.log(e);
     },
   });
-});
-
-// Button actions
-$("#sellBtn").click(function () {
-  location.href = "./sellSize";
-});
-
-$("#buyBtn").click(function () {
-  location.href = "./buySize";
 });
 
 let imgNum = 1;
