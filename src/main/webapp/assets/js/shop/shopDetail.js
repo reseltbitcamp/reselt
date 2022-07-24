@@ -1,7 +1,7 @@
 //Product details pre-requisites
 const pid = document.getElementById("pid").value;
+//Created_at 날짜 변환
 const create_atStr = function (timestamp) {
-  //Created_at 날짜 변환
   const date = new Date(timestamp);
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 };
@@ -29,6 +29,9 @@ $(document).ready(function () {
     url: "/ReseltProject/shop/getProductDTO",
     data: { pid: pid },
     success: function (data) {
+      // Title 변경
+      document.getElementsByTagName('title')[0].innerText = `${data.product_name_kor} | ${data.brand_name} | RESELT | 한정판 거래의 RESELT`;
+
       // 이미지 인젝션
       function carouselImgHTML(img, cnt) {
         const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
@@ -75,8 +78,9 @@ $(document).ready(function () {
         { product_name_eng: data.product_name_eng },
         { product_id: data.product_id },
         { brand_name: data.brand_name },
-        { released_price: data.released_price },
-        { created_at: data.created_at },
+        { released_price1: data.released_price.toLocaleString('ko-KR') },
+        { released_price2: data.released_price.toLocaleString('ko-KR') },
+        { created_at: create_atStr(data.created_at) },
       ];
 
       for (const target of injectionTarget) {
