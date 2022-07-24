@@ -10,5 +10,8 @@
 		<typeAlias type="shop.bean.PriceIndexDTO" alias="priceIndex"/>
 		<typeAlias type="shop.bean.ProductDTO" alias="productDTO"/>
 		<typeAlias type="style.bean.ReplyDTO" alias="reply"/>
+		
+		<typeAlias type="search.bean.SearchDTO" alias="search"/>
+		
 	</typeAliases>
 </configuration>

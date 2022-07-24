@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="searchSQL">
+	<select id="searchProductList" parameterType="java.util.Map" resultType="productDTO">
+		SELECT 
+		product.*, brand.brand_name, product_img.img_file
+        FROM product 
+        LEFT JOIN brand
+        ON 
+        product.brand_id = brand.brand_id
+        LEFT JOIN product_img
+        ON product.pid = product_img.pid
+        WHERE product_img.img_file LIKE '%-1%'
+        order by product.pid;
+	</select>
+</mapper>
