@@ -445,13 +445,17 @@
     });
     </script>
     
-  <div id="productList" class="basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
+  <div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
     
+     
   </div>
+
   
 </script>
-<!-- product img / details tagged you to product datail pg...END-->
+ 
 </div>
+<!-- pg -->
+<input type="text" id="pg" value="${requestScope.pg }" class="invisible">
 
 <!-- Main modal -->
 <div id="popup-modal" tabindex="-1"
@@ -626,9 +630,8 @@
             </div>
           </div>
         </div>
-        <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
-      
-
+       
+    
 
 <!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
