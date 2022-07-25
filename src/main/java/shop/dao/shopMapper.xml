@@ -43,7 +43,7 @@
    </select>
 	
 		<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
-			select product_size, MIN(bidding_price) AS bidding_price
+			select product_size, pid, bidding_id, MIN(bidding_price) AS bidding_price
 			from biddings
 			where pid=#{pid} and status="입찰중"
 			GROUP BY product_size 

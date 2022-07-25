@@ -74,7 +74,7 @@ $(function(){
 	 success:function(data){
 		console.log(JSON.stringify(data))
 		$.each(data.list, function(index, data){
-			$('.price[price-index='+ index + ']').html(data.bidding_price);
+			$(`#price${data.product_size}`).html(data.bidding_price.toLocaleString('ko-KR'));
 		})
 	 }, error:function(err){
 		 console.log(err)
