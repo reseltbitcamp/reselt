@@ -41,8 +41,8 @@ public class SpringConfiguration {
 							new ClassPathResource("notice/dao/noticeMapper.xml"),
 							new ClassPathResource("myPage/dao/myPageProfileMapper.xml"),
 							new ClassPathResource("myPage/dao/myPageAddressMapper.xml"),
-							new ClassPathResource("myPage/dao/myPageBuyingMapper.xml"),
 							new ClassPathResource("myPage/dao/myPageAccountMapper.xml"),
+							new ClassPathResource("admin/dao/adminMapper.xml"),
 							new ClassPathResource("shop/dao/shopMapper.xml"),
 							new ClassPathResource("style/dao/styleMapper.xml"));
 		return sqlSessionFactoryBean.getObject();

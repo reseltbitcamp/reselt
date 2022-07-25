@@ -106,7 +106,7 @@ $('.addressDiv_save').click(function(){
 	}
 });
 
-//페이지 새로고침할 시 데이터 뿌리기 select
+//페이지 새로고침할 시 데이터 select
 $(document).ready(function(){
 	
 	$.ajax({

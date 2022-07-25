@@ -58,4 +58,9 @@
 	<context:component-scan base-package="shop.dao"/>
 	<context:component-scan base-package="shop.service"/>
 	
+	<!-- admin -->
+	<context:component-scan base-package="admin.bean"/>
+	<context:component-scan base-package="admin.dao"/>
+	<context:component-scan base-package="admin.service"/>
+	
 </beans>

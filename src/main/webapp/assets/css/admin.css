@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/*사용자, 관리자 페이지*/
+.my_list_basic {
+	border-bottom: 1px solid #171414;
+	padding-top: 10px;
+	padding-bottom: 9px;
+	padding-left: 20px;
+}
+.my_list_item {
+	position: relative;
+}
+.admin_all {
+	display: flex;
+}
+.adminDiv_content_all {
+	display: flex;
+	width: 90%;
+}
+.adminDiv_num {
+	text-align: center;
+	width: 30px;
+}
+.adminDiv_num_item {
+	margin-top: 6px;
+	width: 30px;
+	font-size: 12px;
+	font-weight: 600px;
+	color: #6A6A6A
+}
+.adminDiv_content {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin-left: 23%;
+}
+.adminDiv_content_item:first-child {
+	margin-top: 6px;
+	width: 20%;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600px;
+	color: color: #6A6A6A
+}
+.adminDiv_content_item:nth-child(2) {
+	margin-top: 6px;
+	width: 20%;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600px;
+	color: color: #6A6A6A;
+	padding-left: 3%;
+}
+.adminDiv_content_item:nth-child(3) {
+	margin-top: 6px;
+	width: 20%;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600px;
+	color: color: #6A6A6A;
+	padding-left: 5%;
+}
+.adminDiv_button {
+	display: flex;
+	justify-content: end;
+	margin-left: 3%;
+}
+.modify_admin,
+.delete_admin {
+	display: inline-block;
+	height: 34px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 1px solid #d3d3d3;
+	background-color: #fff;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-right: 12px;
+	padding-left: 11px;
+	vertical-align: middle;
+	line-height: 32px;
+	letter-spacing: -.06px;
+	color: #222222cc;
+}
+
+.adminDiv_num {
+	width: 120px;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+

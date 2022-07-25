@@ -11,7 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import member.dao.MemberDAO;
-import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 import myPage.dao.MyPageProfileDAO;
 
@@ -55,6 +54,18 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		map.put("nick", nick);
 		myPageProfileDAO.nickUpdate(map);
 	}
+	
+	
+	@Override
+	public void nameUpdate(String name) {
+		Map<String, String> map = new HashMap<String, String>();
+		
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
+		map.put("name", name);
+		myPageProfileDAO.nameUpdate(map);
+	}
+	
 
 	@Override
 	public void sizeUpdate(String footsize) {
@@ -133,6 +144,8 @@ public class MyPageProfileServiceImpl implements MyPageProfileService {
 		myPageProfileDAO.withdrawal_user(email);
 		
 	}
+
+
 
 	
 

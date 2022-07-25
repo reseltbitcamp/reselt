@@ -67,7 +67,7 @@ input:focus {
         <div class="bg-[#FBFBFB] px-[40px]">
           <div class="my_admin_main pt-[20px]">
             <div class="my_admin_main-header flex border-b-solid border-b-[3px] border-b-[#171414] pb-[12px]">
-              <div class="text-[16px] font-semibold text-[#171414] pt-[10px]">전체 멤버</div>
+              <div class="text-[16px] font-semibold text-[#171414] pt-[10px]">전체 상품</div>
               <div class="adminDiv_button flex justify-end ml-auto mt-[7px]">
                      <a class="delete_admin inline-block h-[34px] w-[60px] text-center cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">삭제</a>
                </div>
@@ -77,46 +77,16 @@ input:focus {
             <div class="my_admin_main-content">
               <div class="my_admin_main-content-title border-b-[2px] border-b-[#C8C8C8] px-[80px] py-[7px] pr-[100px]">
                 <div class="my_admin_main-content-title-detail flex justify-between">
-                  <span class="text-[13px] font-semibold text-[#6A6A6A]">IDX</span>
-                  <span class="text-[13px] font-semibold text-[#6A6A6A]">이름</span>
-                  <span class="text-[13px] font-semibold text-[#6A6A6A]">가입일</span>
-                  <span class="mr-[100px] text-[13px] font-semibold text-[#6A6A6A]">이메일 주소</span>
+                  <span class="text-[13px] font-semibold text-[#6A6A6A]">상품코드</span>
+                  <span class="text-[13px] font-semibold text-[#6A6A6A]">이름</span> <!-- 한글, 영어 -->
+                  <span class="mr-[100px] text-[13px] font-semibold text-[#6A6A6A]">입고 날짜</span>
                 </div>
               </div>
               <!--title-->
 
               <div class="my_admin_main-content-list">
               
-             
-     		<!-- 동적 처리
-                <div class="my_list not_empty_area_2">
-                  <div class="my_list_basic border-b-solid border-b-[1px] border-b-[#171414] pt-[10px] pb-[9px] pl-[20px]">
-                    <div class="my_list_item relative">
-                      <div>
-                        <div class="flex admin_all">
-                        
-                          <div class="adminDiv_content_all flex w-[90%]">
-                          	<div class="adminDiv_num w-[120px] flex justify-between">
-                          		<span class="adminDiv_num_chk">
-                          			<input type="checkbox" class="checkbox"/>
-                          		</span>
-                            	<span class="adminDiv_num_item mt-[6px] w-[30px] text-[12px] font-semibold text-[#6A6A6A] mb-[2px] mr-[10%]">26</span>
-                            </div>
-                            <div class="adminDiv_content flex justify-between w-[90%] ml-[20%]">
-                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A]">안녕</span>
-                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A] pl-[3%]">2022/07/21</span>
-                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A] pl-[5%]">hello@naver.com</span>
-                          	</div>
-                          </div>
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-     -->
-               
+             <!-- 동적 처리 -->
                
               </div>
               <!--content list-->
@@ -133,6 +103,6 @@ input:focus {
     <!--container-->
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
-    <script src="../js/admin/user.js"></script>  
+    <script src="../js/admin/productList.js"></script>  
   </body>
 </html>
