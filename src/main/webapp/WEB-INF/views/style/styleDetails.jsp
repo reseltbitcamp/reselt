@@ -266,7 +266,9 @@ var loginEmail = null;
 			$('#textContentBox').text(data.styleDTO.content);
 			$('#userNameText').text(data.styleDTO.memberDTO.nick);
 			$('#styleProfileImg').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.memberDTO.profile_img);
-			$('#replyLoginImage').prop('src', "/ReseltProject/styleImage/"+data.memberDTO.profile_img);
+			if(data.email!=null){
+				$('#replyLoginImage').prop('src', "/ReseltProject/styleImage/"+data.memberDTO.profile_img);
+			}
 			/* 댓글 개수  */
 			$('#replyCount').text(data.count);
 			
