@@ -159,9 +159,9 @@ public class StyleController {
 	
 	@PostMapping(value="styleReplyDelete")
 	@ResponseBody
-	public void styleReplyDelete(@RequestParam int style_seq){
+	public int styleReplyDelete(@RequestParam int style_seq, int pseq){
 		System.out.println("styleReplyDelete seq = "+style_seq);
-		styleService.styleReplyDelete(style_seq);
-		
+		System.out.println("styleReplyDelete pseq = "+pseq);
+		return styleService.styleReplyDelete(style_seq, pseq);
 	}
 }
