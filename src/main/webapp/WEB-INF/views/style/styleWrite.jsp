@@ -30,7 +30,7 @@
       </div>
       <!-- 글 작성 -->
       <textarea id="content" name="content" class="mt-10 pt-10 w-[487px] h-[150px] placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="content" id="content" placeholder="스타일 글 작성... "></textarea>
-    <input type="button" id="uploadBtn" name="uploadBtn" class="mt-3 ml-48 w-28 h-11 text-base bg-zinc-700 text-white rounded-md font-medium cursor-pointer" value="작성 완료">
+    <input type="button" id="uploadBtn" name="uploadBtn" disabled class="mt-3 ml-48 w-28 h-11 text-base bg-zinc-100 text-gray-300 rounded-md font-medium cursor-pointer" value="작성 완료">
     </form>
   </div>
 </div>
@@ -41,7 +41,7 @@ $(function(){
 	$('#img').on('change', function(){
 		readURL(this);
 	});
-	
+
 	function readURL(input){
 		if(input.files[0]){
 			var reader = new FileReader();
@@ -78,5 +78,27 @@ $(function(){
 		});
 	});
 });
+</script>
+<script type="text/javascript">
+	const img = document.querySelector('#img');
+	const product_id = document.querySelector('#product_id');
+	const content = document.querySelector('#content');
+	const uploadBtn = document.querySelector('#uploadBtn');
+	
+	img.addEventListener('input', listener);
+	product_id.addEventListener('keyup', listener);
+	content.addEventListener('keyup', listener);
 
+	function listener() {
+		switch (!(product_id.value && content.value && img.value)) {
+	        case true: 
+	        	uploadBtn.disabled = true;
+	        	uploadBtn.setAttribute("class", "mt-3 ml-48 w-28 h-11 text-base bg-zinc-100 text-gray-300 rounded-md font-medium cursor-pointer"); 
+	        	break;
+	        case false: 
+	        	uploadBtn.disabled = false; 
+	        	uploadBtn.setAttribute("class", "mt-3 ml-48 w-28 h-11 text-base bg-zinc-700 text-white rounded-md font-medium cursor-pointer"); 
+	        	break;
+		}
+	}
 </script>
