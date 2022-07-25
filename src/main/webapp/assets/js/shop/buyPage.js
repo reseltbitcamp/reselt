@@ -1,5 +1,5 @@
 //buySize
-$(function(){
+$(document).ready(function(){
   $('#nextBtn').hide();
   
   $.ajax({
@@ -54,11 +54,6 @@ $(function(){
 		  $('.price').each(function(index){
 			  $(this).attr('price-index',index);
 		  })
-		  
-		  $(document).on('click', '.sizeBtn', function(){
-			  $('#nextBtn').show();
-		  })
-		   
 		}// 신발 사이즈 표시
 	},
 	error: function(e) {
@@ -80,13 +75,16 @@ $(function(){
 		 console.log(err)
 	 }
    })//ajax
-   
-   //다음페이지
-  $('#nextBtn').click(function(){
-	   location.href="./buyAgree?pid="+$('#pid').val()+'&size='+$('.selectSizeValue').val();
-   })
 })
 // buySize
+$(document).on('click', '.sizeBtn', function(){
+  $('#nextBtn').show();
+  
+  //다음페이지
+  $('#nextBtn').click(function(){
+    location.href="./buyAgree?pid="+$('#pid').val()+'&size='+$('.selectSizeValue').val();
+  });
+})
 
 // buyAgree
 $('#firstAgree').click(function(){
@@ -103,6 +101,8 @@ $('#firstAgree').click(function(){
 	  $('#agreeBtn').attr("disabled",true);
 	}
 })
+
+
 
 $('#secondAgree').click(function(){
 	var check1 = $('#firstAgree').prop("checked");
@@ -259,7 +259,6 @@ $('#buyListPageBtn').click(function(){
 })  
 // buySuccess
   
-
 
 
 
