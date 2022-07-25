@@ -149,10 +149,10 @@
     <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
   </div>
   <div class="p-3">
-  	<button id="chargeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
+  	<button id="chargeBtn" value="결제 요청"  class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
   </div>
 </div>
-
+<!-- value="결제 요청" 옆으로 onclick="INIStdPay.pay('SendPayForm_id')"  -->
 
 <!------------------------------------  결제 api   -------------------------------------------->
 <%
@@ -323,6 +323,6 @@
 
 <jsp:include page="./shopModal/addressListModal.jsp"></jsp:include>
 <jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
-<script language="javascript" type="text/javascript" src="https://stgstdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
+<!-- <script language="javascript" type="text/javascript" src="https://stgstdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script> -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>
