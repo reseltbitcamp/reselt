@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import shop.bean.BiddingDTO;
 import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
 import style.bean.StyleDTO;
@@ -29,8 +30,14 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
-	public List<StyleDTO> getProductList(Map<String, Integer> map) {
+	public List<ProductDTO> getProductList(Map<String, Integer> map) {
 		return sqlsession.selectList("shopSQL.getProductList", map);
+	}
+
+	@Override
+	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
 	}
 
 }

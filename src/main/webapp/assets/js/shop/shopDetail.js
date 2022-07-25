@@ -1,7 +1,7 @@
 //Product details pre-requisites
 const pid = document.getElementById("pid").value;
+//Created_at 날짜 변환
 const create_atStr = function (timestamp) {
-  //Created_at 날짜 변환
   const date = new Date(timestamp);
   return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
 };
@@ -29,9 +29,8 @@ $(document).ready(function () {
     url: "/ReseltProject/shop/getProductDTO",
     data: { pid: pid },
     success: function (data) {
-      function docInjection(key, value) {
-        return (document.getElementById(key).innerText = value);
-      }
+      // Title 변경
+      document.getElementsByTagName('title')[0].innerText = `${data.product_name_kor} | ${data.brand_name} | RESELT | 한정판 거래의 RESELT`;
 
       // 이미지 인젝션
       function carouselImgHTML(img, cnt) {
@@ -45,9 +44,9 @@ $(document).ready(function () {
         );
         tagDiv.setAttribute("id", `carousel-item-${cnt}`);
         if (img.split("-")[1].includes("1")) {
-          tagDiv.setAttribute("class", "duration-700 ease-in-out");
+          tagDiv.setAttribute("class", "carouselImg");
         } else {
-          tagDiv.setAttribute("class", "hidden duration-700 ease-in-out");
+          tagDiv.setAttribute("class", "hidden carouselImg");
         }
         tagDiv.append(tagImg);
         const finalHTML = tagDiv;
@@ -55,22 +54,33 @@ $(document).ready(function () {
       }
 
       const imgFiles = data.img_file.split(",");
+
       const imageGallery = document.getElementById("imageGallery");
-      let cnt = 0;
+      let cnt = 1;
       for (const insertImg of imgFiles) {
-        console.log(carouselImgHTML(insertImg));
         imageGallery.append(carouselImgHTML(insertImg, cnt));
         cnt += 1;
       }
 
+      // 이미지 버튼 보이기/숨기기
+      const imgLength = imgFiles.length;
+      if (imgLength > 1) {
+        document.getElementById("nextBtn").classList.remove('invisible');
+      }
+
       // DB테이터 인젝션
+      function docInjection(key, value) {
+        return (document.getElementById(key).innerText = value);
+      }
+
       const injectionTarget = [
         { product_name_kor: data.product_name_kor },
         { product_name_eng: data.product_name_eng },
         { product_id: data.product_id },
         { brand_name: data.brand_name },
-        { released_price: data.released_price },
-        { created_at: data.created_at },
+        { released_price1: data.released_price.toLocaleString('ko-KR') },
+        { released_price2: data.released_price.toLocaleString('ko-KR') },
+        { created_at: create_atStr(data.created_at) },
       ];
 
       for (const target of injectionTarget) {
@@ -133,11 +143,44 @@ $(document).ready(function () {
   });
 });
 
+//이미지 갤러리 버튼 액션
+let imgNum = 1;
+$("#nextBtn").click(function (){
+  const totalImgNum = document.getElementsByClassName('carouselImg').length;
+  document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
+  imgNum += 1;
+
+  if (imgNum == 2) {
+    document.getElementById('prevBtn').classList.remove('invisible');
+  } else if (imgNum == 1) {
+    document.getElementById('nextBtn').classList.remove('invisible');
+  }
+
+  if (imgNum >= totalImgNum) {
+    document.getElementById('nextBtn').classList.add('invisible');
+    document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  } else {
+    document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  }
+});
+
+$('#prevBtn').click(function () {
+  const totalImgNum = document.getElementsByClassName('carouselImg').length;
+  document.getElementById(`carousel-item-${imgNum}`).classList.add('hidden');
+  imgNum -= 1;
+  document.getElementById(`carousel-item-${imgNum}`).classList.remove('hidden');
+  
+  if (imgNum == 1) {
+    document.getElementById('prevBtn').classList.add('invisible');
+    document.getElementById('nextBtn').classList.remove('invisible');
+  }
+});
+
 // Button actions
 $("#sellBtn").click(function () {
-  location.href = "./sellSize";
+  location.href = `./sellSize?pid=${pid}`;
 });
 
 $("#buyBtn").click(function () {
-  location.href = "./buySize";
+  location.href = `./buySize?pid=${pid}`;
 });

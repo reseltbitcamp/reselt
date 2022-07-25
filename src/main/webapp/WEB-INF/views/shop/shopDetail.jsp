@@ -10,8 +10,8 @@
       <div id="imageGallery" class="relative h-[500px] rounded-lg bg-[#f5f5f5]">
       </div>
       <!-- Slider controls -->
-      <button type="button"
-        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+      <button type="button" id="prevBtn"
+        class="invisible flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
         <span
           class="inline-flex justify-center items-center group-focus:ring-white group-focus:outline-none">
           <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -21,8 +21,8 @@
           <span class="hidden">Previous</span>
         </span>
       </button>
-      <button type="button"
-        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+      <button type="button" id="nextBtn"
+        class="invisible flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
         <span
           class="inline-flex justify-center items-center group-focus:ring-white group-focus:outline-none">
           <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -58,7 +58,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white" id="released_price">150,000원</p>
+              <p class="text-base font-semibold text-white" id="released_price1"></p>
               <span class="float-left text-xs text-white ">즉시구매가</span>
             </div>
           </a>
@@ -270,11 +270,11 @@
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">컬러</dt>
-                <dd id="color" class="text-sm">WHITE/BLCK</dd>
+                <dd id="color" class="text-sm"></dd>
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">발매가</dt>
-                <dd class="text-sm" id="released_price">129,000원</dd>
+                <dd class="text-sm" id="released_price2"></dd>
               </div>
             </dl>
           </div>

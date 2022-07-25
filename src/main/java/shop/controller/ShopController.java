@@ -9,12 +9,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import shop.bean.BiddingDTO;
 import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
 import shop.service.ShopService;
@@ -59,24 +61,33 @@ public class ShopController {
 	}
 	
 	@RequestMapping(value = "/buySize", method = RequestMethod.GET)
-	public ModelAndView buySize() {
+	public ModelAndView buySize(@RequestParam String pid) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buySizeMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buySize.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
 		mav.setViewName("/index");
 		
 		return mav;
 	}
 	
+	@PostMapping(value= "/getProductPrice")
+	@ResponseBody
+	public Map<Object, Object> getPrice(@RequestParam int pid) {
+		System.out.println("pid = "+ pid);
+		return shopService.getBiddingDTO(pid);
+	}
+	
 	@RequestMapping(value = "/buyBid", method = RequestMethod.GET)
-	public ModelAndView buyBid() {
+	public ModelAndView buyBid(@RequestParam String pid) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyBidMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buyBid.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
 		mav.setViewName("/index");
 		
 		return mav;
@@ -221,7 +232,7 @@ public class ShopController {
 		
 		return mav;
 	}
-	
+
 	@PostMapping(value = "getSession")
 	@ResponseBody
 	public String getSession(HttpSession session) {
