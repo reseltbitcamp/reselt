@@ -44,6 +44,6 @@
    </select>
 	
 	<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
-		select * from biddings where product_size='275' and pid=#{pid};
+		select * from biddings where pid=#{pid};
 	</select>
 </mapper>

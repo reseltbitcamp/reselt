@@ -2,7 +2,6 @@
 $(function(){
   $('#nextBtn').hide();
   
-  
   $.ajax({
 	type: "post",
     url: "/ReseltProject/shop/getProductDTO",
@@ -18,16 +17,12 @@ $(function(){
 		console.log(imgFiles)
 		$('#product_img').attr("src", imgPath+"/"+data.pid+"/"+imgFiles[0]);
 		
-		//사이즈표시
+		// 사이즈표시
 		let shose_size = [230, 235, 240, 245, 255, 260, 265, 270, 275, 280, 285, 290];
-		const int_size = shose_size.map((i) => Number(i));
-		
-		console.log(typeof shose_size);
-		console.log(typeof int_size);
 		const clothes_size = ['XS' ,'S' ,'M', 'L', 'XL'];
 		const other = "OneSize";
 		
-		//신발 사이즈 표시
+		// 신발 사이즈 표시
 		if(data.category_id == 61){
 			$.each(shose_size, function(index, size){
 				console.log(size,index)
@@ -42,32 +37,33 @@ $(function(){
 					value: size,
 					text : size	
 				}))).appendTo($('#priceTable'));
-				console.log($('sizeBtn').val())
-				//사이즈 버튼 활성화
-			  $('.sizeBtn').each(function(index){
-			    $(this).attr('sizeBtn-index',index);
-			  }).click(function(){
-			    var index = $(this).attr('sizeBtn-index');			    
-			    $('.sizeBtn[sizeBtn-index='+ index + ']').addClass('border-2 border-black selectSizeValue');
-			    $('.sizeBtn[sizeBtn-index!='+ index + ']').removeClass('border-2 border-black');
-			  })
-
-			  $('.sizeBtn').click(function(){
-			    $('#nextBtn').show();
-			  }) //사이즈 버튼 활성화
 			})		
 		}// 신발 사이즈 표시
-		
-		$('#nextBtn').click(function(){
-			location.href="./buyAgree?pid="+data.pid+'&size='+$('.selectSizeValue').val();
-		})
 	},
 	error: function(e) {
-      console.log("병신")
+      console.log(e)
     },
-  });//사이즈 표시
+ });// 사이즈 표시 ajax
+
+  // 버튼 활성화
+  $('.sizeBtn').each(function(index){
+    $(this).attr('sizeBtn-index',index);
+  }).click(function(){
+    var index = $(this).attr('sizeBtn-index');			    
+    $('.sizeBtn[sizeBtn-index='+ index + ']').addClass('border-2 border-black selectSizeValue');
+    $('.sizeBtn[sizeBtn-index!='+ index + ']').removeClass('border-2 border-black');
+  })
+
+  $('.sizeBtn').click(function(){
+    $('#nextBtn').show();
+  })
   
-  //가격 뿌리기
+  $('#nextBtn').click(function(){
+	location.href="./buyAgree?pid="+$('#pid').val()+'&size='+$('.selectSizeValue').val();
+  })
+  // 사이즈 버튼 활성화
+  
+  // 가격 뿌리기
   $.ajax({
 		type: "post",
 		url: "/ReseltProject/shop/getProductPrice",
@@ -79,27 +75,26 @@ $(function(){
 						
 				}
 			})
-			
 		}, error:function(err){
-			console.log('뭐가 문제야')
+			console.log(err)
 		}
   })
 })
-//buySize
+// buySize
 
-//buyAgree
+// buyAgree
 $('#firstAgree').click(function(){
-	var check1 = $('#firstAgree').prop("checked");
-	var check2 = $('#secondAgree').prop("checked");
-	var check3 = $('#thirdAgree').prop("checked");
-	var check4 = $('#fourthAgree').prop("checked");
+  var check1 = $('#firstAgree').prop("checked");
+  var check2 = $('#secondAgree').prop("checked");
+  var check3 = $('#thirdAgree').prop("checked");
+  var check4 = $('#fourthAgree').prop("checked");
 	
-	if(check1 == true && check2 == true && check3 == true && check4 == true){
-	$('#agreeBtn').removeAttr("disabled");
-    $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
-    $('#agreeBtn').addClass("cursor-pointer")
+  	if(check1 == true && check2 == true && check3 == true && check4 == true){
+  	  $('#agreeBtn').removeAttr("disabled");
+  	  $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
+  	  $('#agreeBtn').addClass("cursor-pointer")
 	} else {
-		$('#agreeBtn').attr("disabled",true);
+	  $('#agreeBtn').attr("disabled",true);
 	}
 })
 
@@ -151,11 +146,11 @@ $('#fourthAgree').click(function(){
 $('#agreeBtn').click(function(){
 	location.href="./buyLastPage"
 });
-//buyAgree
+// buyAgree
 
 
 
-//buyLastPage
+// buyLastPage
 $(function(){
 	$('#kgApi').hide();
 	$('#addressDiv_modal').hide();
@@ -240,9 +235,9 @@ $('.paymentOption').each(function(index){
     $('.paymentOption[paymentOption-index='+ index + ']').addClass('border-2 border-black');
     $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
   })
-//buyLastPage
+// buyLastPage
 
-//buySuccess
+// buySuccess
 $(function(){
 	$('#INIpayReturn').hide();
 })
@@ -252,7 +247,7 @@ $('#shopPageBtn').click(function(){
 $('#buyListPageBtn').click(function(){
 	location.href="../myPage/buying"
 })  
-//buySuccess
+// buySuccess
   
 
 
