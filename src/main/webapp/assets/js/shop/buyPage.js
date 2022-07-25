@@ -30,13 +30,13 @@ $(function(){
 					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center",
 					value: size,
 				}).append($('<span/>',{
-					class: "mt-1",
+					class: "mt-1 size",
 					id: "size",
 					text : size	
 				})).append($('<br>')
 					).append($('<span/>',{
-					class : "align-top text-xs text-red-400",
-					id : "price",
+					class : "align-top text-xs text-red-400 price",
+					id : "price"+size,
 					text : "입찰대기"
 				}))).appendTo($('#priceTable'));
 			})
@@ -45,12 +45,16 @@ $(function(){
 		  $('.sizeBtn').each(function(index){
 		    $(this).attr('sizeBtn-index',index);
 		  }).on("click", function(){
-		    var index = $(this).attr('sizeBtn-index');			    
+		    var index = $(this).attr('sizeBtn-index');
 		    $('.sizeBtn[sizeBtn-index='+ index + ']').addClass('border-2 border-black selectSizeValue');
 		    $('.sizeBtn[sizeBtn-index='+ index + ']').attr('id', 'selectSizeValue');		    
 		    $('.sizeBtn[sizeBtn-index!='+ index + ']').removeClass('border-2 border-black');
 		    $('.sizeBtn[sizeBtn-index!='+ index + ']').removeAttr('id', 'selectSizeValue');		    
 		  })
+		  $('.price').each(function(index){
+			  $(this).attr('price-index',index);
+		  })
+		  
 		  $(document).on('click', '.sizeBtn', function(){
 			  $('#nextBtn').show();
 		  })
@@ -68,10 +72,10 @@ $(function(){
 	 url: "/ReseltProject/shop/getProductPrice",
 	 data: $('#buySizeForm').serialize(),
 	 success:function(data){
-		 console.log(JSON.stringify(data))
-		 $.each(data.list, function(index, data){
-			
-		}) 
+		console.log(JSON.stringify(data))
+		$.each(data.list, function(index, data){
+			$('.price[price-index='+ index + ']').html(data.bidding_price);
+		})
 	 }, error:function(err){
 		 console.log(err)
 	 }
