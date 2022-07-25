@@ -29,6 +29,7 @@ $(function(){
 				$('<li/>', {
 					class: "inline-block my-2 mx-3"
 				}).append($('<button/>',{
+          type: "button",
 					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center"
 				}).append($('<span/>',{
 					class: "mt-1",

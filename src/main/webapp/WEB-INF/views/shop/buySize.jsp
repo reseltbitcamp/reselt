@@ -21,42 +21,42 @@
 		<!-- $.each 사용 DB에 size,price 받아와서 표시-->
 		<ul id="priceTable" class="border-2 border-l-0 border-r-0 border-gray-400 items-center">
 			<li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center ">
+				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center ">
 					<span id="size" class="mt-1">220</span><br> 
 					<span id="price" class="align-top text-xs text-red-400">price</span>
 				</button>
 			</li>
 
 			<li class="inline-block my-2 mx-3 ">
-				<button id="sizeBtn"class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
+				<button type="button" id="sizeBtn"class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
 					<span id="size" class="mt-1">225</span><br> 
 					<span	id="price" class="align-top text-xs text-red-400">price</span>
 				</button>
 			</li>
 
 			<li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
+				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
 					<span id="size" class="mt-1">230</span><br> 
 					<span id="price" class="align-top text-xs text-red-400">price</span>
 				</button>
 			</li>
 
       <li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
+				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
 					<span id="size" class="mt-1">235</span><br> 
 					<span id="price" class="align-top text-xs text-red-400">price</span>
 				</button>
 			</li>
 
       <li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
+				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
 					<span id="size" class="mt-1">240</span><br> 
 					<span id="price" class="align-top text-xs text-red-400">price</span>
 				</button>
 			</li>
 
       <li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
+				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
 					<span id="size" class="mt-1">245</span><br> 
 					<span id="price" class="align-top text-xs text-red-400">price</span>
 				</button>
@@ -66,7 +66,7 @@
 </form>
 
 		<div id="nextBtn" class="text-center">
-			<button
+			<button type="button"
 				class="border m-4 bg-black rounded-xl text-white  w-3/4 h-14">
 				<span id="price" class="text-lg ">price</span>
 			</button>
