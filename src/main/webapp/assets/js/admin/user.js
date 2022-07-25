@@ -5,8 +5,16 @@ $(document).ready(function(){
 		url: '/ReseltProject/admin/show_user',
 		dataType: 'json',
 		success: function(data) {
-			
+	
+	
 			$.each(data.list, function(index, items){	
+				
+				if (items.name == null) {
+					
+				} else {
+				
+				
+				
 				$('.my_admin_main-content-list').append($('<div/>', {
 					class: 'my_list'
 				}).append($('<div/>', {
@@ -65,8 +73,8 @@ $(document).ready(function(){
 				
 				)
 			
+			}//else
 			}); //each
-
 			
 		},
 		error: function(error) {

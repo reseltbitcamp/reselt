@@ -7,7 +7,13 @@ $(document).ready(function(){
 		success: function(data) {
 			
 			
-			$.each(data.list, function(index, items){	
+	$.each(data.list, function(index, items){	
+				
+				if (items.name == null) {
+					
+				} else {
+			
+			
 				$('.my_admin_main-content-list').append($('<div/>', {
 					class: 'my_list'
 				}).append($('<div/>', {
@@ -66,6 +72,7 @@ $(document).ready(function(){
 				
 				)
 			
+				}//else
 			}); //each
 
 			

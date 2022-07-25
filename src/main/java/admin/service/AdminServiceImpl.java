@@ -87,6 +87,12 @@ public class AdminServiceImpl implements AdminService {
 		return map;
 	}
 
+	@Override
+	public void delete_product(List<Integer> pid) {
+		adminUserDAO.delete_product(pid);
+		
+	}
+
 	
 
 

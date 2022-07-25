@@ -10,14 +10,20 @@
 	</select>
 	
 	<!-- 유저 삭제 -->
-	<delete id="delete_user" parameterType="java.util.ArrayList">
-		delete from members where id in (
-			
+	<update id="delete_user" parameterType="java.util.ArrayList">
+		<!-- delete from members where id in (		
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		) -->
+		
+		update members set name = null where id in (
 			<foreach collection="list" item="id" index="index" separator=",">
 				'${id}' 
 			</foreach> 
 		)
-	</delete>
+		
+	</update>
 	
 	<!-- 유저 검색 -->
 	<select id="adminUserSearch" parameterType="string" resultType="admin.bean.AdminUserDTO">
@@ -30,20 +36,21 @@
 	</select>
 	
 	<!-- 관리자 삭제 (안됨) -->
-	<delete id="delete_member" parameterType="java.util.ArrayList">
-		begin
-			SET foreign_key_checks = 0; 
+	<update id="delete_member" parameterType="java.util.ArrayList">
+		<!-- delete from members where id in (
 			
-			delete from members where id in (
-			
-				<foreach collection="list" item="id" index="index" separator=",">
-					'${id}' 
-				</foreach> 
-			)
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		) -->
 		
-			SET foreign_key_checks = 1;
-		end;
-	</delete>
+		update members set name = null where id in (
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		)
+		
+	</update>
 	
 	<!-- 관리자 검색 -->
 	<select id="adminMemberSearch" parameterType="string" resultType="admin.bean.AdminUserDTO">
@@ -61,5 +68,15 @@
 		where product_name_eng like CONCAT('%',#{search},'%') or product_name_kor like CONCAT('%',#{search},'%') or pid like CONCAT('%',#{search},'%') order by created_at desc
 	</select>
 	
+	<!-- 상품 삭제 -->
+	<update id="delete_product" parameterType="java.util.ArrayList">
+	
+		update product set product_name_eng = null where pid in (
+			<foreach collection="list" item="pid" index="index" separator=",">
+				'${pid}' 
+			</foreach> 
+		)
+		
+	</update>
 	
 </mapper>

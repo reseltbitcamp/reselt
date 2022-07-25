@@ -25,5 +25,7 @@ public interface AdminService {
 
 	public Map<String, Object> adminProductSearch(String search);
 
+	public void delete_product(List<Integer> pid);
+
 
 }

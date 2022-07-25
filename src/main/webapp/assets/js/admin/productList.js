@@ -8,6 +8,11 @@ $(document).ready(function(){
 			
 			
 			$.each(data.list, function(index, items){	
+				
+				if (items.product_name_eng == null) {
+					
+				} else {
+			
 				$('.my_admin_main-content-list').append($('<div/>', {
 					class: 'my_list'
 				}).append($('<div/>', {
@@ -64,6 +69,7 @@ $(document).ready(function(){
 				
 				)
 			
+				}//else
 			}); //each
 
 			
@@ -117,7 +123,7 @@ $('.adminDiv_search_button').on('click', function(){
 					
 					).append($('<span/>', {
 						class: 'adminDiv_num_item',
-						text: items.id
+						text: items.pid
 					})) 
 					
 					).append($('<div/>', {  //adminDiv_content_all
@@ -161,5 +167,36 @@ $('.adminDiv_search_button').on('click', function(){
 
 
 
-
+//삭제 버튼 누르면 체크된 항목 삭제
+$('.delete_admin').on('click', function(){
+	
+	var checkBoxArr = [];
+	$('input:checkbox:checked').each(function(){
+		checkBoxArr.push($(this).val());
+		console.log(checkBoxArr);
+	});
+	
+	var con = confirm('삭제하시겠습니까?');
+	
+	if (con == true) {
+	
+	$.ajax({
+		type: 'POST',
+		url: '/ReseltProject/admin/delete_product',
+		traditional: true, //배열 넘기기
+		data: {"checkBoxArr": checkBoxArr},
+		success: function() {
+			alert('삭제되었습니다');
+			location.reload();
+		},
+		error: function(e){
+			console.log(e);
+		}
+	});
+	
+	} else {
+		alert('취소되었습니다');
+	}
+	
+});
 

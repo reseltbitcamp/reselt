@@ -25,7 +25,7 @@ public class AdminMybatis implements AdminDAO {
 	@Override
 	public void delete_user(List<Integer> id) {
 	//public void delete_user(List<String> id) {
-		sqlSession.delete("adminSQL.delete_user", id);
+		sqlSession.update("adminSQL.delete_user", id);
 		
 	}
 
@@ -37,7 +37,7 @@ public class AdminMybatis implements AdminDAO {
 	@Override
 	public void delete_member(List<Integer> id) {
 	//public void delete_member(List<String> id) {
-		sqlSession.delete("adminSQL.delete_member", id);
+		sqlSession.update("adminSQL.delete_member", id);
 		
 	}
 
@@ -59,6 +59,12 @@ public class AdminMybatis implements AdminDAO {
 	@Override
 	public List<AdminProductListDTO> adminProductSearch(String search) {
 		return sqlSession.selectList("adminSQL.adminProductSearch", search);
+	}
+
+	@Override
+	public void delete_product(List<Integer> pid) {
+		sqlSession.update("adminSQL.delete_product", pid);
+		
 	}
 
 }

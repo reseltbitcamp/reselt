@@ -26,4 +26,6 @@ public interface AdminDAO {
 
 	public List<AdminProductListDTO> adminProductSearch(String search);
 
+	public void delete_product(List<Integer> pid);
+
 }

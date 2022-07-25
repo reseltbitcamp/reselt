@@ -147,6 +147,25 @@ public class AdminController {
 	
 	 }
 	 
+	 @PostMapping(value="delete_product")
+		@ResponseBody
+		public void delete_product(HttpSession session, HttpServletRequest req) {
+			
+			List<Integer> pid = new ArrayList();
+			
+			String[] checkBoxArr = req.getParameterValues("checkBoxArr"); //ajax 통해 넘어온 배열 데이터 선언
+			
+			if(checkBoxArr != null) {
+				for(int i=0; i<checkBoxArr.length; i++) {
+					pid.add(Integer.parseInt(checkBoxArr[i]));
+					
+					System.out.println(pid);
+				}
+			}
+			
+			adminService.delete_product(pid);
+			
+		}
 }
 
 
