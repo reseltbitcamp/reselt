@@ -56,6 +56,8 @@ public class StyleServiceImpl implements StyleService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		StyleDTO styleDTO = styleDAO.getStyleDetails(seq);
+		map.put("styleDTO", styleDTO);
+		
 		String email = (String) session.getAttribute("email");
 		
 		map.put("email", email);
