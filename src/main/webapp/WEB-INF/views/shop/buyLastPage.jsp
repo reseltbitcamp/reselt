@@ -7,14 +7,18 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+
+<input type="hidden" id="pid" value='${pid}'/>
+<input type="hidden" id="size" value='${size}' />
+<input type="hidden" id="bidding_id" value='${id}'>
 <div class="mx-auto max-h-[960px] max-w-[780px] px-8 pb-4 pt-2 shadow-md">
   <div class="mt-1 mb-5 flex items-center">
-    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
+    <img id="product_img" src="" class="mr-4 block h-24 w-24 rounded-md" />
     <div class="flex-1">
-      <p class="font-bold">DD1391-100</p>
-      <p>Nike Dunk Low Retro Black</p>
-      <p class="text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
-      <p class="text-sm font-bold">275</p>
+      <p id="product_id"class="font-bold"></p>
+      <p id="product_name_eng"></p>
+      <p id="product_name_kor" class="text-sm text-gray-400"></p>
+      <p id="bidding_size"class="text-sm font-bold"></p>
     </div>
   </div>
 </div>
@@ -63,13 +67,13 @@
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14 border-b-2">
       <p class="align-top text-xs font-bold text-black">총 결제 금액</p>
-      <p class="float-right text-xl font-semibold text-red-600">167,400 원</p>
+      <p id="totalPrice" class="totalPrice float-right text-xl font-semibold text-red-600"></p>
     </div>
 
     <div class="w-auto">
       <dl class="flex justify-between">
         <dt class="mt-2 text-sm">즉시 구매가</dt>
-        <dd class="float-right font-semibold">150,000원</dd>
+        <dd id="price" class="float-right font-semibold"></dd>
       </dl>
 
       <dl class="flex justify-between">
@@ -79,7 +83,7 @@
 
       <dl class="flex justify-between">
         <dt class="mt-2 text-xs text-gray-400">수수료</dt>
-        <dd class="float-right text-sm">17,400 원</dd>
+        <dd id="commission" class="float-right text-sm"></dd>
       </dl>
 
       <dl class="flex justify-between">
@@ -146,7 +150,7 @@
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200 shadow-md">
   <div class="flex">
     <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">총 결제금액</dt>
-    <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500">167,400원</dd>
+    <dd class="totalPrice mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500"></dd>
   </div>
   <div class="p-3">
   	<button id="chargeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>

@@ -61,8 +61,8 @@
 	
 	<insert id="writeBuyBidding" parameterType="java.util.Map">
 		INSERT INTO biddings(member_id, pid, product_size, bidding_price, 
-							 position, status, matched_bidding_id)
-		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '구매', '낙찰', #{matched_bidding_id})
+							 position, status, matched_bidding_id, created_at)
+		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '구매', '낙찰', #{matched_bidding_id}, sysdate())
 	</insert>
 	
 	<select id="getProductInformation" parameterType="java.util.Map" resultType="biddingDTO">
@@ -73,5 +73,7 @@
 		GROUP BY product_size 
 		ORDER BY product_size ASC;
 	</select>
+	
+	
 	
 </mapper>

@@ -52,5 +52,12 @@ public class MemberDAOMybatis implements MemberDAO {
 	}
 	
 	
+	//shop사용
+	@Override
+	public MemberDTO checkEmail_useShop(String email) {
+		return sqlSession.selectOne("memberSQL.checkEmail_useShop", email);
+	}
+	
+	
 	
 }

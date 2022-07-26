@@ -13,7 +13,7 @@
 
   <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
   <div class="mt-10 flex items-center">
-    <img id="product_img" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
+    <img id="product_img" src="" class="mr-4 block h-24 w-24 rounded-md" />
     <div class="flex-1">
       <p id="product_id"class="font-bold"></p>
       <p id="product_name_eng"></p>

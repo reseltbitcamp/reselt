@@ -28,9 +28,6 @@ public class ShopController {
 	private ShopService shopService;
 	@Autowired
 	private HttpSession session;
-	
-	@Autowired
-	HttpSession session;
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
@@ -108,7 +105,7 @@ public class ShopController {
 	
 	@PostMapping(value="/getProductInfomation")
 	@ResponseBody
-	public Map<Object, Object> getProductInformation(@RequestParam String size, int pid) {
+	public Map<String, Object> getProductInformation(@RequestParam String size, int pid) {
 		return shopService.getProductInformation(size, pid);
 	}
 
@@ -143,10 +140,10 @@ public class ShopController {
 	
 	@PostMapping(value="insertBuyInfomation")
 	@ResponseBody
-	public Map<String, Object> insertBuyInfomation(HttpSession session, @RequestParam String size, int pid){
-		String member_id = (String)session.getAttribute("id");
-		System.out.println(pid+"   "+member_id+"   "+size);
-		return shopService.buyLastPageInformation(member_id,pid,size);
+	public Map<String, Object> insertBuyInfomation(HttpSession session, @RequestParam String size, int pid, int bidding_id){
+		String email = (String)session.getAttribute("email");
+		System.out.println("세션id"+email);
+		return shopService.insertBuyInfomation(email,pid,size,bidding_id);
 	}
 
 	@RequestMapping(value = "/buySuccess", method={RequestMethod.GET, RequestMethod.POST})
