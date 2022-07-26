@@ -34,6 +34,7 @@ function ProductList(){
                $('<div class="product" data-category="'
                +items.category_name_eng+' '
                +items.brand_name+' '
+               +priceRange+' '
                +items.gender_name+'"><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
                +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
                +items.pid+'/'
@@ -111,8 +112,7 @@ Array.from(items).sort(function(a, b) {
 }
 // ajax상에 locale $ 잡아놓은 것 때문에 innerText안되는지 확인해볼것
 
-sortByNameBtn.addEventListener('click', sortingByName);
-sortByPriceBtn.addEventListener('click', sortByPriceLow);
+sortByPriceLowBtn.addEventListener('click', sortByPriceLow);
 
 	
 	
