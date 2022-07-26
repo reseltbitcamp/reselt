@@ -42,11 +42,20 @@
         order by product.pid asc limit #{startNum}, #{endNum};
    </select>
 	
-		<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
-			select product_size, MIN(bidding_price) AS bidding_price
-			from biddings
-			where pid=#{pid} and status="입찰중"
-			GROUP BY product_size 
-			ORDER BY product_size ASC;
-		</select>
+  <select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
+		select product_size, MIN(bidding_price) AS bidding_price, bidding_id, pid
+		from biddings
+		where pid=#{pid} and status="입찰중"
+		GROUP BY product_size 
+		ORDER BY product_size ASC;
+	</select>
+	
+	<select id="getProductInformation" parameterType="java.util.Map" resultType="biddingDTO">
+		select product_size, MIN(bidding_price) AS bidding_price, product_name_kor, product_name_eng, pid
+		from biddings
+		join product using(pid)
+		where product_size=#{size} AND  status="입찰중" and pid=#{pid}
+		GROUP BY product_size 
+		ORDER BY product_size ASC;
+	</select>
 </mapper>

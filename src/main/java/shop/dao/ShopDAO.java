@@ -16,6 +16,8 @@ public interface ShopDAO {
 
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map);
 
+	public BiddingDTO getProductInformation(Map<String, String> map);
+
 
 		
 	

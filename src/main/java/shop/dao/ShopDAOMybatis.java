@@ -1,5 +1,6 @@
 package shop.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,6 +39,11 @@ public class ShopDAOMybatis implements ShopDAO {
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
 		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
+	}
+
+	@Override
+	public BiddingDTO getProductInformation(Map<String, String> map) {
+		return sqlsession.selectOne("shopSQL.getProductInformation", map);		
 	}
 
 }

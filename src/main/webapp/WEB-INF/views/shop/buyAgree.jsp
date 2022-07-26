@@ -6,7 +6,8 @@
 
 
 <div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
-
+<input type="hidden" id="pid" value='${pid}'/>
+<input type="hidden" id="size" value='${size}' />
       <!-- 제품 정보 화면 -->
 
   <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
@@ -84,6 +85,6 @@
   </form>
 </div>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/buyAgree.js"></script>
 
 
