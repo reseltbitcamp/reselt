@@ -81,6 +81,6 @@ $('#fourthAgree').click(function(){
 })
 
 $('#agreeBtn').click(function(){
-	location.href="./buyLastPage?pid="+$('#pid').val()+"&size="+$('#size').val();
+	location.href="./buyLastPage?pid="+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val();
 });
 // buyAgree

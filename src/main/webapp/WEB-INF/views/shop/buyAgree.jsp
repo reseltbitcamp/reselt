@@ -7,6 +7,7 @@
 
 <input type="hidden" id="pid" value='${pid}'/>
 <input type="hidden" id="size" value='${size}' />
+<input type="hidden" id="bidding_id" value='${id}'>
 <div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
       <!-- 제품 정보 화면 -->
 

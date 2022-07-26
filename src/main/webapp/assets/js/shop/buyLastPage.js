@@ -16,6 +16,19 @@ $(function(){
 	$('#addressChangeBtn').click(function(){
 		$('.addressDiv_modal').show();
 	})
+	
+	$.ajax({
+		type: 'post',
+		url: "/ReseltProject/shop/insertBuyInfomation",
+		data:{'pid': $('#pid').val(),
+			  'size' : $('#size').val()},
+		success:function(data){
+			console.log(JSON.stringify(data))
+		}, error:function(err) {
+			console.log(err)
+		}
+	})
+	
 })
 
 $('#firstAgree').click(function(){
@@ -85,6 +98,6 @@ $('.paymentOption').each(function(index){
   })
   
 $('#chargeBtn').click(function(){
-	location.href='./buySuccess'
+//	location.href='./buySuccess'
 });
 // buyLastPage

@@ -27,6 +27,9 @@ public class ShopController {
 	@Autowired
 	private ShopService shopService;
 	
+	@Autowired
+	HttpSession session;
+
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
 		ModelAndView mav = new ModelAndView();
@@ -80,7 +83,7 @@ public class ShopController {
 	}
 	
 	@GetMapping(value = "/buyAgree")
-	public ModelAndView buyAgree(@RequestParam int pid, String size) {
+	public ModelAndView buyAgree(@RequestParam int pid, String size, int id) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyAgreeMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
@@ -88,6 +91,7 @@ public class ShopController {
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
 		mav.addObject("pid", pid);
 		mav.addObject("size", size);
+		mav.addObject("id", id);
 		mav.setViewName("/index");
 		
 		return mav;
@@ -97,18 +101,6 @@ public class ShopController {
 	@ResponseBody
 	public Map<Object, Object> getProductInformation(@RequestParam String size, int pid) {
 		return shopService.getProductInformation(size, pid);
-	}
-	
-	@GetMapping(value = "/buyBid")
-	public ModelAndView buyBid() {
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyBidMenu.jsp");
-		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
-		mav.addObject("display","/WEB-INF/views/shop/buyBid.jsp");
-		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.setViewName("/index");
-		
-		return mav;
 	}
 
 	@GetMapping(value = "/buyStraight")
@@ -124,17 +116,28 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/buyLastPage", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView buyLastPage() {
+	public ModelAndView buyLastPage(@RequestParam int pid, String size, int id) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buyLastPage.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
+		mav.addObject("size", size);
+		mav.addObject("id", id);
 		mav.setViewName("/index");
 		
 		System.out.println("check");
 		
 		return mav;
+	}
+	
+	@PostMapping(value="insertBuyInfomation")
+	@ResponseBody
+	public Map<String, Object> insertBuyInfomation(HttpSession session, @RequestParam String size, int pid){
+		String member_id = (String)session.getAttribute("id");
+		System.out.println(pid+"   "+member_id+"   "+size);
+		return shopService.buyLastPageInformation(member_id,pid,size);
 	}
 
 	@RequestMapping(value = "/buySuccess", method={RequestMethod.GET, RequestMethod.POST})

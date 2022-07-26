@@ -69,4 +69,14 @@ public class ShopServiceImpl implements ShopService {
 		return map;
 	}
 
+	@Override
+	public Map<String, Object> buyLastPageInformation(String member_id, int pid, String size) {
+		Map<String, Object>map = new HashMap<String, Object>();
+		map.put("member_id", member_id);
+		map.put("pid", pid);
+		map.put("size", size);
+		
+		return map;
+	}
+
 }
