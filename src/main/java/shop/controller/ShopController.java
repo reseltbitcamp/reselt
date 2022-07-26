@@ -26,6 +26,8 @@ import shop.service.ShopService;
 public class ShopController {
 	@Autowired
 	private ShopService shopService;
+	@Autowired
+	private HttpSession session;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
