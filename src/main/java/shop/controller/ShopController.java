@@ -79,6 +79,13 @@ public class ShopController {
 		System.out.println("pid = "+ pid);
 		return shopService.getBiddingDTO(pid);
 	}
+
+	@PostMapping(value= "/getProductPriceMax")
+	@ResponseBody
+	public Map<Object, Object> getPriceMax(@RequestParam int pid) {
+		System.out.println("pid = "+ pid);
+		return shopService.getPriceMax(pid);
+	}
 	
 	@GetMapping(value = "/buyAgree")
 	public ModelAndView buyAgree(@RequestParam int pid, String size) {

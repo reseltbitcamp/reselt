@@ -49,6 +49,14 @@
 		GROUP BY product_size 
 		ORDER BY product_size ASC;
 	</select>
+
+	<select id="getBidiingPriceMax" parameterType="java.util.Map" resultType="biddingDTO">
+		select product_size, pid, bidding_id, MAX(bidding_price) AS bidding_price
+		from biddings
+		where pid=#{pid} and status="입찰중"
+		GROUP BY product_size 
+		ORDER BY product_size ASC;
+	</select>
 	
 	<select id="getProductInformation" parameterType="java.util.Map" resultType="biddingDTO">
 		select product_size, MIN(bidding_price) AS bidding_price, product_name_kor, product_name_eng, pid

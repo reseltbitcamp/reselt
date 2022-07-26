@@ -68,4 +68,13 @@ public class ShopServiceImpl implements ShopService {
 		return map;
 	}
 
+	@Override
+	public Map<Object, Object> getPriceMax(int pid) {
+		Map<Object, Object>map = new HashMap<Object, Object>();
+		map.put("pid", pid);
+		List<BiddingDTO> list = shopDAO.getBidiingPriceMax(map);
+		map.put("list", list);
+		return map;
+	}
+
 }
