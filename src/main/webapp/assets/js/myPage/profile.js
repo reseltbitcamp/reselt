@@ -45,6 +45,13 @@ $('.pwdDiv_text').on('input', function(){
 	}
 });
 
+//변경 누르면 nameDiv 수정
+$('.nameDiv_alter').click(function(){
+	$('.nameDiv').addClass('removeEvent');
+	$('.nameDiv_New').removeClass('removeEvent');
+});
+
+
 
 //변경 누르면 nickDiv 수정
 $('.nickDiv_alter').click(function(){
@@ -63,10 +70,10 @@ $('.nickDiv_cancel').click(function(){
 $('.nickDiv_text').on('input', function(){
 	if ($('.nickDiv_text').val().length < 2 || $('.nickDiv_text').val().length > 50) {
 		$('.nickDiv_save').attr('disabled', true);
-		$('.input_error').removeClass('removeEvent');
+		$('.input_error_nick').removeClass('removeEvent');
 	} else {
 		$('.nickDiv_save').attr('disabled', false);
-		$('.input_error').addClass('removeEvent');
+		$('.input_error_nick').addClass('removeEvent');
 	}
 });
 
@@ -85,14 +92,25 @@ $('.phoneDiv_cancel').click(function(){
 });
 
 
-//텍스트 쓰면 활성화 nickDiv 활성화
+//텍스트 쓰면 활성화 phoneDiv 활성화
 $('.phoneDiv_text').on('input', function(){
 	if ($('.phoneDiv_text').val().length != 10 && $('.phoneDiv_text').val().length != 11) {
 		$('.phoneDiv_save').attr('disabled', true);
-		$('.input_error').removeClass('removeEvent');
+		$('.input_error_phone').removeClass('removeEvent');
 	} else {
 		$('.phoneDiv_save').attr('disabled', false);
-		$('.input_error').addClass('removeEvent');
+		$('.input_error_phone').addClass('removeEvent');
+	}
+});
+
+//텍스트 쓰면 활성화 nameDiv 활성화
+$('.nameDiv_text').on('input', function(){
+	if ($('.nameDiv_text').val().length < 2 || $('.nameDiv_text').val().length > 50) {
+		$('.nameDiv_save').attr('disabled', true);
+		$('.input_error_name').removeClass('removeEvent');
+	} else {
+		$('.nameDiv_save').attr('disabled', false);
+		$('.input_error_name').addClass('removeEvent');
 	}
 });
 
@@ -103,33 +121,6 @@ $('.sizeDiv_alter').click(function(){
 	$('.modalDiv').fadeIn();
 });
 
-//확인 누르면 모달창 x
-//$('.modalDiv_check').click(function(){
-//	$('.modalDiv').fadeOut();
-//});
-
-
-/*
-//email 변경 시 데이터 변경, 페이지에 뿌리기
-$('.emailDiv_save').click(function(){
-	
-	$.ajax({
-		type: 'post',
-		url: '/ReseltProject/myPage/emailUpdate',
-		data: 'email=' + $('.emailDiv_text').val(),
-		success: function(){
-			$('.emailDiv').removeClass('removeEvent');
-			$('.emailDiv_New').addClass('removeEvent');
-			$('.emailDiv_p').text($('.emailDiv_text').val());
-			alert('이메일이 변경되었습니다');
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});
-	
-});
-*/
 
 //비밀번호 변경 시 데이터 변경
 $('.pwdDiv_save').click(function(){
@@ -152,6 +143,28 @@ $('.pwdDiv_save').click(function(){
 
 
 //이름 변경 시 데이터 변경, 페이지 뿌리기
+$('.nameDiv_save').click(function(){
+	
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/nameUpdate',
+		data: 'name=' + $('.nameDiv_text').val(),
+		success: function(){
+			$('.nameDiv').removeClass('removeEvent');
+			$('.nameDiv_New').addClass('removeEvent');
+			$('.nameDiv_p').text($('.nameDiv_text').val());
+			$('.titleDiv_p').text($('.nameDiv_text').val());
+			alert('이름이 변경되었습니다');
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+	
+});
+
+
+//닉네임 변경 시 데이터 변경, 페이지 뿌리기
 $('.nickDiv_save').click(function(){
 	
 	$.ajax({
@@ -418,6 +431,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		success: function(data) {
 			console.log(data.profile_img);
+			$('.titleDiv_p').text(data.name);
 			$('.emailDiv_p').append($('<span/>', {text: data.email}));
 			$('.nameDiv_p').append($('<span/>', {text: data.name}));
 			$('.nickDiv_p').append($('<span/>', {text: data.nick}));
@@ -460,22 +474,3 @@ $(document).ready(function(){
 
 });	
 
-
-/*CREATE TABLE members(
-	     id int not null,
-	     email varchar(20) null,
-	     pwd varchar(20) null,
-	     name varchar(20) null,
-	     tel varchar(20) null,
-	     address varchar(20) null,
-	     created_at date null, --not null
-	     update_at date null, --not null
-	     footsize varchar(20) null,
-	     profile_img varchar(20) null,
-	     login_type int null, --not null
-	     "level" int null --not null
-	     );
-	     
-	     commit;
-	     
-	     insert into members (id) values ('1');*/

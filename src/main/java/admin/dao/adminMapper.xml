@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminSQL">
+
+	<!-- 유저 리스트 -->
+	<select id="show_user" resultType="admin.bean.AdminUserDTO">
+		select id, date_format(created_at, '%y-%m-%d') as created_at, email, name from members where level = 0 order by created_at desc
+	</select>
+	
+	<!-- 유저 삭제 -->
+	<update id="delete_user" parameterType="java.util.ArrayList">
+		<!-- delete from members where id in (		
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		) -->
+		
+		update members set name = null where id in (
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		)
+		
+	</update>
+	
+	<!-- 유저 검색 -->
+	<select id="adminUserSearch" parameterType="string" resultType="admin.bean.AdminUserDTO">
+		select id, date_format(created_at, '%y-%m-%d') as created_at, email, name from members where name like CONCAT('%',#{search},'%') and level = 0 order by created_at desc
+	</select>
+	
+	<!-- 관리자 리스트 -->
+	<select id="show_member" resultType="admin.bean.AdminUserDTO">
+		select id, date_format(created_at, '%y-%m-%d') as created_at, email, name from members where level = 1 order by created_at desc
+	</select>
+	
+	<!-- 관리자 삭제 (안됨) -->
+	<update id="delete_member" parameterType="java.util.ArrayList">
+		<!-- delete from members where id in (
+			
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		) -->
+		
+		update members set name = null where id in (
+			<foreach collection="list" item="id" index="index" separator=",">
+				'${id}' 
+			</foreach> 
+		)
+		
+	</update>
+	
+	<!-- 관리자 검색 -->
+	<select id="adminMemberSearch" parameterType="string" resultType="admin.bean.AdminUserDTO">
+		select id, date_format(created_at, '%y-%m-%d') as created_at, email, name from members where name like CONCAT('%',#{search},'%') and level = 1 order by created_at desc
+	</select>
+	
+	<!-- 상품 리스트 -->
+	<select id="product_list" resultType="admin.bean.AdminProductListDTO">
+		select pid, date_format(created_at, '%y-%m-%d') as created_at, product_name_eng, product_name_kor from product order by created_at desc
+	</select>
+	
+	<!-- 상품 검색 -->
+	<select id="adminProductSearch" parameterType="string" resultType="admin.bean.AdminProductListDTO">
+		select pid, date_format(created_at, '%y-%m-%d') as created_at, product_name_eng, product_name_kor from product
+		where product_name_eng like CONCAT('%',#{search},'%') or product_name_kor like CONCAT('%',#{search},'%') or pid like CONCAT('%',#{search},'%') order by created_at desc
+	</select>
+	
+	<!-- 상품 삭제 -->
+	<update id="delete_product" parameterType="java.util.ArrayList">
+	
+		update product set product_name_eng = null where pid in (
+			<foreach collection="list" item="pid" index="index" separator=",">
+				'${pid}' 
+			</foreach> 
+		)
+		
+	</update>
+	
+</mapper>
