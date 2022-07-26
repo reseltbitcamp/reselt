@@ -50,6 +50,12 @@
 		ORDER BY product_size ASC;
 	</select>
 	
+	<insert id="writeBuyBidding" parameterType="java.util.Map">
+		INSERT INTO biddings(member_id, pid, product_size, bidding_price, 
+							 position, status, matched_bidding_id)
+		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '구매', '낙찰', #{matched_bidding_id})
+	</insert>
+	
 	<select id="getProductInformation" parameterType="java.util.Map" resultType="biddingDTO">
 		select product_size, MIN(bidding_price) AS bidding_price, product_name_kor, product_name_eng, pid
 		from biddings
@@ -58,4 +64,5 @@
 		GROUP BY product_size 
 		ORDER BY product_size ASC;
 	</select>
+	
 </mapper>
