@@ -58,7 +58,7 @@
 	</insert>
 	
 	<select id="getProductInformation" parameterType="java.util.Map" resultType="biddingDTO">
-		select product_size, MIN(bidding_price) AS bidding_price, product_name_kor, product_name_eng, pid
+		select product_size, MIN(bidding_price) AS bidding_price, pid
 		from biddings
 		join product using(pid)
 		where product_size=#{size} AND  status="입찰중" and pid=#{pid}
