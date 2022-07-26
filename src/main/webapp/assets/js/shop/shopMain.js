@@ -1,22 +1,16 @@
 // >>>>>>>>>>>>> 00. infinite scroll
+const observer = new IntersectionObserver(function(entries) {
+  if (entries[0].isIntersecting === true) {
+    // alert("Infinite scroll event will be triggered.");
+    ProductList();
+  }}, { threshold: [0.2] });
 
-function Scroll(){
-   console.log("scroll 실행");
-   const pagination = document.querySelector('.paginaiton');
-   const fullContent = document.querySelector('.infinite');
-   const screenHeight = screen.height;
-   let oneTime = false;
-   document.addEventListener('scroll',OnScroll,{passive:true})
-    function OnScroll () {
-      const fullHeight = fullContent.clientHeight;   
-      const scrollPosition = pageYOffset;
-      if (fullHeight-screenHeight*2 <= scrollPosition && !oneTime) {
-       oneTime = true;
-       ProductList();
-      }
-    }
-}
-
+// Trigger fires when DOM is fully loaded
+document.addEventListener('readystatechange', event => {
+  if (event.target.readyState === "complete") {
+    observer.observe(document.getElementById("footerTop"));
+  }
+});
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 01. product List
 function ProductList(){
@@ -29,17 +23,10 @@ function ProductList(){
        success: function(data){ 
           
             $.each(data.list, function(index, items){
-	        	let priceRange = items.released_price;
-	        	if (priceRange <= 100000){priceRange = 'lowprice'}
-	        	else if (priceRange >100000 && priceRange <= 300000){priceRange = 'lowmidprice'}
-	        	else if (priceRange >300000 && priceRange <= 500000){priceRange = 'midprice'}
-	        	else if (priceRange >500000){priceRange = 'highprice'};
-            	
                //data-category="green small medium africa"
                $('<div class="product" data-category="'
                +items.category_name_eng+' '
                +items.brand_name+' '
-               +priceRange+' '
                +items.gender_name+'"><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
                +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
                +items.pid+'/'
@@ -52,11 +39,11 @@ function ProductList(){
                +items.product_likes+'</p></div>')
                .appendTo($('#productList'));
                //http://3.39.241.175:6753/upload/resources/img/product/12831/12831-1.webp
-             
+        
+               console.log(items.category_name_eng);
             });//each
 
          paging();   
-         Scroll();
       },
       error: function(err){
          console.log(err);
@@ -102,25 +89,34 @@ function ProductList(){
 var filterCheckboxes = $('input[type="checkbox"]');
 var filterFunc = function() {
   
-var selectedFilters = {};
-filterCheckboxes.filter(':checked').each(function() {
+  var selectedFilters = {};
+  filterCheckboxes.filter(':checked').each(function() {
     if (!selectedFilters.hasOwnProperty(this.name)) {
       selectedFilters[this.name] = [];
     }
     selectedFilters[this.name].push(this.value);
-});
+  });
 
-var filteredResults = $('.product');
- $.each(selectedFilters, function(name, filterValues) {
-   filteredResults = filteredResults.filter(function() {
-     var matched = false,
+  // create a collection containing all of the filterable elements
+  var filteredResults = $('.product');
+
+  // loop over the selected filter name -> (array) values pairs
+  $.each(selectedFilters, function(name, filterValues) {
+
+    // filter each .product element
+    filteredResults = filteredResults.filter(function() {
+
+      var matched = false,
         currentFilterValues = $(this).data('category').split(' ');
+
+      // loop over each category value in the current .flower's data-category
       $.each(currentFilterValues, function(_, currentFilterValue) {
         if ($.inArray(currentFilterValue, filterValues) != -1) {
           matched = true;
           return false;
         }
       });
+      // if matched is true the current .flower element is returned
       return matched;
     });
   });
@@ -128,11 +124,6 @@ var filteredResults = $('.product');
 }
 
 filterCheckboxes.on('change', filterFunc);  
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 5. Top Filter
-
- 
-
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 4. paging each itembox//
