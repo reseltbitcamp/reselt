@@ -32,18 +32,19 @@ public class ShopDAOMybatis implements ShopDAO {
 
 	@Override
 	public List<ProductDTO> getProductList(Map<String, Integer> map) {
+		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getProductList", map);
 	}
 
 	@Override
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
-		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
 	}
 
 	@Override
-	public List<BiddingDTO> getProductInformation(Map<String, Object> map) {
-		return sqlsession.selectOne("shopSQL.getProductInformation", map);		
+	public BiddingDTO getProductInformation(Map<Object, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectOne("shopSQL.getProductInformation", map);
 	}
 
 	@Override

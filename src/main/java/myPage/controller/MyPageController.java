@@ -22,10 +22,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import myPage.bean.MyPageAccountDTO;
 import myPage.bean.MyPageAddressDTO;
-import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 import myPage.service.MyPageAddressService;
-import myPage.service.MyPageBuyingService;
 import myPage.service.MyPageProfileService;
 import myPage.service.MyPageAccountService;
 
@@ -35,9 +33,6 @@ public class MyPageController {
 
 	@Autowired
 	MyPageProfileService myPageProfileService;
-	
-	@Autowired
-	MyPageBuyingService myPageBuyingService;
 	
 	@Autowired
 	MyPageAddressService myPageAddressService;
@@ -172,6 +167,11 @@ public class MyPageController {
 		myPageProfileService.nickUpdate(nick);
 	}
 	
+	@PostMapping(value="nameUpdate")
+	@ResponseBody
+	public void nameUpdate(@RequestParam String name) {
+		myPageProfileService.nameUpdate(name);
+	}
 	
 	@PostMapping(value = "telOk")
 	@ResponseBody
@@ -285,17 +285,6 @@ public class MyPageController {
 		return myPageProfileDTO;
 	}
 	
-
-	//buying
-	@PostMapping(value="getBuying")
-	@ResponseBody
-	public List<MyPageBuyingDTO> getBuying() {
-		
-		List<MyPageBuyingDTO> list = myPageBuyingService.getBuying();
-		System.out.println(list);
-		return list;
-		
-	}
 	
 	//address
 	@PostMapping(value="add_address")

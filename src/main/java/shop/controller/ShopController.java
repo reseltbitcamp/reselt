@@ -26,6 +26,8 @@ import shop.service.ShopService;
 public class ShopController {
 	@Autowired
 	private ShopService shopService;
+	@Autowired
+	private HttpSession session;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
@@ -76,7 +78,6 @@ public class ShopController {
 	@PostMapping(value= "/getProductPrice")
 	@ResponseBody
 	public Map<Object, Object> getPrice(@RequestParam int pid) {
-		System.out.println("pid = "+ pid);
 		return shopService.getBiddingDTO(pid);
 	}
 
@@ -103,7 +104,7 @@ public class ShopController {
 	
 	@PostMapping(value="/getProductInfomation")
 	@ResponseBody
-	public Map<String, Object> getProductInformation(@RequestParam String size, int pid) {
+	public Map<Object, Object> getProductInformation(@RequestParam String size, int pid) {
 		return shopService.getProductInformation(size, pid);
 	}
 	

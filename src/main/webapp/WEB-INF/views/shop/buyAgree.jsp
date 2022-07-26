@@ -5,19 +5,19 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-<div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
 <input type="hidden" id="pid" value='${pid}'/>
 <input type="hidden" id="size" value='${size}' />
+<div class="mx-auto max-h-[960px] max-w-[780px] bg-white my-[50px] p-8 shadow-md">
       <!-- 제품 정보 화면 -->
 
   <p class="text-left text-3xl font-semibold text-red-500">구매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
   <div class="mt-10 flex items-center">
-    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
+    <img id="product_img" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
     <div class="flex-1">
-      <p class="font-bold">DD1391-100</p>
-      <p>Nike Dunk Low Retro Black</p>
-      <p class="text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
-      <p class="text-sm font-bold">275</p>
+      <p id="product_id"class="font-bold"></p>
+      <p id="product_name_eng"></p>
+      <p id="product_name_kor" class="text-sm text-gray-400"></p>
+      <p id="bidding_size"class="text-sm font-bold"></p>
     </div>
   </div>
     
@@ -73,7 +73,7 @@
   <div id="buyStraightDiv">
     <div class="mt-5 h-14 border-b-2">
       <p class="align-top text-xs font-bold text-black">판매가</p>
-      <p class="float-right text-xl font-semibold">150,000 원</p>
+      <p id="bidding_price"class="float-right text-xl font-semibold"></p>
     </div>        
     <div class="mb-9 w-auto">
       <dl class="flex justify-between">
