@@ -19,5 +19,5 @@ public interface StyleService {
 
 	public Map<String, Object> styleReplyWrite(Map<String, String> map);
 
-	public void styleReplyDelete(int style_seq);
+	public int styleReplyDelete(int style_seq, int pseq);
 }

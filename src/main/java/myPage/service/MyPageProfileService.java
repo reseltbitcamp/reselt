@@ -2,7 +2,6 @@ package myPage.service;
 
 import java.util.List;
 
-import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 
 public interface MyPageProfileService {
@@ -28,6 +27,8 @@ public interface MyPageProfileService {
 	public void telUpdate(String tel);
 
 	public void withdrawal_user(String email);
+
+	public void nameUpdate(String name);
 
 
 }

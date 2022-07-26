@@ -29,6 +29,8 @@ public interface MyPageProfileDAO {
 
 	public void withdrawal_user(String email);
 
+	public void nameUpdate(Map<String, String> map);
+
 
 
 

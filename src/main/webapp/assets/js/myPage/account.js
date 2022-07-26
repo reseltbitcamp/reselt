@@ -9,14 +9,16 @@ $('.drop_link').on('click', function(){
 	$('.account_list').addClass('removeEvent');
 	$('.accountnameDiv_text').removeAttr('placeholder');
 	$('.accountnameDiv_text').val(account_value);
+	//은행명 넣었을 때 removeEvent 삭제
+	$('.accountnameDiv_text_error').addClass('removeEvent');
 });
 
 //은행명 유효성 검사
 $('.accountnameDiv_text').on('input', function(){
 	if($(this).val() == '') {
-		$('.accountnameDiv_error').removeClass('removeEvent');
+		$('.accountnameDiv_text_error').removeClass('removeEvent');
 	} else {
-		$('.accountnameDiv_error').addClass('removeEvent');
+		$('.accountnameDiv_text_error').addClass('removeEvent');
 	}
 });
 
@@ -45,7 +47,7 @@ $('.accountDiv_save').click(function(){
 	
 	$('.nameDiv_error').addClass('removeEvent');
 	$('.accountDiv_error').addClass('removeEvent');
-	$('.accountnameDiv_error').addClass('removeEvent');
+	$('.accountnameDiv_text_error').addClass('removeEvent');
 	
 	//유효성 검사
 	if ($('.accountnameDiv_text').val() == '') {
