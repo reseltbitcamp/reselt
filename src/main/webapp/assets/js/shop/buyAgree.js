@@ -6,7 +6,15 @@ $(function(){
 		data:{'pid': $('#pid').val(),
 			  'size' : $('#size').val()},
 		success:function(data){
-			console.log(data)
+			console.log(JSON.stringify(data))
+			$('#product_id').html(data.productDTO.product_id);
+			$('#product_name_kor').html(data.productDTO.product_name_kor);
+			$('#product_name_eng').html(data.productDTO.product_name_eng);
+			$('#bidding_size').html(data.size)
+			$('#bidding_price').html(data.biddingDTO.bidding_price.toLocaleString('ko-KR')+" 원");
+			const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
+			const imgFiles = data.productDTO.img_file.split(",");
+			$('#product_img').attr("src", imgPath+"/"+data.pid+"/"+imgFiles[0]);
 		}, error:function(e){
 			console.log("에러")
 		}
@@ -73,6 +81,6 @@ $('#fourthAgree').click(function(){
 })
 
 $('#agreeBtn').click(function(){
-	location.href="./buyLastPage"
+	location.href="./buyLastPage?pid="+$('#pid').val()+"&size="+$('#size').val();
 });
 // buyAgree
