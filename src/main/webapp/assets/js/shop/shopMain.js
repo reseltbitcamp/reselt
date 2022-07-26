@@ -34,6 +34,8 @@ function ProductList(){
 	        	else if (priceRange >100000 && priceRange <= 300000){priceRange = 'lowmidprice'}
 	        	else if (priceRange >300000 && priceRange <= 500000){priceRange = 'midprice'}
 	        	else if (priceRange >500000){priceRange = 'highprice'};
+	        	
+	        	
             	
                //data-category="green small medium africa"
                $('<div class="product" data-category="'
