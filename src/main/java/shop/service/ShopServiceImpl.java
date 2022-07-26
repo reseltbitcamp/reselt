@@ -58,13 +58,14 @@ public class ShopServiceImpl implements ShopService {
 	}
 
 	@Override
-	public BiddingDTO getProductInformation(String size, int pid) {
-		Map<String, String> map = new HashMap<String, String>(); 
-		System.out.println(size);
+	public Map<String, Object> getProductInformation(String size, int pid) {
+		Map<String, Object> map = new HashMap<String, Object>(); 
 		map.put("size", size);
-		map.put("pid", pid+"");
+		map.put("pid", pid);
+		List<BiddingDTO>list = shopDAO.getProductInformation(map);
+		map.put("list", list);
 		
-		return shopDAO.getProductInformation(map);
+		return map;
 	}
 
 }

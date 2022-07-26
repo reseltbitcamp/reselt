@@ -96,7 +96,7 @@ public class ShopController {
 	
 	@PostMapping(value="/getProductInfomation")
 	@ResponseBody
-	public BiddingDTO getProductInformation(@RequestParam String size, int pid) {
+	public Map<String, Object> getProductInformation(@RequestParam String size, int pid) {
 		return shopService.getProductInformation(size, pid);
 	}
 	

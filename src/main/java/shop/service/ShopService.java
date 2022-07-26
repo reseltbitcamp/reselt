@@ -16,5 +16,5 @@ public interface ShopService {
 
 	public Map<Object, Object> getBiddingDTO(int pid);
 
-	public BiddingDTO getProductInformation(String size, int pid);
+	public Map<String, Object> getProductInformation(String size, int pid);
 }

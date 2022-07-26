@@ -1,7 +1,5 @@
 //buySize
 $(document).ready(function(){
-  $('#nextBtn').hide();
-  
   $.ajax({
 	type: "post",
     url: "/ReseltProject/shop/getProductDTO",
@@ -16,7 +14,7 @@ $(document).ready(function(){
 		$('#product_img').attr("src", imgPath+"/"+data.pid+"/"+imgFiles[0]);
 		
 		// 사이즈표시
-		let shose_size = [230, 235, 240, 245, 255, 260, 265, 270, 275, 280, 285, 290];
+		let shose_size = [230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300];
 		const clothes_size = ['XS' ,'S' ,'M', 'L', 'XL'];
 		const other = "OneSize";
 		
@@ -56,8 +54,8 @@ $(document).ready(function(){
 		  })
 		}// 신발 사이즈 표시
 	},
-	error: function(e) {
-      console.log(e)
+	error: function(err) {
+      console.log(err)
     },
  });// 사이즈 표시 ajax
   
@@ -67,18 +65,21 @@ $(document).ready(function(){
 	 url: "/ReseltProject/shop/getProductPrice",
 	 data: $('#buySizeForm').serialize(),
 	 success:function(data){
-		console.log(JSON.stringify(data))
 		$.each(data.list, function(index, data){
-			console.log(index)
 			$(`#price${data.product_size}`).html(data.bidding_price.toLocaleString('ko-KR'));
+			$(`#price${data.product_size}`).val(data.bidding_price.toLocaleString('ko-KR'));
 		})
 	 }, error:function(err){
 		 console.log(err)
 	 }
    })//ajax
 })
+//버튼숨기기
+$('#nextBtn').hide();
 //다음페이지
 $(document).on('click', '.sizeBtn', function(){
+	$('#price').text('');
+	$('#price').text($('#price'+$('.selectSizeValue').val()).val());
 	$('#nextBtn').show();
 })
 $('#nextBtn').click(function(){
