@@ -29,10 +29,17 @@ function ProductList(){
        success: function(data){ 
           
             $.each(data.list, function(index, items){
+	        	let priceRange = items.released_price;
+	        	if (priceRange <= 100000){priceRange = 'lowprice'}
+	        	else if (priceRange >100000 && priceRange <= 300000){priceRange = 'lowmidprice'}
+	        	else if (priceRange >300000 && priceRange <= 500000){priceRange = 'midprice'}
+	        	else if (priceRange >500000){priceRange = 'highprice'};
+            	
                //data-category="green small medium africa"
                $('<div class="product" data-category="'
                +items.category_name_eng+' '
                +items.brand_name+' '
+               +priceRange+' '
                +items.gender_name+'"><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
                +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
                +items.pid+'/'
@@ -45,8 +52,7 @@ function ProductList(){
                +items.product_likes+'</p></div>')
                .appendTo($('#productList'));
                //http://3.39.241.175:6753/upload/resources/img/product/12831/12831-1.webp
-        
-               console.log(items.category_name_eng);
+             
             });//each
 
          paging();   
@@ -96,34 +102,25 @@ function ProductList(){
 var filterCheckboxes = $('input[type="checkbox"]');
 var filterFunc = function() {
   
-  var selectedFilters = {};
-  filterCheckboxes.filter(':checked').each(function() {
+var selectedFilters = {};
+filterCheckboxes.filter(':checked').each(function() {
     if (!selectedFilters.hasOwnProperty(this.name)) {
       selectedFilters[this.name] = [];
     }
     selectedFilters[this.name].push(this.value);
-  });
+});
 
-  // create a collection containing all of the filterable elements
-  var filteredResults = $('.product');
-
-  // loop over the selected filter name -> (array) values pairs
-  $.each(selectedFilters, function(name, filterValues) {
-
-    // filter each .product element
-    filteredResults = filteredResults.filter(function() {
-
-      var matched = false,
+var filteredResults = $('.product');
+ $.each(selectedFilters, function(name, filterValues) {
+   filteredResults = filteredResults.filter(function() {
+     var matched = false,
         currentFilterValues = $(this).data('category').split(' ');
-
-      // loop over each category value in the current .flower's data-category
       $.each(currentFilterValues, function(_, currentFilterValue) {
         if ($.inArray(currentFilterValue, filterValues) != -1) {
           matched = true;
           return false;
         }
       });
-      // if matched is true the current .flower element is returned
       return matched;
     });
   });
@@ -131,6 +128,11 @@ var filterFunc = function() {
 }
 
 filterCheckboxes.on('change', filterFunc);  
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 5. Top Filter
+
+ 
+
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 4. paging each itembox//

@@ -83,9 +83,9 @@
     <li>
       <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</a>
     </li>
-    <li>
+   <!--  <li>
       <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</a>
-    </li>
+    </li> -->
     <li>
       <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">즉시 구매가순</a>
     </li>
@@ -186,9 +186,9 @@
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">A.P.C Golf</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="Nike" type="checkbox" value="Nike" name="allBrand"
+                <input id="NIKE" type="checkbox" value="NIKE" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="Nike"
+                <label for="NIKE"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Nike</label>
               </div>
               <div class="flex items-center pl-8">
@@ -202,6 +202,30 @@
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="Acne Studios"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Acne Studios</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="JORDAN" type="checkbox" value="JORDAN" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="JORDAN"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">JORDAN</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="CDG" type="checkbox" value="CDG" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="CDG"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">CDG</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Chanel" type="checkbox" value="Chanel" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Chanel"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Chanel</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="Celine" type="checkbox" value="Celine" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Celine"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Celine</label>
               </div>
             </ul>
           </li>
