@@ -18,6 +18,8 @@ public interface ShopDAO {
 
 	public BiddingDTO getProductInformation(Map<Object, Object> map);
 
+	public List<BiddingDTO> getBidiingPriceMax(Map<Object, Object> map);
+
 
 		
 	

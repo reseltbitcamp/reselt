@@ -9,7 +9,7 @@
 <div id="headerBot"
 	class="py-2 px-11 border-b-[1px] flex grid-cols-3 flex-row font-notoSans">
 	<div id="menuLogo" class="float-left inline-block w-1/3">
-		<a href="#" class="font-extrabold text-[32px] italic">RESELT</a>
+		<a href="/ReseltProject" class="font-extrabold text-[32px] italic">RESELT</a>
 	</div>
 
 	<div class="font-semibold m-auto text-center inline-block w-1/3">

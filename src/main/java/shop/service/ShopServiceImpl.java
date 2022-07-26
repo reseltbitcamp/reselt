@@ -70,12 +70,20 @@ public class ShopServiceImpl implements ShopService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Map<String, Object> buyLastPageInformation(String member_id, int pid, String size) {
 		Map<String, Object>map = new HashMap<String, Object>();
 		map.put("member_id", member_id);
 		map.put("pid", pid);
 		map.put("size", size);
 		
+=======
+	public Map<Object, Object> getPriceMax(int pid) {
+		Map<Object, Object>map = new HashMap<Object, Object>();
+		map.put("pid", pid);
+		List<BiddingDTO> list = shopDAO.getBidiingPriceMax(map);
+		map.put("list", list);
+>>>>>>> e40f229cb73d58733bb2e4ed57ad5f0db709270c
 		return map;
 	}
 

@@ -18,5 +18,9 @@ public interface ShopService {
 
 	public Map<Object, Object> getProductInformation(String size, int pid);
 
+<<<<<<< HEAD
 	public Map<String, Object> buyLastPageInformation(String member_id, int pid, String size);
+=======
+	public Map<Object, Object> getPriceMax(int pid);
+>>>>>>> e40f229cb73d58733bb2e4ed57ad5f0db709270c
 }

@@ -47,4 +47,10 @@ public class ShopDAOMybatis implements ShopDAO {
 		return sqlsession.selectOne("shopSQL.getProductInformation", map);
 	}
 
+	@Override
+	public List<BiddingDTO> getBidiingPriceMax(Map<Object, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectList("shopSQL.getBidiingPriceMax", map);
+	}
+
 }

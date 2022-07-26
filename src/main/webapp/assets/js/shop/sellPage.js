@@ -1,26 +1,11 @@
 //sellSize
-$(function(){
-	
-  $('#nextBtn').hide();
-  $('.sizeBtn').each(function(index){
-    $(this).attr('sizeBtn-index',index);
-    
-  }).click(function(){
-    var index = $(this).attr('sizeBtn-index');
-    
-    $('.sizeBtn[sizeBtn-index='+ index + ']').addClass('border-2 border-black');
-    $('.sizeBtn[sizeBtn-index!='+ index + ']').removeClass('border-2 border-black');
-  })
 
-  $('.sizeBtn').click(function(){
-    $('#nextBtn').show();
-  })
+	
   
-  $('#PriceBtn').click(function(){
-	  location.href="./sellAgree"
-  })
-})
-//sellSize
+
+	  
+  
+
 
 //sellAgree
 $('#firstAgree').click(function(){
@@ -102,7 +87,9 @@ $('#fifthAgree').click(function(){
 		$('#agreeBtn').attr("disabled", true);
 	}
 	$('#agreeBtn').click(function(){
-		location.href="./sellStraight"
+		var size = $('#sizeInput').val();
+		var pid = $('#pidInput').val();
+		location.href="./sellStraight?size="+ size + "&pid=" + pid
 	})
 })
 //sellAgree

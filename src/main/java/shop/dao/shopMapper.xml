@@ -16,7 +16,7 @@
    
    <select id="getProductDTO" parameterType="int" resultType="productDTO">
       SELECT product.pid AS pid, product_name_kor, product_name_eng, product_id,
-               category_id, gender_id, brand.brand_name AS brand_name,
+               category_id, brand.brand_name AS brand_name, gender_id,
                released_price, created_at, product_likes, product_bookmark,
                GROUP_CONCAT(product_img.img_file) AS img_file
       FROM product
@@ -27,19 +27,20 @@
    </select>
    
    <select id="getProductList" parameterType="java.util.Map" resultType="productDTO">
-      SELECT 
-      product.*, brand.brand_name, product_img.img_file, category.category_name_eng
-        FROM product 
-        LEFT JOIN brand
-        ON 
-        product.brand_id = brand.brand_id
-        LEFT JOIN product_img
-        ON 
-        product.pid = product_img.pid
-        LEFT JOIN category
-        ON product.category_id = category.category_id
-        WHERE product_img.img_file LIKE '%-1%'
-        order by product.pid asc limit #{startNum}, #{endNum};
+	SELECT 
+	product.*, brand.brand_name, product_img.img_file, category.category_name_eng, gender.gender_name
+    FROM product 
+    LEFT JOIN brand
+    ON 
+    product.brand_id = brand.brand_id
+    LEFT JOIN product_img
+    ON product.pid = product_img.pid
+    LEFT JOIN category
+    ON product.category_id = category.category_id
+    LEFT JOIN gender
+    ON product.gender_id = gender.gender_id
+    WHERE product_img.img_file LIKE '%-1%'
+    order by product.pid asc limit #{startNum}, #{endNum};
    </select>
 	
 	<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
@@ -49,6 +50,20 @@
 		GROUP BY product_size 
 		ORDER BY product_size ASC;
 	</select>
+
+	<select id="getBidiingPriceMax" parameterType="java.util.Map" resultType="biddingDTO">
+		select product_size, pid, bidding_id, MAX(bidding_price) AS bidding_price
+		from biddings
+		where pid=#{pid} and status="입찰중"
+		GROUP BY product_size 
+		ORDER BY product_size ASC;
+	</select>
+	
+	<insert id="writeBuyBidding" parameterType="java.util.Map">
+		INSERT INTO biddings(member_id, pid, product_size, bidding_price, 
+							 position, status, matched_bidding_id)
+		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '구매', '낙찰', #{matched_bidding_id})
+	</insert>
 	
 	<select id="getProductInformation" parameterType="java.util.Map" resultType="biddingDTO">
 		select product_size, MIN(bidding_price) AS bidding_price, pid, bidding_id
@@ -58,4 +73,5 @@
 		GROUP BY product_size 
 		ORDER BY product_size ASC;
 	</select>
+	
 </mapper>

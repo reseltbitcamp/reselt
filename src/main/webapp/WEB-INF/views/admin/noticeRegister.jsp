@@ -8,8 +8,12 @@
 <script src="https://kit.fontawesome.com/d84eab0825.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../css/admin.css"/>
 <style>
+textarea:focus,
 input:focus {
 	outline: none;
+}
+.adminDiv_content {
+	margin-left: 41%;
 }
 </style>
 <title>Insert title here</title>
@@ -54,23 +58,15 @@ input:focus {
       <div class="content content_area ml-[180px] overflow-hidden">
         <div class="my_admin_header flex h-[60px] w-full items-center bg-[#ECECEC] p-[10px] px-[40px]">
           <div class="font-semibold text-[#6A6A6A]">Administration</div>
-          <div class="search h-[35px] rounded-[8px] bg-[#fff] pl-[10px] ml-auto flex">
-            <i class="fa-solid fa-magnifying-glass mt-[10px] pr-[10px] text-[#CFCFCF]"></i>
-            <input class="adminDiv_search h-full w-full pt-[1px] pr-[50px] text-[14px] tracking-[-.21px]" type="text" placeholder="이름 검색" />
-          </div>
-          <div class="adminDiv_search_button btn2 m-[5px] h-[35px] rounded-[2px] bg-[#6A6A6A] py-[5px] px-[40px] pt-[7px] text-[13px] text-[#DFD9D7] ml-[5px]">검색</div>
-           <a href="/ReseltProject">
+           <a href="/ReseltProject" class="ml-auto">
            		<div class="btn2 m-[5px] h-[35px] rounded-[2px] bg-[#EC5939] py-[5px] px-[40px] pt-[7px] text-[13px] text-[#DFD9D7] ml-[4px]">나가기</div>
            </a>
         </div>
 
         <div class="bg-[#FBFBFB] px-[40px]">
           <div class="my_admin_main pt-[20px]">
-            <div class="my_admin_main-header flex border-b-solid border-b-[3px] border-b-[#171414] pb-[12px]">
-              <div class="text-[16px] font-semibold text-[#171414] pt-[10px]">전체 멤버</div>
-              <div class="adminDiv_button flex justify-end ml-auto mt-[7px]">
-                     <a class="delete_admin inline-block h-[34px] w-[60px] text-center cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">삭제</a>
-               </div>
+            <div class="my_admin_main-header border-b-solid border-b-[3px] border-b-[#171414] pb-[12px]">
+              <div class="text-[16px] font-semibold text-[#171414]">공지 사항</div>
             </div>
             <!--header-->
 
@@ -78,50 +74,42 @@ input:focus {
               <div class="my_admin_main-content-title border-b-[2px] border-b-[#C8C8C8] px-[80px] py-[7px] pr-[100px]">
                 <div class="my_admin_main-content-title-detail flex justify-between">
                   <span class="text-[13px] font-semibold text-[#6A6A6A]">IDX</span>
-                  <span class="text-[13px] font-semibold text-[#6A6A6A]">이름</span>
-                  <span class="text-[13px] font-semibold text-[#6A6A6A]">가입일</span>
-                  <span class="mr-[100px] text-[13px] font-semibold text-[#6A6A6A]">이메일 주소</span>
+                  <span class="text-[13px] font-semibold text-[#6A6A6A]">제목</span>
+                  <span class="text-[13px] font-semibold text-[#6A6A6A]">작성일</span>
                 </div>
               </div>
               <!--title-->
-
-              <div class="my_admin_main-content-list">
               
-             
-     		<!-- 동적 처리
-                <div class="my_list not_empty_area_2">
-                  <div class="my_list_basic border-b-solid border-b-[1px] border-b-[#171414] pt-[10px] pb-[9px] pl-[20px]">
-                    <div class="my_list_item relative">
-                      <div>
-                        <div class="flex admin_all">
-                        
-                          <div class="adminDiv_content_all flex w-[90%]">
-                          	<div class="adminDiv_num w-[120px] flex justify-between">
-                          		<span class="adminDiv_num_chk">
-                          			<input type="checkbox" class="checkbox"/>
-                          		</span>
-                            	<span class="adminDiv_num_item mt-[6px] w-[30px] text-[12px] font-semibold text-[#6A6A6A] mb-[2px] mr-[10%]">26</span>
-                            </div>
-                            <div class="adminDiv_content flex justify-between w-[90%] ml-[20%]">
-                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A]">안녕</span>
-                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A] pl-[3%]">2022/07/21</span>
-                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A] pl-[5%]">hello@naver.com</span>
-                          	</div>
-                          </div>
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-     -->
-               
-               
-              </div>
-              <!--content list-->
+			<form id="noticeWriteForm">
+			  <table border="1" cellspacing="0" cellpadding="5" class="w-[100%] rounded-md border-[1px] border-[#d3d3d3] py-0 px-[18px] text-sm leading-10 tracking-[-.14px]">
+			    <tr class="rounded-[12px] border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] text-sm leading-10 tracking-[-.14px]">
+			      <td width="70" align="center" class="border-r border-[#d3d3d3] text-[#5c5c5c]">제목</td>
+			      <td>
+			        <input type="text" name="title" id="title" class="w-[100%] bg-[#FBFBFB]" placeholder="제목을 입력하세요" />
+			        <div id="titleDiv"></div>
+			      </td>
+			    </tr>
+			
+			    <tr>
+			      <td align="center" class="border-r border-[#d3d3d3] text-[#5c5c5c]">내용</td>
+			      <td>
+			        <textarea name="content" id="content" rows="15" cols="50" class="w-[100%] bg-[#FBFBFB]" placeholder="내용을 입력하세요"></textarea>
+			        <div id="contentDiv"></div>
+			      </td>
+			    </tr>
+			
+			    <tr>
+			      <td colspan="2" align="center" class="border-t border-[#d3d3d3]">
+			        <input type="button" value="글쓰기" id="noticeWriteBtn" class="h-[42px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] text-sm leading-10 tracking-[-.14px] text-[#5c5c5c]" />
+			        <input type="reset" value="다시작성" class="h-[42px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] text-sm leading-10 tracking-[-.14px] text-[#5c5c5c]" />
+			        <input type="button" value="목록" class="h-[42px] cursor-pointer rounded-[12px] border-[1px] border-solid border-[#d3d3d3] py-0 px-[18px] text-sm leading-10 tracking-[-.14px] text-[#5c5c5c]" onclick="location.href='/ReseltProject/notice/noticeList'" />
+			      </td>
+			    </tr>
+			  </table>
+			</form>
 
-            </div>
+ 
+ 			</div>
             <!--content-->
           </div>
           <!--main-->
@@ -131,8 +119,42 @@ input:focus {
       <!--content-area-->
     </div>
     <!--container-->
-    
-    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
-    <script src="../js/admin/user.js"></script>  
-  </body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#noticeWriteBtn').click(function(){
+		$('#titleDiv').empty();
+		$('#contentDiv').empty();
+		
+		if($('#title').val() == ''){
+			$('#titleDiv').html('제목을 입력하세요');
+			$('#titleDiv').css('color', 'red');
+			$('#titleDiv').css('font-size', '8pt');
+			$('#titleDiv').css('font-weight', 'bold');
+		}else if($('#content').val() == ''){
+			$('#contentDiv').html('내용을 입력하세요');
+			$('#contentDiv').css('color', 'red');
+			$('#contentDiv').css('font-size', '8pt');
+			$('#contentDiv').css('font-weight', 'bold');
+		}else{
+			
+			$.ajax({
+				type: 'post',
+				url: '/ReseltProject/notice/noticeWrite',
+				data: 
+						{'title': $('#title').val(),
+					   	 'content': $('#content').val()},
+				success: function(){
+					alert('작성하신 글을 저장하였습니다.');
+					location.href = '/ReseltProject/admin/notice';
+				},
+				error: function(e){
+					console.log(e);
+				}
+			});
+		}
+	});
+});
+</script>
+</body>
 </html>

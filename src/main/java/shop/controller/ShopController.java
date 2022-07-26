@@ -26,6 +26,8 @@ import shop.service.ShopService;
 public class ShopController {
 	@Autowired
 	private ShopService shopService;
+	@Autowired
+	private HttpSession session;
 	
 	@Autowired
 	HttpSession session;
@@ -80,6 +82,13 @@ public class ShopController {
 	@ResponseBody
 	public Map<Object, Object> getPrice(@RequestParam int pid) {
 		return shopService.getBiddingDTO(pid);
+	}
+
+	@PostMapping(value= "/getProductPriceMax")
+	@ResponseBody
+	public Map<Object, Object> getPriceMax(@RequestParam int pid) {
+		System.out.println("pid = "+ pid);
+		return shopService.getPriceMax(pid);
 	}
 	
 	@GetMapping(value = "/buyAgree")
