@@ -77,23 +77,22 @@
     </button>
 </div>
 <!-- Dropdown menu -->
-<div id="dropdownInformation"
-  class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-white dark:divide-gray-600">
-  <ul class="py-1 text-sm text-black dark:text-black" aria-labelledby="dropdownInformationButton">
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</a>
+<div id="dropdownInformation" class="buttonContainer z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-40 dark:bg-white dark:divide-gray-600">
+  <ul class="py-1 text-xs text-black dark:text-black" aria-labelledby="dropdownInformationButton">
+    <li id="likeSort" value="likeSort" name="allSort">
+      <button class="likeSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</button>
     </li>
-   <!--  <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</a>
-    </li> -->
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">즉시 구매가순</a>
+   	 <li id="premiumSort" value="premiumSort" name="allSort">
+      <button class="premiumSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</button>
     </li>
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">즉시 판매가순</a>
+    <li id="purchaseSort" value="purchaseSort" name="allSort">
+      <button class="purchaseSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 높은 순</button>
     </li>
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">발매일순</a>
+    <li id="lowPrice" value="lowPrice" name="allSort">
+      <button id="sortByPriceLow" class="sellSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 낮은 순</button>
+    </li>
+    <li id="dateSort" value="dateSort" name="allSort">
+      <button class="dateSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">발매일순</button>
     </li>
   </ul>
 </div>
@@ -126,34 +125,24 @@
             <div id="hidecategory" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 카테고리</div>
             <ul id="dropdown0" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
-                <input id="shoesSelect" type="checkbox" value="shoesSelect" name="allCategory"
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="shoesSelect"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
+                <input id="shoesSelect" type="checkbox" value="shoesSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="shoesSelect"class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="garmentSelect" type="checkbox" value="garmentSelect" name="allCategory"
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="garmentSelect"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
+                <input id="garmentSelect" type="checkbox" value="garmentSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="garmentSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="accSelect" type="checkbox" value="accSelect" name="allCategory"
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="accSelect"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
+                <input id="accSelect" type="checkbox" value="accSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="accSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="lifeSelect" type="checkbox" value="lifeSelect" name="allCategory"
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="lifeSelect"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
+                <input id="lifeSelect" type="checkbox" value="lifeSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="lifeSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="techSelect" type="checkbox" value="techSelect" name="allCategory"
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="techSelect"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
+                <input id="techSelect" type="checkbox" value="techSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="techSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
               </div>
             </ul>
           </li>
