@@ -23,7 +23,7 @@ public class StyleDAOMyBatis implements StyleDAO {
 	}
 
 	@Override
-	public List<StyleDTO> getStyleList(Map<String, Integer> map) {
+	public List<StyleDTO> getStyleList(Map<String, Object> map) {
 		return sqlSession.selectList("styleSQL.getStyleList", map);
 	}
 
@@ -45,7 +45,6 @@ public class StyleDAOMyBatis implements StyleDAO {
 	@Override
 	public void styleReplyWrite(Map<String, String> map) {
 		sqlSession.insert("styleSQL.styleReplyWrite", map);
-		
 	}
 
 	@Override
@@ -59,8 +58,8 @@ public class StyleDAOMyBatis implements StyleDAO {
 	}
 
 	@Override
-	public ReplyDTO getNowReply() {
-		return sqlSession.selectOne("styleSQL.getNowReply");
+	public ReplyDTO getNowReply(Map<String, String> map) {
+		return sqlSession.selectOne("styleSQL.getNowReply", map);
 	}
 
 	@Override

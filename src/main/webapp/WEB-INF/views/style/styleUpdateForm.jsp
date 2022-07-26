@@ -28,7 +28,7 @@
       </div>
       <!-- 글 작성 -->
       <textarea id="content" name="content" class="mt-10 pt-10 w-[487px] h-[150px] placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="content" id="content" value=""></textarea>
-    <input type="button" id="styleUpdateBtn" name="uploadBtn" class="mt-3 ml-48 w-28 h-11 text-base bg-zinc-700 text-white rounded-md font-medium cursor-pointer" value="수정 완료">
+    <input type="button" id="styleUpdateBtn" name="styleUpdateBtn" disabled class="mt-3 ml-48 w-28 h-11 text-base bg-zinc-100 text-gray-300 rounded-md font-medium cursor-pointer" value="수정 완료">
     </form>
   </div>
 </div>
@@ -41,12 +41,12 @@ $(function(){
 		data: 'seq='+$('input[name="seq"]').val(),
 		dataType: 'json',
 		success: function(data){
-			$('#imageView').attr("src","/ReseltProject/styleImage/"+data.style_image);
+			$('#imageView').attr("src","/ReseltProject/styleImage/"+data.styleDTO.style_image);
 	 		$('#imageView').attr('class', 'w-auto h-full mx-auto my-0 cursor-pinter');
 			$('#cameraBox').attr('class', 'w-full h-[250px] border border-gray-200 rounded-md overflow-hidden cursor-pinter');
 			$('#imageView').appendTo($('#cameraBox'));
-			$('#product_id').val(data.product_id);
-			$('#content').val(data.content);
+			$('#product_id').val(data.styleDTO.product_id);
+			$('#content').val(data.styleDTO.content);
 		},
 		error:function(request,status,error){    
 			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -97,4 +97,27 @@ function readURL(input){
 	});
 });
 
+</script>
+<script type="text/javascript">
+	const img = document.querySelector('#img');
+	const product_id = document.querySelector('#product_id');
+	const content = document.querySelector('#content');
+	const styleUpdateBtn = document.querySelector('#styleUpdateBtn');
+	
+	img.addEventListener('input', listener);
+	product_id.addEventListener('keyup', listener);
+	content.addEventListener('keyup', listener);
+
+	function listener() {
+		switch (!(product_id.value && content.value && img.value)) {
+	        case true: 
+	        	styleUpdateBtn.disabled = true;
+	        	styleUpdateBtn.setAttribute("class", "mt-3 ml-48 w-28 h-11 text-base bg-zinc-100 text-gray-300 rounded-md font-medium cursor-pointer"); 
+	        	break;
+	        case false: 
+	        	styleUpdateBtn.disabled = false; 
+	        	styleUpdateBtn.setAttribute("class", "mt-3 ml-48 w-28 h-11 text-base bg-zinc-700 text-white rounded-md font-medium cursor-pointer"); 
+	        	break;
+		}
+	}
 </script>

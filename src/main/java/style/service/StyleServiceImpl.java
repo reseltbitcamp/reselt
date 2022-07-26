@@ -4,9 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import member.bean.MemberDTO;
+import member.dao.MemberDAO;
 import style.bean.ReplyDTO;
 import style.bean.StyleDTO;
 import style.dao.StyleDAO;
@@ -15,9 +19,17 @@ import style.dao.StyleDAO;
 public class StyleServiceImpl implements StyleService {
 	@Autowired
 	private StyleDAO styleDAO;
+	@Autowired
+	private HttpSession session;
+	@Autowired
+	private MemberDAO memberDAO;
+	@Autowired
+	private MemberDTO memberDTO;
 	
 	@Override
 	public void styleWriteForm(StyleDTO styleDTO) {
+		String email = (String) session.getAttribute("email");
+		styleDTO.setMember_id(email);
 		styleDAO.styleWriteForm(styleDTO);
 	}
 
@@ -28,12 +40,12 @@ public class StyleServiceImpl implements StyleService {
 		int startNum = endNum - 8;
 		
 		System.out.println("pg = "+pg+", startNum = "+startNum+", endNum = ");
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
 		
 		List<StyleDTO> list = styleDAO.getStyleList(map);
-		
+
 		Map<String, Object> sendMap = new HashMap<String, Object>();
 		sendMap.put("list", list);
 		return sendMap;
@@ -42,8 +54,19 @@ public class StyleServiceImpl implements StyleService {
 	@Override
 	public Map<String, Object> getStyleDetails(String seq) {
 		Map<String, Object> map = new HashMap<String, Object>();
+		
 		StyleDTO styleDTO = styleDAO.getStyleDetails(seq);
 		map.put("styleDTO", styleDTO);
+		
+		String email = (String) session.getAttribute("email");
+		
+		map.put("email", email);
+		if(email!=null) {
+			memberDTO.setEmail(email);
+			
+			memberDTO = memberDAO.checkEmail(memberDTO);
+			map.put("memberDTO", memberDTO);
+		}
 		
 		int pseq = Integer.parseInt(seq);
 		
@@ -68,9 +91,14 @@ public class StyleServiceImpl implements StyleService {
 	@Override
 	public Map<String, Object> styleReplyWrite(Map<String, String> map) {
 		Map<String, Object> sendMap = new HashMap<String, Object>();
+
+		String email = (String) session.getAttribute("email");
+		map.put("email", email);
 		
 		styleDAO.styleReplyWrite(map);
-		ReplyDTO replyDTO = styleDAO.getNowReply();
+		
+		/* 댓글 총 개수 */
+		ReplyDTO replyDTO = styleDAO.getNowReply(map);
 		sendMap.put("replyDTO", replyDTO);
 		
 		int count = styleDAO.getReplyTotal(Integer.parseInt(map.get("pseq"))); 
@@ -79,8 +107,9 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	@Override
-	public void styleReplyDelete(int style_seq) {
+	public int styleReplyDelete(int style_seq, int pseq) {
 		styleDAO.styleReplyDelete(style_seq);
-		
+		int count = styleDAO.getReplyTotal(pseq); 
+		return count;
 	}
 }

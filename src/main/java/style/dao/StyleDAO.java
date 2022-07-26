@@ -10,7 +10,7 @@ public interface StyleDAO {
 
 	public void styleWriteForm(StyleDTO styleDTO);
 
-	public List<StyleDTO> getStyleList(Map<String, Integer> map);
+	public List<StyleDTO> getStyleList(Map<String, Object> map);
 
 	public StyleDTO getStyleDetails(String seq);
 
@@ -24,7 +24,7 @@ public interface StyleDAO {
 
 	public int getReplyTotal(int pseq);
 
-	public ReplyDTO getNowReply();
+	public ReplyDTO getNowReply(Map<String, String> map);
 
 	public void styleReplyDelete(int style_seq);
 
