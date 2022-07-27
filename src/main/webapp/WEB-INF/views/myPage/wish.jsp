@@ -66,7 +66,7 @@
                   </div>
                 </div>
 
-                <div class="wish_buy mt-[10px] ml-[340px] inline-flex flex-shrink-0 flex-col text-right">
+                <div class="wish_buy mt-[10px] ml-[50%] inline-flex flex-shrink-0 flex-col text-right">
                   <div class="w-[164px]">
                     <div class="division_btn_box lg mt-0 flex h-[60px] w-[164px] text-left">
                       <a class="btn_division buy relative inline-flex flex-1 items-center rounded-[10px] bg-[#ef6253] text-[#fff]">
