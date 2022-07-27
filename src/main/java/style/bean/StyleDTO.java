@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 import member.bean.MemberDTO;
+import shop.bean.ProductDTO;
 
 
 @Data
@@ -22,4 +23,9 @@ public class StyleDTO {
 	private Date created_at;
 	
 	private MemberDTO memberDTO;
+	
+	private String product_name_kor;
+	private int released_price;
+	private String img_file;
+
 }

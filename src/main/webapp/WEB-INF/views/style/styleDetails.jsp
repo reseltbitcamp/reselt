@@ -84,10 +84,10 @@
   <div id="styleImage" class="w-full">
     <img id="styleImageMain" class="w-full h-auto styleImageMain">
   </div>
-  <div id="productBox" class="w-[120px] h-[230px]">
+  <div id="productBox" class="w-[120px]">
     <div id="tagName" class="w-full font-medium text-xs pt-6">상품태그</div>
     <div id="productImage" class="bg-sky-100 rounded-md w-[120px] h-[120px] mt-3 mb-2">
-      <img src="/ReseltProject/img/style/productImage.png" alt="나이키 신발">
+      <img id="productImageSrc" alt="나이키 신발">
     </div>
     <p id="productName" class="text-xs"></p>
     <span id="amount" class="text-xs">159,000</span>
@@ -262,13 +262,14 @@ var loginEmail = null;
 			console.log(JSON.stringify(data));
 			$('.styleImageMain').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.style_image);
 			$('.styleImageMain').prop('alt', data.styleDTO.memberDTO.nick+"님 게시글");
-			$('#productName').text(data.styleDTO.product_id);
+			$('#productName').text(data.styleDTO.product_name_kor);
 			$('#textContentBox').text(data.styleDTO.content);
 			$('#userNameText').text(data.styleDTO.memberDTO.nick);
 			$('#styleProfileImg').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.memberDTO.profile_img);
-			
-			 $('#date').text(data.styleDTO.created_at);
-			 
+			$('#amount').text(data.styleDTO.released_price.toLocaleString('en-US'));
+			$('#date').text(data.styleDTO.created_at);
+			$('#productImageSrc').prop('src', "http://3.39.241.175:6753/upload/resources/img/product/"+data.styleDTO.product_id+"/"+data.styleDTO.img_file);
+			$('#productImageSrc').prop('alt', data.styleDTO.product_id+"이미지 사진");
 			if(data.email!=null){
 				$('#replyLoginImage').prop('src', "/ReseltProject/styleImage/"+data.memberDTO.profile_img);
 			}

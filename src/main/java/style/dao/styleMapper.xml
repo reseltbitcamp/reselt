@@ -12,6 +12,9 @@
 		<result column="like_code" property="like_code" />
 		<result column="countcmt" property="countcmt" />
 		<result column="created_at" property="created_at" />
+		<result column="product_name_kor" property="product_name_kor" />
+		<result column="released_price" property="released_price" />
+		<result column="img_file" property="img_file" />
 		<association javaType="member.bean.MemberDTO" property="memberDTO">
 			<id column="id" property="id"/>
 			<result column="nick" property="nick"/>
@@ -40,7 +43,7 @@
 		select m.id
 			, #{style_image}
 			, #{content}
-			, 1111
+			, #{product_id}
 			, 0
 			, 0
 			, NOW()
@@ -50,7 +53,7 @@
 	
 	<!-- List 글 받아오기 -->
 	<select id="getStyleList" parameterType="java.util.Map" resultMap="styleMap">
-		select s.seq
+		 select s.seq
   			  , s.member_id
   			  , s.style_image
   			  , s.content
@@ -61,30 +64,44 @@
   			  , m.nick
   			  , m.email
   			  , m.profile_img
+              , p.product_name_kor
+              , p.released_price
+              , pi.img_file
 		from styles s
   		LEFT JOIN members m
 		ON s.member_id = m.id
+        LEFT JOIN product p
+        ON p.pid = s.product_id
+        LEFT JOIN product_img pi
+        ON s.product_id = pi.pid
 		order by s.seq desc
 		limit #{startNum}, #{endNum}
 	</select>
 	
 	<!-- Details 글 받아오기 -->
 	<select id="getStyleDetails" parameterType="int" resultMap="styleMap">
-		select s.seq
-	  			  , s.member_id
-	  			  , s.style_image
-	  			  , s.content
-	  			  , s.product_id
-	  			  , s.like_code
-	  			  , s.countcmt
-	  			  , s.created_at
-	  			  , m.nick
-	  			  , m.email
-	  			  , m.profile_img
-			from styles s
-	  			  , members m
-			where s.member_id = m.id
-			and s.seq = #{seq}
+		 select s.seq
+  			  , s.member_id
+  			  , s.style_image
+  			  , s.content
+  			  , s.product_id
+  			  , s.like_code
+  			  , s.countcmt
+  			  , s.created_at
+  			  , m.nick
+  			  , m.email
+  			  , m.profile_img
+              , p.product_name_kor
+              , p.released_price
+              , pi.img_file
+		from styles s
+  		LEFT JOIN members m
+		ON s.member_id = m.id
+        LEFT JOIN product p
+        ON p.pid = s.product_id
+        LEFT JOIN product_img pi
+        ON s.product_id = pi.pid
+        where s.seq=#{seq};
 	</select>
 	
 	<delete id="styleDelete" parameterType="int">
