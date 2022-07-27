@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<form id="buySizeForm">
+
 	<div class="m-auto max-w-[780px] max-h-[960px] my-[50px]">
 	<input type="hidden" id="pid" name="pid" value='${pid}'>
 		<div class="my-6 bg-white p-8 shadow-md">
@@ -28,7 +28,6 @@
 			</li> -->
 
 		</ul>
-</form>
 
 		<div id="nextBtn" class="text-center">
 			<button type="button"
@@ -38,5 +37,6 @@
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/buySize.js"></script>

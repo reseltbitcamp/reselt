@@ -42,7 +42,7 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
-	public BiddingDTO getProductInformation(Map<Object, Object> map) {
+	public BiddingDTO getProductInformation(Map<String, Object> map) {
 		System.out.println(map);
 		return sqlsession.selectOne("shopSQL.getProductInformation", map);
 	}
@@ -51,6 +51,11 @@ public class ShopDAOMybatis implements ShopDAO {
 	public List<BiddingDTO> getBidiingPriceMax(Map<Object, Object> map) {
 		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getBidiingPriceMax", map);
+	}
+
+	@Override
+	public void writeBuyBidding(Map<String, Object> map) {
+		sqlsession.insert("shopSQL.writeBuyBidding", map);
 	}
 
 }

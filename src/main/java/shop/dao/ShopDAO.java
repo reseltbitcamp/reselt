@@ -16,12 +16,10 @@ public interface ShopDAO {
 
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map);
 
-	public BiddingDTO getProductInformation(Map<Object, Object> map);
+	public BiddingDTO getProductInformation(Map<String, Object> map);
 
 	public List<BiddingDTO> getBidiingPriceMax(Map<Object, Object> map);
 
-
-		
-	
+	public void writeBuyBidding(Map<String, Object> map);
 
 }
