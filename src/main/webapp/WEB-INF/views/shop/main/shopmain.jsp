@@ -88,7 +88,7 @@
     <li id="purchaseSort" value="purchaseSort" name="allSort">
       <button id="sortByPriceHigh" class="purchaseSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 높은 순</button>
     </li>
-    <li id="lowPrice" value="lowPrice" name="allSort">
+    <li id="priceSort" value="priceSort" name="allSort">
       <button id="sortByPriceLow" class="sellSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 낮은 순</button>
     </li>
     <li id="dateSort" value="dateSort" name="allSort">
@@ -161,7 +161,7 @@
             </button>
             <!-- click event : hide below div -->
             <div id="hidebrand" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 브랜드</div>
-            <ul id="dropdown1" class="hidden py-2 space-y-2">
+            <ul id="dropdown1" class="hidden overflow-y-auto h-40 py-2 space-y-2">
               <div class="flex items-center pl-8">
                 <input id="A.P.C" type="checkbox" value="A.P.C" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
@@ -173,6 +173,12 @@
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="A.P.C Golf"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">A.P.C Golf</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="DIOR" type="checkbox" value="DIOR" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="DIOR"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Dior</label>
               </div>
               <div class="flex items-center pl-8">
                 <input id="NIKE" type="checkbox" value="NIKE" name="allBrand"
@@ -215,6 +221,102 @@
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="Celine"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Celine</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Common Project" type="checkbox" value="Common Project" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Common Project"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Common Project</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Y3" type="checkbox" value="Y3" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Y3"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Y3</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Hunter" type="checkbox" value="Hunter" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Hunter"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Hunter</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Chloe" type="checkbox" value="Chloe" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Chloe"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Chloe</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Cos" type="checkbox" value="Cos" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Cos"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Cos</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Suicoke" type="checkbox" value="Cos" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Suicoke"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Suicoke</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="Goyard" type="checkbox" value="Goyard" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Goyard"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Goyard</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="KENZO" type="checkbox" value="KENZO" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="KENZO"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">KENZO</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Vivienne Westwood" type="checkbox" value="Vivienne Westwood" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Vivienne Westwood"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Vivienne Westwood</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="Jil Sander" type="checkbox" value="Jil Sander" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Jil Sander"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Jil Sander</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Thome Browne" type="checkbox" value="Thome Browne" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Thome Browne"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Thome Browne</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Wooyoungmi" type="checkbox" value="Wooyoungmi" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Wooyoungmi"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">WooYoungmi</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Saint Laurent" type="checkbox" value="Saint Laurent" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Saint Laurent"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Saint Laurent</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Tiffany co" type="checkbox" value="Tiffany co" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Tiffany co"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Tiffany co</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Fendi" type="checkbox" value="Fendi" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Fendi"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Fendi</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Tods" type="checkbox" value="Tods" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Tods"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Tods</label>
               </div>
             </ul>
           </li>
