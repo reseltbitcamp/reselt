@@ -26,7 +26,9 @@ import shop.service.ShopService;
 public class ShopController {
 	@Autowired
 	private ShopService shopService;
-	
+	@Autowired
+	private HttpSession session;
+
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
 		ModelAndView mav = new ModelAndView();
@@ -60,7 +62,7 @@ public class ShopController {
 		return shopService.getProductDTO(pid);
 	}
 	
-	@RequestMapping(value = "/buySize", method = RequestMethod.GET)
+	@GetMapping(value = "/buySize")
 	public ModelAndView buySize(@RequestParam String pid) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buySizeMenu.jsp");
@@ -76,36 +78,38 @@ public class ShopController {
 	@PostMapping(value= "/getProductPrice")
 	@ResponseBody
 	public Map<Object, Object> getPrice(@RequestParam int pid) {
-		System.out.println("pid = "+ pid);
 		return shopService.getBiddingDTO(pid);
 	}
-	
-	@RequestMapping(value = "/buyBid", method = RequestMethod.GET)
-	public ModelAndView buyBid(@RequestParam String pid) {
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyBidMenu.jsp");
-		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
-		mav.addObject("display","/WEB-INF/views/shop/buyBid.jsp");
-		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
-		mav.addObject("pid", pid);
-		mav.setViewName("/index");
-		
-		return mav;
-	}
 
-	@RequestMapping(value = "/buyAgree", method = RequestMethod.GET)
-	public ModelAndView buyAgree() {
+	@PostMapping(value= "/getProductPriceMax")
+	@ResponseBody
+	public Map<Object, Object> getPriceMax(@RequestParam int pid) {
+		System.out.println("pid = "+ pid);
+		return shopService.getPriceMax(pid);
+	}
+	
+	@GetMapping(value = "/buyAgree")
+	public ModelAndView buyAgree(@RequestParam int pid, String size, int id) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyAgreeMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buyAgree.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
+		mav.addObject("size", size);
+		mav.addObject("id", id);
 		mav.setViewName("/index");
 		
 		return mav;
 	}
+	
+	@PostMapping(value="/getProductInfomation")
+	@ResponseBody
+	public Map<String, Object> getProductInformation(@RequestParam String size, int pid) {
+		return shopService.getProductInformation(size, pid);
+	}
 
-	@RequestMapping(value = "/buyStraight", method = RequestMethod.GET)
+	@GetMapping(value = "/buyStraight")
 	public ModelAndView buyStraight() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyStraightMenu.jsp");
@@ -118,17 +122,28 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/buyLastPage", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView buyLastPage() {
+	public ModelAndView buyLastPage(@RequestParam int pid, String size, int id) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buyLastPage.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
+		mav.addObject("size", size);
+		mav.addObject("id", id);
 		mav.setViewName("/index");
 		
 		System.out.println("check");
 		
 		return mav;
+	}
+	
+	@PostMapping(value="insertBuyInfomation")
+	@ResponseBody
+	public Map<String, Object> insertBuyInfomation(HttpSession session, @RequestParam String size, int pid, int bidding_id){
+		String email = (String)session.getAttribute("email");
+		System.out.println("세션id"+email);
+		return shopService.insertBuyInfomation(email,pid,size,bidding_id);
 	}
 
 	@RequestMapping(value = "/buySuccess", method={RequestMethod.GET, RequestMethod.POST})
@@ -143,7 +158,7 @@ public class ShopController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/sellSize", method = RequestMethod.GET)
+	@GetMapping(value = "/sellSize")
 	public ModelAndView sellSize() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/sellSizeMenu.jsp");
