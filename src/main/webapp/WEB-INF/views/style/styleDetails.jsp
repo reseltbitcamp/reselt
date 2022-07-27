@@ -71,7 +71,7 @@
         <img id="styleProfileImg" alt="프로필 사진">
       </div>
     <div id="userName" class="inline w-[350px] font-medium float-left text-xs px-1 pt-2"><p id="userNameText" class="text-xs"></p></div>
-      <div id="date" class="inline float-left text-xs px-1">2시간 전</div>
+      <div id="date" class="inline float-left text-xs px-1"></div>
     </div>
     <div id="menu" class="relative w-[20px] h-[60px] float-left pt-5 ml-[190px] cursor-pointer" onclick="dropmenuView()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
       <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
@@ -95,7 +95,6 @@
   </div>
    <!-- 좋아요, 댓글 버튼 -->
   <div id="btnBox" class="w-full mt-3">
-    <svg class="inline flex-shrink-0 h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/></svg>
     <svg class="inline ml-2 flex-shrink-0 h-6 w-6 cursor-pointer" id="replyViewIcon" onclick="modalView()"xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"/></svg>
     <p id="textBox" class="leading-normal text-xs">공감 86개</p>
   </div>
@@ -260,12 +259,16 @@ var loginEmail = null;
 		data: 'seq='+$('input[name="seq"]').val(),
 		dataType: 'json',
 		success: function(data){
+			console.log(JSON.stringify(data));
 			$('.styleImageMain').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.style_image);
 			$('.styleImageMain').prop('alt', data.styleDTO.memberDTO.nick+"님 게시글");
 			$('#productName').text(data.styleDTO.product_id);
 			$('#textContentBox').text(data.styleDTO.content);
 			$('#userNameText').text(data.styleDTO.memberDTO.nick);
 			$('#styleProfileImg').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.memberDTO.profile_img);
+			
+			 $('#date').text(data.styleDTO.created_at);
+			 
 			if(data.email!=null){
 				$('#replyLoginImage').prop('src', "/ReseltProject/styleImage/"+data.memberDTO.profile_img);
 			}
@@ -276,25 +279,36 @@ var loginEmail = null;
 			$('<div id="modalUserBox" class="w-[40px] h-[80px] py-2 ml-4 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+data.styleDTO.memberDTO.profile_img+'" alt="프로필 사진"></div></div><div id="modalReplyBox" class="w-[245px] h-[80px]  float-left"><div id="replyUserName" class="inline w-[50px] font-medium text-xs pt-1">'+data.styleDTO.memberDTO.nick+'</div><div id="replyBoxContent" class="inline ml-3 w-full text-xs pt-1">'
 					+data.styleDTO.content+'</div><div id="replydate" class="text-xs px-1">2시간 전</div></div>').appendTo($('#modalContent'));
 			
+			/* 공감 버튼 */
+			if(data.num==1){
+				$('<div id="uploadLikesBtn'+data.styleDTO.seq+'" class="inline" onclick="uploadLikes('+data.styleDTO.seq+',\''+data.email+'\')"><svg class="likesToggle'+data.styleDTO.seq+' inline flex-shrink-0 h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="hotPink" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg>').prependTo('#btnBox');
+			}else{
+				$('<div id="uploadLikesBtn'+data.styleDTO.seq+'" class="inline" onclick="uploadLikes('+data.styleDTO.seq+',\''+data.email+'\')"><svg class="likesToggle'+data.styleDTO.seq+' inline flex-shrink-0 h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/></svg></div>').prependTo('#btnBox');
+			}
+			
 			loginEmail = data.email;
 			
-			/* 댓글 데이터 가져오기 */
-			$.each(data.list, function(index, items){
-				//alert(" 3 data.email="+data.email+", items.memberDTO.email = "+items.memberDTO.email);
-				$('<div id="replyUserBox" class="'+items.style_seq+' w-[110px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">2시간 전</div></div><div id="replyContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyDelete'+items.style_seq+'"></div></div>').appendTo($('#replyBox'));
-				$('<div id="replyUserViewBox" class="'+items.style_seq+' w-[95px] h-[56px] py-2 float-left"><div id="replyUserViewImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserViewName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replyViewdate" class="inline float-left text-xs px-1">2시간 전</div></div><div id="replyViewContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyModalDelete'+items.style_seq+'"></div></div>').appendTo($('#replyViewBox'));
-				if(data.email == items.memberDTO.email){
-		        	$('<input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('+items.style_seq+","+items.pseq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" />').appendTo($('.replyDelete'+items.style_seq));
-		        	$('<input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('+items.style_seq+","+items.pseq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" />').appendTo($('.replyModalDelete'+items.style_seq));
-				}
-			});
+			if(data.count > 0){
+				/* 댓글 데이터 가져오기 */
+				$.each(data.list, function(index, items){
+					//alert(" 3 data.email="+data.email+", items.memberDTO.email = "+items.memberDTO.email);
+					$('<div id="replyUserBox" class="'+items.style_seq+' w-[110px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">2시간 전</div></div><div id="replyContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyDelete'+items.style_seq+'"></div></div>').appendTo($('#replyBox'));
+					$('<div id="replyUserViewBox" class="'+items.style_seq+' w-[95px] h-[56px] py-2 float-left"><div id="replyUserViewImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserViewName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replyViewdate" class="inline float-left text-xs px-1">2시간 전</div></div><div id="replyViewContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyModalDelete'+items.style_seq+'"></div></div>').appendTo($('#replyViewBox'));
+					if(data.email == items.memberDTO.email){
+			        	$('<input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('+items.style_seq+","+items.pseq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" />').appendTo($('.replyDelete'+items.style_seq));
+			        	$('<input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('+items.style_seq+","+items.pseq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" />').appendTo($('.replyModalDelete'+items.style_seq));
+					}
+				});
+			}
 			
 			/* email이 같으면 수정, 삭제 메뉴 보이기 */
 			if(data.email == data.styleDTO.memberDTO.email){
 	        	$('#menu').show();
 			}
-	        else
+	        else if(data.email != data.styleDTO.memberDTO.email){
 	        	$('#menu').hide();
+	        }
+	     $('#textBox').text("공감 "+data.likecount+"개");
 			
 		},
 		error:function(request,status,error){    
@@ -337,7 +351,7 @@ function replyDeleteSeq(style_seq, pseq){
 					'pseq':pseq},
 			datatype: 'json',
 		   	success:function(data){
-		   		alert("삭제가 완료되었습니다 "+data);
+		   		alert("삭제가 완료되었습니다 ");
 		   		$( '#replyContent.'+style_seq ).remove();
 		   		$( '#replyUserBox.'+style_seq ).remove();
 		   		$( '#replyViewContent.'+style_seq ).remove();
@@ -349,6 +363,35 @@ function replyDeleteSeq(style_seq, pseq){
 				console.log(e);
 			}
 		});
+	}
+}
+
+/* 공감 토글 버튼 */
+function uploadLikes(seq, email){
+	if(email!='null'){
+		$.ajax({
+			type: 'post',
+			url: '/ReseltProject/style/plusLikes',
+	        data: {'seq':seq,
+				'email':email},
+			success: function(data){
+				if(data.num==0){
+					$('.likesToggle'+seq).remove();
+					$('<svg class="likesToggle'+seq+' inline flex-shrink-0 h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/></svg>').appendTo($('#uploadLikesBtn'+seq));
+					
+				} else {
+					$('.likesToggle'+seq).remove();
+					$('<svg class="likesToggle'+seq+' inline flex-shrink-0 h-6 w-6 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="hotPink" class="bi bi-heart-fill" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg>').appendTo($('#uploadLikesBtn'+seq));
+				}
+				
+				$('#textBox').text("공감 "+data.count+"개");
+			},
+			error:function(request,status,error){    
+				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			}
+		});
+	}else{
+		location.href="/ReseltProject/member/login";
 	}
 }
 
