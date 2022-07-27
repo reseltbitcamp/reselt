@@ -3,12 +3,12 @@ const observer = new IntersectionObserver(function(entries) {
   if (entries[0].isIntersecting === true) {
     // alert("Infinite scroll event will be triggered.");
     ProductList();
-  }}, { threshold: [0.2] });
+  }}, { threshold: [0.5] });
 
 // Trigger fires when DOM is fully loaded
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === "complete") {
-    observer.observe(document.getElementById("footerTop"));
+    observer.observe(document.getElementById("footerBot"));
   }
 });
 
