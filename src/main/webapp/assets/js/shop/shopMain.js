@@ -1,18 +1,18 @@
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 00. Infinite Scroll
+//00. Infinite Scroll
 const observer = new IntersectionObserver(function(entries) {
   if (entries[0].isIntersecting === true) {
     // alert("Infinite scroll event will be triggered.");
     ProductList();
-  }}, { threshold: [0.2] });
+  }}, { threshold: [0.5] });
 
 // Trigger fires when DOM is fully loaded
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === "complete") {
-    observer.observe(document.getElementById("footerTop"));
+    observer.observe(document.getElementById("footerBot"));
   }
 });
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 01. product List
+// 01. product List
 function ProductList(){
    console.log("productList callout");
    $.ajax({
@@ -31,12 +31,11 @@ function ProductList(){
 	        	else if (priceRange >500000){priceRange = 'highprice'};
 
                //data-category="green small medium africa"
-               $('<div class="product item" data-category="'
+               $('<div id=product-'+items.pid+' '+'class="product" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+'data-category="'
                +items.category_name_eng+' '
                +items.brand_name+' '
                +priceRange+' '
-               +items.gender_name+'" data-tags="'
-               +items.brand_name+'"><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
+               +items.gender_name+'"><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
                +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
                +items.pid+'/'
                +items.img_file+'"></div><p class="text-left text-[16px] font-bold font-notoSans pl-1">'
@@ -61,7 +60,7 @@ function ProductList(){
 
 }
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 02. Side Filter
+// 02. Side Filter
 var filterCheckboxes = $('input[type="checkbox"]');
 var filterFunc = function() {
   
@@ -95,28 +94,44 @@ var filteredResults = $('.product');
 
 filterCheckboxes.on('change', filterFunc);  
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 03. Right Top Filter
+// 03. Right Top Filter
+function sortByPrice(condition) {
+  const products = document.getElementsByClassName('product');
+  let array = Array.from(products, function(div) {
+    return { price: `${div.dataset.price}.${div.dataset.pid}`, div: div }
+  });
 
-var sortByPriceLowBtn = document.getElementById('sortByPriceLow');
+  array.sort(function(a, b) {
+    if (parseFloat(a.price) > parseFloat(b.price)) {
+      return 1 * condition; // 낮은 가격 정렬시 condition = 1, 높은 가격 정렬시 condition = -1
+    }
+    if (parseFloat(a.price) < parseFloat(b.price)) {
+      return -1 * condition;
+    }
 
-function sortingByPrice(){
-var items = document.querySelectorAll('.product')
-  
-Array.from(items).sort(function(a, b) {
-    // using ~~ to cast the value to a number instead of a string
-    a = ~~a.document.getElementById('.item-price').innerText
-    b = ~~b.document.getElementById('.item-price').innerText
-    return a - b
-  }).forEach(function(n, i) {
-    n.style.order = i
-  })
+    return 0;
+  });
+
+  const productList = document.getElementById('productList');
+  productList.replaceChildren();
+  for (product of array) {
+    productList.append(product.div);
+  }
 }
 
-sortByNameBtn.addEventListener('click', sortingByName);
-sortByPriceBtn.addEventListener('click', sortByPriceLow);
+const sortByPriceLowBtn = document.getElementById('sortByPriceLow');
+const sortByPriceHighBtn = document.getElementById('sortByPriceHigh');
 
+sortByPriceLowBtn.addEventListener("click", () => {
+  sortByPrice(1);
+  document.getElementById('dropdownInformationButton').innerText = '가격 낮은 순 ↓↑';
+});
+sortByPriceHighBtn.addEventListener("click", () => {
+  sortByPrice(-1);
+  document.getElementById('dropdownInformationButton').innerText = '가격 높은 순 ↓↑';
+});
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 04. Header Filter
+// 04. Header Filter
 const items = document.getElementsByClassName("item"); 
 //window.location.href.includes('design') 
 
@@ -144,7 +159,7 @@ document.getElementById("dysonBtn").addEventListener("click", (event) => showTag
 document.getElementById("iabstudioBtn").addEventListener("click", (event) => showTag(event, 'IAB STUDIO'));
 
 	
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 05. paging each itembox//
+// 05. paging each itembox//
 function paging(){
    const page = document.getElementById("pg");
    console.log("page value = "+page.value);
@@ -152,7 +167,7 @@ function paging(){
 }
 
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>> 06. bookmark login getSession//
+// 06. bookmark login getSession//
 $('#popup-modal').click(function(){
    $.ajax({
       type: 'post',

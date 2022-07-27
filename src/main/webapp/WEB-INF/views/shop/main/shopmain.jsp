@@ -86,7 +86,7 @@
       <button class="premiumSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</button>
     </li>
     <li id="purchaseSort" value="purchaseSort" name="allSort">
-      <button class="purchaseSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 높은 순</button>
+      <button id="sortByPriceHigh" class="purchaseSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 높은 순</button>
     </li>
     <li id="priceSort" value="priceSort" name="allSort">
       <button id="sortByPriceLow" class="sellSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 낮은 순</button>
@@ -629,16 +629,17 @@ btn.addEventListener('click', function(){
    bookmarkColor.style.fill = 'none';   
    }
 })
-const btn1 = document.getElementById('smile')
-const smileColor = document.getElementById('smileColor')
-btn1.addEventListener('click', function(){
-   if (smileColor.style.fill === 'none'){
-   smileColor.style.fill = '#FFFF00'
-   }
-   else {
-   smileColor.style.fill = 'none';   
-   }
-})
+
+// const btn1 = document.getElementById('smile')
+// const smileColor = document.getElementById('smileColor')
+// btn1.addEventListener('click', function(){
+//    if (smileColor.style.fill === 'none'){
+//    smileColor.style.fill = '#FFFF00'
+//    }
+//    else {
+//    smileColor.style.fill = 'none';   
+//    }
+// })
 </script>
 
 

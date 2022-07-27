@@ -18,4 +18,7 @@ public interface MemberDAO {
 
 	public void updateNick(MemberDTO nickDTO);
 	
+	//shop사용
+	public MemberDTO checkEmail_useShop(String email);
+	
 }
