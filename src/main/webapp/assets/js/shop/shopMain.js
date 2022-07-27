@@ -98,15 +98,15 @@ filterCheckboxes.on('change', filterFunc);
 function sortByPrice(condition) {
   const products = document.getElementsByClassName('product');
   let array = Array.from(products, function(div) {
-    return { pid: `${div.dataset.price}.${div.dataset.pid}`, div: div }
+    return { price: `${div.dataset.price}.${div.dataset.pid}`, div: div }
   });
 
   array.sort(function(a, b) {
-    if (parseFloat(a.pid) > parseFloat(b.pid)) {
+    if (parseFloat(a.price) > parseFloat(b.price)) {
       return 1 * condition; // 낮은 가격 정렬시 condition = 1, 높은 가격 정렬시 condition = -1
     }
 
-    if (parseFloat(a.pid) < parseFloat(b.pid)) {
+    if (parseFloat(a.price) < parseFloat(b.price)) {
       return -1 * condition;
     }
 
