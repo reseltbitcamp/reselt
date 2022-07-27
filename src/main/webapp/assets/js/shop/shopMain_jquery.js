@@ -17,12 +17,12 @@ function ProductList(){
            else if (priceRange >500000){priceRange = 'highprice'};
 
               //data-category="green small medium africa"
-              $('<div id=product-'+items.pid+' '+'class="product" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+'data-category="'
+              $('<div id=product-'+items.pid+' '+'class="product" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+' '+'data-order='+index+' '+' '+'data-category="'
               +items.category_name_eng+' '
               +items.brand_name+' '
               +priceRange+' '
               +items.gender_name+'"><button type="button"><a href="/ReseltProject/shop/shopDetail?pid='
-              +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" src="http://3.39.241.175:6753/upload/resources/img/product/'
+              +items.pid+'"><div class="bg-[#ebf0f4] w-60 h-60 rounded-xl"><img class="w-full object-contain min-h-0 h-full" loading="lazy"'+ 'src="http://3.39.241.175:6753/upload/resources/img/product/'
               +items.pid+'/'
               +items.img_file+'"></div><p class="text-left text-[16px] font-bold font-notoSans pl-1">'
               +items.brand_name+'</p><div class="h-20 w-60"><p class="text-left text-[14px] pl-1">'
@@ -35,6 +35,14 @@ function ProductList(){
               //brand_name ~ product_likes까지 div 처리 => right top filter ==> 삭제함
         
               console.log(items.category_name_eng);
+
+              //첫 16개의 이미지만 보이게 하기
+              const classProduct = document.getElementsByClassName('product');
+              for (product of classProduct) {
+                if (product.dataset.order >= 8) {
+                  document.getElementById(product.id).classList.add('hidden');
+                }
+              }
            });//each
 
         paging();   

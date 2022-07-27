@@ -5,36 +5,65 @@
 <mapper namespace="myPageSQL">
 	<!-- 전체 email, status, position, created_at_start, created_at_end-->
 	<select id="buyingList" parameterType="java.util.Map" resultType="myPage.bean.MyPageBuyingDTO">
-		select distinct (select count(*) from biddings) as count_all,
-		(select count(*) from biddings where status = '입찰중') as count_ing,
-		(select count(*) from biddings where status = '낙찰' or status='입찰취소') as count_end,
+		select (select count(*) from biddings where biddings.member_id = (select members.id from members where email = #{email})) as count_all,
+		(select count(*) from biddings where status = '입찰중' and biddings.member_id = (select members.id from members where email = #{email})) as count_ing,
+		(select count(*) from biddings where (status = '낙찰' or status='입찰취소') and biddings.member_id = (select members.id from members where email = #{email})) as count_end,
+		biddings.product_size as footsize, product_name_eng, img_file, date_format(biddings.created_at, '%y-%m-%d') as created_at,
+		biddings.status as status from members
+		join biddings on (members.id = biddings.member_id) 
+		join product using (pid)
+		join product_img using (pid)
+		where 1 = 1
+			<if test='status.equals("종료")'>
+				and (biddings.status = '낙찰' or biddings.status = '입찰취소')
+			</if>
+			
+			<if test='status.equals("진행중")'>
+				and biddings.status = '입찰중'
+			</if>
+			
+			<if test='position.equals("구매")'>
+				and biddings.position = '구매'
+			</if>
+			
+			<if test='position.equals("판매")'>
+				and biddings.position = '판매'
+			</if>
+			
+			<if test='created_at_start != null and created_at_end != null'>
+				and biddings.created_at between date(#{created_at_start}) and date(#{created_at_end})+1
+			</if>
+			and biddings.member_id = (select members.id from members where email = #{email})
+			and product_img.img_file LIKE '%-1%'
+		order by biddings.created_at desc limit 50
+	</select>
+	
+	
+	
+	
+	<!-- 마이 페이지 distinct 뺌 -->
+	<select id="myMainList" parameterType="java.util.Map" resultType="myPage.bean.MyPageBuyingDTO">
+		select (select count(*) from biddings where biddings.member_id = (select members.id from members where email = #{email})) as count_all,
+		(select count(*) from biddings where status = '입찰중' and biddings.member_id = (select members.id from members where email = #{email})) as count_ing,
+		(select count(*) from biddings where (status = '낙찰' or status='입찰취소') and biddings.member_id = (select members.id from members where email = #{email})) as count_end,
+		members.email as email, members.name as name,
 		members.footsize as footsize, product_name_eng, img_file, date_format(biddings.created_at, '%y-%m-%d') as created_at,
 		biddings.status as status from members
 		join biddings on (members.id = biddings.member_id) 
 		join product using (pid)
 		join product_img using (pid)
 		where biddings.member_id = (select members.id from members where email = #{email})
-		<if test='status != null and status.equals("종료")'>
-			and biddings.status = '낙찰' or biddings.status = '입찰취소'
-		</if>
-		
-		<if test='status != null and status.equals("진행중")'>
-			and biddings.status = '입찰중'
-		</if>
-		
-		<if test='position != null and position.equals("구매")'>
-			and biddings.position = '구매'
-		</if>
-		
-		<if test='status != null and status.equals("판매")'>
-			and biddings.position = '판매'
-		</if>
-		
-		<if test='created_at_start != null and created_at_end != null'>
-			and biddings.created_at between date(#{created_at_start}) and date(#{created_at_end})+1
-		</if>
-		
 		and product_img.img_file LIKE '%-1%'
-		order by biddings.created_at desc;
+		order by biddings.created_at desc limit 2
 	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 </mapper>

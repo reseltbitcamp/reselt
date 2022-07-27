@@ -2,8 +2,20 @@ package myPage.bean;
 
 public class MyPageBuyingDTO {
 	int footsize, count_all, count_ing, count_end;
-	String product_name_eng, img_file, created_at, status;
+	String product_name_eng, img_file, created_at, status, name, email;
 	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public int getFootsize() {
 		return footsize;
 	}

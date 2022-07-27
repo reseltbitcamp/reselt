@@ -184,37 +184,6 @@
 </div>
 
 
-<!-- 진행 중 구간 -->
-
-  <div class="empty_area_2 py-[80px] text-center removeEvent">
-  	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">구매 입찰 내역이 없습니다</p>
-  	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP 바로가기</a>
-  </div>
-
- <div class="not_empty_area_2 removeEvent">
-  <ul class="wish_list" id="test">
-  	
-  	<!-- 동적처리 -->
-
-  </ul>
-</div>
-
-<!-- 종료 구간 -->
-
-  <div class="empty_area_3 py-[80px] text-center removeEvent">
-  	<p class="desc text-[13px] tracking-[-.07px] text-[#22222280]">구매 입찰 내역이 없습니다</p>
-  	<a class="btn outlinegrey small mt-[12px] border-[1px] border-solid border-[#d3d3d3] text-[#22222280] text-[12px] tracking-[-.06px] px-[14px] h-[34px] leading-[32px] rounded-[10px] inline-block cursor-pointer text-center align-middle bg-[#fff]">SHOP 바로가기</a>
-  </div>
-
- <div class="not_empty_area_3 removeEvent">
-  <ul class="wish_list" id="test">
-  	
-  	<!-- 동적처리 -->
-
-  </ul>
-</div>
-
-
 
 </div> <!--purchase_list-->
 </div> <!--my purchase-->

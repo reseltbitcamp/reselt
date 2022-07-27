@@ -34,6 +34,12 @@ public class MyPageBuyingServiceImpl implements MyPageBuyingService {
 		
 	}
 
+	@Override
+	public List<MyPageBuyingDTO> myMainList() {
+		String email = (String) session.getAttribute("email");
+		return myPageBuyingDAO.myMainList(email);
+	}
+
 
 
 }

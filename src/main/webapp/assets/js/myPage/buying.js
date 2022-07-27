@@ -51,17 +51,10 @@ function buying_list_btn() {
 			if (list == null) {
 				$('.not_empty_area_1').addClass('removeEvent');
 				$('.empty_area_1').removeClass('removeEvent');
-				$('.not_empty_area_2').addClass('removeEvent');
-				$('.empty_area_2').removeClass('removeEvent');
-				$('.not_empty_area_3').addClass('removeEvent');
-				$('.empty_area_3').removeClass('removeEvent');
+				
 			} else {
 				$('.not_empty_area_1').removeClass('removeEvent');
 				$('.empty_area_1').addClass('removeEvent');
-				$('.not_empty_area_2').removeClass('removeEvent');
-				$('.empty_area_2').addClass('removeEvent');
-				$('.not_empty_area_3').removeClass('removeEvent');
-				$('.empty_area_3').addClass('removeEvent');
 				
 
 				$(".wish_list").empty();
