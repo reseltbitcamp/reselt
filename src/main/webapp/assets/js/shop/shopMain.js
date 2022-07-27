@@ -38,8 +38,13 @@ function sortByPrice(condition) {
 
   const idProductList = document.getElementById('productList');
   idProductList.replaceChildren();
-  for (product of array) {
-    idProductList.append(product.div);
+  for (let i = 0; i < array.length; i++) {
+    array[i].div.dataset.order = i;
+    array[i].div.classList.add('hidden')
+    if (i < 8) {
+      array[i].div.classList.remove('hidden');
+    }
+    idProductList.append(array[i].div);
   }
 }
 
