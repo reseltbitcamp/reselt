@@ -240,13 +240,20 @@ public class ShopController {
 	}
 	
 	@RequestMapping(value = "/sellSuccess", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView sellSuccess() {
+	public ModelAndView sellSuccess(@RequestParam Map<String, Object> map) {
+		System.out.println("sellSuccess map = " +map);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/sellSuccess.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("bidding_price", map.get("bidding_price"));
+		mav.addObject("product_size", map.get("product_size"));
+		mav.addObject("src", map.get("src"));
 		mav.setViewName("/index");
+		
+		//BIDDING TABLE 등록
+		shopService.sellSuccess(map);
 		
 		return mav;
 	}

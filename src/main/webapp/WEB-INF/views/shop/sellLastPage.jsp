@@ -15,6 +15,17 @@
     </div>
   </div>
 </div>
+ 	 
+ 	 <!-- Form 넘길것들 -->
+ 	 <form id="sellLastPageForm" action="/ReseltProject/shop/sellSuccess" method="post">
+ 	 <!-- 세션 메일 얻기 -->
+ 	 <input id="email" name="email" type="hidden" value="${email }" />
+ 	 <input id="src" name="src" type="hidden" value="${src }" />
+ 	 <input id="bidding_price" name="bidding_price" type="hidden" value="${sellBidPrice }" />
+ 	 <input id="product_size" name="product_size" type="hidden" value="${size}" />
+ 	 <input id="pid" name="pid" type="hidden" value="${productDTO.pid}" />
+ 	 <!--  -->
+ 	 </form>
 
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 shadow-md">
   <div class="pb-3">
@@ -23,30 +34,29 @@
   <div class="relative">
 
   <div>
-    <p class="text-xs mt-3">등록된d!</p>
+    <p id="account" class="text-xs mt-3"></p>
   </div>
-  <button class="float-right -mt-5 bg-black align-middle text-white rounded-lg cursor-pointer h-8 text-center px-3 top-1/2 text-xs right-0">계좌 추가</button>
   </div>
 </div>
 
 <div class="mx-auto mt-1 max-h-[960px] max-w-[780px] p-8 shadow-md">
   <h3 class="mb-2 inline-block font-extrabold">반송주소</h3>
-  <button class="addAddressBtn float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button>
+  <!-- <button class="addAddressBtn float-right mt-2 text-xs text-gray-500">+ 새 주소 추가</button> -->
   <div class="border-b">
     <div class="float-right mr-9 mt-1 w-6">
-      <a href="#" id="addressChangeBtn" class="absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
+      <a href="#" class="addAddressBtn absolute h-8 w-16 rounded-lg border border-gray-200 text-center">변경</a>
     </div>
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">받는분</dt>
-      <dd class="block text-sm">양웅비</dd>
+      <dd id="addName" class="block text-sm">-</dd>
     </div>
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">연락처</dt>
-      <dd class="block text-sm">010-2083-3955</dd>
+      <dd id="addTel" class="block text-sm">-</dd>
     </div>
     <div class="mb-3">
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">배송 주소</dt>
-      <dd class="block text-sm">서울 강남구 논현로 111길</dd>
+      <dd id="add" class="block text-sm">-</dd>
     </div>
   </div>
 
@@ -175,3 +185,33 @@
 <jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>
+<script>
+$(document).ready(function(){
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/show_address',
+		dataType: 'json',
+		success: function(data) {
+			//sellLastPage Ajax 입력
+			$('#addName').html(data.address_name);
+			$('#addTel').html(data.address_num);
+			$('#add').html(data.address_info);
+			},
+		error: function(e){
+			console.log(e);
+		}
+	});
+	
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/myPage/show_account',
+		dataType: 'json',
+		success: function(data) {
+			
+			//데이터 보여주기
+			$('#account').text( "<" + data.account_name + ">  계좌번호 : " + data.account_num + " / 예금주 :  " + data.account_holder);
+		}
+});
+
+});			
+</script>

@@ -74,6 +74,11 @@
 		ORDER BY product_size ASC;
 	</select>
 	
+	<insert id="sellSuccess" parameterType="java.util.Map">
+		INSERT INTO biddings(member_id, pid, product_size, bidding_price, 
+							 position, status, matched_bidding_id, created_at)
+		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '판매', '입찰중', #{matched_bidding_id}, sysdate())
+	</insert>
 	
 	
 </mapper>
