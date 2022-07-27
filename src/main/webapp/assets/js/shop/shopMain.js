@@ -3,12 +3,12 @@ const observer = new IntersectionObserver(function(entries) {
   if (entries[0].isIntersecting === true) {
     // alert("Infinite scroll event will be triggered.");
     ProductList();
-  }}, { threshold: [0.2] });
+  }}, { threshold: [0.5] });
 
 // Trigger fires when DOM is fully loaded
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === "complete") {
-    observer.observe(document.getElementById("footerTop"));
+    observer.observe(document.getElementById("footerBot"));
   }
 });
 
@@ -31,7 +31,7 @@ function ProductList(){
 	        	else if (priceRange >500000){priceRange = 'highprice'};
 
                //data-category="green small medium africa"
-               $('<div class="product" data-category="'
+               $('<div id=product-'+items.pid+' '+'class="product" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+'data-category="'
                +items.category_name_eng+' '
                +items.brand_name+' '
                +priceRange+' '
@@ -42,7 +42,7 @@ function ProductList(){
                +items.brand_name+'</p><div class="h-20 w-60"><p class="text-left text-[14px] pl-1">'
                +items.product_name_eng+'</p><p class="text-left text-[13px] text-slate-400 pl-1" >'
                +items.product_name_kor+'</p></div><p class="item-price text-left text-[16px] font-bold font-notoSans">&nbsp;'
-               +items.released_price+'원'+'</p><p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p></a></button><a href="#"><div class="h-6 w-24 grid grid-cols-4 content-start"><button id="bookmark" class="w-1 h-1 py-1"  data-modal-toggle="popup-modal"><svg id="bookmarkColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25"><path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg></button></a><p class="text-[12px] px-0 py-2" id="product_bookmark">'
+               +items.released_price.toLocaleString('en-US')+'원'+'</p><p class="text-left text-[11px] text-slate-400">&nbsp;&nbsp;즉시 구매가</p></a></button><a href="#"><div class="h-6 w-24 grid grid-cols-4 content-start"><button id="bookmark" class="w-1 h-1 py-1"  data-modal-toggle="popup-modal"><svg id="bookmarkColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25"><path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg></button></a><p class="text-[12px] px-0 py-2" id="product_bookmark">'
                +items.product_bookmark+'</p><a href="/ReseltProject/style/styleList"><button id="smile" class="w-1 h-1 py-1"><svg id="smileColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25" href="ReseltProject/"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button></a><p class="text-[12px] px-0 py-2" id="product_likes">'
                +items.product_likes+'</p></div>')
                .appendTo($('#productList'));
@@ -95,24 +95,65 @@ var filteredResults = $('.product');
 filterCheckboxes.on('change', filterFunc);  
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>> 03. Right Top Filter
+function sortByPrice(condition) {
+  const products = document.getElementsByClassName('product');
+  let array = Array.from(products, function(div) {
+    return { price: `${div.dataset.price}.${div.dataset.pid}`, div: div }
+  });
 
-var sortByPriceLowBtn = document.getElementById('sortByPriceLow');
+  array.sort(function(a, b) {
+    if (parseFloat(a.price) > parseFloat(b.price)) {
+      return 1 * condition; // 낮은 가격 정렬시 condition = 1, 높은 가격 정렬시 condition = -1
+    }
 
-function sortingByPrice(){
-var items = document.querySelectorAll('.product')
-  
-Array.from(items).sort(function(a, b) {
-    // using ~~ to cast the value to a number instead of a string
-    a = ~~a.querySelector('.item-price').innerText
-    b = ~~b.querySelector('.item-price').innerText
-    return a - b
-  }).forEach(function(n, i) {
-    n.style.order = i
-  })
+    if (parseFloat(a.price) < parseFloat(b.price)) {
+      return -1 * condition;
+    }
+
+    return 0;
+  });
+
+  const productList = document.getElementById('productList');
+  productList.replaceChildren();
+  for (product of array) {
+    productList.append(product.div);
+  }
 }
+
+const sortByPriceLowBtn = document.getElementById('sortByPriceLow');
+const sortByPriceHighBtn = document.getElementById('sortByPriceHigh');
+
+sortByPriceLowBtn.addEventListener("click", () => {
+  sortByPrice(1);
+  document.getElementById('dropdownInformationButton').innerText = '가격 낮은 순 ↓↑';
+});
+sortByPriceHighBtn.addEventListener("click", () => {
+  sortByPrice(-1);
+  document.getElementById('dropdownInformationButton').innerText = '가격 높은 순 ↓↑';
+});
+
+//><><><><><><><><><><><><><><><><><><><><><>
+
+// let sortByPriceLowBtn = document.getElementById('sortByPriceLow');
+
+// function sortingByPrice(){
+// var items = document.querySelectorAll('.product')
+  
+// Array.from(items).sort(function(a, b) {
+//     // using ~~ to cast the value to a number instead of a string
+//     a = ~~a.querySelector('.item-price').innerText
+//     b = ~~b.querySelector('.item-price').innerText
+//     return a - b
+//   }).forEach(function(n, i) {
+//     n.style.order = i
+//   })
+// }
+
+// document.getElementById('sortByPriceLow').addEventListener('click', test());
+
 // ajax상에 locale $ 잡아놓은 것 때문에 innerText안되는지 확인해볼것
 
-sortByPriceLowBtn.addEventListener('click', sortByPriceLow);
+// sortByPriceLowBtn.addEventListener('click', sortingByPrice());
 
 	
 	
