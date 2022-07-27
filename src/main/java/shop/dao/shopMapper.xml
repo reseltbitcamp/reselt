@@ -40,7 +40,7 @@
     LEFT JOIN gender
     ON product.gender_id = gender.gender_id
     WHERE product_img.img_file LIKE '%-1%'
-    order by product.pid asc limit #{startNum}, #{endNum};
+    order by product.pid asc;
    </select>
 	
 	<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">

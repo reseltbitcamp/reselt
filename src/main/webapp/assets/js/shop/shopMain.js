@@ -1,9 +1,15 @@
 //00. Infinite Scroll
+let orderCnt = 1;
 const observer2 = new IntersectionObserver(function(entries) {
   if (entries[0].isIntersecting === true) {
-    // alert("Infinite scroll event will be triggered.");
-    ProductList();
-  }}, { threshold: [0.5] });
+    const classProduct = document.getElementsByClassName('product');
+    for (product of classProduct) {
+      if (product.dataset.order > orderCnt * 8 && product.dataset.order <= orderCnt * 2 * 8) {
+        document.getElementById(product.id).classList.remove('hidden');
+      }
+    }
+    orderCnt += 1;
+  }}, { threshold: [0.2] });
 
 // Trigger fires when DOM is fully loaded
 document.addEventListener('readystatechange', event => {
@@ -21,19 +27,19 @@ function sortByPrice(condition) {
 
   array.sort(function(a, b) {
     if (parseFloat(a.price) > parseFloat(b.price)) {
-      return 1 * condition; // 낮은 가격 정렬시 condition = 1, 높은 가격 정렬시 condition = -1
+      return 1 * condition; // 낮은 가격 정렬시 condition = 1
     }
     if (parseFloat(a.price) < parseFloat(b.price)) {
-      return -1 * condition;
+      return -1 * condition; // 높은 가격 정렬시 condition = -1
     }
 
     return 0;
   });
 
-  const productList = document.getElementById('productList');
-  productList.replaceChildren();
+  const idProductList = document.getElementById('productList');
+  idProductList.replaceChildren();
   for (product of array) {
-    productList.append(product.div);
+    idProductList.append(product.div);
   }
 }
 
@@ -50,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function(){
     sortByPrice(-1);
     document.getElementById('dropdownInformationButton').innerText = '가격 높은 순 ↓↑';
   });
+
 });
 
 
