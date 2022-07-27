@@ -1,5 +1,5 @@
 //00. Infinite Scroll
-const observer = new IntersectionObserver(function(entries) {
+const observer2 = new IntersectionObserver(function(entries) {
   if (entries[0].isIntersecting === true) {
     // alert("Infinite scroll event will be triggered.");
     ProductList();
@@ -8,7 +8,7 @@ const observer = new IntersectionObserver(function(entries) {
 // Trigger fires when DOM is fully loaded
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === "complete") {
-    observer.observe(document.getElementById("footerBot"));
+    observer2.observe(document.getElementById("footerBot"));
   }
 });
 
@@ -37,17 +37,21 @@ function sortByPrice(condition) {
   }
 }
 
-const sortByPriceLowBtn = document.getElementById('sortByPriceLow');
-const sortByPriceHighBtn = document.getElementById('sortByPriceHigh');
+//Sort 버튼에 대한 addEventListener 선언은 DOMContentLoaded 이후로...
+document.addEventListener("DOMContentLoaded", function(){
+  const sortByPriceLowBtn = document.getElementById('sortByPriceLow');
+  const sortByPriceHighBtn = document.getElementById('sortByPriceHigh');
+  
+  sortByPriceLowBtn.addEventListener("click", () => {
+    sortByPrice(1);
+    document.getElementById('dropdownInformationButton').innerText = '가격 낮은 순 ↓↑';
+  });
+  sortByPriceHighBtn.addEventListener("click", () => {
+    sortByPrice(-1);
+    document.getElementById('dropdownInformationButton').innerText = '가격 높은 순 ↓↑';
+  });
+});
 
-sortByPriceLowBtn.addEventListener("click", () => {
-  sortByPrice(1);
-  document.getElementById('dropdownInformationButton').innerText = '가격 낮은 순 ↓↑';
-});
-sortByPriceHighBtn.addEventListener("click", () => {
-  sortByPrice(-1);
-  document.getElementById('dropdownInformationButton').innerText = '가격 높은 순 ↓↑';
-});
 
 // 04. Header Filter
 const items = document.getElementsByClassName("item"); 
