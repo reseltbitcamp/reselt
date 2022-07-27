@@ -22,5 +22,10 @@ public class MyPageBuyingMybatis implements MyPageBuyingDAO {
 		return sqlSession.selectList("myPageSQL.buyingList", map);
 	}
 
+	@Override
+	public List<MyPageBuyingDTO> myMainList(String email) {
+		return sqlSession.selectList("myPageSQL.myMainList", email);
+	}
+
 
 }
