@@ -6,12 +6,12 @@
 
 <div class="mx-auto max-h-[960px] max-w-[780px] px-8 pb-4 pt-2 shadow-md">
   <div class="mt-1 mb-5 flex items-center">
-    <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
+    <img src="${src }" class="mr-4 block h-24 w-24 rounded-md" />
     <div class="flex-1">
-      <p class="font-bold">DD1391-100</p>
-      <p>Nike Dunk Low Retro Black</p>
-      <p class="text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
-      <p class="text-sm font-bold">275</p>
+      <p class="font-bold">${productDTO.product_id}</p>
+      <p>${productDTO.product_name_eng}</p>
+      <p class="text-sm text-gray-400">${productDTO.product_name_kor}</p>
+      <p class="text-sm font-bold">${size}</p>
     </div>
   </div>
 </div>
@@ -73,13 +73,13 @@
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14 border-b-2">
       <p class="align-top text-xs font-bold text-black">정산 금액</p>
-      <p class="float-right text-xl font-semibold text-green-600">167,400 원</p>
+      <p class="float-right text-xl font-semibold text-green-600"><fmt:formatNumber value="${sellBidPrice - (sellBidPrice * 0.1)}" pattern="#,###" /> 원</p>
     </div>
 
     <div class="w-auto">
       <dl class="flex justify-between">
         <dt class="mt-2 text-sm">판매가</dt>
-        <dd class="float-right font-semibold">150,000원</dd>
+        <dd class="float-right font-semibold"><fmt:formatNumber value="${sellBidPrice }" pattern="#,###" /> 원</dd>
       </dl>
 
       <dl class="flex justify-between">
@@ -89,7 +89,7 @@
 
       <dl class="flex justify-between">
         <dt class="mt-2 text-xs text-gray-400">수수료</dt>
-        <dd class="float-right text-sm">17,400 원</dd>
+        <dd class="float-right text-sm"><fmt:formatNumber value="${sellBidPrice * 0.1}" pattern="#,###" /> 원</dd>
       </dl>
 
       <dl class="flex justify-between">
@@ -165,7 +165,7 @@
 <div class="mx-auto max-h-[960px] max-w-[780px] p-8 border-t-2 border-t-gray-200 shadow-md">
   <div class="flex">
     <dt class="float-left block min-w-[70px] font-semibold mb-1 truncate text-base">정산 금액</dt>
-    <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-green-500">167,400원</dd>
+    <dd class="mt float m inline pl-1 ml-auto text-xl font-semibold text-green-500"><fmt:formatNumber value="${sellBidPrice - (sellBidPrice * 0.1)}" pattern="#,###" /> 원</dd>
   </div>
   <input type="button" value="결제하기" id="chargeBtn" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled></button>
 </div>
