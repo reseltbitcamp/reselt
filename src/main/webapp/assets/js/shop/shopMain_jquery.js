@@ -17,7 +17,7 @@ function ProductList(){
            else if (priceRange >500000){priceRange = 'highprice'};
 
               //data-category="green small medium africa"
-              $('<div id=product-'+items.pid+' '+'class="product elementItem '+items.brand_name+'" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+'data-category="'
+              $('<div id=product-'+items.pid+' '+'class="product" loading="lazy" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+' '+'data-order='+index+' '+' '+'data-category="'
               +items.category_name_eng+' '
               +items.brand_name+' '
               +priceRange+' '
@@ -35,6 +35,14 @@ function ProductList(){
               //brand_name ~ product_likes까지 div 처리 => right top filter ==> 삭제함
         
               console.log(items.category_name_eng);
+
+              //첫 16개의 이미지만 보이게 하기
+              const classProduct = document.getElementsByClassName('product');
+              for (product of classProduct) {
+                if (product.dataset.order >= 8) {
+                  document.getElementById(product.id).classList.add('hidden');
+                }
+              }
            });//each
 
         paging();   

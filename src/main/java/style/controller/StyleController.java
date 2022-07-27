@@ -91,7 +91,7 @@ public class StyleController {
 	
 	@PostMapping(value="getStyleDetails")
 	@ResponseBody
-	public Map<String, Object> getStyleDetails(@RequestParam String seq) {
+	public Map<String, Object> getStyleDetails(@RequestParam int seq) {
 		return styleService.getStyleDetails(seq);
 	}
 	
@@ -163,5 +163,12 @@ public class StyleController {
 		System.out.println("styleReplyDelete seq = "+style_seq);
 		System.out.println("styleReplyDelete pseq = "+pseq);
 		return styleService.styleReplyDelete(style_seq, pseq);
+	}
+	
+	
+	@PostMapping(value="plusLikes")
+	@ResponseBody
+	public Map<String, Object> plusLikes(@RequestParam int seq, String email) {
+		return styleService.plusLikes(seq, email); //원글
 	}
 }

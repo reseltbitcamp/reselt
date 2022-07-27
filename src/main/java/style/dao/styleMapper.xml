@@ -95,14 +95,9 @@
 		update styles set style_image=#{style_image}, product_id=#{product_id}, content=#{content} where seq=#{seq}
 	</update>
 	
-	<insert id="styleReplyWrite" parameterType="java.util.Map">				
-		insert into comment (pseq, cmt_id, comment_reply, created_at)
-		select #{pseq}
-			, m.id
-			, #{comment_reply}
-			, NOW()
-		from members m
-		where email = #{email};
+	<insert id="styleReplyWrite" parameterType="java.util.Map">		
+		update styles set countcmt = countcmt+1 where seq=#{pseq};		
+		insert into comment (pseq, cmt_id, comment_reply, created_at) select #{pseq}, m.id, #{comment_reply}, NOW() from members m where email = #{email};
 	</insert>
 	
 	<!-- 댓글 받아오기 -->
@@ -145,7 +140,34 @@
 	</select>
 	
 	<delete id="styleReplyDelete" parameterType="int">
-		delete from comment where style_seq = #{style_seq}
+		update styles set countcmt = countcmt-1 where seq=(select pseq from comment where style_seq = #{style_seq});
+		delete from comment where style_seq = #{style_seq};
 	</delete>
 
+	<insert id="makeLikes" parameterType="java.util.Map">	
+			update styles set like_code = like_code+1 where seq=#{seq};
+			insert into likes (id, seq, is_like, created_at) select m.id, #{seq}, 1, NOW() from members m where email = #{email};
+	</insert>
+	
+	<select id="findLikes" parameterType="java.util.Map" resultType="int">
+		select count(*)
+		from likes
+   		where seq=#{seq}
+   		and id = (select id from members where email=#{email})
+	</select>
+	
+	<delete id="deleteLikes" parameterType="java.util.Map">
+			update styles set like_code = like_code-1 where seq=#{seq};
+			delete from likes where seq=#{seq} and id = (select id from members where email=#{email});
+	</delete>
+	
+	<select id="getLikeList" parameterType="String" resultType="like">
+		select *
+		from likes
+		where id = (select id from members where email=#{email})
+	</select>
+	
+	<select id="findAllLikes" parameterType="int" resultType="int">
+		select count(*) from likes where seq=#{seq}
+	</select>
 </mapper>
