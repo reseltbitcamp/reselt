@@ -38,6 +38,18 @@ public class StyleController {
 		return mav;
 	}
 	
+	@RequestMapping(value="styleListNew")
+	public ModelAndView styleListNew(@RequestParam(required = false, defaultValue = "1") String pg) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("pg", pg);
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("display", "/WEB-INF/views/style/styleList.jsp");
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.setViewName("/index");
+		
+		return mav;
+	}
+	
 	@GetMapping(value="styleWrite")
 	public ModelAndView styleWrite() {
 		ModelAndView mav = new ModelAndView();
@@ -85,13 +97,13 @@ public class StyleController {
 	
 	@PostMapping(value="getStyleList")
 	@ResponseBody
-	public Map<String, Object> getImageboardList(@RequestParam String pg){
+	public Map<String, Object> getStyleList(@RequestParam String pg){;
 		return styleService.getStyleList(pg);
 	}
 	
 	@PostMapping(value="getStyleDetails")
 	@ResponseBody
-	public Map<String, Object> getStyleDetails(@RequestParam String seq) {
+	public Map<String, Object> getStyleDetails(@RequestParam int seq) {
 		return styleService.getStyleDetails(seq);
 	}
 	
@@ -163,5 +175,12 @@ public class StyleController {
 		System.out.println("styleReplyDelete seq = "+style_seq);
 		System.out.println("styleReplyDelete pseq = "+pseq);
 		return styleService.styleReplyDelete(style_seq, pseq);
+	}
+	
+	
+	@PostMapping(value="plusLikes")
+	@ResponseBody
+	public Map<String, Object> plusLikes(@RequestParam int seq, String email) {
+		return styleService.plusLikes(seq, email); //원글
 	}
 }
