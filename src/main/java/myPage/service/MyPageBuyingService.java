@@ -1,11 +1,12 @@
 package myPage.service;
 
 import java.util.List;
+import java.util.Map;
 
 import myPage.bean.MyPageBuyingDTO;
 
 public interface MyPageBuyingService {
 
-	List<MyPageBuyingDTO> getBuying();
+	public List<MyPageBuyingDTO> buyingList(Map<String, String> map);
 
 }

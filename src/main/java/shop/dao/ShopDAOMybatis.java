@@ -1,5 +1,6 @@
 package shop.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -31,13 +32,30 @@ public class ShopDAOMybatis implements ShopDAO {
 
 	@Override
 	public List<ProductDTO> getProductList(Map<String, Integer> map) {
+		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getProductList", map);
 	}
 
 	@Override
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
-		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
+	}
+
+	@Override
+	public BiddingDTO getProductInformation(Map<String, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectOne("shopSQL.getProductInformation", map);
+	}
+
+	@Override
+	public List<BiddingDTO> getBidiingPriceMax(Map<Object, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectList("shopSQL.getBidiingPriceMax", map);
+	}
+
+	@Override
+	public void writeBuyBidding(Map<String, Object> map) {
+		sqlsession.insert("shopSQL.writeBuyBidding", map);
 	}
 
 }

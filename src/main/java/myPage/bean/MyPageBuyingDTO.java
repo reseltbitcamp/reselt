@@ -1,43 +1,56 @@
 package myPage.bean;
 
-import java.util.Date;
-
 public class MyPageBuyingDTO {
-	private String image_url;
-	private String brand_name;
-	private int product_size_id;
-	private Date created_at;
-	private String name; //입찰상태명
+	int footsize, count_all, count_ing, count_end;
+	String product_name_eng, img_file, created_at, status;
 	
-	public String getImage_url() {
-		return image_url;
+	public int getFootsize() {
+		return footsize;
 	}
-	public void setImage_url(String image_url) {
-		this.image_url = image_url;
+	public void setFootsize(int footsize) {
+		this.footsize = footsize;
 	}
-	public String getBrand_name() {
-		return brand_name;
+	public int getCount_all() {
+		return count_all;
 	}
-	public void setBrand_name(String brand_name) {
-		this.brand_name = brand_name;
+	public void setCount_all(int count_all) {
+		this.count_all = count_all;
 	}
-	public int getProduct_size_id() {
-		return product_size_id;
+	public int getCount_ing() {
+		return count_ing;
 	}
-	public void setProduct_size_id(int product_size_id) {
-		this.product_size_id = product_size_id;
+	public void setCount_ing(int count_ing) {
+		this.count_ing = count_ing;
 	}
-	public Date getCreated_at() {
+	public int getCount_end() {
+		return count_end;
+	}
+	public void setCount_end(int count_end) {
+		this.count_end = count_end;
+	}
+	public String getProduct_name_eng() {
+		return product_name_eng;
+	}
+	public void setProduct_name_eng(String product_name_eng) {
+		this.product_name_eng = product_name_eng;
+	}
+	public String getImg_file() {
+		return img_file;
+	}
+	public void setImg_file(String img_file) {
+		this.img_file = img_file;
+	}
+	public String getCreated_at() {
 		return created_at;
 	}
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
-	public String getName() {
-		return name;
+	public String getStatus() {
+		return status;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

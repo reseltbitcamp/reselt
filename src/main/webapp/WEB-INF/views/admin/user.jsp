@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://kit.fontawesome.com/d84eab0825.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/admin.css"/>
 <style>
 input:focus {
 	outline: none;
@@ -27,23 +28,20 @@ input:focus {
               <ul class="snb_menu list-none">
                 <li class="menu_item list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="/ReseltProject/admin/user">사용자</a></li>
                 <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="/ReseltProject/admin/member">관리자</a></li>
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="#">문의 내역</a></li>
               </ul>
             </div>
 
             <div class="snb_list mt-10">
               <strong class="snb_title inline-block align-top text-[16px] leading-[22px] tracking-[-.27px] text-[#738F66]">쇼핑몰</strong>
               <ul class="snb_menu list-none">
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="#">상품 관리</a></li>
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="#">주문 관리</a></li>
+                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="/ReseltProject/admin/productList">상품 관리</a></li>
               </ul>
             </div>
 
             <div class="snb_list mt-10">
               <strong class="snb_title inline-block align-top text-[16px] leading-[22px] tracking-[-.27px] text-[#738F66]">컨텐츠 관리</strong>
               <ul class="snb_menu list-none">
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="#">게시글 관리</a></li>
-                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="#">댓글 관리</a></li>
+                <li class="menu_item mt-3 list-none"><a class="menu_link text-[14px] leading-[18px] tracking-[-.15px] text-[#DFD9D7]" href="/ReseltProject/admin/notice">공지사항 관리</a></li>
               </ul>
             </div>
           </nav>
@@ -56,17 +54,23 @@ input:focus {
       <div class="content content_area ml-[180px] overflow-hidden">
         <div class="my_admin_header flex h-[60px] w-full items-center bg-[#ECECEC] p-[10px] px-[40px]">
           <div class="font-semibold text-[#6A6A6A]">Administration</div>
-          <div class="search h-[35px] rounded-[8px] bg-[#f4f4f4] pl-[10px] ml-auto flex">
+          <div class="search h-[35px] rounded-[8px] bg-[#fff] pl-[10px] ml-auto flex">
             <i class="fa-solid fa-magnifying-glass mt-[10px] pr-[10px] text-[#CFCFCF]"></i>
-            <input class="h-full w-full pt-[1px] pr-[50px] text-[14px] tracking-[-.21px]" type="text" placeholder="이름, 아이디 검색" />
+            <input class="adminDiv_search h-full w-full pt-[1px] pr-[50px] text-[14px] tracking-[-.21px]" type="text" placeholder="이름 검색" />
           </div>
-          <div class="btn2 m-[5px] h-[35px] rounded-[2px] bg-[#EC5939] py-[5px] px-[40px] pt-[7px] text-[13px] text-[#DFD9D7] ml-[10px]">나가기</div>
+          <div class="adminDiv_search_button btn2 m-[5px] h-[35px] rounded-[2px] bg-[#6A6A6A] py-[5px] px-[40px] pt-[7px] text-[13px] text-[#DFD9D7] ml-[5px]">검색</div>
+           <a href="/ReseltProject">
+           		<div class="btn2 m-[5px] h-[35px] rounded-[2px] bg-[#EC5939] py-[5px] px-[40px] pt-[7px] text-[13px] text-[#DFD9D7] ml-[4px]">나가기</div>
+           </a>
         </div>
 
         <div class="bg-[#FBFBFB] px-[40px]">
           <div class="my_admin_main pt-[20px]">
-            <div class="my_admin_main-header border-b-solid border-b-[3px] border-b-[#171414] pb-[12px]">
-              <div class="text-[16px] font-semibold text-[#171414]">전체 멤버 (5)</div>
+            <div class="my_admin_main-header flex border-b-solid border-b-[3px] border-b-[#171414] pb-[12px]">
+              <div class="text-[16px] font-semibold text-[#171414] pt-[10px]">전체 멤버</div>
+              <div class="adminDiv_button flex justify-end ml-auto mt-[7px]">
+                     <a class="delete_admin inline-block h-[34px] w-[60px] text-center cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">삭제</a>
+               </div>
             </div>
             <!--header-->
 
@@ -74,7 +78,7 @@ input:focus {
               <div class="my_admin_main-content-title border-b-[2px] border-b-[#C8C8C8] px-[80px] py-[7px] pr-[100px]">
                 <div class="my_admin_main-content-title-detail flex justify-between">
                   <span class="text-[13px] font-semibold text-[#6A6A6A]">IDX</span>
-                  <span class="text-[13px] font-semibold text-[#6A6A6A]">이름/아이디</span>
+                  <span class="text-[13px] font-semibold text-[#6A6A6A]">이름</span>
                   <span class="text-[13px] font-semibold text-[#6A6A6A]">가입일</span>
                   <span class="mr-[100px] text-[13px] font-semibold text-[#6A6A6A]">이메일 주소</span>
                 </div>
@@ -83,32 +87,40 @@ input:focus {
 
               <div class="my_admin_main-content-list">
               
-              <!-- 반복문 -->
-                <div class="my_list not_empty_area_2 removeEvent">
-                  <div class="basic border-b-solid border-b-[1px] border-b-[#171414] pt-[10px] pb-[9px]">
-                    <div class="my_item relative flex items-center">
-                      <div class="info_bind mr-[24px]">
-                        <div class="address_info leading-[17px]">
-                          <!-- 동적처리 -->
+             
+     		<!-- 동적 처리
+                <div class="my_list not_empty_area_2">
+                  <div class="my_list_basic border-b-solid border-b-[1px] border-b-[#171414] pt-[10px] pb-[9px] pl-[20px]">
+                    <div class="my_list_item relative">
+                      <div>
+                        <div class="flex admin_all">
+                        
+                          <div class="adminDiv_content_all flex w-[90%]">
+                          	<div class="adminDiv_num w-[120px] flex justify-between">
+                          		<span class="adminDiv_num_chk">
+                          			<input type="checkbox" class="checkbox"/>
+                          		</span>
+                            	<span class="adminDiv_num_item mt-[6px] w-[30px] text-[12px] font-semibold text-[#6A6A6A] mb-[2px] mr-[10%]">26</span>
+                            </div>
+                            <div class="adminDiv_content flex justify-between w-[90%] ml-[20%]">
+                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A]">안녕</span>
+                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A] pl-[3%]">2022/07/21</span>
+                            	<span class="adminDiv_content_item mt-[4px] w-[20%] text-center text-[12px] font-semibold text-[#6A6A6A] pl-[5%]">hello@naver.com</span>
+                          	</div>
+                          </div>
+                          
                         </div>
                       </div>
-
-                      <div class="btn_bind ml-auto">
-                        <a class="modify_address inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">수정</a>
-                        <a class="delete_address inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] py-[0px] px-[14px] pl-[11px] pr-[12px] align-middle text-[12px] leading-[32px] tracking-[-.06px] text-[#222222cc]">삭제</a>
-                      </div>
-                      <!--btn bind-->
                     </div>
-                    <!--my_item-->
                   </div>
-                  <!--basic -->
+                  
                 </div>
-                <!--my list-->
-                
+     -->
+               
+               
               </div>
               <!--content list-->
 
-              <!--list 넣어야됨!!!!!!!-->
             </div>
             <!--content-->
           </div>
@@ -119,5 +131,8 @@ input:focus {
       <!--content-area-->
     </div>
     <!--container-->
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="../js/admin/user.js"></script>  
   </body>
 </html>

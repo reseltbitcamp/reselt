@@ -3,6 +3,7 @@ package myPage.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,13 +38,13 @@ public class MyPageController {
 	MyPageProfileService myPageProfileService;
 	
 	@Autowired
-	MyPageBuyingService myPageBuyingService;
-	
-	@Autowired
 	MyPageAddressService myPageAddressService;
 	
 	@Autowired
 	MyPageAccountService myPageAccountService;
+	
+	@Autowired
+	MyPageBuyingService myPageBuyingService;
 	
 	@Autowired
 	HttpSession session;
@@ -172,6 +173,11 @@ public class MyPageController {
 		myPageProfileService.nickUpdate(nick);
 	}
 	
+	@PostMapping(value="nameUpdate")
+	@ResponseBody
+	public void nameUpdate(@RequestParam String name) {
+		myPageProfileService.nameUpdate(name);
+	}
 	
 	@PostMapping(value = "telOk")
 	@ResponseBody
@@ -285,17 +291,6 @@ public class MyPageController {
 		return myPageProfileDTO;
 	}
 	
-
-	//buying
-	@PostMapping(value="getBuying")
-	@ResponseBody
-	public List<MyPageBuyingDTO> getBuying() {
-		
-		List<MyPageBuyingDTO> list = myPageBuyingService.getBuying();
-		System.out.println(list);
-		return list;
-		
-	}
 	
 	//address
 	@PostMapping(value="add_address")
@@ -329,6 +324,18 @@ public class MyPageController {
 	public MyPageAccountDTO show_account() {
 		
 		return myPageAccountService.show_account();
+	}
+	
+	//구매,판매
+	@PostMapping(value="buyingList")
+	@ResponseBody
+	public List<MyPageBuyingDTO> buyingList(@RequestParam Map <String,String> map) {
+		
+		List<MyPageBuyingDTO> list = myPageBuyingService.buyingList(map);
+		System.out.println(map);
+		System.out.println(list);
+		return list;
+		
 	}
 	
 }

@@ -28,12 +28,22 @@ $('.btn_layer_close').on('click', function(){
 
 
 
-//페이지 새로고침할 시 데이터 뿌리기
-$(document).ready(function(){
+/*페이지 조회 (정렬, 기간, 상태)*/
+//footsize, product_name_eng, img_file, created_at, status, 전체 수, 진행중 수, 종료 수
+//buying_btn id값이 전체면, 진행중이면, 종료면, 즉 null이 아니면 where status 
+//position_item id값이 구매면, 판매면, 즉 null이 아니면 where position 
+//created_at value값이 있으면, 즉 null이 아니면 between 
+function buying_list_btn() {
 	
 	$.ajax({
 		type: 'post',
-		url: '/ReseltProject/myPage/getBuying',
+		url: '/ReseltProject/myPage/buyingList',
+		data: {
+			"status": $('.tab_on').attr('id'),
+			"position": $('.position_a').text(),
+			"created_at_start": $('.created_at_start').val(),
+			"created_at_end": $('.created_at_end').val()
+			}, 
 		dataType: 'json',
 		success: function(list) {
 			
@@ -41,13 +51,23 @@ $(document).ready(function(){
 			if (list == null) {
 				$('.not_empty_area_1').addClass('removeEvent');
 				$('.empty_area_1').removeClass('removeEvent');
+				$('.not_empty_area_2').addClass('removeEvent');
+				$('.empty_area_2').removeClass('removeEvent');
+				$('.not_empty_area_3').addClass('removeEvent');
+				$('.empty_area_3').removeClass('removeEvent');
 			} else {
 				$('.not_empty_area_1').removeClass('removeEvent');
 				$('.empty_area_1').addClass('removeEvent');
+				$('.not_empty_area_2').removeClass('removeEvent');
+				$('.empty_area_2').addClass('removeEvent');
+				$('.not_empty_area_3').removeClass('removeEvent');
+				$('.empty_area_3').addClass('removeEvent');
 				
 
+				$(".wish_list").empty();
+				
 				$.each(list, function(index, items){
-					$('.wish_list_1').append($('<li/>', {
+					$('.wish_list').append($('<li/>', {
 						class: 'wish_list_inner'
 					}).append($('<div/>', {
 						class: 'wish_block'
@@ -57,7 +77,7 @@ $(document).ready(function(){
 						class: 'product_box'
 					}).append($('<img/>', {
 						class: 'product_img',
-						text: items.image_url
+						text: items.img_file
 					}))
 					
 					
@@ -71,10 +91,10 @@ $(document).ready(function(){
 					
 					).append($('<p/>', {
 						class: 'brand_name',
-						text: items.brand_name
+						text: items.product_name_eng
 					})).append($('<span/>', {
 						class: 'brand_size',
-						text: items.product_size_id
+						text: items.footsize
 						
 					}))
 					
@@ -108,7 +128,7 @@ $(document).ready(function(){
 						class: 'wish_buy_inner'
 					}).append($('<span/>', {
 						class: 'wish_buy_content',
-						text: items.name
+						text: items.status
 					})))
 					
 					)
@@ -118,8 +138,14 @@ $(document).ready(function(){
 					)
 					)
 				
+					$('.count_all').text(items.count_all);
+					$('.count_ing').text(items.count_ing);
+					$('.count_end').text(items.count_end);
 					
 				});
+				
+			
+				
 			}
 			
 			
@@ -131,8 +157,13 @@ $(document).ready(function(){
 
 	});
 
-});	
+};	
 
+
+/*로딩*/
+$(document).ready(function(){
+	buying_list_btn();
+});
 
 
 /*구간 누를 때 요소 바뀜*/
@@ -141,15 +172,6 @@ $('.buying_btn_1').on('click', function(){
 	$('.buying_btn_3').children('.tab_link').removeClass('tab_on');
 	$(this).children('.tab_link').addClass('tab_on');
 	
-	/*ajax 넘어오는 데이터 있으면 empty_area가 remove, 없으면 not_empty_area가 remove*/
-	/*kream 보면 다시 전체로 받음*/
-	$('.empty_area_1').removeClass('.removeEvent');
-	$('.not_empty_area_1').removeClass('removeEvent');
-	$('.empty_area_2').addClass('.removeEvent');
-	$('.not_empty_area_2').addClass('removeEvent');
-	$('.empty_area_3').addClass('.removeEvent');
-	$('.not_empty_area_3').addClass('removeEvent');
-	
 });
 
 $('.buying_btn_2').on('click', function(){
@@ -157,13 +179,6 @@ $('.buying_btn_2').on('click', function(){
 	$('.buying_btn_3').children('.tab_link').removeClass('tab_on');
 	$(this).children('.tab_link').addClass('tab_on');
 	
-	$('.empty_area_1').addClass('.removeEvent');
-	$('.not_empty_area_1').addClass('removeEvent');
-	/*ajax 넘어오는 데이터 있으면 empty_area가 remove, 없으면 not_empty_area가 remove*/
-	$('.empty_area_2').removeClass('.removeEvent');
-	$('.not_empty_area_2').removeClass('removeEvent');
-	$('.empty_area_3').addClass('.removeEvent');
-	$('.not_empty_area_3').addClass('removeEvent');
 });
 
 $('.buying_btn_3').on('click', function(){
@@ -171,22 +186,8 @@ $('.buying_btn_3').on('click', function(){
 	$('.buying_btn_2').children('.tab_link').removeClass('tab_on');
 	$(this).children('.tab_link').addClass('tab_on');
 	
-	$('.empty_area_1').addClass('.removeEvent');
-	$('.not_empty_area_1').addClass('removeEvent');
-	$('.empty_area_2').addClass('.removeEvent');
-	$('.not_empty_area_2').addClass('removeEvent');
-	/*ajax 넘어오는 데이터 있으면 empty_area가 remove, 없으면 not_empty_area가 remove*/
-	$('.empty_area_3').removeClass('.removeEvent');
-	$('.not_empty_area_3').removeClass('removeEvent');
 });
 
-
-/*상태 value() 달력 input value() 정렬 value*/
-/*구매 1페이지 조회 (정렬, 기간, 상태)*/
-
-/*구매 2페이지 조회 (정렬, 기간, 상태)*/
-
-/*구매 3페이지 조회 (정렬, 기간, 상태)*/
 
 
 
