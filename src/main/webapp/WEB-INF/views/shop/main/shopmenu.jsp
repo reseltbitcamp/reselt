@@ -10,68 +10,68 @@
 </div>
 
 
-<div id="showcase" class="mx-[72px] my-[50px] px-[32px] grid grid-cols-10 gap-4">
-  <a id="legoBtn" href="#Lego">
+<div class="headerFilter mx-[72px] my-[50px] px-[32px] grid grid-cols-10 gap-4">
+  <button data-filter="lego">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/lego.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">레고</p>
-  </a>
-  <a id="newbalBtn" href="#New Balance">
+  </button>
+  <button data-filter="newbalance">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/newbal.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">뉴발란스</p>
-  </a>
-  <a id="chanelBtn" href="#Chanel">
+  </button>
+  <button data-filter="Chanel">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/chanel.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">샤넬</p>
-  </a>
-  <a id="yashiroBtn" href="#Yashiro">
+  </button>
+  <button data-filter="Yashiro" >
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/yashiro.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">야스히로</p>
-  </a>
-  <a id="rolexBtn" href="#Rolex">
+  </button>
+  <button data-filter="Rolex">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/roli.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">롤렉스</p>
-  </a>
-  <a id="helinoxBtn" href="#Helinox">
+  </button>
+  <button data-filter="Helinox">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/heli.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">헬리녹스</p>
-  </a>
-  <a id="wooyoungmiBtn" href="#Wooyoungmi">
+  </button>
+  <button data-filter="Wooyoungmi">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/wooyoung.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">우영미</p>
-  </a>
-  <a id="nikeBtn" href="#NIKE">
+  </button>
+  <button data-filter="NIKE">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/airforce.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">에어포스</p>
-  </a>
-  <a id="dysonBtn" href="#Dyson">
+  </button>
+  <button data-filter="Dyson">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/dyson.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">다이슨</p>
-  </a>
-  <a id="iabstudioBtn" href="#IAB STUDIO">
+  </button>
+  <button data-filter="IAB STUDIO">
     <div class="bg-white w-28 h-28 rounded-xl">
      <img class="w-full object-contain min-h-0 h-full" src="/ReseltProject/img/shopmenu/IAB.png"> 
     </div>  
     <p class="text-center text-[12px] font-bold">IAB STUDIO</p>
-  </a>
+  </button>
 </div>
 
-<script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
-
+<script type="text/javascript" src="/ReseltProject/js/shop/shopMenu.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>

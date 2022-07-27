@@ -409,7 +409,7 @@ $(function(){
 });
 </script>
   
-<div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
+<div id="productList" class="productList infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
   
    
 </div>
@@ -597,11 +597,12 @@ $(function(){
        
     
 
-<!-- query -->
+<!-- query / script tag -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain_jquery.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
-
+<script type="text/javascript" src="/ReseltProject/js/shop/shopMenu.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 <!-- filter Script -->
 <script type="text/javascript">
 let displayState = {none: "block", block: "none"}
