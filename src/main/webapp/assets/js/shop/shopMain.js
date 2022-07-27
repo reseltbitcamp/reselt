@@ -35,7 +35,7 @@ function sortByPrice(condition) {
 
     return 0;
   });
-
+  orderCnt = 1;
   const idProductList = document.getElementById('productList');
   idProductList.replaceChildren();
   for (let i = 0; i < array.length; i++) {
