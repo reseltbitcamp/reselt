@@ -326,18 +326,29 @@ public class MyPageController {
 		return myPageAccountService.show_account();
 	}
 	
-	//구매,판매
+	//거래
 	@PostMapping(value="buyingList")
 	@ResponseBody
 	public List<MyPageBuyingDTO> buyingList(@RequestParam Map <String,String> map) {
 		
-		List<MyPageBuyingDTO> list = myPageBuyingService.buyingList(map);
 		System.out.println(map);
+		List<MyPageBuyingDTO> list = myPageBuyingService.buyingList(map);
 		System.out.println(list);
 		return list;
 		
 	}
 	
+	//마이 페이지
+	@PostMapping(value="myMainList")
+	@ResponseBody
+	public List<MyPageBuyingDTO> myMainList() {
+		
+		List<MyPageBuyingDTO> list = myPageBuyingService.myMainList();
+		System.out.println(list);
+		return list;
+		
+	}
+
 }
 	
 	
