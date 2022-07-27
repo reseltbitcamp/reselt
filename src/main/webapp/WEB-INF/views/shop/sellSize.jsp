@@ -164,17 +164,24 @@ $.ajax({
 	      
 	      // 사이즈표시
 	      let shose_size = [230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300];
-	      const clothes_size = ['XS' ,'S' ,'M', 'L', 'XL'];
-	      const other = "OneSize";
-	      
+	      let clothes_size = ['xs' ,'s' ,'m', 'l', 'xl', 'xxl'];
+	      let other = ["one_size"];
+	      let itemSize;
+	     
 	      // 신발 사이즈 표시
 	      if(data.category_id == 61){
-	         $.each(shose_size, function(index, size){
+	      	itemSize = shose_size
+	      }else if(data.category_id == 62) {
+	      	itemSize = clothes_size
+	      }else {
+	      	itemSize = other
+	      }// 신발 사이즈 표시
+	         $.each(itemSize, function(index, size){
 					($('<li />').addClass("inline-block my-2 mx-3"))
 					.append($('<button />')
 							.addClass("sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ")
 							.append($('<span />', {html : size + '(size)'}).addClass("mt-1"))
-							.append($('<input />',{ value : size, type : 'hidden'}))
+							.append($('<input />',{ value : size, type : 'hidden',id : 'sizeHidden'}))
 							.append($('<br />'))
 							.append($('<span />', {html : '-',id : "price"+size
 								//(size == innerData.list[index].product_size && innerData.list[index].bidding_price.toLocaleString())
@@ -189,13 +196,15 @@ $.ajax({
 			    type: "post",
 			    url: "/ReseltProject/shop/getProductPriceMax",
 			    data: 'pid='+$('#pid').val(),
-			    success:function(data){
-			      $.each(data.list, function(index, data){
+			    success:function(innerdata){
+			      $.each(innerdata.list, function(index, innerdata){
+	      			console.log(innerdata);
 			    	//console.log(data.product_size);
 			    	//console.log(data);
-			    	//console.log('#price' + data.product_size);
-			         $('#price' + data.product_size).html(data.bidding_price.toLocaleString('ko-KR'));
-			         $('#price' + data.product_size).val(data.bidding_price.toLocaleString('ko-KR'));
+			    	console.log('#priceS' + innerdata.product_size);
+			    	console.log('#priceP' + innerdata.bidding_price);
+			         $('#price' + innerdata.product_size).html(innerdata.bidding_price.toLocaleString('ko-KR'));
+			         $('#price' + innerdata.product_size).val(innerdata.bidding_price.toLocaleString('ko-KR'));
 			      })
 			    }, error:function(err){
 			       console.log(err)
@@ -215,7 +224,6 @@ $.ajax({
 	        $('.price').each(function(index){
 	           $(this).attr('price-index',index);
 	        })
-	      }// 신발 사이즈 표시
 	   },
 	   error: function(err) {
 	      console.log(err)

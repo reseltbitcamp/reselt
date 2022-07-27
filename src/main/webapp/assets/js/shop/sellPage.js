@@ -120,7 +120,7 @@ $('#sellBidBtn').click(function(){
 
 //sellLastPage
 $(function(){
-  $('#addressDiv_modal').hide();
+	$('#addressDiv_modal').hide();
 	$('.addAddressModal').hide();
 
 	$('#exitBtn').click(function(){
@@ -132,10 +132,15 @@ $(function(){
 	$('.addressDiv_reset').click(function(){
 		$('.addAddressModal').hide();
 	})
-})
-$('#addressChangeBtn').click(function(){
-  $('#addressDiv_modal').show();
-})
+
+});
+
+//$('#addressChangeBtn').click(function(){
+//  $('#addressDiv_modal').show();
+//})
+	
+
+
 
 
 $('#firstAgree').click(function(){
@@ -227,7 +232,7 @@ $('.paymentOption').each(function(index){
     $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
   })
 $('#chargeBtn').click(function(){
-	location.href='./sellSuccess'
+	$('#sellLastPageForm').submit();
 })
 //sellLastPage
 

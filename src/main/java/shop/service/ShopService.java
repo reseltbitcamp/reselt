@@ -22,5 +22,7 @@ public interface ShopService {
 
 	public Map<String, Object> insertBuyInfomation(String email, int pid, String size, int bidding_id);
 
+	public void sellSuccess(Map<String, Object> map);
+
 
 }

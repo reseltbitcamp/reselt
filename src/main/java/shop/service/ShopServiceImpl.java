@@ -103,4 +103,14 @@ public class ShopServiceImpl implements ShopService {
 		return map;
 	}
 
+	@Override
+	public void sellSuccess(Map<String, Object> map) {
+		
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setEmail(map.get("email") + "");
+		MemberDTO dto = memberDAO.checkEmail(memberDTO);
+		map.put("member_id",dto.getId());
+		shopDAO.sellSuccess(map);
+	}
+
 }

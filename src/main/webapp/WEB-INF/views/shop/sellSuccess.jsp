@@ -7,7 +7,7 @@
 
 <div class="main-content mx-auto my-5 h-auto max-w-[600px] bg-white p-8 shadow-md">
   <div>
-    <img class="mx-auto block h-[300px] w-[400px] rounded-md" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" />
+    <img class="mx-auto block h-[300px] w-[400px] rounded-md" src="${src }" />
   </div>
   <div class="mt-4">
     <p id="status" class="text-center text-3xl font-semibold">즉시 판매가 완료되었습니다.</p>
@@ -22,13 +22,13 @@
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14 border-b">
       <p class="align-top text-xs font-bold text-black">총 정산 금액</p>
-      <p class="float-right text-xl font-semibold text-green-600">167,400 원</p>
+      <p class="float-right text-xl font-semibold text-green-600"><fmt:formatNumber value="${bidding_price - (bidding_price * 0.1)}" pattern="#,###" /> 원</p>
     </div>
 
     <div class="my-3 w-auto">
       <dl class="flex justify-between">
         <dt class="mt-2 text-sm">즉시 판매가</dt>
-        <dd class="float-right font-semibold">150,000원</dd>
+        <dd class="float-right font-semibold"><fmt:formatNumber value="${bidding_price }" pattern="#,###" /> 원</dd>
       </dl>
 
       <dl class="flex justify-between">
@@ -38,7 +38,7 @@
 
       <dl class="flex justify-between">
         <dt class="mt-2 text-xs text-gray-400">수수료</dt>
-        <dd class="float-right text-sm">17,400 원</dd>
+        <dd class="float-right text-sm"><fmt:formatNumber value="${bidding_price * 0.1}" pattern="#,###" /> 원</dd>
       </dl>
 
       <dl class="flex justify-between">
