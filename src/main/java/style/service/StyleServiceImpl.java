@@ -1,5 +1,7 @@
 package style.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +37,7 @@ public class StyleServiceImpl implements StyleService {
 	}
 
 	@Override
-	public Map<String, Object> getStyleList(String pg) {
+	public Map<String, Object> getStyleList(String pg, int num) {
 		//1페이지당 3개씩
 		int endNum = Integer.parseInt(pg) * 8;
 		int startNum = endNum - 8;
@@ -43,7 +45,8 @@ public class StyleServiceImpl implements StyleService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("startNum", startNum);
 		map.put("endNum", endNum);
-		
+		map.put("num", num);
+		System.out.println("startNum="+startNum+", endNum="+endNum);
 		List<StyleDTO> list = styleDAO.getStyleList(map);
 		
 		String email = (String) session.getAttribute("email");
@@ -52,7 +55,7 @@ public class StyleServiceImpl implements StyleService {
 		
 		Map<String, Object> sendMap = new HashMap<String, Object>();
 		sendMap.put("email", email);
-		
+		sendMap.put("num", num);
 		sendMap.put("like", like);
 		sendMap.put("list", list);
 		return sendMap;
@@ -65,8 +68,31 @@ public class StyleServiceImpl implements StyleService {
 		StyleDTO styleDTO = styleDAO.getStyleDetails(seq);
 		map.put("styleDTO", styleDTO);
 		
+		/*시간 지정하기*/
+		System.out.println("날짜+시간"+styleDTO.getCreated_at().getTime());
+	
+		String dateWrite;
+		long con_date = styleDTO.getCreated_at().getTime();
+		long current_time = System.currentTimeMillis();
+		long getTime = (current_time - con_date)/1000;
+		System.out.println("getTime="+getTime);
+		if(getTime < 60) {
+            dateWrite = "방금 전";
+        }else if(getTime < 300) {
+            dateWrite = "5분 이내";
+        }else if(getTime < 3600) {
+            dateWrite = "1시간 이내";
+        }else if(getTime < 21600) {
+            dateWrite = "6시간 이내";
+        }else if(getTime < 43200) {
+            dateWrite = "12시간 이내";
+        }else {
+            dateWrite = new SimpleDateFormat("YYYY-MM-dd").format(con_date);
+        }
+		
 		String email = (String) session.getAttribute("email");
 		
+		map.put("dateWrite", dateWrite);
 		map.put("email", email);
 		if(email!=null) {
 			memberDTO.setEmail(email);
