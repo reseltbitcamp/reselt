@@ -19,18 +19,36 @@ document.addEventListener('readystatechange', event => {
 });
 
 // 03. Right Top Filter
-function sortByPrice(condition) {
+function shopSort(condition, order) {
   const products = document.getElementsByClassName('product');
-  let array = Array.from(products, function(div) {
-    return { price: `${div.dataset.price}.${div.dataset.pid}`, div: div }
-  });
+  let array = []
+
+  if (condition === 'price') {
+    array = Array.from(products, function(div) {
+      return { key: `${div.dataset.price}.${div.dataset.pid}`, div: div }
+    });
+  } else if (condition === 'release_date') {
+    array = Array.from(products, function(div) {
+      return { key: `${div.dataset.date}.${div.dataset.pid}`, div: div }
+    });
+  } else if (condition === 'product_likes') {
+    array = Array.from(products, function(div) {
+      return { key: `${div.dataset.likes}.${div.dataset.pid}`, div: div }
+    }); 
+  }  
+    else if (condition === 'product_bookmark') {
+    array = Array.from(products, function(div) {
+      return { key: `${div.dataset.bookmark}.${div.dataset.pid}`, div: div }
+    }); 
+  }
+  
 
   array.sort(function(a, b) {
-    if (parseFloat(a.price) > parseFloat(b.price)) {
-      return 1 * condition; // 낮은 가격 정렬시 condition = 1
+    if (parseFloat(a.key) > parseFloat(b.key)) {
+      return 1 * order; // 낮은 정렬
     }
-    if (parseFloat(a.price) < parseFloat(b.price)) {
-      return -1 * condition; // 높은 가격 정렬시 condition = -1
+    if (parseFloat(a.key) < parseFloat(b.key)) {
+      return -1 * order; // 높은 정렬시
     }
 
     return 0;
@@ -52,18 +70,36 @@ function sortByPrice(condition) {
 document.addEventListener("DOMContentLoaded", function(){
   const sortByPriceLowBtn = document.getElementById('sortByPriceLow');
   const sortByPriceHighBtn = document.getElementById('sortByPriceHigh');
+  const sortByNew = document.getElementById('dateSort');
+  const sortByLikesBtn = document.getElementById('likeSort');
+  const sortByBookmark = document.getElementById('bookmarkSort');
   
   sortByPriceLowBtn.addEventListener("click", () => {
-    sortByPrice(1);
+    shopSort('price', 1);
     document.getElementById('dropdownInformationButton').innerText = '가격 낮은 순 ↓↑';
   });
+
   sortByPriceHighBtn.addEventListener("click", () => {
-    sortByPrice(-1);
+    shopSort('price', -1);
     document.getElementById('dropdownInformationButton').innerText = '가격 높은 순 ↓↑';
   });
 
+  sortByNew.addEventListener("click", () => {
+    shopSort('release_date', -1);
+    document.getElementById('dropdownInformationButton').innerText = '발매가 순 ↓↑';
+  });
+  
+  sortByLikesBtn.addEventListener("click", () => {
+    shopSort('product_likes', -1);
+    document.getElementById('dropdownInformationButton').innerText = '인기순 ↓↑';
+  });
+  
+  sortByBookmark.addEventListener("click", () => {
+    shopSort('product_bookmark', -1);
+    document.getElementById('dropdownInformationButton').innerText = '북마크 순 ↓↑';
+  });
+  
 });
-
 
 // 04. Header Filter
 const items = document.getElementsByClassName("item"); 
@@ -71,13 +107,13 @@ const items = document.getElementsByClassName("item");
 
 showTag = (event, tag) => {
 // console.log(window.location.hash)
-	console.log('showing... ', tag)
-	for(let i = 0; i< items.length; i++){
-	  if(items[i].dataset.tags.includes(tag)){
-	    items[i].style.display = "block";
-	  }else{
-	    items[i].style.display = "none";
-	  	}
+   console.log('showing... ', tag)
+   for(let i = 0; i< items.length; i++){
+     if(items[i].dataset.tags.includes(tag)){
+       items[i].style.display = "block";
+     }else{
+       items[i].style.display = "none";
+        }
     }
 }
 
@@ -98,3 +134,31 @@ function paging(){
    console.log("page value = "+page.value);
    page.value++;
 }
+
+
+//// 06. 키워드를 이용한 검색기능
+//function sortByPrice(condition) {
+//  const products = document.getElementsByClassName('product');
+//  const keyword = `${keyword}`;
+//  
+//  const filterProducts = (keyword) => {
+//    return products.filter((el) => 
+//      el.toLowerCase().indexOf(keyword.toLowerCase()) > -1
+//    );
+//  }
+//
+//  orderCnt = 1;
+//  const idProductList = document.getElementById('productList');
+//  idProductList.replaceChildren();
+//  for (let i = 0; i < array.length; i++) {
+//    array[i].div.dataset.order = i;
+//    array[i].div.classList.add('hidden')
+//    if (i < 8) {
+//      array[i].div.classList.remove('hidden');
+//    }
+//    idProductList.append(array[i].div);
+//  }
+//}
+//window.onload=function(){
+//  alert($('#keyword').val())
+//}
