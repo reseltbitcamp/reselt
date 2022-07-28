@@ -4,7 +4,7 @@ $('.head_product').on('click', function(){
 });
 
 
-//모달창 인덱스 받아서 인덱스 값 보내기
+//모달창 인덱스 받아서 값 보내기
 $('.status_link').on('click', function(){
 	var index = $(this).index();
 	var index_value = $(this).attr('id');
@@ -16,16 +16,21 @@ $('.status_link').on('click', function(){
       $(this).addClass('clickEvent');
   }
 	$('.layer').fadeOut();
-	$('.btn_filter').text(index_value);
+	$('.position_a').text(index_value);
 	
 });
-
 
 //x 버튼 누르면 사라짐
 $('.btn_layer_close').on('click', function(){
 	$('.layer').fadeOut();
 });
 
+
+$('select[name=sort]').change(function(){
+	console.log($(this).val());
+	$('.select_list').text($(this).val());
+	buying_list_btn();
+});
 
 
 /*페이지 조회 (정렬, 기간, 상태)*/
@@ -35,10 +40,13 @@ $('.btn_layer_close').on('click', function(){
 //created_at value값이 있으면, 즉 null이 아니면 between 
 function buying_list_btn() {
 	
+	$(".wish_list").empty();
+	
 	$.ajax({
 		type: 'post',
 		url: '/ReseltProject/myPage/buyingList',
 		data: {
+			"sort": $('.select_list').text(),
 			"status": $('.tab_on').attr('id'),
 			"position": $('.position_a').text(),
 			"created_at_start": $('.created_at_start').val(),
@@ -56,8 +64,6 @@ function buying_list_btn() {
 				$('.not_empty_area_1').removeClass('removeEvent');
 				$('.empty_area_1').addClass('removeEvent');
 				
-
-				$(".wish_list").empty();
 				
 				$.each(list, function(index, items){
 					$('.wish_list').append($('<li/>', {
