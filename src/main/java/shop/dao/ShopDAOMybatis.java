@@ -58,4 +58,10 @@ public class ShopDAOMybatis implements ShopDAO {
 		sqlsession.insert("shopSQL.writeBuyBidding", map);
 	}
 
+	@Override
+	public void sellSuccess(Map<String, Object> map) {
+		System.out.println("sellSuccess DB직전 = " + map);
+		sqlsession.insert("shopSQL.sellSuccess", map);
+	}
+
 }

@@ -30,8 +30,9 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public ProductDTO getProductDTO(String pid) {
-		ProductDTO ProductDTO = shopDAO.getProductDTO(Integer.parseInt(pid));
-		return ProductDTO;
+		ProductDTO productDTO = shopDAO.getProductDTO(Integer.parseInt(pid));
+		
+		return productDTO;
 	}
 
 	@Override
@@ -100,6 +101,16 @@ public class ShopServiceImpl implements ShopService {
 		map.put("productDTO", productDTO);
 		map.put("biddingDTO", biddingDTO);
 		return map;
+	}
+
+	@Override
+	public void sellSuccess(Map<String, Object> map) {
+		
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setEmail(map.get("email") + "");
+		MemberDTO dto = memberDAO.checkEmail(memberDTO);
+		map.put("member_id",dto.getId());
+		shopDAO.sellSuccess(map);
 	}
 
 }
