@@ -32,16 +32,16 @@
         
         <div class="recent_area relative pb-[20px] w-[704px] m-auto">
           
-          <div class="recent_box pt-0 px-[40px] pb-[21px] block">
-            <strong class="recent_title inline-block leading-[20px] text-[12px] text-black align-middle font-bold">최근 검색어</strong>
-            <button class="btn_delete inline-block align-middle pt-[8px] pr-[5px] pb-[3px] pl-[1px] ml-[5px]" onclick='recentSearchReset()'>x
-            </button>
-            <ul id="search_list" class="search_list mt-[4px] list-none m-0 p-0">
-              <li class="list_item">
-                <a class="search_item block max-w-[650px] overflow-hidden text-ellipsis whitespace-nowrap text-[14px] tracking-[-.21px] leading-[32px] text-[rgba(34,34,34,.8)]"></a>
-              </li>
-            </ul> <!-- append로 li 추가 -->
-          </div>
+<!--           <div class="recent_box pt-0 px-[40px] pb-[21px] block"> -->
+<!--             <strong class="recent_title inline-block leading-[20px] text-[12px] text-black align-middle font-bold">최근 검색어</strong> -->
+<!--             <button class="btn_delete inline-block align-middle pt-[8px] pr-[5px] pb-[3px] pl-[1px] ml-[5px]" onclick='recentSearchReset()'>x -->
+<!--             </button> -->
+<!--             <ul id="search_list" class="search_list mt-[4px] list-none m-0 p-0"> -->
+<!--               <li class="list_item"> -->
+<!--                 <a class="search_item block max-w-[650px] overflow-hidden text-ellipsis whitespace-nowrap text-[14px] tracking-[-.21px] leading-[32px] text-[rgba(34,34,34,.8)]"></a> -->
+<!--               </li> -->
+<!--             </ul> append로 li 추가 -->
+<!--           </div> -->
           
           <ul class="brand_list py-0 px-[40px] whitespace-nowrap">
             <li class="brand_item inline-block align-top rounded-[8px]">
@@ -111,14 +111,9 @@
 <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
 <script type="text/javascript">
 
-// //검색하면 정렬기준 href 바꾸기
-// $(document).ready(function(){
-// 	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
-// })
-
 $(function(){
   getSearchList();
-  //$('.brand_list').hide();
+//   $('.recent_area').hide();
 });
 
 //검색List 활성화

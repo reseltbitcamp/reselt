@@ -307,14 +307,5 @@ public class ShopController {
 		return mav;
 	}
 	
-	@PostMapping(value="keywordSearch")
-	@ResponseBody
-//	public List<ProductDTO> keywordSearch(@RequestParam String pg, @RequestParam String keyword){ //keyword
-//		return shopService.keywordSearch(pg, keyword);
-//	}
-	public Map<String, Object> keywordSearch(@RequestParam String pg, @RequestParam String keyword){ //keyword
-		return shopService.keywordSearch(pg, keyword);
-	}
-	
 }
 

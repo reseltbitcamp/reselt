@@ -14,11 +14,6 @@ public interface ShopService {
 
 	public Map<String, Object> getProductList(String pg);
 
-//	public Map<String, Object> keywordSearch(Map<String, String> map);
-//	public List<ProductDTO> keywordSearch(String pg, String keyword);
-
-	public Map<String, Object> keywordSearch(String pg, String keyword);
-
 	public Map<Object, Object> getBiddingDTO(int pid);
 
 	public Map<String, Object> getProductInformation(String size, int pid);

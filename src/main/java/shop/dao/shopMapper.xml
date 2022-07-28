@@ -51,20 +51,6 @@
 		ORDER BY product_size ASC;
 	</select>
 	
-	<!-- 검색 -->
-	<select id="keywordSearch" parameterType="java.util.Map" resultType="productDTO">
-		SELECT 
-        product.*, brand.brand_name, product_img.img_file
-        FROM product 
-        LEFT JOIN brand
-        ON 
-        product.brand_id = brand.brand_id
-        LEFT JOIN product_img
-        ON product.pid = product_img.pid
-        WHERE product_img.img_file LIKE '%-1%' AND product.product_name_eng like CONCAT('%',#{keyword},'%')
-        order by product.pid;
-	</select>
-
 	<select id="getBidiingPriceMax" parameterType="java.util.Map" resultType="biddingDTO">
 		select product_size, pid, bidding_id, MAX(bidding_price) AS bidding_price
 		from biddings

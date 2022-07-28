@@ -99,29 +99,31 @@ function paging(){
 	page.value++;
 }
 
-//// 06. 키워드를 이용한 검색기능
-//function sortByPrice(condition) {
-//  const products = document.getElementsByClassName('product');
-//  const keyword = `${keyword}`;
-//  
-//  const filterProducts = (keyword) => {
-//    return products.filter((el) => 
-//      el.toLowerCase().indexOf(keyword.toLowerCase()) > -1
-//    );
-//  }
-//
-//  orderCnt = 1;
-//  const idProductList = document.getElementById('productList');
-//  idProductList.replaceChildren();
-//  for (let i = 0; i < array.length; i++) {
-//    array[i].div.dataset.order = i;
-//    array[i].div.classList.add('hidden')
-//    if (i < 8) {
-//      array[i].div.classList.remove('hidden');
-//    }
-//    idProductList.append(array[i].div);
-//  }
-//}
-//window.onload=function(){
-//  alert($('#keyword').val())
-//}
+//keyword search
+function sortByKeyword() {
+  const products2 = document.getElementsByClassName('product');
+  const keyword = $('#keyword').val().toLowerCase();
+  
+  let array2 = Array.from(products2, function(div2) {
+    return { category: `${div2.dataset.category}.${div2.dataset.pid}`, div: div2 }
+  });
+
+  let sp = array2.filter(function(searchProduct){
+    return searchProduct.category.toLowerCase().indexOf(keyword) !== -1;
+  });
+  
+  alert(keyword);
+  
+  orderCnt = 1;
+  const idProductList2 = document.getElementById('productList');
+  idProductList2.replaceChildren();
+  for (let j = 0; j < sp.length; j++) {
+    sp[j].div.dataset.order = j;
+    sp[j].div.classList.add('hidden')
+    if (j < 4) {
+      sp[j].div.classList.remove('hidden');
+    }
+    idProductList2.append(sp[j].div);
+  }
+  
+}

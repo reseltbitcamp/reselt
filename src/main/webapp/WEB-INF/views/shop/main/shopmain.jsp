@@ -404,12 +404,13 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
     
-<!--     <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script> -->
     <script type="text/javascript">
     $(function(){
       ProductList();
     });
+    
     </script>
+    
     
   <div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
      
@@ -604,12 +605,6 @@
 
 <!-- filter Script -->
 <script type="text/javascript">
-
-/* //검색하면 정렬기준 href 바꾸기
-$(document).ready(function(){
-	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
-}) */
-
 
 let displayState = {none: "block", block: "none"}
 let ids = ["category", "brand", "gender", "price"]
