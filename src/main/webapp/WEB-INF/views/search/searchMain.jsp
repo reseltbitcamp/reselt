@@ -4,28 +4,48 @@
 
 <div class="layer_search fixed t-0 r-0 b-0 h-[100%] w-[100%] bg-[rgba(34,34,34,.5)] overflow-y-auto z-[900] flex">
   <div class="layer_container w-[100%] overflow-hidden">
+
+<!--     <form class="search_top pt-[40px] px-[40px] pb-0 bg-[#fff] z-[100]"> -->
+<!--       <div class="top_box my-0 mx-auto max-w-[1200px]"> -->
+<!--         <div> -->
+<!--           <div class="search_title_input pb-[36px] items-center justify-center pt-0 px-[10%] relative flex"> -->
+<!--             <div class="search_area"> -->
+<!--               <div class="search w-[500px] flex-none order-0 grow my-0 mx-[8px] pb-[16px] border-b-[3px] border-b-solid border-b-[#000]"> -->
+<!--                 <input type="text" class="input_search_top overflow-hidden text-ellipsis whitespace-nowrap text-[24px] font-bold text-[#000] leading-[29px] py-0 pr-[13px] pl-[1px] w-[468px] tracking-[-.015em]"> -->
+<!--                 <button class="btn float-right w-[20px] h-[20px] mt-[5.5px] mr-[3px]">검색</button> -->
+<!--                 <button class="btn_search_delete float-right w-[20px] h-[20px] mt-[5.5 ] mr-[3px]">x</button> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div> -->
+<!--         </div> -->
+<!--         <div class="quick_filter">럭셔리 신발 어쩌구</div> -->
+<!--       </div> -->
+<!--     </form> -->
+
     <div class="layer_content p-0 m-auto">
       
-      <div class="search_container bg-[#fff] box-border">
-        
+      <form class="search_container bg-[#fff] box-border">
+        <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
         <div class="search_wrap pt-[25px] px-[40px] pb-[19px] m-auto w-[704px] flex">
-          
+              
           <div class="search_area flex-1 mr-[20px] block">
             
             <div class="search relative py-0 pr-[40px] pl-[44px] bg-[#f4f4f4] rounded-[8px] h-[40px]">
-			  <input type="text" placeholder="브랜드명, 모델명, 모델번호 등" title="검색창" id="input_search" class="input_search w-[100%] h-[100%] transition-all text-[14px] tracking-[-.21px] border-none bg-[#f4f4f4]">
+			  <input type="search" name="keyword" value="${keyword }" placeholder="브랜드명, 모델명, 모델번호 등" title="검색창" id="keyword" class="input_search w-[100%] h-[100%] transition-all text-[14px] tracking-[-.21px] border-none bg-[#f4f4f4]">
+<!-- 			  <input type="search" placeholder="브랜드명, 모델명, 모델번호 등" title="검색창" id="keyword" class="input_search w-[100%] h-[100%] transition-all text-[14px] tracking-[-.21px] border-none bg-[#f4f4f4]"> -->
             </div>
             
           </div>
           
-          <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='recentSearch()'>검색</button>&nbsp;&nbsp;
+          <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" >검색</button>&nbsp;&nbsp;
+<!--           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='recentSearch()'>검색</button>&nbsp;&nbsp; -->
 <!--           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='itemSearch()'>임시</button>&nbsp;&nbsp; -->
           <button class="btn_close ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick="location.href='/ReseltProject/'">취소</button>
         </div>
         
-      </div>
+      </form>
       
-      <div class="search_content_wrap block block bg-[#fff]">
+      <div class="search_content_wrap block bg-[#fff]">
         
         <div class="recent_area relative pb-[20px] w-[704px] m-auto">
           
@@ -125,27 +145,29 @@ $(function(){
 });
 
 //최근 검색어
-$('.recent_box').hide()
+// $('.recent_box').hide()
 
-function recentSearch(){
-  if($('.input_search').val() != '')
-  $('.recent_box').show()
-	
-  var recent_search = document.getElementById('search_list')
+// function recentSearch(){
+//   if($('.input_search').val() != ''){
+//   $('.recent_box').show()
   
-  recent_search.innerHTML += '<li>'+ $('.input_search').val() +'</li>'
-  $('.input_search').val('')
-}
+//   }
+	
+//   var recent_search = document.getElementById('search_list')
+  
+//   recent_search.innerHTML += '<li>'+ $('.input_search').val() +'</li>'
+//   $('.input_search').val('')
+// }
 
 function recentSearchReset(){
   $('.recent_box').hide()
   $('#search_list').empty()
 }
 
-function itemSearch(){
-  $('.suggest_wrap').toggle()
-  $('.brand_list').toggle()
-}
+// function itemSearch(){
+//   $('.suggest_wrap').toggle()
+//   $('.brand_list').toggle()
+// }
  
 
 </script>

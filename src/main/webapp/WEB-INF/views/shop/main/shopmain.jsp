@@ -439,6 +439,7 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
+    
     <script type="text/javascript">
     $(function(){
       ProductList();
@@ -446,12 +447,11 @@
     </script>
     
   <div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
-    
      
   </div>
-
+    <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
   
-</script>
+  
  
 </div>
 <!-- pg -->
@@ -636,6 +636,8 @@
 <!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
+
 
 
 <!-- filter Script -->
@@ -680,6 +682,10 @@ btn1.addEventListener('click', function(){
 	}
 })
 
+//검색하면 정렬기준 href 바꾸기
+$(function(){
+	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
+})
 
 
 </script>

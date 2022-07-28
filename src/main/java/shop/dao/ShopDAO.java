@@ -13,4 +13,8 @@ public interface ShopDAO {
 
 	public List<ProductDTO> getProductList(Map<String, Integer> map);
 
+//	public List<ProductDTO> keywordSearch(Map<String, String> map);
+
+	public List<ProductDTO> keywordSearch(Map<String, Integer> map);
+
 }

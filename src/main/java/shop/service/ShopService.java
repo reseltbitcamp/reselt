@@ -12,4 +12,10 @@ public interface ShopService {
 	public ProductDTO getProductDTO(String pid);
 
 	public Map<String, Object> getProductList(String pg);
+
+//	public Map<String, Object> keywordSearch(Map<String, String> map);
+
+	public Map<String, Object> keywordSearch(String pg, String keyword);
+
+//	public List<ProductDTO> keywordSearch(String pg, String keyword);
 }
