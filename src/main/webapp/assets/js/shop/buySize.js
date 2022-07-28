@@ -13,17 +13,17 @@ $.ajax({
          
          // 사이즈표시
          let shose_size = [230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300];
-         const clothes_size = ['xs' ,'s' ,'m', 'l', 'xl', 'xxl'];
-         const other = "one_size";
+         const clothes_size = ['XS' ,'S' ,'M', 'L', 'XL', 'XXL'];
+         const other = ['ONE_SIZE'];
          
          // 신발 사이즈 표시
          if(data.category_id == 61){
             $.each(shose_size, function(index, size){
             	$('<li/>', {
-					class: "inline-block my-2 mx-3 itmes-center"
+					class: "inline-block my-4 mx-3 itmes-center"
 				}).append($('<button/>',{
 					type: "button",
-					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center",
+					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center font-semibold",
 					value: size,
 				}).append($('<span/>',{
 					class: "mt-1 size",
@@ -45,15 +45,15 @@ $.ajax({
         			 class: "inline-block my-2 mx-3"
         		 }).append($('<button/>',{
         			 type: "button",
-        			 class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center",
+        			 class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center font-semibold",
         			 value: size,
         		 }).append($('<span/>',{
         			 class: "mt-1 size",
         			 id: "size",
-        			 text : size	
+        			 text : size
         		 })).append($('<br>')
         		 ).append($('<span/>',{
-        			 class : "align-top text-xs text-red-400 price",
+        			 class : "align-top text-xs text-red-400 price font-semibold",
         			 id : "price"+size,
         			 text : "입찰대기",
         			 value: "입찰대기"
@@ -69,13 +69,13 @@ $.ajax({
     			 class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center items-center",
     			 value: other,
     		 }).append($('<span/>',{
-    			 class: "mt-1 size",
+    			 class: "mt-1 size font-semibold",
     			 id: "size",
     			 text : other	
     		 })).append($('<br>')
     		 ).append($('<span/>',{
-    			 class : "align-top text-xs text-red-400 price",
-    			 id : "price"+data.product_size,
+    			 class : "align-top text-xs text-red-400 price font-semibold",
+    			 id : "price"+other,
     			 text : "입찰대기",
     			 value: "입찰대기"
     		 }))).appendTo($('#priceTable'));
@@ -90,11 +90,15 @@ $.ajax({
                $.each(data.list, function(index, data){
                 console.log(JSON.stringify(data))
                 
-                console.log('#price' + data.product_size);
+                console.log($('#price'+data.product_size));
                   $('#price' + data.product_size).html(data.bidding_price.toLocaleString('ko-KR'));
                   $('#price' + data.product_size).val(data.bidding_price.toLocaleString('ko-KR'));
                   $('#price' + data.product_size).attr('value', data.bidding_price.toLocaleString('ko-KR'))
                   $('#price' + data.product_size).attr('price-bidId', data.bidding_id);
+                  
+                  if($('#price' + data.product_size).val(data.bidding_price.toLocaleString('ko-KR')) == undefined){
+                	  $('#price' + data.product_size).attr('disabled', true);  
+                  }
       			
                })
              }, error:function(err){

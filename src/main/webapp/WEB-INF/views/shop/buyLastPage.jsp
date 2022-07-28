@@ -32,15 +32,15 @@
     
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">받는분</dt>
-      <dd class="block text-sm">양웅비</dd>
+      <dd id="addName" class="block text-sm"></dd>
     </div>
     <div>
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">연락처</dt>
-      <dd class="block text-sm">010-2083-3955</dd>
+      <dd id="addTel" class="add block text-sm"></dd>
     </div>
     <div class="mb-3">
       <dt class="float-left block min-w-[80px] truncate text-xs text-gray-500">배송 주소</dt>
-      <dd class="block text-sm">서울 강남구 논현로 111길</dd>
+      <dd id="add"class="adress_address block text-sm"></dd>
     </div>
   </div>
 

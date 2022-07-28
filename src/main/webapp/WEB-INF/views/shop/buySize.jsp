@@ -19,7 +19,7 @@
 		</div>
 
 		<!-- $.each 사용 DB에 size,price 받아와서 표시-->
-		<ul id="priceTable" class="border-2 border-l-0 border-r-0 border-gray-400 items-center">
+		<ul id="priceTable" class="border-2 border-l-0 border-r-0 border-gray-400 text-center">
 			<!-- <li class="inline-block my-2 mx-3">
 				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center ">
 					<span id="size" class="mt-1">test</span><br> 
