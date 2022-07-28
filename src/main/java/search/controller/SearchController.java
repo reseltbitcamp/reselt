@@ -27,6 +27,7 @@ public class SearchController {
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("display", "/WEB-INF/views/search/searchMain.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("shopmain", "/WEB-INF/views/shop/main/shopmain.jsp");
 		mav.addObject("flowbite", true);
 		mav.setViewName("/index");
 		

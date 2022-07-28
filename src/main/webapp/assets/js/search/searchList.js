@@ -39,7 +39,6 @@ $(document).ready(function(){
 
 
 //검색
-
 $('.searchBtn').click(function(){
 	if($('#keyword').val() == '') {
 		alert('검색어를 입력하세요.');

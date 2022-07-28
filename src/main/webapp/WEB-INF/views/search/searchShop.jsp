@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<input type="text" id="pg" value="${requestScope.pg }" class="invisible">
 <form class="search_top pt-[40px] px-[40px] pb-0 bg-[#fff] z-[100]">
 <!-- pg -->
 <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
@@ -29,9 +28,40 @@
 <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
 <script type="text/javascript">
-window.onload = function(){
-	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
-}
+
+//06. 키워드를 이용한 검색기능
+// window.onload=function() {
+//   const products = document.getElementsByClassName('product');
+//   const keyword = `${keyword}`;
+  
+//    //alert(keyword)
+  
+//    let array = Array.from(products, function(div) {
+//     return { name: `${div.dataset.product_name_eng}.${div.dataset.pid}`, div: div }
+//   });
+
+//   array.sort(function() {
+//     if(keyword === `${div.dataset.product_name_eng}`)
+//     return 1 * condition;
+//   });
+
+//   orderCnt = 1;
+//   const idProductList = document.getElementById('productList');
+//   idProductList.replaceChildren();
+//   for (let i = 0; i < array.length; i++) {
+//     array[i].div.dataset.order = i;
+//     array[i].div.classList.add('hidden')
+//     if (i < 8) {
+//       array[i].div.classList.remove('hidden');
+//     }
+//     idProductList.append(array[i].div);
+//   }
+// }
+
+// window.onload = function(){
+// 	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
+// }
+
 // $(function(){
 //   keywordSearch();
 // });

@@ -37,7 +37,6 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public List<ProductDTO> keywordSearch(Map<String, Integer> map) {
 		return sqlsession.selectList("shopSQL.keywordSearch", map);
 	}
@@ -46,7 +45,7 @@ public class ShopDAOMybatis implements ShopDAO {
 //	public List<ProductDTO> keywordSearch(Map<String, String> map) {
 //		return sqlsession.selectList("searchSQL.keywordSearch", map);
 //	}
-=======
+	
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
 		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
 	}
@@ -73,6 +72,5 @@ public class ShopDAOMybatis implements ShopDAO {
 		System.out.println("sellSuccess DB직전 = " + map);
 		sqlsession.insert("shopSQL.sellSuccess", map);
 	}
->>>>>>> 502673300049b05e5577efbfb5851a7482d5b71f
 
 }

@@ -5,23 +5,6 @@
 <div class="layer_search fixed t-0 r-0 b-0 h-[100%] w-[100%] bg-[rgba(34,34,34,.5)] overflow-y-auto z-[900] flex">
   <div class="layer_container w-[100%] overflow-hidden">
 
-<!--     <form class="search_top pt-[40px] px-[40px] pb-0 bg-[#fff] z-[100]"> -->
-<!--       <div class="top_box my-0 mx-auto max-w-[1200px]"> -->
-<!--         <div> -->
-<!--           <div class="search_title_input pb-[36px] items-center justify-center pt-0 px-[10%] relative flex"> -->
-<!--             <div class="search_area"> -->
-<!--               <div class="search w-[500px] flex-none order-0 grow my-0 mx-[8px] pb-[16px] border-b-[3px] border-b-solid border-b-[#000]"> -->
-<!--                 <input type="text" class="input_search_top overflow-hidden text-ellipsis whitespace-nowrap text-[24px] font-bold text-[#000] leading-[29px] py-0 pr-[13px] pl-[1px] w-[468px] tracking-[-.015em]"> -->
-<!--                 <button class="btn float-right w-[20px] h-[20px] mt-[5.5px] mr-[3px]">검색</button> -->
-<!--                 <button class="btn_search_delete float-right w-[20px] h-[20px] mt-[5.5 ] mr-[3px]">x</button> -->
-<!--               </div> -->
-<!--             </div> -->
-<!--           </div> -->
-<!--         </div> -->
-<!--         <div class="quick_filter">럭셔리 신발 어쩌구</div> -->
-<!--       </div> -->
-<!--     </form> -->
-
     <div class="layer_content p-0 m-auto">
       
       <form class="search_container bg-[#fff] box-border">
@@ -122,11 +105,16 @@
   </div>
 </div>
 
-<jsp:include page="../main/main.jsp"></jsp:include>
+<jsp:include page="../shop/main/shopmain.jsp"></jsp:include>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
 <script type="text/javascript">
+
+// //검색하면 정렬기준 href 바꾸기
+// $(document).ready(function(){
+// 	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
+// })
 
 $(function(){
   getSearchList();
@@ -143,6 +131,8 @@ $(function(){
   });
   
 });
+
+
 
 //최근 검색어
 // $('.recent_box').hide()
