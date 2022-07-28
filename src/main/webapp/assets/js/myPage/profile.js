@@ -301,16 +301,35 @@ $('.imgBtn').click(function(){
 		}
 		
 		//2. AJax 통신
+		//$('.emailDiv_p').text() + 
 		var formData = new FormData($('#updateImgForm')[0]);
-
+		//var blob = new Blob($('#updateImgForm')[0], { type: "image/png"})
+		//console.log($('#updateImgForm')[0]);
+		//console.log(input.files[0]);
+		//console.log(blob);
+		//formData.append('userpic', blob, $('.emailDiv_p').text()+".png")
 		$.ajax({
 			type: 'post',
-			url: '/ReseltProject/myPage/updateImg',
+			url: 'http://3.39.241.175:6753/upload/myPage',
+//			url: '/ReseltProject/myPage/updateImg',
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
 			data: formData,
-			success: function(){
+			success: function(data){
+				//alert(data);
+				
+				let fileName = data
+				$.ajax({
+					type: 'post',
+					url: '/ReseltProject/myPage/updateImg',
+					data : {img : fileName },
+					success : function(){
+						//alert('DB감');
+					},
+					error : function(e){}
+				
+				});
 			},
 			error: function(err){
 				console.log(err);
