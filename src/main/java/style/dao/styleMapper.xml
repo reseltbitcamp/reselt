@@ -72,10 +72,16 @@
 		ON s.member_id = m.id
         LEFT JOIN product p
         ON p.pid = s.product_id
-        LEFT JOIN product_img pi
+        LEFT JOIN (SELECT * FROM product_img GROUP BY pid) pi
         ON s.product_id = pi.pid
+        <if test="num == 1">
+		order by like_code desc
+		limit #{startNum}, #{endNum}
+		</if>
+		<if test="num == 2">
 		order by s.seq desc
 		limit #{startNum}, #{endNum}
+		</if>
 	</select>
 	
 	<!-- Details 글 받아오기 -->
