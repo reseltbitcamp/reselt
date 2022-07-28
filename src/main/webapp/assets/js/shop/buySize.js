@@ -13,14 +13,14 @@ $.ajax({
          
          // 사이즈표시
          let shose_size = [230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300];
-         const clothes_size = ['XS' ,'S' ,'M', 'L', 'XL'];
-         const other = "OneSize";
+         const clothes_size = ['xs' ,'s' ,'m', 'l', 'xl', 'xxl'];
+         const other = "one_size";
          
          // 신발 사이즈 표시
          if(data.category_id == 61){
             $.each(shose_size, function(index, size){
             	$('<li/>', {
-					class: "inline-block my-2 mx-3"
+					class: "inline-block my-2 mx-3 itmes-center"
 				}).append($('<button/>',{
 					type: "button",
 					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center",
@@ -37,7 +37,51 @@ $.ajax({
 					value: "입찰대기"
 				}))).appendTo($('#priceTable'));
             })
-                // 가격 뿌리기
+         }//if
+         
+         else if(data.category_id == 62){
+        	 $.each(clothes_size, function(index, size){
+        		 $('<li/>', {
+        			 class: "inline-block my-2 mx-3"
+        		 }).append($('<button/>',{
+        			 type: "button",
+        			 class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center",
+        			 value: size,
+        		 }).append($('<span/>',{
+        			 class: "mt-1 size",
+        			 id: "size",
+        			 text : size	
+        		 })).append($('<br>')
+        		 ).append($('<span/>',{
+        			 class : "align-top text-xs text-red-400 price",
+        			 id : "price"+size,
+        			 text : "입찰대기",
+        			 value: "입찰대기"
+        		 }))).appendTo($('#priceTable'));
+        	 })
+         }//if
+         
+         else if(data.category_id == 63){
+    		 $('<li/>', {
+    			 class: "inline-block my-2 mx-auto"
+    		 }).append($('<button/>',{
+    			 type: "button",
+    			 class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center items-center",
+    			 value: other,
+    		 }).append($('<span/>',{
+    			 class: "mt-1 size",
+    			 id: "size",
+    			 text : other	
+    		 })).append($('<br>')
+    		 ).append($('<span/>',{
+    			 class : "align-top text-xs text-red-400 price",
+    			 id : "price"+data.product_size,
+    			 text : "입찰대기",
+    			 value: "입찰대기"
+    		 }))).appendTo($('#priceTable'));
+         }//if
+      
+          // 가격 뿌리기
           $.ajax({
              type: "post",
              url: "/ReseltProject/shop/getProductPrice",
@@ -46,7 +90,7 @@ $.ajax({
                $.each(data.list, function(index, data){
                 console.log(JSON.stringify(data))
                 
-                console.log('#price' + data.bidding_price);
+                console.log('#price' + data.product_size);
                   $('#price' + data.product_size).html(data.bidding_price.toLocaleString('ko-KR'));
                   $('#price' + data.product_size).val(data.bidding_price.toLocaleString('ko-KR'));
                   $('#price' + data.product_size).attr('value', data.bidding_price.toLocaleString('ko-KR'))
@@ -72,7 +116,7 @@ $.ajax({
            $('.price').each(function(index){
               $(this).attr('price-index',index);
            })
-         }// 신발 사이즈 표시
+         
       },
       error: function(err) {
          console.log(err)

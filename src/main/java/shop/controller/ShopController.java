@@ -147,12 +147,15 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/buySuccess", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView buySuccess() {
+	public ModelAndView buySuccess(@RequestParam String size, int pid, int id) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buySuccess.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
+		mav.addObject("size", size);
+		mav.addObject("id", id);
 		mav.setViewName("/index");
 		
 		return mav;

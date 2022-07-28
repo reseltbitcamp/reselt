@@ -58,4 +58,10 @@ public class ShopDAOMybatis implements ShopDAO {
 		sqlsession.insert("shopSQL.writeBuyBidding", map);
 	}
 
+	@Override
+	public void changeStatus(Map<String, Object> map) {
+		sqlsession.update("shopSQL.changeStatus", map);
+		
+	}
+
 }

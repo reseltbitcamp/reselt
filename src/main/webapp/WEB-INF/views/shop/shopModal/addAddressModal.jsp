@@ -65,5 +65,5 @@
 </div> <!--addressDiv_modal-->
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>  
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
-<script src="../js/myPage/address.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>   
+<script type="text/javascript" src="/ReseltProject/js/shop/addressmodal.js"></script>
