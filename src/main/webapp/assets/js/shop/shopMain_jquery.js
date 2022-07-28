@@ -17,7 +17,13 @@ function ProductList(){
            else if (priceRange >500000){priceRange = 'highprice'};
 
               //data-category="green small medium africa"
-              $('<div id=product-'+items.pid+' '+'class="product" data-price='+items.released_price+' '+'data-pid='+items.pid+' '+' '+'data-order='+index+' '+' '+'data-category="'
+              $('<div id=product-'+items.pid+' '+'class="product" data-price='
+              +items.released_price+' '+'data-pid='
+              +items.pid+' '+' '+'data-order='
+              +index+' '+' '+'data-date='
+              +items.created_at+' '+'data-likes='
+              +items.product_likes+' '+'data-bookmark='
+              +items.product_bookmark+' '+'data-category="'
               +items.category_name_eng+' '
               +items.brand_name+' '
               +priceRange+' '
@@ -32,11 +38,8 @@ function ProductList(){
               +items.product_bookmark+'</p><a href="/ReseltProject/style/styleList"><button id="smile" class="w-1 h-1 py-1"><svg id="smileColor" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" click:viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.25" href="ReseltProject/"><path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button></a><p class="text-[12px] px-0 py-2" id="product_likes">'
               +items.product_likes+'</p></div>')
               .appendTo($('#productList'));
-              //brand_name ~ product_likes까지 div 처리 => right top filter ==> 삭제함
-        
-              console.log(items.category_name_eng);
-
-              //첫 16개의 이미지만 보이게 하기
+           
+              //showing 8개의 div boxes
               const classProduct = document.getElementsByClassName('product');
               for (product of classProduct) {
                 if (product.dataset.order >= 8) {
@@ -61,7 +64,7 @@ var filterFunc = function() {
 var selectedFilters = {};
 filterCheckboxes.filter(':checked').each(function() {
   if(!selectedFilters.hasOwnProperty(this.name)) {
-	  selectedFilters[this.name] = [];
+     selectedFilters[this.name] = [];
   }
   selectedFilters[this.name].push(this.value);
 });
@@ -104,4 +107,3 @@ $('#popup-modal').click(function(){
      }
   });
 });
-
