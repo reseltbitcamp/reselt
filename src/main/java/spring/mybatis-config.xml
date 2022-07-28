@@ -13,7 +13,5 @@
 		<typeAlias type="style.bean.ReplyDTO" alias="reply"/>
 		<typeAlias type="style.bean.LikeDTO" alias="like"/>
 		
-		<typeAlias type="search.bean.SearchDTO" alias="search"/>
-		
 	</typeAliases>
 </configuration>

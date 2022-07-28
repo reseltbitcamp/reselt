@@ -37,6 +37,15 @@ public class ShopDAOMybatis implements ShopDAO {
 	}
 
 	@Override
+	public List<ProductDTO> keywordSearch(Map<String, Integer> map) {
+		return sqlsession.selectList("shopSQL.keywordSearch", map);
+	}
+
+//	@Override
+//	public List<ProductDTO> keywordSearch(Map<String, String> map) {
+//		return sqlsession.selectList("searchSQL.keywordSearch", map);
+//	}
+	
 	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
 		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
 	}

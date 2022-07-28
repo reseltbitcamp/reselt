@@ -290,5 +290,31 @@ public class ShopController {
 		return shopService.getProductList(pg);
 	}
 	
+	@GetMapping(value = "search")
+	public ModelAndView search(@RequestParam(required = false, defaultValue = "1") String pg, String keyword) {
+		System.out.println(keyword);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("pg", pg);
+		mav.addObject("keyword", keyword);
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("display", "/WEB-INF/views/shop/shopindex.jsp");
+		mav.addObject("shopmain", "/WEB-INF/views/shop/main/shopmain.jsp");
+//		mav.addObject("shopmenu", "/WEB-INF/views/shop/main/shopmenu.jsp");
+		mav.addObject("shopmenu", "/WEB-INF/views/search/searchShop.jsp");
+		mav.addObject("flowbite", true);
+		mav.setViewName("/index");
+		return mav;
+	}
+	
+	@PostMapping(value="keywordSearch")
+	@ResponseBody
+//	public List<ProductDTO> keywordSearch(@RequestParam String pg, @RequestParam String keyword){ //keyword
+//		return shopService.keywordSearch(pg, keyword);
+//	}
+	public Map<String, Object> keywordSearch(@RequestParam String pg, @RequestParam String keyword){ //keyword
+		return shopService.keywordSearch(pg, keyword);
+	}
+	
 }
 
