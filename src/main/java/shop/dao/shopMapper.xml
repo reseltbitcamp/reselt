@@ -40,7 +40,7 @@
     LEFT JOIN gender
     ON product.gender_id = gender.gender_id
     WHERE product_img.img_file LIKE '%-1%'
-    order by product.pid asc limit #{startNum}, #{endNum};
+    order by product.pid asc;
    </select>
 	
 	<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
@@ -89,5 +89,11 @@ ORDER BY product_size ASC;
 	<update id="changeStatus" parameterType="java.util.Map">
 	UPDATE biddings set position="구매", status="낙찰" where bidding_id=#{bidding_id} and product_size=#{product_size};
 	</update>
+	
+	<insert id="sellSuccess" parameterType="java.util.Map">
+		INSERT INTO biddings(member_id, pid, product_size, bidding_price, 
+							 position, status, matched_bidding_id, created_at)
+		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '판매', '입찰중', #{matched_bidding_id}, sysdate())
+	</insert>
 	
 </mapper>

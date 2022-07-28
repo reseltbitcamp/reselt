@@ -24,4 +24,7 @@ public interface ShopDAO {
 
 	public void changeStatus(Map<String, Object> map);
 
+	public void sellSuccess(Map<String, Object> map);
+
+
 }

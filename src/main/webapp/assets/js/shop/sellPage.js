@@ -100,6 +100,8 @@ $('#sellBidPrice').keyup(function(){
 	if((check == 0) && ($('#sellBidPrice').val() >= 30000)){
 		console.log(check)
 		$('#sellBidPriceDiv').html("");
+		$('#tax').html(($('#sellBidPrice').val() * 0.1).toLocaleString() + ' 원');
+		$('#sellBidPriceHidden').val($('#sellBidPrice').val());
 		console.log(check)
     $('.sellBidPriceText').removeClass("text-red-600 border-red-600");
 		$('#sellBidBtn').removeAttr("disabled");
@@ -111,14 +113,14 @@ $('#sellBidPrice').keyup(function(){
 })    
 	
 $('#sellBidBtn').click(function(){
-	location.href="./sellLastPage"
+	$('#sellStraightForm').submit();
 })
 
 //sellStraight
 
 //sellLastPage
 $(function(){
-  $('#addressDiv_modal').hide();
+	$('#addressDiv_modal').hide();
 	$('.addAddressModal').hide();
 
 	$('#exitBtn').click(function(){
@@ -130,10 +132,15 @@ $(function(){
 	$('.addressDiv_reset').click(function(){
 		$('.addAddressModal').hide();
 	})
-})
-$('#addressChangeBtn').click(function(){
-  $('#addressDiv_modal').show();
-})
+
+});
+
+//$('#addressChangeBtn').click(function(){
+//  $('#addressDiv_modal').show();
+//})
+	
+
+
 
 
 $('#firstAgree').click(function(){
@@ -225,7 +232,7 @@ $('.paymentOption').each(function(index){
     $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
   })
 $('#chargeBtn').click(function(){
-	location.href='./sellSuccess'
+	$('#sellLastPageForm').submit();
 })
 //sellLastPage
 

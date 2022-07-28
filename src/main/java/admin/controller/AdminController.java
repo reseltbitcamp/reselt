@@ -147,7 +147,7 @@ public class AdminController {
 	
 	 }
 	 
-	 @PostMapping(value="delete_product")
+	 	@PostMapping(value="delete_product")
 		@ResponseBody
 		public void delete_product(HttpSession session, HttpServletRequest req) {
 			

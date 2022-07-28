@@ -1,5 +1,6 @@
 package shop.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +30,9 @@ public class ShopController {
 	private ShopService shopService;
 	@Autowired
 	private HttpSession session;
+	@Autowired
+	private ProductDTO productDTO;
+	
 
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ModelAndView shop(@RequestParam(required = false, defaultValue = "1") String pg) {
@@ -209,26 +214,49 @@ public class ShopController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/sellLastPage", method = RequestMethod.GET)
-	public ModelAndView sellLastPage() {
+	@RequestMapping(value = "/sellLastPage", method = RequestMethod.POST)
+	public ModelAndView sellLastPage(@RequestParam Map<String, Object> map) {
+		//System.out.println(map);
+		
+		productDTO = shopService.getProductDTO(map.get("pid") + "");
+		//이미지 주소 수정
+		String fileName = productDTO.getImg_file();
+		String img[] = fileName.split(",");
+		String server = "http://3.39.241.175:6753/upload/resources/img/product/"; 
+		
+		String imgSrc = server + productDTO.getPid() + "/" + img[0];
+		map.put("imgSrc",imgSrc);
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/sellLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/sellLastPage.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("productDTO", productDTO);
+		mav.addObject("sellBidPrice", map.get("sellBidPrice"));
+		mav.addObject("size", map.get("size"));
+		mav.addObject("src", map.get("imgSrc"));
 		mav.setViewName("/index");
+		//System.out.println(mav);
 		
 		return mav;
 	}
 	
 	@RequestMapping(value = "/sellSuccess", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView sellSuccess() {
+	public ModelAndView sellSuccess(@RequestParam Map<String, Object> map) {
+		System.out.println("sellSuccess map = " +map);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/sellSuccess.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("bidding_price", map.get("bidding_price"));
+		mav.addObject("product_size", map.get("product_size"));
+		mav.addObject("src", map.get("src"));
 		mav.setViewName("/index");
+		
+		//BIDDING TABLE 등록
+		shopService.sellSuccess(map);
 		
 		return mav;
 	}

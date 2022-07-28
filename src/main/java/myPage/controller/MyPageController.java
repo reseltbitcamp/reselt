@@ -3,6 +3,7 @@ package myPage.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,8 +23,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import myPage.bean.MyPageAccountDTO;
 import myPage.bean.MyPageAddressDTO;
+import myPage.bean.MyPageBuyingDTO;
 import myPage.bean.MyPageProfileDTO;
 import myPage.service.MyPageAddressService;
+import myPage.service.MyPageBuyingService;
 import myPage.service.MyPageProfileService;
 import myPage.service.MyPageAccountService;
 
@@ -39,6 +42,9 @@ public class MyPageController {
 	
 	@Autowired
 	MyPageAccountService myPageAccountService;
+	
+	@Autowired
+	MyPageBuyingService myPageBuyingService;
 	
 	@Autowired
 	HttpSession session;
@@ -320,6 +326,29 @@ public class MyPageController {
 		return myPageAccountService.show_account();
 	}
 	
+	//거래
+	@PostMapping(value="buyingList")
+	@ResponseBody
+	public List<MyPageBuyingDTO> buyingList(@RequestParam Map <String,String> map) {
+		
+		System.out.println(map);
+		List<MyPageBuyingDTO> list = myPageBuyingService.buyingList(map);
+		System.out.println(list);
+		return list;
+		
+	}
+	
+	//마이 페이지
+	@PostMapping(value="myMainList")
+	@ResponseBody
+	public List<MyPageBuyingDTO> myMainList() {
+		
+		List<MyPageBuyingDTO> list = myPageBuyingService.myMainList();
+		System.out.println(list);
+		return list;
+		
+	}
+
 }
 	
 	
