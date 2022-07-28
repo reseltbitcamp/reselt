@@ -127,7 +127,7 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/buyLastPage", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView buyLastPage(@RequestParam int pid, String size, int id) {
+	public ModelAndView buyLastPage(@RequestParam int pid, String size, int id, int price) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
@@ -136,6 +136,7 @@ public class ShopController {
 		mav.addObject("pid", pid);
 		mav.addObject("size", size);
 		mav.addObject("id", id);
+		mav.addObject("price", price);		
 		mav.setViewName("/index");
 		
 		System.out.println("check");
