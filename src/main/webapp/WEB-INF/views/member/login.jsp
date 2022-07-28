@@ -85,6 +85,8 @@ $(function(){
 			$('#emailDivcmt').css({'font-size':'5pt'}); 
 			$('#emailDivcmt').css({'color':'red'});  
 			$('#emailDiv').css({'color':'red'});  
+			$('#loginBtn').css({'background-color':'rgb(209 213 219)'}); 
+			$('#loginBtn').css({'cursor':'default'}); 
 		 }                            
 		 else {                     
 			 	  $('#emailDivcmt').html(""); 
@@ -93,6 +95,7 @@ $(function(){
 		               
 	});
     $('#email').on('focusout', function(){
+
 	 	$('#email').trigger('keydown')
  	});         
 	
@@ -100,6 +103,7 @@ $(function(){
 	$('#pwd').keyup(function(){
 		if($('#pwd').val().length >= 10 ) {
 			$('#loginBtn').css({'background-color':'black'});
+			$('#loginBtn').css({'cursor':'pointer'}); 
 			$('#pwdDivcmt').html(""); 
 			$('#pwdDiv').css({'color':'black'}); 
 			
@@ -109,6 +113,7 @@ $(function(){
 			$('#pwdDivcmt').css({'color':'red'}); 
 			$('#pwdDiv').css({'color':'red'}); 
 			$('#loginBtn').css({'background-color':'rgb(209 213 219)'}); 
+			$('#loginBtn').css({'cursor':'default'}); 
 		}
 	});
  	
@@ -136,6 +141,7 @@ $(function(){
 					}
 				},
 				error: function(e){
+					alert('이메일 또는 비밀번호를 확인해주세요.');
 					console.log(e);
 				}
 			});

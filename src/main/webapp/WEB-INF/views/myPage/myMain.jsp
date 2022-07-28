@@ -50,16 +50,17 @@ input:focus {
           <div class="user_membership flex border-[1px] border-solid border-[#fff] py-[23px] pl-[23px]">
             <div class="user_detail flex">
               <div class="user_thumb relative mr-[12px] h-[100px] w-[100px] flex-shrink-0 rounded-full">
-                <img src="../img/myPage/profile.png" alt="사용자 이미지" class="thumb_img h-full w-full rounded-full align-top" />
+                <img src="${ profile}" alt="사용자 이미지" class="thumb_img h-full w-full rounded-full align-top" />
               </div>
 
               <div class="user_info flex items-center">
                 <div class="info_box">
                   <strong class="myMainDiv_name text-[18px] font-semibold leading-[21px] tracking-[-.27px] text-[#000]"></strong>
                   <p class="myMainDiv_email text-[14px] leading-[18px] tracking-[-.05px] text-[#22222280]"></p>
-                  <input class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="프로필 수정" onClick="location.href='/MyPage/my/profile'" />
-                  <input class="btn_my_style mt-[12px] ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="내 스타일" onClick="location.href='/MyPage/social/users'" />
-                </div>
+                  <input class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="프로필 수정" onClick="location.href='/ReseltProject/myPage/profile'" />
+<!--				미구현 삭제 / 내 스타일 버튼
+                   <input class="btn_my_style mt-[12px] ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="내 스타일" onClick="location.href='/MyPage/social/users'" />
+ -->                </div>
                 <!--info_box-->
               </div>
               <!--user_info -->

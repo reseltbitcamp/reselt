@@ -67,6 +67,8 @@ $(function(){
 				$('#telDivcmt').html('');
 				$('#telDiv').css({'color':'black'}); 
 				$('#findEmailBtn').css({"background-color":"black", "color":"white"});
+				$('#findEmailBtn').css({'cursor':'pointer'}); 
+
 
 			}else{
 				$('#telDivcmt').html('올바른 휴대폰 번호를 입력하세요.');
@@ -74,6 +76,8 @@ $(function(){
 				$('#telDivcmt').css({'color':'red'}); 
 				$('#telDiv').css({'color':'red'}); 
 				$('#findEmailBtn').css({"background-color":"rgb(209 213 219)", "color":"white"});
+				$('#findEmailBtn').css({'cursor':'default'}); 
+
 			}
 		}else {
 			$('#telDivcmt').html('올바른 휴대폰 번호를 입력하세요.');
@@ -81,6 +85,8 @@ $(function(){
 			$('#telDivcmt').css({'color':'red'}); 
 			$('#telDiv').css({'color':'red'}); 
 			$('#findEmailBtn').css({"background-color":"rgb(209 213 219)", "color":"white"});
+			$('#findEmailBtn').css({'cursor':'default'}); 
+
 		}
 	});
 	//버튼 색이 검정일떄
