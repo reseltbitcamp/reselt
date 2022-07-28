@@ -13,17 +13,24 @@ $.ajax({
          
          // 사이즈표시
          let shose_size = [230, 235, 240, 245, 250, 255, 260, 265, 270, 275, 280, 285, 290, 295, 300];
-         const clothes_size = ['XS' ,'S' ,'M', 'L', 'XL'];
-         const other = "OneSize";
+         let clothes_size = ['XS' ,'S' ,'M', 'L', 'XL', 'XXL'];
+         let other = ['ONE_SIZE'];
+         let size
          
-         // 신발 사이즈 표시
          if(data.category_id == 61){
-            $.each(shose_size, function(index, size){
+        	 size = shose_size;
+         } else if (data.category_id == 62){
+        	 size = clothes_size;
+         } else {
+        	 size = other
+         }
+         	// 신발 사이즈 표시
+            $.each(size, function(index, size){
             	$('<li/>', {
-					class: "inline-block my-2 mx-3"
+					class: "inline-block my-4 mx-3 itmes-center"
 				}).append($('<button/>',{
 					type: "button",
-					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center",
+					class: "sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center font-semibold",
 					value: size,
 				}).append($('<span/>',{
 					class: "mt-1 size",
@@ -37,16 +44,15 @@ $.ajax({
 					value: "입찰대기"
 				}))).appendTo($('#priceTable'));
             })
-                // 가격 뿌리기
+
+          // 가격 뿌리기
           $.ajax({
              type: "post",
              url: "/ReseltProject/shop/getProductPrice",
              data: 'pid='+$('#pid').val(),
              success:function(data){
                $.each(data.list, function(index, data){
-                console.log(JSON.stringify(data))
                 
-                console.log('#price' + data.bidding_price);
                   $('#price' + data.product_size).html(data.bidding_price.toLocaleString('ko-KR'));
                   $('#price' + data.product_size).val(data.bidding_price.toLocaleString('ko-KR'));
                   $('#price' + data.product_size).attr('value', data.bidding_price.toLocaleString('ko-KR'))
@@ -72,7 +78,7 @@ $.ajax({
            $('.price').each(function(index){
               $(this).attr('price-index',index);
            })
-         }// 신발 사이즈 표시
+         
       },
       error: function(err) {
          console.log(err)
@@ -82,11 +88,24 @@ $.ajax({
    //버튼숨기기
    $('#nextBtn').hide();
    //다음페이지
-   $(document).on('click', '.sizeBtn', function(){
-      $('#price').text('');
-      let id = $('#price' +$('.selectSizeValue').val()).attr('price-bidId');
-      $('#price').text($('#price'+$('.selectSizeValue').val()).val());
-      $('#nextBtn').show();
+   $(document).on('click', '.selectSizeValue', function(){
+	  const btnPrice = ($('#price'+$(this).val()).val());
+	  console.log("btnPrice다 "+btnPrice)
+	  
+	  console.log($(this).val() === $('.selectSizeValue'))
+	  if (btnPrice == '') {
+		  console.log("btnPrice다 "+btnPrice)
+		 $('.pageMoveBtn').attr('disabled', true)
+		 $('.pageMoveBtn').addClass('disabled:cursor-not-allowed disabled:bg-gray-100 text-black');
+		 $('.pageMoveBtn').removeClass('text-white')
+		 $('.pageMoveBtn').text("가격 정보가 없습니다")
+	  } else {
+		 $('.pageMoveBtn').attr('disabled', false)
+		 $('.pageMoveBtn').removeClass('disabled:cursor-not-allowed disabled:bg-gray-100 text-black');
+		 $('.pageMoveBtn').addClass('text-white')
+		 $('.pageMoveBtn').text(btnPrice); 
+	  }
+	  $('#nextBtn').show(); 
    })
    $('#nextBtn').click(function(){
 		location.href="./buyAgree?pid="+$('#pid').val()+'&size='+$('.selectSizeValue').val()+'&id='+$('#price' +$('.selectSizeValue').val()).attr('price-bidId');

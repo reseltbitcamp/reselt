@@ -105,11 +105,15 @@ $(function(){
  	$('#tel , #email').on('input', function(){
 	if ($('#emailOk').val() == "1" && $('#telOk').val() == "1"){
 		$('#findPwdBtn').css({"background-color":"black", "color":"white"});
+		$('#findPwdBtn').css({'cursor':'pointer'}); 
+
 	 	//링크추가
 		
 	
 	}else {
 		$('#findPwdBtn').css({"background-color":"rgb(209 213 219)", "color":"white"});
+		$('#findPwdBtn').css({'cursor':'default'}); 
+
 	}
  	});
  	

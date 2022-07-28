@@ -85,32 +85,5 @@
   
   
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>
-<script>
-$(function(){
-	//alert('hi');	
-	//sellSize
-	$.ajax({
-		type: 'post',
-		url: '/ReseltProject/shop/getProductDTO',
-		data: {'pid' : $('#pidInput').val() },
-		success : function(data){
-			//alert(JSON.stringify(data))
-			console.log(JSON.stringify(data))
-			const imgFiles = data.img_file.split(",");
-			$('#product_id').html(data.product_id);
-			$('#product_name_eng').html(data.product_name_eng);
-			$('#product_name_kor').html(data.product_name_kor);
-			$('#img_file').attr('src', 'http://3.39.241.175:6753/upload/resources/img/product/'  + $('#pidInput').val() + '/' + imgFiles[0]);;
-			
+<script type="text/javascript" src="/ReseltProject/js/shop/sellAgree.js"></script>
 
-			
-		},
-		error : function(e){
-			console.log(e)
-		}
-		
-	});
-
-	});
-</script>
