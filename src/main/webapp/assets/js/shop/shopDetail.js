@@ -78,9 +78,10 @@ $(document).ready(function () {
         { product_name_eng: data.product_name_eng },
         { product_id: data.product_id },
         { brand_name: data.brand_name },
-        { released_price1: data.released_price.toLocaleString('ko-KR') },
-        { released_price2: data.released_price.toLocaleString('ko-KR') },
-        { created_at: create_atStr(data.created_at) },
+        { released_price: `${data.released_price.toLocaleString('ko-KR')}원` },
+        { buy_bidding_price: `${data.buy_bidding_price.toLocaleString('ko-KR')}원` },
+        { sell_bidding_price: `${data.sell_bidding_price.toLocaleString('ko-KR')}원` },
+        { created_at: create_atStr(data.created_at) }
       ];
 
       for (const target of injectionTarget) {
