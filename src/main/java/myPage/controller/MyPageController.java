@@ -50,8 +50,26 @@ public class MyPageController {
 	HttpSession session;
 	
 	@GetMapping(value="myMain")
-	public ModelAndView my() {
+	public ModelAndView my(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
+		
+		
+		if( session.getAttribute("email") != null) {
+			
+		//프로필 이미지 DATA가져오기
+		MyPageProfileDTO myPageProfileDTO = myPageProfileService.getProfile();
+		String filePath = "http://3.39.241.175:6753/upload/resources/img/myPage";
+		
+		
+		if(myPageProfileDTO.getProfile_img() != null && myPageProfileDTO.getProfile_img() != "" ) {
+			String fileName = myPageProfileDTO.getProfile_img();
+			myPageProfileDTO.setProfile_img(filePath + "/" + fileName);
+		}else {
+			myPageProfileDTO.setProfile_img(filePath + "/" + "profileImgDefault.png");
+		}
+		mav.addObject("profile", myPageProfileDTO.getProfile_img());
+		}
+		
 		
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
@@ -210,7 +228,7 @@ public class MyPageController {
 	
 	@PostMapping(value="updateImg")
 	@ResponseBody
-	public void updateImg(@RequestParam MultipartFile img,
+	public void updateImg(@RequestParam String img,
 						 	HttpSession session) {
 
 		/*
@@ -227,17 +245,17 @@ public class MyPageController {
 	     
 		
 		
-		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
-		String fileName = img.getOriginalFilename();
-		System.out.println(filePath); // \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ReseltProject\assets\img\myPage 占쏙옙占쏙옙占�
-		File file = new File(filePath, fileName);
+		//String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
+		String fileName = img;
+		//System.out.println(filePath); // \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ReseltProject\assets\img\myPage 占쏙옙占쏙옙占�
+		//File file = new File(filePath, fileName);
 		
-		
-		try {
-			img.transferTo(file);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		// 로컬에 저장안해도 되서 삭제 , 서버로 바로 저장됨
+//		try {
+//			img.transferTo(file);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
 		
 		
@@ -280,12 +298,15 @@ public class MyPageController {
 	@ResponseBody
 	public MyPageProfileDTO getProfile(HttpSession session) {
 		MyPageProfileDTO myPageProfileDTO = myPageProfileService.getProfile();
+//		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
+		String filePath = "http://3.39.241.175:6753/upload/resources/img/myPage";
 		
-		String filePath = session.getServletContext().getRealPath("/assets/img/myPage");
-		
-		if(myPageProfileDTO.getProfile_img() != null) {
+		if(myPageProfileDTO.getProfile_img() != null && myPageProfileDTO.getProfile_img() != "") {
 			String fileName = myPageProfileDTO.getProfile_img();
 			myPageProfileDTO.setProfile_img(filePath + "/" + fileName);
+		}else {
+			myPageProfileDTO.setProfile_img(filePath + "/" + "profileImgDefault.png");
+			
 		}
 		
 		return myPageProfileDTO;
