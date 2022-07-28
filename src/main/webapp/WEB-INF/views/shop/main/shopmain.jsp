@@ -4,8 +4,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
-
 <div id="indicators-carousel" class="relative" data-carousel="slide">
   <!-- Carousel wrapper -->
   <div class="overflow-hidden relative h-[100px]">
@@ -601,11 +599,10 @@ $(function(){
 
 <!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/shopMain_jquery.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
 
-
 <!-- filter Script -->
-
 <script type="text/javascript">
 let displayState = {none: "block", block: "none"}
 let ids = ["category", "brand", "gender", "price"]

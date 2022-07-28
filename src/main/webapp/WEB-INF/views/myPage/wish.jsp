@@ -20,8 +20,7 @@
             <div>
               <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">쇼핑 정보</strong>
               <ul class="list-none">
-                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">구매 내역</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">판매 내역</a></li>
+                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">거래 내역</a></li>
                 <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">관심 상품</a></li>
               </ul>
             </div>
@@ -66,7 +65,7 @@
                   </div>
                 </div>
 
-                <div class="wish_buy mt-[10px] ml-[340px] inline-flex flex-shrink-0 flex-col text-right">
+                <div class="wish_buy mt-[10px] ml-[50%] inline-flex flex-shrink-0 flex-col text-right">
                   <div class="w-[164px]">
                     <div class="division_btn_box lg mt-0 flex h-[60px] w-[164px] text-left">
                       <a class="btn_division buy relative inline-flex flex-1 items-center rounded-[10px] bg-[#ef6253] text-[#fff]">

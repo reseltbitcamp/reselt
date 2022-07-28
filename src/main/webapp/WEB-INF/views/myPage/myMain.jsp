@@ -25,8 +25,7 @@ input:focus {
             <div>
               <strong class="mb-3 inline-block align-top text-lg font-bold leading-[22px] tracking-[-.27px]">쇼핑 정보</strong>
               <ul class="list-none">
-                <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">구매 내역</a></li>
-                <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/selling">판매 내역</a></li>
+               <li class="list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/buying">거래 내역</a></li>
                 <li class="mt-3 list-none"><a class="text-[15px] leading-[18px] tracking-[-.15px] text-[#222]" href="/ReseltProject/myPage/wish">관심 상품</a></li>
               </ul>
             </div>
@@ -56,8 +55,8 @@ input:focus {
 
               <div class="user_info flex items-center">
                 <div class="info_box">
-                  <strong class="name text-[18px] font-semibold leading-[21px] tracking-[-.27px] text-[#000]">이름</strong>
-                  <p class="email text-[14px] leading-[18px] tracking-[-.05px] text-[#22222280]">naver.com</p>
+                  <strong class="myMainDiv_name text-[18px] font-semibold leading-[21px] tracking-[-.27px] text-[#000]"></strong>
+                  <p class="myMainDiv_email text-[14px] leading-[18px] tracking-[-.05px] text-[#22222280]"></p>
                   <input class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="프로필 수정" onClick="location.href='/MyPage/my/profile'" />
                   <input class="btn_my_style mt-[12px] ml-[8px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fff] px-[14px] text-center align-middle text-xs leading-8 text-[#000]" type="button" value="내 스타일" onClick="location.href='/MyPage/social/users'" />
                 </div>
@@ -83,7 +82,7 @@ input:focus {
                 <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">전체</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]">0</dd>
+                    <dd class="count_all mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]"></dd>
                   </dl>
                 </a>
               </div>
@@ -92,17 +91,8 @@ input:focus {
               <div class="tab_item table-cell text-center">
                 <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">입찰 중</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
-                  </dl>
-                </a>
-              </div>
-
-              <div class="tab_item table-cell text-center">
-                <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
-                  <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">진행 중</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
+                    <dd class="count_ing mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]"></dd>
                   </dl>
                 </a>
               </div>
@@ -111,7 +101,7 @@ input:focus {
                 <a href="/ReseltProject/myPage/buying" class="tab_link relative block h-[96px] pt-[18px]">
                   <dl class="tab_box">
                     <dt class="title text-[13px] tracking-[-.07px] text-[#222]">종료</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
+                    <dd class="count_end mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]"></dd>
                   </dl>
                 </a>
               </div>
@@ -119,89 +109,43 @@ input:focus {
             <!--purchase_list_tab-->
 
             <!--거래 내역 없을 경우-->
-            <div>
+            <div class="empty_area_1">
               <div class="purchase_list all bid">
                 <div class="empty_area py-[80px]">
                   <p class="desc text-center text-[13px] tracking-[-.07px] text-[#22222280]">거래 내역이 없습니다</p>
                 </div>
               </div>
             </div>
+            
+            
+            <!-- 거래 내역 있을 경우 -->
+            <div class="not_empty_area_1">
+  				<ul class="wish_list" id="test">
+  	
+  					<!-- 동적처리 -->
+	
+  				</ul>
+			</div>
           </div>
 
-          <!--판매 내역-->
-          <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
-            <h3 class="title text-[18px] font-semibold tracking-[-.27px]">판매 내역</h3>
-            <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/ReseltProject/myPage/selling">
-              <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">더보기 ></span>
-            </a>
-          </div>
-
-          <div class="recent_purchase">
-            <div class="purchase_list_tab table w-full table-fixed rounded-[12px] bg-[#fafafa]">
-              <div class="tab_item total table-cell text-center">
-                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
-                  <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">전체</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#f15746]">0</dd>
-                  </dl>
-                </a>
-              </div>
-              <!--total-->
-
-              <div class="tab_item table-cell text-center">
-                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
-                  <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">입찰 중</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
-                  </dl>
-                </a>
-              </div>
-
-              <div class="tab_item table-cell text-center">
-                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
-                  <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">진행 중</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
-                  </dl>
-                </a>
-              </div>
-
-              <div class="tab_item table-cell text-center">
-                <a href="/ReseltProject/myPage/selling" class="tab_link relative block h-[96px] pt-[18px]">
-                  <dl class="tab_box">
-                    <dt class="title text-[13px] tracking-[-.07px] text-[#222]">종료</dt>
-                    <dd class="count mt-[2px] text-[18px] font-bold leading-[20px] tracking-[-.09px] text-[#222]">0</dd>
-                  </dl>
-                </a>
-              </div>
-            </div>
-            <!--purchase_list_tab-->
-
-            <!--거래 내역 없을 경우-->
-            <div>
-              <div class="purchase_list all bid">
-                <div class="empty_area py-[80px]">
-                  <p class="desc text-center text-[13px] tracking-[-.07px] text-[#22222280]">거래 내역이 없습니다</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!--recent purchase-->
 
           <!--관심 상품-->
           <div class="my_home_title max-full mt-[42px] flex pb-[16px]">
             <h3 class="title text-[18px] font-semibold tracking-[-.27px]">관심 상품</h3>
-            <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
+            <!-- 임시 주석 <a class="btn_more mt-[3px] ml-auto inline-flex flex-shrink pt-[3px] pl-[5px]" href="/MyPage/my/buying">
               <span class="btn_txt text-[13px] tracking-[-.07px] text-[#22222280]">더보기 ></span>
-            </a>
+            </a> -->
           </div>
 
           <div class="insert_product mx-[-10px]">
+          
+          <!-- 임시 주석
             <div class="empty_area has_bg mx-[10px] rounded-[12px] bg-[#fafafa] py-[80px] text-center">
               <p class="desc text-[14px] tracking-[-.21px]">추가하신 관심 상품이 없습니다</p>
               <a class="mt-[12px] inline-block h-[34px] cursor-pointer rounded-[10px] border-[1px] border-solid border-[#d3d3d3] bg-[#fafafa] px-[14px] text-center align-middle text-xs leading-8 text-[#000]">SHOP 바로가기</a>
             </div>
-
+		   -->
+		 
             <!--추가한 상품이 있을 경우-->
             <div class="product_list">
               <div class="product_item relative my-[20px] inline-block w-1/4 px-[12px] align-top">
@@ -249,7 +193,6 @@ input:focus {
     <!--container-->
     
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>  
-<script src="../js/myPage/address.js"></script>  
 <script src="../js/myPage/myMain.js"></script>  
   </body>
 </html>
