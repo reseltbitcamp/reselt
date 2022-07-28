@@ -75,23 +75,22 @@
     </button>
 </div>
 <!-- Dropdown menu -->
-<div id="dropdownInformation"
-  class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-white dark:divide-gray-600">
-  <ul class="py-1 text-sm text-black dark:text-black" aria-labelledby="dropdownInformationButton">
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</a>
+<div id="dropdownInformation" class="buttonContainer z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-40 dark:bg-white dark:divide-gray-600">
+  <ul class="py-1 text-xs text-black dark:text-black" aria-labelledby="dropdownInformationButton">
+    <li id="likeSort" value="likeSort" name="allSort">
+      <button class="likeSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</button>
     </li>
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</a>
+   	 <li id="premiumSort" value="premiumSort" name="allSort">
+      <button class="premiumSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</button>
     </li>
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">즉시 구매가순</a>
+    <li id="purchaseSort" value="purchaseSort" name="allSort">
+      <button id="sortByPriceHigh" class="purchaseSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 높은 순</button>
     </li>
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">즉시 판매가순</a>
+    <li id="priceSort" value="priceSort" name="allSort">
+      <button id="sortByPriceLow" class="sellSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 낮은 순</button>
     </li>
-    <li>
-      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">발매일순</a>
+    <li id="dateSort" value="dateSort" name="allSort">
+      <button class="dateSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">발매일순</button>
     </li>
   </ul>
 </div>
@@ -110,7 +109,7 @@
 
           <!-- 카테고리 -->
           <li>
-            <button id="category" type="button" data-toggle=""#
+            <button id="category" type="button" data-toggle=""
               class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
               aria-controls="dropdown0" data-collapse-toggle="dropdown0">
               <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>카테고리</span>
@@ -124,34 +123,24 @@
             <div id="hidecategory" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 카테고리</div>
             <ul id="dropdown0" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
+                <input id="shoesSelect" type="checkbox" value="shoesSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="shoesSelect"class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
+                <input id="garmentSelect" type="checkbox" value="garmentSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="garmentSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
+                <input id="accSelect" type="checkbox" value="accSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="accSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
+                <input id="lifeSelect" type="checkbox" value="lifeSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="lifeSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
+                <input id="techSelect" type="checkbox" value="techSelect" name="allCategory" class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="techSelect" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
               </div>
             </ul>
           </li>
@@ -170,36 +159,162 @@
             </button>
             <!-- click event : hide below div -->
             <div id="hidebrand" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 브랜드</div>
-            <ul id="dropdown1" class="hidden py-2 space-y-2">
+            <ul id="dropdown1" class="hidden overflow-y-auto h-40 py-2 space-y-2">
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="A.P.C" type="checkbox" value="A.P.C" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
+                <label for="A.P.C"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">A.P.C</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="A.P.C Golf" type="checkbox" value="A.P.C Golf" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
+                <label for="A.P.C Golf"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">A.P.C Golf</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="DIOR" type="checkbox" value="DIOR" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
+                <label for="DIOR"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Dior</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="NIKE" type="checkbox" value="NIKE" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
+                <label for="NIKE"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Nike</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="Hermes" type="checkbox" value="Hermes" name="allBrand"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
+                <label for="Hermes"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Hermes</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Acne Studios" type="checkbox" value="Acne Studios" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Acne Studios"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Acne Studios</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="JORDAN" type="checkbox" value="JORDAN" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="JORDAN"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">JORDAN</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="CDG" type="checkbox" value="CDG" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="CDG"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">CDG</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Chanel" type="checkbox" value="Chanel" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Chanel"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Chanel</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="Celine" type="checkbox" value="Celine" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Celine"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Celine</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Common Project" type="checkbox" value="Common Project" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Common Project"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Common Project</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Y3" type="checkbox" value="Y3" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Y3"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Y3</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Hunter" type="checkbox" value="Hunter" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Hunter"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Hunter</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Chloe" type="checkbox" value="Chloe" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Chloe"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Chloe</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Cos" type="checkbox" value="Cos" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Cos"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Cos</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Suicoke" type="checkbox" value="Cos" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Suicoke"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Suicoke</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="Goyard" type="checkbox" value="Goyard" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Goyard"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Goyard</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="KENZO" type="checkbox" value="KENZO" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="KENZO"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">KENZO</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Vivienne Westwood" type="checkbox" value="Vivienne Westwood" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Vivienne Westwood"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Vivienne Westwood</label>
+              </div>
+               <div class="flex items-center pl-8">
+                <input id="Jil Sander" type="checkbox" value="Jil Sander" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Jil Sander"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Jil Sander</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Thome Browne" type="checkbox" value="Thome Browne" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Thome Browne"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Thome Browne</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Wooyoungmi" type="checkbox" value="Wooyoungmi" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Wooyoungmi"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">WooYoungmi</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Saint Laurent" type="checkbox" value="Saint Laurent" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Saint Laurent"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Saint Laurent</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Tiffany co" type="checkbox" value="Tiffany co" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Tiffany co"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Tiffany co</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Fendi" type="checkbox" value="Fendi" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Fendi"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Fendi</label>
+              </div>
+              <div class="flex items-center pl-8">
+                <input id="Tods" type="checkbox" value="Tods" name="allBrand"
+                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
+                <label for="Tods"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">Tods</label>
               </div>
             </ul>
           </li>
@@ -220,171 +335,26 @@
             <div id="hidegender" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 성별</div>
             <ul id="dropdown2" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="male" type="checkbox" value="male"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">남자</label>
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">남성</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="female" type="checkbox" value="female"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">여자</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="kids" type="checkbox" value="kids"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">키즈</label>
               </div>
             </ul>
           </li>
-
-          <!-- Collection -->
-          <li>
-            <button id="collection" type="button"
-              class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
-              aria-controls="dropdown0" data-collapse-toggle="dropdown3">
-              <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>컬렉션</span>
-              <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </button>
-            <!-- click event : hide below div -->
-            <div id="hidecollection" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 컬렉션</div>
-            <ul id="dropdown3" class="hidden py-2 space-y-2">
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
-              </div>
-            </ul>
-          </li>
-
-          <!-- Shoe Size -->
-          <li>
-            <button id="shoes" type="button"
-              class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
-              aria-controls="dropdown4" data-collapse-toggle="dropdown4">
-              <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>신발 사이즈</span>
-              <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </button>
-            <!-- click event : hide below div -->
-            <div id="hideshoes" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 사이즈</div>
-            <ul id="dropdown4" class="hidden py-2 space-y-2">
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
-              </div>
-            </ul>
-          </li>
-
-          <!-- garment Size -->
-          <li>
-            <button id="garment" type="button"
-              class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
-              aria-controls="dropdown5" data-collapse-toggle="dropdown5">
-              <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>의류 사이즈</span>
-              <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="">
-                <path fill-rule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </button>
-            <div id="hidegarment" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 사이즈</div>
-            <ul id="dropdown5" class="hidden py-2 space-y-2">
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
-              </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
-              </div>
-            </ul>
-          </li>
-
-          <!--  -->
-          <li>
+          
             <!-- 가격 -->
             <button id="price" type="button"
               class="flex items-center p-1 w-full text-sm font-bold text-black rounded-lg transition duration-75 group hover:bg-white dark:text-black dark:hover:bg-white"
@@ -399,36 +369,30 @@
             <div id="hideprice" class="text-sm pl-5 font-sm text-left text-gray-400" style="display:block">모든 가격</div>
             <ul id="dropdown6" class="hidden py-2 space-y-2">
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="lowprice" type="checkbox" value="lowprice"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">신발</label>
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">10만원 이하</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="lowmidprice" type="checkbox" value="lowmidprice"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">의류</label>
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">10만원 - 30만원 이하</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="midprice" type="checkbox" value="midprice"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">패션잡화</label>
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">30만원 - 50만원 이하</label>
               </div>
               <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
+                <input id="highprice" type="checkbox" value="highprice"
                   class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
                 <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">라이프</label>
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">50만원 이상</label>
               </div>
-              <div class="flex items-center pl-8">
-                <input id="default-checkbox" type="checkbox" value=""
-                  class="w-4 h-4 text-black bg-gray-100 rounded border-gray-300 focus:ring-gray-700 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-300 dark:border-gray-400">
-                <label for="default-checkbox"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-800">테크</label>
-              </div>
-            </ul>
+           </ul>
           </li>
       </div>
     </aside>
@@ -437,6 +401,7 @@
   <!-- product img / details tagged you to product datail pg...-->
     <!-- product content -->
 
+<<<<<<< HEAD
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
     
@@ -451,6 +416,21 @@
   </div>
     <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
   
+=======
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
+<script type="text/javascript">
+$(function(){
+  ProductList();
+});
+</script>
+  
+<div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
+  
+   
+</div>
+
+>>>>>>> 502673300049b05e5577efbfb5851a7482d5b71f
   
  
 </div>
@@ -635,57 +615,51 @@
 
 <!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/shopMain_jquery.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
 
 
-
 <!-- filter Script -->
-
 <script type="text/javascript">
 let displayState = {none: "block", block: "none"}
-let ids = ["category", "brand", "gender", "collection", "shoes", "garment", "price"]
-
+let ids = ["category", "brand", "gender", "price"]
 function toggleDisplayState(id) {
   let ele = document.getElementById("hide" + id);
   ele.style.display = displayState[ele.style.display];
 }
-
 ids.forEach(id=>{
   document.getElementById(id).addEventListener("click", ()=>{
     toggleDisplayState(id);
   })
 })
-
 // <!-- svg script-->
 const btn = document.getElementById('bookmark')
 const bookmarkColor = document.getElementById('bookmarkColor')
-
 btn.addEventListener('click', function(){
-	if (bookmarkColor.style.fill === 'none'){
-	bookmarkColor.style.fill = '#DFBD69'
-	}
-	else {
-	bookmarkColor.style.fill = 'none';	
-	}
+   if (bookmarkColor.style.fill === 'none'){
+   bookmarkColor.style.fill = '#DFBD69'
+   }
+   else {
+   bookmarkColor.style.fill = 'none';   
+   }
 })
 
-const btn1 = document.getElementById('smile')
-const smileColor = document.getElementById('smileColor')
-
-btn1.addEventListener('click', function(){
-	if (smileColor.style.fill === 'none'){
-	smileColor.style.fill = '#FFFF00'
-	}
-	else {
-	smileColor.style.fill = 'none';	
-	}
-})
+// const btn1 = document.getElementById('smile')
+// const smileColor = document.getElementById('smileColor')
+// btn1.addEventListener('click', function(){
+//    if (smileColor.style.fill === 'none'){
+//    smileColor.style.fill = '#FFFF00'
+//    }
+//    else {
+//    smileColor.style.fill = 'none';   
+//    }
+// })
 
 //검색하면 정렬기준 href 바꾸기
-$(function(){
-	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
-})
-
-
+// $(function(){
+// 	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
+// })
 </script>
+
+

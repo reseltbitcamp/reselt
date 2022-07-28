@@ -11,7 +11,7 @@ public interface StyleService {
 
 	public Map<String, Object> getStyleList(String pg);
 
-	public Map<String, Object> getStyleDetails(String seq);
+	public Map<String, Object> getStyleDetails(int seq);
 
 	public void styleDelete(String seq);
 
@@ -19,5 +19,7 @@ public interface StyleService {
 
 	public Map<String, Object> styleReplyWrite(Map<String, String> map);
 
-	public void styleReplyDelete(int style_seq);
+	public int styleReplyDelete(int style_seq, int pseq);
+
+	public Map<String, Object> plusLikes(int seq, String email);
 }

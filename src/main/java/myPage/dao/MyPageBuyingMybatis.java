@@ -1,6 +1,7 @@
 package myPage.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +12,20 @@ import myPage.bean.MyPageBuyingDTO;
 
 @Repository
 @Transactional
-public class MyPageBuyingDAOMybatis implements MyPageBuyingDAO {
+public class MyPageBuyingMybatis implements MyPageBuyingDAO {
 
 	@Autowired
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<MyPageBuyingDTO> getBuying(String member_id) {
-		return sqlSession.selectList("myPageSQL.getBuying", member_id);
+	public List<MyPageBuyingDTO> buyingList(Map<String, String> map) {
+		return sqlSession.selectList("myPageSQL.buyingList", map);
 	}
+
+	@Override
+	public List<MyPageBuyingDTO> myMainList(String email) {
+		return sqlSession.selectList("myPageSQL.myMainList", email);
+	}
+
 
 }

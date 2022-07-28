@@ -3,47 +3,135 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="styleSQL">
+	<resultMap type="style.bean.StyleDTO" id="styleMap">
+		<id column="seq" property="seq" />
+		<result column="member_id" property="member_id" />
+		<result column="style_image" property="style_image" />
+		<result column="content" property="content" />
+		<result column="product_id" property="product_id" />
+		<result column="like_code" property="like_code" />
+		<result column="countcmt" property="countcmt" />
+		<result column="created_at" property="created_at" />
+		<result column="product_name_kor" property="product_name_kor" />
+		<result column="released_price" property="released_price" />
+		<result column="img_file" property="img_file" />
+		<association javaType="member.bean.MemberDTO" property="memberDTO">
+			<id column="id" property="id"/>
+			<result column="nick" property="nick"/>
+			<result column="email" property="email"/>
+			<result column="profile_img" property="profile_img"/>
+		</association>
+	</resultMap>
+	
+	<resultMap type="style.bean.ReplyDTO" id="replyMap">
+		<id column="style_seq" property="style_seq" />
+		<result column="pseq" property="pseq" />
+		<result column="cmt_id" property="cmt_id" />
+		<result column="comment_reply" property="comment_reply" />
+		<result column="CREATED_AT" property="created_at" />
+		<association javaType="member.bean.MemberDTO" property="memberDTO">
+			<id column="ID" property="id"/>
+			<result column="nick" property="nick"/>
+			<result column="email" property="email"/>
+			<result column="profile_img" property="profile_img"/>
+		</association>
+	</resultMap>
+	
 	<!-- style write 등록  -->
 	<insert id="styleWriteForm" parameterType="style">
-		insert into styles values(seq
-									, 103
-									, #{style_image}
-									, #{content}
-									, #{product_id}
-									, 0
-									, 0
-									, NOW())
+		insert into styles (member_id, style_image, content, product_id, like_code, countcmt, created_at)
+		select m.id
+			, #{style_image}
+			, #{content}
+			, #{product_id}
+			, 0
+			, 0
+			, NOW()
+		from members m
+		where email = #{member_id};
 	</insert>
 	
 	<!-- List 글 받아오기 -->
-	<select id="getStyleList" parameterType="java.util.Map" resultType="style">
-	  		select * from styles order by seq desc limit #{startNum}, #{endNum}
+	<select id="getStyleList" parameterType="java.util.Map" resultMap="styleMap">
+		 select s.seq
+  			  , s.member_id
+  			  , s.style_image
+  			  , s.content
+  			  , s.product_id
+  			  , s.like_code
+  			  , s.countcmt
+  			  , s.created_at
+  			  , m.nick
+  			  , m.email
+  			  , m.profile_img
+              , p.product_name_kor
+              , p.released_price
+              , pi.img_file
+		from styles s
+  		LEFT JOIN members m
+		ON s.member_id = m.id
+        LEFT JOIN product p
+        ON p.pid = s.product_id
+        LEFT JOIN product_img pi
+        ON s.product_id = pi.pid
+		order by s.seq desc
+		limit #{startNum}, #{endNum}
 	</select>
 	
 	<!-- Details 글 받아오기 -->
-	<select id="getStyleDetails" parameterType="int" resultType="style">
-	  		select * from styles where seq = #{seq}
+	<select id="getStyleDetails" parameterType="int" resultMap="styleMap">
+		 select s.seq
+  			  , s.member_id
+  			  , s.style_image
+  			  , s.content
+  			  , s.product_id
+  			  , s.like_code
+  			  , s.countcmt
+  			  , s.created_at
+  			  , m.nick
+  			  , m.email
+  			  , m.profile_img
+              , p.product_name_kor
+              , p.released_price
+              , pi.img_file
+		from styles s
+  		LEFT JOIN members m
+		ON s.member_id = m.id
+        LEFT JOIN product p
+        ON p.pid = s.product_id
+        LEFT JOIN product_img pi
+        ON s.product_id = pi.pid
+        where s.seq=#{seq};
 	</select>
 	
 	<delete id="styleDelete" parameterType="int">
-			delete from styles where seq = #{seq}
+		delete from styles where seq = #{seq}
 	</delete>
 	
 	<update id="styleUpdate" parameterType="style">
 		update styles set style_image=#{style_image}, product_id=#{product_id}, content=#{content} where seq=#{seq}
 	</update>
 	
-	<insert id="styleReplyWrite" parameterType="java.util.Map">
-		insert into comment values(#{pseq}
-									, style_seq
-									, 103
-									, #{comment_reply}
-									, NOW())
+	<insert id="styleReplyWrite" parameterType="java.util.Map">		
+		update styles set countcmt = countcmt+1 where seq=#{pseq};		
+		insert into comment (pseq, cmt_id, comment_reply, created_at) select #{pseq}, m.id, #{comment_reply}, NOW() from members m where email = #{email};
 	</insert>
 	
 	<!-- 댓글 받아오기 -->
-	<select id="getStyleReply" parameterType="int" resultType="reply">
-	  		select * from comment where pseq=#{pseq} order by style_seq desc
+	<select id="getStyleReply" parameterType="int" resultMap="replyMap">
+	  		select c.pseq
+	  			  , c.style_seq
+	  			  , c.cmt_id
+	  			  , c.comment_reply
+	  			  , c.CREATED_AT
+	  			  , m.nick
+	  			  , m.email
+	  			  , m.profile_img
+			from comment c
+	  		LEFT JOIN members m
+			ON c.cmt_id = m.ID
+			and c.pseq = #{pseq}
+			order by style_seq desc
 	</select>
 	
 	<!-- 댓글 총개수 -->
@@ -51,12 +139,52 @@
 		select count(*) from comment where pseq=#{pseq}
 	</select>
 	
-	<select id="getNowReply" resultType="reply">
-		select * from comment order by style_seq desc limit 1;
+	<select id="getNowReply" parameterType="java.util.Map" resultMap="replyMap">
+			select c.pseq
+	  			  , c.style_seq
+	  			  , c.cmt_id
+	  			  , c.comment_reply
+	  			  , c.CREATED_AT
+	  			  , m.nick
+	  			  , m.email
+	  			  , m.profile_img
+			from comment c
+	  		LEFT JOIN members m
+			ON c.cmt_id = m.ID
+			and c.pseq = #{pseq}
+			order by style_seq desc
+			limit 1
 	</select>
 	
 	<delete id="styleReplyDelete" parameterType="int">
-		delete from comment where style_seq = #{style_seq}
+		update styles set countcmt = countcmt-1 where seq=(select pseq from comment where style_seq = #{style_seq});
+		delete from comment where style_seq = #{style_seq};
 	</delete>
 
+	<insert id="makeLikes" parameterType="java.util.Map">	
+			update styles set like_code = like_code+1 where seq=#{seq};
+			insert into likes (id, seq, is_like, created_at) select m.id, #{seq}, 1, NOW() from members m where email = #{email};
+	</insert>
+	
+	<select id="findLikes" parameterType="java.util.Map" resultType="int">
+		select count(*)
+		from likes
+   		where seq=#{seq}
+   		and id = (select id from members where email=#{email})
+	</select>
+	
+	<delete id="deleteLikes" parameterType="java.util.Map">
+			update styles set like_code = like_code-1 where seq=#{seq};
+			delete from likes where seq=#{seq} and id = (select id from members where email=#{email});
+	</delete>
+	
+	<select id="getLikeList" parameterType="String" resultType="like">
+		select *
+		from likes
+		where id = (select id from members where email=#{email})
+	</select>
+	
+	<select id="findAllLikes" parameterType="int" resultType="int">
+		select count(*) from likes where seq=#{seq}
+	</select>
 </mapper>

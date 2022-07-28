@@ -143,15 +143,7 @@ $(document).ready(function () {
   });
 });
 
-// Button actions
-$("#sellBtn").click(function () {
-  location.href = "./sellSize";
-});
-
-$("#buyBtn").click(function () {
-  location.href = "./buySize";
-});
-
+//이미지 갤러리 버튼 액션
 let imgNum = 1;
 $("#nextBtn").click(function (){
   const totalImgNum = document.getElementsByClassName('carouselImg').length;
@@ -182,4 +174,49 @@ $('#prevBtn').click(function () {
     document.getElementById('prevBtn').classList.add('invisible');
     document.getElementById('nextBtn').classList.remove('invisible');
   }
+});
+
+// Button actions
+$("#sellBtn").click(function () {
+	$(function(){
+		$.ajax({
+			type: 'post',
+			url: '/ReseltProject/myPage/getSession',
+			success: function(data){
+				
+				//alert(data);
+				if(data == ""){
+					alert('로그인 후 이용해주세요.')
+					location.href='/ReseltProject/member/login'
+				}
+				
+			},
+			error: function(e){
+				console.log(e);
+			}
+		});
+	});
+  location.href = `./sellSize?pid=${pid}`;
+});
+
+$("#buyBtn").click(function () {
+	$(function(){
+		$.ajax({
+			type: 'post',
+			url: '/ReseltProject/myPage/getSession',
+			success: function(data){
+				
+				//alert(data);
+				if(data == ""){
+					alert('로그인 후 이용해주세요.')
+					location.href='/ReseltProject/member/login'
+				}
+				
+			},
+			error: function(e){
+				console.log(e);
+			}
+		});
+	});
+  location.href = `./buySize?pid=${pid}`;
 });

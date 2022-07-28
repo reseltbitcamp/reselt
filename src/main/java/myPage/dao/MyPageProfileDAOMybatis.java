@@ -32,6 +32,12 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 	public void nickUpdate(Map<String, String> map) {
 		sqlSession.update("myPageSQL.nickUpdate", map);
 	}
+	
+	@Override
+	public void nameUpdate(Map<String, String> map) {
+		sqlSession.update("myPageSQL.nameUpdate", map);
+		
+	}
 
 	@Override
 	public void sizeUpdate(Map<String, String> map) {
@@ -78,6 +84,7 @@ public class MyPageProfileDAOMybatis implements MyPageProfileDAO {
 	public void withdrawal_user(String email) {
 		sqlSession.delete("myPageSQL.withdrawal_user",email);
 	}
+
 
 	
 

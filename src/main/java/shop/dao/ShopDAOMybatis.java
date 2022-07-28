@@ -1,5 +1,6 @@
 package shop.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import shop.bean.BiddingDTO;
 import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
 import style.bean.StyleDTO;
@@ -30,10 +32,12 @@ public class ShopDAOMybatis implements ShopDAO {
 
 	@Override
 	public List<ProductDTO> getProductList(Map<String, Integer> map) {
+		System.out.println(map);
 		return sqlsession.selectList("shopSQL.getProductList", map);
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<ProductDTO> keywordSearch(Map<String, Integer> map) {
 		return sqlsession.selectList("shopSQL.keywordSearch", map);
 	}
@@ -42,5 +46,33 @@ public class ShopDAOMybatis implements ShopDAO {
 //	public List<ProductDTO> keywordSearch(Map<String, String> map) {
 //		return sqlsession.selectList("searchSQL.keywordSearch", map);
 //	}
+=======
+	public List<BiddingDTO> getBidiingPrice(Map<Object, Object> map) {
+		return sqlsession.selectList("shopSQL.getBiddingPriceList", map);
+	}
+
+	@Override
+	public BiddingDTO getProductInformation(Map<String, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectOne("shopSQL.getProductInformation", map);
+	}
+
+	@Override
+	public List<BiddingDTO> getBidiingPriceMax(Map<Object, Object> map) {
+		System.out.println(map);
+		return sqlsession.selectList("shopSQL.getBidiingPriceMax", map);
+	}
+
+	@Override
+	public void writeBuyBidding(Map<String, Object> map) {
+		sqlsession.insert("shopSQL.writeBuyBidding", map);
+	}
+
+	@Override
+	public void sellSuccess(Map<String, Object> map) {
+		System.out.println("sellSuccess DB직전 = " + map);
+		sqlsession.insert("shopSQL.sellSuccess", map);
+	}
+>>>>>>> 502673300049b05e5577efbfb5851a7482d5b71f
 
 }

@@ -14,11 +14,12 @@ public class ProductDTO {
    private String product_name_eng;
    private String product_id;
    private int category_id;
-   private int gender_id;
+   private String gender_name;
    private String brand_name;
    private int released_price;
    private Date created_at;
    private int product_likes;
    private int product_bookmark;
    private String img_file;
+   private String category_name_eng;
 }

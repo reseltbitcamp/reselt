@@ -3,61 +3,40 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    
+
 	<div class="m-auto max-w-[780px] max-h-[960px] my-[50px]">
-	
+	<input type="hidden" id="pid" name="pid" value='${pid}'>
 		<div class="my-6 bg-white p-8 shadow-md">
 
 		<!-- 이전페이지에서 내가 선택한 제품의 사진, 제품특성들 받아와서 표시 -->
 		<div class=" items-center mb-5 flex">
-			<img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
+			<img id="product_img" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
 			<div class="flex-1">
-				<p class="font-bold">DD1391-100</p>
-				<p>Nike Dunk Low Retro Black</p>
-				<p class="text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
-				<p class="text-sm font-bold">275</p>
+				<p id="product_id" class="font-bold" ></p>
+				<p id="product_name_eng"></p>
+				<p id="product_name_kor"class="text-sm text-gray-400"></p>
 			</div>
 		</div>
 
 		<!-- $.each 사용 DB에 size,price 받아와서 표시-->
-		<ul class="border-2 border-l-0 border-r-0 border-gray-400 items-center">
-			<li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center ">
-					<span id="size" class="mt-1">220(size)</span><br> 
-					<span id="price" class="align-top text-xs text-red-400">price</span>
+		<ul id="priceTable" class="border-2 border-l-0 border-r-0 border-gray-400 items-center">
+			<!-- <li class="inline-block my-2 mx-3">
+				<button type="button" id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center ">
+					<span id="size" class="mt-1">test</span><br> 
+					<span id="price" class="align-top text-xs text-red-400">test</span>
 				</button>
-			</li>
+			</li> -->
 
-			<li class="inline-block my-2 mx-3 ">
-				<button id="sizeBtn"class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
-					<span id="size" class="mt-1">225(size)</span><br> 
-					<span	id="price" class="align-top text-xs text-red-400">price</span>
-				</button>
-			</li>
-
-			<li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
-					<span id="size" class="mt-1">230(size)</span><br> 
-					<span id="price" class="align-top text-xs text-red-400">price</span>
-				</button>
-			</li>
-
-      <li class="inline-block my-2 mx-3">
-				<button id="sizeBtn" class="sizeBtn h-14 w-52 rounded-2xl cursor-pointer border border-gray-300 text-center inline-block ">
-					<span id="size" class="mt-1">230(size)</span><br> 
-					<span id="price" class="align-top text-xs text-red-400">price</span>
-				</button>
-			</li>
-			<!-- check박스에서 받아온 값을 표시 -->
 		</ul>
 
 		<div id="nextBtn" class="text-center">
-			<button
+			<button type="button"
 				class="border m-4 bg-black rounded-xl text-white  w-3/4 h-14">
 				<span id="price" class="text-lg ">price</span>
 			</button>
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/buySize.js"></script>

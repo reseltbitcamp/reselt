@@ -29,9 +29,9 @@
 <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
 <script type="text/javascript">
-// window.onload = function(){
-// 	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
-// }
+window.onload = function(){
+	$('#productList').children().eq(0).prop('href' , '/ReseltProject/shop/search?keyword='+$('#keyword').val())
+}
 // $(function(){
 //   keywordSearch();
 // });

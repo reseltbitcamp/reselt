@@ -10,12 +10,14 @@
       <p class="text-left text-3xl font-semibold text-lime-400">판매<span class="text-black font-black">하시기 전에 꼭 확인하세요.</span></p>
 
       <div class="mt-10 flex items-center">
-        <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372" class="mr-4 block h-24 w-24 rounded-md" />
+        <img id="img_file" src="" class="mr-4 block h-24 w-24 rounded-md" />
         <div class="flex-1">
-          <p class="font-bold">DD1391-100</p>
-          <p>Nike Dunk Low Retro Black</p>
-          <p class="text-sm text-gray-400">나이키 덩크 로우 레트로 블랙</p>
-          <p class="text-sm font-bold">275</p>
+          <input type="hidden" id="pidInput" value="${param.pid }">
+          <input type="hidden" id="sizeInput" value="${param.size }">
+          <p id="product_id" class="font-bold"></p>
+          <p id="product_name_eng"></p>
+          <p id="product_name_kor" class="text-sm text-gray-400"></p>
+          <p class="text-sm font-bold">${param.size }</p>
         </div>
       </div>
 	
@@ -84,3 +86,31 @@
   
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>
+<script>
+$(function(){
+	//alert('hi');	
+	//sellSize
+	$.ajax({
+		type: 'post',
+		url: '/ReseltProject/shop/getProductDTO',
+		data: {'pid' : $('#pidInput').val() },
+		success : function(data){
+			//alert(JSON.stringify(data))
+			console.log(JSON.stringify(data))
+			const imgFiles = data.img_file.split(",");
+			$('#product_id').html(data.product_id);
+			$('#product_name_eng').html(data.product_name_eng);
+			$('#product_name_kor').html(data.product_name_kor);
+			$('#img_file').attr('src', 'http://3.39.241.175:6753/upload/resources/img/product/'  + $('#pidInput').val() + '/' + imgFiles[0]);;
+			
+
+			
+		},
+		error : function(e){
+			console.log(e)
+		}
+		
+	});
+
+	});
+</script>

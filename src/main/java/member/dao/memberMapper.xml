@@ -19,8 +19,8 @@
 	private int snsLogin;
 	private int level;
 	 -->
-	insert into members(email, pwd, name, tel, footsize, snsLogin, level, nick) 
-				values(#{email},#{pwd},#{name},#{tel},#{footsize},#{snsLogin},0, #{nick})
+	insert into members(email, pwd, name, tel, footsize, snsLogin, level, nick, profile_img) 
+				values(#{email},#{pwd},#{name},#{tel},#{footsize},#{snsLogin},0, #{nick}, 'profileImgDefault.png')
 
 </insert>
 
@@ -50,4 +50,10 @@
 <update id="updateNick" parameterType="member">
 	update members set nick = #{nick} where email = #{email}
 </update>
+
+<!-- shop에서 사용  -->
+<select id="checkEmail_useShop" parameterType="String" resultType="member">
+	select * from members where email = #{email}
+</select>
+
 </mapper>

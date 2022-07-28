@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import style.bean.LikeDTO;
 import style.bean.ReplyDTO;
 import style.bean.StyleDTO;
 
@@ -23,13 +24,13 @@ public class StyleDAOMyBatis implements StyleDAO {
 	}
 
 	@Override
-	public List<StyleDTO> getStyleList(Map<String, Integer> map) {
+	public List<StyleDTO> getStyleList(Map<String, Object> map) {
 		return sqlSession.selectList("styleSQL.getStyleList", map);
 	}
 
 	@Override
-	public StyleDTO getStyleDetails(String seq) {
-		return sqlSession.selectOne("styleSQL.getStyleDetails", Integer.parseInt(seq));
+	public StyleDTO getStyleDetails(int seq) {
+		return sqlSession.selectOne("styleSQL.getStyleDetails", seq);
 	}
 
 	@Override
@@ -45,7 +46,6 @@ public class StyleDAOMyBatis implements StyleDAO {
 	@Override
 	public void styleReplyWrite(Map<String, String> map) {
 		sqlSession.insert("styleSQL.styleReplyWrite", map);
-		
 	}
 
 	@Override
@@ -59,8 +59,8 @@ public class StyleDAOMyBatis implements StyleDAO {
 	}
 
 	@Override
-	public ReplyDTO getNowReply() {
-		return sqlSession.selectOne("styleSQL.getNowReply");
+	public ReplyDTO getNowReply(Map<String, String> map) {
+		return sqlSession.selectOne("styleSQL.getNowReply", map);
 	}
 
 	@Override
@@ -68,4 +68,32 @@ public class StyleDAOMyBatis implements StyleDAO {
 		sqlSession.delete("styleSQL.styleReplyDelete", style_seq);
 		
 	}
+
+	@Override
+	public void deleteLikes(Map<String, Object> map) {
+		sqlSession.delete("styleSQL.deleteLikes", map);
+	}
+
+	@Override
+	public int findLikes(Map<String, Object> map) {
+		return sqlSession.selectOne("styleSQL.findLikes", map);
+	}
+
+	@Override
+	public void makeLikes(Map<String, Object> map) {
+		sqlSession.insert("styleSQL.makeLikes",  map);
+		
+	}
+
+	@Override
+	public List<LikeDTO> getLikeList(String email) {
+		return sqlSession.selectList("styleSQL.getLikeList", email);
+	}
+
+	@Override
+	public int findAllLikes(int seq) {
+		return sqlSession.selectOne("styleSQL.findAllLikes", seq);
+	}
+
+	
 }
