@@ -44,11 +44,23 @@
    </select>
 	
 	<select id="getBiddingPriceList" parameterType="java.util.Map" resultType="biddingDTO">
-		select product_size, pid, bidding_id, MIN(bidding_price) AS bidding_price
-		from biddings
-		where pid=#{pid} and status="입찰중" and position="판매"
-		GROUP BY product_size 
-		ORDER BY product_size ASC;
+		WITH query1(pid, product_size, bidding_price)
+AS (
+   SELECT  pid, product_size, MIN(bidding_price) AS bidding_price
+   FROM biddings
+   WHERE pid =#{pid} AND status = '입찰중' AND position = '판매'
+   GROUP BY product_size
+   )
+SELECT query2.bidding_id, query2.pid, query2.product_size, query2.bidding_price
+FROM (
+     SELECT  bidding_id, pid, product_size, bidding_price
+     FROM biddings
+     )AS query2, query1
+WHERE query2.bidding_price = query1.bidding_price
+   AND query2.product_size = query1.product_size
+   AND query2.pid = query1.pid
+   GROUP BY product_size
+ORDER BY product_size ASC;
 	</select>
 
 	<select id="getBidiingPriceMax" parameterType="java.util.Map" resultType="biddingDTO">
@@ -74,11 +86,14 @@
 		ORDER BY product_size ASC;
 	</select>
 	
+	<update id="changeStatus" parameterType="java.util.Map">
+	UPDATE biddings set position="구매", status="낙찰" where bidding_id=#{bidding_id} and product_size=#{product_size};
+	</update>
+	
 	<insert id="sellSuccess" parameterType="java.util.Map">
 		INSERT INTO biddings(member_id, pid, product_size, bidding_price, 
 							 position, status, matched_bidding_id, created_at)
 		VALUES(#{member_id}, #{pid}, #{product_size}, #{bidding_price}, '판매', '입찰중', #{matched_bidding_id}, sysdate())
 	</insert>
-	
 	
 </mapper>
