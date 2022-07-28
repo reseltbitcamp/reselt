@@ -110,7 +110,7 @@ function readURL(input){
 			data: formData,
 			success: function(){
 				alert('글이 수정되었습니다.');
-				location.href='/ReseltProject/style/styleList';
+				location.href='/ReseltProject/style/styleListNew';
 			},
 			error:function(request,status,error){    
 				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -120,7 +120,6 @@ function readURL(input){
 });
 
 function getSearchList(){
-	alert("5");
 	  $.ajax({
 	    type: 'post',
 	    url: '/ReseltProject/search/searchProductList',

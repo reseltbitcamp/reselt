@@ -30,6 +30,7 @@ public class StyleController {
 	public ModelAndView styleList(@RequestParam(required = false, defaultValue = "1") String pg) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("pg", pg);
+		mav.addObject("num", 1);
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("display", "/WEB-INF/views/style/styleList.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
@@ -42,6 +43,7 @@ public class StyleController {
 	public ModelAndView styleListNew(@RequestParam(required = false, defaultValue = "1") String pg) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("pg", pg);
+		mav.addObject("num", 2);
 		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
 		mav.addObject("display", "/WEB-INF/views/style/styleList.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
@@ -97,8 +99,9 @@ public class StyleController {
 	
 	@PostMapping(value="getStyleList")
 	@ResponseBody
-	public Map<String, Object> getStyleList(@RequestParam String pg){;
-		return styleService.getStyleList(pg);
+	public Map<String, Object> getStyleList(@RequestParam String pg, int num){
+		System.out.println("getStyleList pg="+pg+", num="+num);
+		return styleService.getStyleList(pg, num);
 	}
 	
 	@PostMapping(value="getStyleDetails")

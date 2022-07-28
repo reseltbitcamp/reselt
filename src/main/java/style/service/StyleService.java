@@ -9,7 +9,7 @@ public interface StyleService {
 
 	public void styleWriteForm(StyleDTO styleDTO);
 
-	public Map<String, Object> getStyleList(String pg);
+	public Map<String, Object> getStyleList(String pg, int num);
 
 	public Map<String, Object> getStyleDetails(int seq);
 

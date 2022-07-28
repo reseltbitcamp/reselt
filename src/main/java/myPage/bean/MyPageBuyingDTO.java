@@ -2,8 +2,14 @@ package myPage.bean;
 
 public class MyPageBuyingDTO {
 	int footsize, count_all, count_ing, count_end;
-	String product_name_eng, img_file, created_at, status, name, email;
+	String product_name_eng, img_file, created_at, status, name, email, sort;
 	
+	public String getSort() {
+		return sort;
+	}
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
 	public String getName() {
 		return name;
 	}

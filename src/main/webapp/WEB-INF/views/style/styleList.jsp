@@ -9,11 +9,11 @@
 <!-- style filter -->
 <div id="styleTabMenu" class="sticky top-[93px] bg-white w-full h-[68px] p-4 bg-white">
   <div class="w-24 h-10 text-center mx-auto my-0">
-    <div class="w-12 h-9 justify-center py-1 m-auto rounded-2xl bg-zinc-900 float-left">
-      <a href="/ReseltProject/style/styleList" class="text-white font-semibold">인기</a>
+    <div id="selectFilter1">
+      <a href="/ReseltProject/style/styleList" id="selectFilterName1">인기</a>
     </div>
-    <div class="w-12 h-9 py-1 justify-center m-auto text-center float-left">
-      <a href="/ReseltProject/style/styleListNew">최신</a>
+    <div id="selectFilter2">
+      <a href="/ReseltProject/style/styleListNew" id="selectFilterName2">최신</a>
     </div>
   </div>
 </div>
@@ -26,6 +26,7 @@
   </div>
 </c:if>
 <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
+<input type="text" id="num" value="${requestScope.num }" class="invisible">
 <!-- style content -->
 <div id="styleContent" class="infinite flex flex-wrap gap-1 w-[1100px] mx-auto my-0">
   
@@ -60,10 +61,20 @@ function MadeBox(){
 	$.ajax({
 		type: 'post',
 		url: '/ReseltProject/style/getStyleList',
-        data: 'pg=' + $('#pg').val(),
+        data: {'pg':$('#pg').val(),
+        	'num':$('#num').val()},
 		dataType: 'json',
 		success: function(data){
 			console.log(JSON.stringify(data));
+	 		if(data.num==1){
+				$('#selectFilter1').addClass("w-12 h-9 justify-center py-1 m-auto rounded-2xl bg-zinc-900 float-left");
+				$('#selectFilterName1').addClass("text-white font-semibold");
+				$('#selectFilter2').addClass("w-12 h-9 py-1 justify-center m-auto text-center float-left");
+			} else if(data.num==2){
+				$('#selectFilter2').addClass("w-12 h-9 justify-center py-1 m-auto rounded-2xl bg-zinc-900 float-left");
+				$('#selectFilterName2').addClass("text-white font-semibold");
+				$('#selectFilter1').addClass("w-12 h-9 py-1 justify-center m-auto text-center float-left");				
+			}
 			
 			$.each(data.list, function(index, items){
 				$('<div class="shrink-0 basic-1/8 w-[250px] mx-auto"><div id="styleImage" class="rounded-xl overflow-hidden cursor-pointer" onclick="getStyleDetails('+items.seq+')"><img src="/ReseltProject/styleImage/'
