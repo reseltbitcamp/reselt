@@ -31,7 +31,7 @@
 
 		<div id="nextBtn" class="text-center">
 			<button type="button"
-				class="border m-4 bg-black rounded-xl text-white  w-3/4 h-14">
+				class="pageMoveBtn border m-4 bg-black rounded-xl text-white  w-3/4 h-14">
 				<span id="price" class="text-lg ">price</span>
 			</button>
 		</div>

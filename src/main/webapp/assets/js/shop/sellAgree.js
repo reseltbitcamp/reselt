@@ -25,7 +25,7 @@ $('#firstAgree').click(function(){
 	var check5 = $('#fifthAgree').prop("checked");
 	
 	if(check1 == true && check2 == true && check3 == true && check4 == true && check5 == true){
-		$('#agreeBtn').removeAttr("disabled");
+	$('#agreeBtn').removeAttr("disabled");
     $('#agreeBtn').removeClass("disabled:cursor-not-allowed")
     $('#agreeBtn').addClass("cursor-pointer")
 	} else{

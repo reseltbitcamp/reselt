@@ -6,7 +6,7 @@ $('.addAddressModal').hide();
 		url: '/ReseltProject/myPage/show_account',
 		dataType: 'json',
 		success: function(data) {
-			
+			consol.log(JSON.stringify(data))
 			//데이터 보여주기
 			$('#account').text( "<" + data.account_name + ">  계좌번호 : " + data.account_num + " / 예금주 :  " + data.account_holder);
 		}
