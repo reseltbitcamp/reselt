@@ -12,6 +12,7 @@ $(function(){
 			$('#product_name_eng').html(data.productDTO.product_name_eng);
 			$('#bidding_size').html(data.size)
 			$('#bidding_price').html(data.biddingDTO.bidding_price.toLocaleString('ko-KR')+" 원");
+			$('#bidding_price').val(data.biddingDTO.bidding_price);
 			const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
 			const imgFiles = data.productDTO.img_file.split(",");
 			$('#product_img').attr("src", imgPath+"/"+data.pid+"/"+imgFiles[0]);
@@ -81,6 +82,6 @@ $('#fourthAgree').click(function(){
 })
 
 $('#agreeBtn').click(function(){
-	location.href="./buyLastPage?pid="+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val();
+	location.href="./buyLastPage?pid="+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val()+"&price="+$('#bidding_price').val();
 });
 // buyAgree
