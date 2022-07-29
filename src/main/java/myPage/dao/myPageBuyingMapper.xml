@@ -52,15 +52,15 @@
 			</if>
 			
 			<if test='sort == "내림차순"'> 
-				order by biddings.created_at desc limit #{startNum}, #{endNum}
+				order by biddings.created_at desc LIMIT 5 OFFSET #{startNum}
 			</if>
 			
 			<if test='sort == "오름차순"'>
-				order by biddings.created_at asc limit #{startNum}, #{endNum}
+				order by biddings.created_at asc  LIMIT 5 OFFSET #{startNum}
 			</if>
 			
 			<if test='sort == ""'>
-				order by biddings.created_at desc limit #{startNum}, #{endNum}
+				order by biddings.created_at desc  LIMIT 5 OFFSET #{startNum}
 			</if>
 		</select>
 		
