@@ -397,7 +397,6 @@
       </div>
     </aside>
   </div>
-
   <!-- product img / details tagged you to product datail pg...-->
     <!-- product content -->
 
@@ -595,7 +594,6 @@
         </div>
        
     
-
 <!-- query -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain_jquery.js"></script>
@@ -639,7 +637,6 @@ btn.addEventListener('click', function(){
 //    smileColor.style.fill = 'none';   
 //    }
 // })
-
 
 </script>
 

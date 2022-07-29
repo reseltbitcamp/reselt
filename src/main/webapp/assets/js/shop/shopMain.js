@@ -148,8 +148,6 @@ function sortByKeyword() {
     return searchProduct.category.toLowerCase().indexOf(keyword) !== -1;
   });
   
-  alert(keyword);
-  
   orderCnt = 1;
   const idProductList2 = document.getElementById('productList');
   idProductList2.replaceChildren();
@@ -162,4 +160,4 @@ function sortByKeyword() {
     idProductList2.append(sp[j].div);
   }
   
-}
+}; 

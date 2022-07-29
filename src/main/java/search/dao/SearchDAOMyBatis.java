@@ -21,9 +21,5 @@ public class SearchDAOMyBatis implements SearchDAO {
 		return sqlSession.selectList("searchSQL.searchProductList");
 	}
 
-//	@Override
-//	public List<ProductDTO> keywordSearch(Map<String, String> map) {
-//		return sqlSession.selectList("searchSQL.keywordSearch", map);
-//	}
 
 }
