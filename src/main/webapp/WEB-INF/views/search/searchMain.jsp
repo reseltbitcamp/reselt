@@ -4,41 +4,44 @@
 
 <div class="layer_search fixed t-0 r-0 b-0 h-[100%] w-[100%] bg-[rgba(34,34,34,.5)] overflow-y-auto z-[900] flex">
   <div class="layer_container w-[100%] overflow-hidden">
+
     <div class="layer_content p-0 m-auto">
       
-      <div class="search_container bg-[#fff] box-border">
-        
+      <form class="search_container bg-[#fff] box-border">
+        <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
         <div class="search_wrap pt-[25px] px-[40px] pb-[19px] m-auto w-[704px] flex">
-          
+              
           <div class="search_area flex-1 mr-[20px] block">
             
             <div class="search relative py-0 pr-[40px] pl-[44px] bg-[#f4f4f4] rounded-[8px] h-[40px]">
-			  <input type="text" placeholder="브랜드명, 모델명, 모델번호 등" title="검색창" id="input_search" class="input_search w-[100%] h-[100%] transition-all text-[14px] tracking-[-.21px] border-none bg-[#f4f4f4]">
+			  <input type="search" name="keyword" value="${keyword }" placeholder="브랜드명, 모델명, 모델번호 등" title="검색창" id="keyword" class="input_search w-[100%] h-[100%] transition-all text-[14px] tracking-[-.21px] border-none bg-[#f4f4f4]">
+<!-- 			  <input type="search" placeholder="브랜드명, 모델명, 모델번호 등" title="검색창" id="keyword" class="input_search w-[100%] h-[100%] transition-all text-[14px] tracking-[-.21px] border-none bg-[#f4f4f4]"> -->
             </div>
             
           </div>
           
-          <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='recentSearch()'>검색</button>&nbsp;&nbsp;
+          <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" >검색</button>&nbsp;&nbsp;
+<!--           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='recentSearch()'>검색</button>&nbsp;&nbsp; -->
 <!--           <button class="searchBtn ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick='itemSearch()'>임시</button>&nbsp;&nbsp; -->
           <button class="btn_close ml-auto p-0 border-0 bg-[rgba(0,0,0,0)] appearance-none" onclick="location.href='/ReseltProject/'">취소</button>
         </div>
         
-      </div>
+      </form>
       
-      <div class="search_content_wrap block block bg-[#fff]">
+      <div class="search_content_wrap block bg-[#fff]">
         
         <div class="recent_area relative pb-[20px] w-[704px] m-auto">
           
-          <div class="recent_box pt-0 px-[40px] pb-[21px] block">
-            <strong class="recent_title inline-block leading-[20px] text-[12px] text-black align-middle font-bold">최근 검색어</strong>
-            <button class="btn_delete inline-block align-middle pt-[8px] pr-[5px] pb-[3px] pl-[1px] ml-[5px]" onclick='recentSearchReset()'>x
-            </button>
-            <ul id="search_list" class="search_list mt-[4px] list-none m-0 p-0">
-              <li class="list_item">
-                <a class="search_item block max-w-[650px] overflow-hidden text-ellipsis whitespace-nowrap text-[14px] tracking-[-.21px] leading-[32px] text-[rgba(34,34,34,.8)]"></a>
-              </li>
-            </ul> <!-- append로 li 추가 -->
-          </div>
+<!--           <div class="recent_box pt-0 px-[40px] pb-[21px] block"> -->
+<!--             <strong class="recent_title inline-block leading-[20px] text-[12px] text-black align-middle font-bold">최근 검색어</strong> -->
+<!--             <button class="btn_delete inline-block align-middle pt-[8px] pr-[5px] pb-[3px] pl-[1px] ml-[5px]" onclick='recentSearchReset()'>x -->
+<!--             </button> -->
+<!--             <ul id="search_list" class="search_list mt-[4px] list-none m-0 p-0"> -->
+<!--               <li class="list_item"> -->
+<!--                 <a class="search_item block max-w-[650px] overflow-hidden text-ellipsis whitespace-nowrap text-[14px] tracking-[-.21px] leading-[32px] text-[rgba(34,34,34,.8)]"></a> -->
+<!--               </li> -->
+<!--             </ul> append로 li 추가 -->
+<!--           </div> -->
           
           <ul class="brand_list py-0 px-[40px] whitespace-nowrap">
             <li class="brand_item inline-block align-top rounded-[8px]">
@@ -102,7 +105,7 @@
   </div>
 </div>
 
-<jsp:include page="../main/main.jsp"></jsp:include>
+<jsp:include page="../shop/main/shopmain.jsp"></jsp:include>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script>
@@ -110,7 +113,7 @@
 
 $(function(){
   getSearchList();
-  //$('.brand_list').hide();
+//   $('.recent_area').hide();
 });
 
 //검색List 활성화
@@ -124,28 +127,32 @@ $(function(){
   
 });
 
-//최근 검색어
-$('.recent_box').hide()
 
-function recentSearch(){
-  if($('.input_search').val() != '')
-  $('.recent_box').show()
-	
-  var recent_search = document.getElementById('search_list')
+
+//최근 검색어
+// $('.recent_box').hide()
+
+// function recentSearch(){
+//   if($('.input_search').val() != ''){
+//   $('.recent_box').show()
   
-  recent_search.innerHTML += '<li>'+ $('.input_search').val() +'</li>'
-  $('.input_search').val('')
-}
+//   }
+	
+//   var recent_search = document.getElementById('search_list')
+  
+//   recent_search.innerHTML += '<li>'+ $('.input_search').val() +'</li>'
+//   $('.input_search').val('')
+// }
 
 function recentSearchReset(){
   $('.recent_box').hide()
   $('#search_list').empty()
 }
 
-function itemSearch(){
-  $('.suggest_wrap').toggle()
-  $('.brand_list').toggle()
-}
+// function itemSearch(){
+//   $('.suggest_wrap').toggle()
+//   $('.brand_list').toggle()
+// }
  
 
 </script>

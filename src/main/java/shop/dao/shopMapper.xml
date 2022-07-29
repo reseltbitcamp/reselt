@@ -62,7 +62,7 @@ WHERE query2.bidding_price = query1.bidding_price
    GROUP BY product_size
 ORDER BY product_size ASC;
 	</select>
-
+	
 	<select id="getBidiingPriceMax" parameterType="java.util.Map" resultType="biddingDTO">
 		select product_size, pid, bidding_id, MAX(bidding_price) AS bidding_price
 		from biddings

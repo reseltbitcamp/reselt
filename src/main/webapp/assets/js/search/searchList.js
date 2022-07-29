@@ -1,6 +1,6 @@
 function getSearchList(){
   //console.log("제발 와주세요 ㅠ");
-  //$('.brand_list').hide();
+  //$('.brand_list').hide()
 	
   $.ajax({
     type: 'post',
@@ -17,7 +17,7 @@ function getSearchList(){
 	            +items.product_name_eng+'</p><p class="model_sub_info mt-[2px] text-[12px] tracking-[-.06px] text-[rgba(34,34,34,.5)]" id="product_name_kor">&nbsp;'
 	            +items.product_name_kor+'</p></div><br>&nbsp;')
 	            .appendTo($('.suggest_list'));
-	            console.log(items.img_file);
+	            //console.log(items.img_file);
       }); //each
       
     },
@@ -29,10 +29,28 @@ function getSearchList(){
 
 //Auto Complete
 $(document).ready(function(){
-  $('#input_search').on("keyup", function(){
+  $('.input_search').on("keyup", function(){
     var value = $(this).val().toLowerCase();
     $('.suggest_item').filter(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
 });
+
+
+//검색
+$('.searchBtn').click(function(){
+	if($('#keyword').val() == '') {
+		alert('검색어를 입력하세요.');
+	}
+	else{
+		location.href='/ReseltProject/shop/search?keyword='+ $('#keyword').val();
+		alert($('#keyword').val() + '(을)를 검색합니다.');
+	}
+});
+
+
+
+
+
+
