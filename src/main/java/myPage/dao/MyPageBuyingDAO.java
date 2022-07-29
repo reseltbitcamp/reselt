@@ -10,5 +10,7 @@ public interface MyPageBuyingDAO {
 	public List<MyPageBuyingDTO> buyingList(Map<String, String> map);
 
 	public List<MyPageBuyingDTO> myMainList(String email);
+	
+	public int getTotalA();
 
 }

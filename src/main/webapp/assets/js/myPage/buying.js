@@ -46,6 +46,7 @@ function buying_list_btn() {
 		type: 'post',
 		url: '/ReseltProject/myPage/buyingList',
 		data: {
+			"pg" : $('#pg').val(),
 			"sort": $('.select_list').text(),
 			"status": $('.tab_on').attr('id'),
 			"position": $('.position_a').text(),
@@ -53,10 +54,10 @@ function buying_list_btn() {
 			"created_at_end": $('.created_at_end').val()
 			}, 
 		dataType: 'json',
-		success: function(list) {
+		success: function(data) {
 			
 			
-			if (list == null) {
+			if (data.list == null) {
 				$('.not_empty_area_1').addClass('removeEvent');
 				$('.empty_area_1').removeClass('removeEvent');
 				
@@ -65,7 +66,7 @@ function buying_list_btn() {
 				$('.empty_area_1').addClass('removeEvent');
 				
 				
-				$.each(list, function(index, items){
+				$.each(data.list, function(index, items){
 					$('.wish_list').append($('<li/>', {
 						class: 'wish_list_inner'
 					}).append($('<div/>', {
@@ -143,7 +144,8 @@ function buying_list_btn() {
 					
 				});
 				
-			
+				//페이징
+				$('#noticePagingDiv').html(data.noticePaging.pagingHTML);
 				
 			}
 			
@@ -156,6 +158,9 @@ function buying_list_btn() {
 
 	});
 
+	function noticePaging(pg){
+		location.href = "noticeList?pg=" + pg;
+	}
 };	
 
 

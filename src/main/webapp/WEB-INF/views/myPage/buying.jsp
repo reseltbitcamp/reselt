@@ -182,6 +182,10 @@
   	<!-- 동적처리 -->
 
   </ul>
+  
+  	<!-- 페이징 -->
+  	<input type="hidden" id="pg" value="${requestScope.pg }">
+  	<div id="noticePagingDiv" class="py-[28px] px-0 text-center"></div>
 </div>
 
 

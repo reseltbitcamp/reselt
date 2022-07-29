@@ -27,5 +27,10 @@ public class MyPageBuyingMybatis implements MyPageBuyingDAO {
 		return sqlSession.selectList("myPageSQL.myMainList", email);
 	}
 
+	@Override
+	public int getTotalA() {
+		return sqlSession.selectOne("myPageSQL.getTotalA");
+	}
+
 
 }

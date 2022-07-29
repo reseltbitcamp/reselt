@@ -329,12 +329,12 @@ public class MyPageController {
 	//거래
 	@PostMapping(value="buyingList")
 	@ResponseBody
-	public List<MyPageBuyingDTO> buyingList(@RequestParam Map <String,String> map) {
+	public Map<String, Object> buyingList(@RequestParam Map <String,String> map, @RequestParam(required = false, defaultValue = "1") String pg) {
 		
+		map.put("pg", pg);
 		System.out.println(map);
-		List<MyPageBuyingDTO> list = myPageBuyingService.buyingList(map);
-		System.out.println(list);
-		return list;
+		return myPageBuyingService.buyingList(map);
+		
 		
 	}
 	

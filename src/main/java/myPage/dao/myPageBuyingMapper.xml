@@ -51,23 +51,26 @@
 				and biddings.created_at between date(#{created_at_start}) and date(#{created_at_end})+1
 			</if>
 			
-			<if test='sort == "내림차순"'>
-				order by biddings.created_at desc limit 30 offset 0
+			<if test='sort == "내림차순"'> 
+				order by biddings.created_at desc limit #{startNum2}, #{endNum2}
 			</if>
 			
 			<if test='sort == "오름차순"'>
-				order by biddings.created_at asc limit 30 offset 0
+				order by biddings.created_at asc limit #{startNum2}, #{endNum2}
 			</if>
 			
 			<if test='sort == ""'>
-				order by biddings.created_at desc limit 30 offset 0
+				order by biddings.created_at desc limit #{startNum2}, #{endNum2}
 			</if>
 		</select>
 		
 	
 			
-		
-
+		<!-- 총글수 -->
+		<select id="getTotalA" resultType="int">
+			select count(*) from notice
+		</select>
+	
 			
 	
 	
