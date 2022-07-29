@@ -154,7 +154,7 @@ function sortByKeyword() {
   for (let j = 0; j < sp.length; j++) {
     sp[j].div.dataset.order = j;
     sp[j].div.classList.add('hidden')
-    if (j < 4) {
+    if (j < 100) {
       sp[j].div.classList.remove('hidden');
     }
     idProductList2.append(sp[j].div);
