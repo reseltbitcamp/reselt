@@ -278,7 +278,7 @@ var loginEmail = null;
 			$('#replyCount').text(data.count);
 			
 			/* 모달 댓글창  */
-			$('<div id="modalUserBox" class="w-[40px] h-[80px] py-2 ml-4 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="src="http://3.39.241.175:6753/upload/resources/img/myPage/'+data.styleDTO.memberDTO.profile_img+'" alt="프로필 사진"></div></div><div id="modalReplyBox" class="w-[245px] h-[80px]  float-left"><div id="replyUserName" class="inline w-[50px] font-medium text-xs pt-1">'+data.styleDTO.memberDTO.nick+'</div><div id="replyBoxContent" class="inline ml-3 w-full text-xs pt-1">'
+			$('<div id="modalUserBox" class="w-[40px] h-[80px] py-2 ml-4 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="http://3.39.241.175:6753/upload/resources/img/myPage/'+data.styleDTO.memberDTO.profile_img+'" alt="프로필 사진"></div></div><div id="modalReplyBox" class="w-[245px] h-[80px]  float-left"><div id="replyUserName" class="inline w-[50px] font-medium text-xs pt-1">'+data.styleDTO.memberDTO.nick+'</div><div id="replyBoxContent" class="inline ml-3 w-full text-xs pt-1">'
 					+data.styleDTO.content+'</div><div id="replydate" class="text-xs px-1">'+data.dateWrite+'</div></div>').appendTo($('#modalContent'));
 			
 			/* 공감 버튼 */
