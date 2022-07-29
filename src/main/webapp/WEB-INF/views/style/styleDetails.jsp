@@ -411,7 +411,7 @@ $(document).ready(function(){
 				'pseq': $('#pseq').val()},
 			dataType: 'json',
 	       	success:function(data){
-	       		alert("#"+JSON.stringify(data));
+	       		//alert("#"+JSON.stringify(data));
 				$('#comment_reply').val("");
 				
 				/* 댓글 개수  */
