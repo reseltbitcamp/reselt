@@ -26,6 +26,4 @@ public interface ShopDAO {
 
 	public void sellSuccess(Map<String, Object> map);
 	
-	public List<ProductDTO> keywordSearch(Map<String, Integer> map);
-
 }
