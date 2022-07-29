@@ -56,7 +56,7 @@
 
       <dl class="flex justify-between">
         <dt class="mt-2 text-xs text-gray-400">배송비</dt>
-        <dd class="float-right inline-block text-sm">3000원</dd>
+        <dd class="float-right inline-block text-sm">3,000원</dd>
       </dl>
     </div>
   </div>

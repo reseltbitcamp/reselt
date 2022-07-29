@@ -1,6 +1,6 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="com.inicis.std.util.SignatureUtil"%>
 <%@page import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -53,7 +53,7 @@
           <div class="text-sm items-center border-y w-full relative p-[9px] flex-1">
             <p class="font-semibold">
               <span>일반배송</span>
-              <span class="text-sm font-medium">3000원</span>
+              <span class="text-sm font-medium">3,000원</span>
             </p>
             <p class="text-sm text-gray-400">검수 후 배송 · 5-7일 내 도착 예정</p>
           </div>
@@ -152,18 +152,26 @@
     <dd class="totalPrice mt float m inline pl-1 ml-auto text-xl font-semibold text-red-500"></dd>
   </div>
   <div class="p-3">
-  	<button id="chargeBtn" value="결제 요청" class="mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
+  	<button id="chargeBtn" value="결제 요청" onclick="INIStdPay.pay('SendPayForm_id')" class="chargeBtn mt-4 w-full rounded-lg bg-black p-3 text-white disabled:cursor-not-allowed disabled:bg-gray-100" disabled>결제요청</button>
+  	<button id="nextBtn"value="성공 페이지로 이동" class="mt-4 w-full rounded-lg bg-black p-3 text-white" >성공페이지로 이동</button>
   </div> 
 </div>
-<!-- value="결제 요청" 옆으로 onclick="INIStdPay.pay('SendPayForm_id')"  -->
+
 
 <!------------------------------------  결제 api   -------------------------------------------->
 <%
+
+	int getPrice = Integer.parseInt(request.getParameter("price"));
+	double commission = (getPrice*0.1) + getPrice;
+	int sibar = (int)commission+3000;
+	String totalPrice = ""+sibar;
+	
+	
 	String mid					= "INIpayTest";		// 가맹점 ID(가맹점 수정후 고정)					
 	String signKey			    = "SU5JTElURV9UUklQTEVERVNfS0VZU1RS";	// 가맹점에 제공된 웹 표준 사인키(가맹점 수정후 고정)
 	String timestamp			= SignatureUtil.getTimestamp();			// util에 의해서 자동생성
 	String oid					= mid+"_"+SignatureUtil.getTimestamp();	// 가맹점 주문번호(가맹점에서 직접 설정)
-	String price				= "100";													// 상품가격(특수기호 제외, 가맹점에서 직접 설정)
+	String price				= totalPrice;				// 상품가격(특수기호 제외, 가맹점에서 직접 설정)
 	String cardNoInterestQuota	= "11-2:3:,34-5:12,14-6:12:24,12-12:36,06-9:12,01-3:4";		// 카드 무이자 여부 설정(가맹점에서 직접 설정)
 	String cardQuotaBase		= "2:3:4:5:6:11:12:24:36";		// 가맹점에서 사용할 할부 개월수 설정
 

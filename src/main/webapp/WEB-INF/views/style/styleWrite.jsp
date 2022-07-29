@@ -81,19 +81,34 @@ $(function(){
 		var formData = new FormData($('#styleWriteForm')[0]);
 		$.ajax({
 			type: 'post',
-			url: '/ReseltProject/style/styleWriteForm',
+			url: 'http://3.39.241.175:6753/upload/style',
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
 			data: formData,
 			success: function(){
-				alert('글이 등록되었습니다.');
-				location.href='/ReseltProject/style/styleListNew';
+				$.ajax({
+					type: 'post',
+					url: '/ReseltProject/style/styleWriteForm',
+					enctype: 'multipart/form-data',
+					processData: false,
+					contentType: false,
+					data: formData,
+					success: function(){
+						alert('글이 등록되었습니다.');
+						location.href='/ReseltProject/style/styleListNew';
+					},
+					error:function(request,status,error){    
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					}
+				});
 			},
 			error:function(request,status,error){    
 				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			}
 		});
+		
+		
 	});
 });
 
