@@ -22,6 +22,9 @@ public interface ShopDAO {
 
 	public void writeBuyBidding(Map<String, Object> map);
 
+	public void changeStatus(Map<String, Object> map);
+
 	public void sellSuccess(Map<String, Object> map);
+
 
 }

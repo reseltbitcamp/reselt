@@ -184,34 +184,4 @@
 <jsp:include page="./shopModal/addressListModal.jsp"></jsp:include>
 <jsp:include page="./shopModal/addAddressModal.jsp"></jsp:include>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/ReseltProject/js/shop/sellPage.js"></script>
-<script>
-$(document).ready(function(){
-	$.ajax({
-		type: 'post',
-		url: '/ReseltProject/myPage/show_address',
-		dataType: 'json',
-		success: function(data) {
-			//sellLastPage Ajax 입력
-			$('#addName').html(data.address_name);
-			$('#addTel').html(data.address_num);
-			$('#add').html(data.address_info);
-			},
-		error: function(e){
-			console.log(e);
-		}
-	});
-	
-	$.ajax({
-		type: 'post',
-		url: '/ReseltProject/myPage/show_account',
-		dataType: 'json',
-		success: function(data) {
-			
-			//데이터 보여주기
-			$('#account').text( "<" + data.account_name + ">  계좌번호 : " + data.account_num + " / 예금주 :  " + data.account_holder);
-		}
-});
-
-});			
-</script>
+<script type="text/javascript" src="/ReseltProject/js/shop/sellLastPage.js"></script>

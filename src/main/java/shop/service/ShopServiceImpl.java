@@ -97,9 +97,10 @@ public class ShopServiceImpl implements ShopService {
 		int bidding_price = biddingDTO.getBidding_price();
 		map.put("product_size", size);
 		map.put("bidding_price",bidding_price);
-		shopDAO.writeBuyBidding(map); 
+		shopDAO.writeBuyBidding(map);
 		map.put("productDTO", productDTO);
 		map.put("biddingDTO", biddingDTO);
+		shopDAO.changeStatus(map);
 		return map;
 	}
 

@@ -203,9 +203,13 @@ $(function(){
 		console.log('변화');
 		if($('#emailOk').val() == '1' && $('#pwdOk').val() == '1' && $('#repwdOk').val() == '1' && $('#checkOk').val() == '1' ){
 			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+			$('#joinBtn').css({'cursor':'pointer'}); 
+
 			console.log('0');
 		}else{
 			$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+			$('#joinBtn').css({'cursor':'default'}); 
+
 			console.log('1');
 		}
 	}); 
@@ -213,8 +217,10 @@ $(function(){
 		console.log('변화');
 		if($('#emailOk').val() == '1' && $('#pwdOk').val() == '1' && $('#repwdOk').val() == '1' && $('#checkOk').val() == '1' ){
 			$('#joinBtn').css({'background-color' : 'rgb(0, 0, 0)'});
+			$('#joinBtn').css({'cursor':'pointer'}); 
 		}else{
 			$('#joinBtn').css({"background-color":"rgb(209, 213, 219)"});
+			$('#joinBtn').css({'cursor':'default'}); 
 			console.log('1');
 		}
 	}); 
