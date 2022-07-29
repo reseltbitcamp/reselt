@@ -29,37 +29,4 @@
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
 <script type="text/javascript">
 
-//키워드 검색 - shopMain.js
-$(function(){
-	sortByKeyword()
-});
-
-// $(document).ready(function sortByKeyword() {
-//   const products2 = document.getElementsByClassName('product');
-//   const keyword = $('#keyword').val().toLowerCase();
-  
-//   let array2 = Array.from(products2, function(div2) {
-//     return { category: `${div2.dataset.category}.${div2.dataset.pid}`, div: div2 }
-//   });
-
-//   let sp = array2.filter(function(searchProduct){
-//     return searchProduct.category.toLowerCase().indexOf(keyword) !== -1;
-//   });
-  
-//   //alert(keyword);
-  
-//   orderCnt = 1;
-//   const idProductList2 = document.getElementById('productList');
-//   idProductList2.replaceChildren();
-//   for (let j = 0; j < sp.length; j++) {
-//     sp[j].div.dataset.order = j;
-//     sp[j].div.classList.add('hidden')
-//     if (j < 4) {
-//       sp[j].div.classList.remove('hidden');
-//     }
-//     idProductList2.append(sp[j].div);
-//   }
-  
-// });
-
 </script>

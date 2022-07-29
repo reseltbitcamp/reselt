@@ -39,11 +39,6 @@ public class SearchController {
 	public Map<String, Object> searchProductList(){
 		return searchService.searchProductList();
 	}
-	
-//	@PostMapping(value="keywordSearch")
-//	@ResponseBody
-//	public Map<String, Object> keywordSearch(@RequestParam Map<String, String> map){ //keyword
-//		return searchService.keywordSearch(map);
-//	}
+
 	
 }

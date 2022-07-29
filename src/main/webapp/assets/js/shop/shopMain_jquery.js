@@ -48,7 +48,8 @@ function ProductList(){
               }
            });//each
 
-        paging();   
+        paging();
+        sortByKeyword();
      },
      error: function(err){
         console.log(err);
