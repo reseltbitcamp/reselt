@@ -418,7 +418,7 @@ $(document).ready(function(){
 				$('#replyCount').text(data.count);
 				
 				$('#replyBox').prepend('<div id="replyUserBox" class="'
-					+data.replyDTO.style_seq+' w-[115px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+data.replyDTO.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+data.replyDTO.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">'+data.replyDTO.created_at+'</div></div><div id="replyContent" class="'
+					+data.replyDTO.style_seq+' w-[115px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="http://3.39.241.175:6753/upload/resources/img/myPage/'+data.replyDTO.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+data.replyDTO.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">'+data.replyDTO.created_at+'</div></div><div id="replyContent" class="'
 					+data.replyDTO.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'
 					+data.replyDTO.comment_reply+'</div><div id="replyDelete"><input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('
 					+data.replyDTO.style_seq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" /></div></div>');
