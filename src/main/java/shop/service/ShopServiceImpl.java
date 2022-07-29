@@ -38,13 +38,7 @@ public class ShopServiceImpl implements ShopService {
 	@Override
 	public Map<String, Object> getProductList(String pg) {
 		//1페이지당 3씩
-		int endNum = Integer.parseInt(pg) * 32;
-		int startNum = endNum - 32;
-		
-		System.out.println("pg = "+pg+", startNum = "+startNum+", endNum = ");
 		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("startNum", startNum);
-		map.put("endNum", endNum);
 		
 		List<ProductDTO> list = shopDAO.getProductList(map);
 		
@@ -53,7 +47,6 @@ public class ShopServiceImpl implements ShopService {
 		return sendMap;
 	}
 
-	@Override
 	public Map<Object, Object> getBiddingDTO(int pid) {
 		Map<Object, Object>map = new HashMap<Object, Object>();
 		map.put("pid", pid);
@@ -97,9 +90,10 @@ public class ShopServiceImpl implements ShopService {
 		int bidding_price = biddingDTO.getBidding_price();
 		map.put("product_size", size);
 		map.put("bidding_price",bidding_price);
-		shopDAO.writeBuyBidding(map); 
+		shopDAO.writeBuyBidding(map);
 		map.put("productDTO", productDTO);
 		map.put("biddingDTO", biddingDTO);
+		shopDAO.changeStatus(map);
 		return map;
 	}
 

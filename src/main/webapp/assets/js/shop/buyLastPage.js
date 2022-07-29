@@ -18,36 +18,37 @@ $(function(){
 	})
 	
 	$.ajax({
-		type: 'post',
-		url: "/ReseltProject/shop/insertBuyInfomation",
-		data:{'pid': $('#pid').val(),
-			  'size' : $('#size').val(),
-			  'bidding_id': $('#bidding_id').val()},
-		success:function(data){
-			console.log(JSON.stringify(data))
-			//제품 정보
-			$('#product_id').html(data.productDTO.product_id);
-			$('#product_name_kor').html(data.productDTO.product_name_kor);
-			$('#product_name_eng').html(data.productDTO.product_name_eng);
-			$('#bidding_size').html(data.size)
-			const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
-			const imgFiles = data.productDTO.img_file.split(",");
-			$('#product_img').attr("src", imgPath+"/"+data.pid+"/"+imgFiles[0]);
-			$('#price').val(data.biddingDTO.bidding_price);
-			$('#price').html(data.biddingDTO.bidding_price.toLocaleString('ko-KR')+" 원");
+	type:'post',
+	url: '/ReseltProject/shop/getProductInfomation',
+	data:{'pid': $('#pid').val(),
+		  'size' : $('#size').val()},
+	success:function(data){
+		console.log(JSON.stringify(data))
+		//제품 정보
+		$('#product_id').html(data.productDTO.product_id);
+		$('#product_name_kor').html(data.productDTO.product_name_kor);
+		$('#product_name_eng').html(data.productDTO.product_name_eng);
+		$('#bidding_size').html(data.size)
+		const imgPath = "http://3.39.241.175:6753/upload/resources/img/product";
+		const imgFiles = data.productDTO.img_file.split(",");
+		$('#product_img').attr("src", imgPath+"/"+data.pid+"/"+imgFiles[0]);
+		$('#price').val(data.biddingDTO.bidding_price);
+		$('#price').html(data.biddingDTO.bidding_price.toLocaleString('ko-KR')+" 원");
 
-			//수수료 부여
-			$('#commission').val((data.biddingDTO.bidding_price * 0.1))
-			$('#commission').html((data.biddingDTO.bidding_price * 0.1).toLocaleString('ko-KR')+" 원")
-			
-			//최종금액 표시
-			console.log($('#commission').val())
-			const bidding_price = Number(data.biddingDTO.bidding_price);
-			
-			const commission = Number($('#commission').val());
-			
-			$('.totalPrice').val(data.biddingDTO.bidding_price + $('#commission').val() + 3000);
-			$('.totalPrice').html((bidding_price + commission + 3000).toLocaleString('ko-KR')+" 원");
+		//수수료 부여
+		$('#commission').val((data.biddingDTO.bidding_price * 0.1))
+		$('#commission').html((data.biddingDTO.bidding_price * 0.1).toLocaleString('ko-KR')+" 원")
+		
+		//최종금액 표시
+		const bidding_price = Number(data.biddingDTO.bidding_price);
+		const commission = Number($('#commission').val());
+		
+		$('.totalPrice').val(data.biddingDTO.bidding_price + $('#commission').val() + 3000);
+		$('.totalPrice').html((bidding_price + commission + 3000).toLocaleString('ko-KR')+" 원");
+		$('.returnUrl').val("http://localhost:8080/ReseltProject/shop/buySuccess?pid="+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val())
+		$('#nextBtn').click(function(){
+			location.href='./buySuccess?pid='+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val();
+			})
 		}, error:function(err) {
 			console.log(err)
 		}
@@ -120,8 +121,5 @@ $('.paymentOption').each(function(index){
     $('.paymentOption[paymentOption-index='+ index + ']').addClass('border-2 border-black');
     $('.paymentOption[paymentOption-index!='+ index + ']').removeClass('border-2 border-black');
   })
-  
-$('#chargeBtn').click(function(){
-//	location.href='./buySuccess'
-});
+
 // buyLastPage

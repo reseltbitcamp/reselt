@@ -78,10 +78,10 @@
 <div id="dropdownInformation" class="buttonContainer z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-40 dark:bg-white dark:divide-gray-600">
   <ul class="py-1 text-xs text-black dark:text-black" aria-labelledby="dropdownInformationButton">
     <li id="likeSort" value="likeSort" name="allSort">
-      <button class="likeSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</button>
+      <button class="sortByLikes block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">인기순</button>
     </li>
-   	 <li id="premiumSort" value="premiumSort" name="allSort">
-      <button class="premiumSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">프리미엄순</button>
+   	 <li id="bookmarkSort" value="bookmarkSort" name="allSort">
+      <button class="premiumSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">북마크 순</button>
     </li>
     <li id="purchaseSort" value="purchaseSort" name="allSort">
       <button id="sortByPriceHigh" class="purchaseSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 높은 순</button>
@@ -90,7 +90,7 @@
       <button id="sortByPriceLow" class="sellSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">가격 낮은 순</button>
     </li>
     <li id="dateSort" value="dateSort" name="allSort">
-      <button class="dateSort block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">발매일순</button>
+      <button class="sortByDateNew block w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-200 dark:hover:text-black">발매일순</button>
     </li>
   </ul>
 </div>
@@ -401,22 +401,21 @@
   <!-- product img / details tagged you to product datail pg...-->
     <!-- product content -->
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
-<script type="text/javascript">
-$(function(){
-  ProductList();
-});
-</script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="/ReseltProject/js/style.js"></script> -->
+    
+    <script type="text/javascript">
+    $(function(){
+      ProductList();
+    });
+    
+    </script>
+    
+    
+  <div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
+     
+  </div>
   
-<div id="productList" class="infinite basis-4/5 mx-[20px] my-[15px] pl-[32px] grid grid-cols-4 auto-cols-auto gap-4">
-  
-   
-</div>
-
-  
-</script>
- 
 </div>
 <!-- pg -->
 <input type="text" id="pg" value="${requestScope.pg }" class="invisible">
@@ -601,9 +600,12 @@ $(function(){
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain_jquery.js"></script>
 <script type="text/javascript" src="/ReseltProject/js/shop/shopMain.js"></script>
+<!-- <script type="text/javascript" src="/ReseltProject/js/search/searchList.js"></script> -->
+
 
 <!-- filter Script -->
 <script type="text/javascript">
+
 let displayState = {none: "block", block: "none"}
 let ids = ["category", "brand", "gender", "price"]
 function toggleDisplayState(id) {
@@ -637,6 +639,8 @@ btn.addEventListener('click', function(){
 //    smileColor.style.fill = 'none';   
 //    }
 // })
+
+
 </script>
 
 

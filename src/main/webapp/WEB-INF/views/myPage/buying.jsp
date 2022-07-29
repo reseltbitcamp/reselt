@@ -158,9 +158,10 @@
     <div class="head_status ml-auto items-center text-right flex ">
       
       <div class="status_box field_expires_at block">
-      		<select style="outline-style:none; border:none;" class="text-[13px] border-none">
-      			<option value="asc">오름차순</option>
-      			<option value="desc" selected>내림차순</option>
+      	<div class="select_list removeEvent">내림차순</div>
+      		<select name="sort" style="outline-style:none; border:none;" class=" text-[13px] border-none">
+      			<option class="option" value="오름차순">오름차순</option>
+      			<option class="option" value="내림차순" selected>내림차순</option>
       		</select>
       </div> 
     </div> <!-- head_status -->
@@ -181,6 +182,10 @@
   	<!-- 동적처리 -->
 
   </ul>
+  
+  	<!-- 페이징 -->
+  	<input type="hidden" id="pg" value="">
+  	<div id="noticePagingDiv" class="py-[28px] px-0 text-center"></div>
 </div>
 
 
@@ -202,12 +207,17 @@
     <div class="layer_content">
       <div class="select_status px-[26px] pt-[4px] pb-[26px]">
         <ul id="test">
-          <li onClick="buying_list_btn()" class="position_item status_item item_on m-[6px] inline-block" style="width: calc(49% - 12px);">
+        <li onClick="buying_list_btn()" class="position_item status_item item_on m-[6px] inline-block" style="width: calc(32.333% - 12px);">
             <!--버튼 눌렀을 떄는 bg-[#222] font-bold-->
-            <a id="구매 " class="status_link block overflow-hidden whitespace-nowrap rounded-[16px] border-[1px] border-solid border-[#ebebeb] bg-[#fff] py-[15px] px-[14px] text-center text-[14px] leading-[20px]">구매</a>
+            <a id="전체" class="status_link block overflow-hidden whitespace-nowrap rounded-[16px] border-[1px] border-solid border-[#ebebeb] bg-[#fff] py-[15px] px-[14px] text-center text-[14px] leading-[20px]">전체</a>
+          </li>
+        
+          <li onClick="buying_list_btn()" class="position_item status_item item_on m-[6px] inline-block" style="width: calc(32.333% - 12px);">
+            <!--버튼 눌렀을 떄는 bg-[#222] font-bold-->
+            <a id="구매" class="status_link block overflow-hidden whitespace-nowrap rounded-[16px] border-[1px] border-solid border-[#ebebeb] bg-[#fff] py-[15px] px-[14px] text-center text-[14px] leading-[20px]">구매</a>
           </li>
 
-          <li onClick="buying_list_btn()" class="position_item status_item item_on m-[6px] inline-block" style="width: calc(49% - 12px);">
+          <li onClick="buying_list_btn()" class="position_item status_item item_on m-[6px] inline-block" style="width: calc(32.333% - 12px);">
             <!--버튼 눌렀을 떄는 bg-[#222] font-bold-->
             <a id="판매" class="status_link block overflow-hidden whitespace-nowrap rounded-[16px] border-[1px] border-solid border-[#ebebeb] bg-[#fff] py-[15px] px-[14px] text-center text-[14px] leading-[20px]">판매</a>
           </li>

@@ -24,6 +24,7 @@ public class StyleDTO {
 	
 	private MemberDTO memberDTO;
 	
+	private int pid;
 	private String product_name_kor;
 	private int released_price;
 	private String img_file;

@@ -24,5 +24,4 @@ public interface ShopService {
 
 	public void sellSuccess(Map<String, Object> map);
 
-
 }

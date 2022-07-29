@@ -8,9 +8,12 @@
 <%@ page import="com.inicis.std.util.HttpUtil"%>
 <%@ page import="java.util.*"%>
 
+<input type="hidden" id="pid" value='${pid}'/>
+<input type="hidden" id="size" value='${size}' />
+<input type="hidden" id="bidding_id" value='${id}'>
 <div class="main-content mx-auto my-5 bg-white p-8 shadow-md max-w-[600px] max-h-[900px]">
   <div>
-  <img class="w-[400px] h-[300px] block mx-auto rounded-md" src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshopping-phinf.pstatic.net%2Fmain_3305047%2F33050474907.jpg&type=f372_372"/>
+  <img id="product_img" src=""  class="w-[400px] h-[300px] block mx-auto rounded-md"/>
   </div>
   <div class="mt-4">
     <p id="status" class="text-center text-3xl font-semibold">즉시 구매가 완료되었습니다.</p>
@@ -32,13 +35,13 @@
     <h3 class="font-bold">최종 주문 정보</h3>
     <div class="mt-5 h-14">
       <p class="align-top text-xs font-bold text-black">총 결제 금액</p>
-      <p class="float-right text-xl font-semibold text-red-600">167,400 원</p>
+      <p id="totalPrice" class="totalPrice float-right text-xl font-semibold text-red-600"></p>
     </div>
 
     <div class="w-auto mt-3">
       <dl class="flex justify-between">
         <dt class="mt-2 text-sm">즉시 구매가</dt>
-        <dd class="float-right font-semibold">150,000원</dd>
+        <dd id="price" class="float-right font-semibold"></dd>
       </dl>
 
       <dl class="flex justify-between">
@@ -48,12 +51,12 @@
 
       <dl class="flex justify-between">
         <dt class="mt-2 text-xs text-gray-400">수수료</dt>
-        <dd class="float-right text-sm">17,400 원</dd>
+        <dd id="commission" class="float-right text-sm"></dd>
       </dl>
 
       <dl class="flex justify-between">
         <dt class="mt-2 text-xs text-gray-400">배송비</dt>
-        <dd class="float-right inline-block text-sm">3000원</dd>
+        <dd class="float-right inline-block text-sm">3,000원</dd>
       </dl>
     </div>
   </div>
@@ -575,4 +578,4 @@
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/ReseltProject/js/shop/buyPage.js"></script>
+<script type="text/javascript" src="/ReseltProject/js/shop/buySuccess.js"></script>

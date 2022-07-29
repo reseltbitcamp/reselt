@@ -15,6 +15,7 @@
 		<result column="product_name_kor" property="product_name_kor" />
 		<result column="released_price" property="released_price" />
 		<result column="img_file" property="img_file" />
+		<result column="pid" property="pid" />
 		<association javaType="member.bean.MemberDTO" property="memberDTO">
 			<id column="id" property="id"/>
 			<result column="nick" property="nick"/>
@@ -66,16 +67,23 @@
   			  , m.profile_img
               , p.product_name_kor
               , p.released_price
+              , p.pid
               , pi.img_file
 		from styles s
   		LEFT JOIN members m
 		ON s.member_id = m.id
         LEFT JOIN product p
         ON p.pid = s.product_id
-        LEFT JOIN product_img pi
+        LEFT JOIN (SELECT * FROM product_img GROUP BY pid) pi
         ON s.product_id = pi.pid
+        <if test="num == 1">
+		order by like_code desc
+		limit #{startNum}, #{endNum}
+		</if>
+		<if test="num == 2">
 		order by s.seq desc
 		limit #{startNum}, #{endNum}
+		</if>
 	</select>
 	
 	<!-- Details 글 받아오기 -->
@@ -94,6 +102,7 @@
               , p.product_name_kor
               , p.released_price
               , pi.img_file
+              , p.pid
 		from styles s
   		LEFT JOIN members m
 		ON s.member_id = m.id
@@ -130,7 +139,7 @@
 			from comment c
 	  		LEFT JOIN members m
 			ON c.cmt_id = m.ID
-			and c.pseq = #{pseq}
+			where c.pseq = #{pseq}
 			order by style_seq desc
 	</select>
 	

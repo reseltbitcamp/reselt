@@ -1,6 +1,5 @@
 package shop.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,16 +8,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import shop.bean.BiddingDTO;
 import shop.bean.PriceIndexDTO;
 import shop.bean.ProductDTO;
 import shop.service.ShopService;
@@ -127,7 +123,7 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/buyLastPage", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView buyLastPage(@RequestParam int pid, String size, int id) {
+	public ModelAndView buyLastPage(@RequestParam int pid, String size, int id, int price) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
@@ -136,6 +132,7 @@ public class ShopController {
 		mav.addObject("pid", pid);
 		mav.addObject("size", size);
 		mav.addObject("id", id);
+		mav.addObject("price", price);		
 		mav.setViewName("/index");
 		
 		System.out.println("check");
@@ -152,12 +149,15 @@ public class ShopController {
 	}
 
 	@RequestMapping(value = "/buySuccess", method={RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView buySuccess() {
+	public ModelAndView buySuccess(@RequestParam String size, int pid, int id) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("menu", "/WEB-INF/views/shopMenu/buyLastPageMenu.jsp");
 		mav.addObject("main", "/WEB-INF/views/main/main.jsp");
 		mav.addObject("display","/WEB-INF/views/shop/buySuccess.jsp");
 		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("pid", pid);
+		mav.addObject("size", size);
+		mav.addObject("id", id);
 		mav.setViewName("/index");
 		
 		return mav;
@@ -288,6 +288,23 @@ public class ShopController {
 	@ResponseBody
 	public Map<String, Object> getImageboardList(@RequestParam String pg){
 		return shopService.getProductList(pg);
+	}
+	
+	@GetMapping(value = "search")
+	public ModelAndView search(@RequestParam(required = false, defaultValue = "1") String pg, String keyword) {
+		System.out.println(keyword);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("menu", "/WEB-INF/views/main/menu.jsp");
+		mav.addObject("pg", pg);
+		mav.addObject("keyword", keyword);
+		mav.addObject("footer", "/WEB-INF/views/main/footer.jsp");
+		mav.addObject("display", "/WEB-INF/views/shop/shopindex.jsp");
+		mav.addObject("shopmain", "/WEB-INF/views/shop/main/shopmain.jsp");
+//		mav.addObject("shopmenu", "/WEB-INF/views/shop/main/shopmenu.jsp");
+		mav.addObject("shopmenu", "/WEB-INF/views/search/searchShop.jsp");
+		mav.addObject("flowbite", true);
+		mav.setViewName("/index");
+		return mav;
 	}
 	
 }

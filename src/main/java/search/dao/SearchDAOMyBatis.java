@@ -1,6 +1,7 @@
 package search.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +14,16 @@ import shop.bean.ProductDTO;
 @Transactional
 public class SearchDAOMyBatis implements SearchDAO {
 	@Autowired
-	private SqlSession sqlsession;
+	private SqlSession sqlSession;
 
 	@Override
 	public List<ProductDTO> searchProductList() {
-		return sqlsession.selectList("searchSQL.searchProductList");
+		return sqlSession.selectList("searchSQL.searchProductList");
 	}
+
+//	@Override
+//	public List<ProductDTO> keywordSearch(Map<String, String> map) {
+//		return sqlSession.selectList("searchSQL.keywordSearch", map);
+//	}
 
 }

@@ -63,12 +63,13 @@ $(function(){
 		dataType: 'json',
 		success: function(data){
 			console.log(JSON.stringify(data));
-			$('#imageView').attr("src","/ReseltProject/styleImage/"+data.styleDTO.style_image);
+			$('#imageView').attr("src","http://3.39.241.175:6753/upload/resources/img/style/"+data.styleDTO.style_image);
 	 		$('#imageView').attr('class', 'w-auto h-full mx-auto my-0 cursor-pinter');
 			$('#cameraBox').attr('class', 'w-full h-[250px] border border-gray-200 rounded-md overflow-hidden cursor-pinter');
 			$('#imageView').appendTo($('#cameraBox'));
 			$('#searchProduct').val(data.styleDTO.product_name_kor);
 			$('#content').val(data.styleDTO.content);
+			$('#product_id').val(data.styleDTO.pid);
 		},
 		error:function(request,status,error){    
 			alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -103,14 +104,27 @@ function readURL(input){
 		
 		$.ajax({
 			type: 'post',
-			url: '/ReseltProject/style/styleUpdate',
+			url: 'http://3.39.241.175:6753/upload/style',
 			enctype: 'multipart/form-data',
 			processData: false,
 			contentType: false,
 			data: formData,
 			success: function(){
-				alert('글이 수정되었습니다.');
-				location.href='/ReseltProject/style/styleList';
+				$.ajax({
+					type: 'post',
+					url: '/ReseltProject/style/styleUpdate',
+					enctype: 'multipart/form-data',
+					processData: false,
+					contentType: false,
+					data: formData,
+					success: function(){
+						alert('글이 수정되었습니다.');
+						location.href='/ReseltProject/style/styleListNew';
+					},
+					error:function(request,status,error){    
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					}
+				}); 
 			},
 			error:function(request,status,error){    
 				alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -120,7 +134,6 @@ function readURL(input){
 });
 
 function getSearchList(){
-	alert("5");
 	  $.ajax({
 	    type: 'post',
 	    url: '/ReseltProject/search/searchProductList',
@@ -153,7 +166,6 @@ $(document).ready(function(){
 	});
 
 function productSelect(pid, name){
-	alert("pid="+pid+", name="+name);
 	$('.suggest_wrap').hide();
 	$('#searchProduct').val(name);
 	$('#product_id').val(pid);
