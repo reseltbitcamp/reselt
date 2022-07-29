@@ -20,7 +20,8 @@
              released_price, product.created_at, product_likes, product_bookmark,
              GROUP_CONCAT(product_img.img_file) AS img_file,
              MAX(biddings.bidding_price) AS buy_bidding_price,
-             MIN(biddings.bidding_price) AS sell_bidding_price
+             MIN(biddings.bidding_price) AS sell_bidding_price,
+             (MAX(biddings.bidding_price) + MIN(biddings.bidding_price)) / 2 AS latest_price
 	  FROM product
       INNER JOIN product_img ON product.pid = product_img.pid
       INNER JOIN brand ON product.brand_id = brand.brand_id

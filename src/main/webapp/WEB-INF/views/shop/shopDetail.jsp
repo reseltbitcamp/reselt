@@ -49,7 +49,7 @@
         
         <div class="mt-3 flex-initial">
           <p class="mb-3 text-xs">최근거래가
-            <span id="latest_price" class="float-right text-xl font-semibold">150,000원</span>
+            <span id="latest_price" class="float-right text-xl font-semibold"></span>
           </p>
           <p id="latest_price_diff" class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
         </div>

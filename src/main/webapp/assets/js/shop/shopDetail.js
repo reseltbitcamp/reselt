@@ -81,6 +81,7 @@ $(document).ready(function () {
         { released_price: `${data.released_price.toLocaleString('ko-KR')}원` },
         { buy_bidding_price: `${data.buy_bidding_price.toLocaleString('ko-KR')}원` },
         { sell_bidding_price: `${data.sell_bidding_price.toLocaleString('ko-KR')}원` },
+        { latest_price: `${data.latest_price.toLocaleString('ko-KR')}원` },
         { created_at: create_atStr(data.created_at) }
       ];
 
