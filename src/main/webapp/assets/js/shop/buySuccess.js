@@ -15,7 +15,7 @@ $(function(){
 			$('#price').html(data.biddingDTO.bidding_price.toLocaleString('ko-KR')+" 원");
 			
 			//수수료 부여
-			$('#commission').val(data.biddingDTO.bidding_price)
+			$('#commission').val(data.biddingDTO.bidding_price * 0.1)
 			$('#commission').html((data.biddingDTO.bidding_price * 0.1).toLocaleString('ko-KR')+" 원")
 			
 			//최종금액 표시
