@@ -15,19 +15,27 @@
    </select>
    
    <select id="getProductDTO" parameterType="int" resultType="productDTO">
-	  SELECT product.pid AS pid, product_name_kor, product_name_eng, product_id,
-             category_id, brand.brand_name AS brand_name, gender_id,
-             released_price, product.created_at, product_likes, product_bookmark,
-             GROUP_CONCAT(product_img.img_file) AS img_file,
-             MAX(biddings.bidding_price) AS buy_bidding_price,
-             MIN(biddings.bidding_price) AS sell_bidding_price,
-             (MAX(biddings.bidding_price) + MIN(biddings.bidding_price)) / 2 AS latest_price
-	  FROM product
-      INNER JOIN product_img ON product.pid = product_img.pid
-      INNER JOIN brand ON product.brand_id = brand.brand_id
-      INNER JOIN biddings ON product.pid = biddings.pid
-      WHERE product.pid = #{pid}
-      GROUP BY product.pid
+		SELECT product.pid AS pid, product_name_kor, product_name_eng, product_id,
+		         category_id, brand.brand_name AS brand_name, gender_id,
+		         released_price, product.created_at, product_likes, product_bookmark,
+		         GROUP_CONCAT(product_img.img_file) AS img_file,
+		         (SELECT MAX(biddings.bidding_price)
+		          FROM biddings
+		          WHERE status = '입찰중' AND position = '판매' AND pid = #{pid}
+		          GROUP BY pid) AS buy_bidding_price,
+			     (SELECT MIN(biddings.bidding_price)
+			      FROM biddings
+			      WHERE status = '입찰중' AND position = '판매' AND pid = #{pid}
+			      GROUP BY pid) AS sell_bidding_price,
+			     (SELECT (MAX(biddings.bidding_price) + MIN(biddings.bidding_price)) / 2
+			      FROM biddings
+			      WHERE status = '입찰중' AND position = '판매' AND pid = #{pid}
+			      GROUP BY pid)AS latest_price
+		  FROM product
+		  INNER JOIN product_img ON product.pid = product_img.pid
+		  INNER JOIN brand ON product.brand_id = brand.brand_id
+		  WHERE product.pid = #{pid}
+		  GROUP BY product.pid
    </select>
    
    <select id="getProductList" parameterType="java.util.Map" resultType="productDTO">
