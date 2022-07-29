@@ -32,7 +32,7 @@
           </c:if>
         </div>
       </div>
-      
+
 <!-- menu -->
 <div id="headerBot" class="py-2 px-11 border-b-[1px] flex flex-row font-notoSans">
   <div id="menuLogo" class="basis-1/2">
@@ -40,9 +40,9 @@
   </div>
   <div id="menuBtn" class="basis-1/2 text-right self-center font-light">
     <a href="/ReseltProject/style/styleList" id="styleBtn" class="px-5 text-[15px]">STYLE</a>
-    <a href="/ReseltProject/shop/shopindex" id="shopBtn" class="px-5 text-[15px]">SHOP</a>
+    <a href="/ReseltProject/shop" id="shopBtn" class="px-5 text-[15px]">SHOP</a>
     <a href="#" id="aboutBtn" class="px-5 text-[15px]">ABOUT</a>
-    <a id="searchBtn" href="#" class="pl-5">
+    <a id="searchBtn" href="/ReseltProject/search/searchMain" class="pl-5">
       <img src="/ReseltProject/img/index/search-icon.png" class="w-6 h-6 inline align-middle">
     </a>
   </div>
@@ -84,7 +84,7 @@
   <div id="styleImage" class="w-full">
     <img id="styleImageMain" class="w-full h-auto styleImageMain">
   </div>
-  <div id="productBox" class="w-[120px]">
+  <div id="productBox" class="w-[120px] cursor-pointer">
     <div id="tagName" class="w-full font-medium text-xs pt-6">상품태그</div>
     <div id="productImage" class="bg-sky-100 rounded-md w-[120px] h-[120px] mt-3 mb-2">
       <img id="productImageSrc" alt="나이키 신발">
@@ -231,7 +231,7 @@
       <input type="hidden" id="pseq" name="pseq" value="${seq }">
       <div id="modalUserBox" class="w-[40px] h-[40px] ml-4 float-left mt-1">
         <div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden">
-          <img id="replyLoginImage" src="/ReseltProject/img/style/userImage.jpeg" alt="프로필 사진">
+          <img id="replyLoginImage" alt="프로필 사진">
         </div>
       </div>
         <input type="text" placeholder="댓글을 작성하세요..." id="comment_reply" name="comment_reply" class="float-left w-[210px] h-[40px] placeholder:italic placeholder:text-xs block bg-white w-full border border-slate-300 rounded-md shadow-sm focus:outline-none focus:border-gray-300 focus:ring-gray-200 focus:ring-1 sm:text-sm" name="content" id="content" placeholder="스타일 글 작성... ">
@@ -260,24 +260,25 @@ var loginEmail = null;
 		dataType: 'json',
 		success: function(data){
 			console.log(JSON.stringify(data));
-			$('.styleImageMain').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.style_image);
+			$('.styleImageMain').prop('src', "http://3.39.241.175:6753/upload/resources/img/style/"+data.styleDTO.style_image);
 			$('.styleImageMain').prop('alt', data.styleDTO.memberDTO.nick+"님 게시글");
 			$('#productName').text(data.styleDTO.product_name_kor);
 			$('#textContentBox').text(data.styleDTO.content);
 			$('#userNameText').text(data.styleDTO.memberDTO.nick);
-			$('#styleProfileImg').prop('src', "/ReseltProject/styleImage/"+data.styleDTO.memberDTO.profile_img);
+			$('#styleProfileImg').prop('src', "http://3.39.241.175:6753/upload/resources/img/myPage/"+data.styleDTO.memberDTO.profile_img);
 			$('#amount').text(data.styleDTO.released_price.toLocaleString('en-US'));
 			$('#date').text(data.dateWrite);
 			$('#productImageSrc').prop('src', "http://3.39.241.175:6753/upload/resources/img/product/"+data.styleDTO.product_id+"/"+data.styleDTO.img_file);
 			$('#productImageSrc').prop('alt', data.styleDTO.product_id+"이미지 사진");
+			$('#productBox').attr("onclick","shopDetail("+data.styleDTO.pid+")");
 			if(data.email!=null){
-				$('#replyLoginImage').prop('src', "/ReseltProject/styleImage/"+data.memberDTO.profile_img);
+				$('#replyLoginImage').prop('src', "http://3.39.241.175:6753/upload/resources/img/myPage/"+data.memberDTO.profile_img);
 			}
 			/* 댓글 개수  */
 			$('#replyCount').text(data.count);
 			
 			/* 모달 댓글창  */
-			$('<div id="modalUserBox" class="w-[40px] h-[80px] py-2 ml-4 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+data.styleDTO.memberDTO.profile_img+'" alt="프로필 사진"></div></div><div id="modalReplyBox" class="w-[245px] h-[80px]  float-left"><div id="replyUserName" class="inline w-[50px] font-medium text-xs pt-1">'+data.styleDTO.memberDTO.nick+'</div><div id="replyBoxContent" class="inline ml-3 w-full text-xs pt-1">'
+			$('<div id="modalUserBox" class="w-[40px] h-[80px] py-2 ml-4 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="http://3.39.241.175:6753/upload/resources/img/myPage/'+data.styleDTO.memberDTO.profile_img+'" alt="프로필 사진"></div></div><div id="modalReplyBox" class="w-[245px] h-[80px]  float-left"><div id="replyUserName" class="inline w-[50px] font-medium text-xs pt-1">'+data.styleDTO.memberDTO.nick+'</div><div id="replyBoxContent" class="inline ml-3 w-full text-xs pt-1">'
 					+data.styleDTO.content+'</div><div id="replydate" class="text-xs px-1">'+data.dateWrite+'</div></div>').appendTo($('#modalContent'));
 			
 			/* 공감 버튼 */
@@ -294,8 +295,8 @@ var loginEmail = null;
 				$.each(data.list, function(index, items){
 					
 					//alert(" 3 data.email="+data.email+", items.memberDTO.email = "+items.memberDTO.email);
-					$('<div id="replyUserBox" class="'+items.style_seq+' w-[115px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">'+items.created_at+'</div></div><div id="replyContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyDelete'+items.style_seq+'"></div></div>').appendTo($('#replyBox'));
-					$('<div id="replyUserViewBox" class="'+items.style_seq+' w-[110px] h-[56px] py-2 float-left"><div id="replyUserViewImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserViewName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replyViewdate" class="inline float-left text-xs px-1">'+items.created_at+'</div></div><div id="replyViewContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyModalDelete'+items.style_seq+'"></div></div>').appendTo($('#replyViewBox'));
+					$('<div id="replyUserBox" class="'+items.style_seq+' w-[115px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="http://3.39.241.175:6753/upload/resources/img/myPage/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">'+items.created_at+'</div></div><div id="replyContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyDelete'+items.style_seq+'"></div></div>').appendTo($('#replyBox'));
+					$('<div id="replyUserViewBox" class="'+items.style_seq+' w-[110px] h-[56px] py-2 float-left"><div id="replyUserViewImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="http://3.39.241.175:6753/upload/resources/img/myPage/'+items.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserViewName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+items.memberDTO.nick+'</div><div id="replyViewdate" class="inline float-left text-xs px-1">'+items.created_at+'</div></div><div id="replyViewContent" class="'+items.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'+items.comment_reply+'</div><div class="replyModalDelete'+items.style_seq+'"></div></div>').appendTo($('#replyViewBox'));
 					if(data.email == items.memberDTO.email){
 			        	$('<input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('+items.style_seq+","+items.pseq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" />').appendTo($('.replyDelete'+items.style_seq));
 			        	$('<input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('+items.style_seq+","+items.pseq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" />').appendTo($('.replyModalDelete'+items.style_seq));
@@ -397,6 +398,10 @@ function uploadLikes(seq, email){
 	}
 }
 
+function shopDetail(pid){
+	location.href = '/ReseltProject/shop/shopDetail?pid='+pid;	
+}
+
 $(document).ready(function(){
 	$('#replyUploadBtn').click(function(){
 		$.ajax({
@@ -406,14 +411,14 @@ $(document).ready(function(){
 				'pseq': $('#pseq').val()},
 			dataType: 'json',
 	       	success:function(data){
-	       		alert("#"+JSON.stringify(data));
+	       		//alert("#"+JSON.stringify(data));
 				$('#comment_reply').val("");
 				
 				/* 댓글 개수  */
 				$('#replyCount').text(data.count);
 				
 				$('#replyBox').prepend('<div id="replyUserBox" class="'
-					+data.replyDTO.style_seq+' w-[115px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="/ReseltProject/img/style/'+data.replyDTO.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+data.replyDTO.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">'+data.replyDTO.created_at+'</div></div><div id="replyContent" class="'
+					+data.replyDTO.style_seq+' w-[115px] h-[56px] py-2 float-left"><div id="replyUserImage" class="bg-slate-200 rounded-full w-[34px] h-[34px] float-left overflow-hidden"><img src="http://3.39.241.175:6753/upload/resources/img/myPage/'+data.replyDTO.memberDTO.profile_img+'" alt="프로필 사진"></div><div id="replyUserName" class="inline w-[50px] font-medium float-left text-xs px-1 pt-1">'+data.replyDTO.memberDTO.nick+'</div><div id="replydate" class="inline float-left text-xs px-1">'+data.replyDTO.created_at+'</div></div><div id="replyContent" class="'
 					+data.replyDTO.style_seq+' w-full h-[56px] text-xs pt-3"><div id="replyContentText">'
 					+data.replyDTO.comment_reply+'</div><div id="replyDelete"><input type="button" name="replyDeleteBtn" onClick="replyDeleteSeq('
 					+data.replyDTO.style_seq+')" class="replyDeleteBtn w-[28px] text-xs font-medium bg-zinc-900 text-white rounded cursor-pointer" value="삭제" /></div></div>');

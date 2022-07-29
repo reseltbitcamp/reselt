@@ -46,7 +46,7 @@ $(function(){
 		$('.totalPrice').val(data.biddingDTO.bidding_price + $('#commission').val() + 3000);
 		$('.totalPrice').html((bidding_price + commission + 3000).toLocaleString('ko-KR')+" 원");
 		$('.returnUrl').val("http://localhost:8080/ReseltProject/shop/buySuccess?pid="+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val())
-		$('#chargeBtn').click(function(){
+		$('#nextBtn').click(function(){
 			location.href='./buySuccess?pid='+$('#pid').val()+"&size="+$('#size').val()+"&id="+$('#bidding_id').val();
 			})
 		}, error:function(err) {

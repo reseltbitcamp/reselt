@@ -22,4 +22,7 @@ public class ProductDTO {
    private int product_bookmark;
    private String img_file;
    private String category_name_eng;
+   private int buy_bidding_price;
+   private int sell_bidding_price;
+   private int latest_price;
 }

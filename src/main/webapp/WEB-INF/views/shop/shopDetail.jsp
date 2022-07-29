@@ -49,7 +49,7 @@
         
         <div class="mt-3 flex-initial">
           <p class="mb-3 text-xs">최근거래가
-            <span id="latest_price" class="float-right text-xl font-semibold">150,000원</span>
+            <span id="latest_price" class="float-right text-xl font-semibold"></span>
           </p>
           <p id="latest_price_diff" class="float-right text-xs text-green-500">▼ 27,000원(-13.2%)</p>
         </div>
@@ -58,7 +58,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">구매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white" id="released_price1"></p>
+              <p class="text-base font-semibold text-white" id="buy_bidding_price"></p>
               <span class="float-left text-xs text-white ">즉시구매가</span>
             </div>
           </a>
@@ -66,7 +66,7 @@
             <strong
               class=" ml-2 h-full w-14 float-left flex items-center border-r-[1px] text-white border-gray-400">판매</strong>
             <div class="float-left ml-2">
-              <p class="text-base font-semibold text-white">150,000원</p>
+              <p class="text-base font-semibold text-white" id="sell_bidding_price">-</p>
               <span class="float-left text-xs text-white">즉시 판매가</span>
             </div>
           </a>
@@ -274,7 +274,7 @@
               </div>
               <div class="border-r flex-1 px-3 border-gray-300">
                 <dt class="text-xs ">발매가</dt>
-                <dd class="text-sm" id="released_price2"></dd>
+                <dd class="text-sm" id="released_price"></dd>
               </div>
             </dl>
           </div>
